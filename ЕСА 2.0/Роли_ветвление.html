@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e0e3e5",
+                        "tertiary": "#2d4cba",
+                        "on-surface-variant": "#444652",
+                        "primary-fixed": "#dce1ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-tertiary-fixed": "#001453",
+                        "outline-variant": "#c5c5d4",
+                        "on-surface": "#191c1e",
+                        "surface-tint": "#3d59b2",
+                        "on-primary-fixed": "#00164f",
+                        "secondary-fixed": "#dde1ff",
+                        "inverse-surface": "#2d3133",
+                        "secondary-fixed-dim": "#b8c4ff",
+                        "on-primary-container": "#f1f1ff",
+                        "background": "#f7f9fb",
+                        "surface-container-low": "#f2f4f6",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#e6e8ea",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "primary-container": "#4e69c3",
+                        "surface": "#f7f9fb",
+                        "tertiary-container": "#4966d4",
+                        "surface-dim": "#d8dadc",
+                        "secondary": "#4b5b9a",
+                        "surface-container": "#eceef0",
+                        "tertiary-fixed": "#dde1ff",
+                        "on-secondary-container": "#384785",
+                        "on-background": "#191c1e",
+                        "surface-bright": "#f7f9fb",
+                        "on-secondary-fixed-variant": "#334380",
+                        "outline": "#757683",
+                        "on-secondary-fixed": "#001453",
+                        "primary": "#3450a9",
+                        "on-tertiary-fixed-variant": "#173baa",
+                        "tertiary-fixed-dim": "#b8c4ff",
+                        "on-tertiary-container": "#f2f1ff",
+                        "on-primary-fixed-variant": "#214098",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#a9b8fe",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#b6c4ff",
+                        "inverse-on-surface": "#eff1f3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "section-gap": "32px",
+                        "module-gap": "24px",
+                        "container-padding": "16px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "25.6px", "fontWeight": "400"}],
+                        "label-sm": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .signature-gradient {
+            background: linear-gradient(135deg, #3450a9 0%, #4e69c3 100%);
+        }
+        .tonal-elevation {
+            background-color: #f2f4f6; /* surface-container-low */
+        }
+        .tonal-card {
+            background-color: #ffffff; /* surface-container-lowest */
+            transition: background-color 0.2s ease;
+        }
+        .tonal-card:hover {
+            background-color: #f7f9fb; /* surface-bright / hover shift */
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex flex-col">
+<!-- Encryption Ribbon -->
+<!--<div class="bg-[#001453] h-8 flex items-center px-12 justify-between z-50">-->
+<!--<div class="flex items-center gap-2">-->
+<!--<span class="w-2 h-2 rounded-full bg-surface-tint animate-pulse"></span>-->
+<!--<span class="font-label-sm text-label-sm text-white uppercase tracking-widest">Active encrypted session: AES-256-GCM</span>-->
+<!--</div>-->
+<!--<span class="font-label-sm text-label-sm text-white/60">NODE_ID: VAULT-081</span>-->
+<!--</div>-->
+<!-- TopAppBar -->
+<!--<header class="fixed top-8 left-0 w-full z-50 flex justify-between items-center px-12 h-16 bg-[#001453] text-white font-inter antialiased tracking-tight">-->
+<!--<div class="flex items-center gap-8">-->
+<!--<div class="text-lg font-bold tracking-tighter text-white uppercase">CertifyVault</div>-->
+<!--</div>-->
+<!--<div class="flex items-center gap-6">-->
+<!--<button class="material-symbols-outlined text-white hover:bg-white/10 p-2 transition-colors rounded">lock</button>-->
+<!--<button class="material-symbols-outlined text-white hover:bg-white/10 p-2 transition-colors rounded">help_outline</button>-->
+<!--<button class="material-symbols-outlined text-white hover:bg-white/10 p-2 transition-colors rounded">language</button>-->
+<!--</div>-->
+<!--</header>-->
+<!-- Main Content -->
+<main class="flex-grow pt-32 pb-24 px-12 max-w-7xl mx-auto w-full">
+<!-- Hero Section -->
+<section class="mb-section-gap">
+<!--<p class="font-label-sm text-label-sm text-primary uppercase mb-base">Authentication Gateway</p>-->
+<h1 class="font-display-lg text-display-lg text-on-surface max-w-2xl">Выберите вашу роль для доступа к ЕСА 2.0</h1>
+</section>
+<!-- Role Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-module-gap mb-section-gap">
+<!-- Card 1 -->
+<div onclick="window.location.href='./6_Администрирование/Администрирование.html'" class="tonal-card p-10 flex flex-col items-start group cursor-pointer">
+<span class="material-symbols-outlined text-primary mb-6 text-3xl">settings_suggest</span>
+<!--<span class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-2">System Infrastructure</span>-->
+<h3 class="font-headline-md text-headline-md text-on-surface">Администратор системы</h3>
+</div>
+<!-- Card 2 -->
+<div onclick="window.location.href='./3_Управление группами на аттестацию/Аттестация.html'"  class="tonal-card p-10 flex flex-col items-start group cursor-pointer">
+<span class="material-symbols-outlined text-primary mb-6 text-3xl">admin_panel_settings</span>
+<!--<span class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-2">Policy Control</span>-->
+<h3 class="font-headline-md text-headline-md text-on-surface">Администратор системы аттестации (СА)</h3>
+</div>
+<!-- Card 3 -->
+<div onclick="window.location.href='./1_Управление вопросами/Управление вопросами/Управление вопросами.html'" class="tonal-card p-10 flex flex-col items-start group cursor-pointer">
+<span class="material-symbols-outlined text-primary mb-6 text-3xl">quiz</span>
+<!--<span class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-2">Knowledge Management</span>-->
+<h3 class="font-headline-md text-headline-md text-on-surface">Администратор вопросов</h3>
+</div>
+<!-- Card 4 -->
+<div onclick="window.location.href='./3_Управление группами на аттестацию/Аттестация.html'" class="tonal-card p-10 flex flex-col items-start group cursor-pointer">
+<span class="material-symbols-outlined text-primary mb-6 text-3xl">account_balance</span>
+<!--<span class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-2">Review Board</span>-->
+<h3 class="font-headline-md text-headline-md text-on-surface">Член аттестационной комиссии</h3>
+</div>
+<!-- Card 5 -->
+<div onclick="window.location.href='5_Аттестационное тестирование/Доступ авторизованного пользователя к тестам/Центр Аттестации.html'" class="tonal-card p-10 flex flex-col items-start group cursor-pointer">
+<span class="material-symbols-outlined text-primary mb-6 text-3xl">person</span>
+<!--<span class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-2">Applicant Profile</span>-->
+<h3 class="font-headline-md text-headline-md text-on-surface">Претендент</h3>
+</div>
+</div>
+<!-- Special Highlighted Section -->
+<div class="signature-gradient p-12 lg:p-16 flex flex-col md:flex-row items-center justify-between gap-8 text-white relative overflow-hidden">
+<div class="relative z-10 max-w-xl">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">school</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-white/80">Тестирование</span>
+</div>
+<h2 class="font-headline-md text-headline-md mb-4 text-white">Учебное тестирование</h2>
+<p class="font-body-md text-body-md text-white/90">Свободный анонимный доступ для подготовки к аттестации. Проверьте свои знания перед официальным тестированием.</p>
+</div>
+<div class="relative z-10">
+<button onclick="window.location.href='../Учебное тестирование/1_Учебное тестирование_Настройка теста/Учебное тестирование.html'" class="bg-white text-primary font-label-md px-8 py-4 hover:bg-surface-variant transition-colors flex items-center gap-2">
+                    Начать тест
+                    <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<!-- Decorative Element -->
+<div class="absolute -right-12 -bottom-12 opacity-10">
+<span class="material-symbols-outlined text-[240px]">shield</span>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<!--<footer class="w-full py-8 px-12 flex justify-between items-center border-t border-slate-200/10 bg-slate-50 font-inter text-xs tracking-widest uppercase text-slate-500">-->
+<!--<div class="flex items-center gap-4">-->
+<!--<span>© 2026 ЕСА 2.0</span>-->
+<!--</div>-->
+<!--<nav class="flex gap-8">-->
+<!--<a class="hover:text-[#4e69c3] transition-colors" href="#">Security Protocol</a>-->
+<!--<a class="hover:text-[#4e69c3] transition-colors" href="#">Privacy Policy</a>-->
+<!--<a class="hover:text-[#4e69c3] transition-colors" href="#">System Status</a>-->
+<!--<a class="hover:text-[#4e69c3] transition-colors" href="#">Accessibility</a>-->
+<!--</nav>-->
+<!--</footer>-->
+</body></html>

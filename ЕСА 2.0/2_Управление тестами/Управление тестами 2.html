@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#444652",
+                        "surface-container-low": "#f2f4f6",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#e6e8ea",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#c5c5d4",
+                        "primary-container": "#4e69c3",
+                        "secondary-fixed": "#dde1ff",
+                        "background": "#f7f9fb",
+                        "outline": "#757683",
+                        "on-background": "#191c1e",
+                        "on-primary-fixed": "#00164f",
+                        "on-tertiary-fixed-variant": "#173baa",
+                        "tertiary-fixed-dim": "#b8c4ff",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#3d59b2",
+                        "surface-variant": "#e0e3e5",
+                        "secondary-fixed-dim": "#b8c4ff",
+                        "secondary": "#4b5b9a",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "primary-fixed": "#dce1ff",
+                        "on-tertiary-container": "#f2f1ff",
+                        "surface-bright": "#f7f9fb",
+                        "tertiary-container": "#4966d4",
+                        "tertiary": "#2d4cba",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#eceef0",
+                        "surface-dim": "#d8dadc",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface": "#f7f9fb",
+                        "on-secondary-fixed": "#001453",
+                        "tertiary-fixed": "#dde1ff",
+                        "on-primary-fixed-variant": "#214098",
+                        "on-secondary-fixed-variant": "#334380",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#191c1e",
+                        "inverse-primary": "#b6c4ff",
+                        "on-primary-container": "#f1f1ff",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#a9b8fe",
+                        "on-tertiary-fixed": "#001453",
+                        "on-secondary-container": "#384785",
+                        "inverse-surface": "#2d3133",
+                        "primary": "#3450a9",
+                        "inverse-on-surface": "#eff1f3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "module-gap": "24px",
+                        "section-gap": "32px",
+                        "base": "8px",
+                        "container-padding": "16px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-sm": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "25.6px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .gradient-primary {
+            background: linear-gradient(135deg, #4e69c3 0%, #001453 100%);
+        }
+        .tonal-elevation-1 {
+            background-color: #ffffff;
+        }
+        .tonal-elevation-base {
+            background-color: #f7f9fb;
+        }
+        .tonal-elevation-low {
+            background-color: #f2f4f6;
+        }
+        .active-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .4; }
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-background min-h-screen flex flex-col">
+<!-- Encryption Ribbon -->
+<header class="bg-[#001453] text-on-primary px-8 py-2 flex items-center justify-between sticky top-0 z-[100] h-10">
+</header>
+<div class="flex flex-1">
+<!-- SideNavBar -->
+<aside class="bg-surface-container-low dark:bg-[#191c1e] h-[calc(100vh-40px)] w-64 fixed left-0 top-10 flex flex-col py-8 space-y-6">
+<div class="px-8 space-y-1">
+<div class="font-black text-[#4e69c3] text-xl tracking-tighter">НКА Академия | ЕСА 2.0</div>
+<div class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant/60 font-bold">Управление тестами</div>
+</div>
+<div class="flex-1 px-0 py-4">
+<nav class="space-y-1">
+    <a class="flex items-center gap-3 px-8 py-3 text-[#44474e] hover:text-[#4e69c3] hover:bg-[#e0e3e5]/50 ease-out duration-200 font-['Inter'] font-medium text-sm" href="../../1_Главная%20страница%20НКА%20Академия/2_Главная_страница.html">
+        <span class="material-symbols-outlined">database</span>
+        <span>На главную</span>
+    </a>
+    <a class="flex items-center gap-3 px-8 py-3 text-[#44474e] hover:text-[#4e69c3] hover:bg-[#e0e3e5]/50 ease-out duration-200 font-['Inter'] font-medium text-sm" href="../1_Управление%20вопросами/Управление%20вопросами/Управление%20вопросами.html">
+        <span class="material-symbols-outlined">analytics</span>
+        <span>Управление вопросами</span>
+    </a>
+    <a class="flex items-center gap-3 px-8 py-3 bg-white text-[#4e69c3] rounded-r-full shadow-[40px_0_12px_-12px_rgba(25,28,30,0.04)] font-['Inter'] font-medium text-sm" href="#">
+<span class="material-symbols-outlined">assignment</span>
+<span>Управление тестами</span>
+</a>
+</nav>
+</div>
+<div class="px-6">
+<button onclick="window.location.href='./Создание теста/Создание теста.html'" class="w-full gradient-primary text-white py-3 rounded-xl font-label-md transition-transform active:scale-95 shadow-lg">Создать тест</button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 flex-1 p-section-gap overflow-y-auto">
+<!-- Page Header -->
+<div class="flex items-end justify-between mb-module-gap">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="font-label-sm bg-surface-container-high px-2 py-0.5 rounded text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">security</span>Администратор вопросов</span>
+</div>
+<h1 class="font-display-lg text-on-background">УПРАВЛЕНИЕ ТЕСТАМИ</h1>
+</div>
+<div class="flex items-center gap-module-gap">
+<div class="flex -space-x-3">
+<img class="w-10 h-10 rounded-full border-2 border-background" data-alt="professional male profile avatar in clean studio lighting with friendly expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBInMm5Md94qS7c8UHNovzdWvVjTZGO-bwG52No1YveUzQDc-w8-r98-qIjKyVglsuyp2agd3rcUeblI4lEXV-KX8X1Bbf5pJoyvUstMn_p4b6uB5EFfxSVxPF7h0ph8_mDR7Fmp1arezOKZ09BH9RivP8sNk90A1_mwtFcf6-QoeTwB5ihB3__8NJVeQwDs7XZnstrj-KxbT-HXUuB-i6t79A_2_51_XjK081qf_Veag6dQfoHXp36URwaXf2KlwTSz-4PLbPVkJIo"/>
+<img class="w-10 h-10 rounded-full border-2 border-background" data-alt="professional female profile avatar with smiling expression and modern corporate look" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsVu2Q7vY4LiHRGTIYlCl9NUCLBorwmyIZn3oQVBaQuvzak6eppd03RhN8eloOXND-xqKVjmMycIRCnwavwMkQfJfH1Wqyk7GKbKETZwIAMzoRQ1IGlxkTfK94XUquTmJfrSy2Dc5mCtbvGGqUBN817Z2wW_xNrFSS38bibPQ-HWM9plpx5CQmfR1qGhY0b5yfw2cWz3vd7k4hQzEqijJ1vZhNxF-gBHeAABOyuWnJz0AGdeTUGydItTxcI1P7z6oTY0foxE98eM3I"/>
+<div class="w-10 h-10 rounded-full border-2 border-background bg-surface-container-highest flex items-center justify-center font-label-sm text-on-surface-variant">+4</div>
+</div>
+</div>
+</div>
+
+    <!-- Dashboard Stats Cluster (Bento Style) -->
+    <div class="mt-section-gap grid grid-cols-4 gap-module-gap">
+        <div class="col-span-1 p-6 bg-surface-container-low rounded-xl">
+            <div class="text-on-surface-variant font-label-md mb-2">Всего тестов</div>
+            <div class="text-[32px] font-black text-[#4e69c3]">24</div>
+            <div class="mt-4 text-xs text-on-surface-variant/70">+10% за последний месяц</div>
+        </div>
+        <!-- Status Distribution Card -->
+        <div class="col-span-2 p-6 bg-surface-container-low rounded-xl">
+            <h3 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-6">Жизненный цикл тестов</h3>
+            <div class="space-y-4">
+                <div>
+                    <div class="flex justify-between text-[10px] font-bold mb-1.5">
+                        <span class="text-emerald-600 uppercase">Активные (84%)</span>
+                        <span class="text-slate-600 font-black">17</span>
+                    </div>
+                    <div class="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+                        <div class="h-full bg-emerald-500 w-[84%] transition-all duration-700"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between text-[10px] font-bold mb-1.5">
+                        <span class="text-amber-600 uppercase">Черновики (10%)</span>
+                        <span class="text-slate-600 font-black">4</span>
+                    </div>
+                    <div class="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+                        <div class="h-full bg-amber-500 w-[10%] transition-all duration-700"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between text-[10px] font-bold mb-1.5">
+                        <span class="text-slate-500 uppercase">Архив (6%)</span>
+                        <span class="text-slate-600 font-black">3</span>
+                    </div>
+                    <div class="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+                        <div class="h-full bg-slate-400 w-[6%] transition-all duration-700"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Warning Message (Embedded Modal Mockup) -->
+<div class="mb-section-gap bg-error-container/30 border-l-4 border-error p-container-padding flex items-start gap-4">
+<span class="material-symbols-outlined text-error">Warning</span>
+<div>
+<p class="font-label-md text-on-error-container">Предупреждение: тест не подлежит удалению.</p>
+<p class="text-on-surface-variant text-sm mt-1">Выбранный тест на данныймомент назначен группе аттестации<span class="font-bold">[Аттестация 23.04.2026]</span>. Удаление запрещено до завершения теста группой либо назначьте иной тест указанной группе.</p>
+</div>
+<button class="ml-auto text-on-surface-variant hover:text-on-background">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+    <!-- Data Table / List -->
+<div class="space-y-4">
+<!-- Table Header -->
+<div class="grid grid-cols-12 px-6 font-label-md text-on-surface-variant uppercase tracking-wider text-[11px]">
+<div class="col-span-3">Наименование</div>
+<div class="col-span-1">Разделов</div>
+<div class="col-span-1">Тип</div>
+<div class="col-span-1">Статус</div>
+<div class="col-span-1">Режим</div>
+<div class="col-span-1 text-center">Всего вопросов в разделах</div>
+<div class="col-span-1 text-center">Количество вопросов</div>
+<div class="col-span-1">Таймер, мин.</div>
+<div class="col-span-2 text-right">Действия</div>
+</div>
+<!-- List Items (Tonal Layering instead of Lines) -->
+<!-- Item 1 -->
+<div class="grid grid-cols-12 items-center px-6 py-5 bg-surface-container-lowest hover:bg-white transition-colors duration-200">
+<div class="col-span-3">
+<div class="font-headline-md text-base text-on-background">Аттестация специалистов по ТИ 22.04.2026</div>
+<div class="text-sm text-on-surface-variant line-clamp-1">Краткое описание</div>
+</div>
+<div class="col-span-1 font-label-md">07</div>
+<div class="col-span-1 font-label-md">Аттестационный</div>
+<div class="col-span-1">
+<span class="bg-[#e7f3ef] text-[#006a52] px-2 py-1 rounded text-[10px] font-bold uppercase">Активный</span>
+</div>
+<div class="col-span-1 font-label-md">Адаптивный</div>
+<div class="col-span-1 text-center font-label-md">2420</div>
+<div class="col-span-1 text-center font-label-md">40</div>
+<div class="col-span-1 font-label-md">60</div>
+<div class="col-span-2 flex justify-end gap-3 text-on-surface-variant">
+<button class="hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]">edit</span></button>
+<button class="hover:text-error transition-colors opacity-30 cursor-not-allowed"><span class="material-symbols-outlined text-[20px]">delete</span></button>
+<!--<button class="hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]">settings</span></button>-->
+</div>
+</div>
+<!-- Item 2 -->
+<div class="grid grid-cols-12 items-center px-6 py-5 bg-surface-container-low hover:bg-white transition-colors duration-200">
+<div class="col-span-3">
+<div class="font-headline-md text-base text-on-background">Курсы повышения квалификации специалистов по ТИ_тест 2026</div>
+<div class="text-sm text-on-surface-variant line-clamp-1">Краткое описание</div>
+</div>
+<div class="col-span-1 font-label-md">07</div>
+<div class="col-span-1 font-label-md">Экзаменационный</div>
+<div class="col-span-1">
+<span class="bg-surface-container-highest text-on-surface-variant px-2 py-1 rounded text-[10px] font-bold uppercase">Черновик</span>
+</div>
+<div class="col-span-1 font-label-md">Адаптивный</div>
+<div class="col-span-1 text-center font-label-md">2420</div>
+<div class="col-span-1 text-center font-label-md">30</div>
+<div class="col-span-1 font-label-md">60</div>
+<div class="col-span-2 flex justify-end gap-3 text-on-surface-variant">
+<button class="hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]">edit</span></button>
+<button class="hover:text-error transition-colors"><span class="material-symbols-outlined text-[20px]">delete</span></button>
+<!--<button class="hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]">settings</span></button>-->
+</div>
+</div>
+<!-- Item 3 -->
+<div class="grid grid-cols-12 items-center px-6 py-5 bg-surface-container-lowest hover:bg-white transition-colors duration-200">
+<div class="col-span-3">
+<div class="font-headline-md text-base text-on-background">Тест учебный_Гражданский кодекс</div>
+<div class="text-sm text-on-surface-variant line-clamp-1">Краткое описание</div>
+</div>
+<div class="col-span-1 font-label-md">1</div>
+<div class="col-span-1 font-label-md">Учебный</div>
+<div class="col-span-1">
+<span class="bg-[#e7f3ef] text-[#006a52] px-2 py-1 rounded text-[10px] font-bold uppercase">Активный</span>
+</div>
+<div class="col-span-1 font-label-md">Фиксированный</div>
+<div class="col-span-1 text-center font-label-md">12</div>
+<div class="col-span-1 text-center font-label-md">12</div>
+<div class="col-span-1 font-label-md">--</div>
+<div class="col-span-2 flex justify-end gap-3 text-on-surface-variant">
+<button class="hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]">edit</span></button>
+<button class="hover:text-error transition-colors"><span class="material-symbols-outlined text-[20px]">delete</span></button>
+<!--<button class="hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]">settings</span></button>-->
+</div>
+</div>
+<!-- Item 4 -->
+<div class="grid grid-cols-12 items-center px-6 py-5 bg-surface-container-low hover:bg-white transition-colors duration-200">
+<div class="col-span-3">
+<div class="font-headline-md text-base text-on-background">Аттестация специалистов по ТИ 20.02.2025</div>
+<div class="text-sm text-on-surface-variant line-clamp-1">Краткое описание</div>
+</div>
+<div class="col-span-1 font-label-md">07</div>
+<div class="col-span-1 font-label-md">Аттестационный</div>
+<div class="col-span-1">
+<span class="bg-surface-container-highest text-on-surface-variant px-2 py-1 rounded text-[10px] font-bold uppercase">Архивный</span>
+</div>
+<div class="col-span-1 font-label-md">Фиксированный</div>
+<div class="col-span-1 text-center font-label-md">2420</div>
+<div class="col-span-1 text-center font-label-md">40</div>
+<div class="col-span-1 font-label-md">60</div>
+<div class="col-span-2 flex justify-end gap-3 text-on-surface-variant">
+    <button class="hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]">edit</span></button>
+<button class="hover:text-error transition-colors"><span class="material-symbols-outlined text-[20px]">delete</span></button>
+</div>
+</div>
+</div>
+    <div class="p-5 flex items-center justify-between bg-surface-container-low/20">
+        <span class="text-xs text-slate-500">Показано 1-5 из 24 тестов</span>
+        <div class="flex items-center gap-1">
+            <button class="p-2 text-slate-400 hover:text-primary transition-colors"><span class="material-symbols-outlined" data-icon="navigate_before">navigate_before</span></button>
+            <button class="px-3 py-1 text-xs font-bold bg-[#4e69c3] text-white rounded">1</button>
+            <button class="px-3 py-1 text-xs font-bold text-slate-600 hover:bg-surface-container transition-colors rounded">2</button>
+            <button class="px-3 py-1 text-xs font-bold text-slate-600 hover:bg-surface-container transition-colors rounded">3</button>
+            <span class="px-2 text-slate-400">...</span>
+            <button class="px-3 py-1 text-xs font-bold text-slate-600 hover:bg-surface-container transition-colors rounded">6</button>
+            <button class="p-2 text-slate-400 hover:text-primary transition-colors"><span class="material-symbols-outlined" data-icon="navigate_next">navigate_next</span></button>
+        </div>
+    </div>
+</main>
+</div>
+</body></html>

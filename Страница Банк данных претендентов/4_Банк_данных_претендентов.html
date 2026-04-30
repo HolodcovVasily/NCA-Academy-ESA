@@ -1,0 +1,1853 @@
+<!-- specialists.html - Банк данных претендентов в специалисты по ТИ -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Банк данных претендентов — НКА Академия</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #00A86B;
+            --primary-dark: #008F5D;
+            --primary-light: #D1FAE5;
+            --secondary: #1E3A5F;
+            --accent: #FFD700;
+            --accent-dark: #FFA500;
+            --bg: #F8FAFC;
+            --card: #FFFFFF;
+            --text: #1F2937;
+            --text-light: #6B7280;
+            --border: #E5E7EB;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --error: #EF4444;
+            --info: #3B82F6;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        /* Header */
+        .header {
+            background: var(--card);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            margin-left: 2rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .user-menu {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .role-badge {
+            background: var(--secondary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Page Header */
+        .page-header {
+            margin-bottom: 2rem;
+        }
+
+        .page-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-subtitle {
+            color: var(--text-light);
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+        }
+
+        .stat-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-light);
+            font-size: 0.875rem;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .stat-change {
+            font-size: 0.875rem;
+            color: var(--success);
+            margin-top: 0.25rem;
+        }
+
+        /* Filters */
+        .filters-section {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            margin-bottom: 2rem;
+        }
+
+        .filters-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr auto;
+            gap: 1rem;
+            align-items: end;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .filter-label {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-light);
+        }
+
+        .filter-input, .filter-select {
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-size: 0.875rem;
+            background: var(--bg);
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            font-size: 0.875rem;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+        }
+
+        .btn-secondary {
+            background: var(--bg);
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        /* Pretenders Grid */
+        .pretenders-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .pretender-card {
+            background: var(--card);
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .pretender-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: var(--primary);
+        }
+
+        .card-header {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #F0F7FF 0%, #FFFFFF 100%);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .pretender-main {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .pretender-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--info), #2563EB);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .pretender-info h3 {
+            font-weight: 700;
+            font-size: 1.125rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .pretender-meta {
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        .rating-badge {
+            text-align: center;
+        }
+
+        .rating-score {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.125rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .rating-score.high {
+            background: linear-gradient(135deg, var(--success), #059669);
+            color: white;
+        }
+
+        .rating-score.medium {
+            background: linear-gradient(135deg, var(--warning), #D97706);
+            color: white;
+        }
+
+        .rating-score.low {
+            background: linear-gradient(135deg, var(--error), #DC2626);
+            color: white;
+        }
+
+        .rating-label {
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .section-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* Professional Info */
+        .prof-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .prof-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .prof-label {
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+
+        .prof-value {
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        /* Software Skills */
+        .skills-section {
+            margin-bottom: 1.25rem;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            padding: 0.375rem 0.875rem;
+            background: var(--bg);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 0.375rem;
+        }
+
+        .skill-tag.mastered {
+            background: var(--primary-light);
+            border-color: var(--primary);
+            color: var(--primary-dark);
+        }
+
+        .skill-level {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .level-high { background: var(--success); }
+        .level-medium { background: var(--warning); }
+        .level-low { background: var(--error); }
+
+        /* Courses Progress */
+        .courses-section {
+            background: #F8FAFC;
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .courses-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .courses-count {
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        .courses-progress {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .course-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.5rem;
+            background: white;
+            border-radius: 8px;
+            font-size: 0.875rem;
+        }
+
+        .course-status {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.625rem;
+            flex-shrink: 0;
+        }
+
+        .course-status.completed {
+            background: var(--success);
+            color: white;
+        }
+
+        .course-status.progress {
+            background: var(--warning);
+            color: white;
+        }
+
+        .course-status.pending {
+            background: var(--border);
+            color: var(--text-light);
+        }
+
+        .course-name {
+            flex: 1;
+        }
+
+        .course-score {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .progress-bar-mini {
+            height: 6px;
+            background: var(--border);
+            border-radius: 3px;
+            overflow: hidden;
+            margin-top: 0.75rem;
+        }
+
+        .progress-fill-mini {
+            height: 100%;
+            background: var(--primary);
+            border-radius: 3px;
+            transition: width 0.5s;
+        }
+
+        /* Card Footer */
+        .card-footer {
+            padding: 1rem 1.5rem;
+            background: var(--bg);
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .status-badge {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            background: #DBEAFE;
+            color: #1E40AF;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .btn-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .btn-icon:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* Modal - Passport Detail */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--card);
+            border-radius: 24px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-header {
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--secondary) 0%, #0F172A 100%);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.1);
+            color: white;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .modal-close:hover {
+            background: rgba(255,255,255,0.2);
+            transform: rotate(90deg);
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-subtitle {
+            opacity: 0.8;
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        /* Rating Calculation */
+        .rating-section {
+            background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .rating-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .rating-title {
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .rating-total {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--secondary);
+        }
+
+        .rating-breakdown {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .rating-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255,255,255,0.5);
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
+        }
+
+        .rating-item-name {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .rating-item-value {
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        /* Passport Blocks */
+        .passport-block {
+            background: var(--bg);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border);
+        }
+
+        .block-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .block-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .block-title {
+            font-weight: 700;
+            font-size: 1.125rem;
+        }
+
+        .block-number {
+            margin-left: auto;
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        .passport-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .passport-field {
+            background: white;
+            padding: 1rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .field-label {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .field-value {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* Software Detail */
+        .software-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .software-item {
+            background: white;
+            border-radius: 12px;
+            padding: 1.25rem;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .software-icon {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .software-name {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .software-level {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            margin-bottom: 0.75rem;
+        }
+
+        .level-bar {
+            height: 8px;
+            background: var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .level-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.5s;
+        }
+
+        .level-fill.beginner { width: 33%; background: var(--error); }
+        .level-fill.intermediate { width: 66%; background: var(--warning); }
+        .level-fill.advanced { width: 100%; background: var(--success); }
+
+        /* Courses Detail */
+        .courses-detail {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .course-detail-item {
+            background: white;
+            border-radius: 12px;
+            padding: 1rem;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .course-detail-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: var(--primary-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .course-detail-info {
+            flex: 1;
+        }
+
+        .course-detail-name {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .course-detail-meta {
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        .course-detail-score {
+            text-align: right;
+        }
+
+        .score-value {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .score-label {
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+
+        /* Comparison Bar */
+        .comparison-bar {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--secondary);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            display: none;
+            align-items: center;
+            gap: 1.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            z-index: 100;
+        }
+
+        .comparison-bar.active {
+            display: flex;
+        }
+
+        .comparison-count {
+            font-weight: 700;
+        }
+
+        .btn-compare {
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .stats-bar {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .filters-grid {
+                grid-template-columns: 1fr;
+            }
+            .pretenders-grid {
+                grid-template-columns: 1fr;
+            }
+            .passport-grid {
+                grid-template-columns: 1fr;
+            }
+            .software-grid {
+                grid-template-columns: 1fr;
+            }
+            .prof-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">НКА</div>
+                <span>НКА Академия</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Главная</a>
+                <a href="course.html">Курсы</a>
+                <a href="knowledge.html">База знаний</a>
+                <a href="specialists.html">Банк данных</a>
+            </div>
+            <div class="user-menu">
+                <span class="role-badge">👔 Куратор ТОР</span>
+                <div style="width: 40px; height: 40px; background: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">КТ</div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1 class="page-title">🎯 Банк данных претендентов в специалисты по технической инвентаризации</h1>
+            <p class="page-subtitle"> Управление кадровым потенциалом и рейтинговая система отбора кандидатов в специалисты по технической инвентаризации</p>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-bar">
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span>🎯</span>
+                    <span>Всего претендентов</span>
+                </div>
+                <div class="stat-value">89</div>
+                <div class="stat-change">↑ 5 за месяц</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span>⭐</span>
+                    <span>Средний рейтинг</span>
+                </div>
+                <div class="stat-value">74.2</div>
+                <div class="stat-change">↑ 2.1 за квартал</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span>✅</span>
+                    <span>Готовы к собеседованию</span>
+                </div>
+                <div class="stat-value">23</div>
+                <div class="stat-change">Рейтинг 80+</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span>📚</span>
+                    <span>Активно обучаются</span>
+                </div>
+                <div class="stat-value">41</div>
+                <div class="stat-change">Проходят курсы</div>
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters-section">
+            <div class="filters-grid">
+                <div class="filter-group">
+                    <label class="filter-label">🔍 Поиск по ФИО или ID</label>
+                    <input type="text" class="filter-input" placeholder="Введите ФИО претендента...">
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">📍 Регион</label>
+                    <select class="filter-select">
+                        <option>Все регионы</option>
+                        <option>Минск</option>
+                        <option>Брест</option>
+                        <option>Гомель</option>
+                        <option>Гродно</option>
+                        <option>Могилев</option>
+                        <option>Витебск</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">🎓 Образование</label>
+                    <select class="filter-select">
+                        <option>Все уровни</option>
+                        <option>Высшее</option>
+                        <option>Среднее специальное</option>
+                        <option>Студент последнего курса</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">⭐ Рейтинг от</label>
+                    <select class="filter-select">
+                        <option>Любой</option>
+                        <option>90+ (Отлично)</option>
+                        <option>75-89 (Хорошо)</option>
+                        <option>60-74 (Удовлетворительно)</option>
+                        <option>До 60 (На старте обучения)</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary">
+                    <span>🔍</span>
+                    <span>Применить</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Pretenders Grid -->
+        <div class="pretenders-grid" id="pretendersGrid">
+            <!-- Card 1 -->
+            <div class="pretender-card" onclick="openPassport(1)">
+                <div class="card-header">
+                    <div class="pretender-main">
+                        <div class="pretender-avatar">АК</div>
+                        <div class="pretender-info">
+                            <h3>Алексей Ковалёв</h3>
+                            <div class="pretender-meta">ID: P-2026-0042 • Минск</div>
+                        </div>
+                    </div>
+                    <div class="rating-badge">
+                        <div class="rating-score high">92</div>
+                        <div class="rating-label">баллов</div>
+                    </div>
+                </div>
+                
+                <div class="card-body">
+                    <!-- Профессиональные данные (без идентификации) -->
+                    <div class="section-title">💼 Профессиональные данные</div>
+                    <div class="prof-info">
+                        <div class="prof-item">
+                            <span class="prof-label">Образование</span>
+                            <span class="prof-value">Высшее, БНТУ (2026)</span>
+                        </div>
+                        <div class="prof-item">
+                            <span class="prof-label">Специальность</span>
+                            <span class="prof-value">Архитектор</span>
+                        </div>
+                        <div class="prof-item">
+                            <span class="prof-label">В системе</span>
+                            <span class="prof-value">3 месяца</span>
+                        </div>
+                        <div class="prof-item">
+                            <span class="prof-label">Статус</span>
+                            <span class="prof-value" style="color: var(--success);">Готов к собеседованию</span>
+                        </div>
+                    </div>
+
+                    <!-- Владение ПО -->
+                    <div class="skills-section">
+                        <div class="section-title">💻 Владение специализированным ПО</div>
+                        <div class="skills-list">
+                            <span class="skill-tag mastered">
+                                <span class="skill-level level-high"></span>
+                                AutoCAD
+                            </span>
+                            <span class="skill-tag mastered">
+                                <span class="skill-level level-high"></span>
+                                NKA_RH
+                            </span>
+                            <span class="skill-tag mastered">
+                                <span class="skill-level level-medium"></span>
+                                Поэтажные планы
+                            </span>
+                            <span class="skill-tag">
+                                <span class="skill-level level-low"></span>
+                                Ситуационные планы
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Теоретические курсы -->
+                    <div class="courses-section">
+                        <div class="courses-header">
+                            <span class="section-title" style="margin: 0;">📚 Теоретические курсы</span>
+                            <span class="courses-count">6 из 8 пройдено</span>
+                        </div>
+                        <div class="courses-progress">
+                            <div class="course-item">
+                                <div class="course-status completed">✓</div>
+                                <span class="course-name">Основы ТИ</span>
+                                <span class="course-score">95%</span>
+                            </div>
+                            <div class="course-item">
+                                <div class="course-status completed">✓</div>
+                                <span class="course-name">Инструменты и методы измерений</span>
+                                <span class="course-score">88%</span>
+                            </div>
+                            <div class="course-item">
+                                <div class="course-status progress">→</div>
+                                <span class="course-name">Практическая работа</span>
+                                <span class="course-score">75%</span>
+                            </div>
+                        </div>
+                        <div class="progress-bar-mini">
+                            <div class="progress-fill-mini" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <span class="status-badge">🎯 Претендент</span>
+                    <div class="card-actions">
+                        <button class="btn-icon" title="Добавить к сравнению" onclick="event.stopPropagation(); toggleComparison(1)">⚖️</button>
+                        <button class="btn-icon" title="Открыть паспорт">👁</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="pretender-card" onclick="openPassport(2)">
+                <div class="card-header">
+                    <div class="pretender-main">
+                        <div class="pretender-avatar">ЕН</div>
+                        <div class="pretender-info">
+                            <h3>Елена Новикова</h3>
+                            <div class="pretender-meta">ID: P-2026-0078 • Гродно</div>
+                        </div>
+                    </div>
+                    <div class="rating-badge">
+                        <div class="rating-score medium">68</div>
+                        <div class="rating-label">баллов</div>
+                    </div>
+                </div>
+                
+                <div class="card-body">
+                    <div class="section-title">💼 Профессиональные данные</div>
+                    <div class="prof-info">
+                        <div class="prof-item">
+                            <span class="prof-label">Образование</span>
+                            <span class="prof-value">Среднее специальное</span>
+                        </div>
+                        <div class="prof-item">
+                            <span class="prof-label">Специальность</span>
+                            <span class="prof-value">Техник-строитель</span>
+                        </div>
+                        <div class="prof-item">
+                            <span class="prof-label">В системе</span>
+                            <span class="prof-value">1 месяц</span>
+                        </div>
+                        <div class="prof-item">
+                            <span class="prof-label">Статус</span>
+                            <span class="prof-value" style="color: var(--warning);">В процессе обучения</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-section">
+                        <div class="section-title">💻 Владение специализированным ПО</div>
+                        <div class="skills-list">
+                            <span class="skill-tag">
+                                <span class="skill-level level-medium"></span>
+                                AutoCAD
+                            </span>
+                            <span class="skill-tag">
+                                <span class="skill-level level-low"></span>
+                                NKA_RH
+                            </span>
+                            <span class="skill-tag">
+                                <span class="skill-level level-low"></span>
+                                Поэтажные планы
+                            </span>
+                            <span class="skill-tag">
+                                <span class="skill-level level-low"></span>
+                                Ситуационные планы
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="courses-section">
+                        <div class="courses-header">
+                            <span class="section-title" style="margin: 0;">📚 Теоретические курсы</span>
+                            <span class="courses-count">2 из 8 пройдено</span>
+                        </div>
+                        <div class="courses-progress">
+                            <div class="course-item">
+                                <div class="course-status completed">✓</div>
+                                <span class="course-name">Основы ТИ</span>
+                                <span class="course-score">72%</span>
+                            </div>
+                            <div class="course-item">
+                                <div class="course-status progress">→</div>
+                                <span class="course-name">Инструменты и методы измерений</span>
+                                <span class="course-score">45%</span>
+                            </div>
+                            <div class="course-item">
+                                <div class="course-status pending">○</div>
+                                <span class="course-name">Практическая работа</span>
+                                <span class="course-score">—</span>
+                            </div>
+                        </div>
+                        <div class="progress-bar-mini">
+                            <div class="progress-fill-mini" style="width: 25%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <span class="status-badge">🎯 Претендент</span>
+                    <div class="card-actions">
+                        <button class="btn-icon" title="Добавить к сравнению" onclick="event.stopPropagation(); toggleComparison(2)">⚖️</button>
+                        <button class="btn-icon" title="Открыть паспорт">👁</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="pretender-card" onclick="openPassport(3)">
+                <div class="card-header">
+                    <div class="pretender-main">
+                        <div class="pretender-avatar">СМ</div>
+                        <div class="pretender-info">
+                            <h3>Сергей Морозов</h3>
+                            <div class="pretender-meta">ID: P-2026-0056 • Брест</div>
+                        </div>
+                    </div>
+                    <div class="rating-badge">
+                        <div class="rating-score high">87</div>
+                        <div class="rating-label">баллов</div>
+                    </div>
+                </div>
+                
+                <div class="card-body">
+                    <div class="section-title">💼 Профессиональные данные</div>
+                    <div class="prof-info">
+                        <div class="prof-item">
+                            <span class="prof-label">Образование</span>
+                            <span class="prof-value">Высшее, БГТУ (2025)</span>
+                        </div>
+                        <div class="prof-item">
+                            <span class="prof-label">Специальность</span>
+                            <span class="prof-value">Инженер-геодезист</span>
+                        </div>
+                        <div class="prof-item">
+                            <span class="prof-label">В системе</span>
+                            <span class="prof-value">2 месяца</span>
+                        </div>
+                        <div class="prof-item">
+                            <span class="prof-label">Статус</span>
+                            <span class="prof-value" style="color: var(--success);">Готов к собеседованию</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-section">
+                        <div class="section-title">💻 Владение специализированным ПО</div>
+                        <div class="skills-list">
+                            <span class="skill-tag mastered">
+                                <span class="skill-level level-high"></span>
+                                AutoCAD
+                            </span>
+                            <span class="skill-tag mastered">
+                                <span class="skill-level level-high"></span>
+                                NKA_RH
+                            </span>
+                            <span class="skill-tag mastered">
+                                <span class="skill-level level-high"></span>
+                                Поэтажные планы
+                            </span>
+                            <span class="skill-tag mastered">
+                                <span class="skill-level level-medium"></span>
+                                Ситуационные планы
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="courses-section">
+                        <div class="courses-header">
+                            <span class="section-title" style="margin: 0;">📚 Теоретические курсы</span>
+                            <span class="courses-count">7 из 8 пройдено</span>
+                        </div>
+                        <div class="courses-progress">
+                            <div class="course-item">
+                                <div class="course-status completed">✓</div>
+                                <span class="course-name">Основы ТИ</span>
+                                <span class="course-score">92%</span>
+                            </div>
+                            <div class="course-item">
+                                <div class="course-status completed">✓</div>
+                                <span class="course-name">Инструменты и методы измерений</span>
+                                <span class="course-score">89%</span>
+                            </div>
+                            <div class="course-item">
+                                <div class="course-status progress">→</div>
+                                <span class="course-name">Практическая работа</span>
+                                <span class="course-score">80%</span>
+                            </div>
+                        </div>
+                        <div class="progress-bar-mini">
+                            <div class="progress-fill-mini" style="width: 88%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <span class="status-badge">🎯 Претендент</span>
+                    <div class="card-actions">
+                        <button class="btn-icon" title="Добавить к сравнению" onclick="event.stopPropagation(); toggleComparison(3)">⚖️</button>
+                        <button class="btn-icon" title="Открыть паспорт">👁</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="pretender-card" onclick="openPassport(4)">
+                <div class="card-header">
+                    <div class="pretender-main">
+                        <div class="pretender-avatar">АВ</div>
+                        <div class="pretender-info">
+                            <h3>Анна Васильева</h3>
+                            <div class="pretender-meta">ID: P-2026-0091 • Витебск</div>
+                        </div>
+                    </div>
+                    <div class="rating-badge">
+                        <div class="rating-score low">54</div>
+                        <div class="rating-label">баллов</div>
+                    </div>
+                </div>
+                
+                <div class="card-body">
+                    <div class="section-title">💼 Профессиональные данные</div>
+                    <div class="prof-info">
+                        <div class="prof-item">
+                            <span class="prof-label">Образование</span>
+                            <span class="prof-value">Студентка (5 курс)</span>
+                        </div>
+                        <div class="prof-item">
+                            <span class="prof-label">Специальность</span>
+                            <span class="prof-value">Землеустройство</span>
+                        </div>
+                        <div class="prof-item">
+                            <span class="prof-label">В системе</span>
+                            <span class="prof-value">2 недели</span>
+                        </div>
+                        <div class="prof-item">
+                            <span class="prof-label">Статус</span>
+                            <span class="prof-value" style="color: var(--error);">Требует внимания</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-section">
+                        <div class="section-title">💻 Владение специализированным ПО</div>
+                        <div class="skills-list">
+                            <span class="skill-tag">
+                                <span class="skill-level level-low"></span>
+                                AutoCAD
+                            </span>
+                            <span class="skill-tag">
+                                <span class="skill-level level-low"></span>
+                                NKA_RH
+                            </span>
+                            <span class="skill-tag">
+                                <span class="skill-level level-low"></span>
+                                Поэтажные планы
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="courses-section">
+                        <div class="courses-header">
+                            <span class="section-title" style="margin: 0;">📚 Теоретические курсы</span>
+                            <span class="courses-count">1 из 8 пройдено</span>
+                        </div>
+                        <div class="courses-progress">
+                            <div class="course-item">
+                                <div class="course-status completed">✓</div>
+                                <span class="course-name">Основы ТИ</span>
+                                <span class="course-score">65%</span>
+                            </div>
+                            <div class="course-item">
+                                <div class="course-status progress">→</div>
+                                <span class="course-name">Инструменты и методы измерений</span>
+                                <span class="course-score">30%</span>
+                            </div>
+                            <div class="course-item">
+                                <div class="course-status pending">○</div>
+                                <span class="course-name">Практическая работа</span>
+                                <span class="course-score">—</span>
+                            </div>
+                        </div>
+                        <div class="progress-bar-mini">
+                            <div class="progress-fill-mini" style="width: 12%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <span class="status-badge">🎯 Претендент</span>
+                    <div class="card-actions">
+                        <button class="btn-icon" title="Добавить к сравнению" onclick="event.stopPropagation(); toggleComparison(4)">⚖️</button>
+                        <button class="btn-icon" title="Открыть паспорт">👁</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Passport Modal -->
+    <div class="modal" id="passportModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="modal-close" onclick="closePassport()">×</button>
+                <div class="modal-title">🎫 Паспорт претендента</div>
+                <div class="modal-subtitle">Полная информация и рейтинговая оценка</div>
+            </div>
+            
+            <div class="modal-body">
+                <!-- Rating Section -->
+                <div class="rating-section">
+                    <div class="rating-header">
+                        <div class="rating-title">
+                            <span>⭐</span>
+                            <span>Автоматический расчёт рейтинга</span>
+                        </div>
+                        <div class="rating-total" id="modalRating">92</div>
+                    </div>
+                    <div class="rating-breakdown" id="ratingBreakdown">
+                        <div class="rating-item">
+                            <div class="rating-item-name">
+                                <span>🎓</span>
+                                <span>Образование (вес 20%)</span>
+                            </div>
+                            <div class="rating-item-value">18/20</div>
+                        </div>
+                        <div class="rating-item">
+                            <div class="rating-item-name">
+                                <span>⏱️</span>
+                                <span>Активность в системе (вес 10%)</span>
+                            </div>
+                            <div class="rating-item-value">8/10</div>
+                        </div>
+                        <div class="rating-item">
+                            <div class="rating-item-name">
+                                <span>💻</span>
+                                <span>Владение ПО (вес 25%)</span>
+                            </div>
+                            <div class="rating-item-value">23/25</div>
+                        </div>
+                        <div class="rating-item">
+                            <div class="rating-item-name">
+                                <span>📚</span>
+                                <span>Теоретические курсы (вес 25%)</span>
+                            </div>
+                            <div class="rating-item-value">22/25</div>
+                        </div>
+                        <div class="rating-item">
+                            <div class="rating-item-name">
+                                <span>🎯</span>
+                                <span>Практическая работа (вес 20%)</span>
+                            </div>
+                            <div class="rating-item-value">17/20</div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(0,0,0,0.1); font-size: 0.875rem; color: var(--secondary);">
+                        <strong>Формула расчёта:</strong> Рейтинг = Σ(Баллы × Вес категории) / Макс. возможный балл × 100
+                    </div>
+                </div>
+
+                <!-- Block 1: Identification (only in modal) -->
+                <div class="passport-block">
+                    <div class="block-header">
+                        <div class="block-icon">🆔</div>
+                        <div class="block-title">Блок 1: Идентификационные данные</div>
+                        <div class="block-number">ID: P-2026-0042</div>
+                    </div>
+                    <div class="passport-grid">
+                        <div class="passport-field">
+                            <div class="field-label">Фамилия</div>
+                            <div class="field-value">Ковалёв</div>
+                        </div>
+                        <div class="passport-field">
+                            <div class="field-label">Имя</div>
+                            <div class="field-value">Алексей</div>
+                        </div>
+                        <div class="passport-field">
+                            <div class="field-label">Отчество</div>
+                            <div class="field-value">Сергеевич</div>
+                        </div>
+                        <div class="passport-field">
+                            <div class="field-label">Дата рождения</div>
+                            <div class="field-value">15.03.1998</div>
+                        </div>
+                        <div class="passport-field">
+                            <div class="field-label">Контактный телефон</div>
+                            <div class="field-value">+375 (29) 123-45-45</div>
+                        </div>
+                        <div class="passport-field">
+                            <div class="field-label">Email</div>
+                            <div class="field-value">a.kovalev@gmail.com</div>
+                        </div>
+                        <div class="passport-field">
+                            <div class="field-label">Регион</div>
+                            <div class="field-value">г. Минск, Центральный район</div>
+                        </div>
+                        <div class="passport-field">
+                            <div class="field-label">Дата регистрации</div>
+                            <div class="field-value">10.01.2026</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Block 2: Professional -->
+                <div class="passport-block">
+                    <div class="block-header">
+                        <div class="block-icon">💼</div>
+                        <div class="block-title">Блок 2: Профессиональные данные</div>
+                    </div>
+                    <div class="passport-grid">
+                        <div class="passport-field">
+                            <div class="field-label">Уровень образования</div>
+                            <div class="field-value">Высшее</div>
+                        </div>
+                        <div class="passport-field">
+                            <div class="field-label">Учебное заведение</div>
+                            <div class="field-value">БНТУ, Факультет архитектуры</div>
+                        </div>
+                        <div class="passport-field">
+                            <div class="field-label">Специальность</div>
+                            <div class="field-value">Архитектор</div>
+                        </div>
+                        <div class="passport-field">
+                            <div class="field-label">Год окончания</div>
+                            <div class="field-value">2026</div>
+                        </div>
+                        <div class="passport-field">
+                            <div class="field-label">Квалификация</div>
+                            <div class="field-value">Не присвоена</div>
+                        </div>
+                        <div class="passport-field">
+                            <div class="field-label">Опыт работы в ТИ</div>
+                            <div class="field-value">Отсутствует</div>
+                        </div>
+                        <div class="passport-field">
+                            <div class="field-label">Предыдущее место работы</div>
+                            <div class="field-value">—</div>
+                        </div>
+                        <div class="passport-field">
+                            <div class="field-label">Текущий статус</div>
+                            <div class="field-value" style="color: var(--info); font-weight: 700;">Претендент</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Block 3: Software Skills -->
+                <div class="passport-block">
+                    <div class="block-header">
+                        <div class="block-icon">💻</div>
+                        <div class="block-title">Блок 3: Владение специализированным ПО</div>
+                    </div>
+                    <div class="software-grid">
+                        <div class="software-item">
+                            <div class="software-icon">📐</div>
+                            <div class="software-name">AutoCAD</div>
+                            <div class="software-level">Продвинутый</div>
+                            <div class="level-bar">
+                                <div class="level-fill advanced"></div>
+                            </div>
+                            <div style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-light);">
+                                Сертификат: AutoCAD Professional (2025)
+                            </div>
+                        </div>
+                        
+                        <div class="software-item">
+                            <div class="software-icon">🏗️</div>
+                            <div class="software-name">NKA Реестр характеристик</div>
+                            <div class="software-level">Средний</div>
+                            <div class="level-bar">
+                                <div class="level-fill intermediate"></div>
+                            </div>
+                            <div style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-light);">
+                                Тест: 78/100 баллов
+                            </div>
+                        </div>
+                        
+                        <div class="software-item">
+                            <div class="software-icon">📋</div>
+                            <div class="software-name">Подсистема поэтажных планов</div>
+                            <div class="software-level">Средний</div>
+                            <div class="level-bar">
+                                <div class="level-fill intermediate"></div>
+                            </div>
+                            <div style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-light);">
+                                Практика: 3 объекта
+                            </div>
+                        </div>
+                        
+                        <div class="software-item">
+                            <div class="software-icon">🗺️</div>
+                            <div class="software-name">Подсистема ситуационных планов</div>
+                            <div class="software-level">Начальный</div>
+                            <div class="level-bar">
+                                <div class="level-fill beginner"></div>
+                            </div>
+                            <div style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-light);">
+                                Практика: 1 объект
+                            </div>
+                        </div>
+                        
+                        <div class="software-item">
+                            <div class="software-icon">📱</div>
+                            <div class="software-name">NKA_Mobile</div>
+                            <div class="software-level">Средний</div>
+                            <div class="level-bar">
+                                <div class="level-fill intermediate"></div>
+                            </div>
+                            <div style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-light);">
+                                Практика: 5 модулей
+                            </div>
+                        </div>
+                        
+                        <div class="software-item">
+                            <div class="software-icon">📊</div>
+                            <div class="software-name">Кадастровый редактор</div>
+                            <div class="software-level">Начальный</div>
+                            <div class="level-bar">
+                                <div class="level-fill beginner"></div>
+                            </div>
+                            <div style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-light);">
+                                В процессе обучения
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Theoretical Courses Detail -->
+                <div class="passport-block">
+                    <div class="block-header">
+                        <div class="block-icon">📚</div>
+                        <div class="block-title">Прохождение теоретических курсов</div>
+                    </div>
+                    <div class="courses-detail">
+                        <div class="course-detail-item">
+                            <div class="course-detail-icon">🎯</div>
+                            <div class="course-detail-info">
+                                <div class="course-detail-name">1. Введение в профессию</div>
+                                <div class="course-detail-meta">Пройден 15.01.2026 • Время: 2.5 часа</div>
+                            </div>
+                            <div class="course-detail-score">
+                                <div class="score-value">98%</div>
+                                <div class="score-label">тест</div>
+                            </div>
+                        </div>
+
+                        <div class="course-detail-item">
+                            <div class="course-detail-icon">📐</div>
+                            <div class="course-detail-info">
+                                <div class="course-detail-name">2. Основы технической инвентаризации</div>
+                                <div class="course-detail-meta">Пройден 22.01.2026 • Время: 8 часов</div>
+                            </div>
+                            <div class="course-detail-score">
+                                <div class="score-value">95%</div>
+                                <div class="score-label">тест</div>
+                            </div>
+                        </div>
+
+                        <div class="course-detail-item">
+                            <div class="course-detail-icon">⚖️</div>
+                            <div class="course-detail-info">
+                                <div class="course-detail-name">3. Инструменты и методы измерений</div>
+                                <div class="course-detail-meta">Пройден 05.02.2026 • Время: 12 часов</div>
+                            </div>
+                            <div class="course-detail-score">
+                                <div class="score-value">88%</div>
+                                <div class="score-label">тест</div>
+                            </div>
+                        </div>
+
+                        <div class="course-detail-item">
+                            <div class="course-detail-icon">🔧</div>
+                            <div class="course-detail-info">
+                                <div class="course-detail-name">4. Практическая работа</div>
+                                <div class="course-detail-meta">В процессе • Прогресс 75%</div>
+                            </div>
+                            <div class="course-detail-score">
+                                <div class="score-value">75%</div>
+                                <div class="score-label">текущий</div>
+                            </div>
+                        </div>
+
+                        <div class="course-detail-item" style="opacity: 0.5;">
+                            <div class="course-detail-icon">🏢</div>
+                            <div class="course-detail-info">
+                                <div class="course-detail-name">5. Поэтажные планы</div>
+                                <div class="course-detail-meta">Не начат • Доступен после курса 4</div>
+                            </div>
+                            <div class="course-detail-score">
+                                <div class="score-value">—</div>
+                                <div class="score-label">ожидает</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Actions -->
+                <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                    <button class="btn btn-primary" style="flex: 1;">
+                        <span>📋</span>
+                        <span>Сформировать отчёт</span>
+                    </button>
+                    <button class="btn btn-secondary">
+                        <span>⚖️</span>
+                        <span>Добавить к сравнению</span>
+                    </button>
+                    <button class="btn btn-secondary">
+                        <span>✉️</span>
+                        <span>Пригласить на собеседование</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Comparison Bar -->
+    <div class="comparison-bar" id="comparisonBar">
+        <span class="comparison-count">Выбрано: 2 претендента</span>
+        <button class="btn-compare" onclick="compareSelected()">Сравнить</button>
+        <button onclick="clearComparison()" style="background: none; border: none; color: white; cursor: pointer;">✕</button>
+    </div>
+
+    <script>
+        // Sample data for different pretenders
+        const pretendersData = {
+            1: {
+                id: 'P-2026-0042',
+                name: 'Алексей Ковалёв',
+                rating: 92,
+                ratingBreakdown: [
+                    { name: 'Образование (вес 20%)', value: '18/20', icon: '🎓' },
+                    { name: 'Активность в системе (вес 10%)', value: '8/10', icon: '⏱️' },
+                    { name: 'Владение ПО (вес 25%)', value: '23/25', icon: '💻' },
+                    { name: 'Теоретические курсы (вес 25%)', value: '22/25', icon: '📚' },
+                    { name: 'Практическая работа (вес 20%)', value: '17/20', icon: '🎯' }
+                ],
+                identification: {
+                    lastName: 'Ковалёв',
+                    firstName: 'Алексей',
+                    middleName: 'Сергеевич',
+                    birthDate: '15.03.1998',
+                    phone: '+375 (29) 123-45-45',
+                    email: 'a.kovalev@gmail.com',
+                    region: 'г. Минск, Центральный район',
+                    regDate: '10.01.2026'
+                },
+                professional: {
+                    education: 'Высшее',
+                    institution: 'БНТУ, Факультет архитектуры',
+                    specialty: 'Архитектор',
+                    year: '2026',
+                    qualification: 'Не присвоена',
+                    experience: 'Отсутствует',
+                    prevWork: '—',
+                    status: 'Претендент'
+                }
+            },
+            2: {
+                id: 'P-2026-0078',
+                name: 'Елена Новикова',
+                rating: 68,
+                ratingBreakdown: [
+                    { name: 'Образование (вес 20%)', value: '14/20', icon: '🎓' },
+                    { name: 'Активность в системе (вес 10%)', value: '4/10', icon: '⏱️' },
+                    { name: 'Владение ПО (вес 25%)', value: '12/25', icon: '💻' },
+                    { name: 'Теоретические курсы (вес 25%)', value: '16/25', icon: '📚' },
+                    { name: 'Практическая работа (вес 20%)', value: '10/20', icon: '🎯' }
+                ],
+                identification: {
+                    lastName: 'Новикова',
+                    firstName: 'Елена',
+                    middleName: 'Петровна',
+                    birthDate: '22.11.1999',
+                    phone: '+375 (29) 987-65-33',
+                    email: 'e.novikova@mail.ru',
+                    region: 'Гродно, Ленинский район',
+                    regDate: '15.03.2026'
+                },
+                professional: {
+                    education: 'Среднее специальное',
+                    institution: 'Гродненский политехнический колледж',
+                    specialty: 'Техник-строитель',
+                    year: '2019',
+                    qualification: 'Техник',
+                    experience: 'Отсутствует',
+                    prevWork: '—',
+                    status: 'Претендент'
+                }
+            }
+        };
+
+        let selectedForComparison = [];
+
+        function openPassport(id) {
+            const modal = document.getElementById('passportModal');
+            const data = pretendersData[id] || pretendersData[1];
+            
+            // Update rating
+            document.getElementById('modalRating').textContent = data.rating;
+            
+            // Update rating breakdown
+            const breakdownHtml = data.ratingBreakdown.map(item => `
+                <div class="rating-item">
+                    <div class="rating-item-name">
+                        <span>${item.icon}</span>
+                        <span>${item.name}</span>
+                    </div>
+                    <div class="rating-item-value">${item.value}</div>
+                </div>
+            `).join('');
+            document.getElementById('ratingBreakdown').innerHTML = breakdownHtml;
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePassport() {
+            document.getElementById('passportModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function toggleComparison(id, event) {
+            if (event) event.stopPropagation();
+            const index = selectedForComparison.indexOf(id);
+            
+            if (index > -1) {
+                selectedForComparison.splice(index, 1);
+            } else {
+                if (selectedForComparison.length < 3) {
+                    selectedForComparison.push(id);
+                } else {
+                    alert('Можно сравнить максимум 3 претендента');
+                    return;
+                }
+            }
+            
+            updateComparisonBar();
+        }
+
+        function updateComparisonBar() {
+            const bar = document.getElementById('comparisonBar');
+            if (selectedForComparison.length > 0) {
+                bar.classList.add('active');
+                bar.querySelector('.comparison-count').textContent = 
+                    `Выбрано: ${selectedForComparison.length} ${selectedForComparison.length === 1 ? 'претендент' : 'претендента'}`;
+            } else {
+                bar.classList.remove('active');
+            }
+        }
+
+        function clearComparison() {
+            selectedForComparison = [];
+            updateComparisonBar();
+        }
+
+        function compareSelected() {
+            alert(`Сравнение претендентов: ${selectedForComparison.join(', ')}`);
+        }
+
+        // Close modal on outside click
+        document.getElementById('passportModal').addEventListener('click', function(e) {
+            if (e.target === this) closePassport();
+        });
+    </script>
+
+</body>
+</html>

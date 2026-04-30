@@ -1,0 +1,1375 @@
+<!-- course.html - Страница обучения с интерактивным курсом -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Основы технической инвентаризации — НКА Академия</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #00A86B;
+            --primary-dark: #008F5D;
+            --secondary: #1E3A5F;
+            --accent: #FFD700;
+            --bg: #F8FAFC;
+            --card: #FFFFFF;
+            --text: #1F2937;
+            --text-light: #6B7280;
+            --border: #E5E7EB;
+            --success: #10B981;
+            --error: #EF4444;
+            --warning: #F59E0B;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        /* Header */
+        .header {
+            background: var(--card);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: var(--primary);
+        }
+
+        .course-progress-header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .progress-bar {
+            width: 200px;
+            height: 8px;
+            background: var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        .xp-gain {
+            background: linear-gradient(135deg, var(--accent), #FFA500);
+            color: var(--secondary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.875rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* Main Layout */
+        .course-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 280px 1fr 320px;
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+
+        .module-list {
+            list-style: none;
+        }
+
+        .module-item {
+            padding: 1rem;
+            border-radius: 12px;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .module-item:hover {
+            background: var(--bg);
+        }
+
+        .module-item.active {
+            background: #F0FDF4;
+            border: 1px solid var(--primary);
+        }
+
+        .module-item.completed {
+            color: var(--success);
+        }
+
+        .module-item.locked {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .module-number {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .module-item.active .module-number {
+            background: var(--primary);
+            color: white;
+        }
+
+        .module-item.completed .module-number {
+            background: var(--success);
+            color: white;
+        }
+
+        /* Content Area */
+        .content {
+            background: var(--card);
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .lesson-header {
+            padding: 2rem;
+            border-bottom: 1px solid var(--border);
+            background: linear-gradient(135deg, #F0FDF4 0%, #FFFFFF 100%);
+        }
+
+        .breadcrumbs {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .lesson-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .lesson-meta {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        .lesson-body {
+            padding: 2rem;
+        }
+
+        .content-block {
+            margin-bottom: 2rem;
+        }
+
+        .content-block h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .content-block p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .highlight-box {
+            background: #F0FDF4;
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 0 12px 12px 0;
+            margin: 1.5rem 0;
+        }
+
+        .warning-box {
+            background: #FEF3C7;
+            border-left: 4px solid var(--warning);
+            padding: 1.5rem;
+            border-radius: 0 12px 12px 0;
+            margin: 1.5rem 0;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .info-card {
+            background: var(--bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+        }
+
+        .info-card h4 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        /* Interactive Image */
+        .interactive-image {
+            position: relative;
+            background: var(--bg);
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 1.5rem 0;
+        }
+
+        .interactive-image img {
+            width: 100%;
+            display: block;
+        }
+
+        .hotspot {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(0,168,107,0.4);
+            animation: pulse-ring 2s infinite;
+            transition: transform 0.3s;
+        }
+
+        .hotspot:hover {
+            transform: scale(1.2);
+        }
+
+        @keyframes pulse-ring {
+            0% { box-shadow: 0 0 0 0 rgba(0,168,107,0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(0,168,107,0); }
+            100% { box-shadow: 0 0 0 0 rgba(0,168,107,0); }
+        }
+
+        .hotspot-tooltip {
+            position: absolute;
+            background: var(--card);
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-width: 250px;
+            display: none;
+            z-index: 10;
+            border: 1px solid var(--border);
+        }
+
+        .hotspot:hover .hotspot-tooltip {
+            display: block;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Micro Quiz */
+        .micro-quiz {
+            background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 2px solid #BAE6FD;
+        }
+
+        .quiz-question {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .quiz-options {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .quiz-option {
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .quiz-option:hover {
+            border-color: var(--primary);
+            background: #F0FDF4;
+        }
+
+        .quiz-option.selected {
+            border-color: var(--primary);
+            background: #F0FDF4;
+        }
+
+        .quiz-option.correct {
+            border-color: var(--success);
+            background: #D1FAE5;
+        }
+
+        .quiz-option.wrong {
+            border-color: var(--error);
+            background: #FEE2E2;
+        }
+
+        .option-letter {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .quiz-option.selected .option-letter {
+            background: var(--primary);
+            color: white;
+        }
+
+        .quiz-feedback {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            border-radius: 12px;
+            display: none;
+        }
+
+        .quiz-feedback.show {
+            display: block;
+        }
+
+        .quiz-feedback.correct {
+            background: #D1FAE5;
+            color: #065F46;
+        }
+
+        .quiz-feedback.wrong {
+            background: #FEE2E2;
+            color: #991B1B;
+        }
+
+        /* Navigation Buttons */
+        .lesson-nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 2rem;
+            border-top: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .nav-btn {
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .nav-btn-prev {
+            background: white;
+            border: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        .nav-btn-next {
+            background: var(--primary);
+            color: white;
+        }
+
+        .nav-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .nav-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Right Panel */
+        .right-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .panel-card {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+        }
+
+        .panel-title {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .achievement-small {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: #FEF3C7;
+            border-radius: 12px;
+            margin-bottom: 0.75rem;
+        }
+
+        .achievement-small.locked {
+            background: var(--bg);
+            opacity: 0.6;
+        }
+
+        .achievement-icon {
+            font-size: 1.5rem;
+        }
+
+        .achievement-text {
+            font-size: 0.875rem;
+        }
+
+        .achievement-text div:first-child {
+            font-weight: 600;
+        }
+
+        .achievement-text div:last-child {
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+
+        /* Final Test */
+        .final-test {
+            display: none;
+            background: var(--card);
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            padding: 3rem;
+        }
+
+        .final-test.active {
+            display: block;
+        }
+
+        .test-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .test-header h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .test-progress {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .test-question-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .question-number {
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .question-text {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .test-options {
+            display: grid;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .test-option {
+            background: var(--bg);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .test-option:hover {
+            border-color: var(--primary);
+        }
+
+        .test-option.selected {
+            border-color: var(--primary);
+            background: #F0FDF4;
+        }
+
+        /* Results Screen */
+        .results-screen {
+            display: none;
+            text-align: center;
+            padding: 3rem;
+        }
+
+        .results-screen.active {
+            display: block;
+        }
+
+        .result-icon {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .result-score {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .result-message {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .reward-box {
+            background: linear-gradient(135deg, #FEF3C7, #FDE68A);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+            display: inline-block;
+        }
+
+        /* Video Container */
+        .video-container {
+            position: relative;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 1.5rem 0;
+        }
+
+        .video-placeholder {
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--secondary), #0F172A);
+            color: white;
+            font-size: 3rem;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 2rem;
+            transition: transform 0.3s;
+        }
+
+        .video-placeholder:hover .play-button {
+            transform: scale(1.1);
+        }
+
+        /* Step by Step Guide */
+        .steps-container {
+            margin: 2rem 0;
+        }
+
+        .step {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 50px;
+            width: 2px;
+            height: calc(100% + 1rem);
+            background: var(--border);
+        }
+
+        .step-number {
+            width: 42px;
+            height: 42px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-content {
+            flex: 1;
+            background: var(--bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .step-content h4 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-content p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .course-container {
+                grid-template-columns: 1fr;
+            }
+            .sidebar, .right-panel {
+                display: none;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .celebration {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            animation: confetti-fall 3s ease-out forwards;
+        }
+
+        @keyframes confetti-fall {
+            0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="back-link">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Назад к курсам
+            </a>
+            
+            <div class="course-progress-header">
+                <div>
+                    <div style="font-size: 0.875rem; color: var(--text-light); margin-bottom: 0.25rem;">Прогресс курса</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="courseProgress" style="width: 25%;"></div>
+                    </div>
+                </div>
+                <div class="xp-gain">+50 XP за урок</div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
+    <div class="course-container">
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <h3 style="margin-bottom: 1rem; font-size: 0.875rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em;">Содержание курса</h3>
+            <ul class="module-list">
+                <li class="module-item completed" onclick="goToModule(0)">
+                    <div class="module-number">✓</div>
+                    <div>
+                        <div style="font-weight: 600;">Введение в ТИ</div>
+                        <div style="font-size: 0.75rem; color: var(--text-light);">10 мин</div>
+                    </div>
+                </li>
+                <li class="module-item active" onclick="goToModule(1)">
+                    <div class="module-number">2</div>
+                    <div>
+                        <div style="font-weight: 600;">Инструменты измерения</div>
+                        <div style="font-size: 0.75rem; color: var(--text-light);">15 мин • Тест</div>
+                    </div>
+                </li>
+                <li class="module-item locked">
+                    <div class="module-number">3</div>
+                    <div>
+                        <div style="font-weight: 600;">Поэтажные планы</div>
+                        <div style="font-size: 0.75rem; color: var(--text-light);">20 мин</div>
+                    </div>
+                </li>
+                <li class="module-item locked">
+                    <div class="module-number">4</div>
+                    <div>
+                        <div style="font-weight: 600;">Реестр характеристик</div>
+                        <div style="font-size: 0.75rem; color: var(--text-light);">25 мин</div>
+                    </div>
+                </li>
+                <li class="module-item locked">
+                    <div class="module-number">5</div>
+                    <div>
+                        <div style="font-weight: 600;">Итоговый тест</div>
+                        <div style="font-size: 0.75rem; color: var(--text-light);">15 вопросов</div>
+                    </div>
+                </li>
+            </ul>
+
+            <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
+                <div style="font-size: 0.875rem; color: var(--text-light); margin-bottom: 0.5rem;">Ваш наставник</div>
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <div style="width: 40px; height: 40px; background: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">СВ</div>
+                    <div>
+                        <div style="font-weight: 600; font-size: 0.875rem;">Светлана Волкова</div>
+                        <div style="font-size: 0.75rem; color: var(--primary); cursor: pointer;">✉ Написать</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content" id="lessonContent">
+            <div class="lesson-header">
+                <div class="breadcrumbs">Курс: Основы ТИ > Модуль 2: Инструменты</div>
+                <h1 class="lesson-title">Инструменты и методы измерений</h1>
+                <div class="lesson-meta">
+                    <span>📹 Видео: 8 мин</span>
+                    <span>📖 Теория: 5 мин</span>
+                    <span>🎯 Практика: 2 мин</span>
+                    <span style="color: var(--success);">✓ Микро-тест</span>
+                </div>
+            </div>
+
+            <div class="lesson-body">
+                <!-- Video Section -->
+                <div class="content-block">
+                    <div class="video-container">
+                        <div class="video-placeholder" onclick="playVideo(this)">
+                            <div class="play-button">▶</div>
+                            <div style="position: absolute; bottom: 1rem; left: 1rem; font-size: 1rem;">8:45</div>
+                        </div>
+                    </div>
+                    <p style="text-align: center; color: var(--text-light); font-size: 0.875rem;">Видео-урок: Обзор оборудования для полевых работ</p>
+                </div>
+
+                <!-- Theory Section -->
+                <div class="content-block">
+                    <h3>📏 Основные инструменты инвентаризатора</h3>
+                    <p>Для проведения качественной технической инвентаризации специалист должен владеть следующим оборудованием и знать правила его применения:</p>
+                    
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <h4>🔷 Лазерный дальномер</h4>
+                            <p>Основной инструмент для измерения расстояний. Точность ±3 см. Рабочий диапазон 0.05–100 м.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4>📏 Рулетка</h4>
+                            <p>Контрольный инструмент для проверки замеров. Длина 5–10 м, класс точности II.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4>📐 GNSS-приемник</h4>
+                            <p>Для определения высокоточных координат. Работа с GNSS-приемником с контроллером и геодезической вехой.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4>📱 Планшет</h4>
+                            <p>Для определения высокоточных координат. Работа с GNSS-планшетом.</p>
+                        </div>
+                    </div>
+
+                    <div class="highlight-box">
+                        <strong>💡 Профессиональный совет:</strong> Всегда начинайте обмер с наружных размеров здания, затем переходите к внутренним помещениям. Это позволяет контролировать суммарную площадь.
+                    </div>
+                </div>
+
+                <!-- Interactive Image -->
+                <div class="content-block">
+                    <h3>🏠 Интерактивная схема обмера</h3>
+                    <p>Наведите на маркеры, чтобы узнать подробности о каждом этапе измерения:</p>
+                    
+                    <div class="interactive-image">
+                        <img src="https://kimi-web-img.moonshot.cn/img/www.firstinarchitecture.co.uk/b55b77fc18785bea0f3746da05354fc22ab4edee.jpg" alt="Схема обмера помещения">
+                        
+                        <div class="hotspot" style="top: 20%; left: 15%;">
+                            1
+                            <div class="hotspot-tooltip">
+                                <strong>Начало координат</strong>
+                                <p>Выберите угол помещения как точку отсчета. Отметьте его на плане "Точка А".</p>
+                            </div>
+                        </div>
+                        
+                        <div class="hotspot" style="top: 25%; left: 45%;">
+                            2
+                            <div class="hotspot-tooltip">
+                                <strong>Основные размеры</strong>
+                                <p>Измерьте длину стен по периметру. Фиксируйте в миллиметрах.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="hotspot" style="top: 60%; left: 30%;">
+                            3
+                            <div class="hotspot-tooltip">
+                                <strong>Диагонали</strong>
+                                <p>Обязательно измерьте диагонали для проверки прямоугольности!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step by Step -->
+                <div class="content-block">
+                    <h3>📝 Пошаговый алгоритм обмера квартиры</h3>
+                    <div class="steps-container">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Подготовка к работе</h4>
+                                <p>Проверьте комплектность инструментов, заряд устройств, наличие чистых чертежей. Ознакомьтесь с поэтажным планом БТИ (если есть).</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Наружный обмер</h4>
+                                <p>Измерьте габариты здания снаружи. Зафиксируйте толщину стен, наличие выступающих элементов (балконы, эркеры, козырьки).</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Внутренние помещения</h4>
+                                <p>Начните с крупных помещений (гостиная, кухня). Двигайтесь по часовой стрелке. Не забудьте про ниши и встроенные шкафы.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Высотные отметки</h4>
+                                <p>Измерьте высоту потолков в каждом помещении (в трех точках). Отметьте уровень пола относительно земли.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Warning Box -->
+                <div class="warning-box">
+                    <strong>⚠️ Частые ошибки начинающих:</strong>
+                    <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                        <li>Забывают измерить толщину внутренних перегородок</li>
+                        <li>Не фиксируют расположение дверных и оконных проемов от угла</li>
+                        <li>Пропускают инженерные коммуникации (вентканалы, стояки)</li>
+                        <li>Не делают фото-фиксацию ключевых элементов</li>
+                    </ul>
+                </div>
+
+                <!-- Micro Quiz -->
+                <div class="micro-quiz" id="microQuiz">
+                    <div class="quiz-question">🎯 Проверьте себя: Какова допустимая погрешность измерения лазерным дальномером по Инструкции №11?</div>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectOption(this, false)">
+                            <div class="option-letter">A</div>
+                            <div>±30 мм на 10 метров</div>
+                        </div>
+                        <div class="quiz-option" onclick="selectOption(this, true)">
+                            <div class="option-letter">B</div>
+                            <div>±3 см до 6 метров</div>
+                        </div>
+                            <div class="quiz-option" onclick="selectOption(this, false)">
+                            <div class="option-letter">C</div>
+                            <div>±10 см на 10 метров</div>
+                        </div>
+                        <div class="quiz-option" onclick="selectOption(this, false)">
+                            <div class="option-letter">D</div>
+                            <div>±0.5 мм на 10 метров</div>
+                        </div>
+                    </div>
+                    <div class="quiz-feedback" id="quizFeedback">
+                        <strong>✓ Правильно!</strong> Согласно п. 49 Инструкции №11, погрешность измерений не должна превышать для доступных для непосредственного измерения элементов: для линий до 6 м - 0,03 м; для линий свыше 6 м - 1:200 (0,5%) длины линии.
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-nav">
+                <button class="nav-btn nav-btn-prev" onclick="previousLesson()">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    Предыдущий урок
+                </button>
+                <button class="nav-btn nav-btn-next" onclick="nextLesson()">
+                    Следующий урок
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+            </div>
+        </main>
+
+        <!-- Final Test (Hidden by default) -->
+        <main class="final-test" id="finalTest">
+            <div class="test-header">
+                <h2>🎓 Итоговое тестирование</h2>
+                <p style="color: var(--text-light);">Проверьте знания, полученные за курс. Для успешного прохождения нужно 80% правильных ответов.</p>
+                <div class="test-progress">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.875rem;">
+                        <span>Вопрос <span id="currentQuestion">1</span> из 5</span>
+                        <span id="testProgressPercent">20%</span>
+                    </div>
+                    <div class="progress-bar" style="width: 100%;">
+                        <div class="progress-fill" id="testProgressBar" style="width: 20%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="test-question-container" id="questionContainer">
+                <div class="question-number">Вопрос 1</div>
+                <div class="question-text" id="questionText">Какой документ является основным нормативным актом, регламентирующим техническую инвентаризацию в Республике Беларусь?</div>
+                
+                <div class="test-options" id="testOptions">
+                    <div class="test-option" onclick="selectTestOption(0)">
+                        <div class="option-letter">A</div>
+                        <div>Закон РБ "О государственной регистрации недвижимого имущества"</div>
+                    </div>
+                    <div class="test-option" onclick="selectTestOption(1)">
+                        <div class="option-letter">B</div>
+                        <div>Инструкция №11 о порядке проведения технической инвентаризации</div>
+                    </div>
+                    <div class="test-option" onclick="selectTestOption(2)">
+                        <div class="option-letter">C</div>
+                        <div>Постановление Совмина РБ "О единой системе технической инвентаризации"</div>
+                    </div>
+                    <div class="test-option" onclick="selectTestOption(3)">
+                        <div class="option-letter">D</div>
+                        <div>Методические рекомендации НКА по инвентаризации жилых зданий</div>
+                    </div>
+                </div>
+
+                <button class="nav-btn nav-btn-next" style="margin-top: 2rem; width: 100%; justify-content: center;" onclick="nextQuestion()" id="nextQuestionBtn" disabled>
+                    Ответить
+                </button>
+            </div>
+        </main>
+
+        <!-- Results Screen -->
+        <div class="results-screen" id="resultsScreen">
+            <div class="result-icon" id="resultIcon">🎉</div>
+            <div class="result-score" id="resultScore">80%</div>
+            <div class="result-message" id="resultMessage">Отличный результат! Вы успешно освоили основы технической инвентаризации.</div>
+            
+            <div class="reward-box">
+                <div style="font-size: 3rem; margin-bottom: 0.5rem;">🏆</div>
+                <div style="font-weight: 700; margin-bottom: 0.25rem;">Достижение получено!</div>
+                <div style="font-size: 0.875rem;">"Юридический эксперт"</div>
+                <div style="margin-top: 1rem; font-size: 1.25rem; font-weight: 700; color: var(--primary);">+500 XP</div>
+            </div>
+
+            <div style="margin-top: 2rem;">
+                <button class="nav-btn nav-btn-primary" onclick="window.location.href='index.html'" style="background: var(--primary); color: white; margin-right: 1rem;">
+                    Вернуться на главную
+                </button>
+                <button class="nav-btn nav-btn-secondary" onclick="location.reload()" style="background: white; border: 1px solid var(--border);">
+                    Пройти ещё раз
+                </button>
+            </div>
+        </div>
+
+        <!-- Right Panel -->
+        <aside class="right-panel">
+            <div class="panel-card">
+                <div class="panel-title">🎯 Достижения модуля</div>
+                <div class="achievement-small">
+                    <div class="achievement-icon">📹</div>
+                    <div class="achievement-text">
+                        <div>Видео просмотрено</div>
+                        <div>+20 XP</div>
+                    </div>
+                </div>
+                <div class="achievement-small">
+                    <div class="achievement-icon">📖</div>
+                    <div class="achievement-text">
+                        <div>Теория изучена</div>
+                        <div>+15 XP</div>
+                    </div>
+                </div>
+                <div class="achievement-small locked" id="quizAchievement">
+                    <div class="achievement-icon">🎯</div>
+                    <div class="achievement-text">
+                        <div>Тест пройден</div>
+                        <div>+15 XP</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-card">
+                <div class="panel-title">📊 Прогресс обучения</div>
+                <div style="margin-bottom: 1rem;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.875rem;">
+                        <span>Уроки</span>
+                        <span style="font-weight: 600;">2/5</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 40%;"></div>
+                    </div>
+                </div>
+                <div style="margin-bottom: 1rem;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.875rem;">
+                        <span>Тесты</span>
+                        <span style="font-weight: 600;">1/3</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 33%;"></div>
+                    </div>
+                </div>
+                <div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.875rem;">
+                        <span>Общий прогресс</span>
+                        <span style="font-weight: 600;">25%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 25%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-card">
+                <div class="panel-title">💡 Подсказка</div>
+                <p style="font-size: 0.875rem; color: var(--text-light); line-height: 1.6;">
+                    При работе с лазерным дальномером всегда проверяйте, что луч не пересекает стеклянные поверхности — это может исказить показания.
+                </p>
+            </div>
+
+            <div class="panel-card" style="background: linear-gradient(135deg, #F0FDF4, #D1FAE5);">
+                <div class="panel-title">📱 Мобильное приложение</div>
+                <p style="font-size: 0.875rem; margin-bottom: 1rem;">Скачайте NKA_Mobile для offline-доступа к материалам</p>
+                <button class="nav-btn nav-btn-primary" style="width: 100%; justify-content: center; background: var(--primary); color: white;">
+                    Скачать
+                </button>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Celebration Container -->
+    <div class="celebration" id="celebration"></div>
+
+    <script>
+        // Quiz functionality
+        let quizAnswered = false;
+        
+        function selectOption(element, isCorrect) {
+            if (quizAnswered) return;
+            
+            document.querySelectorAll('.quiz-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            element.classList.add('selected');
+            
+            const feedback = document.getElementById('quizFeedback');
+            feedback.classList.add('show');
+            
+            if (isCorrect) {
+                element.classList.add('correct');
+                feedback.classList.add('correct');
+                feedback.innerHTML = '<strong>✓ Правильно!</strong> Согласно п. 49 Инструкции №11, погрешность измерений не должна превышать для доступных для непосредственного измерения элементов: для линий до 6 м - 0,03 м; для линий свыше 6 м - 1:200 (0,5%) длины линии.';
+                
+                // Unlock achievement
+                document.getElementById('quizAchievement').classList.remove('locked');
+                
+                // Add XP animation
+                showXpGain();
+            } else {
+                element.classList.add('wrong');
+                feedback.classList.add('wrong');
+                feedback.innerHTML = '<strong>✗ Неверно.</strong> Правильный ответ: ±3 cм. Согласно техническим требованиям, современные лазерные дальномеры обеспечивают именно такую точность.';
+            }
+            
+            quizAnswered = true;
+        }
+
+        function showXpGain() {
+            const xpBadge = document.querySelector('.xp-gain');
+            xpBadge.style.transform = 'scale(1.5)';
+            setTimeout(() => {
+                xpBadge.style.transform = 'scale(1)';
+            }, 300);
+        }
+
+        // Video placeholder
+        function playVideo(element) {
+            element.innerHTML = '<div style="color: white; font-size: 1.25rem;">▶ Воспроизведение началось...</div>';
+            setTimeout(() => {
+                element.innerHTML = '<div style="color: white; text-align: center;"><div style="font-size: 3rem; margin-bottom: 1rem;">🎬</div><div>Видео завершено ✓</div></div>';
+                element.style.background = 'linear-gradient(135deg, var(--success), #059669)';
+            }, 2000);
+        }
+
+        // Navigation
+        let currentModule = 1;
+        
+        function goToModule(index) {
+            if (index > currentModule) return; // Can't skip ahead
+            // In real app, this would load different content
+            console.log('Going to module', index);
+        }
+
+        function previousLesson() {
+            alert('Переход к предыдущему уроку...');
+        }
+
+        function nextLesson() {
+            // Show final test
+            document.getElementById('lessonContent').style.display = 'none';
+            document.getElementById('finalTest').classList.add('active');
+            document.querySelector('.sidebar').style.display = 'none';
+            document.querySelector('.right-panel').style.display = 'none';
+        }
+
+        // Final Test Logic
+        const questions = [
+            {
+                text: "Какой документ является основным нормативным актом, регламентирующим техническую инвентаризацию в Республике Беларусь?",
+                options: [
+                    "Закон РБ \"О государственной регистрации недвижимого имущества\"",
+                    "Инструкция №11 о порядке проведения технической инвентаризации",
+                    "Постановление Совмина РБ \"О единой системе технической инвентаризации\"",
+                    "Методические рекомендации НКА по инвентаризации жилых зданий"
+                ],
+                correct: 1
+            },
+            {
+                text: "В какой последовательности следует проводить обмер здания?",
+                options: [
+                    "Сначала внутренние помещения, затем фасад",
+                    "Сначала наружные размеры, затем внутренние помещения",
+                    "Только наружные размеры",
+                    "В произвольном порядке"
+                ],
+                correct: 1
+            },
+            {
+                text: "Какие измерения являются обязательными для проверки геометрии помещения?",
+                options: [
+                    "Только длины стен",
+                    "Только высоту потолков",
+                    "Диагонали помещения",
+                    "Площадь оконных проемов"
+                ],
+                correct: 2
+            },
+            {
+                text: "Какова минимальная точность измерения площади для квартиры площадью 50 м²?",
+                options: [
+                    "±0.05 м²",
+                    "±0.5 м²",
+                    "±5 м²",
+                    "±0.01 м²"
+                ],
+                correct: 0
+            },
+            {
+                text: "Что необходимо сделать перед выездом на объект?",
+                options: [
+                    "Только взять дальномер",
+                    "Проверить комплектность инструментов и заряд устройств",
+                    "Ничего не нужно делать",
+                    "Только взять планшет"
+                ],
+                correct: 1
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let selectedOption = null;
+        let correctAnswers = 0;
+
+        function selectTestOption(index) {
+            selectedOption = index;
+            document.querySelectorAll('.test-option').forEach((opt, i) => {
+                opt.classList.toggle('selected', i === index);
+            });
+            document.getElementById('nextQuestionBtn').disabled = false;
+        }
+
+        function nextQuestion() {
+            if (selectedOption === questions[currentQuestionIndex].correct) {
+                correctAnswers++;
+            }
+            
+            currentQuestionIndex++;
+            
+            if (currentQuestionIndex < questions.length) {
+                loadQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function loadQuestion() {
+            const q = questions[currentQuestionIndex];
+            document.getElementById('currentQuestion').textContent = currentQuestionIndex + 1;
+            document.getElementById('testProgressPercent').textContent = ((currentQuestionIndex + 1) / questions.length * 100) + '%';
+            document.getElementById('testProgressBar').style.width = ((currentQuestionIndex + 1) / questions.length * 100) + '%';
+            document.getElementById('questionText').textContent = q.text;
+            
+            const optionsContainer = document.getElementById('testOptions');
+            optionsContainer.innerHTML = '';
+            
+            q.options.forEach((opt, i) => {
+                const div = document.createElement('div');
+                div.className = 'test-option';
+                div.onclick = () => selectTestOption(i);
+                div.innerHTML = `
+                    <div class="option-letter">${String.fromCharCode(65 + i)}</div>
+                    <div>${opt}</div>
+                `;
+                optionsContainer.appendChild(div);
+            });
+            
+            selectedOption = null;
+            document.getElementById('nextQuestionBtn').disabled = true;
+            
+            if (currentQuestionIndex === questions.length - 1) {
+                document.getElementById('nextQuestionBtn').textContent = 'Завершить тест';
+            }
+        }
+
+        function showResults() {
+            document.getElementById('finalTest').style.display = 'none';
+            document.getElementById('resultsScreen').classList.add('active');
+            
+            const percentage = Math.round((correctAnswers / questions.length) * 100);
+            document.getElementById('resultScore').textContent = percentage + '%';
+            
+            if (percentage >= 80) {
+                document.getElementById('resultIcon').textContent = '🎉';
+                document.getElementById('resultMessage').textContent = 'Отличный результат! Вы успешно освоили основы технической инвентаризации.';
+                createConfetti();
+            } else if (percentage >= 60) {
+                document.getElementById('resultIcon').textContent = '👍';
+                document.getElementById('resultMessage').textContent = 'Хороший результат, но есть над чем поработать. Повторите материал и попробуйте снова.';
+            } else {
+                document.getElementById('resultIcon').textContent = '📚';
+                document.getElementById('resultMessage').textContent = 'Рекомендуем повторить материал курса. Вы можете пройти тест ещё раз.';
+            }
+        }
+
+        function createConfetti() {
+            const colors = ['#00A86B', '#FFD700', '#1E3A5F', '#FF6B6B', '#4ECDC4'];
+            const container = document.getElementById('celebration');
+            
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDelay = Math.random() * 2 + 's';
+                confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+                container.appendChild(confetti);
+            }
+        }
+    </script>
+</body>
+</html>

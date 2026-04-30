@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface-variant": "#45464d",
+                    "on-secondary-fixed-variant": "#3a485b",
+                    "on-tertiary-container": "#98805d",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "primary": "#000000",
+                    "secondary-fixed-dim": "#b9c7df",
+                    "surface-variant": "#e0e3e5",
+                    "on-secondary-fixed": "#0d1c2e",
+                    "on-background": "#191c1e",
+                    "inverse-primary": "#b8c4ff",
+                    "surface-container-low": "#f2f4f6",
+                    "secondary": "#515f74",
+                    "on-secondary-container": "#57657a",
+                    "surface-container": "#eceef0",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#001453",
+                    "tertiary-fixed": "#fcdeb5",
+                    "surface": "#f7f9fb",
+                    "secondary-fixed": "#d5e3fc",
+                    "inverse-on-surface": "#eff1f3",
+                    "on-tertiary-fixed": "#271901",
+                    "tertiary": "#000000",
+                    "surface-tint": "#3755c3",
+                    "outline-variant": "#c6c6cd",
+                    "on-surface": "#191c1e",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-error": "#ffffff",
+                    "tertiary-container": "#271901",
+                    "error-container": "#ffdad6",
+                    "on-error-container": "#93000a",
+                    "primary-fixed": "#dde1ff",
+                    "surface-container-high": "#e6e8ea",
+                    "surface-bright": "#f7f9fb",
+                    "background": "#f7f9fb",
+                    "outline": "#76777d",
+                    "on-primary-container": "#607cec",
+                    "error": "#ba1a1a",
+                    "inverse-surface": "#2d3133",
+                    "secondary-container": "#d5e3fc",
+                    "tertiary-fixed-dim": "#dec29a",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#574425",
+                    "on-primary-fixed-variant": "#173bab",
+                    "primary-fixed-dim": "#b8c4ff",
+                    "primary-container": "#001453",
+                    "surface-dim": "#d8dadc"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .btn-gradient {
+            background: linear-gradient(135deg, #4e69c3 0%, #001453 100%);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface min-h-screen flex flex-col">
+<main class="flex-grow flex items-center justify-center px-6 py-12 md:py-20 bg-surface">
+<div class="max-w-[1100px] w-full grid grid-cols-1 lg:grid-cols-12 gap-0 overflow-hidden rounded-xl shadow-2xl shadow-on-surface/5">
+<!-- Branding/Info Column (Asymmetric density) -->
+<div class="lg:col-span-5 bg-primary-container p-12 flex flex-col justify-between relative overflow-hidden">
+<div class="relative z-10">
+<div class="mb-12">
+<span class="font-headline font-black text-white text-3xl tracking-tighter">НКА Академия</span>
+<div class="mt-2 h-1 w-12 bg-surface-tint"></div>
+</div>
+<h1 class="text-4xl font-headline font-bold text-white leading-tight mb-6 tracking-tight">Регистрация в системе НКА Академия</h1>
+<p class="text-white/70 body-md leading-relaxed mb-8">
+    Присоединяйтесь к интерактивной платформе адаптации и обучения специалистов по технической инвентаризации недвижимого имущества с модулем профессиональной аттестации.
+                    </p>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<div>
+<p class="text-white font-medium text-sm">Наши преимущества:</p>
+<p class="text-white/50 text-xs">Полный цикл подготовки от новичка до аттестованного специалиста</p>
+</div>
+</div>
+   </div>
+</div>
+<!-- Abstract Texture Decor -->
+<div class="absolute -bottom-20 -right-20 w-80 h-80 rounded-full border-[32px] border-white/5 z-0"></div>
+<div class="absolute top-1/2 -left-20 w-40 h-40 rounded-full bg-surface-tint/10 blur-3xl z-0"></div>
+</div>
+<!-- Form Column -->
+<div class="lg:col-span-7 bg-white p-8 md:p-16 flex flex-col justify-center">
+<div class="mb-10">
+<span class="font-label text-[10px] text-outline tracking-widest uppercase block mb-1">Форма регистрация</span>
+<h2 class="text-2xl font-headline font-bold text-on-background">ЛИЧНЫЕ ДАННЫЕ</h2>
+</div>
+<!-- Registration Form -->
+<form class="space-y-6" onsubmit="return false;">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Last Name -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Фамилия</label>
+<div class="relative group">
+<input class="w-full bg-surface-container-low border-none rounded-md py-3 px-4 focus:ring-0 focus:bg-white focus:border-b-2 focus:border-surface-tint transition-all duration-300 text-sm" placeholder="Введите фамилию" type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline/40 text-[18px]">person</span>
+</div>
+</div>
+<!-- First Name -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Имя</label>
+<div class="relative group">
+<input class="w-full bg-surface-container-low border-none rounded-md py-3 px-4 focus:ring-0 focus:bg-white focus:border-b-2 focus:border-surface-tint transition-all duration-300 text-sm" placeholder="Введите имя" type="text"/>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Middle Name -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Отчество</label>
+<input class="w-full bg-surface-container-low border-none rounded-md py-3 px-4 focus:ring-0 focus:bg-white focus:border-b-2 focus:border-surface-tint transition-all duration-300 text-sm" placeholder="При наличии" type="text"/>
+</div>
+<!-- Date of Birth -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Дата рождения</label>
+<div class="relative">
+<input class="w-full bg-surface-container-low border-none rounded-md py-3 px-4 focus:ring-0 focus:bg-white focus:border-b-2 focus:border-surface-tint transition-all duration-300 text-sm appearance-none" type="date"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline/40 text-[18px] pointer-events-none">calendar_month</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Phone -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Контактный телефон</label>
+<div class="relative">
+<input class="w-full bg-surface-container-low border-none rounded-md py-3 px-4 focus:ring-0 focus:bg-white focus:border-b-2 focus:border-surface-tint transition-all duration-300 text-sm" placeholder="+375 (__) ___-__-__" type="tel"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline/40 text-[18px]">call</span>
+</div>
+</div>
+<!-- Email -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Email</label>
+<div class="relative">
+<input class="w-full bg-surface-container-low border-none rounded-md py-3 px-4 focus:ring-0 focus:bg-white focus:border-b-2 focus:border-surface-tint transition-all duration-300 text-sm" placeholder="Введите email" type="email"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline/40 text-[18px]">mail</span>
+</div>
+</div>
+</div>
+<!-- Region Dropdown -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Регион</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low border-none rounded-md py-3 px-4 focus:ring-0 focus:bg-white focus:border-b-2 focus:border-surface-tint transition-all duration-300 text-sm appearance-none">
+<option disabled="" selected="" value="">Выберите регион из списка</option>
+<option value="01">Брестская область</option>
+<option value="02">Витебская область</option>
+<option value="03">Гомельская область</option>
+    <option value="04">Гродненская область</option>
+    <option value="05">Минская область</option>
+    <option value="06">Могилевская область</option>
+    <option value="07">г. Минск</option>
+<option value="other">Другой регион</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline/40 text-[18px] pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Consent Checkbox -->
+<div class="flex items-start gap-3 py-2">
+<input class="mt-1 rounded border-outline-variant text-surface-tint focus:ring-surface-tint" id="consent" type="checkbox"/>
+<label class="text-xs text-on-surface-variant leading-relaxed select-none" for="consent">
+                            Согласие на обработку персональных данных. Я подтверждаю, что ознакомлен с <a class="text-surface-tint underline underline-offset-2" href="#">Политикой конфиденциальности</a>.
+                        </label>
+</div>
+<!-- Error Placeholder -->
+<div class="bg-error-container/30 rounded-md p-4 flex items-center gap-3 border-l-4 border-error">
+<span class="material-symbols-outlined text-error text-[20px]">error</span>
+<p class="text-xs font-medium text-on-error-container">Пожалуйста, заполните все обязательные поля для завершения процедуры регистрации.</p>
+</div>
+<!-- Actions -->
+<div class="flex flex-col sm:flex-row gap-4 pt-6">
+<button class="btn-gradient text-white font-headline font-bold text-sm px-8 py-4 rounded-md flex-1 transition-transform active:scale-95 shadow-lg shadow-primary-container/20">
+    <a href="../1_Главная%20страница%20НКА%20Академия/2_Главная_страница.html">Зарегистрироваться</a>
+                        </button>
+<button title="Переход без сохранения. Показывать предупреждение о выходе со странице регистрации." class="bg-surface-container-low hover:bg-surface-container-high text-on-surface-variant font-headline font-semibold text-sm px-8 py-4 rounded-md flex-1 transition-all">
+    <a href="../index.html">На главную страницу</a>
+</button>
+</div>
+    <!-- Success State Hint (Invisible by default in standard UI output) -->
+<div class="mt-8 pt-8 border-t border-surface-container-high">
+<div class="flex items-center gap-3 text-secondary text-xs">
+<span class="material-symbols-outlined text-[16px]">info</span>
+<span>После нажатия кнопки «Зарегистрироваться» логин и пароль будут отправлены на ваш email.</span>
+</div>
+</div>
+</form>
+</div>
+</div>
+</main>
+<footer class="bg-[#f2f4f6] dark:bg-[#020617] w-full py-12">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 max-w-[1440px] mx-auto gap-8">
+<div class="flex flex-col gap-2 text-center md:text-left">
+<p class="font-['Inter'] text-[10px] uppercase tracking-widest text-slate-400 dark:text-slate-500 max-w-[400px]">
+                    © 2026 НКА Академия
+                </p>
+</div>
+<div class="flex gap-8">
+<a class="font-['Inter'] text-[10px] uppercase tracking-widest text-slate-400 dark:text-slate-500 hover:text-slate-600 transition-colors" href="#">Политика конфиденциальности/безопасности</a>
+<a class="font-['Inter'] text-[10px] uppercase tracking-widest text-slate-400 dark:text-slate-500 hover:text-slate-600 transition-colors" href="#">FAQ</a>
+</div>
+</div>
+</footer>
+</body></html>

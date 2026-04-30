@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Академия НКА | ЕСА 2.0 | Просмотр результатов претендента</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e0e3e5",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#dde1ff",
+                        "outline": "#757683",
+                        "outline-variant": "#c5c5d4",
+                        "on-secondary-fixed-variant": "#334380",
+                        "surface-container-highest": "#e0e3e5",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#b6c4ff",
+                        "surface-dim": "#d8dadc",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#b8c4ff",
+                        "on-surface-variant": "#44474e",
+                        "surface-container": "#eceef0",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "surface-tint": "#3d59b2",
+                        "secondary-fixed-dim": "#b8c4ff",
+                        "surface-bright": "#f7f9fb",
+                        "on-background": "#191c1e",
+                        "background": "#f7f9fb",
+                        "on-surface": "#191c1e",
+                        "secondary-fixed": "#dde1ff",
+                        "primary-fixed": "#dce1ff",
+                        "surface-container-low": "#f2f4f6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#f1f1ff",
+                        "surface-container-high": "#e6e8ea",
+                        "primary": "#3450a9",
+                        "inverse-on-surface": "#eff1f3",
+                        "inverse-surface": "#2d3133",
+                        "tertiary": "#2d4cba",
+                        "secondary-container": "#a9b8fe",
+                        "on-primary-fixed": "#00164f",
+                        "on-tertiary-fixed": "#001453",
+                        "secondary": "#4b5b9a",
+                        "on-secondary": "#ffffff",
+                        "surface": "#f7f9fb",
+                        "tertiary-container": "#4966d4",
+                        "on-primary-fixed-variant": "#214098",
+                        "on-tertiary-fixed-variant": "#173baa",
+                        "on-secondary-container": "#384785",
+                        "on-error": "#ffffff",
+                        "primary-container": "#4e69c3",
+                        "on-secondary-fixed": "#001453",
+                        "on-tertiary-container": "#f2f1ff",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "module-gap": "24px",
+                        "container-padding": "16px",
+                        "base": "8px",
+                        "section-gap": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-sm": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "25.6px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, #3450a9 0%, #001453 100%);
+        }
+        .glass-blur {
+            backdrop-filter: blur(12px);
+            background: rgba(247, 249, 251, 0.8);
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #e0e3e5; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface overflow-hidden">
+<!-- Background -->
+<header class="bg-surface-container-lowest flex justify-between items-center w-full px-12 py-4 h-20 sticky top-0 z-40">
+    <div class="text-xl font-bold tracking-tighter text-on-surface uppercase">Академия НКА</div>
+    <div class="flex items-center gap-4">
+        <span class="material-symbols-outlined text-on-surface-variant p-2 hover:bg-surface-container-low transition-all rounded-full cursor-pointer" data-icon="notifications">notifications</span>
+        <span class="material-symbols-outlined text-on-surface-variant p-2 hover:bg-surface-container-low transition-all rounded-full cursor-pointer" data-icon="settings">settings</span>
+        <div class="h-10 w-10 rounded-full bg-surface-container overflow-hidden ml-4 ring-2 ring-white">
+            <img alt="Administrator Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6NSyqnCa5ZNsW4b75CuTSE7TqvWk6U8t2sJbqcUGVzx1pdc_zPr7eHW8t4JoVufZpghq_z6hj1yN7-tI50dPNjlowxBpg5eIuGHA3c9K4qtk9SllUwgXnFBCgonJuNwkpdBXO7i-RwWkkhb3ptlSYfvJDFjWubC-P7sjEoGSXfjMTfj24ZsUK8PYIuk2iThFzt_BBiip30THFxtCtrOOY3OLKk-qGUG-af9siv8Kie9rI96z8dYa8GYNRWmhI5XF8w0CJLw581pbV"/>
+        </div>
+    </div>
+</header>
+<aside class="hidden xl:flex flex-col h-screen w-64 fixed left-0 top-20 bg-surface-container-low py-8 space-y-2 z-30">
+    <div class="px-8 pb-6">
+        <div class="font-semibold text-on-surface text-label-md">Администратор СА</div>
+        <div class="text-xs text-on-surface-variant">Члены аттестационной комиссии</div>
+    </div>
+    <div class="flex flex-col space-y-1">
+        <a class="text-on-surface-variant pl-8 py-3 hover:text-on-surface hover:bg-surface-container-high transition-all" href="#">
+            <span class="material-symbols-outlined align-middle mr-3 text-xl" data-icon="dashboard">dashboard</span>Аттестация
+        </a>
+        <a class="bg-surface-container-lowest text-primary font-semibold rounded-l-lg ml-4 pl-4 py-3 transition-all" href="#">
+            <span class="material-symbols-outlined align-middle mr-3 text-xl" data-icon="verified_user">verified_user</span>Протокол
+        </a>
+        <a class="text-on-surface-variant pl-8 py-3 hover:text-on-surface transition-all" href="#">
+            <span class="material-symbols-outlined align-middle mr-3 text-xl" data-icon="security">security</span>Управление тестами
+        </a>
+        <a class="text-on-surface-variant pl-8 py-3 hover:text-on-surface transition-all" href="#">
+            <span class="material-symbols-outlined align-middle mr-3 text-xl" data-icon="group">group</span>Администрирование
+        </a>
+    </div>
+    <div class="mt-auto px-6 pb-20">
+    </div>
+    <button class="bg-on-surface text-white px-4 py-2 rounded-full font-label-md flex items-center gap-2 hover:bg-on-surface-variant transition-all shadow-lg ml-8">
+        <span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
+        Сгенерировать протокол
+    </button>
+    <div class="w-[1px] h-10 bg-surface-container-low"></div>
+    <button class="bg-surface-container-lowest text-on-surface px-6 py-3 rounded-full font-label-md flex items-center gap-2 hover:bg-surface-container-low transition-all">
+        <span class="material-symbols-outlined" data-icon="print">print</span>
+        Распечатать протокол
+    </button>
+    <button class="bg-surface-container-lowest text-on-surface px-6 py-3 rounded-full font-label-md flex items-center gap-2 hover:bg-surface-container-low transition-all">
+        <span class="material-symbols-outlined" data-icon="share">share</span>
+        Отправить протокол
+    </button>
+</aside>
+<!-- BG Main Content Area -->
+<main class="xl:ml-64 mr-[400px] p-12 space-y-section-gap">
+    <!-- Header & Top Actions -->
+    <div class="flex justify-between items-end">
+        <div class="space-y-1">
+            <h1 class="font-display-lg text-display-lg text-on-surface">Протокол аттестации</h1>
+            <p class="text-on-surface-variant font-label-md uppercase tracking-wider">Группа: №09_24_06.05.2026</p>
+            <p class="text-on-surface-variant font-label-md uppercase tracking-wider">Тест: Аттестация специалистов по ТИ 22.04.2026</p>
+        </div>
+        <div class="flex gap-4">
+            <button  title="При нажатии отображается уточнение о необходимости активирования теста" class="bg-green-500 text-white font-label-md px-8 py-3 rounded-xl flex items-center gap-2 shadow-sm transition-transform active:scale-95">
+                <span  class="material-symbols-outlined" data-icon="play_arrow">play_arrow</span>
+                Тест активирован
+            </button>
+        </div>
+    </div>
+    <!-- Group Summary Panel -->
+    <section class="grid grid-cols-6 gap-module-gap">
+        <div class="col-span-2 bg-surface-container-lowest p-8 rounded-xl space-y-4">
+            <span class="text-label-sm uppercase text-on-surface-variant opacity-60">Сведения о группе</span>
+            <div class="flex items-baseline gap-4">
+                <span class="text-5xl font-extrabold text-on-surface tracking-tighter">25</span>
+                <span class="text-on-surface-variant font-label-md">назначено</span>
+            </div>
+            <div class="flex gap-6 pt-4 border-t border-surface-container-low">
+                <div>
+                    <div class="text-2xl font-bold text-on-surface">18</div>
+                    <div class="text-[10px] uppercase text-on-surface-variant tracking-widest">Присутствующих</div>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-error">07</div>
+                    <div class="text-[10px] uppercase text-on-surface-variant tracking-widest">Отсутствующих</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-span-2 bg-surface-container-lowest p-8 rounded-xl space-y-4">
+            <span class="text-label-sm uppercase text-on-surface-variant opacity-60">Статистика по группе</span>
+            <div class="flex items-baseline gap-4">
+                <span class="text-5xl font-extrabold text-tertiary tracking-tighter">83%</span>
+                <span class="text-on-surface-variant font-label-md">процент успешно пойденного теста</span>
+            </div>
+            <div class="flex gap-6 pt-4 border-t border-surface-container-low">
+                <div>
+                    <div class="text-2xl font-bold text-on-surface">15</div>
+                    <div class="text-[10px] uppercase text-on-surface-variant tracking-widest">Сдали успешно</div>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-on-surface-variant">03</div>
+                    <div class="text-[10px] uppercase text-on-surface-variant tracking-widest">Тест не пройден</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-span-2 bg-primary-container p-8 rounded-xl flex flex-col justify-between overflow-hidden relative">
+            <div class="z-10">
+                <span class="text-label-sm uppercase text-white/70">Статус Протокола</span>
+                <div class="text-2xl font-bold text-white mt-2">Требуется заключительная проверка</div>
+            </div>
+            <button class="z-10 bg-white/10 hover:bg-white/20 text-white font-label-md px-4 py-2 rounded-lg self-start mt-4 transition-colors">
+                Просмотреть требования
+            </button>
+            <div class="absolute -right-10 -bottom-10 opacity-10">
+                <span class="material-symbols-outlined text-[180px]" data-icon="verified">verified</span>
+            </div>
+        </div>
+    </section>
+    <!-- Main Candidate Table with Horizontal Scrolling -->
+    <section class="bg-surface-container-lowest rounded-xl overflow-hidden">
+        <div class="px-8 py-6 border-b border-surface-container-low flex justify-between items-center bg-surface-container-lowest">
+            <h3 class="font-headline-md text-on-surface">Список Претендентов</h3>
+            <div class="flex items-center gap-4">
+                <div class="bg-surface-container-low px-4 py-2 rounded-xl flex items-center gap-3">
+                    <span class="material-symbols-outlined text-on-surface-variant text-sm" data-icon="search">search</span>
+                    <input class="bg-transparent border-none focus:ring-0 text-sm w-48" placeholder="Поиск претендента..." type="text"/>
+                </div>
+            </div>
+        </div>
+        <div class="overflow-x-auto table-shadow-inset">
+            <table class="w-full text-left border-collapse min-w-[2400px]">
+                <thead>
+                <tr class="bg-surface-container-low text-on-surface-variant text-label-sm uppercase">
+                    <th class="px-8 py-4 font-bold sticky left-0 bg-surface-container-low z-10 w-[280px]">Фамилия, имя, отчество</th>
+                    <th class="px-4 py-4 font-bold">Должность</th>
+                    <th class="px-4 py-4 font-bold">Стаж</th>
+                    <th class="px-4 py-4 font-bold">Место работы</th>
+                    <th class="px-4 py-4 font-bold">Образование</th>
+                    <th class="px-4 py-4 font-bold text-center">Характеристика </th>
+                    <th class="px-4 py-4 font-bold">Проверка</th>
+                    <th class="px-4 py-4 font-bold">Повышение квалификации</th>
+                    <th class="px-4 py-4 font-bold text-center">Тестирование</th>
+                    <th class="px-4 py-4 font-bold">Дата аттестации</th>
+                    <th class="px-4 py-4 font-bold">Собеседование</th>
+                    <th class="px-4 py-4 font-bold text-center">Результат</th>
+                    <th class="px-8 py-4 font-bold">Решение АК</th>
+                </tr>
+                </thead>
+                <tbody class="divide-y divide-surface-container-low">
+                <!-- Row 1: Detailed Entry -->
+                <tr class="hover:bg-surface-container-low/50 transition-colors group">
+                    <td class="px-8 py-6 sticky left-0 bg-surface-container-lowest group-hover:bg-surface-container-low/50 z-10">
+                        <div class="flex items-center gap-4">
+                            <div class="font-semibold text-on-surface">Иванов Алексей Иванович</div>
+                        </div>
+                    </td>
+                    <td class="px-4 py-6">
+                        <div class="text-sm font-medium">Специалист по ТИ 1 к.</div>
+                    </td>
+                    <td class="px-4 py-6">
+                        <div class="text-sm">12.2</div>
+                    </td>
+                    <td class="px-4 py-6">
+                        <div class="text-sm">Минское городское Агентство</div>
+                    </td>
+                    <td class="px-4 py-6">
+                        <div class="text-[11px] leading-tight max-w-[250px]">
+                            <span class="font-bold">Образование, наименование учебного заведения</span><br/>
+                            <span class="text-on-surface-variant italic">Cпециальность по образованию, квалификация</span>
+                        </div>
+                    </td>
+                    <td class="px-4 py-6 text-center">
+                        <button class="p-2 hover:bg-surface-container rounded-lg text-primary" title="Скачать характеристику">
+                            <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">1</span>
+                            <span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
+                        </button>
+                    </td>
+                    <td class="px-4 py-6">
+                        <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">3</span>
+                    </td>
+                    <td class="px-4 py-6">
+                        <div class="text-[11px] leading-tight max-w-[250px]">
+                            <span class="font-bold">где, номер документа, дата его выдачи, наименование курсов, оценка</span><br/>
+                            <span class="text-on-surface-variant italic">Оценка</span>
+                        </div>
+                    </td>
+                    <td class="px-4 py-6 text-center font-bold text-on-surface">38/40</td>
+                    <td class="px-4 py-6 text-sm">24.04.2026</td>
+                    <td class="px-4 py-6">
+                        <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">3</span>
+                    </td>
+                    <td class="px-4 py-6 text-center font-extrabold text-primary">12</td>
+                    <td class="px-8 py-6">
+                        <div class="text-xs font-bold text-tertiary">Аттестован, рекомендовано присвоение категории</div>
+                    </td>
+                </tr>
+                <!-- Row 2 -->
+                <tr class="hover:bg-surface-container-low/50 transition-colors group bg-surface-container-low/10">
+                    <td class="px-8 py-6 sticky left-0 bg-surface-container-lowest group-hover:bg-surface-container-low/50 z-10">
+                        <div class="flex items-center gap-4">
+                            <div class="font-semibold text-on-surface">Иванова Татьяна Васильевна</div>
+                        </div>
+                    </td>
+                    <td class="px-4 py-6">
+                        <div class="text-sm font-medium">Специалист по ТИ 2 к.</div>
+                    </td>
+                    <td class="px-4 py-6">
+                        <div class="text-sm">8.5</div>
+                    </td>
+                    <td class="px-4 py-6">
+                        <div class="text-sm">Гродненское Агентство</div>
+                    </td>
+                    <td class="px-4 py-6">
+                        <div class="text-[11px] leading-tight max-w-[250px]">
+                            <span class="font-bold">Образование, наименование учебного заведения</span><br/>
+                            <span class="text-on-surface-variant italic">Cпециальность по образованию, квалификация</span>
+                        </div>
+                    </td>
+                    <td class="px-4 py-6 text-center">
+                        <button class="p-2 hover:bg-surface-container rounded-lg text-primary" title="Скачать характеристику">
+                            <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">3</span>
+                            <span class="material-symbols-outlined" data-icon="description">description</span>
+                        </button>
+                    </td>
+                    <td class="px-4 py-6">
+                        <span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">0</span>
+                    </td>
+                    <td class="px-4 py-6">
+                        <div class="text-[11px] leading-tight max-w-[250px]">
+                            <span class="font-bold">где, номер документа, дата его выдачи, наименование курсов, оценка</span><br/>
+                            <span class="text-on-surface-variant italic">Оценка</span>
+                        </div>
+                    </td>
+                    <td class="px-4 py-6 text-center font-bold text-on-surface">36/40</td>
+                    <td class="px-4 py-6 text-sm">24.04.2026</td>
+                    <td class="px-4 py-6">
+                        <span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">0</span>
+                    </td>
+                    <td class="px-4 py-6 text-center font-extrabold text-primary">10</td>
+                    <td class="px-8 py-6">
+                        <div class="text-xs font-bold text-on-surface-variant">Аттестован</div>
+                    </td>
+                </tr>
+                <!-- Row 3 -->
+                <tr class="hover:bg-surface-container-low/50 transition-colors group opacity-50">
+                    <td class="px-8 py-6 sticky left-0 bg-surface-container-lowest group-hover:bg-surface-container-low/50 z-10">
+                        <div class="flex items-center gap-4">
+                            <div class="font-semibold text-on-surface">Сидоров Дмитрий Иванович</div>
+                        </div>
+                    </td>
+                    <td class="px-4 py-6">
+                        <div class="text-sm font-medium">Начальник отдела</div>
+                    </td>
+                    <td class="px-4 py-6">
+                        <div class="text-sm">15.9</div>
+                    </td>
+                    <td class="px-4 py-6">
+                        <div class="text-sm">Национальное кадастровое агентство</div>
+                    </td>
+                    <td class="px-4 py-6">
+                        <div class="text-[11px] leading-tight max-w-[250px]">
+                            <span class="font-bold">Образование, наименование учебного заведения</span><br/>
+                            <span class="text-on-surface-variant italic">Cпециальность по образованию, квалификация</span>
+                        </div>
+                    </td>
+                    <td class="px-4 py-6 text-center">
+                        <button class="p-2 hover:bg-surface-container rounded-lg text-primary opacity-50" disabled="">
+                            <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">3</span>
+                            <span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
+                        </button>
+                    </td>
+                    <td class="px-4 py-6">
+                        <span class="bg-error-container text-on-error-container text-[10px] font-bold px-2 py-1 rounded-full uppercase">-1</span>
+                    </td>
+                    <td class="px-4 py-6">
+                        <!--<div class="text-[11px] text-on-surface-variant italic">где, номер документа, дата его выдачи, наименование курсов, оценка</div>-->
+                        <div class="text-[11px] leading-tight max-w-[250px]">
+                            <span class="font-bold">где, номер документа, дата его выдачи, наименование курсов, оценка</span><br/>
+                            <span class="text-on-surface-variant italic">Оценка</span>
+                        </div>
+
+                    </td>
+                    <td class="px-4 py-6 text-center font-bold text-error">0/100</td>
+                    <td class="px-4 py-6 text-sm">--</td>
+                    <td class="px-4 py-6">
+                        <span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">0</span>
+                    </td>
+
+
+                    <td class="px-4 py-6 text-center font-extrabold text-on-surface-variant">0</td>
+                    <td class="px-8 py-6">
+                        <div class="text-xs font-bold text-error">Результат аннулирован</div>
+                    </td>
+                </tr>
+                <!-- Row 4 -->
+                <tr class="hover:bg-surface-container-low/50 transition-colors group">
+                    <td class="px-8 py-6 sticky left-0 bg-surface-container-lowest group-hover:bg-surface-container-low/50 z-10">
+                        <div class="flex items-center gap-4">
+                            <div class="font-semibold text-on-surface">Петрова Валерия Степановна</div>
+                        </div>
+                    </td>
+                    <td class="px-4 py-6">
+                        <div class="text-sm font-medium">Специалист по ТИ</div>
+                    </td>
+                    <td class="px-4 py-6">
+                        <div class="text-sm">1.1</div>
+                    </td>
+                    <td class="px-4 py-6">
+                        <div class="text-sm">Гомельское Агентство</div>
+                    </td>
+                    <td class="px-4 py-6">
+                        <div class="text-[11px] leading-tight max-w-[250px]">
+                            <span class="font-bold">Образование, наименование учебного заведения</span><br/>
+                            <span class="text-on-surface-variant italic">Cпециальность по образованию, квалификация</span>
+                        </div>
+                    </td>
+                    <td class="px-4 py-6 text-center">
+                        <button class="p-2 hover:bg-surface-container rounded-lg text-primary" title="Скачать характеристику">
+                            <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">1</span>
+                            <span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
+                        </button>
+                    </td>
+                    <td class="px-4 py-6">
+                        <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">3</span>
+                    </td>
+                    <td class="px-4 py-6">
+                        <div class="text-[11px] leading-tight max-w-[250px]">
+                            <span class="font-bold">где, номер документа, дата его выдачи, наименование курсов, оценка</span><br/>
+                            <span class="text-on-surface-variant italic">Оценка</span>
+                        </div>
+                    </td>
+                    <td class="px-4 py-6 text-center font-bold text-on-surface">40/40</td>
+                    <td class="px-4 py-6 text-sm">24.04.2026</td>
+                    <td class="px-4 py-6">
+                        <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">3</span>
+                    </td>
+                    <td class="px-4 py-6 text-center font-extrabold text-primary">12</td>
+                    <td class="px-8 py-6">
+                        <div class="text-xs font-bold text-tertiary">Аттестован, рекомендовано присвоение категории</div>
+                    </td>
+                </tr>
+                <!-- Row 5 -->
+                <tr class="hover:bg-surface-container-low/50 transition-colors group">
+                    <td class="px-8 py-6 sticky left-0 bg-surface-container-lowest group-hover:bg-surface-container-low/50 z-10">
+                        <div class="flex items-center gap-4">
+                            <div class="font-semibold text-on-surface">Кузнецов Михаил Петрович</div>
+                        </div>
+                    </td>
+                    <td class="px-4 py-6">
+                        <div class="text-sm font-medium">Инженер</div>
+                    </td>
+                    <td class="px-4 py-6">
+                        <div class="text-sm">0.5</div>
+                    </td>
+                    <td class="px-4 py-6">
+                        <div class="text-sm">Брестское Агентство</div>
+                    </td>
+                    <td class="px-4 py-6">
+                        <div class="text-[11px] leading-tight max-w-[250px]">
+                            <span class="font-bold">Образование, наименование учебного заведения</span><br/>
+                            <span class="text-on-surface-variant italic">Cпециальность по образованию, квалификация</span>
+                        </div>
+                    </td>
+                    <td class="px-4 py-6 text-center">
+                        <button class="p-2 hover:bg-surface-container rounded-lg text-primary" title="Скачать характеристику">
+                            <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">3</span>
+                            <span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
+                        </button>
+                    </td>
+                    <td class="px-4 py-6">
+                        <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">0</span>
+                    </td>
+                    <td class="px-4 py-6">
+                        <div class="text-[11px] leading-tight max-w-[250px]">
+                            <span class="font-bold">где, номер документа, дата его выдачи, наименование курсов, оценка</span><br/>
+                            <span class="text-on-surface-variant italic">Оценка</span>
+                        </div>
+                    </td>
+                    <td class="px-4 py-6 text-center font-bold text-on-surface">40/40</td>
+                    <td class="px-4 py-6 text-sm">24.04.2026</td>
+                    <td class="px-4 py-6">
+                        <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">1</span>
+                    </td>
+                    <td class="px-4 py-6 text-center font-extrabold text-primary">8</td>
+                    <td class="px-8 py-6">
+                        <div class="text-xs font-bold text-tertiary">Аттестован, рекомендовано присвоение категории</div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- Pagination -->
+        <div class="p-8 flex items-center justify-between mt-auto">
+            <span class="text-xs text-outline font-medium">Показано 1-5 из 25 претендентов</span>
+            <div class="flex gap-2">
+                <button class="p-2 bg-surface-container-lowest text-outline hover:text-primary rounded transition-colors"><span class="material-symbols-outlined">chevron_left</span></button>
+                <button class="w-8 h-8 flex items-center justify-center bg-surface-tint text-white font-label-md rounded">1</button>
+                <button class="w-8 h-8 flex items-center justify-center text-outline hover:bg-surface-container-high rounded">2</button>
+                <button class="w-8 h-8 flex items-center justify-center text-outline hover:bg-surface-container-high rounded">3</button>
+                <button class="p-2 bg-surface-container-lowest text-outline hover:text-primary rounded transition-colors"><span class="material-symbols-outlined">chevron_right</span></button>
+            </div>
+        </div>
+    </section>
+</main>
+<!-- BG Right Sidebar: Individual Audit -->
+<aside class="fixed right-0 top-20 bottom-0 w-[400px] bg-surface-container-lowest shadow-2xl z-20 overflow-y-auto">
+    <div class="p-8 space-y-8">
+        <div class="flex justify-between items-start">
+            <h2 class="font-headline-md text-on-surface">Карточка претендента</h2>
+            <button class="text-on-surface-variant hover:text-on-surface transition-colors p-1 rounded-full">
+                <span class="material-symbols-outlined" data-icon="close">close</span>
+            </button>
+        </div>
+        <!-- Selected Candidate Card -->
+        <div class="bg-surface-container-low p-6 rounded-xl space-y-4">
+            <div class="flex items-center gap-4">
+                <!--<div class="h-16 w-16 rounded-full overflow-hidden ring-4 ring-white shadow-sm">-->
+                <!--<img alt="Selected Candidate" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2cAb8XQY7qMR_Fjiy17SHnw28wTDpl8B9Ok194WVIS9KAAtM5ztyfOSVvbDgQHGFnWATO11qCWdCQUi7aewAHkpxanyQG6w5RXQ8HaeBMx4wkSEzQ57PXrLHMx1fCK3piGY4Iw3Y58ZRbx5jPwiVwz9i39czwBmajf83RjPga3D_0KFlyZn7KcjSgE8A-nIXqzhp_EhSdYsyEXX_6qaVkU2byRSPuucdTEy3dYWpLPeRLM0oHA1IFfyfkEacZ78kXiCKlv4VTHplp"/>-->
+                <!--</div>-->
+                <div>
+                    <div class="font-bold text-lg text-on-surface">Иванов Алексей Иванович</div>
+                    <div class="text-xs text-primary font-bold uppercase tracking-wide">Тест завершен</div>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 pt-4 border-t border-surface-container">
+                <div>
+                    <div class="text-[10px] uppercase text-on-surface-variant font-bold tracking-tight">Итоговый результат:</div>
+                    <div class="text-2xl font-extrabold text-on-surface">80.5%</div>
+                </div>
+                <div>
+                    <div class="text-[10px] uppercase text-on-surface-variant font-bold tracking-tight">Затрачено времени:</div>
+                    <div class="text-2xl font-extrabold text-on-surface">34:12</div>
+                </div>
+            </div>
+        </div>
+        <!-- Accuracy Breakdown -->
+        <div class="space-y-6">
+            <h4 class="text-label-sm uppercase text-on-surface-variant tracking-[0.15em] font-bold">Статистика прохождения теста</h4>
+            <div class="space-y-5">
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm">
+                        <span class="font-medium text-on-surface">Гражданский кодекс</span>
+                        <span class="font-bold text-on-surface">100%</span>
+                    </div>
+                    <div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+                        <div class="h-full bg-green-500 w-[100%]"></div>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm">
+                        <span class="font-medium text-on-surface">Закон о государственной регистрации</span>
+                        <span class="font-bold text-on-surface">88%</span>
+                    </div>
+                    <div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+                        <div class="h-full bg-green-500 w-[100%]"></div>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm">
+                        <span class="font-medium text-on-surface">Инструкция о кадастровых номерах</span>
+                        <span class="font-bold text-on-surface">95%</span>
+                    </div>
+                    <div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+                        <div class="h-full bg-primary w-[95%]"></div>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm">
+                        <span class="font-medium text-on-surface">Инструкция о порядке ведения адресной системы</span>
+                        <span class="font-bold text-on-surface">100%</span>
+                    </div>
+                    <div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+                        <div class="h-full bg-green-500 w-[100%]"></div>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm">
+                        <span class="font-medium text-on-surface">Инструкция № 11</span>
+                        <span class="font-bold text-on-surface">88%</span>
+                    </div>
+                    <div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+                        <div class="h-full bg-primary w-[88%]"></div>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm">
+                        <span class="font-medium text-on-surface">Инструкция об инвентарных номерах</span>
+                        <span class="font-bold text-on-surface">100%</span>
+                    </div>
+                    <div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+                        <div class="h-full bg-green-500 w-[100%]"></div>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm">
+                        <span class="font-medium text-on-surface">Кодекс Республики Беларусь о земле</span>
+                        <span class="font-bold text-on-surface">100%</span>
+                    </div>
+                    <div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+                        <div class="h-full bg-green-500 w-[100%]"></div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <!-- Question Ledger -->
+        <div class="space-y-4">
+            <div class="flex justify-between items-center">
+                <h4 class="text-label-sm uppercase text-on-surface-variant tracking-[0.15em] font-bold">Список вопросов</h4>
+                <span class="text-xs text-on-surface-variant">Всего: 40 вопросов</span>
+            </div>
+            <div class="space-y-2">
+                <div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low group hover:bg-surface-container-lowest transition-colors cursor-pointer">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-green-500 text-lg" data-icon="check_circle">check_circle</span>
+                        <span class="text-sm font-medium">Вопрос № 1. В соответствии с Гражданским Кодексом, что ...</span>
+                    </div>
+                    <span class="text-[10px] text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">Выбрано б)</span>
+                </div>
+                <div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low group hover:bg-surface-container-lowest transition-colors cursor-pointer border-l-4 border-error/30">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-error text-lg" data-icon="cancel">cancel</span>
+                        <span class="text-sm font-medium">Вопрос № 2. Чем в соответствии с ГК является строительств...</span>
+                    </div>
+                    <span class="text-[10px] text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">Выбрано а)</span>
+                </div>
+                <div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low group hover:bg-surface-container-lowest transition-colors cursor-pointer">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-green-500 text-lg" data-icon="check_circle">check_circle</span>
+                        <span class="text-sm font-medium">Вопрос № 3. Чем в соответствии с ГК является строительств...</span>
+                    </div>
+                    <span class="text-[10px] text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">Выбрано в)</span>
+                </div>
+                <div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low group hover:bg-surface-container-lowest transition-colors cursor-pointer">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-green-500 text-lg" data-icon="check_circle">check_circle</span>
+                        <span class="text-sm font-medium">Вопрос № 4. В соответствии с Гражданским Кодексом, что ...</span>
+                    </div>
+                    <span class="text-[10px] text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">Выбрано б)</span>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Actions Sidebar -->
+        <div class="pt-8 border-t border-surface-container grid grid-cols-2 gap-4">
+            <button class="bg-surface-container hover:bg-surface-container-high py-3 rounded-xl font-label-md text-on-surface transition-colors flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined text-sm" data-icon="edit">edit</span>
+                Редактировать
+            </button>
+            <button class="primary-gradient py-3 rounded-xl font-label-md text-white transition-all flex items-center justify-center gap-2 shadow-sm">
+                <span class="material-symbols-outlined text-sm" data-icon="assignment_turned_in">assignment_turned_in</span>
+                Завершить
+            </button>
+        </div>
+    </div>
+</aside>
+    <div class="fixed inset-0 z-[100] flex items-center justify-center p-8 bg-on-surface/40 backdrop-blur-sm">
+<!-- BG Main Modal Overlay Container -->
+<div class="relative w-full max-w-7xl h-full bg-surface-bright shadow-2xl overflow-hidden flex flex-col rounded-xl">
+<!--MODAL Encryption Ribbon -->
+<div class="h-10 bg-on-tertiary-fixed flex items-center justify-between px-6 shrink-0">
+    <!-- Modal close -->
+        <div>
+        </div>
+        <button class="w-10 h-10 rounded-full  flex items-center justify-center text-outline transition-colors">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+</div>
+<!-- Top Header Actions -->
+<div class="px-8 py-6 flex items-center justify-between bg-surface-container-lowest shrink-0">
+<div class="flex items-center gap-6">
+<div>
+<h1 class="font-headline-md text-on-surface leading-tight">Сведения о претенденте</h1>
+<p class="text-label-md text-outline">Дата аттестации: 25.04.2026</p>
+</div>
+</div>
+<!-- Special Status Tags -->
+<div class="flex gap-2">
+<button class="px-4 py-2 text-label-sm rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-colors">Отсутствие по уважительной причине</button>
+<button class="px-4 py-2 text-label-sm rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-colors">Отсутствие без уважительной причины</button>
+<button class="px-4 py-2 text-label-sm rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-colors">Отказе от прохождения аттестации</button>
+<button class="px-4 py-2 text-label-sm rounded-full bg-error-container text-on-error-container hover:opacity-80 transition-opacity">Апелляция</button>
+</div>
+</div>
+<!-- Modal Body Content -->
+<div class="flex-1 overflow-hidden flex">
+<!-- LEFT AREA: Candidate Data -->
+<div class="w-[55%] bg-surface-container-low p-8 overflow-y-auto space-y-section-gap">
+<!-- Section: Personal Information -->
+<div class="space-y-4">
+<div class="flex items-center gap-2 mb-4">
+<span class="w-1 h-6 bg-primary rounded-full"></span>
+<h2 class="text-label-md uppercase tracking-widest text-primary">Аттестационный лист</h2>
+</div>
+<div class="grid grid-cols-2 gap-y-6 gap-x-8">
+<div class="flex flex-col gap-1">
+<span class="text-label-sm text-outline uppercase">Фамилия, имя, отчество</span>
+<span class="font-label-md text-on-surface">Иванов Алексей Иванович</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-label-sm text-outline uppercase">Должность</span>
+<span class="font-label-md text-on-surface">Специалист по ТИ 1 к.</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-label-sm text-outline uppercase">Стаж работы в должности</span>
+<span class="font-label-md text-on-surface">12.2</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-label-sm text-outline uppercase">Наименование организации </span>
+<span class="font-label-md text-on-surface">Минское городское Агентство</span>
+</div>
+</div>
+</div>
+<!-- Section: Academic Profile -->
+<div class="bg-surface-container-lowest p-6 rounded-lg space-y-4">
+<h3 class="text-label-md text-on-surface-variant">Образование | Профессиональная деятельность</h3>
+<div class="space-y-4">
+<div class="flex flex-col gap-1">
+    <span class="text-label-sm text-outline">Уровень образования</span>
+    <p class="text-body-md leading-relaxed">высшее</p>
+<span class="text-label-sm text-outline">Наименование учебного заведения</span>
+<p class="text-body-md leading-relaxed">Наименование</p>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-label-sm text-outline">Специальность по образованию</span>
+<p class="text-body-md">специальность</p>
+    <span class="text-label-sm text-outline">Квалификация</span>
+    <p class="text-body-md">квалификация</p>
+</div>
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-2 text-primary cursor-pointer hover:underline">
+<span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
+<span class="text-label-md">Характеристика.pdf</span>
+</div>
+<span class="text-label-sm px-2 py-0.5 bg-green-100 text-green-800 rounded">Балл: 3</span>
+</div>
+    <div class="flex items-center justify-between pt-2">
+        <div class="flex items-center gap-2 text-primary cursor-pointer hover:underline">
+            <span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
+            <span class="text-label-md">Проверка правильности выполнения работ.pdf</span>
+        </div>
+        <span class="text-label-sm px-2 py-0.5 bg-green-100 text-green-800 rounded">Балл: 2</span>
+    </div>
+    <div class="flex flex-col gap-1">
+        <span class="text-label-sm text-outline">Повышение квалификации</span>
+        <p class="text-body-md leading-relaxed">где</p>
+        <span class="text-label-sm text-outline">Номер документа</span>
+        <p class="text-body-md leading-relaxed">№№</p>
+        <span class="text-label-sm text-outline">Дата выдачи</span>
+        <p class="text-body-md leading-relaxed">--.--.--</p>
+        <span class="text-label-sm text-outline">Наименование курсов</span>
+        <p class="text-body-md leading-relaxed">наименование</p>
+        <div class="flex items-center justify-between pt-2">
+            <div class="flex items-center gap-2 text-primary cursor-pointer">
+                <span class="text-label-sm text-outline">Оценка</span>
+            </div>
+            <span class="text-label-sm px-2 py-0.5 bg-green-100 text-green-800 rounded">Балл: 2</span>
+        </div>
+    </div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-8 border-t-4 border-primary rounded-lg space-y-6">
+<div class="flex items-center justify-between">
+<h3 class="text-headline-md text-primary">Результат тестирования</h3>
+<div class="flex flex-col items-end">
+<span class="text-label-sm text-outline">балл</span>
+<span class="text-headline-md">3</span>
+</div>
+</div>
+<div class="space-y-4">
+<!--<div class="space-y-2">-->
+<!--<label class="text-label-sm text-on-surface uppercase">Результат собеседования</label>-->
+<!--<div class="relative">-->
+<!--<input class="w-full bg-surface-container-highest h-12 px-4 border-none focus:ring-0 focus:border-b-2 focus:border-surface-tint transition-all outline-none text-headline-md" type="number" value="1"/>-->
+<!--<span class="absolute right-4 top-3 material-symbols-outlined text-outline" data-icon="lock">lock</span>-->
+<!--</div>-->
+<!--</div>-->
+<div class="space-y-2">
+<label class="text-label-sm text-on-surface uppercase">Результат собеседования</label>
+<select class="w-full bg-surface-container-highest h-12 px-4 border-none focus:ring-0 focus:border-b-2 focus:border-surface-tint transition-all outline-none font-label-md appearance-none">
+<option selected="">Ответ демонстрирует знания высокого уровня по вопросу: 3</option>
+<option >Ответ демонстрирует знания хорошего уровня по вопросу: 2</option>
+<option>В целом ответ демонстрирует знания достаточного уровня по вопросу: 1</option>
+    <option>Ответ демонстрирует знания недостаточного уровня по вопрос: 0</option>
+<option>Ответ демонстрирует знания низкого уровня по вопросу: -1</option>
+    <option>Ответ демонстрирует отсутствие знаний по вопросу: -2</option>
+    <option>Собеседование не проводилось: 0</option>
+
+<!--    5 (Ответ демонстрирует знания высокого уровня по вопросу)-->
+<!--    4 (Ответ демонстрирует знания хорошего уровня по вопросу)-->
+<!--    3 (В целом ответ демонстрирует знания достаточного уровня по вопросу)-->
+<!--    2 (Ответ демонстрирует знания недостаточного уровня по вопросу)-->
+<!--    1 (Ответ демонстрирует знания низкого уровня по вопросу)-->
+<!--    0 (Ответ демонстрирует отсутствие знаний по вопросу)-->
+</select>
+</div>
+    <div class="space-y-2">
+        <label class="text-label-sm text-on-surface uppercase">Решение аттестационной комиссии </label>
+        <select class="w-full bg-surface-container-highest h-12 px-4 border-none focus:ring-0 focus:border-b-2 focus:border-surface-tint transition-all outline-none font-label-md appearance-none">
+            <option selected="">Аттестован, соответствует занимаемой должности</option>
+            <option >Аттестован, рекомендуется для присвоения (подтверждения) категории</option>
+            <option>Аттестован, рекомендуется для присвоения (подтверждения) должности</option>
+            <option>Аттестован, рекомендуется для для принятия решения о премировании</option>
+            <option>Не аттестован</option>
+            <option>Не аттестован, не соответствует занимаемой должности</option>
+            <option>Аттестован, допущен к выполнению работ в отношении видов объектов недвижимого имущества повышенной сложности </option>
+
+            <!--    для аттестации на право выполнять работы по технической инвентаризации претенденту необходимо набрать не менее пяти баллов;-->
+            <!--    для присвоения (подтверждения) II квалификационной категории претенденту необходимо набрать не менее шести баллов;-->
+            <!--    для присвоения (подтверждения) I квалификационной категории претенденту необходимо набрать не менее семи баллов;-->
+            <!--    для присвоения (подтверждения) должности ведущего специалиста по технической инвентаризации, руководителя структурного подразделения, выполняющего работы по технической инвентаризации претенденту необходимо набрать не менее восьми баллов;-->
+            <!--    для принятия решения о премировании претендента необходимо набрать не менее девяти баллов.-->
+
+        </select>
+    </div>
+<div class="flex items-center justify-between pt-4">
+<span class="text-label-md font-bold text-on-surface">Результат аттестации (общая сумма баллов)</span>
+<span class="text-[32px] font-extrabold text-primary">10</span>
+</div>
+<div class="flex items-center gap-3 py-2">
+<input  class="rounded-sm border-outline text-primary focus:ring-primary w-5 h-5" id="familiarized" type="checkbox" checked disabled/>
+<label class="text-label-md text-on-surface-variant" for="familiarized">Наличие отметки об ознакомлении с аттестационным листом</label>
+</div>
+</div>
+<div class="pt-4 flex flex-col gap-3">
+<button class="w-full h-12 primary-gradient text-on-primary font-label-md rounded shadow-lg flex items-center justify-center gap-2 hover:opacity-90 transition-all">
+<span class="material-symbols-outlined" data-icon="save">save</span>
+                                Сохранить аттестационный лист
+                            </button>
+    <button class="w-full h-12 bg-error-container text-on-error-container hover:opacity-70 transition-opacity font-label-md rounded shadow-lg flex items-center justify-center gap-2">
+<!--        <button class="w-full h-12 primary-gradient text-on-primary font-label-md rounded shadow-lg flex items-center justify-center gap-2 hover:opacity-80 transition-all">-->
+        <span class="material-symbols-outlined text-[16px]" data-icon="cancel">cancel</span>
+        Аннулировать результат
+
+    </button>
+</div>
+</div>
+</div>
+<!-- RIGHT AREA: Test Statistics -->
+<div class="w-[45%] bg-surface-bright p-8 overflow-y-auto space-y-section-gap border-l border-outline-variant/10">
+<div class="flex items-center gap-2 mb-6">
+<span class="w-1 h-6 bg-secondary rounded-full"></span>
+<h2 class="text-label-md uppercase tracking-widest text-secondary">Отчет о прохождении теста</h2>
+</div>
+<!-- Key Stats Grid -->
+<div class="grid grid-cols-3 gap-6">
+<div class="bg-surface-container-lowest p-6 rounded-lg border-b-2 border-primary shadow-sm">
+<span class="text-label-sm text-outline block mb-2">Процент правильности</span>
+<span class="text-[28px] font-bold text-on-surface">80%</span>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-lg border-b-2 border-secondary shadow-sm">
+<span class="text-label-sm text-outline block mb-2">Правильных ответов</span>
+<span class="text-[28px] font-bold text-on-surface">32</span>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-lg border-b-2 border-on-secondary-fixed-variant shadow-sm">
+<span class="text-label-sm text-outline block mb-2">Затрачено времени, минуты</span>
+<span class="text-[28px] font-bold text-on-surface">28</span>
+</div>
+</div>
+<!-- Complexity & Section Metrics -->
+<div class="grid grid-cols-2 gap-module-gap">
+<div class="space-y-4">
+<h4 class="text-label-sm font-bold text-outline uppercase">Процент правильности по сложности</h4>
+<div class="space-y-3">
+<div class="space-y-1">
+<div class="flex justify-between text-label-sm">
+<span>Легкие (8)</span>
+<span class="font-bold">100%</span>
+</div>
+<div class="h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-full"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-label-sm">
+<span>Средние (24)</span>
+<span class="font-bold">88%</span>
+</div>
+<div class="h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[88%]"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-label-sm">
+<span>Сложные (8)</span>
+<span class="font-bold">74%</span>
+</div>
+<div class="h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[74%]"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="text-label-sm font-bold text-outline uppercase">Процент правильности по Разделам</h4>
+<div class="space-y-3">
+<div class="space-y-1">
+<div class="flex justify-between text-label-sm">
+<span>Гражданский кодекс</span>
+<span class="font-bold">95%</span>
+</div>
+<div class="h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-green-500 w-[95%]"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-label-sm">
+<span>Закон о государственной регистрации</span>
+<span class="font-bold">82%</span>
+</div>
+<div class="h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[82%]"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-label-sm">
+<span>Инструкция о кадастровых номерах</span>
+<span class="font-bold">100%</span>
+</div>
+<div class="h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-green-500 w-full"></div>
+</div>
+</div>
+    <div class="space-y-1">
+        <div class="flex justify-between text-label-sm">
+            <span>Инструкция о порядке ведения адресной системы</span>
+            <span class="font-bold">100%</span>
+        </div>
+        <div class="h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+            <div class="h-full bg-green-500 w-full"></div>
+        </div>
+    </div>
+    <div class="space-y-1">
+        <div class="flex justify-between text-label-sm">
+            <span>Инструкция № 11</span>
+            <span class="font-bold">78%</span>
+        </div>
+        <div class="h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+            <div class="h-full bg-secondary w-[78%]"></div>
+        </div>
+    </div>
+    <div class="space-y-1">
+        <div class="flex justify-between text-label-sm">
+            <span>Инструкция об инвентарных номерах</span>
+            <span class="font-bold">100%</span>
+        </div>
+        <div class="h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+            <div class="h-full bg-green-500 w-full"></div>
+        </div>
+    </div>
+    <div class="space-y-1">
+        <div class="flex justify-between text-label-sm">
+            <span>Кодекс Республики Беларусь о земле</span>
+            <span class="font-bold">100%</span>
+        </div>
+        <div class="h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+            <div class="h-full bg-green-500 w-full"></div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+    <!-- Accordion List: Question Details -->
+    <div class="space-y-4">
+        <div class="flex items-center justify-between">
+            <h4 class="text-label-md font-bold text-on-surface uppercase">Детализация ответов Претендента</h4>
+            <div class="flex items-center bg-surface-container-low p-1 rounded-lg border border-outline-variant/30">
+                <button class="px-3 py-1 text-[11px] font-bold uppercase tracking-wider rounded bg-surface-container-lowest text-primary shadow-sm transition-all">
+                    Все
+                </button>
+                <button class="px-3 py-1 text-[11px] font-bold uppercase tracking-wider rounded text-outline hover:text-on-surface transition-all">
+                    Правильные
+                </button>
+                <button class="px-3 py-1 text-[11px] font-bold uppercase tracking-wider rounded text-outline hover:text-on-surface transition-all">
+                    Неправильные
+                </button>
+                <button class="px-3 py-1 text-[11px] font-bold uppercase tracking-wider rounded text-outline hover:text-on-surface transition-all">
+                    Нет ответа
+                </button>
+            </div>
+        </div>
+<!--        <div class="space-y-2">-->
+<!--            &lt;!&ndash; Question Card 1 &ndash;&gt;-->
+<!--            <div class="bg-surface-container-low rounded p-5 hover:bg-surface-container transition-colors cursor-pointer group">-->
+<!--                <div class="flex justify-between items-start">-->
+<!--                    <div class="flex-1">-->
+<!--                        <div class="flex items-center gap-2 mb-2">-->
+<!--                            <span class="text-label-sm font-bold text-primary">#001</span>-->
+<!--                            <span class="px-2 py-0.5 rounded-sm bg-green-100 text-green-700 text-[10px] font-bold uppercase">Correct</span>-->
+<!--                        </div>-->
+<!--                        <p class="text-label-md font-medium text-on-surface mb-3">Define the primary mechanism of AES-256 bit block encryption in high-latency environments.</p>-->
+<!--                        <div class="grid grid-cols-2 gap-4">-->
+<!--                            <div class="flex flex-col">-->
+<!--                                <span class="text-[10px] text-outline uppercase">Chosen Answer</span>-->
+<!--                                <span class="text-label-sm font-bold text-on-surface">Symmetric Rijndael Substitution</span>-->
+<!--                            </div>-->
+<!--                            <div class="flex flex-col">-->
+<!--                                <span class="text-[10px] text-outline uppercase">Correct Answer</span>-->
+<!--                                <span class="text-label-sm font-bold text-green-600">Symmetric Rijndael Substitution</span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            &lt;!&ndash; Question Card 2 &ndash;&gt;-->
+<!--            <div class="bg-surface-container-low rounded p-5 hover:bg-surface-container transition-colors cursor-pointer group">-->
+<!--                <div class="flex justify-between items-start">-->
+<!--                    <div class="flex-1">-->
+<!--                        <div class="flex items-center gap-2 mb-2">-->
+<!--                            <span class="text-label-sm font-bold text-primary">#002</span>-->
+<!--                            <span class="px-2 py-0.5 rounded-sm bg-error-container text-error text-[10px] font-bold uppercase">Incorrect</span>-->
+<!--                        </div>-->
+<!--                        <p class="text-label-md font-medium text-on-surface mb-3">Which protocol is mandated for internal lateral movement monitoring within the Vault Architecture?</p>-->
+<!--                        <div class="grid grid-cols-2 gap-4">-->
+<!--                            <div class="flex flex-col">-->
+<!--                                <span class="text-[10px] text-outline uppercase">Chosen Answer</span>-->
+<!--                                <span class="text-label-sm font-bold text-error">Standard OIDC Flow</span>-->
+<!--                            </div>-->
+<!--                            <div class="flex flex-col">-->
+<!--                                <span class="text-[10px] text-outline uppercase">Correct Answer</span>-->
+<!--                                <span class="text-label-sm font-bold text-green-600">Zero-Trust Mutual TLS (mTLS)</span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            &lt;!&ndash; Question Card 3 &ndash;&gt;-->
+<!--            <div class="bg-surface-container-low rounded p-5 hover:bg-surface-container transition-colors cursor-pointer group">-->
+<!--                <div class="flex justify-between items-start">-->
+<!--                    <div class="flex-1">-->
+<!--                        <div class="flex items-center gap-2 mb-2">-->
+<!--                            <span class="text-label-sm font-bold text-primary">#003</span>-->
+<!--                            <span class="px-2 py-0.5 rounded-sm bg-green-100 text-green-700 text-[10px] font-bold uppercase">Correct</span>-->
+<!--                        </div>-->
+<!--                        <p class="text-label-md font-medium text-on-surface mb-3">Explain the impact of "Quantun-Ready" salting on legacy SHA-256 databases.</p>-->
+<!--                        <div class="grid grid-cols-2 gap-4">-->
+<!--                            <div class="flex flex-col">-->
+<!--                                <span class="text-[10px] text-outline uppercase">Chosen Answer</span>-->
+<!--                                <span class="text-label-sm font-bold text-on-surface">Entropy saturation increase by 40%</span>-->
+<!--                            </div>-->
+<!--                            <div class="flex flex-col">-->
+<!--                                <span class="text-[10px] text-outline uppercase">Correct Answer</span>-->
+<!--                                <span class="text-label-sm font-bold text-green-600">Entropy saturation increase by 40%</span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+        <!-- Detailed Question Review  -->
+        <div class="space-y-4">
+            <div class="space-y-3">
+                <!-- Question Card 1 (Correct) -->
+                <details class="group bg-surface-container-low rounded-lg overflow-hidden transition-all duration-300">
+                    <summary class="list-none cursor-pointer p-5 flex items-center justify-between hover:bg-surface-container-high transition-colors">
+                        <div class="flex items-center gap-4">
+                            <span class="text-label-sm font-bold text-primary tracking-wider">№01</span>
+                            <span class="px-2 py-0.5 rounded-sm bg-green-100 text-green-700 text-[10px] font-bold uppercase">Правильный</span>
+                        </div>
+                        <span class="material-symbols-outlined text-outline expand-icon transition-transform duration-300">keyboard_arrow_down</span>
+                    </summary>
+                    <div class="px-5 pb-5 pt-2 space-y-6">
+                        <div class="p-4 bg-surface-container-highest/40 rounded-lg">
+                            <p class="text-label-md font-medium text-on-surface">Что такое сервитут в соответствии с Гражданским Кодексом?</p>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="space-y-2">
+                                <div class="flex items-center gap-3 p-3 rounded bg-green-50 border-l-4 border-green-500">
+                                    <span class="material-symbols-outlined text-green-600 text-[20px]">check_circle</span>
+                                    <div class="flex-1">
+                                        <p class="text-label-sm font-bold text-on-surface">Ответ претендента</p>
+                                        <span class="text-[10px] text-green-700 uppercase font-bold">право ограниченного пользования соседним или другим недвижимым имуществом</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3 p-3 rounded bg-surface-container-lowest">
+                                    <div class="w-5 h-5 rounded-full border-2 border-outline-variant/30"></div>
+                                    <p class="text-label-sm text-on-surface-variant">право ограниченного владения соседним или другим недвижимым имуществом</p>
+                                </div>
+                                <div class="flex items-center gap-3 p-3 rounded bg-surface-container-lowest">
+                                    <div class="w-5 h-5 rounded-full border-2 border-outline-variant/30"></div>
+                                    <p class="text-label-sm text-on-surface-variant">право ограниченного распоряжения соседним или другим недвижимым имуществом</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-outline-variant/20 space-y-3">
+                            <h5 class="text-label-sm font-bold text-primary uppercase tracking-wider">Структурная единица, текст</h5>
+                            <div class="bg-surface-container-highest/60 p-4 rounded text-body-md text-on-surface-variant italic leading-relaxed">
+                                "ст.268 ГК. Собственник недвижимого имущества вправе требовать от собственника соседнего недвижимого имущества, а в необходимых случаях - и от собственника другого недвижимого имущества предоставления права ограниченного пользования недвижимым имуществом (сервитута)."
+                            </div>
+                            <a class="inline-flex items-center gap-2 text-primary text-label-md font-bold hover:underline" href="#">
+                                <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+                                Ссылка на документ
+                            </a>
+                        </div>
+                    </div>
+                </details>
+                <!-- Question Card 2 (Incorrect) -->
+                <details class="group bg-surface-container-low rounded-lg overflow-hidden transition-all duration-300">
+                    <summary class="list-none cursor-pointer p-5 flex items-center justify-between hover:bg-surface-container-high transition-colors">
+                        <div class="flex items-center gap-4">
+                            <span class="text-label-sm font-bold text-primary tracking-wider">№02</span>
+                            <span class="px-2 py-0.5 rounded-sm bg-error-container text-error text-[10px] font-bold uppercase">Неправильный</span>
+                        </div>
+                        <span class="material-symbols-outlined text-outline expand-icon transition-transform duration-300">keyboard_arrow_down</span>
+                    </summary>
+                    <div class="px-5 pb-5 pt-2 space-y-6">
+                        <div class="p-4 bg-surface-container-highest/40 rounded-lg">
+                            <p class="text-label-md font-medium text-on-surface">Какая степень округления величины готовности допускается для незавершенного законсервированного (незаконсервированного) капитального строения в целом?</p>
+                        </div>
+                        <div class="space-y-2">
+<!--                            <span class="text-label-sm text-outline uppercase font-bold">Response Analysis</span>-->
+                            <div class="space-y-2">
+                                <div class="flex items-center gap-3 p-3 rounded bg-error-container/20 border-l-4 border-error">
+                                    <span class="material-symbols-outlined text-error text-[20px]">cancel</span>
+                                    <div class="flex-1">
+                                        <p class="text-label-sm font-bold text-on-surface">до 5%;</p>
+                                        <span class="text-[10px] text-error uppercase font-bold">Ответ претендента</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3 p-3 rounded bg-green-50 border-l-4 border-green-500">
+                                    <span class="material-symbols-outlined text-green-600 text-[20px]">check_circle</span>
+                                    <div class="flex-1">
+                                        <p class="text-label-sm font-bold text-on-surface"> до 1%;</p>
+                                        <span class="text-[10px] text-green-700 uppercase font-bold">Правильный ответ</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-outline-variant/20 space-y-3">
+                            <h5 class="text-label-sm font-bold text-primary uppercase tracking-wider">Структурная единица, текст</h5>
+                            <div class="bg-surface-container-highest/60 p-4 rounded text-body-md text-on-surface-variant italic leading-relaxed">
+                                "п. 263. Готовность незавершенного строения в целом определяется принятым в технической инвентаризации методом сложения величин готовности отдельных конструктивных элементов, взвешенных по удельному весу капитального строения (здания, сооружения) с поправками. Формула определения готовности незавершенного строения в целом: где С - готовность незавершенного строения в целом; - сумма величин готовности отдельных конструктивных элементов; В - сумма удельного веса конструктивных элементов капитального строения (здания, сооружения) с поправками к ним. Допускается следующая степень округления величины готовности: для отдельных участков конструктивного элемента - до 10%; для конструктивного элемента в целом - до 5%; для незавершенного строения в целом - до 1%."
+                            </div>
+                            <a class="inline-flex items-center gap-2 text-primary text-label-md font-bold hover:underline" href="#">
+                                <span class="material-symbols-outlined text-[18px]">article</span>
+                                Ссылка на документ
+                            </a>
+                        </div>
+                    </div>
+                </details>
+                <!-- Question Card 3 (Correct) -->
+                <details class="group bg-surface-container-low rounded-lg overflow-hidden transition-all duration-300">
+                    <summary class="list-none cursor-pointer p-5 flex items-center justify-between hover:bg-surface-container-high transition-colors">
+                        <div class="flex items-center gap-4">
+                            <span class="text-label-sm font-bold text-primary tracking-wider">№03</span>
+                            <span class="px-2 py-0.5 rounded-sm bg-green-100 text-green-700 text-[10px] font-bold uppercase">Правильный</span>
+                        </div>
+                        <span class="material-symbols-outlined text-outline expand-icon transition-transform duration-300">keyboard_arrow_down</span>
+                    </summary>
+                    <div class="px-5 pb-5 pt-2 space-y-6">
+                        <div class="p-4 bg-surface-container-highest/40 rounded-lg">
+                            <p class="text-label-md font-medium text-on-surface">Как в итоговой технической документации, составленной на индивидуальный гараж указывается отсутствие смотровой ямы, подвала, погреба?</p>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="space-y-2">
+                                <div class="flex items-center gap-3 p-3 rounded bg-green-50 border-l-4 border-green-500">
+                                    <span class="material-symbols-outlined text-green-600 text-[20px]">check_circle</span>
+                                    <div class="flex-1">
+                                        <p class="text-label-sm font-bold text-on-surface">Ответ претендента</p>
+                                        <span class="text-[10px] text-green-700 uppercase font-bold">словом "нет"</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3 p-3 rounded bg-surface-container-lowest">
+                                    <div class="w-5 h-5 rounded-full border-2 border-outline-variant/30"></div>
+                                    <p class="text-label-sm text-on-surface-variant">словом "отсутствует"</p>
+                                </div>
+                                <div class="flex items-center gap-3 p-3 rounded bg-surface-container-lowest">
+                                    <div class="w-5 h-5 rounded-full border-2 border-outline-variant/30"></div>
+                                    <p class="text-label-sm text-on-surface-variant">символом "-" (прочерк)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-outline-variant/20 space-y-3">
+                            <h5 class="text-label-sm font-bold text-primary uppercase tracking-wider">Структурная единица, текст</h5>
+                            <div class="bg-surface-container-highest/60 p-4 rounded text-body-md text-on-surface-variant italic leading-relaxed">
+                                "п.п. 249.2.6 п.249. Инструкция об основаниях назначения и порядке технической инвентаризации недвижимого имущества, а также проверки характеристик недвижимого имущества при совершении регистрационных действий"
+                            </div>
+                            <a class="inline-flex items-center gap-2 text-primary text-label-md font-bold hover:underline" href="#">
+                                <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+                                Ссылка на документ
+                            </a>
+                        </div>
+                    </div>
+                </details>
+                <!-- Question Card 4 (Correct) -->
+                <details class="group bg-surface-container-low rounded-lg overflow-hidden transition-all duration-300">
+                    <summary class="list-none cursor-pointer p-5 flex items-center justify-between hover:bg-surface-container-high transition-colors">
+                        <div class="flex items-center gap-4">
+                            <span class="text-label-sm font-bold text-primary tracking-wider">№04</span>
+                            <span class="px-2 py-0.5 rounded-sm bg-green-100 text-green-700 text-[10px] font-bold uppercase">Правильный</span>
+                        </div>
+                        <span class="material-symbols-outlined text-outline expand-icon transition-transform duration-300">keyboard_arrow_down</span>
+                    </summary>
+                    <div class="px-5 pb-5 pt-2 space-y-6">
+                        <div class="p-4 bg-surface-container-highest/40 rounded-lg">
+                            <p class="text-label-md font-medium text-on-surface">Что такое сервитут в соответствии с Гражданским Кодексом?</p>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="space-y-2">
+                                <div class="flex items-center gap-3 p-3 rounded bg-green-50 border-l-4 border-green-500">
+                                    <span class="material-symbols-outlined text-green-600 text-[20px]">check_circle</span>
+                                    <div class="flex-1">
+                                        <p class="text-label-sm font-bold text-on-surface">Ответ претендента</p>
+                                        <span class="text-[10px] text-green-700 uppercase font-bold">право ограниченного пользования соседним или другим недвижимым имуществом</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3 p-3 rounded bg-surface-container-lowest">
+                                    <div class="w-5 h-5 rounded-full border-2 border-outline-variant/30"></div>
+                                    <p class="text-label-sm text-on-surface-variant">право ограниченного владения соседним или другим недвижимым имуществом</p>
+                                </div>
+                                <div class="flex items-center gap-3 p-3 rounded bg-surface-container-lowest">
+                                    <div class="w-5 h-5 rounded-full border-2 border-outline-variant/30"></div>
+                                    <p class="text-label-sm text-on-surface-variant">право ограниченного распоряжения соседним или другим недвижимым имуществом</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-outline-variant/20 space-y-3">
+                            <h5 class="text-label-sm font-bold text-primary uppercase tracking-wider">Структурная единица, текст</h5>
+                            <div class="bg-surface-container-highest/60 p-4 rounded text-body-md text-on-surface-variant italic leading-relaxed">
+                                "ст.268 ГК. Собственник недвижимого имущества вправе требовать от собственника соседнего недвижимого имущества, а в необходимых случаях - и от собственника другого недвижимого имущества предоставления права ограниченного пользования недвижимым имуществом (сервитута)."
+                            </div>
+                            <a class="inline-flex items-center gap-2 text-primary text-label-md font-bold hover:underline" href="#">
+                                <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+                                Ссылка на документ
+                            </a>
+                        </div>
+                    </div>
+                </details>
+                <!-- Question Card 5 (Correct) -->
+                <details class="group bg-surface-container-low rounded-lg overflow-hidden transition-all duration-300">
+                    <summary class="list-none cursor-pointer p-5 flex items-center justify-between hover:bg-surface-container-high transition-colors">
+                        <div class="flex items-center gap-4">
+                            <span class="text-label-sm font-bold text-primary tracking-wider">№05</span>
+                            <span class="px-2 py-0.5 rounded-sm bg-green-100 text-green-700 text-[10px] font-bold uppercase">Правильный</span>
+                        </div>
+                        <span class="material-symbols-outlined text-outline expand-icon transition-transform duration-300">keyboard_arrow_down</span>
+                    </summary>
+                    <div class="px-5 pb-5 pt-2 space-y-6">
+                        <div class="p-4 bg-surface-container-highest/40 rounded-lg">
+                            <p class="text-label-md font-medium text-on-surface">Что такое сервитут в соответствии с Гражданским Кодексом?</p>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="space-y-2">
+                                <div class="flex items-center gap-3 p-3 rounded bg-green-50 border-l-4 border-green-500">
+                                    <span class="material-symbols-outlined text-green-600 text-[20px]">check_circle</span>
+                                    <div class="flex-1">
+                                        <p class="text-label-sm font-bold text-on-surface">Ответ претендента</p>
+                                        <span class="text-[10px] text-green-700 uppercase font-bold">право ограниченного пользования соседним или другим недвижимым имуществом</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3 p-3 rounded bg-surface-container-lowest">
+                                    <div class="w-5 h-5 rounded-full border-2 border-outline-variant/30"></div>
+                                    <p class="text-label-sm text-on-surface-variant">право ограниченного владения соседним или другим недвижимым имуществом</p>
+                                </div>
+                                <div class="flex items-center gap-3 p-3 rounded bg-surface-container-lowest">
+                                    <div class="w-5 h-5 rounded-full border-2 border-outline-variant/30"></div>
+                                    <p class="text-label-sm text-on-surface-variant">право ограниченного распоряжения соседним или другим недвижимым имуществом</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-outline-variant/20 space-y-3">
+                            <h5 class="text-label-sm font-bold text-primary uppercase tracking-wider">Структурная единица, текст</h5>
+                            <div class="bg-surface-container-highest/60 p-4 rounded text-body-md text-on-surface-variant italic leading-relaxed">
+                                "ст.268 ГК. Собственник недвижимого имущества вправе требовать от собственника соседнего недвижимого имущества, а в необходимых случаях - и от собственника другого недвижимого имущества предоставления права ограниченного пользования недвижимым имуществом (сервитута)."
+                            </div>
+                            <a class="inline-flex items-center gap-2 text-primary text-label-md font-bold hover:underline" href="#">
+                                <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+                                Ссылка на документ
+                            </a>
+                        </div>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="px-8 py-4 bg-surface-container-lowest flex justify-end gap-4 border-t border-outline-variant/10 shrink-0">
+<button class="px-6 h-10 text-label-md text-on-surface-variant hover:bg-surface-container transition-colors rounded">Закрыть без сохранений</button>
+<button class="px-8 h-10 primary-gradient text-on-primary font-label-md rounded shadow-sm hover:brightness-110 transition-all">Сохранить изменения</button>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,798 @@
+<!-- dashboard.html - Личный кабинет с дорожной картой -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой прогресс — НКА Академия</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #00A86B;
+            --primary-dark: #008F5D;
+            --primary-light: #D1FAE5;
+            --secondary: #1E3A5F;
+            --accent: #FFD700;
+            --bg: #F8FAFC;
+            --card: #FFFFFF;
+            --text: #1F2937;
+            --text-light: #6B7280;
+            --border: #E5E7EB;
+            --success: #10B981;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        .header {
+            background: var(--card);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            margin-left: 2rem;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* Profile Header */
+        .profile-header {
+            background: linear-gradient(135deg, var(--secondary) 0%, #0F172A 100%);
+            color: white;
+            border-radius: 24px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: 700;
+            border: 4px solid rgba(255,255,255,0.2);
+        }
+
+        .profile-info h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-info p {
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .profile-badges {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .badge {
+            background: rgba(255,255,255,0.15);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .stats-cards {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 16px;
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            opacity: 0.8;
+        }
+
+        /* Roadmap Section */
+        .roadmap-section {
+            background: var(--card);
+            border-radius: 24px;
+            padding: 3rem;
+            border: 1px solid var(--border);
+            margin-bottom: 3rem;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .roadmap-timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .roadmap-timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2.5rem;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -3rem;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--card);
+            border: 3px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.875rem;
+            font-weight: 700;
+        }
+
+        .timeline-item.completed .timeline-dot {
+            background: var(--success);
+            border-color: var(--success);
+            color: white;
+        }
+
+        .timeline-item.active .timeline-dot {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+            box-shadow: 0 0 0 4px var(--primary-light);
+        }
+
+        .timeline-content {
+            background: var(--bg);
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+        }
+
+        .timeline-item.active .timeline-content {
+            background: #F0FDF4;
+            border-color: var(--primary);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-title {
+            font-weight: 700;
+            font-size: 1.125rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-period {
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        .timeline-status {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .status-completed {
+            background: #D1FAE5;
+            color: var(--success);
+        }
+
+        .status-active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .status-locked {
+            background: var(--border);
+            color: var(--text-light);
+        }
+
+        .timeline-tasks {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .task-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            background: white;
+            border-radius: 10px;
+            font-size: 0.9rem;
+        }
+
+        .task-item.completed {
+            color: var(--success);
+        }
+
+        .task-check {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+        }
+
+        .task-item.completed .task-check {
+            background: var(--success);
+            border-color: var(--success);
+            color: white;
+        }
+
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        /* Achievements */
+        .achievements-card {
+            background: var(--card);
+            border-radius: 24px;
+            padding: 2rem;
+            border: 1px solid var(--border);
+        }
+
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .achievement-item {
+            aspect-ratio: 1;
+            background: var(--bg);
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1rem;
+            transition: all 0.3s;
+        }
+
+        .achievement-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .achievement-item.unlocked {
+            background: linear-gradient(135deg, #FEF3C7, #FDE68A);
+        }
+
+        .achievement-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .achievement-name {
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* Activity Chart */
+        .activity-card {
+            background: var(--card);
+            border-radius: 24px;
+            padding: 2rem;
+            border: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+
+        .chart-placeholder {
+            height: 200px;
+            background: var(--bg);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            margin-top: 1rem;
+        }
+
+        /* Mentor Section */
+        .mentor-card {
+            background: linear-gradient(135deg, #F0FDF4 0%, #FFFFFF 100%);
+            border-radius: 24px;
+            padding: 2rem;
+            border: 1px solid var(--border);
+        }
+
+        .mentor-profile {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .mentor-avatar {
+            width: 64px;
+            height: 64px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .mentor-info h4 {
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .mentor-info p {
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        .mentor-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .mentor-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--secondary);
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .footer-desc {
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        .footer-links h4 {
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .footer-links a {
+            display: block;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 1024px) {
+            .profile-header {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+            .stats-cards {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">НКА</div>
+                <span>НКА Академия</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Главная</a>
+                <a href="course.html">Курсы</a>
+                <a href="knowledge.html">База знаний</a>
+                <a href="dashboard.html" class="active">Мой прогресс</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Profile Header -->
+        <div class="profile-header">
+            <div class="avatar">АИ</div>
+            <div class="profile-info">
+                <h1>Анна Иванова</h1>
+                <p>Специалист по технической инвентаризации • Минск</p>
+                <div class="profile-badges">
+                    <div class="badge">📅 В системе: 1 месяц</div>
+                    <div class="badge">🎯 Уровень 3</div>
+                    <div class="badge">🔥 Серия: 5 дней</div>
+                </div>
+            </div>
+            <div class="stats-cards">
+                <div class="stat-card">
+                    <div class="stat-value">1,250</div>
+                    <div class="stat-label">XP</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">1/12</div>
+                    <div class="stat-label">Месяцев</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">8</div>
+                    <div class="stat-label">Курсов</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Roadmap Section -->
+        <div class="roadmap-section">
+            <div class="section-header">
+                <h2 class="section-title">🗺 Моя дорожная карта адаптации</h2>
+                <span style="color: var(--text-light);">Согласно Отраслевому стандарту</span>
+            </div>
+
+            <div class="roadmap-timeline">
+                <div class="timeline-item completed">
+                    <div class="timeline-dot">✓</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="timeline-title">Этап 1: Введение в профессию</div>
+                                <div class="timeline-period">Апрель 2026</div>
+                            </div>
+                            <span class="timeline-status status-completed">Завершено</span>
+                        </div>
+                        <div class="timeline-tasks">
+                            <div class="task-item completed">
+                                <div class="task-check">✓</div>
+                                <span>Изучение структуры системы организаций Госкомимущества, знакомство с наставником, руководством организации и Госкомимущества</span>
+                            </div>
+                            <div class="task-item completed">
+                                <div class="task-check">✓</div>
+                                <span>Основы гражданского, жилищного законодательства и законодательства об охране и спользовании земель</span>
+                            </div>
+                            <div class="task-item completed">
+                                <div class="task-check">✓</div>
+                                <span>Способы формирования недвижимого имущества</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item completed">
+                    <div class="timeline-dot">✓</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="timeline-title">Этап 2: Основы технической инвентаризации</div>
+                                <div class="timeline-period">Апрель 2026</div>
+                            </div>
+                            <span class="timeline-status status-completed">Завершено</span>
+                        </div>
+                        <div class="timeline-tasks">
+                            <div class="task-item completed">
+                                <div class="task-check">✓</div>
+                                <span>Порядок проведения работ по технической инвентаризации</span>
+                            </div>
+                            <div class="task-item completed">
+                                <div class="task-check">✓</div>
+                                <span>Составление итоговой технической документации</span>
+                            </div>
+                            <div class="task-item completed">
+                                <div class="task-check">✓</div>
+				<span>Проверка характеристик недвижимого имущества</span>
+                            </div>
+                            <div class="task-item completed">
+                                <div class="task-check">✓</div>
+                                <span>Тестирование</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item active">
+                    <div class="timeline-dot">3</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="timeline-title">Этап 3: Инструменты и методы измерений</div>
+                                <div class="timeline-period">Апрель 2026 • Текущий</div>
+                            </div>
+                            <span class="timeline-status status-active">В процессе</span>
+                        </div>
+                        <div class="timeline-tasks">
+                            <div class="task-item completed">
+                                <div class="task-check">✓</div>
+                                <span>Лазерные дальномеры и рулетки</span>
+                            </div>
+                            <div class="task-item">
+                                <div class="task-check"></div>
+                                <span>Работа с планшетом (в процессе)</span>
+                            </div>
+                            <div class="task-item">
+                                <div class="task-check"></div>
+                                <span>Работа с GNSS-приемником с контроллером и геодезической вехой</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot">4</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="timeline-title">Этап 4: Практическая работа</div>
+                                <div class="timeline-period">Май 2026</div>
+                            </div>
+                            <span class="timeline-status status-locked">Заблокировано</span>
+                        </div>
+                        <div class="timeline-tasks">
+                            <div class="task-item">
+                                <div class="task-check"></div>
+                                <span>Составление абриса</span>
+                            </div>
+                            <div class="task-item">
+                                <div class="task-check"></div>
+                                <span>Работа с NKA_RH</span>
+                            </div>
+                            <div class="task-item">
+                                <div class="task-check"></div>
+                                <span>Составление поэтажных и ситуационных планов</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Two Column Layout -->
+        <div class="two-column">
+            <div>
+                <!-- Achievements -->
+                <div class="achievements-card">
+                    <div class="section-header">
+                        <h2 class="section-title">🏆 Мои достижения</h2>
+                        <span style="color: var(--primary); font-weight: 600;">3 из 12</span>
+                    </div>
+                    <div class="achievement-grid">
+                        <div class="achievement-item unlocked">
+                            <div class="achievement-icon">🌱</div>
+                            <div class="achievement-name">Первые шаги</div>
+                        </div>
+                        <div class="achievement-item unlocked">
+                            <div class="achievement-icon">📚</div>
+                            <div class="achievement-name">Ботаник</div>
+                        </div>
+                        <div class="achievement-item unlocked">
+                            <div class="achievement-icon">🎯</div>
+                            <div class="achievement-name">Точность</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-icon">🔒</div>
+                            <div class="achievement-name">Марафонец</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-icon">🔒</div>
+                            <div class="achievement-name">Эксперт</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-icon">🔒</div>
+                            <div class="achievement-name">Наставник</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity -->
+                <div class="activity-card">
+                    <h3 class="section-title">📊 Активность обучения</h3>
+                    <div class="chart-placeholder">
+                        📈 График активности за последние 30 дней
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <!-- Mentor -->
+                <div class="mentor-card">
+                    <h3 class="section-title">👨‍🏫 Мой наставник</h3>
+                    <div class="mentor-profile">
+                        <div class="mentor-avatar">СВ</div>
+                        <div class="mentor-info">
+                            <h4>Светлана Волкова</h4>
+                            <p>Ведущий специалист<br>15 лет опыта</p>
+                        </div>
+                    </div>
+                    <button class="mentor-btn">✉ Написать сообщение</button>
+                    <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
+                        <div style="font-size: 0.875rem; color: var(--text-light); margin-bottom: 0.5rem;">Ближайшая встреча</div>
+                        <div style="font-weight: 600;">10 мая 2026, 14:00</div>
+                        <div style="font-size: 0.875rem; color: var(--text-light);">Обсуждение практических заданий</div>
+                    </div>
+                </div>
+
+                <!-- Next Goals -->
+                <div class="achievements-card" style="margin-top: 2rem;">
+                    <h3 class="section-title">🎯 Следующие цели</h3>
+                    <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: var(--bg); border-radius: 12px;">
+                            <div style="font-size: 1.5rem;">📐</div>
+                            <div style="flex: 1;">
+                                <div style="font-weight: 600;">Завершить курс AutoCAD</div>
+                                <div style="font-size: 0.875rem; color: var(--text-light);">Осталось 2 урока</div>
+                            </div>
+                            <div style="color: var(--primary); font-weight: 600;">+200 XP</div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: var(--bg); border-radius: 12px;">
+                            <div style="font-size: 1.5rem;">🎯</div>
+                            <div style="flex: 1;">
+                                <div style="font-weight: 600;">Пройти тест модуля 3</div>
+                                <div style="font-size: 0.875rem; color: var(--text-light);">На 80% правильных</div>
+                            </div>
+                            <div style="color: var(--primary); font-weight: 600;">+150 XP</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <div class="footer-logo">НКА Академия</div>
+                <p class="footer-desc">Платформа адаптации и обучения специалистов технической инвентаризации.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Навигация</h4>
+                <a href="index.html">Главная</a>
+                <a href="course.html">Курсы</a>
+                <a href="knowledge.html">База знаний</a>
+            </div>
+            <div class="footer-links">
+                <h4>Поддержка</h4>
+                <a href="#">Наставники</a>
+                <a href="#">FAQ</a>
+                <a href="#">Техподдержка</a>
+            </div>
+            <div class="footer-links">
+                <h4>Контакты</h4>
+                <a href="#">nca.by</a>
+                <a href="#">support@nca.by</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

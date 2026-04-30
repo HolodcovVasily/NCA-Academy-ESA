@@ -1,0 +1,711 @@
+<!-- knowledge.html - Расширенная база знаний -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>База знаний — НКА Академия</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #00A86B;
+            --primary-dark: #008F5D;
+            --secondary: #1E3A5F;
+            --accent: #FFD700;
+            --bg: #F8FAFC;
+            --card: #FFFFFF;
+            --text: #1F2937;
+            --text-light: #6B7280;
+            --border: #E5E7EB;
+            --success: #10B981;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        .header {
+            background: var(--card);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            margin-left: 2rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Search Hero */
+        .search-hero {
+            background: linear-gradient(135deg, var(--secondary) 0%, #0F172A 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .search-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .search-box {
+            max-width: 700px;
+            margin: 2rem auto 0;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1.25rem 3rem 1.25rem 1.5rem;
+            border-radius: 16px;
+            border: none;
+            font-size: 1rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 0.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* AI Assistant */
+        .ai-assistant {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.1);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            margin-top: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .ai-assistant:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 3rem;
+        }
+
+        /* Sidebar Categories */
+        .sidebar {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+
+        .category {
+            padding: 0.875rem 1rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 500;
+        }
+
+        .category:hover {
+            background: var(--bg);
+        }
+
+        .category.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .category-icon {
+            font-size: 1.25rem;
+        }
+
+        /* Content Grid */
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .docs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .doc-card {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .doc-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+            border-color: var(--primary);
+        }
+
+        .doc-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .doc-type {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .doc-type.pdf {
+            background: #FEE2E2;
+        }
+
+        .doc-type.video {
+            background: #DBEAFE;
+        }
+
+        .doc-type.check {
+            background: #D1FAE5;
+        }
+
+        .doc-type.law {
+            background: #F3E8FF;
+        }
+
+        .doc-meta-header {
+            flex: 1;
+        }
+
+        .doc-meta-header h4 {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .doc-tag {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            background: var(--bg);
+            color: var(--text-light);
+        }
+
+        .doc-desc {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .doc-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        /* Interactive Materials */
+        .interactive-section {
+            background: linear-gradient(135deg, #F0FDF4 0%, #FFFFFF 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid var(--border);
+        }
+
+        .interactive-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .interactive-item {
+            background: var(--card);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .interactive-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+
+        .interactive-thumb {
+            height: 160px;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            position: relative;
+        }
+
+        .play-overlay {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .interactive-info {
+            padding: 1.25rem;
+        }
+
+        .interactive-info h4 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .interactive-info p {
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        /* Version Badge */
+        .version-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #D1FAE5;
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-left: auto;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--secondary);
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .footer-desc {
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        .footer-links h4 {
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .footer-links a {
+            display: block;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                display: none;
+            }
+            .interactive-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">НКА</div>
+                <span>НКА Академия</span>
+            </a>
+            <div class="nav-links">
+                <a href="../index.html">Главная</a>
+                <a href="../Страница%20курса/2_Страница_с_интерактивным_курсом.html">Курсы</a>
+                <a href="knowledge.html">База знаний</a>
+                <a href="dashboard.html">Мой прогресс</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Search Hero -->
+    <section class="search-hero">
+        <h1>📚 База знаний НКА</h1>
+        <p style="opacity: 0.9; font-size: 1.125rem;">Нормативные документы, методические материалы и интерактивные руководства</p>
+        
+        <div class="search-box">
+            <input type="text" class="search-input" placeholder="Поиск по документам, статьям или вопросам...">
+            <button class="search-btn">🔍 Искать</button>
+        </div>
+        
+        <div class="ai-assistant">
+            <span>🤖</span>
+            <span>Задать вопрос ИИ-ассистенту</span>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h3 style="margin-bottom: 1rem; font-size: 0.875rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em;">Категории</h3>
+            
+            <div class="category active">
+                <span class="category-icon">📋</span>
+                <span>Все документы</span>
+            </div>
+            <div class="category">
+                <span class="category-icon">⚖️</span>
+                <span>Законодательство</span>
+            </div>
+            <div class="category">
+                <span class="category-icon">🔧</span>
+                <span>Технология работ</span>
+            </div>
+            <div class="category">
+                <span class="category-icon">🏢</span>
+                <span>Здания и сооружения</span>
+            </div>
+            <div class="category">
+                <span class="category-icon">🗺</span>
+                <span>Адресная система</span>
+            </div>
+            <div class="category">
+                <span class="category-icon">💻</span>
+                <span>Программное обеспечение</span>
+            </div>
+            <div class="category">
+                <span class="category-icon">📹</span>
+                <span>Видео-обучение</span>
+            </div>
+            <div class="category">
+                <span class="category-icon">✅</span>
+                <span>Чек-листы</span>
+            </div>
+        </aside>
+
+        <!-- Content -->
+        <div class="content-area">
+            <!-- Latest Documents -->
+            <section>
+                <h2 class="section-title">📄 Нормативные документы</h2>
+                <div class="docs-grid">
+                    <div class="doc-card" onclick="alert('Открытие документа...')">
+                        <div class="doc-header">
+                            <div class="doc-type law">⚖️</div>
+                            <div class="doc-meta-header">
+                                <h4>Инструкция №11</h4>
+                                <span class="doc-tag">Актуальная версия</span>
+                            </div>
+                        </div>
+                        <p class="doc-desc">Техническая инвентаризация зданий и сооружений.</p>
+                        <div class="doc-footer">
+                            <span>📅 15.03.2024</span>
+                            <span>⬇ 856 скачиваний</span>
+                        </div>
+                    </div>
+
+                    <div class="doc-card">
+                        <div class="doc-header">
+                            <div class="doc-type pdf">📄</div>
+                            <div class="doc-meta-header">
+                                <h4>Закон о регистрации</h4>
+                                <span class="doc-tag">Обновлено</span>
+                            </div>
+                        </div>
+                        <p class="doc-desc">Основной нормативный документ отрасли.</p>
+                        <div class="doc-footer">
+                            <span>📅 10.02.2024</span>
+                            <span>⬇ 432 скачивания</span>
+                        </div>
+                    </div>
+
+                    <div class="doc-card">
+                        <div class="doc-header">
+                            <div class="doc-type check">✓</div>
+                            <div class="doc-meta-header">
+                                <h4>Методические рекомендации</h4>
+                                <span class="doc-tag">Рекомендации</span>
+                            </div>
+                        </div>
+                        <p class="doc-desc">По инвентаризации одноквартирных и блокированных жилых домов.</p>
+                        <div class="doc-footer">
+                            <span>📅 2023</span>
+                            <span>⬇ 234 скачивания</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interactive Materials -->
+            <section class="interactive-section">
+                <h2 class="section-title">🎬 Интерактивные материалы</h2>
+                <div class="interactive-grid">
+                    <div class="interactive-item">
+                        <div class="interactive-thumb">
+                            📐
+                            <div class="play-overlay">▶</div>
+                        </div>
+                        <div class="interactive-info">
+                            <h4>Симулятор обмера помещения</h4>
+                            <p>Практический тренажер измерений с виртуальным дальномером</p>
+                        </div>
+                    </div>
+
+                    <div class="interactive-item">
+                        <div class="interactive-thumb" style="background: linear-gradient(135deg, #7C3AED, #A855F7);">
+                            🏗️
+                            <div class="play-overlay">▶</div>
+                        </div>
+                        <div class="interactive-info">
+                            <h4>3D-модель одноквартирного жилого дома</h4>
+                            <p>Интерактивная модель с разрезами и характеристиками</p>
+                        </div>
+                    </div>
+
+                    <div class="interactive-item">
+                        <div class="interactive-thumb" style="background: linear-gradient(135deg, #DC2626, #EF4444);">
+                            🎯
+                            <div class="play-overlay">▶</div>
+                        </div>
+                        <div class="interactive-info">
+                            <h4>Тренажер NKA_RH</h4>
+                            <p>Симулятор работы с Реестром характеристик</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Video Instructions -->
+            <section>
+                <h2 class="section-title">📹 Видео-обучение</h2>
+                <div class="docs-grid">
+                    <div class="doc-card">
+                        <div class="doc-header">
+                            <div class="doc-type video">🎥</div>
+                            <div class="doc-meta-header">
+                                <h4>Измерение площадей</h4>
+                                <span class="doc-tag">45 мин</span>
+                            </div>
+                        </div>
+                        <p class="doc-desc">Практическое руководство по правильному измерению площадей жилых и нежилых помещений.</p>
+                        <div class="doc-footer">
+                            <span>👁 892 просмотра</span>
+                            <span>⭐ 4.9/5</span>
+                        </div>
+                    </div>
+
+                    <div class="doc-card">
+                        <div class="doc-header">
+                            <div class="doc-type video">🎥</div>
+                            <div class="doc-meta-header">
+                                <h4>Работа в AutoCAD</h4>
+                                <span class="doc-tag">30 мин</span>
+                            </div>
+                        </div>
+                        <p class="doc-desc">Создание поэтажных планов, работа со слоями и шаблонами.</p>
+                        <div class="doc-footer">
+                            <span>👁 567 просмотров</span>
+                            <span>⭐ 4.8/5</span>
+                        </div>
+                    </div>
+
+                    <div class="doc-card">
+                        <div class="doc-header">
+                            <div class="doc-type video">🎥</div>
+                            <div class="doc-meta-header">
+                                <h4>Оформление документации</h4>
+                                <span class="doc-tag">20 мин</span>
+                            </div>
+                        </div>
+                        <p class="doc-desc">Требования к составлению итоговых технических документов и приложений к ним.</p>
+                        <div class="doc-footer">
+                            <span>👁 445 просмотров</span>
+                            <span>⭐ 4.7/5</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Checklists -->
+            <section>
+                <h2 class="section-title">✅ Чек-листы и шаблоны</h2>
+                <div class="docs-grid">
+                    <div class="doc-card">
+                        <div class="doc-header">
+                            <div class="doc-type check">✓</div>
+                            <div class="doc-meta-header">
+                                <h4>Выезд на объект</h4>
+                                <span class="doc-tag">24 пункта</span>
+                            </div>
+                        </div>
+                        <p class="doc-desc">Чек-лист проверки комплектности инструментов перед выездом и совершения всех необходимых действий.</p>
+                        <div class="doc-footer">
+                            <span>✅ 89% выполняют</span>
+                            <span>📋 Интерактивный</span>
+                        </div>
+                    </div>
+
+                    <div class="doc-card">
+                        <div class="doc-header">
+                            <div class="doc-type check">✓</div>
+                            <div class="doc-meta-header">
+                                <h4>Обмерные работы</h4>
+                                <span class="doc-tag">18 пунктов</span>
+                            </div>
+                        </div>
+                        <p class="doc-desc">Контрольный список для проверки действий при обследовании строения.</p>
+                        <div class="doc-footer">
+                            <span>✅ 76% используют</span>
+                            <span>📋 PDF</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <div class="footer-logo">НКА Академия</div>
+                <p class="footer-desc">Единая база знаний для специалистов технической инвентаризации. Национальное кадастровое агентство Республики Беларусь.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Навигация</h4>
+                <a href="index.html">Главная</a>
+                <a href="course.html">Курсы</a>
+                <a href="knowledge.html">База знаний</a>
+            </div>
+            <div class="footer-links">
+                <h4>Поддержка</h4>
+                <a href="#">ИИ-ассистент</a>
+                <a href="#">Наставники</a>
+                <a href="#">Техподдержка</a>
+            </div>
+            <div class="footer-links">
+                <h4>Контакты</h4>
+                <a href="#">nca.by</a>
+                <a href="#">support@nca.by</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

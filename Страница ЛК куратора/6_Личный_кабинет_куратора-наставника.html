@@ -1,0 +1,1210 @@
+<!-- curator-dashboard.html - Личный кабинет куратора ТОР/наставника -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кабинет куратора ТОР/наставника — НКА Академия</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #00A86B;
+            --primary-dark: #008F5D;
+            --primary-light: #D1FAE5;
+            --secondary: #1E3A5F;
+            --secondary-light: #2D5A87;
+            --accent: #FFD700;
+            --accent-dark: #FFA500;
+            --bg: #F8FAFC;
+            --card: #FFFFFF;
+            --text: #1F2937;
+            --text-light: #6B7280;
+            --border: #E5E7EB;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --error: #EF4444;
+            --info: #3B82F6;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        /* Header */
+        .header {
+            background: var(--card);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            background: var(--primary-light);
+            color: var(--primary-dark);
+        }
+
+        .user-menu {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .role-badge {
+            background: var(--secondary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .notification-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            background: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .notification-badge {
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            width: 18px;
+            height: 18px;
+            background: var(--error);
+            color: white;
+            border-radius: 50%;
+            font-size: 0.625rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Page Header */
+        .page-header {
+            margin-bottom: 2rem;
+        }
+
+        .page-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-subtitle {
+            color: var(--text-light);
+        }
+
+        /* Dashboard Grid */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 2rem;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .sidebar-card {
+            background: var(--card);
+            border-radius: 20px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+        }
+
+        .sidebar-title {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+        }
+
+        /* Curator Info */
+        .curator-profile {
+            text-align: center;
+        }
+
+        .curator-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .curator-name {
+            font-weight: 700;
+            font-size: 1.125rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .curator-role {
+            color: var(--text-light);
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+
+        .curator-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .curator-stat {
+            text-align: center;
+        }
+
+        .curator-stat-value {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .curator-stat-label {
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+
+        /* Quick Actions */
+        .action-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .action-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.875rem 1rem;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-align: left;
+        }
+
+        .action-btn:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .action-icon {
+            font-size: 1.25rem;
+        }
+
+        /* Alerts */
+        .alert-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .alert-item {
+            display: flex;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: #FEF3C7;
+            border-radius: 12px;
+            border-left: 4px solid var(--warning);
+        }
+
+        .alert-item.critical {
+            background: #FEE2E2;
+            border-left-color: var(--error);
+        }
+
+        .alert-icon {
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .alert-content {
+            flex: 1;
+        }
+
+        .alert-title {
+            font-weight: 600;
+            font-size: 0.875rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .alert-text {
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+
+        /* Main Content */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        /* Stats Cards */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .stat-card {
+            background: var(--card);
+            border-radius: 20px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+        }
+
+        .stat-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-light);
+            font-size: 0.875rem;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .stat-change {
+            font-size: 0.875rem;
+            color: var(--success);
+            margin-top: 0.25rem;
+        }
+
+        .stat-change.negative {
+            color: var(--error);
+        }
+
+        /* Tabs */
+        .tabs-container {
+            background: var(--card);
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .tabs-header {
+            display: flex;
+            border-bottom: 1px solid var(--border);
+            padding: 0.5rem;
+        }
+
+        .tab-btn {
+            padding: 0.875rem 1.5rem;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.875rem;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .tab-btn:hover {
+            background: var(--bg);
+        }
+
+        .tab-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .tabs-content {
+            padding: 1.5rem;
+        }
+
+        /* Filters */
+        .filters-bar {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-input, .filter-select {
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-size: 0.875rem;
+            background: var(--bg);
+        }
+
+        .filter-input {
+            min-width: 250px;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            font-size: 0.875rem;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+        }
+
+        .btn-secondary {
+            background: var(--bg);
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        /* Specialists Table */
+        .table-container {
+            overflow-x: auto;
+        }
+
+        .specialists-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .specialists-table th {
+            text-align: left;
+            padding: 1rem;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+            font-weight: 600;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .specialists-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.875rem;
+        }
+
+        .specialists-table tr:hover {
+            background: var(--bg);
+        }
+
+        .specialist-cell {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .specialist-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .specialist-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .specialist-name {
+            font-weight: 600;
+        }
+
+        .specialist-id {
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+
+        .progress-cell {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            min-width: 150px;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+        }
+
+        .progress-bar {
+            height: 6px;
+            background: var(--border);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 3px;
+            transition: width 0.5s;
+        }
+
+        .progress-fill.high { background: var(--success); }
+        .progress-fill.medium { background: var(--warning); }
+        .progress-fill.low { background: var(--error); }
+
+        .status-badge {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .status-month-1 { background: #DBEAFE; color: #1E40AF; }
+        .status-month-2 { background: #D1FAE5; color: #065F46; }
+        .status-month-3 { background: #FEF3C7; color: #92400E; }
+        .status-month-4-6 { background: #F3E8FF; color: #6B21A8; }
+        .status-month-7-9 { background: #FCE7F3; color: #9D174D; }
+        .status-month-10-12 { background: #FED7AA; color: #9A3412; }
+
+        .rating-badge {
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.875rem;
+            display: inline-block;
+        }
+
+        .rating-high { background: var(--primary-light); color: var(--primary-dark); }
+        .rating-medium { background: #FEF3C7; color: #92400E; }
+        .rating-low { background: #FEE2E2; color: #991B1B; }
+
+        .action-btns {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .btn-icon-small {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.875rem;
+            transition: all 0.3s;
+        }
+
+        .btn-icon-small:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* Reports Section */
+        .reports-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .report-card {
+            background: var(--bg);
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .report-card:hover {
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .report-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .report-title {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .report-desc {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .report-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+
+        /* Analytics Charts Placeholder */
+        .analytics-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .chart-card {
+            background: var(--card);
+            border-radius: 20px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+        }
+
+        .chart-placeholder {
+            height: 300px;
+            background: var(--bg);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            margin-top: 1rem;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--card);
+            border-radius: 24px;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-header {
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--secondary) 0%, #0F172A 100%);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.1);
+            color: white;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        /* Report Builder */
+        .report-builder {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .builder-section {
+            background: var(--bg);
+            border-radius: 16px;
+            padding: 1.5rem;
+        }
+
+        .builder-title {
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem;
+            background: white;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--secondary);
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .footer-desc {
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        .footer-links h4 {
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .footer-links a {
+            display: block;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .stats-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .reports-grid {
+                grid-template-columns: 1fr;
+            }
+            .analytics-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                grid-template-columns: 1fr;
+            }
+            .stats-row {
+                grid-template-columns: 1fr;
+            }
+            .specialists-table {
+                font-size: 0.75rem;
+            }
+            .specialists-table th,
+            .specialists-table td {
+                padding: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">НКА</div>
+                <span>НКА Академия</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Главная</a>
+                <a href="knowledge.html">База знаний</a>
+                <a href="specialists.html">Банк претендентов</a>
+                <a href="curator-dashboard.html" class="active">Кабинет куратора/наставника</a>
+            </div>
+            <div class="user-menu">
+                <span class="role-badge">👔 Куратор ТОР/наставник</span>
+                <button class="notification-btn">
+                    🔔
+                    <span class="notification-badge">3</span>
+                </button>
+                <div style="width: 40px; height: 40px; background: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">ИП</div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1 class="page-title">👔 Личный кабинет куратора ТОР/наставника</h1>
+            <p class="page-subtitle">Управление молодыми специалистами, мониторинг прогресса и формирование отчётов</p>
+        </div>
+
+        <div class="dashboard-grid">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Curator Profile -->
+                <div class="sidebar-card curator-profile">
+                    <div class="curator-avatar">ИП</div>
+                    <div class="curator-name">Игорь Петрович Семенов</div>
+                    <div class="curator-role">Начальник отдела по ТИ • Минск</div>
+                    <div class="curator-stats">
+                        <div class="curator-stat">
+                            <div class="curator-stat-value">24</div>
+                            <div class="curator-stat-label">Подопечных</div>
+                        </div>
+                        <div class="curator-stat">
+                            <div class="curator-stat-value">156</div>
+                            <div class="curator-stat-label">Всего за год</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="sidebar-card">
+                    <div class="sidebar-title">⚡ Быстрые действия</div>
+                    <div class="action-list">
+                        <button class="action-btn" onclick="openReportBuilder()">
+                            <span class="action-icon">📊</span>
+                            <span>Создать отчёт</span>
+                        </button>
+                        <button class="action-btn">
+                            <span class="action-icon">📧</span>
+                            <span>Массовая рассылка</span>
+                        </button>
+                        <button class="action-btn">
+                            <span class="action-icon">📅</span>
+                            <span>Запланировать встречи</span>
+                        </button>
+                        <button class="action-btn">
+                            <span class="action-icon">🎯</span>
+                            <span>Назначить наставников</span>
+                        </button>
+                        <button class="action-btn">
+                            <span class="action-icon">📈</span>
+                            <span>Экспорт аналитики</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Alerts -->
+                <div class="sidebar-card">
+                    <div class="sidebar-title">🔔 Требуют внимания</div>
+                    <div class="alert-list">
+                        <div class="alert-item critical">
+                            <div class="alert-icon">⚠️</div>
+                            <div class="alert-content">
+                                <div class="alert-title">Критический прогресс</div>
+                                <div class="alert-text">3 специалиста отстают более чем на 2 недели</div>
+                            </div>
+                        </div>
+                        <div class="alert-item">
+                            <div class="alert-icon">📅</div>
+                            <div class="alert-content">
+                                <div class="alert-title">Итоговая аттестация</div>
+                                <div class="alert-text">5 специалистов готовятся к экзамену</div>
+                            </div>
+                        </div>
+                        <div class="alert-item">
+                            <div class="alert-icon">🎉</div>
+                            <div class="alert-content">
+                                <div class="alert-title">Успешное завершение</div>
+                                <div class="alert-text">2 специалиста прошли адаптацию</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Stats Row -->
+                <div class="stats-row">
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span>👨‍💼</span>
+                            <span>Активных специалистов</span>
+                        </div>
+                        <div class="stat-value">24</div>
+                        <div class="stat-change">↑ 3 за месяц</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span>📊</span>
+                            <span>Средний прогресс</span>
+                        </div>
+                        <div class="stat-value">68%</div>
+                        <div class="stat-change">↑ 5% за месяц</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span>⭐</span>
+                            <span>Средний рейтинг</span>
+                        </div>
+                        <div class="stat-value">78.5</div>
+                        <div class="stat-change">↑ 2.1 за квартал</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span>🎯</span>
+                            <span>На аттестации</span>
+                        </div>
+                        <div class="stat-value">5</div>
+                        <div class="stat-change">Месяц 10-12</div>
+                    </div>
+                </div>
+
+                <!-- Tabs -->
+                <div class="tabs-container">
+                    <div class="tabs-header">
+                        <button class="tab-btn active" onclick="switchTab('specialists')">👨‍💼 Молодые специалисты</button>
+                        <button class="tab-btn" onclick="switchTab('analytics')">📈 Аналитика</button>
+                        <button class="tab-btn" onclick="switchTab('reports')">📊 Отчёты</button>
+                    </div>
+
+                    <div class="tabs-content">
+                        <!-- Tab 1: Specialists -->
+                        <div id="tab-specialists" class="tab-content">
+                            <div class="filters-bar">
+                                <input type="text" class="filter-input" placeholder="🔍 Поиск по ФИО или ID...">
+                                <select class="filter-select">
+                                    <option>Все месяцы адаптации</option>
+                                    <option>Месяц 1 (Введение)</option>
+                                    <option>Месяц 2-3 (Основы)</option>
+                                    <option>Месяц 4-6 (Практика)</option>
+                                    <option>Месяц 7-9 (Углубление)</option>
+                                    <option>Месяц 10-12 (Аттестация)</option>
+                                </select>
+                                <select class="filter-select">
+                                    <option>Все регионы</option>
+                                    <option>Минск</option>
+                                    <option>Брест</option>
+                                    <option>Гомель</option>
+                                    <option>Гродно</option>
+                                    <option>Могилев</option>
+                                    <option>Витебск</option>
+                                </select>
+                                <select class="filter-select">
+                                    <option>Любой рейтинг</option>
+                                    <option>90+ Отлично</option>
+                                    <option>75-89 Хорошо</option>
+                                    <option>60-74 Удовлетворительно</option>
+                                    <option>Ниже 60 Требует внимания</option>
+                                </select>
+                                <button class="btn btn-primary">Применить</button>
+                            </div>
+
+                            <div class="table-container">
+                                <table class="specialists-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Специалист</th>
+                                            <th>Период адаптации</th>
+                                            <th>Прогресс курса</th>
+                                            <th>Рейтинг</th>
+                                            <th>Последняя активность</th>
+                                            <th>Действия</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="specialist-cell">
+                                                    <div class="specialist-avatar">АК</div>
+                                                    <div class="specialist-info">
+                                                        <span class="specialist-name">Алексей Ковалёв</span>
+                                                        <span class="specialist-id">ID: S-2026-0042</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td><span class="status-badge status-month-2">Месяц 2</span></td>
+                                            <td>
+                                                <div class="progress-cell">
+                                                    <div class="progress-header">
+                                                        <span>Модуль 2</span>
+                                                        <span>75%</span>
+                                                    </div>
+                                                    <div class="progress-bar">
+                                                        <div class="progress-fill medium" style="width: 75%"></div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td><span class="rating-badge rating-high">92</span></td>
+                                            <td>Сегодня, 14:30</td>
+                                            <td>
+                                                <div class="action-btns">
+                                                    <button class="btn-icon-small" title="Профиль">👤</button>
+                                                    <button class="btn-icon-small" title="Сообщение">✉️</button>
+                                                    <button class="btn-icon-small" title="Отчёт">📊</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="specialist-cell">
+                                                    <div class="specialist-avatar">МС</div>
+                                                    <div class="specialist-info">
+                                                        <span class="specialist-name">Мария Сидорова</span>
+                                                        <span class="specialist-id">ID: S-2025-0189</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td><span class="status-badge status-month-3">Месяц 3</span></td>
+                                            <td>
+                                                <div class="progress-cell">
+                                                    <div class="progress-header">
+                                                        <span>Модуль 3</span>
+                                                        <span>60%</span>
+                                                    </div>
+                                                    <div class="progress-bar">
+                                                        <div class="progress-fill medium" style="width: 60%"></div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td><span class="rating-badge rating-high">87</span></td>
+                                            <td>Вчера, 18:15</td>
+                                            <td>
+                                                <div class="action-btns">
+                                                    <button class="btn-icon-small" title="Профиль">👤</button>
+                                                    <button class="btn-icon-small" title="Сообщение">✉️</button>
+                                                    <button class="btn-icon-small" title="Отчёт">📊</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="specialist-cell">
+                                                    <div class="specialist-avatar">ДП</div>
+                                                    <div class="specialist-info">
+                                                        <span class="specialist-name">Дмитрий Петров</span>
+                                                        <span class="specialist-id">ID: S-2025-0045</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td><span class="status-badge status-month-4-6">Месяц 5</span></td>
+                                            <td>
+                                                <div class="progress-cell">
+                                                    <div class="progress-header">
+                                                        <span>Модуль 4</span>
+                                                        <span>90%</span>
+                                                    </div>
+                                                    <div class="progress-bar">
+                                                        <div class="progress-fill high" style="width: 90%"></div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td><span class="rating-badge rating-high">96</span></td>
+                                            <td>Сегодня, 09:45</td>
+                                            <td>
+                                                <div class="action-btns">
+                                                    <button class="btn-icon-small" title="Профиль">👤</button>
+                                                    <button class="btn-icon-small" title="Сообщение">✉️</button>
+                                                    <button class="btn-icon-small" title="Отчёт">📊</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="specialist-cell">
+                                                    <div class="specialist-avatar">ЕН</div>
+                                                    <div class="specialist-info">
+                                                        <span class="specialist-name">Елена Новикова</span>
+                                                        <span class="specialist-id">ID: S-2026-0078</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td><span class="status-badge status-month-1">Месяц 1</span></td>
+                                            <td>
+                                                <div class="progress-cell">
+                                                    <div class="progress-header">
+                                                        <span>Модуль 1</span>
+                                                        <span>25%</span>
+                                                    </div>
+                                                    <div class="progress-bar">
+                                                        <div class="progress-fill low" style="width: 25%"></div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td><span class="rating-badge rating-medium">68</span></td>
+                                            <td>3 дня назад</td>
+                                            <td>
+                                                <div class="action-btns">
+                                                    <button class="btn-icon-small" title="Профиль">👤</button>
+                                                    <button class="btn-icon-small" title="Сообщение">✉️</button>
+                                                    <button class="btn-icon-small" title="Отчёт">📊</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="specialist-cell">
+                                                    <div class="specialist-avatar">СМ</div>
+                                                    <div class="specialist-info">
+                                                        <span class="specialist-name">Сергей Морозов</span>
+                                                        <span class="specialist-id">ID: S-2026-0056</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td><span class="status-badge status-month-10-12">Месяц 11</span></td>
+                                            <td>
+                                                <div class="progress-cell">
+                                                    <div class="progress-header">
+                                                        <span>Модуль 6</span>
+                                                        <span>85%</span>
+                                                    </div>
+                                                    <div class="progress-bar">
+                                                        <div class="progress-fill high" style="width: 85%"></div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td><span class="rating-badge rating-high">89</span></td>
+                                            <td>Сегодня, 11:20</td>
+                                            <td>
+                                                <div class="action-btns">
+                                                    <button class="btn-icon-small" title="Профиль">👤</button>
+                                                    <button class="btn-icon-small" title="Сообщение">✉️</button>
+                                                    <button class="btn-icon-small" title

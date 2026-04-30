@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Академия НКА | ЕСА 2.0 | Результаты за период</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#191c1e",
+                        "on-tertiary-fixed": "#001453",
+                        "on-primary-fixed-variant": "#214098",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "tertiary": "#2d4cba",
+                        "on-error": "#ffffff",
+                        "tertiary-container": "#4966d4",
+                        "on-surface-variant": "#44474e",
+                        "surface-container": "#eceef0",
+                        "secondary-fixed-dim": "#b8c4ff",
+                        "on-secondary-fixed-variant": "#334380",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e0e3e5",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-container-low": "#f2f4f6",
+                        "outline-variant": "#c5c5d4",
+                        "on-background": "#191c1e",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#001453",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#757683",
+                        "on-primary-fixed": "#00164f",
+                        "tertiary-fixed": "#dde1ff",
+                        "on-primary-container": "#f1f1ff",
+                        "surface-tint": "#3755c3",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#a9b8fe",
+                        "primary": "#3450a9",
+                        "secondary": "#4b5b9a",
+                        "on-tertiary-fixed-variant": "#173baa",
+                        "on-tertiary-container": "#f2f1ff",
+                        "inverse-on-surface": "#eff1f3",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#dce1ff",
+                        "primary-container": "#4e69c3",
+                        "inverse-primary": "#b6c4ff",
+                        "inverse-surface": "#2d3133",
+                        "surface": "#f7f9fb",
+                        "surface-container-high": "#e6e8ea",
+                        "secondary-fixed": "#dde1ff",
+                        "on-primary": "#ffffff",
+                        "background": "#f7f9fb",
+                        "tertiary-fixed-dim": "#b8c4ff",
+                        "on-secondary-container": "#384785",
+                        "surface-dim": "#d8dadc",
+                        "surface-bright": "#f7f9fb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "section-gap": "32px",
+                        "module-gap": "24px",
+                        "container-padding": "16px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "25.6px", "fontWeight": "400"}],
+                        "label-sm": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .architectural-blur {
+            backdrop-filter: blur(12px);
+            background-color: rgba(25, 28, 30, 0.4);
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, #4e69c3 0%, #001453 100%);
+        }
+        .ghost-border {
+            outline: 1px solid rgba(198, 198, 205, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-hidden">
+<!-- Подложка -->
+<header class="bg-[#001453] text-white font-['Inter'] tracking-tight font-medium docked full-width top-0 h-16 flex justify-between items-center px-8 w-full z-50">
+    <div class="flex items-center gap-6">
+    </div>
+    </div>
+    <div class="flex items-center gap-4">
+        <button class="p-2 hover:bg-white/10 transition-colors rounded-lg"><span class="material-symbols-outlined">notifications</span></button>
+        <button class="p-2 hover:bg-white/10 transition-colors rounded-lg"><span class="material-symbols-outlined">settings</span></button>
+        <img alt="Administrator Profile" class="w-8 h-8 rounded-full border border-white/20 ml-2" data-alt="Professional corporate administrator portrait in a dark blue suit with clean lighting and neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp3if6K6SPsUFabf_akSpjvxye3U6T4Gir9cEqp-I2GjvMcqaWZOnsoznTLfGx_bD3ZUp0disreN7g-Y0ae1PN9BLvn18Ku7ZRMxZ3ybi1Uq-6fadT9YvOe4vFPRsQ5CAOrFnXF_Xx5b9cESwATvCPHmaQTJ5OQUTqU0ioIC_prxKUZGk5a5vJ9_t8TWrBqCUUVUfFdx8Vtn6Y9EnIxY7oupXe8GOkkAObF7uuxSGl-OpkMr_FmeJ4UBj6mmHHiuJKui6sP2VSMjXz"/>
+    </div>
+</header>
+<div class="flex h-[calc(100vh-64px)] overflow-hidden">
+    <!-- SideNavBar -->
+    <nav class="bg-slate-50 flex flex-col h-full py-8 px-6 space-y-4 h-screen w-64 fixed left-0 border-r-0 font-['Inter'] text-sm font-semibold tracking-wide">
+        <div class="mb-8">
+            <div class="flex items-center gap-3 mb-1">
+                <div class="w-8 h-8 bg-primary rounded flex items-center justify-center">
+                    <span class="material-symbols-outlined text-white text-lg" data-weight="fill" style="font-variation-settings: 'FILL' 1;">security</span>
+                </div>
+                <span class="text-xl font-black text-slate-900 uppercase tracking-tighter">Академия НКА</span>
+            </div>
+            <span class="text-xs text-slate-500 font-medium ml-11">Администратор СА</span>
+        </div>
+        <div class="space-y-1">
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100 transition-transform duration-200 scale-98" href="#">
+                <span class="material-symbols-outlined">analytics</span>
+                <span>Администрирование</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100 transition-transform duration-200 scale-98" href="#">
+                <span class="material-symbols-outlined">database</span>
+                <span>Банк вопросов</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100 transition-transform duration-200 scale-98" href="#">
+                <span class="material-symbols-outlined">dashboard</span>
+                <span>Управление тестами</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-[#4e69c3] bg-white font-bold transition-transform duration-200 scale-98" href="#">
+                <span class="material-symbols-outlined">badge</span>
+                <span>Аттестация</span>
+            </a>
+            <!--<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100 transition-transform duration-200 scale-98" href="#">-->
+            <!--<span class="material-symbols-outlined">group_work</span>-->
+            <!--<span>Certification Groups</span>-->
+            <!--</a>-->
+
+
+        </div>
+        <!--<button class="mt-4 mx-4 py-3 primary-gradient text-white rounded font-label-md text-xs uppercase tracking-widest flex items-center justify-center gap-2">-->
+        <!--<span class="material-symbols-outlined text-sm">add</span> Add Group-->
+        <!--            </button>-->
+        <div class="mt-auto pt-8 space-y-1">
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100" href="#">
+                <span class="material-symbols-outlined">help_center</span>
+                <span>Поддержка</span>
+            </a>
+            <!-- Генерация отчета о результатах аттестации за период -->
+            <div class="w-[1px] h-10 bg-surface-container-low"></div>
+            <button class="bg-surface-container-lowest text-on-surface px-6 py-3 rounded-full font-label-md flex items-center gap-2 hover:bg-surface-container-low transition-all">
+                <span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
+                <!--        <span class="material-symbols-outlined" data-icon="picture_as_pdf">print</span>-->
+                Результаты за период
+            </button>
+
+        </div>
+    </nav>
+    <!-- Main Content Area -->
+    <main class="ml-64 flex-1 flex h-full p-8 gap-section-gap overflow-hidden">
+        <!-- Left Section: Общая группа претендентов -->
+        <section class="flex-1 bg-surface-container-low rounded-xl flex flex-col overflow-hidden">
+            <div class="p-8 space-y-6">
+                <div class="flex justify-between items-end">
+                    <div>
+                        <h2 class="font-headline-md text-headline-md text-on-surface mb-1">Претенденты. Всего в общей группе: 38</h2>
+                        <!--<p class="text-sm text-on-surface-variant font-medium"></p>-->
+                    </div>
+                    <button class="mt-4 mx-4 py-3 px-2 primary-gradient text-white rounded font-label-md text-xs flex items-center justify-center gap-2">Импортировать из Реестра</button>
+                </div>
+                <div class="relative">
+                    <span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline">search</span>
+                    <input class="w-full pl-12 pr-4 py-3 bg-surface-container-highest border-none focus:bg-surface-container-lowest focus:border-b-2 focus:border-surface-tint transition-all placeholder:text-outline font-body-md rounded-t-lg" placeholder="Поиск по ФИО или должности..." type="text"/>
+                </div>
+            </div>
+            <div class="flex-1 overflow-y-auto px-8 custom-scrollbar">
+                <table class="w-full text-left">
+                    <thead>
+                    <tr class="text-label-sm text-outline uppercase tracking-widest border-b border-outline-variant/10">
+                        <th class="pb-4 font-bold">Фамилия Имя Отчество</th>
+                        <th class="pb-4 font-bold">Место работы</th>
+                        <th class="pb-4 font-bold">Стаж</th>
+                        <th class="pb-4 font-bold">Истечение срока аттестации</th>
+                        <th class="pb-4 font-bold text-right">Должность</th>
+                    </tr>
+                    </thead>
+                    <tbody class="divide-y-0">
+                    <!-- High Urgency -->
+                    <tr class="bg-surface-container-lowest hover:bg-white transition-colors group">
+                        <td class="py-5 px-4 first:rounded-l-lg">
+                            <div class="font-label-md text-on-surface">Иванов Алексей Иванович</div>
+                            <div class="text-xs text-on-surface-variant mt-0.5">Специалист по ТИ 1 к.</div>
+                        </td>
+                        <td class="py-5 px-4 text-sm text-on-surface-variant">Минское городское Агентство</td>
+                        <td class="py-5 px-4 text-sm text-on-surface-variant">12.2</td>
+                        <td class="py-5 px-4">
+                            <span class="px-2 py-1 bg-error-container text-on-error-container text-xs font-bold rounded">23.04.2026</span>
+                        </td>
+                        <td class="py-5 px-4 text-right last:rounded-r-lg">
+                            <button class="p-2 text-outline hover:text-primary transition-colors"><span class="material-symbols-outlined">person</span></button>
+                        </td>
+                    </tr>
+                    <tr class="h-4"></tr>
+                    <tr class="bg-surface-container-lowest hover:bg-white transition-colors">
+                        <td class="py-5 px-4 first:rounded-l-lg">
+                            <div class="font-label-md text-on-surface">Иванова Татьяна Васильевна</div>
+                            <div class="text-xs text-on-surface-variant mt-0.5">Специалист по ТИ 2 к.</div>
+                        </td>
+                        <td class="py-5 px-4 text-sm text-on-surface-variant">Гродненское Агентство</td>
+                        <td class="py-5 px-4 text-sm text-on-surface-variant">8.5</td>
+                        <td class="py-5 px-4">
+                            <span class="px-2 py-1 bg-surface-container-high text-on-surface text-xs font-bold rounded">18.06.2026</span>
+                        </td>
+                        <td class="py-5 px-4 text-right last:rounded-r-lg">
+                            <button class="p-2 text-outline hover:text-primary transition-colors"><span class="material-symbols-outlined">person</span></button>
+                        </td>
+                    </tr>
+                    <tr class="h-4"></tr>
+                    <tr class="bg-surface-container-lowest hover:bg-white transition-colors">
+                        <td class="py-5 px-4 first:rounded-l-lg">
+                            <div class="font-label-md text-on-surface">Сидоров Дмитрий Иванович</div>
+                            <div class="text-xs text-on-surface-variant mt-0.5">Начальник отдела</div>
+                        </td>
+                        <td class="py-5 px-4 text-sm text-on-surface-variant">Национальное кадастровое агентство</td>
+                        <td class="py-5 px-4 text-sm text-on-surface-variant">15.9</td>
+                        <td class="py-5 px-4 text-sm text-on-surface-variant">25.06.2026</td>
+                        <td class="py-5 px-4 text-right last:rounded-r-lg">
+                            <button class="p-2 text-outline hover:text-primary transition-colors"><span class="material-symbols-outlined">person</span></button>
+                        </td>
+                    </tr>
+                    <tr class="h-4"></tr>
+                    <tr class="bg-surface-container-lowest hover:bg-white transition-colors">
+                        <td class="py-5 px-4 first:rounded-l-lg">
+                            <div class="font-label-md text-on-surface">Кузнецов Михаил Петрович</div>
+                            <div class="text-xs text-on-surface-variant mt-0.5">инженер</div>
+                        </td>
+                        <td class="py-5 px-4 text-sm text-on-surface-variant">Брестское Агентство</td>
+                        <td class="py-5 px-4 text-sm text-on-surface-variant">0.5</td>
+                        <td class="py-5 px-4 text-sm text-on-surface-variant">22.07.2026</td>
+                        <td class="py-5 px-4 text-right last:rounded-r-lg">
+                            <button class="p-2 text-outline hover:text-primary transition-colors"><span class="material-symbols-outlined">person</span></button>
+                        </td>
+                    </tr>
+                    <tr class="h-4"></tr>
+                    <tr class="bg-surface-container-lowest hover:bg-white transition-colors">
+                        <td class="py-5 px-4 first:rounded-l-lg">
+                            <div class="font-label-md text-on-surface">Петрова Валерия Степановка</div>
+                            <div class="text-xs text-on-surface-variant mt-0.5">Специалист по ТИ</div>
+                        </td>
+                        <td class="py-5 px-4 text-sm text-on-surface-variant">Гомельское Агентство</td>
+                        <td class="py-5 px-4 text-sm text-on-surface-variant">1.1</td>
+                        <td class="py-5 px-4 text-sm text-on-surface-variant">28.11.2026</td>
+                        <td class="py-5 px-4 text-right last:rounded-r-lg">
+                            <button class="p-2 text-outline hover:text-primary transition-colors"><span class="material-symbols-outlined">person</span></button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Pagination -->
+            <div class="p-8 flex items-center justify-between mt-auto">
+                <span class="text-xs text-outline font-medium">Показано 1-10 из 38 претендентов</span>
+                <div class="flex gap-2">
+                    <button class="p-2 bg-surface-container-lowest text-outline hover:text-primary rounded transition-colors"><span class="material-symbols-outlined">chevron_left</span></button>
+                    <button class="w-8 h-8 flex items-center justify-center bg-surface-tint text-white font-label-md rounded">1</button>
+                    <button class="w-8 h-8 flex items-center justify-center text-outline hover:bg-surface-container-high rounded">2</button>
+                    <button class="w-8 h-8 flex items-center justify-center text-outline hover:bg-surface-container-high rounded">3</button>
+                    <button class="p-2 bg-surface-container-lowest text-outline hover:text-primary rounded transition-colors"><span class="material-symbols-outlined">chevron_right</span></button>
+                </div>
+            </div>
+        </section>
+        <!-- Right Section: Certification Groups -->
+        <section class="flex-1 flex flex-col gap-module-gap">
+            <!-- Stats Bar -->
+            <div class="grid grid-cols-4 gap-4">
+                <div class="bg-surface-container-lowest p-5 rounded-lg ghost-border">
+                    <div class="text-xs font-label-sm text-outline uppercase mb-2">Всего групп</div>
+                    <div class="text-2xl font-black text-on-surface">12</div>
+                </div>
+                <div class="bg-surface-container-lowest p-5 rounded-lg ghost-border">
+                    <div class="text-xs font-label-sm text-outline uppercase mb-2">Открытых</div>
+                    <div class="text-2xl font-black text-primary">4</div>
+                </div>
+                <div class="bg-surface-container-lowest p-5 rounded-lg ghost-border">
+                    <div class="text-xs font-label-sm text-outline uppercase mb-2">Закрытых</div>
+                    <div class="text-2xl font-black text-slate-400">8</div>
+                </div>
+                <div class="bg-surface-container-lowest p-5 rounded-lg ghost-border">
+                    <div class="text-xs font-label-sm text-outline uppercase mb-2">Претендентов в группах</div>
+                    <div class="text-2xl font-black text-on-surface">156</div>
+                </div>
+            </div>
+            <!-- Calendar Main Area -->
+            <div class="flex-1 bg-surface-container-lowest rounded-xl flex flex-col overflow-hidden ghost-border">
+                <div class="p-6 flex items-center justify-between">
+                    <div class="flex items-center gap-6">
+                        <h2 class="font-headline-md text-xl text-on-surface tracking-tight">Май 2026</h2>
+                        <div class="flex gap-1">
+                            <button class="w-8 h-8 flex items-center justify-center rounded hover:bg-surface-container-high text-outline transition-colors"><span class="material-symbols-outlined text-lg">chevron_left</span></button>
+                            <button class="w-8 h-8 flex items-center justify-center rounded hover:bg-surface-container-high text-outline transition-colors"><span class="material-symbols-outlined text-lg">chevron_right</span></button>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="flex bg-surface-container-high p-1 rounded-lg">
+                            <button class="px-4 py-1.5 bg-white text-xs font-bold rounded shadow-sm">Месяц</button>
+                            <button class="px-4 py-1.5 text-xs text-outline font-bold">Неделя</button>
+                        </div>
+                        <button class="px-6 py-2 primary-gradient text-white font-label-md rounded flex items-center gap-2">
+                            <span class="material-symbols-outlined text-sm">add</span> Добавить группу
+                        </button>
+                        <button class="px-6 py-2 bg-slate-300 text-white font-label-md rounded flex items-center gap-2">
+                            <span class="material-symbols-outlined text-sm">delete</span> Удалить
+                        </button>
+                    </div>
+                </div>
+                <!-- Calendar Grid -->
+                <div class="flex-1 flex flex-col">
+                    <div class="grid grid-cols-7 text-center bg-surface-container-low py-3">
+                        <span class="text-xs font-bold text-outline">ПН</span>
+                        <span class="text-xs font-bold text-outline">ВТ</span>
+                        <span class="text-xs font-bold text-outline">СР</span>
+                        <span class="text-xs font-bold text-outline">ЧТ</span>
+                        <span class="text-xs font-bold text-outline">ПТ</span>
+                        <span class="text-xs font-bold text-outline">СБ</span>
+                        <span class="text-xs font-bold text-outline">ВС</span>
+                    </div>
+                    <div class="flex-1 grid grid-cols-7 grid-rows-5 h-full bg-outline-variant/10 gap-[1px]">
+                        <!-- Empty days -->
+                        <div class="bg-surface-container-low/30 p-2"></div>
+                        <div class="bg-surface-container-low/30 p-2"></div>
+                        <div class="bg-surface-container-low/30 p-2"></div>
+                        <div class="bg-surface-container-lowest p-2 relative">
+                            <span class="text-xs font-bold text-slate-300">1</span>
+                        </div>
+                        <div class="bg-surface-container-lowest p-2 relative">
+                            <span class="text-xs font-bold text-slate-300">2</span>
+                            <!-- Grey Card: Closed -->
+                            <!--                    <div class="mt-2 p-2 bg-slate-100 text-slate-500">-->
+                            <div class="mt-2 p-2 bg-slate-100 text-slate-500 rounded text-[10px] leading-tight shadow-md flex flex-col gap-2">
+                                <div class="font-bold">№08_24</div>
+                                <div class="opacity-50 uppercase tracking-tighter">Закрыта</div>
+                                <button class="w-full py-1.5 bg-slate-300 rounded-sm text-[9px] font-bold uppercase tracking-widest hover:brightness-110 transition-all border border-white/20">Протокол</button>
+                            </div>
+
+                        </div>
+                        <div class="bg-surface-container-low/20 p-2 relative"><span class="text-xs font-bold text-slate-300">3</span></div>
+                        <div class="bg-surface-container-low/20 p-2 relative"><span class="text-xs font-bold text-slate-300">4</span></div>
+                        <!-- Next Row -->
+                        <div class="bg-surface-container-lowest p-2 relative"><span class="text-xs font-bold text-slate-300">5</span></div>
+                        <div class="bg-surface-container-lowest p-2 relative">
+                            <span class="text-xs font-bold text-slate-300">6</span>
+
+                            <div class="mt-2 p-2 bg-[#4e69c3] text-white rounded text-[10px] leading-tight shadow-md flex flex-col gap-2">
+                                <div class="font-bold">№09_24</div>
+                                <div class="opacity-80 uppercase tracking-tighter">Сформирована</div>
+                                <button class="w-full py-1.5 primary-gradient rounded-sm text-[9px] font-bold uppercase tracking-widest hover:brightness-110 transition-all border border-white/20">Протокол</button>
+
+                            </div>
+                        </div>
+                        <div class="bg-surface-container-lowest p-2 relative"><span class="text-xs font-bold text-slate-300">7</span></div>
+                        <div class="bg-surface-container-lowest p-2 relative"><span class="text-xs font-bold text-slate-300">8</span></div>
+                        <div class="bg-surface-container-lowest p-2 relative">
+                            <span class="text-xs font-bold text-slate-300">9</span>
+                            <!--                    &lt;!&ndash; Green Card: Open &ndash;&gt;-->
+                            <!--                    <div class="mt-2 p-2 bg-emerald-100 text-emerald-800 rounded text-[10px] leading-tight">-->
+                            <!--                        <div class="font-bold">№102_25</div>-->
+                            <!--                        <div class="uppercase tracking-tighter">Открыта</div>-->
+                            <!--                    </div>-->
+                            <!-- Green Card: Open -->
+                            <div class="mt-2 p-2 bg-[#4e69c3] text-white rounded text-[10px] leading-tight shadow-md flex flex-col gap-2">
+                                <div class="font-bold">№10_25</div>
+                                <div class="opacity-80 uppercase tracking-tighter">Сформирована</div>
+                                <button class="w-full py-1.5 primary-gradient rounded-sm text-[9px] font-bold uppercase tracking-widest hover:brightness-110 transition-all border border-white/20">Протокол</button>
+                            </div>
+
+                        </div>
+                        <div class="bg-surface-container-low/20 p-2 relative"><span class="text-xs font-bold text-slate-300">10</span></div>
+                        <div class="bg-surface-container-low/20 p-2 relative"><span class="text-xs font-bold text-slate-300">11</span></div>
+                        <!-- Active Week -->
+                        <div class="bg-surface-container-lowest p-2 relative"><span class="text-xs font-bold text-slate-300">12</span></div>
+                        <div class="bg-surface-container-lowest p-2 relative"><span class="text-xs font-bold text-slate-300">13</span></div>
+                        <div class="bg-surface-container-lowest p-2 relative">
+                            <span class="text-xs font-bold text-slate-300">14</span>
+                            <!-- Deep Blue Card: Formed -->
+                            <div class="mt-2 p-2 bg-[#4e69c3] text-white rounded text-[10px] leading-tight shadow-md flex flex-col gap-2">
+                                <div>
+                                    <div class="font-bold">№11_25</div>
+                                    <div class="opacity-80 uppercase tracking-tighter text-[9px]">Сформирована</div>
+                                </div>
+                                <button class="w-full py-1.5 primary-gradient rounded-sm text-[9px] font-bold uppercase tracking-widest hover:brightness-110 transition-all border border-white/20">Протокол</button>
+                            </div>
+                        </div>
+                        <div class="bg-surface-container-low/40 p-2 relative ring-2 ring-inset ring-surface-tint z-10">
+                            <span class="text-xs font-bold text-surface-tint">15</span>
+                            <div class="mt-2 p-2 bg-white ghost-border rounded text-[10px] text-center italic text-outline">Нет событий</div>
+                        </div>
+                        <div class="bg-surface-container-lowest p-2 relative"><span class="text-xs font-bold text-slate-300">16</span></div>
+                        <div class="bg-surface-container-low/20 p-2 relative"><span class="text-xs font-bold text-slate-300">17</span></div>
+                        <div class="bg-surface-container-low/20 p-2 relative"><span class="text-xs font-bold text-slate-300">18</span></div>
+                        <!-- Fill remainder of calendar -->
+                        <div class="bg-surface-container-lowest p-2 relative"><span class="text-xs font-bold text-slate-300">19</span></div>
+                        <div class="bg-surface-container-lowest p-2 relative">
+                            <span class="text-xs font-bold text-slate-300">20</span>
+                            <div class="mt-2 p-2 bg-emerald-100 text-emerald-800 rounded text-[10px] leading-tight">
+                                <div class="font-bold">№106_25</div>
+                                <div class="uppercase tracking-tighter">Открыта</div>
+                            </div>
+                        </div>
+                        <div class="bg-surface-container-lowest p-2 relative"><span class="text-xs font-bold text-slate-300">21</span></div>
+                        <div class="bg-surface-container-lowest p-2 relative"><span class="text-xs font-bold text-slate-300">22</span></div>
+                        <div class="bg-surface-container-lowest p-2 relative"><span class="text-xs font-bold text-slate-300">23</span></div>
+                        <div class="bg-surface-container-low/20 p-2 relative"><span class="text-xs font-bold text-slate-300">24</span></div>
+                        <div class="bg-surface-container-low/20 p-2 relative"><span class="text-xs font-bold text-slate-300">25</span></div>
+                        <div class="bg-surface-container-lowest p-2 relative"><span class="text-xs font-bold text-slate-300">26</span></div>
+                        <div class="bg-surface-container-lowest p-2 relative"><span class="text-xs font-bold text-slate-300">27</span></div>
+                        <div class="bg-surface-container-lowest p-2 relative"><span class="text-xs font-bold text-slate-300">28</span></div>
+                        <div class="bg-surface-container-lowest p-2 relative"><span class="text-xs font-bold text-slate-300">29</span></div>
+                        <div class="bg-surface-container-lowest p-2 relative"><span class="text-xs font-bold text-slate-300">30</span></div>
+                        <div class="bg-surface-container-low/20 p-2 relative text-slate-300 font-bold text-xs">31</div>
+                        <div class="bg-surface-container-low/30"></div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Footer Context / Legend -->
+            <div class="flex gap-6 px-4">
+                <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+                    <span class="text-xs font-bold text-outline">Открыта</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-[#4e69c3]"></span>
+                    <span class="text-xs font-bold text-outline">Сформирована</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-slate-300"></span>
+                    <span class="text-xs font-bold text-outline">Закрыта</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-error"></span>
+                    <span class="text-xs font-bold text-outline">Обратите внимание</span>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<!-- Modal Overlay -->
+<div class="fixed inset-0 z-50 architectural-blur flex items-center justify-center p-8">
+<!-- Results Modal Window -->
+<section class="bg-surface-container-lowest w-full max-w-7xl rounded-xl shadow-[0px_12px_40px_rgba(25,28,30,0.04)] overflow-hidden flex flex-col max-h-[921px]">
+<!-- Modal Header -->
+<header class="flex justify-between items-center h-20 px-10 border-b border-[#c6c6cd]/15">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl">verified</span>
+<h2 class="font-headline-md text-headline-md text-on-surface tracking-tight">Результаты</h2>
+</div>
+<button onclick="window.location.href='../Аттестация.html'" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">close</span>
+</button>
+</header>
+<!-- Filter Bar (Tonal Layering) -->
+    <div class="bg-surface-container-low px-10 py-6 flex flex-wrap items-center justify-between gap-6">
+        <div class="flex items-center gap-8 relative">
+    <!-- Date Range Picker Simulation -->
+    <div class="bg-surface-container-lowest px-4 py-3 rounded-lg flex items-center gap-4 border-2 border-primary relative z-[60] ">
+        <span class="material-symbols-outlined text-outline">calendar_today</span>
+        <span class="font-label-md text-on-surface-variant">01.01.2026— 31.12.2026</span>
+        <span class="material-symbols-outlined text-outline">arrow_drop_down</span>
+    </div>
+            <div class="absolute top-full left-0 mt-2 w-[320px] bg-surface-container-lowest border border-outline-variant rounded-xl shadow-xl z-[70] p-4 animate-in fade-in slide-in-from-top-2 hidden">
+    <div class="flex items-center justify-between mb-4">
+        <button class="p-1 hover:bg-surface-container-low rounded-full"><span class="material-symbols-outlined text-[20px]">chevron_left</span></button>
+        <span class="font-label-md text-on-surface">Декабрь 2026</span>
+        <button class="p-1 hover:bg-surface-container-low rounded-full"><span class="material-symbols-outlined text-[20px]">chevron_right</span></button>
+    </div>
+    <div class="grid grid-cols-7 text-center mb-2">
+        <span class="text-[10px] font-bold text-outline uppercase">Пн</span>
+        <span class="text-[10px] font-bold text-outline uppercase">Вт</span>
+        <span class="text-[10px] font-bold text-outline uppercase">Ср</span>
+        <span class="text-[10px] font-bold text-outline uppercase">Чт</span>
+        <span class="text-[10px] font-bold text-outline uppercase">Пт</span>
+        <span class="text-[10px] font-bold text-outline uppercase">Сб</span>
+        <span class="text-[10px] font-bold text-outline uppercase">Вс</span>
+    </div>
+    <div class="grid grid-cols-7 gap-y-1 text-center">
+        <span class="py-2 text-outline-variant text-[13px]">25</span>
+        <span class="py-2 text-outline-variant text-[13px]">26</span>
+        <span class="py-2 text-outline-variant text-[13px]">27</span>
+        <span class="py-2 text-outline-variant text-[13px]">28</span>
+        <span class="py-2 text-outline-variant text-[13px]">29</span>
+        <span class="py-2 text-outline-variant text-[13px]">30</span>
+        <span class="py-2 bg-primary-fixed text-on-primary-fixed-variant rounded-l-full text-[13px]">1</span>
+        <span class="py-2 bg-primary-fixed-dim/20 text-[13px]">2</span>
+        <span class="py-2 bg-primary-fixed-dim/20 text-[13px]">3</span>
+        <span class="py-2 bg-primary-fixed-dim/20 text-[13px]">4</span>
+        <span class="py-2 bg-primary-fixed-dim/20 text-[13px]">5</span>
+        <span class="py-2 bg-primary-fixed-dim/20 text-[13px]">6</span>
+        <span class="py-2 bg-primary-fixed-dim/20 text-[13px]">7</span>
+        <span class="py-2 bg-primary-fixed-dim/20 text-[13px]">8</span>
+        <span class="py-2 bg-primary-fixed-dim/20 text-[13px]">9</span>
+        <span class="py-2 bg-primary-fixed-dim/20 text-[13px]">10</span>
+        <span class="py-2 bg-primary-fixed-dim/20 text-[13px]">11</span>
+        <span class="py-2 bg-primary-fixed-dim/20 text-[13px]">12</span>
+        <span class="py-2 bg-primary-fixed-dim/20 text-[13px]">13</span>
+        <span class="py-2 bg-primary-fixed-dim/20 text-[13px]">14</span>
+        <span class="py-2 bg-primary-fixed-dim/20 text-[13px]">15</span>
+        <span class="py-2 bg-primary-fixed-dim/20 text-[13px]">16</span>
+        <span class="py-2 bg-primary-fixed-dim/20 text-[13px]">17</span>
+        <span class="py-2 bg-primary-fixed-dim/20 text-[13px]">18</span>
+        <span class="py-2 bg-primary-fixed-dim/20 text-[13px]">19</span>
+        <span class="py-2 bg-primary-fixed-dim/20 text-[13px]">20</span>
+        <span class="py-2 bg-primary-fixed-dim/20 text-[13px]">21</span>
+        <span class="py-2 bg-primary-fixed-dim/20 text-[13px]">22</span>
+        <span class="py-2 bg-primary-fixed-dim/20 text-[13px]">23</span>
+        <span class="py-2 bg-primary-fixed-dim/20 text-[13px]">24</span>
+        <span class="py-2 bg-primary-fixed-dim/20 text-[13px]">25</span>
+        <span class="py-2 bg-primary-fixed-dim/20 text-[13px]">26</span>
+        <span class="py-2 bg-primary-fixed-dim/20 text-[13px]">27</span>
+        <span class="py-2 bg-primary-fixed-dim/20 text-[13px]">28</span>
+        <span class="py-2 bg-primary-fixed-dim/20 text-[13px]">29</span>
+        <span class="py-2 bg-primary-fixed-dim/20 text-[13px]">30</span>
+        <span class="py-2 bg-primary text-on-primary rounded-r-full text-[13px] font-bold">31</span>
+    </div>
+    <div class="mt-4 flex justify-end gap-2 border-t border-outline-variant pt-4">
+        <button class="px-4 py-2 text-primary font-label-md hover:bg-surface-container-low rounded-lg transition-colors">Отмена</button>
+        <button class="px-4 py-2 bg-primary text-on-primary font-label-md rounded-lg shadow-sm">Применить</button>
+    </div>
+</div>
+<!-- Quick Filter Chips -->
+<div class="flex gap-2">
+<button class="px-5 py-2.5 rounded-full font-label-md text-on-surface-variant hover:bg-surface-variant transition-colors">Год</button>
+<button class="px-5 py-2.5 rounded-full font-label-md text-on-surface-variant hover:bg-surface-variant transition-colors">Полгода</button>
+<button class="px-5 py-2.5 rounded-full font-label-md text-on-surface-variant hover:bg-surface-variant transition-colors">Месяц</button>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<span class="font-label-sm text-outline uppercase tracking-widest">Найдено групп: 15</span>
+<button class="primary-gradient text-on-primary px-8 py-3 rounded-lg font-label-md flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                        Экспорт
+                    </button>
+</div>
+</div>
+<!-- Data Table Container -->
+<div class="flex-1 overflow-auto px-10 py-8">
+<table class="w-full border-separate border-spacing-y-0">
+<thead>
+<tr class="bg-surface-container-highest">
+<th class="py-2 px-2 text-left font-label-sm text-on-surface-variant tracking-wider first:rounded-l-lg">Номер группы</th>
+<th class="py-2 px-2 text-left font-label-sm text-on-surface-variant tracking-wider">Дата аттестации</th>
+<th class="py-2 px-2 text-center font-label-sm text-on-surface-variant tracking-wider">Претендентов</th>
+<th class="py-2 px-2 text-center font-label-sm text-on-surface-variant tracking-wider">Явилось</th>
+<th class="py-2 px-2 text-center font-label-sm text-on-surface-variant tracking-wider">Не явилось</th>
+<th class="py-2 px-2 text-center font-label-sm text-on-surface-variant tracking-wider">Аттестовано</th>
+<th class="py-2 px-2 text-center font-label-sm text-on-surface-variant tracking-wider">Не аттестовано</th>
+<th class="py-2 px-2 text-center font-label-sm text-on-surface-variant tracking-wider">Апелляций</th>
+<th class="py-2 px-2 text-center font-label-sm text-on-surface-variant tracking-wider">Нарушений</th>
+<th class="py-2 px-2 text-right font-label-sm text-on-surface-variant tracking-wider last:rounded-r-lg">Всего аттестовано, %</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<!-- Row 1 -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors group">
+<td class="py-5 px-6 font-label-md text-on-surface">№01</td>
+<td class="py-5 px-6 font-body-md text-on-surface-variant">21.01.2026</td>
+<td class="py-5 px-4 text-center font-body-md">25</td>
+<td class="py-5 px-4 text-center font-body-md text-on-primary-fixed-variant">23</td>
+<td class="py-5 px-4 text-center font-body-md text-error">2</td>
+<td class="py-5 px-4 text-center font-body-md text-tertiary">20</td>
+<td class="py-5 px-4 text-center font-body-md">3</td>
+<td class="py-5 px-4 text-center font-body-md">1</td>
+<td class="py-5 px-4 text-center font-body-md">0</td>
+<td class="py-5 px-6 text-right">
+<div class="flex items-center justify-end gap-3">
+<span class="font-label-md text-primary">87%</span>
+<div class="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.4)]"></div>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="bg-surface-container-low/50 hover:bg-surface-container-low transition-colors group">
+<td class="py-5 px-6 font-label-md text-on-surface">№02</td>
+<td class="py-5 px-6 font-body-md text-on-surface-variant">13.02.2026</td>
+<td class="py-5 px-4 text-center font-body-md">20</td>
+<td class="py-5 px-4 text-center font-body-md text-on-primary-fixed-variant">20</td>
+<td class="py-5 px-4 text-center font-body-md">0</td>
+<td class="py-5 px-4 text-center font-body-md text-tertiary">19</td>
+<td class="py-5 px-4 text-center font-body-md">1</td>
+<td class="py-5 px-4 text-center font-body-md">0</td>
+<td class="py-5 px-4 text-center font-body-md">0</td>
+<td class="py-5 px-6 text-right">
+<div class="flex items-center justify-end gap-3">
+<span class="font-label-md text-primary">95%</span>
+<div class="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.4)]"></div>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors group">
+<td class="py-5 px-6 font-label-md text-on-surface">№03</td>
+<td class="py-5 px-6 font-body-md text-on-surface-variant">18.03.2026</td>
+<td class="py-5 px-4 text-center font-body-md">15</td>
+<td class="py-5 px-4 text-center font-body-md text-on-primary-fixed-variant">12</td>
+<td class="py-5 px-4 text-center font-body-md text-error">3</td>
+<td class="py-5 px-4 text-center font-body-md text-tertiary">9</td>
+<td class="py-5 px-4 text-center font-body-md">3</td>
+<td class="py-5 px-4 text-center font-body-md">2</td>
+<td class="py-5 px-4 text-center font-body-md text-error">1</td>
+<td class="py-5 px-6 text-right">
+<div class="flex items-center justify-end gap-3">
+<span class="font-label-md text-primary">75%</span>
+<div class="w-2.5 h-2.5 rounded-full bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.4)]"></div>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="bg-surface-container-low/50 hover:bg-surface-container-low transition-colors group">
+<td class="py-5 px-6 font-label-md text-on-surface">№04</td>
+<td class="py-5 px-6 font-body-md text-on-surface-variant">22.04.2026</td>
+<td class="py-5 px-4 text-center font-body-md">25</td>
+<td class="py-5 px-4 text-center font-body-md text-on-primary-fixed-variant">24</td>
+<td class="py-5 px-4 text-center font-body-md text-error">1</td>
+<td class="py-5 px-4 text-center font-body-md text-tertiary">11</td>
+<td class="py-5 px-4 text-center font-body-md">13</td>
+<td class="py-5 px-4 text-center font-body-md">5</td>
+<td class="py-5 px-4 text-center font-body-md text-error">2</td>
+<td class="py-5 px-6 text-right">
+<div class="flex items-center justify-end gap-3">
+<span class="font-label-md text-primary">45%</span>
+<div class="w-2.5 h-2.5 rounded-full bg-rose-600 shadow-[0_0_8px_rgba(225,29,72,0.4)]"></div>
+</div>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors group">
+<td class="py-5 px-6 font-label-md text-on-surface">№05</td>
+<td class="py-5 px-6 font-body-md text-on-surface-variant">12.05.2026</td>
+<td class="py-5 px-4 text-center font-body-md">22</td>
+<td class="py-5 px-4 text-center font-body-md text-on-primary-fixed-variant">22</td>
+<td class="py-5 px-4 text-center font-body-md text-outline">0</td>
+<td class="py-5 px-4 text-center font-body-md text-tertiary">18</td>
+<td class="py-5 px-4 text-center font-body-md">4</td>
+<td class="py-5 px-4 text-center font-body-md">1</td>
+<td class="py-5 px-4 text-center font-body-md">0</td>
+<td class="py-5 px-6 text-right">
+<div class="flex items-center justify-end gap-3">
+<span class="font-label-md text-primary">82%</span>
+<div class="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.4)]"></div>
+</div>
+</td>
+</tr>
+<!-- Row 6 -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors group">
+    <td class="py-5 px-6 font-label-md text-on-surface">№06</td>
+    <td class="py-5 px-6 font-body-md text-on-surface-variant">20.06.2026</td>
+    <td class="py-5 px-4 text-center font-body-md">23</td>
+    <td class="py-5 px-4 text-center font-body-md text-on-primary-fixed-variant">23</td>
+    <td class="py-5 px-4 text-center font-body-md text-outline">0</td>
+    <td class="py-5 px-4 text-center font-body-md text-tertiary">18</td>
+    <td class="py-5 px-4 text-center font-body-md">3</td>
+    <td class="py-5 px-4 text-center font-body-md">1</td>
+    <td class="py-5 px-4 text-center font-body-md">0</td>
+    <td class="py-5 px-6 text-right">
+        <div class="flex items-center justify-end gap-3">
+            <span class="font-label-md text-primary">82%</span>
+            <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.4)]"></div>
+        </div>
+    </td>
+</tr>
+<!-- Row 7 -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors group">
+    <td class="py-5 px-6 font-label-md text-on-surface">№07</td>
+    <td class="py-5 px-6 font-body-md text-on-surface-variant">10.07.2026</td>
+    <td class="py-5 px-4 text-center font-body-md">24</td>
+    <td class="py-5 px-4 text-center font-body-md text-on-primary-fixed-variant">22</td>
+    <td class="py-5 px-4 text-center font-body-md text-outline">0</td>
+    <td class="py-5 px-4 text-center font-body-md text-tertiary">19</td>
+    <td class="py-5 px-4 text-center font-body-md">4</td>
+    <td class="py-5 px-4 text-center font-body-md">1</td>
+    <td class="py-5 px-4 text-center font-body-md">0</td>
+    <td class="py-5 px-6 text-right">
+        <div class="flex items-center justify-end gap-3">
+            <span class="font-label-md text-primary">82%</span>
+            <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.4)]"></div>
+        </div>
+    </td>
+</tr>
+<!-- Row 8 -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors group">
+    <td class="py-5 px-6 font-label-md text-on-surface">№08</td>
+    <td class="py-5 px-6 font-body-md text-on-surface-variant">22.08.2026</td>
+    <td class="py-5 px-4 text-center font-body-md">20</td>
+    <td class="py-5 px-4 text-center font-body-md text-on-primary-fixed-variant">17</td>
+    <td class="py-5 px-4 text-center font-body-md text-outline">0</td>
+    <td class="py-5 px-4 text-center font-body-md text-tertiary">15</td>
+    <td class="py-5 px-4 text-center font-body-md">2</td>
+    <td class="py-5 px-4 text-center font-body-md">1</td>
+    <td class="py-5 px-4 text-center font-body-md">0</td>
+    <td class="py-5 px-6 text-right">
+        <div class="flex items-center justify-end gap-3">
+            <span class="font-label-md text-primary">82%</span>
+            <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.4)]"></div>
+        </div>
+    </td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Footer Pagination/Summary -->
+<footer class="h-20 px-10 border-t border-[#c6c6cd]/15 flex items-center justify-between bg-surface-container-lowest">
+<div class="flex items-center gap-6">
+<span class="font-label-md text-on-surface-variant">Строк на странице: 10</span>
+<span class="material-symbols-outlined text-outline">expand_more</span>
+</div>
+<div class="flex items-center gap-8">
+<span class="font-label-md text-on-surface-variant">1-5 из 15</span>
+<div class="flex gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors opacity-40">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</footer>
+</section>
+</div>
+</body></html>
