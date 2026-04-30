@@ -1,0 +1,1175 @@
+<!-- index.html - Главная страница НКА Академия -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>НКА Академия | Главная страница для всех</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #00A86B;
+            --primary-dark: #008F5D;
+            --primary-light: #D1FAE5;
+            --secondary: #1E3A5F;
+            --secondary-light: #3B5998;
+            --accent: #FFD700;
+            --accent-dark: #FFA500;
+            --bg: #F8FAFC;
+            --card: #FFFFFF;
+            --text: #1F2937;
+            --text-light: #6B7280;
+            --border: #E5E7EB;
+            --success: #10B981;
+            --error: #EF4444;
+            --warning: #F59E0B;
+            --info: #3B82F6;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .header {
+            background: var(--card);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .user-stats {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            background: var(--bg);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+        }
+
+        .stat {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .level-badge {
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            color: var(--secondary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.75rem;
+        }
+
+        .streak-counter {
+            background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            animation: fire 1s infinite alternate;
+        }
+
+        @keyframes fire {
+            from { box-shadow: 0 0 10px rgba(255,107,107,0.5); }
+            to { box-shadow: 0 0 20px rgba(255,107,107,0.8); }
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--secondary) 0%, #0F172A 100%);
+            color: white;
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0,168,107,0.3) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,168,107,0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .floating-card {
+            background: rgba(255,255,255,0.95);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            position: absolute;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-card:nth-child(1) {
+            top: 0;
+            right: 0;
+            animation-delay: 0s;
+        }
+
+        .floating-card:nth-child(2) {
+            bottom: 20%;
+            left: -10%;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .progress-ring {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: conic-gradient(var(--primary) 75%, var(--border) 0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: var(--card);
+            border-bottom: 1px solid var(--border);
+            padding: 2rem;
+        }
+
+        .stats-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.875rem;
+        }
+
+        /* Section */
+        .section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        /* Roadmap Section */
+        .roadmap-section {
+            background: linear-gradient(135deg, #F0FDF4 0%, #FFFFFF 100%);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .roadmap-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .roadmap {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 3rem;
+        }
+
+        .roadmap::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--border);
+            z-index: 0;
+        }
+
+        .roadmap-progress {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            height: 4px;
+            background: var(--primary);
+            width: 0%;
+            z-index: 1;
+            transition: width 0.5s;
+        }
+
+        .roadmap-step {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            width: 120px;
+        }
+
+        .step-circle {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--card);
+            border: 3px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .roadmap-step.completed .step-circle {
+            background: var(--success);
+            border-color: var(--success);
+            color: white;
+        }
+
+        .roadmap-step.active .step-circle {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+            box-shadow: 0 0 0 4px var(--primary-light);
+        }
+
+        .step-title {
+            font-weight: 600;
+            font-size: 0.875rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .step-desc {
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+
+        /* Courses Grid */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .course-card {
+            background: var(--card);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: var(--primary);
+        }
+
+        .course-image {
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .course-badge.beginner {
+            background: var(--success);
+            color: white;
+        }
+
+        .course-badge.intermediate {
+            background: var(--warning);
+            color: white;
+        }
+
+        .course-badge.advanced {
+            background: var(--error);
+            color: white;
+        }
+
+        .course-content {
+            padding: 1.5rem;
+        }
+
+        .course-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        .course-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .course-desc {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .course-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .course-xp {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .course-btn {
+            background: var(--bg);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: all 0.3s;
+        }
+
+        .course-card:hover .course-btn {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Knowledge Base Preview */
+        .kb-preview {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--border);
+        }
+
+        .kb-document {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            gap: 1rem;
+            align-items: start;
+        }
+
+        .kb-document:hover {
+            border-color: var(--primary);
+            background: #F0FDF4;
+        }
+
+        .doc-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .doc-icon.pdf {
+            background: #FEE2E2;
+            color: #DC2626;
+        }
+
+        .doc-icon.video {
+            background: #DBEAFE;
+            color: #2563EB;
+        }
+
+        .doc-icon.check {
+            background: #D1FAE5;
+            color: var(--primary);
+        }
+
+        .doc-info h4 {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .doc-info p {
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--card);
+            border-radius: 20px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-header {
+            padding: 2rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            background: var(--card);
+            z-index: 10;
+        }
+
+        .modal-close {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            background: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .modal-close:hover {
+            background: var(--bg);
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .law-article {
+            background: #F8FAFC;
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .law-article h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Achievements */
+        .achievements {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .achievement {
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            color: var(--secondary);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(255,215,0,0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .achievement.locked {
+            background: var(--border);
+            color: var(--text-light);
+            animation: none;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--secondary);
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .footer-desc {
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        .footer-links h4 {
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .footer-links a {
+            display: block;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+            .roadmap {
+                overflow-x: auto;
+                padding-bottom: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .courses-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <a href="#" class="logo">
+                <div class="logo-icon">НКА</div>
+                <span>НКА Академия</span>
+            </a>
+            <div class="nav-links">
+                <a href="#">Главная</a>
+                <a href="Страница%20курса/2_Страница_с_интерактивным_курсом.html">Курсы</a>
+                <a href=Страница%20База%20знаний/3_База_знаний.html>База знаний</a>
+                <a href="Учебное%20тестирование/1_Учебное%20тестирование_Настройка%20теста/Учебное%20тестирование.html">Учебное тестирование</a>
+                    <div class="hero-buttons">
+                        <a href="2_Auth/auth.html" class="btn btn-primary" title="направляет на авторизацию">
+                        Войти
+                        </a>
+                        <a href="3_Страница%20Регистрации/Регистрация%20в%20Академии%20НКА.html" class="btn btn-primary" title="направляет на регистрацию">
+                            Зарегистрироваться
+                        </a>
+                    </div>
+<!--                <a href="dashboard.html">Мой прогресс</a>-->
+            </div>
+<!--            <div class="user-stats">-->
+<!--                <div class="stat">-->
+<!--                    <span>🔥</span>-->
+<!--                    <span class="streak-counter">5 дней</span>-->
+<!--                </div>-->
+<!--                <div class="stat">-->
+<!--                    <span>⚡</span>-->
+<!--                    <span>1,250 XP</span>-->
+<!--                </div>-->
+<!--                <span class="level-badge">Уровень 3</span>-->
+<!--                <div style="width: 36px; height: 36px; background: var(&#45;&#45;primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">АИ</div>-->
+<!--            </div>-->
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Профессиональное развитие и аттестация специалистов по технической инвентаризации недвижимого имущества</h1>
+                <p>Интерактивная платформа адаптации и обучения специалистов по технической инвентаризации недвижимого имущества с модулем профессиональной аттестации.
+                    12-месячная дорожная карта развития от новичка до аттестованного профессионала</p>
+                <div class="hero-buttons">
+                    <a href="2_Auth/auth.html" class="btn btn-primary" title="направляет на авторизацию если не авторизован">
+                        Начать обучение
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="#" title="просмотр доступен всем пользователям" class="btn btn-secondary">База знаний</a>
+                    <a href="Учебное%20тестирование/1_Учебное%20тестирование_Настройка%20теста/Учебное%20тестирование.html" title="доступен переход только к учебному тестированию" class="btn btn-secondary">Учебное тестирование</a>
+                </div>
+                
+                <div class="achievements">
+<!--                    <div class="achievement">🏆 Первые шаги</div>-->
+<!--                    <div class="achievement locked">🔒 Юридический эксперт</div>-->
+<!--                    <div class="achievement locked">🔒 Мастер AutoCAD</div>-->
+                </div>
+            </div>
+            <div class="hero-visual">
+<!--                <div class="floating-card">-->
+<!--                    <div class="progress-ring">25%</div>-->
+<!--                    <div style="font-size: 0.875rem; font-weight: 600; color: var(&#45;&#45;text);">Месяц 3 из 12</div>-->
+<!--                    <div style="font-size: 0.75rem; color: var(&#45;&#45;text-light);">Продолжить адаптацию</div>-->
+<!--                </div>-->
+<!--                <div class="floating-card">-->
+<!--                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">📊</div>-->
+<!--                    <div style="font-size: 0.875rem; font-weight: 600; color: var(&#45;&#45;text);">Ваш прогресс</div>-->
+<!--                    <div style="font-size: 0.75rem; color: var(&#45;&#45;text-light);">+125 XP сегодня</div>-->
+<!--                </div>-->
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800" alt="Здание" style="width: 100%; border-radius: 20px; box-shadow: 0 30px 60px rgba(0,0,0,0.3);">
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-number">12</span>
+                <span class="stat-label">Месяцев адаптации</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Документов в базе</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">>1 000</span>
+                <span class="stat-label">Специалистов</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">20+</span>
+                <span class="stat-label">Обучающих курсов</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Roadmap Section -->
+    <section class="roadmap-section">
+        <div class="roadmap-container">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 1rem;">🗺 Ваша дорожная карта адаптации</h2>
+            <p style="text-align: center; color: var(--text-light); max-width: 600px; margin: 0 auto 2rem;">12-месячный план развития от новичка до самостоятельного специалиста по технической инвентаризации недвижимого имущества согласно Отраслевому стандарту</p>
+            
+            <div class="roadmap">
+                <div class="roadmap-progress"></div>
+                
+                <div class="roadmap-step">
+<!--                    <div class="roadmap-step completed">-->
+                    <div class="step-circle">1</div>
+<!--                    <div class="step-circle">✓</div>-->
+                    <div class="step-title">Месяц 1</div>
+                    <div class="step-desc">Введение в ТИ</div>
+                </div>
+                
+                <div class="roadmap-step">
+<!--                    <div class="roadmap-step completed">-->
+<!--                    <div class="step-circle">✓</div>-->
+                    <div class="step-circle">2</div>
+                    <div class="step-title">Месяц 2</div
+                    >
+                    <div class="step-desc">Инструменты измерений</div>
+                </div>
+                
+                <div class="roadmap-step">
+<!--                    <div class="roadmap-step active">-->
+                    <div class="step-circle">3</div>
+                    <div class="step-title">Месяц 3</div>
+                    <div class="step-desc">Программное обеспечение</div>
+                </div>
+                
+                <div class="roadmap-step">
+                    <div class="step-circle">4</div>
+                    <div class="step-title">Месяц 4-6</div>
+                    <div class="step-desc">Практическая работа</div>
+                </div>
+                
+                <div class="roadmap-step">
+                    <div class="step-circle">7</div>
+                    <div class="step-title">Месяц 7-9</div>
+                    <div class="step-desc">Углубление</div>
+                </div>
+                
+                <div class="roadmap-step">
+                    <div class="step-circle">10</div>
+                    <div class="step-title">Месяц 10-12</div>
+                    <div class="step-desc">Аттестация</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="section" id="courses">
+        <div class="section-header">
+            <h2 class="section-title">📚 Каталог курсов</h2>
+            <a href="#" style="color: var(--primary); text-decoration: none; font-weight: 600;">Все курсы →</a>
+        </div>
+        
+        <div class="courses-grid">
+            <!-- Course 1 -->
+            <div class="course-card" onclick="#">
+                <div class="course-image" style="background: linear-gradient(135deg, #00A86B, #008F5D);">
+                    <span class="course-badge beginner">Начальный</span>
+                    <div style="position: absolute; bottom: 1rem; right: 1rem; background: rgba(255,255,255,0.9); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">
+                        📹 22 видео • 📝 10 тестов
+                    </div>
+                </div>
+                <div class="course-content">
+                    <div class="course-meta">
+                        <span>📅 2 недели</span>
+                        <span>👥 340 учеников</span>
+                    </div>
+                    <h3 class="course-title">Основы технической инвентаризации</h3>
+                    <p class="course-desc">Базовый курс для новых сотрудников и претендентов. Порядок проведения работ по технической инвентаризации. Итоговая техническая документация. Проверка характеристик недвижимого имущества.</p>
+                    <div class="course-footer">
+                        <div class="course-xp">
+                            <span>⚡</span>
+                            <span>500 XP</span>
+                        </div>
+                        <div class="course-btn">Записаться</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 2 -->
+            <div class="course-card">
+                <div class="course-image" style="background: linear-gradient(135deg, #1E3A5F, #2D5A87);">
+                    <span class="course-badge intermediate">Средний</span>
+                    <div style="position: absolute; bottom: 1rem; right: 1rem; background: rgba(255,255,255,0.9); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">
+                        📹 8 видео • 🎯 5 симуляторов
+                    </div>
+                </div>
+                <div class="course-content">
+                    <div class="course-meta">
+                        <span>📅 2 недели</span>
+                        <span>👥 156 учеников</span>
+                    </div>
+                    <h3 class="course-title">Составление графических приложений</h3>
+                    <p class="course-desc">Практическое освоение AutoCAD и RH_CAD: создание поэтажных и ситуационных планов, иных графических приложений.</p>
+                    <div class="course-footer">
+                        <div class="course-xp">
+                            <span>⚡</span>
+                            <span>750 XP</span>
+                        </div>
+                        <div class="course-btn">Записаться</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 3 -->
+            <div class="course-card">
+                <div class="course-image" style="background: linear-gradient(135deg, #7C3AED, #A855F7);">
+                    <span class="course-badge intermediate">Средний</span>
+                    <div style="position: absolute; bottom: 1rem; right: 1rem; background: rgba(255,255,255,0.9); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">
+                        📹 4 видео • 📝 2 теста • 🎯 3 симулятора
+                    </div>
+                </div>
+                <div class="course-content">
+                    <div class="course-meta">
+                        <span>📅 1 неделя</span>
+                        <span>👥 89 учеников</span>
+                    </div>
+                    <h3 class="course-title">Инструменты и методы измерений</h3>
+                    <p class="course-desc">Лазерные дальномеры и рулетки. Работа с планшетом и GNSS-приемником с контроллером и геодезической вехой</p>
+                    <div class="course-footer">
+                        <div class="course-xp">
+                            <span>⚡</span>
+                            <span>1000 XP</span>
+                        </div>
+                        <div class="course-btn">Записаться</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 4 -->
+            <div class="course-card">
+                <div class="course-image" style="background: linear-gradient(135deg, #059669, #10B981);">
+                    <span class="course-badge beginner">Начальный</span>
+                    <div style="position: absolute; bottom: 1rem; right: 1rem; background: rgba(255,255,255,0.9); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">
+                        📹 4 видео • 🎯 Симулятор • 📝 6 тестов
+                    </div>
+                </div>
+                <div class="course-content">
+                    <div class="course-meta">
+                        <span>📅 1 неделя</span>
+                        <span>👥 412 учеников</span>
+                    </div>
+                    <h3 class="course-title">Работа с NKA_RH</h3>
+                    <p class="course-desc">Интерактивный симулятор работы с Реестром характеристик: ввод данных, формирование итоговой технической документации, ведение инвентарных дел.</p>
+                    <div class="course-footer">
+                        <div class="course-xp">
+                            <span>⚡</span>
+                            <span>300 XP</span>
+                        </div>
+                        <div class="course-btn">Записаться</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Knowledge Base Preview -->
+    <section class="section" style="background: white; border-top: 1px solid var(--border);">
+        <div class="section-header">
+            <h2 class="section-title">📖 База знаний</h2>
+            <a href="#" style="color: var(--primary); text-decoration: none; font-weight: 600;">Перейти в библиотеку →</a>
+        </div>
+        
+        <div class="kb-preview">
+            <div class="kb-document" onclick="openModal()">
+                <div class="doc-icon pdf">📄</div>
+                <div class="doc-info">
+                    <h4>Инструкция №11 — Техническая инвентаризация зданий и сооружений</h4>
+                    <p>Утверждена постановлением Министерства архитектуры и строительства РБ. Основной нормативный документ.</p>
+                </div>
+            </div>
+            
+            <div class="kb-document">
+                <div class="doc-icon video">🎥</div>
+                <div class="doc-info">
+                    <h4>Видео-инструкция: Измерение площадей помещений</h4>
+                    <p>Практическое руководство с примерами и типичными ошибками.</p>
+                </div>
+            </div>
+            
+            <div class="kb-document">
+                <div class="doc-icon check">✓</div>
+                <div class="doc-info">
+                    <h4>Чек-лист: Подготовка к выезду на объект</h4>
+                    <p>Интерактивный чек-лист для проверки комплектности инструментов.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <div class="footer-logo">НКА Академия</div>
+                <p class="footer-desc">Интерактивная платформа адаптации и дистанционного обучения специалистов технической инвентаризации. Национальное кадастровое агентство Республики Беларусь.</p>
+                <p style="margin-top: 1rem; opacity: 0.6; font-size: 0.875rem;">© 2026 УП "Национальное кадастровое агентство"</p>
+            </div>
+            <div class="footer-links">
+                <h4>Обучение</h4>
+                <a href="course.html">Курсы</a>
+                <a href="#">Вебинары</a>
+                <a href="#">Симуляторы</a>
+                <a href="#">Тестирование</a>
+            </div>
+            <div class="footer-links">
+                <h4>Ресурсы</h4>
+                <a href="knowledge.html">База знаний</a>
+                <a href="#">Нормативные документы</a>
+                <a href="#">Видео-инструкции</a>
+                <a href="#">Чек-листы</a>
+            </div>
+            <div class="footer-links">
+                <h4>Поддержка</h4>
+                <a href="#">Наставники</a>
+                <a href="#">FAQ</a>
+                <a href="#">Техподдержка</a>
+                <a href="#">Обратная связь</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Document Modal -->
+    <div class="modal" id="docModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h2>Инструкция №11</h2>
+                    <p style="color: var(--text-light); font-size: 0.875rem; margin-top: 0.25rem;">Техническая инвентаризация зданий и сооружений</p>
+                </div>
+                <button class="modal-close" onclick="closeModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                    <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">📥 Скачать PDF</button>
+                    <button class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem; color: var(--text); border: 1px solid var(--border);">🖨 Печать</button>
+                </div>
+                
+                <div class="law-article">
+                    <h4>Глава 1. Общие положения</h4>
+                    <p>Настоящая Инструкция устанавливает порядок проведения технической инвентаризации зданий, сооружений, помещений в Республике Беларусь и подготовки технических планов.</p>
+                </div>
+
+                <div class="law-article">
+                    <h4>Статья 1. Цели и задачи технической инвентаризации</h4>
+                    <p>1.1. Техническая инвентаризация проводится в целях:<br>
+                    - учета объектов недвижимости;<br>
+                    - контроля за их техническим состоянием;<br>
+                    - подготовки технических планов для государственной регистрации.</p>
+                </div>
+
+                <div class="law-article">
+                    <h4>Статья 2. Объекты технической инвентаризации</h4>
+                    <p>2.1. Объектами технической инвентаризации являются:<br>
+                    - здания;<br>
+                    - сооружения;<br>
+                    - помещения;<br>
+                    - объекты незавершенного строительства.</p>
+                </div>
+
+                <div class="law-article">
+                    <h4>Статья 3. Порядок проведения измерений</h4>
+                    <p>3.1. Измерения выполняются с использованием:<br>
+                    - лазерных дальномеров;<br>
+                    - рулеток (для контрольных замеров);<br>
+                    - GPS-оборудования (для определения координат).</p>
+                    <p>3.2. Погрешность измерений не должна превышать ±0,1% от измеряемой величины.</p>
+                </div>
+
+                <div style="background: #DBEAFE; border-radius: 8px; padding: 1rem; margin-top: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                    <div style="font-size: 2rem;">💡</div>
+                    <div>
+                        <div style="font-weight: 600; color: #1E40AF;">ИИ-ассистент подготовил пояснение</div>
+                        <div style="font-size: 0.875rem; color: #1E40AF; margin-top: 0.25rem;">Пункт 3.2 означает, что при измерении комнаты 5×4 метра (20 м²) допустимая погрешность составляет ±0,02 м².</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+        function openModal() {
+            document.getElementById('docModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('docModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        document.getElementById('docModal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+    </script>
+</body>
+</html>
