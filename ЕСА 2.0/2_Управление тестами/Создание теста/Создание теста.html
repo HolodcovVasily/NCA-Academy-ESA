@@ -444,11 +444,18 @@
 <div>
 <label class="font-label-sm text-label-sm text-outline uppercase tracking-[0.1em] mb-2 block">Режим теста</label>
 <select class="w-full h-12 px-4 bg-surface-container-highest border-none rounded-t-lg focus:bg-surface-container-lowest focus:ring-0 focus:border-b-2 focus:border-surface-tint font-body-md text-on-surface appearance-none">
-<option title="Всем аттестуемым должен запускаться одинаковый тест по составу из случайных вопросов, со случайным порядком отображения в тесте">Фиксированный</option>
+<option title="Всем аттестуемым должен запускаться одинаковый тест по составу из случайных вопросов, со случайным порядком отображения в тесте">Стандартный</option>
 <!--<option>By Criteria</option>-->
 <option title="При выборе отображаются дополнительные настройки адаптивного тестирования" selected="">Адаптивный</option>
 </select>
 </div>
+    <div>
+        <label class="font-label-sm text-label-sm text-outline uppercase tracking-[0.1em] mb-2 block">Количество правильных ответов</label>
+        <div class="relative">
+            <input class="w-full h-12 px-4 bg-surface-container-highest border-none rounded-t-lg focus:bg-surface-container-lowest focus:ring-0 focus:border-b-2 focus:border-surface-tint font-body-md text-on-surface" type="number" value="32"/>
+            <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline/50 text-[18px]">шт.</span>
+        </div>
+    </div>
 </div>
 </div>
 <!-- Section 2: Adaptive Settings (The "Vaulted" Content) -->
@@ -506,17 +513,6 @@
             <div class="w-4 h-4 bg-white rounded-full"></div>
         </div>
     </div>
-<!--<div class="col-span-2">-->
-<!--<label class="font-label-sm text-label-sm text-outline uppercase tracking-[0.1em] mb-2 block">Question Limits</label>-->
-<!--</div>-->
-<!--<div class="relative">-->
-<!--<input class="w-full h-12 px-4 bg-surface-container-highest border-none rounded-t-lg focus:bg-surface-container-lowest focus:ring-0 focus:border-b-2 focus:border-surface-tint font-body-md text-on-surface" placeholder="Min" type="number"/>-->
-<!--<span class="absolute right-4 top-1/2 -translate-y-1/2 text-outline text-[12px] uppercase">Min</span>-->
-<!--</div>-->
-<!--<div class="relative">-->
-<!--<input class="w-full h-12 px-4 bg-surface-container-highest border-none rounded-t-lg focus:bg-surface-container-lowest focus:ring-0 focus:border-b-2 focus:border-surface-tint font-body-md text-on-surface" placeholder="Max" type="number"/>-->
-<!--<span class="absolute right-4 top-1/2 -translate-y-1/2 text-outline text-[12px] uppercase">Max</span>-->
-<!--</div>-->
 </div>
 
 </div>
