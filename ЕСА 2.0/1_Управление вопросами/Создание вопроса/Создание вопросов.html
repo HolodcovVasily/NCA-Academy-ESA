@@ -257,6 +257,46 @@
 </section>
 <!-- Main Content Area -->
 <section class="lg:w-2/3 flex flex-col gap-module-gap">
+    <!-- Question Type Selection -->
+    <div class="bg-surface-container-low p-6 rounded-xl">
+        <label class="font-label-sm text-label-sm text-outline uppercase mb-4 block px-1">Тип вопроса:</label>
+        <div class="flex flex-wrap gap-3">
+            <button class="flex-1 min-w-[140px] px-4 py-3 rounded-lg bg-white border border-primary text-primary font-label-md flex items-center justify-center gap-2 shadow-sm">
+                <span class="material-symbols-outlined text-lg" data-icon="radio_button_checked">radio_button_checked</span>
+                Стандартный
+            </button>
+            <button class="flex-1 min-w-[140px] px-4 py-3 rounded-lg bg-surface-container hover:bg-white text-on-surface-variant font-label-md flex items-center justify-center gap-2 transition-colors">
+                <span class="material-symbols-outlined text-lg" data-icon="check_box">check_box</span>
+                Интерактивный
+            </button>
+            <button class="flex-1 min-w-[140px] px-4 py-3 rounded-lg bg-surface-container hover:bg-white text-on-surface-variant font-label-md flex items-center justify-center gap-2 transition-colors">
+                <span class="material-symbols-outlined text-lg" data-icon="short_text">short_text</span>
+                Открытый
+            </button>
+            <button class="flex-1 min-w-[140px] px-4 py-3 rounded-lg bg-surface-container hover:bg-white text-on-surface-variant font-label-md flex items-center justify-center gap-2 transition-colors">
+                <span class="material-symbols-outlined text-lg" data-icon="sync_alt">sync_alt</span>
+                Соответствие
+            </button>
+            <button class="flex-1 min-w-[140px] px-4 py-3 rounded-lg bg-surface-container hover:bg-white text-on-surface-variant font-label-md flex items-center justify-center gap-2 transition-colors">
+                <span class="material-symbols-outlined text-lg" data-icon="reorder">reorder</span>
+                Последовательность
+            </button>
+        </div>
+    </div>
+    <!-- Answer Type Selection -->
+    <div class="bg-surface-container-low p-6 rounded-xl">
+        <label class="font-label-sm text-label-sm text-outline uppercase mb-4 block px-1">Тип ответов:</label>
+        <div class="flex flex-wrap gap-3">
+            <button class="flex-1 min-w-[140px] px-4 py-3 rounded-lg bg-white border border-primary text-primary font-label-md flex items-center justify-center gap-2 shadow-sm">
+                <span class="material-symbols-outlined text-lg" data-icon="radio_button_checked">radio_button_checked</span>
+                Одиночный выбор
+            </button>
+            <button class="flex-1 min-w-[140px] px-4 py-3 rounded-lg bg-surface-container hover:bg-white text-on-surface-variant font-label-md flex items-center justify-center gap-2 transition-colors">
+                <span class="material-symbols-outlined text-lg" data-icon="check_box">check_box</span>
+                Множественный выбор
+            </button>
+        </div>
+    </div>
 <!-- Content Section -->
 <div class="bg-surface-container-lowest p-8 rounded-xl outline outline-1 outline-outline-variant/15">
 <div class="flex justify-between items-center mb-6">
@@ -264,10 +304,10 @@
 <span class="material-symbols-outlined text-primary" data-icon="edit_note">edit_note</span>
     Содержание вопроса
                         </h3>
-<div class="flex bg-surface-container-low p-1 rounded-full">
-<button class="px-4 py-2 font-label-sm text-label-sm rounded-full text-on-surface-variant hover:text-on-surface">Стандартный вопрос</button>
-<button class="px-4 py-2 font-label-sm text-label-sm rounded-full bg-white text-primary shadow-sm">Интерактивный вопрос</button>
-</div>
+<!--<div class="flex bg-surface-container-low p-1 rounded-full">-->
+<!--<button class="px-4 py-2 font-label-sm text-label-sm rounded-full text-on-surface-variant hover:text-on-surface">Стандартный вопрос</button>-->
+<!--<button class="px-4 py-2 font-label-sm text-label-sm rounded-full bg-white text-primary shadow-sm">Интерактивный вопрос</button>-->
+<!--</div>-->
 </div>
 <div class="flex flex-col gap-6">
 <div>
@@ -315,6 +355,15 @@
 </div>
 <!-- Answers Section -->
 <div class="bg-surface-container-lowest p-8 rounded-xl outline outline-1 outline-outline-variant/15">
+    <!-- Shuffle Toggle -->
+<!--    <div class="flex items-center justify-between bg-surface-container-highest p-3 rounded-lg">-->
+    <div class="flex items-center justify-between bg-surface-container-low p-6 rounded-xl mb-4">
+        <span class="font-label-md text-on-surface-variant">Перемешивание вопросов</span>
+        <label class="relative inline-flex items-center cursor-pointer">
+            <input checked="" class="sr-only peer" type="checkbox"/>
+            <div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+        </label>
+    </div>
 <div class="flex justify-between items-center mb-6">
 <h3 class="font-label-md text-label-md text-on-surface flex items-center gap-2">
 <span class="material-symbols-outlined text-primary" data-icon="checklist">checklist</span>
@@ -349,47 +398,25 @@
 </div>
 <!-- Footer Actions -->
 <footer class="flex items-center justify-between p-8 bg-surface-container-low rounded-xl mb-12">
-<!--<div class="flex-grow max-w-sm">-->
-<!--<label class="font-label-sm text-label-sm text-outline uppercase mb-2 block px-1">Structural Unit (Article/Point)</label>-->
-<!--<div class="relative">-->
-<!--<input class="w-full h-12 px-4 bg-white border-none font-body-md text-body-md text-on-surface bottom-border-focus rounded-lg" type="text" value="Art. 4.2.1-B"/>-->
-<!--<span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-surface-tint text-sm" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>-->
-<!--</div>-->
-<!--</div>-->
     <!-- Source Reference -->
     <section class="bg-surface-container-lowest p-8 rounded-xl">
-        <label class="text-[10px] font-bold uppercase tracking-widest text-slate-500 block mb-6" style="">Ссылка на источник</label>
+        <label class="text-[10px] font-bold uppercase tracking-widest text-slate-500 block mb-6" style="">Ссылка на источник. Ссылка на документ из Базы знаний будет прикреплена автоматически</label>
 
-        <div class="grid grid-cols-2 gap-6">
-            <div class="space-y-2">
-                <label class="text-[10px] font-bold uppercase text-outline" style="">Раздел</label>
-                <select class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface appearance-none bottom-border-focus">
-                    <option>Гражданский кодекс</option>
-                    <option>Закон о государственной реистрации</option>
-                    <option>Инструкция о кадастровых номерах</option>
-                    <option>Инструкция о порядке ведения адресной системы</option>
-                    <option>Инструкция № 11</option>
-                    <option>Инструкция об инвентарных номерах</option>
-                    <option>Кодекс Республики Беларусь о земле</option>
-                </select>
-<!--                <span class="text-[10px] font-bold uppercase text-outline" style="">Документ</span>-->
-<!--                <input class="w-full bg-surface-container-low border-none rounded-lg px-4 py-2.5 text-sm" type="text" value="Гражданский кодекс Республики Беларусь" placeholder="Введите наименование документа">-->
-            </div>
-            <div class="space-y-2">
-                <span class="text-[10px] font-bold uppercase text-outline" style="">Структурная единица</span>
-                <input class="w-full bg-surface-container-low border-none rounded-lg px-4 py-2.5 text-sm" type="text" value="Ст. 223 ГК" placeholder="Введите наименование статьи, пункта документа">
-            </div>
+<!--        <div class="grid grid-cols-2 gap-6"></div>-->
+        <div class="space-y-2">
+            <span class="text-[10px] font-bold uppercase text-outline" style="">Структурная единица</span>
+            <input class="w-full bg-surface-container-low border-none rounded-lg px-4 py-2.5 text-sm" type="text" value="" placeholder="Укажите статью, пункт документа">
 
-        </div>
-        <div>
-            <label class="font-label-sm text-label-sm text-outline uppercase mt-2 block px-1">Описание</label>
-            <textarea class="w-full p-6 bg-surface-container-low border-none font-body-md text-body-md text-on-surface focus:bg-white focus:ring-0 focus:border-b-2 focus:border-surface-tint" placeholder="Вставьте текст структурной единицы" rows="4"></textarea>
+            <label class="text-[10px] font-bold uppercase text-outline">Описание</label>
+            <textarea class="w-full bg-surface-container-low border-none rounded-lg px-4 py-2.5 text-sm focus:bg-white focus:ring-0 focus:border-b-2 focus:border-surface-tint" placeholder="Вставьте текст структурной единицы" rows="4"></textarea>
         </div>
     </section>
 </footer>
     <div class="flex gap-4 justify-between items-center">
         <button onclick="window.location.href='../Управление вопросами/Управление вопросами.html'" class="px-8 py-2.5 rounded-lg text-xs font-bold text-on-surface-variant hover:bg-surface-container-low transition-all" style="">
             Отмена</button>
+        <button onclick="window.location.href='#'" class="px-8 py-2.5 rounded-lg text-xs font-bold text-on-surface-variant hover:bg-surface-container-low transition-all" style="">
+            <span class="material-symbols-outlined text-sm" style="">clear</span>Очистить форму</button>
         <button onclick="window.location.href='../Управление вопросами/Управление вопросами.html'" class="bg-gradient-to-br from-[#4e69c3] to-[#001453] text-white px-10 py-4 rounded-xl font-label-md text-label-md shadow-lg hover:brightness-110 active:scale-95 transition-all flex items-center gap-3" style="">
             <span class="material-symbols-outlined text-sm" style="">save</span>Сохранить вопрос</button>
     </div>
