@@ -170,8 +170,8 @@
 <div class="mb-section-gap flex justify-between items-end">
 <div class="max-w-2xl">
 <span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em] mb-2 block">Создание вопроса</span>
-<h1 class="font-display-lg text-display-lg text-on-background">Гражданский кодекс Республики Беларусь. Раздел 1</h1>
-<p class="font-body-md text-body-md text-on-surface-variant mt-2">Добавляйте новые вопросы. После сохранения вопросы отображаются в Банке вопросов в зависимости от их статуса.</p>
+<!--<h1 class="font-display-lg text-display-lg text-on-background">Гражданский кодекс Республики Беларусь. Раздел 1</h1>-->
+<!--<p class="font-body-md text-body-md text-on-surface-variant mt-2">Добавляйте новые вопросы. После сохранения вопросы отображаются в Банке вопросов в зависимости от их статуса.</p>-->
 </div>
 </div>
 <div class="flex flex-col lg:flex-row gap-module-gap">
@@ -186,13 +186,13 @@
 <div class="flex flex-col gap-4">
 <div class="group">
     <div class="space-y-2">
-        <div class="pt-4 border-t border-outline-variant/30 space-y-4">
-            <div class="flex justify-between items-center">
-                <span class="text-[10px] font-bold text-slate-500 uppercase" style="">Редактирование</span>
-                <span class="text-xs font-bold" style="">2026-04-13 14:32</span>
-            </div>
-        </div>
-        <label class="font-label-sm text-label-sm text-outline uppercase mb-2 block px-1" style="">Раздел</label>
+<!--        <div class="pt-4 border-t border-outline-variant/30 space-y-4">-->
+<!--            <div class="flex justify-between items-center">-->
+<!--                <span class="text-[10px] font-bold text-slate-500 uppercase" style="">Редактирование</span>-->
+<!--                <span class="text-xs font-bold" style="">2026-04-13 14:32</span>-->
+<!--            </div>-->
+<!--        </div>-->
+        <label class="font-label-sm text-label-sm text-outline uppercase mb-2 block px-1" style="">Документ (Раздел)</label>
         <select class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface appearance-none bottom-border-focus">
             <option>Гражданский кодекс</option>
             <option>Закон о государственной реистрации</option>
@@ -201,6 +201,13 @@
             <option>Инструкция № 11</option>
             <option>Инструкция об инвентарных номерах</option>
             <option>Кодекс Республики Беларусь о земле</option>
+        </select>
+
+        <label class="font-label-sm text-label-sm text-outline uppercase mb-2 block px-1" style="">Подраздел</label>
+        <select class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface appearance-none bottom-border-focus">
+            <option>Глава 1</option>
+            <option>Глава 2</option>
+            <option>Глава 3</option>
         </select>
 
         <div class="space-y-2">
@@ -218,19 +225,25 @@
                 <option selected="">Средняя</option>
                 <option>Сложная</option>
             </select>
-
-            <!--<input class="w-full bg-surface-container-lowest border-none rounded px-4 py-2 text-sm" type="text" value="Легкая" placeholder="Легкая">-->
         </div>
-
+        <label class="font-label-sm text-label-sm text-outline uppercase mb-2 block px-1">Номер (ID)</label>
+        <input class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant cursor-not-allowed" readonly="" type="text" value="4153723"/>
     </div>
-<!--    -->
-<!--<label class="font-label-sm text-label-sm text-outline uppercase mb-2 block px-1">Document Reference</label>-->
-<!--<input class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant cursor-not-allowed" readonly="" type="text" value="Basel III - Capital Requirements Framework"/>-->
+
+
 </div>
     <div class="">
         <div>
-            <label class="font-label-sm text-label-sm text-outline uppercase mb-2 block px-1">Автор</label>
-            <input class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface bottom-border-focus" type="text" value="Авторизованный пользователь"/>
+            <label class="font-label-sm text-label-sm text-outline uppercase mb-2 block px-1">Разработчик</label>
+            <input class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant cursor-not-allowed" readonly="" type="text" value="Авторизованный администратор вопросов"/>
+        </div>
+        <div>
+            <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Создан</label>
+            <input class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant cursor-not-allowed" readonly="" type="text" value="03.10.2016 15:55:06"/>
+        </div>
+        <div>
+            <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Дата изменений</label>
+            <input class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant cursor-not-allowed" readonly="" type="text" value="07.05.2026 09:21:06"/>
         </div>
     </div>
 </div>
