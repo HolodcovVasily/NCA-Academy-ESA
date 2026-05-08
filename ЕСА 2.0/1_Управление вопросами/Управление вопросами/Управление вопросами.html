@@ -150,9 +150,6 @@
 <header class="h-14 bg-brand-lowest flex items-center justify-between px-6 z-20" data-purpose="top-navigation">
     <div class="flex items-center gap-8">
         <div class="flex items-center gap-2">
-            <div class="w-8 h-8 bg-brand-primary rounded flex items-center justify-center text-white">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-            </div>
             <h1 class="text-xl font-black text-[#001453] dark:text-white">НКА Академия | ЕСА 2.0 | Управление вопросами</h1>
         </div>
     </div>
@@ -207,10 +204,7 @@
 <section class="w-80 bg-surface-container-low flex flex-col border-r border-surface-container">
 <div class="p-6">
 <div class="flex items-center justify-between mb-4">
-<h2 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Техническая инвентаризация</h2>
-<!--<button class="p-1 text-primary hover:bg-primary/10 rounded transition-colors">-->
-<!--<span class="material-symbols-outlined text-lg" data-icon="add">add</span>-->
-<!--</button>-->
+<h2 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Документ (Раздел)</h2>
 </div>
 <div class="space-y-2 custom-scrollbar overflow-y-auto max-h-[calc(100vh-200px)]">
 <!-- Accordion Item 1 -->
@@ -220,14 +214,38 @@
 <span class="material-symbols-outlined text-slate-400 group-hover:rotate-90 transition-transform" data-icon="chevron_right">chevron_right</span>
 </button>
 <div class="mt-2 ml-4 space-y-1 border-l-2 border-slate-200 pl-4">
-<div class="flex items-center justify-between p-2 text-xs text-slate-600 hover:bg-white hover:rounded-md transition-colors cursor-pointer">
+<div class="flex items-center justify-between p-1 text-xs text-slate-600 hover:bg-white hover:rounded-md transition-colors cursor-pointer">
 <span class="">Глава 1. Описание</span>
+    <div>
+        <button class="p-1 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">
+            <span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+        </button>
+        <button class="p-1 hover:bg-white rounded transition-all text-slate-400 hover:text-error">
+            <span class="material-symbols-outlined text-lg" data-icon="delete">delete</span>
+        </button>
+    </div>
 </div>
-<div class="flex items-center justify-between p-2 text-xs text-slate-600 hover:bg-white hover:rounded-md transition-colors cursor-pointer">
-<span class="">Глава 1. Описание</span>
+<div class="flex items-center justify-between p-1 text-xs text-slate-600 hover:bg-white hover:rounded-md transition-colors cursor-pointer">
+<span class="">Глава 2. Описание</span>
+    <div>
+        <button class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">
+            <span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+        </button>
+        <button class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-error">
+            <span class="material-symbols-outlined text-lg" data-icon="delete">delete</span>
+        </button>
+    </div>
 </div>
-    <div class="flex items-center justify-between p-2 text-xs text-slate-600 hover:bg-white hover:rounded-md transition-colors cursor-pointer">
+    <div class="flex items-center justify-between p-1 text-xs text-slate-600 hover:bg-white hover:rounded-md transition-colors cursor-pointer">
         <span class="">Глава 3. Описание</span>
+        <div>
+            <button class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">
+                <span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+            </button>
+            <button class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-error">
+                <span class="material-symbols-outlined text-lg" data-icon="delete">delete</span>
+            </button>
+        </div>
     </div>
 <button class="flex items-center gap-2 p-2 text-[10px] uppercase font-bold text-primary tracking-wider hover:underline">
 <span class="material-symbols-outlined text-xs" data-icon="add">add</span> Добавить подраздел
@@ -495,6 +513,35 @@
 </div>
 </td>
 </tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors group cursor-pointer">
+    <td class="px-6 py-4 text-xs font-medium text-slate-400">
+        <input class="w-4 h-4 rounded border-outline-variant text-surface-tint focus:ring-surface-tint/20 cursor-pointer" type="checkbox">
+    </td>
+    <td class="px-4 py-4 text-xs font-bold text-[#001453]">4153726</td>
+    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">В соответствии с ГК, что является недвижимы...</td>
+    <td class="px-4 py-4">
+        <span class="px-2 py-0.5 bg-emerald-100 text-emerald-700 text-[9px] font-black uppercase rounded">Архивный</span>
+    </td>
+    <td class="px-4 py-4">
+        <div class="flex items-center gap-1.5">
+            <div class="w-1.5 h-1.5 rounded-full bg-amber-500"></div>
+            <span class="text-[10px] font-bold text-slate-600">Средняя</span>
+        </div>
+    </td>
+    <td class="px-6 py-4 text-right">
+        <div class="flex items-center justify-end gap-1">
+            <button class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">
+                <span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+            </button>
+            <button class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-on-surface">
+                <span class="material-symbols-outlined text-lg" data-icon="content_copy">content_copy</span>
+            </button>
+            <button class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-error">
+                <span class="material-symbols-outlined text-lg" data-icon="delete">delete</span>
+            </button>
+        </div>
+    </td>
+</tr>
 </tbody>
 </table>
 <!-- Pagination -->
@@ -566,6 +613,10 @@
     <div>
         <label class="text-[10px] font-bold text-slate-500 uppercase block mb-1">Разработчик</label>
         <span class="text-xs font-mono font-bold text-[#001453]">Дубков А.В.</span>
+    </div>
+    <div>
+        <label class="text-[10px] font-bold text-slate-500 uppercase block mb-1">ID</label>
+        <span class="text-xs font-mono font-bold text-[#001453]">4153726</span>
     </div>
 </div>
 </div>
