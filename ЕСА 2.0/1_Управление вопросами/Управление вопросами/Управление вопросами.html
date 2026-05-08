@@ -76,6 +76,66 @@
             },
         }
     </script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            primary: '#4e69c3',
+                            dark: '#0a1d43',
+                            surface: '#f7f9fb',
+                            container: '#f2f4f6',
+                            lowest: '#ffffff',
+                        },
+                        status: {
+                            active: '#10b981',
+                            development: '#f59e0b',
+                            archived: '#94a3b8',
+                            easy: '#10b981',
+                            medium: '#f59e0b',
+                            hard: '#ef4444',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                        tightest: '-0.02em',
+                    }
+                }
+            }
+        }
+    </script>
+    <style data-purpose="custom-scrollbar">
+        /* Subtle scrollbar for modern editorial look */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+    <style data-purpose="editorial-layout">
+        body {
+            background-color: #f7f9fb;
+            color: #0a1d43;
+            font-family: 'Inter', sans-serif;
+        }
+        .no-line-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .sidebar-active {
+            background-color: #ffffff;
+            color: #4e69c3;
+            font-weight: 600;
+        }
+        .tag-active { background-color: #ecfdf5; color: #059669; }
+        .tag-dev { background-color: #fffbeb; color: #d97706; }
+        .gradient-btn {
+            background: linear-gradient(135deg, #4e69c3 0%, #3a4f9a 100%);
+        }
+    </style>
 <style>
         body { font-family: 'Inter', sans-serif; }
         .material-symbols-outlined {
@@ -87,27 +147,48 @@
     </style>
 </head>
 <body class="bg-surface text-on-background selection:bg-primary-fixed selection:text-on-primary-fixed">
+<header class="h-14 bg-brand-lowest flex items-center justify-between px-6 z-20" data-purpose="top-navigation">
+    <div class="flex items-center gap-8">
+        <div class="flex items-center gap-2">
+            <div class="w-8 h-8 bg-brand-primary rounded flex items-center justify-center text-white">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+            </div>
+            <h1 class="text-xl font-black text-[#001453] dark:text-white">НКА Академия | ЕСА 2.0 | Управление вопросами</h1>
+        </div>
+    </div>
+    <div class="flex items-center gap-6">
+        <div class="flex items-center gap-2">
+            <div class="text-right">
+                <p class="text-xs font-semibold">Администратор вопросов</p>
+                <p class="text-[10px] text-slate-500">Давыдович Ю.В.</p>
+            </div>
+            <div class="w-9 h-9 rounded-full bg-brand-container flex items-center justify-center">
+                <svg class="w-5 h-5 text-brand-primary" fill="currentColor" viewBox="0 0 20 20"><path clip-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" fill-rule="evenodd"></path></svg>
+            </div>
+        </div>
+    </div>
+</header>
 <div class="flex h-screen overflow-hidden">
-<!-- SideNavBar -->
-<aside class="hidden md:flex flex-col h-full py-6 px-4 bg-[#f2f4f6] dark:bg-slate-900 w-72 shrink-0">
-<div class="mb-10 px-2">
-<div class="text-xl font-black text-[#001453] dark:text-white">НКА Академия | ЕСА 2.0 | Управление вопросами</div>
-</div>
-<nav class="flex-1 space-y-1">
-    <a class="flex items-center gap-3 px-8 py-3 text-[#44474e] hover:text-[#4e69c3] hover:bg-[#e0e3e5]/50 ease-out duration-200 font-['Inter'] font-medium text-sm" href="../../../1_Главная%20страница%20НКА%20Академия/2_Главная_страница.html">
-        <span class="material-symbols-outlined">database</span>
-        <span>На главную</span>
-    </a>
-    <a class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-slate-800 text-[#4e69c3] font-semibold rounded-l-lg shadow-sm transition-all duration-200" href="#">
-        <span class="material-symbols-outlined">analytics</span>
-        <span>Управление вопросами</span>
-    </a>
-    <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-[#4e69c3] hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-200" href="../../2_Управление%20тестами/Управление%20тестами%202.html">
-        <span class="material-symbols-outlined">assignment</span>
-        <span>Управление тестами</span>
-    </a>
-</nav>
-</aside>
+    <aside class="w-64 bg-brand-surface flex flex-col py-6" data-purpose="main-sidebar">
+        <nav class="flex-1 px-4 space-y-1">
+            <a class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-600 rounded-lg hover:bg-brand-container transition-colors" href="../../../1_Главная%20страница%20НКА%20Академия/2_Главная_страница.html">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                На главную
+            </a>
+                <a class="sidebar-active flex items-center gap-3 px-4 py-3 bg-white dark:bg-slate-800 text-[#4e69c3] font-semibold rounded-l-lg shadow-sm transition-all duration-200" href="#">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                Управление вопросами
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-600 rounded-lg hover:bg-brand-container transition-colors" href="../../2_Управление%20тестами/Управление%20тестами%202.html">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                Управление тестами
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-600 rounded-lg hover:bg-brand-container transition-colors" href="#">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                Нормативные акты
+            </a>
+        </nav>
+    </aside>
 <div class="flex-1 flex flex-col min-w-0">
 <!-- TopNavBar -->
 <header class="flex justify-between items-center w-full px-8 h-16 bg-[#f7f9fb] dark:bg-slate-950 sticky top-0 z-50 border-b border-surface-container">
@@ -201,124 +282,132 @@
 <h2 class="text-lg font-bold text-[#001453]">Статистика раздела: <span class="text-primary">Гражданский кодекс</span></h2>
 <span class="text-xs text-slate-400">Последнее обновление: Сегодня, 14:30</span>
 </div>
-<div class="grid grid-cols-12 gap-6">
-<!-- Total Summary Card -->
-<div class="col-span-3 bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-surface-container flex flex-col justify-between">
-<div>
-<div class="flex items-center gap-2 mb-2">
-<span class="material-symbols-outlined text-primary" data-icon="quiz">quiz</span>
-<span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Всего вопросов</span>
-</div>
-<div class="text-4xl font-black text-[#001453]">240</div>
-</div>
-<div class="mt-4 pt-4 border-t border-surface-container flex items-center justify-between">
-<div class="flex flex-col">
-<span class="text-[10px] text-slate-400 font-bold uppercase">За месяц</span>
-<span class="text-xs font-bold text-emerald-600">+12 новых</span>
-</div>
-<span class="material-symbols-outlined text-emerald-500" data-icon="trending_up">trending_up</span>
-</div>
-</div>
-<!-- Status Distribution Card -->
-<div class="col-span-4 bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-surface-container">
-<h3 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-6">Жизненный цикл вопросов</h3>
-<div class="space-y-4">
-<div>
-<div class="flex justify-between text-[10px] font-bold mb-1.5">
-<span class="text-emerald-600 uppercase">Активный (84%)</span>
-<span class="text-slate-600 font-black">202</span>
-</div>
-<div class="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
-<div class="h-full bg-emerald-500 w-[84%] transition-all duration-700"></div>
-</div>
-</div>
-<div>
-<div class="flex justify-between text-[10px] font-bold mb-1.5">
-<span class="text-amber-600 uppercase">В разработке (10%)</span>
-<span class="text-slate-600 font-black">24</span>
-</div>
-<div class="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
-<div class="h-full bg-amber-500 w-[10%] transition-all duration-700"></div>
-</div>
-</div>
-<div>
-<div class="flex justify-between text-[10px] font-bold mb-1.5">
-<span class="text-slate-500 uppercase">Архивный (6%)</span>
-<span class="text-slate-600 font-black">14</span>
-</div>
-<div class="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
-<div class="h-full bg-slate-400 w-[6%] transition-all duration-700"></div>
-</div>
-</div>
-</div>
-</div>
-<!-- Complexity Ratio Card -->
-<div class="col-span-5 bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-surface-container">
-<div class="flex items-center justify-between mb-4">
-<h3 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Баланс сложности</h3>
-<span class="text-[9px] font-bold bg-primary/10 text-primary px-2 py-0.5 rounded">ЦЕЛЬ: 20-60-20</span>
-</div>
-<div class="flex h-10 w-full bg-slate-100 rounded-lg overflow-hidden mb-6">
-<div class="h-full bg-emerald-500 flex items-center justify-center text-[10px] font-black text-white w-[25%]" title="Легкие">25%</div>
-<div class="h-full bg-amber-500 flex items-center justify-center text-[10px] font-black text-white w-[55%]" title="Средние">55%</div>
-<div class="h-full bg-rose-500 flex items-center justify-center text-[10px] font-black text-white w-[20%]" title="Сложные">20%</div>
-</div>
-<div class="grid grid-cols-3 gap-4">
-<div class="text-center p-2 rounded-lg bg-surface-container-low border border-surface-container/50">
-<div class="text-[10px] font-bold text-slate-500 uppercase mb-1">Легкие</div>
-<div class="text-lg font-black text-emerald-600">60</div>
-</div>
-<div class="text-center p-2 rounded-lg bg-surface-container-low border border-surface-container/50">
-<div class="text-[10px] font-bold text-slate-500 uppercase mb-1">Средние</div>
-<div class="text-lg font-black text-amber-600">132</div>
-</div>
-<div class="text-center p-2 rounded-lg bg-surface-container-low border border-surface-container/50">
-<div class="text-[10px] font-bold text-slate-500 uppercase mb-1">Сложные</div>
-<div class="text-lg font-black text-rose-600">48</div>
-</div>
-</div>
-</div>
-</div>
+    <!-- BEGIN: Statistics Dashboard -->
+    <div class="grid grid-cols-3 gap-4" data-purpose="stats-dashboard">
+        <!-- Total Questions -->
+        <div class="no-line-card p-5 relative overflow-hidden">
+            <div class="flex items-center gap-2 mb-1">
+                <svg class="w-4 h-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Всего вопросов</span>
+            </div>
+            <div class="text-4xl font-black text-brand-dark">240</div>
+            <div class="mt-4 flex items-center justify-between">
+                <div>
+                    <p class="text-[9px] text-slate-400 uppercase font-bold">За месяц</p>
+                    <p class="text-[11px] font-bold text-emerald-500">+12 новых</p>
+                </div>
+                <svg class="w-10 h-6 text-emerald-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </div>
+        </div>
+        <!-- Lifecycle -->
+        <div class="no-line-card p-5">
+            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-4">Жизненный цикл вопросов</span>
+            <div class="space-y-3">
+                <div class="space-y-1">
+                    <div class="flex justify-between text-[10px] font-bold uppercase">
+                        <span class="text-status-active">Активный (84%)</span>
+                        <span class="">202</span>
+                    </div>
+                    <div class="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
+                        <div class="h-full bg-status-active w-[84%]"></div>
+                    </div>
+                </div>
+                <div class="space-y-1">
+                    <div class="flex justify-between text-[10px] font-bold uppercase">
+                        <span class="text-status-development">В разработке (10%)</span>
+                        <span class="">24</span>
+                    </div>
+                    <div class="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
+                        <div class="h-full bg-status-development w-[10%]"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Complexity -->
+        <div class="no-line-card p-5">
+            <div class="flex justify-between items-center mb-4">
+                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Баланс сложности</span>
+                <span class="text-[8px] px-1.5 py-0.5 bg-brand-container text-slate-500 rounded font-bold uppercase">Цель: 20-60-20</span>
+            </div>
+            <div class="flex h-6 rounded-md overflow-hidden mb-4">
+                <div class="h-full bg-status-active w-[25%] flex items-center justify-center text-[10px] font-bold text-white">25%</div>
+                <div class="h-full bg-status-medium w-[55%] flex items-center justify-center text-[10px] font-bold text-white">55%</div>
+                <div class="h-full bg-status-hard w-[20%] flex items-center justify-center text-[10px] font-bold text-white">20%</div>
+            </div>
+            <div class="grid grid-cols-3 gap-2">
+                <div class="text-center">
+                    <p class="text-[9px] text-slate-400 font-bold uppercase mb-0.5">Легкие</p>
+                    <p class="text-base font-bold text-status-active">60</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-[9px] text-slate-400 font-bold uppercase mb-0.5">Средние</p>
+                    <p class="text-base font-bold text-status-medium">132</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-[9px] text-slate-400 font-bold uppercase mb-0.5">Сложные</p>
+                    <p class="text-base font-bold text-status-hard">48</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- Bank of Questions Table -->
 <div class="px-8 pb-8 flex-1">
 <div class="bg-surface-container-lowest rounded-xl overflow-hidden border border-surface-container shadow-sm">
-<div class="p-5 flex items-center justify-between border-b border-surface-container">
-<div class="flex items-center gap-4">
-    <div class="relative hidden lg:block">
-        <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg" data-icon="search">search</span>
-        <input class="pl-10 pr-4 py-1.5 bg-surface-container-highest border-none rounded-md text-sm focus:ring-2 focus:ring-surface-tint focus:bg-white transition-all" placeholder="Поиск по ID" type="text"/>
+    <!-- Table Controls -->
+    <div class="p-4 flex items-center gap-4 bg-brand-container/30 rounded-t-lg">
+        <div class="relative flex-1 max-w-xs">
+            <input class="w-full pl-9 pr-4 py-2 bg-brand-lowest text-xs border-none rounded-md ring-1 ring-slate-200 focus:ring-brand-primary" placeholder="Поиск по ID" type="text">
+            <svg class="w-4 h-4 text-slate-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        </div>
+        <div class="relative flex-1 max-w-sm">
+            <input class="w-full pl-9 pr-4 py-2 bg-brand-lowest text-xs border-none rounded-md ring-1 ring-slate-200 focus:ring-brand-primary" placeholder="Поиск по тексту" type="text">
+            <svg class="w-4 h-4 text-slate-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        </div>
+        <div class="relative">
+            <button class="flex items-center gap-2 px-3 py-2 bg-brand-lowest text-[11px] font-bold text-slate-600 border-none rounded-md ring-1 ring-slate-200 hover:ring-brand-primary transition-all">
+                <span class="material-symbols-outlined text-[16px]">filter_list</span>
+                Статус
+                <span class="material-symbols-outlined text-[14px]">expand_more</span>
+            </button>
+        </div>
+        <div class="h-8 w-[1px] bg-slate-200 mx-1"></div>
+        <button class="flex items-center gap-2 px-4 py-2 bg-brand-primary/10 text-brand-primary text-[11px] font-bold rounded-md hover:bg-brand-primary hover:text-white transition-all">
+            <span class="material-symbols-outlined text-[16px]">task_alt</span>
+            Массовые действия
+        </button>
+        <button class="p-2 text-slate-400 hover:text-brand-primary"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button>
     </div>
-    <div class="relative hidden lg:block">
-        <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg" data-icon="search">search</span>
-        <input class="pl-10 pr-4 py-1.5 bg-surface-container-highest border-none rounded-md text-sm focus:ring-2 focus:ring-surface-tint focus:bg-white transition-all" placeholder="Поиск по тексту" type="text"/>
-    </div>
-<div class="flex items-center gap-2">
-<span class="text-xs text-slate-400">Сортировать:</span>
-<select class="text-xs border-none bg-transparent font-bold text-[#4e69c3] focus:ring-0 cursor-pointer p-0">
-<option>статус</option>
-<option>ID</option>
-<option>сложность</option>
-</select>
-</div>
-<button class="p-1.5 hover:bg-surface-container-low rounded text-slate-400 hover:text-primary transition-all">
-<span class="material-symbols-outlined text-lg" data-icon="filter_list">filter_list</span>
-</button>
-</div>
-</div>
 <table class="w-full text-left border-collapse">
-<thead class="bg-surface-container-low">
-<tr>
-<th class="px-6 py-4 text-[10px] font-bold uppercase tracking-wider text-slate-500 w-16">
-    <input class="w-4 h-4 rounded border-outline-variant text-surface-tint focus:ring-surface-tint/20 cursor-pointer" type="checkbox">
-</th>
-<th class="px-4 py-4 text-[10px] font-bold uppercase tracking-wider text-slate-500 w-24">ID</th>
-<th class="px-4 py-4 text-[10px] font-bold uppercase tracking-wider text-slate-500">Текст вопроса</th>
-<th class="px-4 py-4 text-[10px] font-bold uppercase tracking-wider text-slate-500 w-32">Статус</th>
-<th class="px-4 py-4 text-[10px] font-bold uppercase tracking-wider text-slate-500 w-24">Сложность</th>
-<th class="px-6 py-4 text-[10px] font-bold uppercase tracking-wider text-slate-500 w-32 text-right">Действия</th>
-</tr>
-</thead>
+    <thead class="sticky top-0 bg-brand-lowest text-[10px] font-bold uppercase text-slate-400 border-b border-brand-container">
+    <tr>
+        <th class="px-6 py-4 w-12"><input class="rounded text-brand-primary focus:ring-brand-primary border-slate-300" type="checkbox" placeholder="on" value=""></th>
+        <th class="px-4 py-4 w-24 cursor-pointer hover:text-brand-primary transition-colors group">
+            <div class="flex items-center gap-1">
+                ID <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
+            </div>
+        </th>
+        <th class="px-4 py-4 cursor-pointer hover:text-brand-primary transition-colors group">
+            <div class="flex items-center gap-1">
+                Текст вопроса <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
+            </div>
+        </th>
+        <th class="px-4 py-4 w-32 cursor-pointer hover:text-brand-primary transition-colors group">
+            <div class="flex items-center gap-1">
+                Статус <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
+            </div>
+        </th>
+        <th class="px-4 py-4 w-32 cursor-pointer hover:text-brand-primary transition-colors group">
+            <div class="flex items-center gap-1">
+                Сложность <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
+            </div>
+        </th>
+        <th class="px-4 py-4 w-32 text-right pr-6 cursor-pointer hover:text-brand-primary transition-colors group">
+            <div class="flex items-center justify-end gap-1">
+                Действия <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">settings</span>
+            </div>
+        </th></tr>
+    </thead>
 <tbody class="divide-y divide-surface-container">
 <tr class="hover:bg-surface-container-low/50 transition-colors group cursor-pointer">
 <td class="px-6 py-4 text-xs font-medium text-slate-400">
@@ -429,10 +518,8 @@
 <aside class="w-96 bg-surface-container-low border-l border-surface-container flex flex-col">
 <div class="p-6 overflow-y-auto custom-scrollbar flex-1">
 <div class="flex items-center justify-between mb-8">
-<span class="text-[10px] font-black uppercase tracking-[0.1em] text-primary bg-primary/10 px-2 py-1 rounded">Детали вопроса</span>
+        <span class="text-[9px] font-black text-brand-primary uppercase tracking-widest bg-brand-lowest px-2 py-1 rounded shadow-sm">Детали вопроса</span>
 <div class="flex gap-2">
-<!--<button class="p-2 hover:bg-white rounded-full transition-all text-slate-400 hover:text-primary"><span class="material-symbols-outlined text-lg" data-icon="edit">edit</span></button>-->
-<!--<button class="p-2 hover:bg-white rounded-full transition-all text-slate-400 hover:text-error"><span class="material-symbols-outlined text-lg" data-icon="delete">delete</span></button>-->
 </div>
 </div>
 <div class="space-y-6">
