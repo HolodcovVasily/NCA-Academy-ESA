@@ -156,7 +156,7 @@
     </aside>
 
 <!-- Main Content Area -->
-<main class="ml-16 flex-1 p-section-gap overflow-y-auto">
+<main class="ml-4 flex-1 p-section-gap overflow-y-auto">
 <!-- Page Header -->
     <div class="flex justify-between items-center w-full px-8 h-16 bg-[#f7f9fb] dark:bg-slate-950 sticky top-0 z-50 border-b border-surface-container">
         <div class="flex items-center gap-8">
@@ -166,14 +166,14 @@
             <button onclick="window.location.href='./Создание теста/Создание теста.html'" title="Добавить новый вопрос" class="px-5 py-2 text-sm font-semibold text-white bg-gradient-to-br from-[#4e69c3] to-[#001453] rounded-md active:scale-[0.98] transition-all">Создать тест</button>        </div>
     </div>
     <!-- Dashboard Stats Cluster (Bento Style) -->
-    <div class="mt-section-gap grid grid-cols-4 gap-module-gap">
+    <div class="mt-section-gap grid grid-cols-3 gap-module-gap">
         <div class="col-span-1 p-6 bg-surface-container-low rounded-xl">
             <div class="text-on-surface-variant font-label-md mb-2">Всего тестов</div>
             <div class="text-[32px] font-black text-[#4e69c3]">24</div>
             <div class="mt-4 text-xs text-on-surface-variant/70">+10% за последний месяц</div>
         </div>
         <!-- Status Distribution Card -->
-        <div class="col-span-2 p-6 bg-surface-container-low rounded-xl">
+        <div class="col-span-1 p-6 bg-surface-container-low rounded-xl">
             <h3 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-6">Жизненный цикл тестов</h3>
             <div class="space-y-4">
                 <div>
@@ -222,28 +222,12 @@
     <div class="px-8 pb-8 flex-1">
         <div class="bg-surface-container-lowest rounded-xl overflow-hidden border border-surface-container shadow-sm">
             <!-- Table Controls -->
-<!--            <div class="p-4 flex items-center gap-4 bg-brand-container/30 rounded-t-lg">-->
-<!--                <div class="relative flex-1 max-w-xs">-->
-<!--                    <input class="w-full pl-9 pr-4 py-2 bg-brand-lowest text-xs border-none rounded-md ring-1 ring-slate-200 focus:ring-brand-primary" placeholder="Поиск по ID" type="text">-->
-<!--                    <svg class="w-4 h-4 text-slate-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>-->
-<!--                </div>-->
-<!--                <div class="relative flex-1 max-w-sm">-->
-<!--                    <input class="w-full pl-9 pr-4 py-2 bg-brand-lowest text-xs border-none rounded-md ring-1 ring-slate-200 focus:ring-brand-primary" placeholder="Поиск по тексту" type="text">-->
-<!--                    <svg class="w-4 h-4 text-slate-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>-->
-<!--                </div>-->
-<!--                <div class="relative">-->
-<!--                    <button class="flex items-center gap-2 px-3 py-2 bg-brand-lowest text-[11px] font-bold text-slate-600 border-none rounded-md ring-1 ring-slate-200 hover:ring-brand-primary transition-all">-->
-<!--                        <span class="material-symbols-outlined text-[16px]">filter_list</span>-->
-<!--                        Статус-->
-<!--                        <span class="material-symbols-outlined text-[14px]">expand_more</span>-->
-<!--                    </button>-->
-<!--                </div>-->
-<!--&lt;!&ndash;                <div class="h-8 w-[1px] bg-slate-200 mx-1"></div>&ndash;&gt;-->
-<!--&lt;!&ndash;                <button class="flex items-center gap-2 px-4 py-2 bg-brand-primary/10 text-brand-primary text-[11px] font-bold rounded-md hover:bg-brand-primary hover:text-white transition-all">&ndash;&gt;-->
-<!--&lt;!&ndash;                    <span class="material-symbols-outlined text-[16px]">task_alt</span>&ndash;&gt;-->
-<!--&lt;!&ndash;                    Массовые действия&ndash;&gt;-->
-<!--&lt;!&ndash;                </button>&ndash;&gt;-->
-<!--            </div>-->
+            <div class="p-4 flex flex-row-reverse items-center gap-4 bg-brand-container/30 rounded-t-lg">
+                <div class="relative flex-1 max-w-sm">
+                    <input class="w-full pl-9 pr-4 py-2 bg-brand-lowest text-xs border-none rounded-md ring-1 ring-slate-200 focus:ring-brand-primary" placeholder="Поиск по наименованию теста" type="text">
+                    <svg class="w-4 h-4 text-slate-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                </div>
+            </div>
             <table class="w-full text-left border-collapse">
                 <thead class="sticky top-0 bg-brand-lowest text-[10px] font-bold uppercase text-slate-400 border-b border-brand-container">
                 <tr>
