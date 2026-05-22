@@ -128,7 +128,7 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <!-- Last Name -->
 <div class="flex flex-col gap-1.5">
-<label class="font-label text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Фамилия</label>
+<label class="font-label text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Фамилия *</label>
 <div class="relative group">
 <input class="w-full bg-surface-container-low border-none rounded-md py-3 px-4 focus:ring-0 focus:bg-white focus:border-b-2 focus:border-surface-tint transition-all duration-300 text-sm" placeholder="Введите фамилию" type="text"/>
 <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline/40 text-[18px]">person</span>
@@ -136,7 +136,7 @@
 </div>
 <!-- First Name -->
 <div class="flex flex-col gap-1.5">
-<label class="font-label text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Имя</label>
+<label class="font-label text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Имя *</label>
 <div class="relative group">
 <input class="w-full bg-surface-container-low border-none rounded-md py-3 px-4 focus:ring-0 focus:bg-white focus:border-b-2 focus:border-surface-tint transition-all duration-300 text-sm" placeholder="Введите имя" type="text"/>
 </div>
@@ -150,7 +150,7 @@
 </div>
 <!-- Date of Birth -->
 <div class="flex flex-col gap-1.5">
-<label class="font-label text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Дата рождения</label>
+<label class="font-label text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Дата рождения *</label>
 <div class="relative">
 <input class="w-full bg-surface-container-low border-none rounded-md py-3 px-4 focus:ring-0 focus:bg-white focus:border-b-2 focus:border-surface-tint transition-all duration-300 text-sm appearance-none" type="date"/>
 <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline/40 text-[18px] pointer-events-none">calendar_month</span>
@@ -160,7 +160,7 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <!-- Phone -->
 <div class="flex flex-col gap-1.5">
-<label class="font-label text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Контактный телефон</label>
+<label class="font-label text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Контактный телефон *</label>
 <div class="relative">
 <input class="w-full bg-surface-container-low border-none rounded-md py-3 px-4 focus:ring-0 focus:bg-white focus:border-b-2 focus:border-surface-tint transition-all duration-300 text-sm" placeholder="+375 (__) ___-__-__" type="tel"/>
 <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline/40 text-[18px]">call</span>
@@ -168,7 +168,7 @@
 </div>
 <!-- Email -->
 <div class="flex flex-col gap-1.5">
-<label class="font-label text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Email</label>
+<label class="font-label text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Email *</label>
 <div class="relative">
 <input class="w-full bg-surface-container-low border-none rounded-md py-3 px-4 focus:ring-0 focus:bg-white focus:border-b-2 focus:border-surface-tint transition-all duration-300 text-sm" placeholder="Введите email" type="email"/>
 <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline/40 text-[18px]">mail</span>
@@ -177,7 +177,7 @@
 </div>
 <!-- Region Dropdown -->
 <div class="flex flex-col gap-1.5">
-<label class="font-label text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Регион</label>
+<label class="font-label text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Регион *</label>
 <div class="relative">
 <select class="w-full bg-surface-container-low border-none rounded-md py-3 px-4 focus:ring-0 focus:bg-white focus:border-b-2 focus:border-surface-tint transition-all duration-300 text-sm appearance-none">
 <option disabled="" selected="" value="">Выберите регион из списка</option>
@@ -203,7 +203,7 @@
 <!-- Error Placeholder -->
 <div class="bg-error-container/30 rounded-md p-4 flex items-center gap-3 border-l-4 border-error">
 <span class="material-symbols-outlined text-error text-[20px]">error</span>
-<p class="text-xs font-medium text-on-error-container">Пожалуйста, заполните все обязательные поля для завершения процедуры регистрации.</p>
+<p class="text-xs font-medium text-on-error-container">* Пожалуйста, заполните все обязательные поля для завершения процедуры регистрации.</p>
 </div>
 <!-- Actions -->
 <div class="flex flex-col sm:flex-row gap-4 pt-6">
@@ -225,17 +225,17 @@
 </div>
 </div>
 </main>
-<footer class="bg-[#f2f4f6] dark:bg-[#020617] w-full py-12">
-<div class="flex flex-col md:flex-row justify-between items-center px-12 max-w-[1440px] mx-auto gap-8">
-<div class="flex flex-col gap-2 text-center md:text-left">
-<p class="font-['Inter'] text-[10px] uppercase tracking-widest text-slate-400 dark:text-slate-500 max-w-[400px]">
-                    © 2026 НКА Академия
-                </p>
-</div>
-<div class="flex gap-8">
-<a class="font-['Inter'] text-[10px] uppercase tracking-widest text-slate-400 dark:text-slate-500 hover:text-slate-600 transition-colors" href="#">Политика конфиденциальности/безопасности</a>
-<a class="font-['Inter'] text-[10px] uppercase tracking-widest text-slate-400 dark:text-slate-500 hover:text-slate-600 transition-colors" href="#">FAQ</a>
-</div>
-</div>
-</footer>
+<!--<footer class="bg-[#f2f4f6] dark:bg-[#020617] w-full py-12">-->
+<!--<div class="flex flex-col md:flex-row justify-between items-center px-12 max-w-[1440px] mx-auto gap-8">-->
+<!--<div class="flex flex-col gap-2 text-center md:text-left">-->
+<!--<p class="font-['Inter'] text-[10px] uppercase tracking-widest text-slate-400 dark:text-slate-500 max-w-[400px]">-->
+<!--                    © 2026 НКА Академия-->
+<!--                </p>-->
+<!--</div>-->
+<!--<div class="flex gap-8">-->
+<!--<a class="font-['Inter'] text-[10px] uppercase tracking-widest text-slate-400 dark:text-slate-500 hover:text-slate-600 transition-colors" href="#">Политика конфиденциальности/безопасности</a>-->
+<!--<a class="font-['Inter'] text-[10px] uppercase tracking-widest text-slate-400 dark:text-slate-500 hover:text-slate-600 transition-colors" href="#">FAQ</a>-->
+<!--</div>-->
+<!--</div>-->
+<!--</footer>-->
 </body></html>
