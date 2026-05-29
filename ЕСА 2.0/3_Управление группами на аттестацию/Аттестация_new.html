@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Академия НКА | ЕСА 2.0 | Аттестация</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#173baa",
+                        "secondary-fixed-dim": "#b8c4ff",
+                        "outline-variant": "#c6c6cd",
+                        "tertiary-container": "#4966d4",
+                        "inverse-primary": "#b6c4ff",
+                        "tertiary-fixed-dim": "#b8c4ff",
+                        "background": "#f7f9fb",
+                        "secondary": "#4b5b9a",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#f2f4f6",
+                        "on-surface": "#191c1e",
+                        "on-tertiary-fixed": "#001453",
+                        "on-secondary-fixed": "#001453",
+                        "surface-tint": "#3755c3",
+                        "on-tertiary-container": "#f2f1ff",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "tertiary": "#2d4cba",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-surface-variant": "#44474e",
+                        "on-primary-container": "#f1f1ff",
+                        "on-primary-fixed": "#00164f",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#d8dadc",
+                        "surface-container": "#eceef0",
+                        "primary-container": "#4e69c3",
+                        "primary-fixed": "#dce1ff",
+                        "inverse-on-surface": "#eff1f3",
+                        "inverse-surface": "#2d3133",
+                        "secondary-fixed": "#dde1ff",
+                        "on-background": "#191c1e",
+                        "secondary-container": "#a9b8fe",
+                        "surface": "#f7f9fb",
+                        "surface-variant": "#e0e3e5",
+                        "on-primary-fixed-variant": "#214098",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "on-secondary-container": "#384785",
+                        "on-secondary-fixed-variant": "#334380",
+                        "surface-bright": "#f7f9fb",
+                        "on-error": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#dde1ff",
+                        "primary": "#3450a9",
+                        "outline": "#757683"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "section-gap": "32px",
+                        "container-padding": "16px",
+                        "base": "8px",
+                        "module-gap": "24px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-sm": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "25.6px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, #3755c3 0%, #001453 100%);
+        }
+        .ghost-border {
+            outline: 1px solid rgba(198, 198, 205, 0.15);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #e0e3e5;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-background overflow-hidden">
+<!-- TopAppBar / Encryption Ribbon -->
+<!--<header class="bg-[#001453] text-white font-['Inter'] tracking-tight font-medium docked full-width top-0 h-16 flex justify-between items-center px-8 w-full z-50">-->
+<!--<div class="flex items-center gap-6">-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="flex items-center gap-4">-->
+<!--<button class="p-2 hover:bg-white/10 transition-colors rounded-lg"><span class="material-symbols-outlined">notifications</span></button>-->
+<!--<button class="p-2 hover:bg-white/10 transition-colors rounded-lg"><span class="material-symbols-outlined">settings</span></button>-->
+<!--<img alt="Administrator Profile" class="w-8 h-8 rounded-full border border-white/20 ml-2" data-alt="Professional corporate administrator portrait in a dark blue suit with clean lighting and neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp3if6K6SPsUFabf_akSpjvxye3U6T4Gir9cEqp-I2GjvMcqaWZOnsoznTLfGx_bD3ZUp0disreN7g-Y0ae1PN9BLvn18Ku7ZRMxZ3ybi1Uq-6fadT9YvOe4vFPRsQ5CAOrFnXF_Xx5b9cESwATvCPHmaQTJ5OQUTqU0ioIC_prxKUZGk5a5vJ9_t8TWrBqCUUVUfFdx8Vtn6Y9EnIxY7oupXe8GOkkAObF7uuxSGl-OpkMr_FmeJ4UBj6mmHHiuJKui6sP2VSMjXz"/>-->
+<!--</div>-->
+<!--</header>-->
+<!-- TopAppBar & Encryption Ribbon Hybrid -->
+<header class="flex justify-between items-center w-full px-container-padding h-16 bg-primary-container text-on-primary shadow-sm shrink-0 z-40">
+    <div class="ml-64 flex items-center gap-8">
+        <div class="flex items-center gap-3 bg-on-primary/10 px-4 py-2 rounded-full cursor-pointer hover:bg-on-primary/20 transition-colors relative group"><div class="w-2 h-2 bg-surface-tint rounded-full animate-pulse"></div><span class="font-label-md text-label-md">Период: 08.06.2026 – 14.06.2026</span><span class="material-symbols-outlined text-[18px] pointer-events-none group-hover:rotate-180 transition-transform">expand_more</span><div class="absolute top-full left-0 mt-2 w-64 bg-surface-container-lowest rounded-xl architectural-shadow overflow-hidden opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-all z-[100] border border-outline-variant/10"><div class="p-3 border-b border-outline-variant/10"><div class="relative flex items-center bg-surface-container-low rounded-lg px-2 py-1"><span class="material-symbols-outlined text-[18px] text-on-surface-variant/50">search</span><input type="text" placeholder="Поиск (месяц, год)" class="bg-transparent border-none focus:ring-0 text-label-sm w-full py-1 text-on-surface"></div></div><div class="flex flex-col py-2 max-h-60 overflow-y-auto"><button class="px-4 py-3 text-left hover:bg-surface-container-low transition-colors font-label-md text-label-md text-on-surface-variant">01.06.2026 – 07.06.2026</button><button class="px-4 py-3 text-left bg-primary/5 text-primary font-bold transition-colors font-label-md text-label-md">08.06.2026 – 14.06.2026</button><button class="px-4 py-3 text-left hover:bg-surface-container-low transition-colors font-label-md text-label-md text-on-surface-variant">15.06.2026 – 21.06.2026</button><button class="px-4 py-3 text-left hover:bg-surface-container-low transition-colors font-label-md text-label-md text-on-surface-variant">22.06.2026 – 28.06.2026</button><button class="px-4 py-3 text-left hover:bg-surface-container-low transition-colors font-label-md text-label-md text-on-surface-variant">29.06.2026 – 05.07.2026</button></div></div></div>
+<!--        <nav class="hidden md:flex items-center gap-6">-->
+<!--            <a class="text-on-primary/70 font-medium font-label-md text-label-md hover:text-on-primary transition-colors" href="#">Active Period</a>-->
+<!--            <a class="text-on-primary font-bold border-b-2 border-surface-tint pb-1 font-label-md text-label-md" href="#">Future Planning</a>-->
+<!--            <a class="text-on-primary/70 font-medium font-label-md text-label-md hover:text-on-primary transition-colors" href="#">Audit Logs</a>-->
+<!--        </nav>-->
+    </div>
+    <div class="flex items-center gap-4">
+        <div class="relative group cursor-pointer p-2 hover:bg-on-primary/10 rounded-full transition-colors">
+            <span class="material-symbols-outlined">notifications</span>
+            <span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span>
+        </div>
+        <div class="p-2 hover:bg-on-primary/10 rounded-full transition-colors cursor-pointer">
+            <span class="material-symbols-outlined">settings</span>
+        </div>
+        <div class="h-8 w-[1px] bg-on-primary/20 mx-2"></div>
+
+        <img alt="Administrator Profile" class="w-8 h-8 rounded-full border-2 border-on-primary/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_W5yg9tc7sucFXvPuKaTyj3WirvnPnaQYrClqsaaJyBMa3kUhdYhKwTbDNC-W47NknN4JcaviOfHMh2siFPqSvzRsO4uIFrYe8IA4HCOfuqO-adFNP0UUs4-RZh21ctqMEawWtGdSaL8Ph-TUpLMkCoTvUxUJ4DQ-M1G3RXNajr7TgwGjb4gR719EP4rZYVB1dfK3AKq4eZowzxGNaZlUCArUAsDgiTU2A09nfNU2crZRpHY68yXPQKryXs2Lqc16B_Et_4crGz9P">
+    </div>
+</header>
+<div class="flex h-[calc(100vh-64px)] overflow-hidden">
+<!-- SideNavBar -->
+<nav class="bg-slate-50 flex flex-col h-full py-8 px-6 space-y-4 h-screen w-64 fixed left-0 border-r-0 font-['Inter'] text-sm font-semibold tracking-wide">
+<div class="mb-8">
+<div class="flex items-center gap-3 mb-1">
+<div class="w-8 h-8 bg-primary rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-lg" data-weight="fill" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<span class="text-xl font-black text-slate-900 uppercase tracking-tighter">Академия НКА</span>
+</div>
+<span class="text-xs text-slate-500 font-medium ml-11">Администратор СА</span>
+</div>
+<div class="space-y-1">
+<!--    <a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100 transition-transform duration-200 scale-98" href="#">-->
+<!--        <span class="material-symbols-outlined">analytics</span>-->
+<!--        <span>Администрирование</span>-->
+<!--    </a>-->
+    <a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100 transition-transform duration-200 scale-98" href="../../1_Главная%20страница%20НКА%20Академия/2_Главная_страница.html">
+        <span class="material-symbols-outlined">database</span>
+        <span>На главную</span>
+    </a>
+<!--<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100 transition-transform duration-200 scale-98" href="#">-->
+<!--<span class="material-symbols-outlined">dashboard</span>-->
+<!--<span>Управление тестами</span>-->
+<!--</a>-->
+<a class="flex items-center gap-3 px-4 py-3 text-[#4e69c3] bg-white font-bold transition-transform duration-200 scale-98" href="#">
+<span class="material-symbols-outlined">badge</span>
+<span>Аттестация</span>
+</a>
+<!--<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100 transition-transform duration-200 scale-98" href="#">-->
+<!--<span class="material-symbols-outlined">group_work</span>-->
+<!--<span>Certification Groups</span>-->
+<!--</a>-->
+
+
+</div>
+<!--<button class="mt-4 mx-4 py-3 primary-gradient text-white rounded font-label-md text-xs uppercase tracking-widest flex items-center justify-center gap-2">-->
+<!--<span class="material-symbols-outlined text-sm">add</span> Add Group-->
+<!--            </button>-->
+<div class="mt-auto pt-8 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100" href="#">
+<span class="material-symbols-outlined">help_center</span>
+<span>Поддержка</span>
+</a>
+    <!-- Генерация отчета о результатах аттестации за период -->
+    <div class="w-[1px] h-10 bg-surface-container-low"></div>
+    <button onclick="window.location.href='./Результаты за период/Результаты.html'" class="bg-surface-container-lowest text-on-surface px-6 py-3 rounded-full font-label-md flex items-center gap-2 hover:bg-surface-container-low transition-all">
+        <span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
+<!--        <span class="material-symbols-outlined" data-icon="picture_as_pdf">print</span>-->
+        Результаты за период
+    </button>
+
+</div>
+</nav>
+<!-- Main Content Area -->
+<!--<main class="ml-64 flex-1 flex h-full p-8 gap-section-gap overflow-hidden">-->
+<!--&lt;!&ndash; Left Section: Общая группа претендентов &ndash;&gt;-->
+<!--<section class="flex-1 bg-surface-container-low rounded-xl flex flex-col overflow-hidden">-->
+<!--<div class="p-8 space-y-6">-->
+<!--<div class="flex justify-between items-end">-->
+<!--<div>-->
+<!--<h2 class="font-headline-md text-headline-md text-on-surface mb-1">Претенденты. Всего в общей группе: 38</h2>-->
+<!--&lt;!&ndash;<p class="text-sm text-on-surface-variant font-medium"></p>&ndash;&gt;-->
+<!--</div>-->
+<!--    <button class="mt-4 mx-4 py-3 px-2 primary-gradient text-white rounded font-label-md text-xs flex items-center justify-center gap-2">Импортировать из Реестра</button>-->
+<!--</div>-->
+<!--<div class="relative">-->
+<!--<span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline">search</span>-->
+<!--<input class="w-full pl-12 pr-4 py-3 bg-surface-container-highest border-none focus:bg-surface-container-lowest focus:border-b-2 focus:border-surface-tint transition-all placeholder:text-outline font-body-md rounded-t-lg" placeholder="Поиск по ФИО или должности..." type="text"/>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="flex-1 overflow-y-auto px-8 custom-scrollbar">-->
+<!--<table class="w-full text-left">-->
+<!--<thead>-->
+<!--<tr class="text-label-sm text-outline uppercase tracking-widest border-b border-outline-variant/10">-->
+<!--<th class="pb-4 font-bold">Фамилия Имя Отчество</th>-->
+<!--<th class="pb-4 font-bold">Место работы</th>-->
+<!--&lt;!&ndash;<th class="pb-4 font-bold">Стаж</th>&ndash;&gt;-->
+<!--<th class="pb-4 font-bold">Истечение срока аттестации</th>-->
+<!--<th class="pb-4 font-bold text-right">Должность</th>-->
+<!--</tr>-->
+<!--</thead>-->
+<!--<tbody class="divide-y-0">-->
+<!--&lt;!&ndash; High Urgency &ndash;&gt;-->
+<!--<tr class="bg-surface-container-lowest hover:bg-white transition-colors group">-->
+<!--<td class="py-5 px-4 first:rounded-l-lg">-->
+<!--<div class="font-label-md text-on-surface">Иванов Алексей Иванович</div>-->
+<!--<div class="text-xs text-on-surface-variant mt-0.5">Специалист по ТИ 1 к.</div>-->
+<!--</td>-->
+<!--<td class="py-5 px-4 text-sm text-on-surface-variant">Минское городское Агентство</td>-->
+<!--&lt;!&ndash;<td class="py-5 px-4 text-sm text-on-surface-variant">12.2</td>&ndash;&gt;-->
+<!--<td class="py-5 px-4">-->
+<!--<span class="px-2 py-1 bg-error-container text-on-error-container text-xs font-bold rounded">23.04.2026</span>-->
+<!--</td>-->
+<!--<td class="py-5 px-4 text-right last:rounded-r-lg">-->
+<!--<button class="p-2 text-outline hover:text-primary transition-colors"><span class="material-symbols-outlined">person</span></button>-->
+<!--</td>-->
+<!--</tr>-->
+<!--<tr class="h-4"></tr>-->
+<!--<tr class="bg-surface-container-lowest hover:bg-white transition-colors">-->
+<!--<td class="py-5 px-4 first:rounded-l-lg">-->
+<!--<div class="font-label-md text-on-surface">Иванова Татьяна Васильевна</div>-->
+<!--<div class="text-xs text-on-surface-variant mt-0.5">Специалист по ТИ 2 к.</div>-->
+<!--</td>-->
+<!--<td class="py-5 px-4 text-sm text-on-surface-variant">Гродненское Агентство</td>-->
+<!--&lt;!&ndash;<td class="py-5 px-4 text-sm text-on-surface-variant">8.5</td>&ndash;&gt;-->
+<!--<td class="py-5 px-4">-->
+<!--<span class="px-2 py-1 bg-surface-container-high text-on-surface text-xs font-bold rounded">18.06.2026</span>-->
+<!--</td>-->
+<!--<td class="py-5 px-4 text-right last:rounded-r-lg">-->
+<!--<button class="p-2 text-outline hover:text-primary transition-colors"><span class="material-symbols-outlined">person</span></button>-->
+<!--</td>-->
+<!--</tr>-->
+<!--<tr class="h-4"></tr>-->
+<!--<tr class="bg-surface-container-lowest hover:bg-white transition-colors">-->
+<!--<td class="py-5 px-4 first:rounded-l-lg">-->
+<!--<div class="font-label-md text-on-surface">Сидоров Дмитрий Иванович</div>-->
+<!--<div class="text-xs text-on-surface-variant mt-0.5">Начальник отдела</div>-->
+<!--</td>-->
+<!--<td class="py-5 px-4 text-sm text-on-surface-variant">Национальное кадастровое агентство</td>-->
+<!--&lt;!&ndash;<td class="py-5 px-4 text-sm text-on-surface-variant">15.9</td>&ndash;&gt;-->
+<!--<td class="py-5 px-4 text-sm text-on-surface-variant">25.06.2026</td>-->
+<!--<td class="py-5 px-4 text-right last:rounded-r-lg">-->
+<!--<button class="p-2 text-outline hover:text-primary transition-colors"><span class="material-symbols-outlined">person</span></button>-->
+<!--</td>-->
+<!--</tr>-->
+<!--<tr class="h-4"></tr>-->
+<!--<tr class="bg-surface-container-lowest hover:bg-white transition-colors">-->
+<!--<td class="py-5 px-4 first:rounded-l-lg">-->
+<!--<div class="font-label-md text-on-surface">Кузнецов Михаил Петрович</div>-->
+<!--<div class="text-xs text-on-surface-variant mt-0.5">инженер</div>-->
+<!--</td>-->
+<!--<td class="py-5 px-4 text-sm text-on-surface-variant">Брестское Агентство</td>-->
+<!--&lt;!&ndash;<td class="py-5 px-4 text-sm text-on-surface-variant">0.5</td>&ndash;&gt;-->
+<!--<td class="py-5 px-4 text-sm text-on-surface-variant">22.07.2026</td>-->
+<!--<td class="py-5 px-4 text-right last:rounded-r-lg">-->
+<!--<button class="p-2 text-outline hover:text-primary transition-colors"><span class="material-symbols-outlined">person</span></button>-->
+<!--</td>-->
+<!--</tr>-->
+<!--<tr class="h-4"></tr>-->
+<!--<tr class="bg-surface-container-lowest hover:bg-white transition-colors">-->
+<!--    <td class="py-5 px-4 first:rounded-l-lg">-->
+<!--        <div class="font-label-md text-on-surface">Петрова Валерия Степановка</div>-->
+<!--        <div class="text-xs text-on-surface-variant mt-0.5">Специалист по ТИ</div>-->
+<!--    </td>-->
+<!--    <td class="py-5 px-4 text-sm text-on-surface-variant">Гомельское Агентство</td>-->
+<!--&lt;!&ndash;    <td class="py-5 px-4 text-sm text-on-surface-variant">1.1</td>&ndash;&gt;-->
+<!--    <td class="py-5 px-4 text-sm text-on-surface-variant">28.11.2026</td>-->
+<!--    <td class="py-5 px-4 text-right last:rounded-r-lg">-->
+<!--        <button class="p-2 text-outline hover:text-primary transition-colors"><span class="material-symbols-outlined">person</span></button>-->
+<!--    </td>-->
+<!--</tr>-->
+<!--</tbody>-->
+<!--</table>-->
+<!--</div>-->
+<!--&lt;!&ndash; Pagination &ndash;&gt;-->
+<!--<div class="p-8 flex items-center justify-between mt-auto">-->
+<!--<span class="text-xs text-outline font-medium">Показано 1-10 из 38 претендентов</span>-->
+<!--<div class="flex gap-2">-->
+<!--<button class="p-2 bg-surface-container-lowest text-outline hover:text-primary rounded transition-colors"><span class="material-symbols-outlined">chevron_left</span></button>-->
+<!--<button class="w-8 h-8 flex items-center justify-center bg-surface-tint text-white font-label-md rounded">1</button>-->
+<!--<button class="w-8 h-8 flex items-center justify-center text-outline hover:bg-surface-container-high rounded">2</button>-->
+<!--<button class="w-8 h-8 flex items-center justify-center text-outline hover:bg-surface-container-high rounded">3</button>-->
+<!--<button class="p-2 bg-surface-container-lowest text-outline hover:text-primary rounded transition-colors"><span class="material-symbols-outlined">chevron_right</span></button>-->
+<!--</div>-->
+<!--</div>-->
+<!--</section>-->
+<!--&lt;!&ndash; Right Section: Certification Groups &ndash;&gt;-->
+<!--<section class="flex-1 flex flex-col gap-module-gap">-->
+<!--&lt;!&ndash; Stats Bar &ndash;&gt;-->
+<!--<div class="grid grid-cols-4 gap-4">-->
+<!--<div class="bg-surface-container-lowest p-5 rounded-lg ghost-border">-->
+<!--<div class="text-xs font-label-sm text-outline uppercase mb-2">Всего групп</div>-->
+<!--<div class="text-2xl font-black text-on-surface">12</div>-->
+<!--</div>-->
+<!--<div class="bg-surface-container-lowest p-5 rounded-lg ghost-border">-->
+<!--<div class="text-xs font-label-sm text-outline uppercase mb-2">Открытых</div>-->
+<!--<div class="text-2xl font-black text-primary">4</div>-->
+<!--</div>-->
+<!--<div class="bg-surface-container-lowest p-5 rounded-lg ghost-border">-->
+<!--<div class="text-xs font-label-sm text-outline uppercase mb-2">Закрытых</div>-->
+<!--<div class="text-2xl font-black text-slate-400">8</div>-->
+<!--</div>-->
+<!--<div class="bg-surface-container-lowest p-5 rounded-lg ghost-border">-->
+<!--<div class="text-xs font-label-sm text-outline uppercase mb-2">Претендентов в группах</div>-->
+<!--<div class="text-2xl font-black text-on-surface">156</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--&lt;!&ndash; Calendar Main Area &ndash;&gt;-->
+<!--    <div class="flex-1 bg-surface-container-lowest rounded-xl flex flex-col overflow-hidden ghost-border">-->
+<!--        <div class="p-6 flex items-center justify-between">-->
+<!--            <div class="flex items-center gap-6">-->
+<!--                <h2 class="font-headline-md text-xl text-on-surface tracking-tight">Май 2026</h2>-->
+<!--                <div class="flex gap-1">-->
+<!--                    <button class="w-8 h-8 flex items-center justify-center rounded hover:bg-surface-container-high text-outline transition-colors"><span class="material-symbols-outlined text-lg">chevron_left</span></button>-->
+<!--                    <button class="w-8 h-8 flex items-center justify-center rounded hover:bg-surface-container-high text-outline transition-colors"><span class="material-symbols-outlined text-lg">chevron_right</span></button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="flex items-center gap-4">-->
+<!--                <div class="flex bg-surface-container-high p-1 rounded-lg">-->
+<!--                    <button class="px-4 py-1.5 bg-white text-xs font-bold rounded shadow-sm">Месяц</button>-->
+<!--                    <button class="px-4 py-1.5 text-xs text-outline font-bold">Неделя</button>-->
+<!--                </div>-->
+<!--                <button onclick="window.location.href='./Добавление группы/Добавление группы.html'" class="px-6 py-2 primary-gradient text-white font-label-md rounded flex items-center gap-2">-->
+<!--                    <span class="material-symbols-outlined text-sm">add</span> Добавить группу-->
+<!--                </button>-->
+<!--                <button class="px-6 py-2 bg-slate-300 text-white font-label-md rounded flex items-center gap-2">-->
+<!--                    <span class="material-symbols-outlined text-sm">delete</span> Удалить-->
+<!--                </button>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash; Calendar Grid &ndash;&gt;-->
+<!--        <div class="flex-1 flex flex-col">-->
+<!--            <div class="grid grid-cols-7 text-center bg-surface-container-low py-3">-->
+<!--                <span class="text-xs font-bold text-outline">ПН</span>-->
+<!--                <span class="text-xs font-bold text-outline">ВТ</span>-->
+<!--                <span class="text-xs font-bold text-outline">СР</span>-->
+<!--                <span class="text-xs font-bold text-outline">ЧТ</span>-->
+<!--                <span class="text-xs font-bold text-outline">ПТ</span>-->
+<!--                <span class="text-xs font-bold text-outline">СБ</span>-->
+<!--                <span class="text-xs font-bold text-outline">ВС</span>-->
+<!--            </div>-->
+<!--            <div class="flex-1 grid grid-cols-7 grid-rows-5 h-full bg-outline-variant/10 gap-[1px]">-->
+<!--                &lt;!&ndash; Empty days &ndash;&gt;-->
+<!--                <div class="bg-surface-container-low/30 p-2"></div>-->
+<!--                <div class="bg-surface-container-low/30 p-2"></div>-->
+<!--                <div class="bg-surface-container-low/30 p-2"></div>-->
+<!--                <div class="bg-surface-container-lowest p-2 relative">-->
+<!--                    <span class="text-xs font-bold text-slate-300">1</span>-->
+<!--                </div>-->
+<!--                <div class="bg-surface-container-lowest p-2 relative">-->
+<!--                    <span class="text-xs font-bold text-slate-300">2</span>-->
+<!--                    &lt;!&ndash; Grey Card: Closed &ndash;&gt;-->
+<!--&lt;!&ndash;                    <div class="mt-2 p-2 bg-slate-100 text-slate-500">&ndash;&gt;-->
+<!--                    <div class="mt-2 p-2 bg-slate-100 text-slate-500 rounded text-[10px] leading-tight shadow-md flex flex-col gap-2">-->
+<!--                    <div class="font-bold">№08_24</div>-->
+<!--                    <div class="opacity-50 uppercase tracking-tighter">Закрыта</div>-->
+<!--                        <button onclick="window.location.href='../4_Протокол/Группа архивная_аттестация и апелляция завершена/Протокол.html'" class="w-full py-1.5 bg-slate-300 rounded-sm text-[9px] font-bold uppercase tracking-widest hover:brightness-110 transition-all border border-white/20">Протокол</button>-->
+<!--                    </div>-->
+
+<!--                </div>-->
+<!--                <div class="bg-surface-container-low/20 p-2 relative"><span class="text-xs font-bold text-slate-300">3</span></div>-->
+<!--                <div class="bg-surface-container-low/20 p-2 relative"><span class="text-xs font-bold text-slate-300">4</span></div>-->
+<!--                &lt;!&ndash; Next Row &ndash;&gt;-->
+<!--                <div class="bg-surface-container-lowest p-2 relative"><span class="text-xs font-bold text-slate-300">5</span></div>-->
+<!--                <div class="bg-surface-container-lowest p-2 relative">-->
+<!--                    <span class="text-xs font-bold text-slate-300">6</span>-->
+
+<!--&lt;!&ndash;                    <div onclick="window.location.href='./Добавление группы/Добавление группы.html'" class="mt-2 p-2 bg-[#4e69c3] text-white rounded text-[10px] leading-tight shadow-md flex flex-col gap-2">&ndash;&gt;-->
+<!--                    <div  class="mt-2 p-2 bg-[#4e69c3] text-white rounded text-[10px] leading-tight shadow-md flex flex-col gap-2">-->
+<!--                    <div class="font-bold">№09_24</div>-->
+<!--                        <div class="opacity-80 uppercase tracking-tighter">Сформирована</div>-->
+<!--                                            <button onclick="window.location.href='../4_Протокол/Активная группа_аттестация/Протокол.html'" class="w-full py-1.5 primary-gradient rounded-sm text-[9px] font-bold uppercase tracking-widest hover:brightness-110 transition-all border border-white/20">Протокол</button>-->
+
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="bg-surface-container-lowest p-2 relative"><span class="text-xs font-bold text-slate-300">7</span></div>-->
+<!--                <div class="bg-surface-container-lowest p-2 relative"><span class="text-xs font-bold text-slate-300">8</span></div>-->
+<!--                <div class="bg-surface-container-lowest p-2 relative">-->
+<!--                    <span class="text-xs font-bold text-slate-300">9</span>-->
+<!--                    &lt;!&ndash; Card &ndash;&gt;-->
+<!--                    <div class="mt-2 p-2 bg-[#4e69c3] text-white rounded text-[10px] leading-tight shadow-md flex flex-col gap-2">-->
+<!--                    <div class="font-bold">№10_25</div>-->
+<!--                        <div class="opacity-80 uppercase tracking-tighter">Сформирована</div>-->
+<!--                        <button onclick="window.location.href='../4_Протокол/Активная группа_аттестация/Протокол.html'" class="w-full py-1.5 primary-gradient rounded-sm text-[9px] font-bold uppercase tracking-widest hover:brightness-110 transition-all border border-white/20">Протокол</button>-->
+<!--                    </div>-->
+
+<!--                </div>-->
+<!--                <div class="bg-surface-container-low/20 p-2 relative"><span class="text-xs font-bold text-slate-300">10</span></div>-->
+<!--                <div class="bg-surface-container-low/20 p-2 relative"><span class="text-xs font-bold text-slate-300">11</span></div>-->
+<!--                &lt;!&ndash; Active Week &ndash;&gt;-->
+<!--                <div class="bg-surface-container-lowest p-2 relative"><span class="text-xs font-bold text-slate-300">12</span></div>-->
+<!--                <div class="bg-surface-container-lowest p-2 relative"><span class="text-xs font-bold text-slate-300">13</span></div>-->
+<!--                <div class="bg-surface-container-lowest p-2 relative">-->
+<!--                    <span class="text-xs font-bold text-slate-300">14</span>-->
+<!--                    &lt;!&ndash; Deep Blue Card: Formed &ndash;&gt;-->
+<!--                    <div class="mt-2 p-2 bg-[#4e69c3] text-white rounded text-[10px] leading-tight shadow-md flex flex-col gap-2">-->
+<!--                        <div>-->
+<!--                            <div class="font-bold">№11_25</div>-->
+<!--                            <div class="opacity-80 uppercase tracking-tighter text-[9px]">Сформирована</div>-->
+<!--                        </div>-->
+<!--                        <button onclick="window.location.href='../4_Протокол/Активная группа_аттестация/Протокол.html'" class="w-full py-1.5 primary-gradient rounded-sm text-[9px] font-bold uppercase tracking-widest hover:brightness-110 transition-all border border-white/20">Протокол</button>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="bg-surface-container-low/40 p-2 relative ring-2 ring-inset ring-surface-tint z-10">-->
+<!--                    <span class="text-xs font-bold text-surface-tint">15</span>-->
+<!--                    <div class="mt-2 p-2 bg-white ghost-border rounded text-[10px] text-center italic text-outline">Нет событий</div>-->
+<!--                </div>-->
+<!--                <div class="bg-surface-container-lowest p-2 relative"><span class="text-xs font-bold text-slate-300">16</span></div>-->
+<!--                <div class="bg-surface-container-low/20 p-2 relative"><span class="text-xs font-bold text-slate-300">17</span></div>-->
+<!--                <div class="bg-surface-container-low/20 p-2 relative"><span class="text-xs font-bold text-slate-300">18</span></div>-->
+<!--                &lt;!&ndash; Fill remainder of calendar &ndash;&gt;-->
+<!--                <div class="bg-surface-container-lowest p-2 relative"><span class="text-xs font-bold text-slate-300">19</span></div>-->
+<!--                <div class="bg-surface-container-lowest p-2 relative">-->
+<!--                    <span class="text-xs font-bold text-slate-300">20</span>-->
+<!--                    <div onclick="window.location.href='./Добавление группы/Добавление группы.html'"  class="mt-2 p-2 bg-emerald-100 text-emerald-800 rounded text-[10px] leading-tight">-->
+<!--                        <div class="font-bold">№106_25</div>-->
+<!--                        <div class="uppercase tracking-tighter">Открыта</div>-->
+<!--&lt;!&ndash;                        <button onclick="window.location.href='./Добавление группы/Добавление группы.html'" class="w-full py-1.5 bg-white rounded-sm text-[9px] font-bold uppercase tracking-widest hover:brightness-110 transition-all border border-white/20">Открыть</button>&ndash;&gt;-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="bg-surface-container-lowest p-2 relative"><span class="text-xs font-bold text-slate-300">21</span></div>-->
+<!--                <div class="bg-surface-container-lowest p-2 relative"><span class="text-xs font-bold text-slate-300">22</span></div>-->
+<!--                <div class="bg-surface-container-lowest p-2 relative"><span class="text-xs font-bold text-slate-300">23</span></div>-->
+<!--                <div class="bg-surface-container-low/20 p-2 relative"><span class="text-xs font-bold text-slate-300">24</span></div>-->
+<!--                <div class="bg-surface-container-low/20 p-2 relative"><span class="text-xs font-bold text-slate-300">25</span></div>-->
+<!--                <div class="bg-surface-container-lowest p-2 relative"><span class="text-xs font-bold text-slate-300">26</span></div>-->
+<!--                <div class="bg-surface-container-lowest p-2 relative"><span class="text-xs font-bold text-slate-300">27</span></div>-->
+<!--                <div class="bg-surface-container-lowest p-2 relative"><span class="text-xs font-bold text-slate-300">28</span></div>-->
+<!--                <div class="bg-surface-container-lowest p-2 relative"><span class="text-xs font-bold text-slate-300">29</span></div>-->
+<!--                <div class="bg-surface-container-lowest p-2 relative"><span class="text-xs font-bold text-slate-300">30</span></div>-->
+<!--                <div class="bg-surface-container-low/20 p-2 relative text-slate-300 font-bold text-xs">31</div>-->
+<!--                <div class="bg-surface-container-low/30"></div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+
+
+<!--&lt;!&ndash; Footer Context / Legend &ndash;&gt;-->
+<!--<div class="flex gap-6 px-4">-->
+<!--<div class="flex items-center gap-2">-->
+<!--<span class="w-3 h-3 rounded-full bg-emerald-500"></span>-->
+<!--<span class="text-xs font-bold text-outline">Открыта</span>-->
+<!--</div>-->
+<!--<div class="flex items-center gap-2">-->
+<!--<span class="w-3 h-3 rounded-full bg-[#4e69c3]"></span>-->
+<!--<span class="text-xs font-bold text-outline">Сформирована</span>-->
+<!--</div>-->
+<!--<div class="flex items-center gap-2">-->
+<!--<span class="w-3 h-3 rounded-full bg-slate-300"></span>-->
+<!--<span class="text-xs font-bold text-outline">Закрыта</span>-->
+<!--</div>-->
+<!--<div class="flex items-center gap-2">-->
+<!--<span class="w-3 h-3 rounded-full bg-error"></span>-->
+<!--<span class="text-xs font-bold text-outline">Обратите внимание</span>-->
+<!--</div>-->
+<!--</div>-->
+<!--</section>-->
+<!--</main>-->
+
+    <!-- Content Canvas -->
+    <div class="ml-64 flex-1 flex overflow-hidden p-container-padding gap-container-padding">
+
+        <!-- Column 1: Unassigned Applications -->
+        <section class="w-[32%] flex flex-col bg-surface-container-lowest rounded-xl architectural-shadow overflow-hidden">
+<!--            <div class="flex justify-between items-center w-full px-container-padding h-16 bg-primary-container text-on-primary shadow-sm shrink-0 z-40">-->
+<!--                <div class="flex items-center gap-8">-->
+<!--                    <div class="flex items-center gap-3 bg-on-primary/10 px-4 py-2 rounded-full cursor-pointer hover:bg-on-primary/20 transition-colors relative group"><div class="w-2 h-2 bg-surface-tint rounded-full animate-pulse"></div><span class="font-label-md text-label-md">Период: 08.06.2026 – 14.06.2026</span><span class="material-symbols-outlined text-[18px] pointer-events-none group-hover:rotate-180 transition-transform">expand_more</span><div class="absolute top-full left-0 mt-2 w-64 bg-surface-container-lowest rounded-xl architectural-shadow overflow-hidden opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-all z-[100] border border-outline-variant/10"><div class="p-3 border-b border-outline-variant/10"><div class="relative flex items-center bg-surface-container-low rounded-lg px-2 py-1"><span class="material-symbols-outlined text-[18px] text-on-surface-variant/50">search</span><input type="text" placeholder="Поиск (месяц, год)" class="bg-transparent border-none focus:ring-0 text-label-sm w-full py-1 text-on-surface"></div></div><div class="flex flex-col py-2 max-h-60 overflow-y-auto"><button class="px-4 py-3 text-left hover:bg-surface-container-low transition-colors font-label-md text-label-md text-on-surface-variant">01.06.2026 – 07.06.2026</button><button class="px-4 py-3 text-left bg-primary/5 text-primary font-bold transition-colors font-label-md text-label-md">08.06.2026 – 14.06.2026</button><button class="px-4 py-3 text-left hover:bg-surface-container-low transition-colors font-label-md text-label-md text-on-surface-variant">15.06.2026 – 21.06.2026</button><button class="px-4 py-3 text-left hover:bg-surface-container-low transition-colors font-label-md text-label-md text-on-surface-variant">22.06.2026 – 28.06.2026</button><button class="px-4 py-3 text-left hover:bg-surface-container-low transition-colors font-label-md text-label-md text-on-surface-variant">29.06.2026 – 05.07.2026</button></div></div></div>-->
+<!--                </div>-->
+
+<!--            </div>-->
+            <div class="p-6 pb-2">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="font-headline-md text-headline-md font-bold text-on-surface">Нераспределенные заявки</h2>
+                    <button class="p-2 text-outline hover:text-primary hover:bg-surface-container transition-colors rounded-lg">
+                        <span class="material-symbols-outlined">filter_list</span>
+                    </button>
+                </div>
+                <div class="flex gap-2 mb-4">
+                    <button class="text-primary font-label-md text-label-md hover:underline">Выбрать все</button>
+                    <span class="text-outline-variant">|</span>
+                    <button class="text-primary font-label-md text-label-md hover:underline flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[16px]">bolt</span>
+                        Автораспределение
+                    </button>
+                </div>
+            </div>
+            <div class="flex-1 overflow-y-auto px-6 pb-6">
+
+
+                    <table class="w-full text-left">
+                        <thead>
+                        <tr class="text-label-sm text-outline uppercase tracking-widest border-b border-outline-variant/10">
+                            <th class="pb-4 font-bold">Фамилия Имя Отчество</th>
+                            <th class="pb-4 font-bold">Место работы</th>
+                            <!--<th class="pb-4 font-bold">Стаж</th>-->
+                            <th class="pb-4 font-bold">Истечение срока аттестации</th>
+                            <th class="pb-4 font-bold text-right">Должность</th>
+                        </tr>
+                        </thead>
+                        <tbody class="divide-y-0">
+                        <!-- High Urgency -->
+                        <tr class="bg-surface-container-lowest hover:bg-white transition-colors group">
+                            <td class="py-5 px-4 first:rounded-l-lg">
+                                <div class="font-label-md text-on-surface">Иванов Алексей Иванович</div>
+
+                            </td>
+                            <td class="py-5 px-4 text-sm text-on-surface-variant">Минское городское Агентство</td>
+                            <!--<td class="py-5 px-4 text-sm text-on-surface-variant">12.2</td>-->
+                            <td class="py-5 px-4">
+                                <span class="px-2 py-1 bg-error-container text-on-error-container text-xs font-bold rounded">23.04.2026</span>
+                            </td>
+                            <td class="py-5 px-4 text-right last:rounded-r-lg">
+                                <div class="text-xs text-on-surface-variant mt-0.5">Специалист по ТИ 1 к.</div>
+                            </td>
+                        </tr>
+                        <tr class="bg-surface-container-lowest hover:bg-white transition-colors">
+                            <td class="py-5 px-4 first:rounded-l-lg">
+                                <div class="font-label-md text-on-surface">Иванова Татьяна Васильевна</div>
+                            </td>
+                            <td class="py-5 px-4 text-sm text-on-surface-variant">Гродненское Агентство</td>
+                            <!--<td class="py-5 px-4 text-sm text-on-surface-variant">8.5</td>-->
+                            <td class="py-5 px-4">
+                                <span class="px-2 py-1 bg-surface-container-high text-on-surface text-xs font-bold rounded">18.06.2026</span>
+                            </td>
+                            <td class="py-5 px-4 text-right last:rounded-r-lg">
+                                <div class="text-xs text-on-surface-variant mt-0.5">Специалист по ТИ 2 к.</div>
+                            </td>
+                        </tr>
+                        <tr class="h-4"></tr>
+                        <tr class="bg-surface-container-lowest hover:bg-white transition-colors">
+                            <td class="py-5 px-4 first:rounded-l-lg">
+                                <div class="font-label-md text-on-surface">Сидоров Дмитрий Иванович</div>
+                            </td>
+                            <td class="py-5 px-4 text-sm text-on-surface-variant">Национальное кадастровое агентство</td>
+                            <!--<td class="py-5 px-4 text-sm text-on-surface-variant">15.9</td>-->
+                            <td class="py-5 px-4 text-sm text-on-surface-variant">25.06.2026</td>
+                            <td class="py-5 px-4 text-right last:rounded-r-lg">
+                                <div class="text-xs text-on-surface-variant mt-0.5">Начальник отдела</div>
+                            </td>
+                        </tr>
+                        <tr class="h-4"></tr>
+                        <tr class="bg-surface-container-lowest hover:bg-white transition-colors">
+                            <td class="py-5 px-4 first:rounded-l-lg">
+                                <div class="font-label-md text-on-surface">Кузнецов Михаил Петрович</div>
+
+                            </td>
+                            <td class="py-5 px-4 text-sm text-on-surface-variant">Брестское Агентство</td>
+                            <!--<td class="py-5 px-4 text-sm text-on-surface-variant">0.5</td>-->
+                            <td class="py-5 px-4 text-sm text-on-surface-variant">22.07.2026</td>
+                            <td class="py-5 px-4 text-right last:rounded-r-lg">
+                                <div class="text-xs text-on-surface-variant mt-0.5">инженер</div>
+                            </td>
+                        </tr>
+                        <tr class="h-4"></tr>
+                        <tr class="bg-surface-container-lowest hover:bg-white transition-colors">
+                            <td class="py-5 px-4 first:rounded-l-lg">
+                                <div class="font-label-md text-on-surface">Петрова Валерия Степановка</div>
+
+                            </td>
+                            <td class="py-5 px-4 text-sm text-on-surface-variant">Гомельское Агентство</td>
+                            <!--    <td class="py-5 px-4 text-sm text-on-surface-variant">1.1</td>-->
+                            <td class="py-5 px-4 text-sm text-on-surface-variant">28.11.2026</td>
+                            <td class="py-5 px-4 text-right last:rounded-r-lg">
+                                <div class="text-xs text-on-surface-variant mt-0.5">Специалист по ТИ</div>
+                            </td>
+                        </tr>
+                        <tr class="bg-surface-container-lowest hover:bg-white transition-colors">
+                            <td class="py-5 px-4 first:rounded-l-lg">
+                                <div class="font-label-md text-on-surface">Петрова Валерия Степановна</div>
+
+                            </td>
+                            <td class="py-5 px-4 text-sm text-on-surface-variant">Гомельское Агентство</td>
+                            <!--    <td class="py-5 px-4 text-sm text-on-surface-variant">1.1</td>-->
+                            <td class="py-5 px-4 text-sm text-on-surface-variant">28.11.2026</td>
+                            <td class="py-5 px-4 text-right last:rounded-r-lg">
+                                <div class="text-xs text-on-surface-variant mt-0.5">Специалист по ТИ</div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+            </div>
+        </section>
+        <!-- Column 2: Period Groups -->
+        <section class="w-[34%] flex flex-col bg-surface-container-low rounded-xl overflow-hidden">
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="font-headline-md text-headline-md font-bold text-on-surface">Группы периода</h2>
+                    <button class="primary-gradient text-on-primary px-4 py-2 rounded-lg font-bold font-label-md text-label-md flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[18px]">add</span>
+                        Добавить группу
+                    </button>
+                </div>
+                <div class="space-y-4 overflow-hidden">
+                    <!-- Active Group Card -->
+                    <div class="p-5 bg-surface-container-lowest border-l-4 border-primary rounded-r-xl architectural-shadow scale-[1.02] transition-transform cursor-pointer">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="font-headline-md text-headline-md font-bold text-on-surface leading-tight">№ А-09-06.2026</h3>
+                                <p class="text-primary font-bold font-label-md text-label-md mt-1">Аттестационный</p>
+                            </div>
+                            <span class="bg-primary-container text-on-primary text-[10px] px-2 py-1 rounded font-black tracking-widest uppercase">ОТКРЫТА</span>
+                        </div>
+                        <div class="flex items-center gap-4 text-on-surface-variant mb-6 font-label-md text-label-md">
+                            <div class="flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                                12.06.2026
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[18px]">schedule</span>
+                                09:00–11:00
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-label-sm font-label-sm">
+                                <span class="text-on-surface-variant uppercase">Заполняемость</span>
+                                <span class="text-on-surface font-bold">19 / 25 человек</span>
+                            </div>
+                            <div class="w-full h-2 bg-surface-variant rounded-full overflow-hidden">
+                                <div class="h-full bg-primary" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Regular Group Card 1-->
+                    <div class="p-5 bg-surface-container-lowest rounded-xl hover:bg-surface-container transition-colors cursor-pointer group">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="font-headline-md text-headline-md font-bold text-on-surface/80 group-hover:text-on-surface transition-colors leading-tight">№ А-10-06.2026</h3>
+                                <p class="text-on-surface-variant font-bold font-label-md text-label-md mt-1">Аттестационный</p>
+                            </div>
+                            <span class="bg-primary-container text-on-primary text-[10px] px-2 py-1 rounded font-black tracking-widest uppercase">ОТКРЫТА</span>
+                        </div>
+                        <div class="flex items-center gap-4 text-on-surface-variant/60 mb-6 font-label-md text-label-md">
+                            <div class="flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                                12.06.2026
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[18px]">schedule</span>
+                                12:00–14:00
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-label-sm font-label-sm">
+                                <span class="text-on-surface-variant/60 uppercase">Заполняемость</span>
+                                <span class="text-on-surface-variant font-bold">6 / 25 человек</span>
+                            </div>
+                            <div class="w-full h-2 bg-surface-variant rounded-full overflow-hidden">
+                                <div class="h-full bg-outline-variant" style="width: 26%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Regular Group Card 2-->
+                    <div class="p-5 bg-surface-container-lowest rounded-xl hover:bg-surface-container transition-colors cursor-pointer group">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="font-headline-md text-headline-md font-bold text-on-surface/80 group-hover:text-on-surface transition-colors leading-tight">№ Э-03-06.2026</h3>
+                                <p class="text-on-surface-variant font-bold font-label-md text-label-md mt-1">Экзаменационный</p>
+                            </div>
+                            <span class="bg-primary-container text-on-primary text-[10px] px-2 py-1 rounded font-black tracking-widest uppercase">ОТКРЫТА</span>
+                        </div>
+                        <div class="flex items-center gap-4 text-on-surface-variant/60 mb-6 font-label-md text-label-md">
+                            <div class="flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                                12.06.2026
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[18px]">schedule</span>
+                                12:00–14:00
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-label-sm font-label-sm">
+                                <span class="text-on-surface-variant/60 uppercase">Заполняемость</span>
+                                <span class="text-on-surface-variant font-bold">6 / 25 человек</span>
+                            </div>
+                            <div class="w-full h-2 bg-surface-variant rounded-full overflow-hidden">
+                                <div class="h-full bg-outline-variant" style="width: 26%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Draft Group Card -->
+<!--                    <div class="p-5 bg-surface-container-lowest/50 border border-dashed border-outline-variant rounded-xl cursor-pointer">-->
+<!--                        <div class="flex justify-between items-start mb-4 opacity-50">-->
+<!--                            <div>-->
+<!--                                <h3 class="font-headline-md text-headline-md font-bold text-on-surface leading-tight">Группа №A-14</h3>-->
+<!--                                <p class="text-on-surface-variant font-bold font-label-md text-label-md mt-1 italic">Черновик</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <button class="w-full py-2 bg-surface-variant text-on-surface-variant font-bold font-label-md text-label-md rounded-lg">Настроить</button>-->
+<!--                    </div>-->
+                </div>
+            </div>
+        </section>
+        <!-- Column 3: Group Details -->
+        <section class="w-[34%] flex flex-col bg-surface-container-lowest rounded-xl architectural-shadow overflow-hidden">
+            <div class="p-8 border-b border-surface-variant/30">
+                <h2 class="font-headline-md text-headline-md font-bold text-on-surface mb-6">Информация о группе</h2>
+                <div class="grid grid-cols-2 gap-6 mb-8">
+                    <div>
+                        <p class="text-outline text-label-sm font-label-sm uppercase tracking-wider mb-1">Назначенный тест</p>
+                        <p class="font-label-md text-label-md font-bold text-primary">Аттестация специалистов по ТИ 22.04.2026</p>
+                    </div>
+                    <div>
+                        <p class="text-outline text-label-sm font-label-sm uppercase tracking-wider mb-1">Председатель АК:</p>
+                        <p class="font-label-md text-label-md font-bold text-on-surface">Дубков А.В.</p>
+                    </div>
+                    <div>
+                        <p class="text-outline text-label-sm font-label-sm uppercase tracking-wider mb-1">Члены АК:</p>
+                        <p class="font-label-md text-label-md font-bold text-on-surface">Самусев В.В.</p>
+                        <p class="font-label-md text-label-md font-bold text-on-surface">Самусев2 В.В.</p>
+                    </div>
+                </div>
+                <div class="bg-surface-container-low p-4 rounded-xl">
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="font-label-md text-label-md font-bold text-on-surface">Кандидаты</h4>
+                        <span class="font-label-sm text-label-sm text-on-surface-variant">12 человек</span>
+                    </div>
+                    <div class="space-y-3 max-h-[300px] overflow-y-auto pr-2">
+                        <div class="flex items-center justify-between py-2 border-b border-outline-variant/10">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 bg-primary/10 text-primary flex items-center justify-center rounded-full font-bold text-[12px]">ИВ</div>
+                                <span class="font-label-md text-label-md">Иванов Алексей</span>
+                            </div>
+                            <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2 border-b border-outline-variant/10">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 bg-primary/10 text-primary flex items-center justify-center rounded-full font-bold text-[12px]">ПС</div>
+                                <span class="font-label-md text-label-md">Петров Сергей</span>
+                            </div>
+                            <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 bg-surface-variant text-on-surface-variant flex items-center justify-center rounded-full font-bold text-[12px]">МК</div>
+                                <span class="font-label-md text-label-md">Михайлова Кира</span>
+                            </div>
+                            <span class="material-symbols-outlined text-outline-variant text-[18px]">pending</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2 border-b border-outline-variant/10">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 bg-primary/10 text-primary flex items-center justify-center rounded-full font-bold text-[12px]">ИВ</div>
+                                <span class="font-label-md text-label-md">Иванов Алексей</span>
+                            </div>
+                            <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2 border-b border-outline-variant/10">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 bg-primary/10 text-primary flex items-center justify-center rounded-full font-bold text-[12px]">ИВ</div>
+                                <span class="font-label-md text-label-md">Иванов Алексей</span>
+                            </div>
+                            <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2 border-b border-outline-variant/10">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 bg-primary/10 text-primary flex items-center justify-center rounded-full font-bold text-[12px]">ИВ</div>
+                                <span class="font-label-md text-label-md">Иванов Алексей</span>
+                            </div>
+                            <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2 border-b border-outline-variant/10">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 bg-primary/10 text-primary flex items-center justify-center rounded-full font-bold text-[12px]">ИВ</div>
+                                <span class="font-label-md text-label-md">Иванов Алексей</span>
+                            </div>
+                            <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-1 p-8 bg-error-container/10">
+                <div class="bg-surface-container-lowest p-4 rounded-xl ghost-border">
+                    <div class="flex gap-4">
+                        <div class="w-1 bg-error rounded-full shrink-0"></div>
+                        <div>
+                            <p class="font-label-md text-label-md font-bold text-on-surface">Предупреждение:</p>
+                            <p class="font-body-md text-body-md text-on-surface-variant/70 text-[13px] mt-1">Текущий список претендентов (19) приближается к лимиту группы (25). Рекомендуется добавить новую группу.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="p-8 border-t border-surface-variant/30 flex gap-4">
+<!--                <button class="flex-1 py-3 bg-surface-container-low text-on-surface font-bold font-label-md text-label-md rounded-xl hover:bg-surface-container transition-colors">Печать Протокола</button>-->
+                <button class="flex-1 py-3 primary-gradient text-on-primary font-bold font-label-md text-label-md rounded-xl">Редактировать группу</button>
+            </div>
+        </section>
+    </div>
+</div>
+</body></html>

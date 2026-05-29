@@ -115,10 +115,10 @@
 <body class="bg-surface font-body-md text-on-surface antialiased">
 <!-- Encryption Ribbon (Top Level) -->
 <header class="fixed top-0 w-full h-6 z-[60] bg-[#001453] flex justify-center items-center uppercase text-[10px] font-bold tracking-[0.2em] text-white">
-<div class="flex items-center gap-2">
-<span class="w-1.5 h-1.5 rounded-full bg-surface-tint pulsing-indicator"></span>
-            SECURE SESSION
-        </div>
+<!--<div class="flex items-center gap-2">-->
+<!--<span class="w-1.5 h-1.5 rounded-full bg-surface-tint pulsing-indicator"></span>-->
+<!--            SECURE SESSION-->
+<!--        </div>-->
 </header>
 <!-- Top App Bar -->
 <!--Страница-подложка-->
@@ -490,12 +490,19 @@
 </div>
 </div>
 <div class="space-y-2">
-<label class="font-label-md text-label-md text-on-surface-variant block uppercase tracking-wider">Дата аттестации | Время</label>
+<label class="font-label-md text-label-md text-on-surface-variant block uppercase tracking-wider">Дата аттестации</label>
 <div class="relative group">
-<input class="w-full h-12 bg-surface-container-highest px-4 font-label-md text-on-surface border-none focus:bg-surface-container-lowest focus:ring-0 focus:border-b-2 focus:border-surface-tint transition-all" type="datetime-local"/>
+<input class="w-full h-12 bg-surface-container-highest px-4 font-label-md text-on-surface border-none focus:bg-surface-container-lowest focus:ring-0 focus:border-b-2 focus:border-surface-tint transition-all" type="date"/>
 <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant/40 text-[18px]" data-icon="calendar_today">calendar_today</span>
 </div>
 </div>
+    <div class="space-y-2">
+        <label class="font-label-md text-label-md text-on-surface-variant block uppercase tracking-wider">Время</label>
+        <div class="relative group">
+            <input class="w-full h-12 bg-surface-container-highest px-4 font-label-md text-on-surface border-none focus:bg-surface-container-lowest focus:ring-0 focus:border-b-2 focus:border-surface-tint transition-all" type="time"/>
+            <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant/40 text-[18px]" data-icon="time"></span>
+        </div>
+    </div>
 <div class="space-y-2">
 <label class="font-label-md text-label-md text-on-surface-variant block uppercase tracking-wider">Место проведения аттестации</label>
 <div class="relative group">
@@ -521,26 +528,26 @@
     <option>Утвержденный тест на 2026 "Аттестация специалистов по ТИ"</option>
 </select>
 </div>
-<div class="space-y-2">
-<label class="font-label-md text-label-md text-on-surface-variant block uppercase tracking-wider">Основания назначения аттестации</label>
-<div class="flex gap-4 items-center h-12">
-<label class="flex items-center gap-2 cursor-pointer">
-<input checked="" class="w-4 h-4 text-primary focus:ring-offset-0 focus:ring-0" name="reason" type="radio"/>
-<span class="font-label-md text-on-surface">Плановая</span>
-</label>
-<label class="flex items-center gap-2 cursor-pointer">
-<input class="w-4 h-4 text-primary focus:ring-offset-0 focus:ring-0" name="reason" type="radio"/>
-<span class="font-label-md text-on-surface">Оценка компетенций</span>
-</label>
-</div>
-</div>
+<!--<div class="space-y-2">-->
+<!--<label class="font-label-md text-label-md text-on-surface-variant block uppercase tracking-wider">Основания назначения аттестации</label>-->
+<!--<div class="flex gap-4 items-center h-12">-->
+<!--<label class="flex items-center gap-2 cursor-pointer">-->
+<!--<input checked="" class="w-4 h-4 text-primary focus:ring-offset-0 focus:ring-0" name="reason" type="radio"/>-->
+<!--<span class="font-label-md text-on-surface">Плановая</span>-->
+<!--</label>-->
+<!--<label class="flex items-center gap-2 cursor-pointer">-->
+<!--<input class="w-4 h-4 text-primary focus:ring-offset-0 focus:ring-0" name="reason" type="radio"/>-->
+<!--<span class="font-label-md text-on-surface">Оценка компетенций</span>-->
+<!--</label>-->
+<!--</div>-->
+<!--</div>-->
 </div>
 </section>
 <!-- Section: Candidate Management -->
 <section>
 <div class="flex justify-between items-end mb-module-gap">
 <div class="flex items-center gap-2 flex-1 mr-4">
-<span class="font-label-sm text-on-surface-variant uppercase tracking-widest">Список Претендентов | в группе: 5 человек | максимум 25</span>
+<span class="font-label-sm text-on-surface-variant uppercase tracking-widest">Список Претендентов | в группе: 19 человек | максимум 25</span>
 <div class="h-px flex-1 bg-outline-variant/30"></div>
 </div>
 <button class="bg-surface-container-high text-primary px-4 h-10 font-label-md rounded hover:bg-surface-container-highest transition-colors flex items-center gap-2">
@@ -550,9 +557,9 @@
 </div>
 <div class="mb-6">
 <div class="relative">
-<input class="w-full h-14 bg-surface-container-highest px-12 font-body-md text-on-surface border-none focus:bg-surface-container-lowest focus:ring-0 focus:border-b-2 focus:border-surface-tint" placeholder="Добавить претендента из общей группы..." type="text"/>
+<input class="w-full h-14 bg-surface-container-highest px-12 font-body-md text-on-surface border-none focus:bg-surface-container-lowest focus:ring-0 focus:border-b-2 focus:border-surface-tint" placeholder="Добавить претендента..." type="text"/>
 <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant/60" data-icon="search">search</span>
-<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant/40" data-icon="person_add">person_add</span>
+<button class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant/40" data-icon="person_add">person_add</button>
 </div>
 </div>
 <div class="space-y-4"><!-- Candidate List Header -->
