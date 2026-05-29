@@ -459,7 +459,7 @@
 <div class="px-8 py-6 bg-slate-700 flex justify-between items-center">
 <div>
 <span class="font-label-sm text-blue-400 uppercase tracking-[0.2em]">Новая группа на аттестацию</span>
-<h2 class="font-headline-md text-headline-md text-white">№14_5_20.04.2026</h2>
+<h2 class="font-headline-md text-headline-md text-white">№ А-09-06.2026</h2>
 </div>
 <button onclick="window.location.href='../Аттестация.html'" class="text-white/60 hover:text-white transition-colors">
 <span class="material-symbols-outlined" data-icon="close">close</span>
@@ -468,50 +468,81 @@
 <div class="flex-1 overflow-y-auto">
 <div class="p-8 space-y-section-gap">
 <!-- Section: Group Details Form -->
-<section>
-<div class="flex items-center gap-2 mb-module-gap">
-<span class="font-label-sm text-on-surface-variant uppercase tracking-widest">Настройки группы</span>
-<div class="h-px flex-1 bg-outline-variant/30"></div>
-</div>
-<div class="grid grid-cols-2 gap-module-gap">
-<div class="space-y-2">
-<label class="font-label-md text-label-md text-on-surface-variant block uppercase tracking-wider">Номер группы</label>
-<div class="relative group">
-<input class="w-full h-12 bg-surface-container-highest px-4 font-label-md text-on-surface border-none focus:ring-0 cursor-not-allowed" readonly="" type="text" value="14"/>
-<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant/40 text-[18px]" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
-</div>
-</div>
-<div class="space-y-2">
-<label class="font-label-md text-label-md text-on-surface-variant block uppercase tracking-wider">Статус</label>
-<div class="flex h-12 bg-surface-container-low rounded p-1">
-<button class="flex-1 rounded font-label-md text-label-md bg-white text-primary shadow-sm">Открыта</button>
-<button class="flex-1 rounded font-label-md text-label-md text-on-surface-variant hover:bg-white/50 transition-colors">Сформирована</button>
-<button class="flex-1 rounded font-label-md text-label-md text-on-surface-variant hover:bg-white/50 transition-colors">Закрыта</button>
-</div>
-</div>
-<div class="space-y-2">
-<label class="font-label-md text-label-md text-on-surface-variant block uppercase tracking-wider">Дата аттестации</label>
-<div class="relative group">
-<input class="w-full h-12 bg-surface-container-highest px-4 font-label-md text-on-surface border-none focus:bg-surface-container-lowest focus:ring-0 focus:border-b-2 focus:border-surface-tint transition-all" type="date"/>
-<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant/40 text-[18px]" data-icon="calendar_today">calendar_today</span>
-</div>
-</div>
-    <div class="space-y-2">
-        <label class="font-label-md text-label-md text-on-surface-variant block uppercase tracking-wider">Время</label>
-        <div class="relative group">
-            <input class="w-full h-12 bg-surface-container-highest px-4 font-label-md text-on-surface border-none focus:bg-surface-container-lowest focus:ring-0 focus:border-b-2 focus:border-surface-tint transition-all" type="time"/>
-            <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant/40 text-[18px]" data-icon="time"></span>
+<div>
+        <!-- Section: Сomission Assignment -->
+    <section class="bg-surface-container-low p-6 rounded-lg">
+        <div class="flex items-center gap-2 mb-module-gap">
+            <span class="font-label-sm text-on-surface-variant uppercase tracking-widest">Назначение членов Аттестационной комиссии (АК)</span>
+            <div class="h-px flex-1 bg-outline-variant/30"></div>
         </div>
-    </div>
-<div class="space-y-2">
-<label class="font-label-md text-label-md text-on-surface-variant block uppercase tracking-wider">Место проведения аттестации</label>
-<div class="relative group">
-<input class="w-full h-12 bg-surface-container-highest px-4 font-label-md text-on-surface border-none focus:bg-surface-container-lowest focus:ring-0 focus:border-b-2 focus:border-surface-tint transition-all" placeholder="укажите место проведения аттестации" type="text"/>
-<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant/40 text-[18px]" data-icon="location_on">location_on</span>
+        <div class="grid grid-cols-2 gap-module-gap">
+            <div class="space-y-2">
+                <label class="font-label-md text-label-md text-on-surface-variant block uppercase tracking-wider">Председатель АК:</label>
+                <select class="w-full h-12 bg-surface-container-lowest px-4 font-label-md text-on-surface border-none focus:ring-0 focus:border-b-2 focus:border-surface-tint">
+                    <option>Дубков А.В.</option>
+                    <option>Манак Е.С.</option>
+                    <option>Давыдович Ю.В.</option>
+                    <option>Шведова Н.С.</option>
+                </select>
+            </div>
+            <div class="space-y-2">
+                <label class="font-label-md text-label-md text-on-surface-variant block uppercase tracking-wider">Члены АК:</label>
+                <select class="w-full h-12 bg-surface-container-lowest px-4 font-label-md text-on-surface border-none focus:ring-0 focus:border-b-2 focus:border-surface-tint">
+                    <option>Дубков А.В.</option>
+                    <option>Манак Е.С.</option>
+                    <option>Давыдович Ю.В.</option>
+                    <option>Шведова Н.С.</option>
+                    <option>Самусев В.В.</option>
+                </select>
+            </div>
+        </div>
+    </section>
+    <!-- Section: Настройки группы -->
+    <section class="bg-surface-container-low p-6 rounded-lg">
+        <div class="flex items-center gap-2 mb-module-gap">
+            <span class="font-label-sm text-on-surface-variant uppercase tracking-widest">Настройки группы</span>
+            <div class="h-px flex-1 bg-outline-variant/30"></div>
+        </div>
+        <div class="grid grid-cols-2 gap-module-gap">
+            <div class="space-y-2">
+                <label class="font-label-md text-label-md text-on-surface-variant block uppercase tracking-wider">Наименование (номер) группы</label>
+                <div class="relative group">
+                    <input class="w-full h-12 bg-surface-container-highest px-4 font-label-md text-on-surface border-none focus:ring-0 cursor-not-allowed" readonly="" type="text" value="№ А-09-06.2026"/>
+                    <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant/40 text-[18px]" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+                </div>
+            </div>
+            <div class="space-y-2">
+                <label class="font-label-md text-label-md text-on-surface-variant block uppercase tracking-wider">Статус</label>
+                <div class="flex h-12 bg-surface-container-low rounded p-1">
+                    <button class="flex-1 rounded font-label-md text-label-md bg-white text-primary shadow-sm">Открыта</button>
+                    <button class="flex-1 rounded font-label-md text-label-md text-on-surface-variant hover:bg-white/50 transition-colors">Сформирована</button>
+                    <button class="flex-1 rounded font-label-md text-label-md text-on-surface-variant hover:bg-white/50 transition-colors">Закрыта</button>
+                </div>
+            </div>
+            <div class="space-y-2">
+                <label class="font-label-md text-label-md text-on-surface-variant block uppercase tracking-wider">Дата аттестации</label>
+                <div class="relative group">
+                    <input class="w-full h-12 bg-surface-container-highest px-4 font-label-md text-on-surface border-none focus:bg-surface-container-lowest focus:ring-0 focus:border-b-2 focus:border-surface-tint transition-all" type="date"/>
+                    <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant/40 text-[18px]" data-icon="calendar_today">calendar_today</span>
+                </div>
+            </div>
+            <div class="space-y-2">
+                <label class="font-label-md text-label-md text-on-surface-variant block uppercase tracking-wider">Время</label>
+                <div class="relative group">
+                    <input class="w-full h-12 bg-surface-container-highest px-4 font-label-md text-on-surface border-none focus:bg-surface-container-lowest focus:ring-0 focus:border-b-2 focus:border-surface-tint transition-all" type="time"/>
+                    <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant/40 text-[18px]" data-icon="time"></span>
+                </div>
+            </div>
+            <div class="space-y-2">
+                <label class="font-label-md text-label-md text-on-surface-variant block uppercase tracking-wider">Место проведения аттестации</label>
+                <div class="relative group">
+                    <input class="w-full h-12 bg-surface-container-highest px-4 font-label-md text-on-surface border-none focus:bg-surface-container-lowest focus:ring-0 focus:border-b-2 focus:border-surface-tint transition-all" placeholder="укажите место проведения аттестации" type="text"/>
+                    <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant/40 text-[18px]" data-icon="location_on">location_on</span>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
-</div>
-</div>
-</section>
 <!-- Section: Test Assignment -->
 <section class="bg-surface-container-low p-6 rounded-lg">
 <div class="flex items-center gap-2 mb-module-gap">
@@ -519,6 +550,13 @@
 <div class="h-px flex-1 bg-outline-variant/30"></div>
 </div>
 <div class="grid grid-cols-2 gap-module-gap">
+    <div class="space-y-2">
+        <label class="font-label-md text-label-md text-on-surface-variant block uppercase tracking-wider">Тип тестирования:</label>
+        <select class="w-full h-12 bg-surface-container-lowest px-4 font-label-md text-on-surface border-none focus:ring-0 focus:border-b-2 focus:border-surface-tint">
+            <option>Аттестационное</option>
+            <option>Экзаменационное</option>
+        </select>
+    </div>
 <div class="space-y-2">
 <label class="font-label-md text-label-md text-on-surface-variant block uppercase tracking-wider">Назначить тест:</label>
 <select class="w-full h-12 bg-surface-container-lowest px-4 font-label-md text-on-surface border-none focus:ring-0 focus:border-b-2 focus:border-surface-tint">
@@ -528,19 +566,7 @@
     <option>Утвержденный тест на 2026 "Аттестация специалистов по ТИ"</option>
 </select>
 </div>
-<!--<div class="space-y-2">-->
-<!--<label class="font-label-md text-label-md text-on-surface-variant block uppercase tracking-wider">Основания назначения аттестации</label>-->
-<!--<div class="flex gap-4 items-center h-12">-->
-<!--<label class="flex items-center gap-2 cursor-pointer">-->
-<!--<input checked="" class="w-4 h-4 text-primary focus:ring-offset-0 focus:ring-0" name="reason" type="radio"/>-->
-<!--<span class="font-label-md text-on-surface">Плановая</span>-->
-<!--</label>-->
-<!--<label class="flex items-center gap-2 cursor-pointer">-->
-<!--<input class="w-4 h-4 text-primary focus:ring-offset-0 focus:ring-0" name="reason" type="radio"/>-->
-<!--<span class="font-label-md text-on-surface">Оценка компетенций</span>-->
-<!--</label>-->
-<!--</div>-->
-<!--</div>-->
+
 </div>
 </section>
 <!-- Section: Candidate Management -->
