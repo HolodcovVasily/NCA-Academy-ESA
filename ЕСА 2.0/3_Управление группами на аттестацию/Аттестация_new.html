@@ -119,17 +119,20 @@
 
 <header class="flex justify-between items-center w-full px-container-padding h-16 bg-primary-container text-on-primary shadow-sm shrink-0 z-40">
     <div class="ml-64 flex items-center gap-8">
-        <div class="flex items-center gap-3 bg-on-primary/10 px-4 py-2 rounded-full cursor-pointer hover:bg-on-primary/20 transition-colors relative group">
+        <div class="flex items-center gap-3 bg-on-primary/50 px-4 py-2 rounded-full cursor-pointer hover:bg-on-primary/20 transition-colors relative group">
             <div class="w-2 h-2 bg-surface-tint rounded-full animate-pulse"></div>
             <span class="font-label-md text-label-md">Период: 08.06.2026 – 14.06.2026</span>
             <span class="material-symbols-outlined text-[18px] pointer-events-none group-hover:rotate-180 transition-transform">expand_more</span>
-            <div class="absolute top-full left-0 mt-2 w-64 bg-surface-container-lowest rounded-xl architectural-shadow overflow-hidden opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-all z-[100] border border-outline-variant/10"><div class="p-3 border-b border-outline-variant/10">
-                <div class="relative flex items-center bg-surface-container-low rounded-lg px-2 py-1">
-                    <span class="material-symbols-outlined text-[18px] text-on-surface-variant/50">search</span>
+            <div class="absolute top-full left-0 mt-2 w-64 bg-surface-container rounded-xl architectural-shadow overflow-hidden opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-all z-[100] border border-outline-variant/10">
+                <div class="p-3 border-b border-outline-variant/10">
+                <div class="relative flex items-center bg-primary/20 rounded-lg px-2 py-1">
+                    <span class="material-symbols-outlined text-[18px] text-on-surface-variant/10">search</span>
                     <input type="text" placeholder="Поиск (месяц, год)" class="bg-transparent border-none focus:ring-0 text-label-sm w-full py-1 text-on-surface">
                 </div>
             </div>
                 <div class="flex flex-col py-2 max-h-60 overflow-y-auto">
+                    <button class="px-4 py-3 text-left hover:bg-primary/10 transition-colors font-label-md text-label-md text-on-surface-variant">18.05.2026 – 22.05.2026</button>
+                    <button class="px-4 py-3 text-left hover:bg-primary/10 transition-colors font-label-md text-label-md text-on-surface-variant">25.05.2026 – 29.05.2026</button>
                     <button class="px-4 py-3 text-left hover:bg-primary/10 transition-colors font-label-md text-label-md text-on-surface-variant">01.06.2026 – 07.06.2026</button>
                     <button class="px-4 py-3 text-left bg-primary/5 text-primary font-bold transition-colors font-label-md text-label-md">08.06.2026 – 14.06.2026</button>
                     <button class="px-4 py-3 text-left hover:bg-primary/10 transition-colors font-label-md text-label-md text-on-surface-variant">15.06.2026 – 21.06.2026</button>
@@ -327,7 +330,7 @@
                                 <h3 class="font-headline-md text-headline-md font-bold text-on-surface leading-tight">№ А-09-06.2026</h3>
                                 <p class="text-primary font-bold font-label-md text-label-md mt-1">Аттестационный</p>
                             </div>
-                            <span class="bg-primary-container text-on-primary text-[10px] px-2 py-1 rounded font-black tracking-widest uppercase">СФОРМИРОВАНА</span>
+                            <span onclick="window.location.href='../4_Протокол/Активная группа_аттестация/Протокол_без карточки.html'" class="bg-primary-container text-on-primary text-[10px] px-2 py-1 rounded font-black tracking-widest uppercase">СФОРМИРОВАНА</span>
                         </div>
                         <div class="flex items-center gap-4 text-on-surface-variant mb-6 font-label-md text-label-md">
                             <div class="flex items-center gap-1">
