@@ -143,14 +143,34 @@
         </div>
 
     </div>
+
+    <!-- Stats Bar -->
+    <div class="flex">
+        <div class="p-5 rounded-lg ghost-border">
+            <div class="font-bold font-label-md text-label-md uppercase mb-2">Всего групп</div>
+            <div class="font-bold font-label-md text-label-md">12</div>
+        </div>
+        <div class="p-5 rounded-lg ghost-border">
+            <div class="font-bold font-label-md text-label-md uppercase mb-2">Открытых</div>
+            <div class="font-bold font-label-md text-label-md">4</div>
+        </div>
+        <div class="p-5 rounded-lg ghost-border">
+            <div class="font-bold font-label-md text-label-md uppercase mb-2">Закрытых</div>
+            <div class="font-bold font-label-md text-label-md">8</div>
+        </div>
+        <div class="p-5 rounded-lg ghost-border">
+            <div class="font-bold font-label-md text-label-md uppercase mb-2">Претендентов в группах</div>
+            <div class="font-bold font-label-md text-label-md">156</div>
+        </div>
+    </div>
     <div class="flex items-center gap-4">
         <div onclick="window.location.href='./Аттестация.html'" class="relative group cursor-pointer p-2 hover:bg-on-primary/10 rounded-full transition-colors">
             <span  class="material-symbols-outlined">notifications</span>
             <span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span>
         </div>
-        <div class="p-2 hover:bg-on-primary/10 rounded-full transition-colors cursor-pointer">
-            <span class="material-symbols-outlined">settings</span>
-        </div>
+<!--        <div class="p-2 hover:bg-on-primary/10 rounded-full transition-colors cursor-pointer">-->
+<!--            <span class="material-symbols-outlined">settings</span>-->
+<!--        </div>-->
         <div class="h-8 w-[1px] bg-on-primary/20 mx-2"></div>
 
         <img alt="Administrator Profile" class="w-8 h-8 rounded-full border-2 border-on-primary/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_W5yg9tc7sucFXvPuKaTyj3WirvnPnaQYrClqsaaJyBMa3kUhdYhKwTbDNC-W47NknN4JcaviOfHMh2siFPqSvzRsO4uIFrYe8IA4HCOfuqO-adFNP0UUs4-RZh21ctqMEawWtGdSaL8Ph-TUpLMkCoTvUxUJ4DQ-M1G3RXNajr7TgwGjb4gR719EP4rZYVB1dfK3AKq4eZowzxGNaZlUCArUAsDgiTU2A09nfNU2crZRpHY68yXPQKryXs2Lqc16B_Et_4crGz9P">
@@ -180,10 +200,10 @@
 
 </div>
 <div class="mt-auto pt-8 space-y-1">
-<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100" href="./Аттестация.html">
-<span class="material-symbols-outlined">help_center</span>
-<span>Поддержка</span>
-</a>
+<!--<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100" href="./Аттестация.html">-->
+<!--<span class="material-symbols-outlined">help_center</span>-->
+<!--<span>Поддержка</span>-->
+<!--</a>-->
     <!-- Генерация отчета о результатах аттестации за период -->
     <div class="w-[1px] h-10 bg-surface-container-low"></div>
     <button onclick="window.location.href='./Результаты за период/Результаты.html'" class="bg-surface-container-lowest text-on-surface px-6 py-3 rounded-full font-label-md flex items-center gap-2 hover:bg-surface-container-low transition-all">
@@ -194,12 +214,12 @@
 
 </div>
 </nav>
-
     <!-- Content Canvas -->
+
     <div class="ml-64 flex-1 flex overflow-hidden p-container-padding gap-container-padding">
 
         <!-- Column 1: Unassigned Applications -->
-        <section class="w-[40%] flex flex-col bg-surface-container-lowest rounded-xl architectural-shadow overflow-hidden">
+        <section class="w-[35%] flex flex-col bg-surface-container-lowest rounded-xl architectural-shadow overflow-hidden">
             <div class="p-6 pb-2">
                 <div class="flex items-center justify-between mb-4">
                     <h2 class="font-headline-md text-headline-md font-bold text-on-surface">Нераспределенные заявки</h2>
@@ -362,7 +382,7 @@
                         </div>
                     </div>
                     <!-- Regular Group Card 1-->
-                    <div class="p-5 bg-surface-container rounded-xl hover:bg-surface-container transition-colors cursor-pointer group">
+                    <div class="p-5 bg-error-container rounded-xl hover:bg-error-container transition-colors cursor-pointer group">
                         <div class="flex justify-between items-start mb-4">
                             <div>
                                 <h3 class="font-headline-md text-headline-md font-bold text-on-surface/80 group-hover:text-on-surface transition-colors leading-tight">№ А-10-06.2026</h3>
@@ -431,7 +451,17 @@
 <!--                    </div>-->
                 </div>
             </div>
-
+            <div class="flex-1 p-8 bg-error-container/10">
+                <div class="bg-error-container p-4 rounded-xl ghost-border">
+                    <div class="flex gap-4">
+                        <div class="w-1 bg-error rounded-full shrink-0"></div>
+                        <div>
+                            <p class="font-label-md text-label-md font-bold text-on-surface">Предупреждение:</p>
+                            <p class="font-body-md text-body-md text-on-surface-variant/70 text-[13px] mt-1">Группа № А-10-06.2026 приближается к истекающему сроку назначения аттестации. Аттестация должна быть назначена за 10 дней до даты проведения.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- Footer Context / Legend -->
             <div class="flex gap-6 px-4 " >
                 <div class="flex items-center gap-2">
@@ -453,8 +483,8 @@
             </div>
         </section>
         <!-- Column 3: Group Details -->
-        <section class="w-[25%] flex flex-col bg-surface-container-lowest rounded-xl architectural-shadow overflow-hidden">
-            <div class="p-8 border-b border-surface-variant/30">
+        <section class="w-[30%] flex flex-col bg-surface-container-lowest rounded-xl architectural-shadow overflow-hidden">
+            <div class="p-2 border-b border-surface-variant/30">
                 <h2 class="font-headline-md text-headline-md font-bold text-on-surface mb-6">Информация о группе</h2>
                 <div class="grid grid-cols-2 gap-6 mb-8">
                     <div>
@@ -475,79 +505,91 @@
                         <p class="font-label-md text-label-md font-bold text-on-surface">Самусев2 В.В.</p>
                     </div>
                 </div>
-                <div class="bg-surface-container-low p-4 rounded-xl">
+                <div class="p-8 border-t border-surface-variant/30 flex gap-4">
+                    <!--                <button class="flex-1 py-3 bg-surface-container-low text-on-surface font-bold font-label-md text-label-md rounded-xl hover:bg-surface-container transition-colors">Печать Протокола</button>-->
+                    <button onclick="window.location.href='./Добавление группы/Добавление группы.html'" class="flex-1 py-3 primary-gradient text-on-primary font-bold font-label-md text-label-md rounded-xl">Редактировать группу</button>
+                </div>
+                <div class="bg-surface-container-low rounded-xl">
                     <div class="flex items-center justify-between mb-2">
                         <h4 class="font-label-md text-label-md font-bold text-on-surface">Кандидаты</h4>
                         <span class="font-label-sm text-label-sm text-on-surface-variant">19 человек</span>
                     </div>
-                    <div class="space-y-3 max-h-[300px] overflow-y-auto pr-2">
+                    <div class="space-y-3 overflow-y-auto pr-2">
                         <div class="flex items-center justify-between py-2 border-b border-outline-variant/10">
                             <div class="flex items-center gap-3">
                                 <div class="w-8 h-8 bg-primary/10 text-primary flex items-center justify-center rounded-full font-bold text-[12px]">ИВ</div>
-                                <span class="font-label-md text-label-md">Иванов Алексей</span>
+                                <span class="font-label-md text-label-md">Иванов А.А.</span>
                             </div>
                             <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
                         </div>
                         <div class="flex items-center justify-between py-2 border-b border-outline-variant/10">
                             <div class="flex items-center gap-3">
                                 <div class="w-8 h-8 bg-primary/10 text-primary flex items-center justify-center rounded-full font-bold text-[12px]">ПС</div>
-                                <span class="font-label-md text-label-md">Петров Сергей</span>
+                                <span class="font-label-md text-label-md">Петров С.В.</span>
                             </div>
                             <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
                         </div>
                         <div class="flex items-center justify-between py-2">
                             <div class="flex items-center gap-3">
                                 <div class="w-8 h-8 bg-surface-variant text-on-surface-variant flex items-center justify-center rounded-full font-bold text-[12px]">МК</div>
-                                <span class="font-label-md text-label-md">Михайлова Кира</span>
+                                <span class="font-label-md text-label-md">Михайлова К.П.</span>
                             </div>
                             <span class="material-symbols-outlined text-outline-variant text-[18px]">pending</span>
                         </div>
                         <div class="flex items-center justify-between py-2 border-b border-outline-variant/10">
                             <div class="flex items-center gap-3">
                                 <div class="w-8 h-8 bg-primary/10 text-primary flex items-center justify-center rounded-full font-bold text-[12px]">ИВ</div>
-                                <span class="font-label-md text-label-md">Иванов Алексей</span>
+                                <span class="font-label-md text-label-md">Иванов А.Д.</span>
                             </div>
                             <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
                         </div>
                         <div class="flex items-center justify-between py-2 border-b border-outline-variant/10">
                             <div class="flex items-center gap-3">
                                 <div class="w-8 h-8 bg-primary/10 text-primary flex items-center justify-center rounded-full font-bold text-[12px]">ИВ</div>
-                                <span class="font-label-md text-label-md">Иванов Алексей</span>
+                                <span class="font-label-md text-label-md">Путров С.А.</span>
                             </div>
                             <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
                         </div>
                         <div class="flex items-center justify-between py-2 border-b border-outline-variant/10">
                             <div class="flex items-center gap-3">
                                 <div class="w-8 h-8 bg-primary/10 text-primary flex items-center justify-center rounded-full font-bold text-[12px]">ИВ</div>
-                                <span class="font-label-md text-label-md">Иванов Алексей</span>
+                                <span class="font-label-md text-label-md">Дмитров В.Г.</span>
                             </div>
                             <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
                         </div>
                         <div class="flex items-center justify-between py-2 border-b border-outline-variant/10">
                             <div class="flex items-center gap-3">
                                 <div class="w-8 h-8 bg-primary/10 text-primary flex items-center justify-center rounded-full font-bold text-[12px]">ИВ</div>
-                                <span class="font-label-md text-label-md">Иванов Алексей</span>
+                                <span class="font-label-md text-label-md">Крикун С.А.</span>
+                            </div>
+                            <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2 border-b border-outline-variant/10">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 bg-primary/10 text-primary flex items-center justify-center rounded-full font-bold text-[12px]">ИВ</div>
+                                <span class="font-label-md text-label-md">Балюнова С.А.</span>
+                            </div>
+                            <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2 border-b border-outline-variant/10">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 bg-primary/10 text-primary flex items-center justify-center rounded-full font-bold text-[12px]">ИВ</div>
+                                <span class="font-label-md text-label-md">Петров И.И.</span>
+                            </div>
+                            <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2 border-b border-outline-variant/10">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 bg-primary/10 text-primary flex items-center justify-center rounded-full font-bold text-[12px]">ИВ</div>
+                                <span class="font-label-md text-label-md">Носик П.С.</span>
                             </div>
                             <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="flex-1 p-8 bg-error-container/10">
-                <div class="bg-surface-container-lowest p-4 rounded-xl ghost-border">
-                    <div class="flex gap-4">
-                        <div class="w-1 bg-error rounded-full shrink-0"></div>
-                        <div>
-                            <p class="font-label-md text-label-md font-bold text-on-surface">Предупреждение:</p>
-                            <p class="font-body-md text-body-md text-on-surface-variant/70 text-[13px] mt-1">Текущий список претендентов (19) приближается к лимиту группы (25). Рекомендуется добавить новую группу.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="p-8 border-t border-surface-variant/30 flex gap-4">
-<!--                <button class="flex-1 py-3 bg-surface-container-low text-on-surface font-bold font-label-md text-label-md rounded-xl hover:bg-surface-container transition-colors">Печать Протокола</button>-->
-                <button onclick="window.location.href='./Добавление группы/Добавление группы.html'" class="flex-1 py-3 primary-gradient text-on-primary font-bold font-label-md text-label-md rounded-xl">Редактировать группу</button>
-            </div>
+
+
         </section>
     </div>
 </div>
