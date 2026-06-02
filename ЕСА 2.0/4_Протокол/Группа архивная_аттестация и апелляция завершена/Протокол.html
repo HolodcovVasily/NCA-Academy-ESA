@@ -160,10 +160,6 @@
     <section class="bg-surface-container-lowest p-8 rounded-xl signature-bg relative overflow-hidden">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-y-8 gap-x-12 relative z-10">
             <div>
-                <p class="text-label-sm text-slate-400 uppercase mb-1">Номер группы</p>
-                <p class="font-headline-md text-primary tracking-tight">№ А-10-06.2026</p>
-            </div>
-            <div>
                 <p class="text-label-sm text-slate-400 uppercase mb-1">Дата аттестации</p>
                 <p class="font-label-md text-on-surface">12 июня 2026</p>
             </div>
@@ -212,302 +208,50 @@
             </div>
         </div>
     </section>
-    <!-- Statistics Grid (Bento Style) -->
-    <section class="grid grid-cols-1 md:grid-cols-6 gap-6">
-        <div class="md:col-span-2 bg-surface-container-lowest p-8 rounded-xl">
-            <p class="text-label-sm text-slate-400 uppercase mb-4">Охват претендентов</p>
-            <div class="flex items-end justify-between">
+
+
+    <section class="grid grid-cols-6 gap-module-gap">
+        <div class="col-span-2 bg-surface-container-lowest p-8 rounded-xl space-y-4">
+            <div class="flex items-baseline gap-4">
+                <span class="text-5xl font-extrabold text-on-surface tracking-tighter">25</span>
+                <span class="text-on-surface-variant font-label-md">Претендентов</span>
+            </div>
+            <div class="flex gap-6 pt-4 border-t border-surface-container-low">
                 <div>
-                    <p class="text-display-lg leading-none font-bold">15</p>
-                    <p class="text-label-sm text-slate-500 mt-2">Всего заявок</p>
+                    <div class="text-2xl font-bold text-on-surface">18</div>
+                    <div class="text-[10px] uppercase text-on-surface-variant tracking-widest">Явилось</div>
                 </div>
-                <div class="text-right space-y-1">
-                    <div class="flex items-center gap-2 text-label-md">
-                        <span class="w-2 h-2 rounded-full bg-primary"></span>
-                        <span>Явилось: 14</span>
-                    </div>
-                    <div class="flex items-center gap-2 text-label-md text-slate-400">
-                        <span class="w-2 h-2 rounded-full bg-surface-dim"></span>
-                        <span>Не явилось: 1</span>
-                    </div>
+                <div>
+                    <div class="text-2xl font-bold text-error">07</div>
+                    <div class="text-[10px] uppercase text-on-surface-variant tracking-widest">Не явилось</div>
                 </div>
             </div>
         </div>
-        <div class="md:col-span-2 bg-surface-container-lowest p-8 rounded-xl">
-            <p class="text-label-sm text-slate-400 uppercase mb-4">Результаты</p>
-            <div class="flex items-center gap-6">
-                <div class="relative w-20 h-20">
-                    <svg class="w-full h-full transform -rotate-90">
-                        <circle class="text-slate-100" cx="40" cy="40" fill="transparent" r="36" stroke="currentColor" stroke-width="8"></circle>
-                        <circle class="text-primary" cx="40" cy="40" fill="transparent" r="36" stroke="currentColor" stroke-dasharray="226" stroke-dashoffset="45" stroke-width="8"></circle>
-                    </svg>
-                    <div class="absolute inset-0 flex items-center justify-center font-bold text-label-md">86%</div>
-                </div>
-                <div class="space-y-2">
-                    <div class="text-label-md font-bold text-primary">12 Аттестовано</div>
-                    <div class="text-label-md text-error">2 Не аттестовано</div>
-                </div>
+        <div class="col-span-3 bg-surface-container-lowest p-8 rounded-xl space-y-4">
+            <span class="text-label-sm uppercase text-on-surface-variant opacity-60">Статистика по группе</span>
+            <div class="flex items-baseline gap-4">
+                <span class="text-5xl font-extrabold text-tertiary tracking-tighter">83</span>
+                <span class="text-on-surface-variant font-label-md">Всего аттестовано, %</span>
             </div>
-        </div>
-        <div class="md:col-span-2 bg-[#001453] p-8 rounded-xl text-white">
-            <p class="text-label-sm text-blue-300 uppercase mb-4">Итоговая эффективность</p>
-            <div class="flex items-baseline gap-2">
-                <p class="text-display-lg font-bold">85.7</p>
-                <p class="text-headline-md opacity-60">%</p>
-            </div>
-            <div class="mt-4 pt-4 border-t border-blue-800 flex justify-between items-center text-label-sm">
-                <span class="opacity-60">Апелляции: 0</span>
-                <span class="opacity-60">Нарушения: 0</span>
+            <div class="flex gap-6 pt-4 border-t border-surface-container-low">
+                <div>
+                    <div class="text-2xl font-bold text-on-surface">15</div>
+                    <div class="text-[10px] uppercase text-on-surface-variant tracking-widest">Аттестовано</div>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-on-surface-variant">03</div>
+                    <div class="text-[10px] uppercase text-on-surface-variant tracking-widest">Не аттестовано</div>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-on-surface">0</div>
+                    <div class="text-[10px] uppercase text-on-surface-variant tracking-widest">Апелляции</div>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold text-on-surface-variant">0</div>
+                    <div class="text-[10px] uppercase text-on-surface-variant tracking-widest">Нарушения</div>
+                </div>
             </div>
         </div>
     </section>
 </main>
-<!-- Main Content Area -->
-<!--<main class="xl:ml-64 mr-[400px] p-12 space-y-section-gap">-->
-<!--&lt;!&ndash; Header & Top Actions &ndash;&gt;-->
-<!--<div class="flex justify-between items-end">-->
-<!--<div class="space-y-1">-->
-<!--<h1 class="font-display-lg text-display-lg text-on-surface">Протокол группы аттестации</h1>-->
-<!--<p class="text-on-surface-variant font-label-md uppercase tracking-wider">Группа: №09_25_25.04.2026</p>-->
-<!--    <p class="text-on-surface-variant font-label-md uppercase tracking-wider">Тест: Аттестация специалистов по ТИ 22.04.2026</p>-->
-<!--</div>-->
-<!--<div class="flex gap-4">-->
-<!--&lt;!&ndash;<button class="bg-surface-container-lowest text-on-surface font-label-md px-6 py-3 rounded-xl flex items-center gap-2 hover:bg-surface-container transition-colors">&ndash;&gt;-->
-<!--&lt;!&ndash;<span class="material-symbols-outlined" data-icon="print">print</span>&ndash;&gt;-->
-<!--&lt;!&ndash;                    Распечатать протокол&ndash;&gt;-->
-<!--&lt;!&ndash;                </button>&ndash;&gt;-->
-<!--&lt;!&ndash;    primary-gradient&ndash;&gt;-->
-<!--<button  title="При нажатии отображается уточнение о необходимости активирования теста" class="bg-green-500 text-white font-label-md px-8 py-3 rounded-xl flex items-center gap-2 shadow-sm transition-transform active:scale-95 hidden">-->
-<!--<span  class="material-symbols-outlined" data-icon="play_arrow">play_arrow</span>-->
-<!--                   Тест активирован-->
-<!--                </button>-->
-<!--</div>-->
-<!--</div>-->
-<!--&lt;!&ndash; Group Summary Panel &ndash;&gt;-->
-<!--    <section class="grid grid-cols-6 gap-module-gap">-->
-<!--        <div class="col-span-2 bg-surface-container-lowest p-8 rounded-xl space-y-4">-->
-<!--            &lt;!&ndash;<span class="text-label-sm uppercase text-on-surface-variant opacity-60">Сведения о группе</span>&ndash;&gt;-->
-<!--            <span class="text-label-sm uppercase text-on-surface-variant opacity-60">Дата аттестации</span>-->
-<!--            <span class="text-on-surface-variant font-label-md">25.04.2026</span>-->
-<!--            <div class="flex items-baseline gap-4">-->
-<!--                <span class="text-5xl font-extrabold text-on-surface tracking-tighter">25</span>-->
-<!--                <span class="text-on-surface-variant font-label-md">Претендентов</span>-->
-<!--            </div>-->
-<!--            <div class="flex gap-6 pt-4 border-t border-surface-container-low">-->
-<!--                <div>-->
-<!--                    <div class="text-2xl font-bold text-on-surface">18</div>-->
-<!--                    <div class="text-[10px] uppercase text-on-surface-variant tracking-widest">Явилось</div>-->
-<!--                </div>-->
-<!--                <div>-->
-<!--                    <div class="text-2xl font-bold text-error">07</div>-->
-<!--                    <div class="text-[10px] uppercase text-on-surface-variant tracking-widest">Не явилось</div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="col-span-2 bg-surface-container-lowest p-8 rounded-xl space-y-4">-->
-<!--            <span class="text-label-sm uppercase text-on-surface-variant opacity-60">Дата рассмотрения апелляций</span>-->
-<!--            <span class="text-on-surface-variant font-label-md">10.05.2026</span>-->
-<!--            <div class="flex items-baseline gap-4">-->
-<!--                <span class="text-5xl font-extrabold text-on-surface tracking-tighter">1</span>-->
-<!--                <span class="text-on-surface-variant font-label-md">Апелляций</span>-->
-<!--            </div>-->
-<!--            <div class="flex gap-6 pt-4 border-t border-surface-container-low">-->
-<!--                <div>-->
-<!--&lt;!&ndash;                    <div class="text-2xl font-bold text-on-surface">1</div>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <div class="text-[10px] uppercase text-on-surface-variant tracking-widest">Явилось</div>&ndash;&gt;-->
-<!--                </div>-->
-<!--                <div>-->
-<!--&lt;!&ndash;                    <div class="text-2xl font-bold text-error">07</div>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <div class="text-[10px] uppercase text-on-surface-variant tracking-widest">Не явилось</div>&ndash;&gt;-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="col-span-2 bg-surface-container-lowest p-8 rounded-xl space-y-4">-->
-<!--            <span class="text-label-sm uppercase text-on-surface-variant opacity-60">Статистика по группе</span>-->
-<!--            <div class="flex items-baseline gap-4">-->
-<!--                <span class="text-5xl font-extrabold text-tertiary tracking-tighter">83</span>-->
-<!--                <span class="text-on-surface-variant font-label-md">Всего аттестовано, %</span>-->
-<!--            </div>-->
-<!--            <div class="flex gap-6 pt-4 border-t border-surface-container-low">-->
-<!--                <div>-->
-<!--                    <div class="text-2xl font-bold text-on-surface">15</div>-->
-<!--                    <div class="text-[10px] uppercase text-on-surface-variant tracking-widest">Аттестовано</div>-->
-<!--                </div>-->
-<!--                <div>-->
-<!--                    <div class="text-2xl font-bold text-on-surface-variant">03</div>-->
-<!--                    <div class="text-[10px] uppercase text-on-surface-variant tracking-widest">Не аттестовано</div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="col-span-2 bg-slate-300 p-8 rounded-xl flex flex-col justify-between overflow-hidden relative">-->
-<!--            <div class="z-10">-->
-<!--                <span class="text-label-sm uppercase text-white/70">Статус Протокола</span>-->
-<!--                <div class="text-2xl font-bold text-white mt-2">Архивная группа</div>-->
-<!--            </div>-->
-<!--            <button class="z-10 bg-white/10 hover:bg-white/20 text-white font-label-md px-4 py-2 rounded-lg self-start mt-4 transition-colors hidden">-->
-<!--                Завершить аттестацию-->
-<!--            </button>-->
-<!--            <div class="absolute -right-10 -bottom-10 opacity-10">-->
-<!--                <span class="material-symbols-outlined text-[180px]" data-icon="verified">verified</span>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </section>-->
-
-<!-- Right Sidebar: Individual Audit -->
-<aside class="fixed right-0 top-20 bottom-0 w-[400px] bg-surface-container-lowest shadow-2xl z-20 overflow-y-auto hidden">
-<div class="p-8 space-y-8">
-<div class="flex justify-between items-start">
-<h2 class="font-headline-md text-on-surface">Карточка претендента</h2>
-<button class="text-on-surface-variant hover:text-on-surface transition-colors p-1 rounded-full">
-<span class="material-symbols-outlined" data-icon="close">close</span>
-</button>
-</div>
-<!-- Selected Candidate Card -->
-<div class="bg-surface-container-low p-6 rounded-xl space-y-4">
-<div class="flex items-center gap-4">
-<!--<div class="h-16 w-16 rounded-full overflow-hidden ring-4 ring-white shadow-sm">-->
-<!--<img alt="Selected Candidate" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2cAb8XQY7qMR_Fjiy17SHnw28wTDpl8B9Ok194WVIS9KAAtM5ztyfOSVvbDgQHGFnWATO11qCWdCQUi7aewAHkpxanyQG6w5RXQ8HaeBMx4wkSEzQ57PXrLHMx1fCK3piGY4Iw3Y58ZRbx5jPwiVwz9i39czwBmajf83RjPga3D_0KFlyZn7KcjSgE8A-nIXqzhp_EhSdYsyEXX_6qaVkU2byRSPuucdTEy3dYWpLPeRLM0oHA1IFfyfkEacZ78kXiCKlv4VTHplp"/>-->
-<!--</div>-->
-<div>
-<div class="font-bold text-lg text-on-surface">Иванов Алексей Иванович</div>
-<div class="text-xs text-primary font-bold uppercase tracking-wide">Тест завершен</div>
-</div>
-</div>
-<div class="grid grid-cols-2 gap-4 pt-4 border-t border-surface-container">
-<div>
-<div class="text-[10px] uppercase text-on-surface-variant font-bold tracking-tight">Итоговый результат:</div>
-<div class="text-2xl font-extrabold text-on-surface">94.5%</div>
-</div>
-<div>
-<div class="text-[10px] uppercase text-on-surface-variant font-bold tracking-tight">Затрачено времени:</div>
-<div class="text-2xl font-extrabold text-on-surface">34:12</div>
-</div>
-</div>
-</div>
-<!-- Accuracy Breakdown -->
-<div class="space-y-6">
-<h4 class="text-label-sm uppercase text-on-surface-variant tracking-[0.15em] font-bold">Статистика прохождения теста</h4>
-<div class="space-y-5">
-<div class="space-y-2">
-<div class="flex justify-between text-sm">
-<span class="font-medium text-on-surface">Гражданский кодекс</span>
-<span class="font-bold text-on-surface">100%</span>
-</div>
-<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
-<div class="h-full bg-green-500 w-[100%]"></div>
-</div>
-</div>
-<div class="space-y-2">
-<div class="flex justify-between text-sm">
-<span class="font-medium text-on-surface">Закон о государственной регистрации</span>
-<span class="font-bold text-on-surface">88%</span>
-</div>
-    <div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
-        <div class="h-full bg-green-500 w-[100%]"></div>
-    </div>
-</div>
-<div class="space-y-2">
-<div class="flex justify-between text-sm">
-<span class="font-medium text-on-surface">Инструкция о кадастровых номерах</span>
-<span class="font-bold text-on-surface">95%</span>
-</div>
-<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
-<div class="h-full bg-primary w-[95%]"></div>
-</div>
-</div>
-
-    <div class="space-y-2">
-        <div class="flex justify-between text-sm">
-            <span class="font-medium text-on-surface">Инструкция о порядке ведения адресной системы</span>
-            <span class="font-bold text-on-surface">100%</span>
-        </div>
-        <div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
-            <div class="h-full bg-green-500 w-[100%]"></div>
-        </div>
-    </div>
-
-    <div class="space-y-2">
-        <div class="flex justify-between text-sm">
-            <span class="font-medium text-on-surface">Инструкция № 11</span>
-            <span class="font-bold text-on-surface">88%</span>
-        </div>
-        <div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
-            <div class="h-full bg-primary w-[88%]"></div>
-        </div>
-    </div>
-
-    <div class="space-y-2">
-        <div class="flex justify-between text-sm">
-            <span class="font-medium text-on-surface">Инструкция об инвентарных номерах</span>
-            <span class="font-bold text-on-surface">100%</span>
-        </div>
-        <div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
-            <div class="h-full bg-green-500 w-[100%]"></div>
-        </div>
-    </div>
-
-    <div class="space-y-2">
-        <div class="flex justify-between text-sm">
-            <span class="font-medium text-on-surface">Кодекс Республики Беларусь о земле</span>
-            <span class="font-bold text-on-surface">100%</span>
-        </div>
-        <div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
-            <div class="h-full bg-green-500 w-[100%]"></div>
-        </div>
-    </div>
-
-
-</div>
-</div>
-<!-- Question Ledger -->
-<div class="space-y-4">
-<div class="flex justify-between items-center">
-<h4 class="text-label-sm uppercase text-on-surface-variant tracking-[0.15em] font-bold">Список вопросов</h4>
-<span class="text-xs text-on-surface-variant">Всего: 40 вопросов</span>
-</div>
-<div class="space-y-2">
-<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low group hover:bg-surface-container-lowest transition-colors cursor-pointer">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-green-500 text-lg" data-icon="check_circle">check_circle</span>
-<span class="text-sm font-medium">Вопрос № 1. В соответствии с Гражданским Кодексом, что ...</span>
-</div>
-<span class="text-[10px] text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">Выбрано б)</span>
-</div>
-<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low group hover:bg-surface-container-lowest transition-colors cursor-pointer border-l-4 border-error/30">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-error text-lg" data-icon="cancel">cancel</span>
-<span class="text-sm font-medium">Вопрос № 2. Чем в соответствии с ГК является строительств...</span>
-</div>
-<span class="text-[10px] text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">Выбрано а)</span>
-</div>
-<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low group hover:bg-surface-container-lowest transition-colors cursor-pointer">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-green-500 text-lg" data-icon="check_circle">check_circle</span>
-<span class="text-sm font-medium">Вопрос № 3. Чем в соответствии с ГК является строительств...</span>
-</div>
-<span class="text-[10px] text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">Выбрано в)</span>
-</div>
-    <div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low group hover:bg-surface-container-lowest transition-colors cursor-pointer">
-        <div class="flex items-center gap-3">
-            <span class="material-symbols-outlined text-green-500 text-lg" data-icon="check_circle">check_circle</span>
-            <span class="text-sm font-medium">Вопрос № 4. В соответствии с Гражданским Кодексом, что ...</span>
-        </div>
-        <span class="text-[10px] text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">Выбрано б)</span>
-    </div>
-</div>
-</div>
-<!-- Footer Actions Sidebar -->
-<div class="pt-8 border-t border-surface-container grid grid-cols-2 gap-4">
-<button class="bg-surface-container hover:bg-surface-container-high py-3 rounded-xl font-label-md text-on-surface transition-colors flex items-center justify-center gap-2">
-<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span>
-                    Редактировать
-                </button>
-<button class="primary-gradient py-3 rounded-xl font-label-md text-white transition-all flex items-center justify-center gap-2 shadow-sm">
-<span class="material-symbols-outlined text-sm" data-icon="assignment_turned_in">assignment_turned_in</span>
-                    Закрыть
-                </button>
-</div>
-</div>
-</aside>
-
 </body></html>
