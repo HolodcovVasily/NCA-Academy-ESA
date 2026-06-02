@@ -130,7 +130,6 @@
 <aside class="hidden xl:flex flex-col h-screen w-64 fixed left-0 top-20 bg-surface-container-low py-8 space-y-2 z-30">
 <div class="px-8 pb-6">
 <div class="font-semibold text-on-surface text-label-md">Администратор СА</div>
-<div class="text-xs text-on-surface-variant">Члены аттестационной комиссии</div>
 </div>
 <div class="flex flex-col space-y-1">
 <a class="text-on-surface-variant pl-8 py-3 hover:text-on-surface hover:bg-surface-container-high transition-all" href="../../3_Управление%20группами%20на%20аттестацию/Аттестация.html">
@@ -139,411 +138,221 @@
 <a class="bg-surface-container-lowest text-primary font-semibold rounded-l-lg ml-4 pl-4 py-3 transition-all" href="#">
 <span class="material-symbols-outlined align-middle mr-3 text-xl" data-icon="verified_user">verified_user</span>Протокол
             </a>
-<!--<a class="text-on-surface-variant pl-8 py-3 hover:text-on-surface transition-all" href="#">-->
-<!--<span class="material-symbols-outlined align-middle mr-3 text-xl" data-icon="security">security</span>Управление тестами-->
-<!--            </a>-->
-<!--<a class="text-on-surface-variant pl-8 py-3 hover:text-on-surface transition-all" href="#">-->
-<!--<span class="material-symbols-outlined align-middle mr-3 text-xl" data-icon="group">group</span>Администрирование-->
-<!--            </a>-->
 </div>
-<div class="mt-auto px-6 pb-20">
-</div>
-    <!-- Global Action Bar (Floating) -->
-        <button class="bg-on-surface text-white px-4 py-2 rounded-full font-label-md flex items-center gap-2 hover:bg-on-surface-variant transition-all shadow-lg ml-8">
-        <span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
-            Просмотреть протокол
-        </button>
-        <div class="w-[1px] h-10 bg-surface-container-low"></div>
-        <button class="bg-surface-container-lowest text-on-surface px-6 py-3 rounded-full font-label-md flex items-center gap-2 hover:bg-surface-container-low transition-all">
-            <span class="material-symbols-outlined" data-icon="print">print</span>
-            Распечатать протокол
-        </button>
-        <button class="bg-surface-container-lowest text-on-surface px-6 py-3 rounded-full font-label-md flex items-center gap-2 hover:bg-surface-container-low transition-all">
-            <span class="material-symbols-outlined" data-icon="share">share</span>
-            Отправить протокол
-        </button>
-<!--        </div>-->
-<!--    </div>-->
 </aside>
-<!-- Main Content Area -->
-<main class="xl:ml-64 mr-[400px] p-12 space-y-section-gap">
-<!-- Header & Top Actions -->
-<div class="flex justify-between items-end">
-<div class="space-y-1">
-<h1 class="font-display-lg text-display-lg text-on-surface">Протокол аттестации</h1>
-<p class="text-on-surface-variant font-label-md uppercase tracking-wider">Группа: №09_25_25.04.2026</p>
-    <p class="text-on-surface-variant font-label-md uppercase tracking-wider">Тест: Аттестация специалистов по ТИ 22.04.2026</p>
-</div>
-<div class="flex gap-4">
-<!--<button class="bg-surface-container-lowest text-on-surface font-label-md px-6 py-3 rounded-xl flex items-center gap-2 hover:bg-surface-container transition-colors">-->
-<!--<span class="material-symbols-outlined" data-icon="print">print</span>-->
-<!--                    Распечатать протокол-->
-<!--                </button>-->
-<!--    primary-gradient-->
-<button  title="При нажатии отображается уточнение о необходимости активирования теста" class="bg-green-500 text-white font-label-md px-8 py-3 rounded-xl flex items-center gap-2 shadow-sm transition-transform active:scale-95 hidden">
-<span  class="material-symbols-outlined" data-icon="play_arrow">play_arrow</span>
-                   Тест активирован
-                </button>
-</div>
-</div>
-<!-- Group Summary Panel -->
-    <section class="grid grid-cols-6 gap-module-gap">
-        <div class="col-span-2 bg-surface-container-lowest p-8 rounded-xl space-y-4">
-            <!--<span class="text-label-sm uppercase text-on-surface-variant opacity-60">Сведения о группе</span>-->
-            <span class="text-label-sm uppercase text-on-surface-variant opacity-60">Дата аттестации</span>
-            <span class="text-on-surface-variant font-label-md">25.04.2026</span>
-            <div class="flex items-baseline gap-4">
-                <span class="text-5xl font-extrabold text-on-surface tracking-tighter">25</span>
-                <span class="text-on-surface-variant font-label-md">Претендентов</span>
-            </div>
-            <div class="flex gap-6 pt-4 border-t border-surface-container-low">
-                <div>
-                    <div class="text-2xl font-bold text-on-surface">18</div>
-                    <div class="text-[10px] uppercase text-on-surface-variant tracking-widest">Явилось</div>
-                </div>
-                <div>
-                    <div class="text-2xl font-bold text-error">07</div>
-                    <div class="text-[10px] uppercase text-on-surface-variant tracking-widest">Не явилось</div>
-                </div>
+
+<!-- Main Content -->
+<main class="flex-1 xl:ml-64 p-12 mx-auto space-y-section-gap pb-24">
+    <!-- Protocol Header -->
+    <section class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+        <div>
+            <div class="flex items-center gap-4">
+                <h1 class="font-display-lg text-headline-md text-on-surface">Группа № А-10-06.2026</h1>
+                <span class="px-3 py-1 bg-surface-dim text-on-surface-variant font-label-sm rounded-full tracking-widest">ЗАКРЫТА</span>
             </div>
         </div>
-        <div class="col-span-2 bg-surface-container-lowest p-8 rounded-xl space-y-4">
-            <span class="text-label-sm uppercase text-on-surface-variant opacity-60">Дата рассмотрения апелляций</span>
-            <span class="text-on-surface-variant font-label-md">10.05.2026</span>
-            <div class="flex items-baseline gap-4">
-                <span class="text-5xl font-extrabold text-on-surface tracking-tighter">1</span>
-                <span class="text-on-surface-variant font-label-md">Апелляций</span>
+        <button class="bg-on-surface text-white px-4 py-2 rounded-full font-label-md flex items-center gap-2 hover:bg-on-surface-variant transition-all shadow-lg ml-8">
+            <span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
+            Протокол
+        </button>
+    </section>
+    <!-- Information Header Grid -->
+    <section class="bg-surface-container-lowest p-8 rounded-xl signature-bg relative overflow-hidden">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-y-8 gap-x-12 relative z-10">
+            <div>
+                <p class="text-label-sm text-slate-400 uppercase mb-1">Номер группы</p>
+                <p class="font-headline-md text-primary tracking-tight">№ А-10-06.2026</p>
             </div>
-            <div class="flex gap-6 pt-4 border-t border-surface-container-low">
-                <div>
-<!--                    <div class="text-2xl font-bold text-on-surface">1</div>-->
-<!--                    <div class="text-[10px] uppercase text-on-surface-variant tracking-widest">Явилось</div>-->
+            <div>
+                <p class="text-label-sm text-slate-400 uppercase mb-1">Дата аттестации</p>
+                <p class="font-label-md text-on-surface">12 июня 2026</p>
+            </div>
+            <div>
+                <p class="text-label-sm text-slate-400 uppercase mb-1">Время проведения</p>
+                <p class="font-label-md text-on-surface">09:00 – 11:00</p>
+            </div>
+            <div>
+                <p class="text-label-sm text-slate-400 uppercase mb-1">Местоположение</p>
+                <p class="font-label-md text-on-surface flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[18px] text-slate-400" data-icon="location_on">location_on</span>
+                    Учебный центр. Аудитория 8
+                </p>
+            </div>
+            <div class="md:col-span-2 p-6 bg-surface-container rounded-lg border-l-4 border-primary">
+                <p class="text-label-sm text-slate-400 uppercase mb-3">Комиссия аттестации</p>
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-label-md font-bold">Председатель АК: Дубков А.В.</span>
+                        <div class="flex items-center gap-2 text-primary">
+                            <span class="material-symbols-outlined text-[18px]" data-icon="verified">verified</span>
+                            <span class="text-[10px] uppercase font-bold tracking-tighter">Подписано ЭЦП</span>
+                        </div>
+                    </div>
+                    <div class="h-[1px] bg-slate-200"></div>
+                    <div class="text-label-sm text-on-surface-variant">
+                        <span class="font-semibold text-on-surface">Члены АК:</span> Петров П.П., Сидоров С.С.
+                    </div>
                 </div>
-                <div>
-<!--                    <div class="text-2xl font-bold text-error">07</div>-->
-<!--                    <div class="text-[10px] uppercase text-on-surface-variant tracking-widest">Не явилось</div>-->
+            </div>
+            <div class="md:col-span-2 p-6 bg-surface-container rounded-lg">
+                <p class="text-label-sm text-slate-400 uppercase mb-3">Детали тестирования</p>
+                <div class="space-y-4">
+                    <div>
+                        <p class="text-[10px] text-slate-400 uppercase">Тип</p>
+                        <p class="text-label-md font-bold">Аттестационное тестирование</p>
+                    </div>
+                    <div>
+                        <p class="text-[10px] text-slate-400 uppercase">Назначенный тест</p>
+                        <p class="text-label-md flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary text-[18px]" data-icon="description">description</span>
+                            Аттестация специалистов по ТИ 22.04.2026
+                        </p>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-span-2 bg-surface-container-lowest p-8 rounded-xl space-y-4">
-            <span class="text-label-sm uppercase text-on-surface-variant opacity-60">Статистика по группе</span>
-            <div class="flex items-baseline gap-4">
-                <span class="text-5xl font-extrabold text-tertiary tracking-tighter">83</span>
-                <span class="text-on-surface-variant font-label-md">Всего аттестовано, %</span>
-            </div>
-            <div class="flex gap-6 pt-4 border-t border-surface-container-low">
-                <div>
-                    <div class="text-2xl font-bold text-on-surface">15</div>
-                    <div class="text-[10px] uppercase text-on-surface-variant tracking-widest">Аттестовано</div>
-                </div>
-                <div>
-                    <div class="text-2xl font-bold text-on-surface-variant">03</div>
-                    <div class="text-[10px] uppercase text-on-surface-variant tracking-widest">Не аттестовано</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-span-2 bg-slate-300 p-8 rounded-xl flex flex-col justify-between overflow-hidden relative">
-            <div class="z-10">
-                <span class="text-label-sm uppercase text-white/70">Статус Протокола</span>
-                <div class="text-2xl font-bold text-white mt-2">Архивная группа</div>
-            </div>
-            <button class="z-10 bg-white/10 hover:bg-white/20 text-white font-label-md px-4 py-2 rounded-lg self-start mt-4 transition-colors hidden">
-                Завершить аттестацию
-            </button>
-            <div class="absolute -right-10 -bottom-10 opacity-10">
-                <span class="material-symbols-outlined text-[180px]" data-icon="verified">verified</span>
             </div>
         </div>
     </section>
-<!-- Main Candidate Table with Horizontal Scrolling -->
-<section class="bg-surface-container-lowest rounded-xl overflow-hidden hidden">
-<div class="px-8 py-6 border-b border-surface-container-low flex justify-between items-center bg-surface-container-lowest">
-<h3 class="font-headline-md text-on-surface">Список Претендентов</h3>
-<div class="flex items-center gap-4">
-<div class="bg-surface-container-low px-4 py-2 rounded-xl flex items-center gap-3">
-<span class="material-symbols-outlined text-on-surface-variant text-sm" data-icon="search">search</span>
-<input class="bg-transparent border-none focus:ring-0 text-sm w-48" placeholder="Поиск претендента..." type="text"/>
-</div>
-</div>
-</div>
-<div class="overflow-x-auto table-shadow-inset">
-<table class="w-full text-left border-collapse min-w-[2400px]">
-<thead>
-<tr class="bg-surface-container-low text-on-surface-variant text-label-sm uppercase">
-<th class="px-8 py-4 font-bold sticky left-0 bg-surface-container-low z-10 w-[280px]">Фамилия, имя, отчество</th>
-<th class="px-4 py-4 font-bold">Должность</th>
-<th class="px-4 py-4 font-bold">Стаж</th>
-<th class="px-4 py-4 font-bold">Место работы</th>
-<th class="px-4 py-4 font-bold">Образование</th>
-<!--<th class="px-4 py-4 font-bold">наименование  УО</th>-->
-<!--<th class="px-4 py-4 font-bold">Специальность</th>-->
-<!--<th class="px-4 py-4 font-bold">квалификация</th>-->
-<th class="px-4 py-4 font-bold text-center">Характеристика </th>
-<th class="px-4 py-4 font-bold">Проверка</th>
-<th class="px-4 py-4 font-bold">Повышение квалификации</th>
-<th class="px-4 py-4 font-bold text-center">Тестирование</th>
-<th class="px-4 py-4 font-bold">Дата аттестации</th>
-<th class="px-4 py-4 font-bold">Собеседование</th>
-<th class="px-4 py-4 font-bold text-center">Результат</th>
-<th class="px-8 py-4 font-bold">Решение АК</th>
-</tr>
-</thead>
-<tbody class="divide-y divide-surface-container-low">
-<!-- Row 1: Detailed Entry -->
-<tr class="hover:bg-surface-container-low/50 transition-colors">
-<td class="px-8 py-6 sticky left-0 bg-surface-container-lowest group-hover:bg-surface-container-low/50 z-10">
-<div class="flex items-center gap-4">
-<div class="font-semibold text-on-surface hover:bg-surface-container">Иванов Алексей Иванович</div>
-</div>
-</td>
-<td class="px-4 py-6">
-<div class="text-sm font-medium">Специалист по ТИ 1 к.</div>
-</td>
-<td class="px-4 py-6">
-<div class="text-sm">12.2</div>
-</td>
-<td class="px-4 py-6">
-<div class="text-sm">Минское городское Агентство</div>
-</td>
-<td class="px-4 py-6">
-    <div class="text-[11px] leading-tight max-w-[250px]">
-        <span class="font-bold">Образование, наименование учебного заведения</span><br/>
-        <span class="text-on-surface-variant italic">Cпециальность по образованию, квалификация</span>
+    <!-- Statistics Grid (Bento Style) -->
+    <section class="grid grid-cols-1 md:grid-cols-6 gap-6">
+        <div class="md:col-span-2 bg-surface-container-lowest p-8 rounded-xl">
+            <p class="text-label-sm text-slate-400 uppercase mb-4">Охват претендентов</p>
+            <div class="flex items-end justify-between">
+                <div>
+                    <p class="text-display-lg leading-none font-bold">15</p>
+                    <p class="text-label-sm text-slate-500 mt-2">Всего заявок</p>
+                </div>
+                <div class="text-right space-y-1">
+                    <div class="flex items-center gap-2 text-label-md">
+                        <span class="w-2 h-2 rounded-full bg-primary"></span>
+                        <span>Явилось: 14</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-label-md text-slate-400">
+                        <span class="w-2 h-2 rounded-full bg-surface-dim"></span>
+                        <span>Не явилось: 1</span>
+                    </div>
+                </div>
+            </div>
         </div>
-</td>
-<td class="px-4 py-6 text-center">
-<button class="p-2 hover:bg-surface-container rounded-lg text-primary" title="Скачать характеристику">
-    <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">1</span>
-<span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
-</button>
-</td>
-<td class="px-4 py-6">
-<span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">3</span>
-</td>
-<td class="px-4 py-6">
-    <div class="text-[11px] leading-tight max-w-[250px]">
-        <span class="font-bold">где, номер документа, дата его выдачи, наименование курсов, оценка</span><br/>
-        <span class="text-on-surface-variant italic">Оценка</span>
-    </div>
-</td>
-<td class="px-4 py-6 text-center font-bold text-on-surface">38/40</td>
-<td class="px-4 py-6 text-sm">24.04.2026</td>
-<td class="px-4 py-6">
-<span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">3</span>
-</td>
-<td class="px-4 py-6 text-center font-extrabold text-primary">12</td>
-<td class="px-8 py-6">
-<div class="text-xs font-bold text-tertiary">Аттестован, рекомендовано присвоение категории</div>
-</td>
-</tr>
-<!-- Row 2 -->
-<tr class="hover:bg-surface-container-low/50 transition-colors group bg-surface-container-low/10">
-<td class="px-8 py-6 sticky left-0 bg-surface-container-lowest group-hover:bg-surface-container-low/50 z-10">
-<div class="flex items-center gap-4">
-<div class="font-semibold text-on-surface hover:bg-surface-container">Иванова Татьяна Васильевна</div>
-</div>
-</td>
-<td class="px-4 py-6">
-<div class="text-sm font-medium">Специалист по ТИ 2 к.</div>
-</td>
-<td class="px-4 py-6">
-<div class="text-sm">8.5</div>
-</td>
-<td class="px-4 py-6">
-<div class="text-sm">Гродненское Агентство</div>
-</td>
-<td class="px-4 py-6">
-    <div class="text-[11px] leading-tight max-w-[250px]">
-        <span class="font-bold">Образование, наименование учебного заведения</span><br/>
-        <span class="text-on-surface-variant italic">Cпециальность по образованию, квалификация</span>
-    </div>
-</td>
-<td class="px-4 py-6 text-center">
-<button class="p-2 hover:bg-surface-container rounded-lg text-primary" title="Скачать характеристику">
-    <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">3</span>
-<span class="material-symbols-outlined" data-icon="description">description</span>
-</button>
-</td>
-<td class="px-4 py-6">
-<span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">0</span>
-</td>
-<td class="px-4 py-6">
-    <div class="text-[11px] leading-tight max-w-[250px]">
-        <span class="font-bold">где, номер документа, дата его выдачи, наименование курсов, оценка</span><br/>
-        <span class="text-on-surface-variant italic">Оценка</span>
-    </div>
-</td>
-<td class="px-4 py-6 text-center font-bold text-on-surface">36/40</td>
-<td class="px-4 py-6 text-sm">24.04.2026</td>
-<td class="px-4 py-6">
-<span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">0</span>
-</td>
-<td class="px-4 py-6 text-center font-extrabold text-primary">10</td>
-<td class="px-8 py-6">
-<div class="text-xs font-bold text-on-surface-variant">Аттестован</div>
-</td>
-</tr>
-<!-- Row 3 -->
-<tr class="hover:bg-surface-container-low/50 transition-colors group opacity-50">
-<td class="px-8 py-6 sticky left-0 bg-surface-container-lowest group-hover:bg-surface-container-low/50 z-10">
-<div class="flex items-center gap-4">
-<div class="font-semibold text-on-surface hover:bg-surface-container">Сидоров Дмитрий Иванович</div>
-</div>
-</td>
-<td class="px-4 py-6">
-<div class="text-sm font-medium">Начальник отдела</div>
-</td>
-<td class="px-4 py-6">
-<div class="text-sm">15.9</div>
-</td>
-<td class="px-4 py-6">
-<div class="text-sm">Национальное кадастровое агентство</div>
-</td>
-<td class="px-4 py-6">
-    <div class="text-[11px] leading-tight max-w-[250px]">
-        <span class="font-bold">Образование, наименование учебного заведения</span><br/>
-        <span class="text-on-surface-variant italic">Cпециальность по образованию, квалификация</span>
-    </div>
-</td>
-<td class="px-4 py-6 text-center">
-<button class="p-2 hover:bg-surface-container rounded-lg text-primary opacity-50" disabled="">
-    <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">3</span>
-<span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
-</button>
-</td>
-<td class="px-4 py-6">
-<span class="bg-error-container text-on-error-container text-[10px] font-bold px-2 py-1 rounded-full uppercase">-1</span>
-</td>
-<td class="px-4 py-6">
-<!--<div class="text-[11px] text-on-surface-variant italic">где, номер документа, дата его выдачи, наименование курсов, оценка</div>-->
-    <div class="text-[11px] leading-tight max-w-[250px]">
-        <span class="font-bold">где, номер документа, дата его выдачи, наименование курсов, оценка</span><br/>
-        <span class="text-on-surface-variant italic">Оценка</span>
-    </div>
-
-</td>
-<td class="px-4 py-6 text-center font-bold text-error">0/100</td>
-<td class="px-4 py-6 text-sm">--</td>
-    <td class="px-4 py-6">
-        <span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">0</span>
-    </td>
-
-
-<td class="px-4 py-6 text-center font-extrabold text-on-surface-variant">0</td>
-<td class="px-8 py-6">
-<div class="text-xs font-bold text-error">Результат аннулирован</div>
-</td>
-</tr>
-<!-- Row 4 -->
-<tr class="hover:bg-surface-container-low/50 transition-colors group">
-    <td class="px-8 py-6 sticky left-0 bg-surface-container-lowest group-hover:bg-surface-container-low/50 z-10">
-        <div class="flex items-center gap-4">
-            <div class="font-semibold text-on-surface hover:bg-surface-container">Петрова Валерия Степановна</div>
+        <div class="md:col-span-2 bg-surface-container-lowest p-8 rounded-xl">
+            <p class="text-label-sm text-slate-400 uppercase mb-4">Результаты</p>
+            <div class="flex items-center gap-6">
+                <div class="relative w-20 h-20">
+                    <svg class="w-full h-full transform -rotate-90">
+                        <circle class="text-slate-100" cx="40" cy="40" fill="transparent" r="36" stroke="currentColor" stroke-width="8"></circle>
+                        <circle class="text-primary" cx="40" cy="40" fill="transparent" r="36" stroke="currentColor" stroke-dasharray="226" stroke-dashoffset="45" stroke-width="8"></circle>
+                    </svg>
+                    <div class="absolute inset-0 flex items-center justify-center font-bold text-label-md">86%</div>
+                </div>
+                <div class="space-y-2">
+                    <div class="text-label-md font-bold text-primary">12 Аттестовано</div>
+                    <div class="text-label-md text-error">2 Не аттестовано</div>
+                </div>
+            </div>
         </div>
-    </td>
-    <td class="px-4 py-6">
-        <div class="text-sm font-medium">Специалист по ТИ</div>
-    </td>
-    <td class="px-4 py-6">
-        <div class="text-sm">1.1</div>
-    </td>
-    <td class="px-4 py-6">
-        <div class="text-sm">Гомельское Агентство</div>
-    </td>
-    <td class="px-4 py-6">
-        <div class="text-[11px] leading-tight max-w-[250px]">
-            <span class="font-bold">Образование, наименование учебного заведения</span><br/>
-            <span class="text-on-surface-variant italic">Cпециальность по образованию, квалификация</span>
+        <div class="md:col-span-2 bg-[#001453] p-8 rounded-xl text-white">
+            <p class="text-label-sm text-blue-300 uppercase mb-4">Итоговая эффективность</p>
+            <div class="flex items-baseline gap-2">
+                <p class="text-display-lg font-bold">85.7</p>
+                <p class="text-headline-md opacity-60">%</p>
+            </div>
+            <div class="mt-4 pt-4 border-t border-blue-800 flex justify-between items-center text-label-sm">
+                <span class="opacity-60">Апелляции: 0</span>
+                <span class="opacity-60">Нарушения: 0</span>
+            </div>
         </div>
-    </td>
-    <td class="px-4 py-6 text-center">
-        <button class="p-2 hover:bg-surface-container rounded-lg text-primary" title="Скачать характеристику">
-            <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">1</span>
-            <span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
-        </button>
-    </td>
-    <td class="px-4 py-6">
-        <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">3</span>
-    </td>
-    <td class="px-4 py-6">
-        <div class="text-[11px] leading-tight max-w-[250px]">
-            <span class="font-bold">где, номер документа, дата его выдачи, наименование курсов, оценка</span><br/>
-            <span class="text-on-surface-variant italic">Оценка</span>
-        </div>
-    </td>
-    <td class="px-4 py-6 text-center font-bold text-on-surface">40/40</td>
-    <td class="px-4 py-6 text-sm">24.04.2026</td>
-    <td class="px-4 py-6">
-        <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">3</span>
-    </td>
-    <td class="px-4 py-6 text-center font-extrabold text-primary">12</td>
-    <td class="px-8 py-6">
-        <div class="text-xs font-bold text-tertiary">Аттестован, рекомендовано присвоение категории</div>
-    </td>
-</tr>
-<!-- Row 5 -->
-<tr class="hover:bg-surface-container-low/50 transition-colors group">
-    <td class="px-8 py-6 sticky left-0 bg-surface-container-lowest group-hover:bg-surface-container-low/50 z-10">
-        <div class="flex items-center gap-4">
-            <div class="font-semibold text-on-surface hover:bg-surface-container">Кузнецов Михаил Петрович</div>
-        </div>
-    </td>
-    <td class="px-4 py-6">
-        <div class="text-sm font-medium">Инженер</div>
-    </td>
-    <td class="px-4 py-6">
-        <div class="text-sm">0.5</div>
-    </td>
-    <td class="px-4 py-6">
-        <div class="text-sm">Брестское Агентство</div>
-    </td>
-    <td class="px-4 py-6">
-        <div class="text-[11px] leading-tight max-w-[250px]">
-            <span class="font-bold">Образование, наименование учебного заведения</span><br/>
-            <span class="text-on-surface-variant italic">Cпециальность по образованию, квалификация</span>
-        </div>
-    </td>
-    <td class="px-4 py-6 text-center">
-        <button class="p-2 hover:bg-surface-container rounded-lg text-primary" title="Скачать характеристику">
-            <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">3</span>
-            <span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
-        </button>
-    </td>
-    <td class="px-4 py-6">
-        <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">0</span>
-    </td>
-    <td class="px-4 py-6">
-        <div class="text-[11px] leading-tight max-w-[250px]">
-            <span class="font-bold">где, номер документа, дата его выдачи, наименование курсов, оценка</span><br/>
-            <span class="text-on-surface-variant italic">Оценка</span>
-        </div>
-    </td>
-    <td class="px-4 py-6 text-center font-bold text-on-surface">40/40</td>
-    <td class="px-4 py-6 text-sm">24.04.2026</td>
-    <td class="px-4 py-6">
-        <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">1</span>
-    </td>
-    <td class="px-4 py-6 text-center font-extrabold text-primary">8</td>
-    <td class="px-8 py-6">
-        <div class="text-xs font-bold text-tertiary">Аттестован, рекомендовано присвоение категории</div>
-    </td>
-</tr>
-</tbody>
-</table>
-</div>
-    <!-- Pagination -->
-    <div class="p-8 flex items-center justify-between mt-auto">
-        <span class="text-xs text-outline font-medium">Показано 1-5 из 25 претендентов</span>
-        <div class="flex gap-2">
-            <button class="p-2 bg-surface-container-lowest text-outline hover:text-primary rounded transition-colors"><span class="material-symbols-outlined">chevron_left</span></button>
-            <button class="w-8 h-8 flex items-center justify-center bg-surface-tint text-white font-label-md rounded">1</button>
-            <button class="w-8 h-8 flex items-center justify-center text-outline hover:bg-surface-container-high rounded">2</button>
-            <button class="w-8 h-8 flex items-center justify-center text-outline hover:bg-surface-container-high rounded">3</button>
-            <button class="p-2 bg-surface-container-lowest text-outline hover:text-primary rounded transition-colors"><span class="material-symbols-outlined">chevron_right</span></button>
-        </div>
-    </div>
-</section>
+    </section>
 </main>
+<!-- Main Content Area -->
+<!--<main class="xl:ml-64 mr-[400px] p-12 space-y-section-gap">-->
+<!--&lt;!&ndash; Header & Top Actions &ndash;&gt;-->
+<!--<div class="flex justify-between items-end">-->
+<!--<div class="space-y-1">-->
+<!--<h1 class="font-display-lg text-display-lg text-on-surface">Протокол группы аттестации</h1>-->
+<!--<p class="text-on-surface-variant font-label-md uppercase tracking-wider">Группа: №09_25_25.04.2026</p>-->
+<!--    <p class="text-on-surface-variant font-label-md uppercase tracking-wider">Тест: Аттестация специалистов по ТИ 22.04.2026</p>-->
+<!--</div>-->
+<!--<div class="flex gap-4">-->
+<!--&lt;!&ndash;<button class="bg-surface-container-lowest text-on-surface font-label-md px-6 py-3 rounded-xl flex items-center gap-2 hover:bg-surface-container transition-colors">&ndash;&gt;-->
+<!--&lt;!&ndash;<span class="material-symbols-outlined" data-icon="print">print</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                    Распечатать протокол&ndash;&gt;-->
+<!--&lt;!&ndash;                </button>&ndash;&gt;-->
+<!--&lt;!&ndash;    primary-gradient&ndash;&gt;-->
+<!--<button  title="При нажатии отображается уточнение о необходимости активирования теста" class="bg-green-500 text-white font-label-md px-8 py-3 rounded-xl flex items-center gap-2 shadow-sm transition-transform active:scale-95 hidden">-->
+<!--<span  class="material-symbols-outlined" data-icon="play_arrow">play_arrow</span>-->
+<!--                   Тест активирован-->
+<!--                </button>-->
+<!--</div>-->
+<!--</div>-->
+<!--&lt;!&ndash; Group Summary Panel &ndash;&gt;-->
+<!--    <section class="grid grid-cols-6 gap-module-gap">-->
+<!--        <div class="col-span-2 bg-surface-container-lowest p-8 rounded-xl space-y-4">-->
+<!--            &lt;!&ndash;<span class="text-label-sm uppercase text-on-surface-variant opacity-60">Сведения о группе</span>&ndash;&gt;-->
+<!--            <span class="text-label-sm uppercase text-on-surface-variant opacity-60">Дата аттестации</span>-->
+<!--            <span class="text-on-surface-variant font-label-md">25.04.2026</span>-->
+<!--            <div class="flex items-baseline gap-4">-->
+<!--                <span class="text-5xl font-extrabold text-on-surface tracking-tighter">25</span>-->
+<!--                <span class="text-on-surface-variant font-label-md">Претендентов</span>-->
+<!--            </div>-->
+<!--            <div class="flex gap-6 pt-4 border-t border-surface-container-low">-->
+<!--                <div>-->
+<!--                    <div class="text-2xl font-bold text-on-surface">18</div>-->
+<!--                    <div class="text-[10px] uppercase text-on-surface-variant tracking-widest">Явилось</div>-->
+<!--                </div>-->
+<!--                <div>-->
+<!--                    <div class="text-2xl font-bold text-error">07</div>-->
+<!--                    <div class="text-[10px] uppercase text-on-surface-variant tracking-widest">Не явилось</div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-span-2 bg-surface-container-lowest p-8 rounded-xl space-y-4">-->
+<!--            <span class="text-label-sm uppercase text-on-surface-variant opacity-60">Дата рассмотрения апелляций</span>-->
+<!--            <span class="text-on-surface-variant font-label-md">10.05.2026</span>-->
+<!--            <div class="flex items-baseline gap-4">-->
+<!--                <span class="text-5xl font-extrabold text-on-surface tracking-tighter">1</span>-->
+<!--                <span class="text-on-surface-variant font-label-md">Апелляций</span>-->
+<!--            </div>-->
+<!--            <div class="flex gap-6 pt-4 border-t border-surface-container-low">-->
+<!--                <div>-->
+<!--&lt;!&ndash;                    <div class="text-2xl font-bold text-on-surface">1</div>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <div class="text-[10px] uppercase text-on-surface-variant tracking-widest">Явилось</div>&ndash;&gt;-->
+<!--                </div>-->
+<!--                <div>-->
+<!--&lt;!&ndash;                    <div class="text-2xl font-bold text-error">07</div>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <div class="text-[10px] uppercase text-on-surface-variant tracking-widest">Не явилось</div>&ndash;&gt;-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-span-2 bg-surface-container-lowest p-8 rounded-xl space-y-4">-->
+<!--            <span class="text-label-sm uppercase text-on-surface-variant opacity-60">Статистика по группе</span>-->
+<!--            <div class="flex items-baseline gap-4">-->
+<!--                <span class="text-5xl font-extrabold text-tertiary tracking-tighter">83</span>-->
+<!--                <span class="text-on-surface-variant font-label-md">Всего аттестовано, %</span>-->
+<!--            </div>-->
+<!--            <div class="flex gap-6 pt-4 border-t border-surface-container-low">-->
+<!--                <div>-->
+<!--                    <div class="text-2xl font-bold text-on-surface">15</div>-->
+<!--                    <div class="text-[10px] uppercase text-on-surface-variant tracking-widest">Аттестовано</div>-->
+<!--                </div>-->
+<!--                <div>-->
+<!--                    <div class="text-2xl font-bold text-on-surface-variant">03</div>-->
+<!--                    <div class="text-[10px] uppercase text-on-surface-variant tracking-widest">Не аттестовано</div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-span-2 bg-slate-300 p-8 rounded-xl flex flex-col justify-between overflow-hidden relative">-->
+<!--            <div class="z-10">-->
+<!--                <span class="text-label-sm uppercase text-white/70">Статус Протокола</span>-->
+<!--                <div class="text-2xl font-bold text-white mt-2">Архивная группа</div>-->
+<!--            </div>-->
+<!--            <button class="z-10 bg-white/10 hover:bg-white/20 text-white font-label-md px-4 py-2 rounded-lg self-start mt-4 transition-colors hidden">-->
+<!--                Завершить аттестацию-->
+<!--            </button>-->
+<!--            <div class="absolute -right-10 -bottom-10 opacity-10">-->
+<!--                <span class="material-symbols-outlined text-[180px]" data-icon="verified">verified</span>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
+
 <!-- Right Sidebar: Individual Audit -->
 <aside class="fixed right-0 top-20 bottom-0 w-[400px] bg-surface-container-lowest shadow-2xl z-20 overflow-y-auto hidden">
 <div class="p-8 space-y-8">
