@@ -230,7 +230,7 @@
 </section>
 <!-- Main Candidate Table with Horizontal Scrolling -->
 <section class="bg-surface-container-lowest rounded-xl overflow-hidden">
-<div class="px-8 py-6 border-b border-surface-container-low flex justify-between items-center bg-surface-container-lowest">
+<div class="px-8 py-2 border-b border-surface-container-low flex justify-between items-center bg-surface-container-lowest">
 <h3 class="font-headline-md text-on-surface">Список Претендентов</h3>
 <div class="flex items-center gap-4">
 <div class="bg-surface-container-low px-4 py-2 rounded-xl flex items-center gap-3">
@@ -240,264 +240,346 @@
 </div>
 </div>
 <div class="overflow-x-auto table-shadow-inset">
-<table class="w-full text-left border-collapse min-w-[2400px]">
+<table class="w-full text-left border-collapse">
 <thead>
 <tr class="bg-surface-container-low text-on-surface-variant text-label-sm uppercase">
-<th class="px-8 py-4 font-bold sticky left-0 bg-surface-container-low z-10 w-[280px]">Фамилия, имя, отчество</th>
-<th class="px-4 py-4 font-bold">Должность</th>
-<th class="px-4 py-4 font-bold">Стаж</th>
-<th class="px-4 py-4 font-bold">Место работы</th>
-<th class="px-4 py-4 font-bold">Образование</th>
-<!--<th class="px-4 py-4 font-bold">наименование  УО</th>-->
-<!--<th class="px-4 py-4 font-bold">Специальность</th>-->
-<!--<th class="px-4 py-4 font-bold">квалификация</th>-->
-<th class="px-4 py-4 font-bold text-center">Характеристика </th>
-<th class="px-4 py-4 font-bold">Проверка</th>
-<th class="px-4 py-4 font-bold">Повышение квалификации</th>
-<th class="px-4 py-4 font-bold text-center">Тестирование</th>
-<th class="px-4 py-4 font-bold">Дата аттестации</th>
-<th class="px-4 py-4 font-bold">Собеседование</th>
-<th class="px-4 py-4 font-bold text-center">Результат</th>
-<th class="px-8 py-4 font-bold">Решение АК</th>
+<!--    <th class="px-4 py-4 font-bold text-center">Ознакомлен</th>-->
+    <th class="px-4 py-4 font-bold sticky bg-surface-container-low z-20 w-[80px] text-center">
+        <div class="flex items-center justify-center gap-1 cursor-pointer hover:text-primary transition-colors">
+        <span class="">Ознакомлен</span>
+            <span class="material-symbols-outlined text-sm">unfold_more</span>
+        </div>
+    </th>
+    <th class="px-4 py-4 font-bold sticky bg-surface-container-low z-20 w-[80px] text-center">
+        <div class="flex items-center justify-center gap-1 cursor-pointer hover:text-primary transition-colors">
+            <span class="">ФИО</span>
+            <span class="material-symbols-outlined text-sm">unfold_more</span>
+        </div>
+    </th>
+    <th class="px-4 py-4 font-bold sticky bg-surface-container-low z-20 w-[80px] text-center">
+        <div class="flex items-center justify-center gap-1 cursor-pointer hover:text-primary transition-colors">
+            <span class="">Должность</span>
+            <span class="material-symbols-outlined text-sm">unfold_more</span>
+        </div>
+    </th>
+<!--    <th class="px-4 py-4 font-bold sticky bg-surface-container-low z-20 w-[80px] text-center">-->
+<!--        <div class="flex items-center justify-center gap-1 cursor-pointer hover:text-primary transition-colors">-->
+<!--            <span class="">Стаж</span>-->
+<!--            <span class="material-symbols-outlined text-sm">unfold_more</span>-->
+<!--        </div>-->
+<!--    </th>-->
+    <th class="px-4 py-4 font-bold sticky bg-surface-container-low z-20 w-[80px] text-center">
+    <div class="flex items-center justify-center gap-1 cursor-pointer hover:text-primary transition-colors">
+        <span class="">Место работы</span>
+        <span class="material-symbols-outlined text-sm">unfold_more</span>
+    </div>
+</th>
+<!--    <th class="px-4 py-4 font-bold sticky bg-surface-container-low z-20 w-[80px] text-center">-->
+<!--    <div class="flex items-center justify-center gap-1 cursor-pointer hover:text-primary transition-colors">-->
+<!--        <span class="">Образование</span>-->
+<!--        <span class="material-symbols-outlined text-sm">unfold_more</span>-->
+<!--    </div>-->
+<!--</th>-->
+<!--    <th class="px-4 py-4 font-bold sticky bg-surface-container-low z-20 w-[80px] text-center">-->
+<!--        <div class="flex items-center justify-center gap-1 cursor-pointer hover:text-primary transition-colors">-->
+<!--            <span class="">Характеристика</span>-->
+<!--            <span class="material-symbols-outlined text-sm">unfold_more</span>-->
+<!--        </div>-->
+<!--    </th>-->
+<!--    <th class="px-4 py-4 font-bold sticky bg-surface-container-low z-20 w-[80px] text-center">-->
+<!--        <div class="flex items-center justify-center gap-1 cursor-pointer hover:text-primary transition-colors">-->
+<!--            <span class="">Проверка</span>-->
+<!--            <span class="material-symbols-outlined text-sm">unfold_more</span>-->
+<!--        </div>-->
+<!--    </th>-->
+<!--    <th class="px-4 py-4 font-bold sticky bg-surface-container-low z-20 w-[80px] text-center">-->
+<!--        <div class="flex items-center justify-center gap-1 cursor-pointer hover:text-primary transition-colors">-->
+<!--            <span class="">Повышение квалификации</span>-->
+<!--            <span class="material-symbols-outlined text-sm">unfold_more</span>-->
+<!--        </div>-->
+<!--    </th>-->
+<!--    <th class="px-4 py-4 font-bold sticky bg-surface-container-low z-20 w-[80px] text-center">-->
+<!--        <div class="flex items-center justify-center gap-1 cursor-pointer hover:text-primary transition-colors">-->
+<!--            <span class="">Тестирование</span>-->
+<!--            <span class="material-symbols-outlined text-sm">unfold_more</span>-->
+<!--        </div>-->
+<!--    </th>-->
+<!--    <th class="px-4 py-4 font-bold sticky bg-surface-container-low z-20 w-[80px] text-center">-->
+<!--        <div class="flex items-center justify-center gap-1 cursor-pointer hover:text-primary transition-colors">-->
+<!--            <span class="">Дата аттестации</span>-->
+<!--            <span class="material-symbols-outlined text-sm">unfold_more</span>-->
+<!--        </div>-->
+<!--    </th>-->
+<!--    <th class="px-4 py-4 font-bold sticky bg-surface-container-low z-20 w-[80px] text-center">-->
+<!--        <div class="flex items-center justify-center gap-1 cursor-pointer hover:text-primary transition-colors">-->
+<!--            <span class="">Собеседование</span>-->
+<!--            <span class="material-symbols-outlined text-sm">unfold_more</span>-->
+<!--        </div>-->
+<!--    </th>-->
+    <th class="px-4 py-4 font-bold sticky bg-surface-container-low z-20 w-[80px] text-center">
+        <div class="flex items-center justify-center gap-1 cursor-pointer hover:text-primary transition-colors">
+            <span class="">Результат</span>
+            <span class="material-symbols-outlined text-sm">unfold_more</span>
+        </div>
+    </th>
+    <th class="px-4 py-4 font-bold sticky bg-surface-container-low z-20 w-[80px] text-center">
+        <div class="flex items-center justify-center gap-1 cursor-pointer hover:text-primary transition-colors">
+            <span class="">Решение АК</span>
+            <span class="material-symbols-outlined text-sm">unfold_more</span>
+        </div>
+    </th>
 </tr>
 </thead>
 <tbody class="divide-y divide-surface-container-low">
 <!-- Row 1: Detailed Entry -->
-<tr onclick="window.location.href='./Протокол_Претендент.html'" class=" bg-green-100 hover:bg-green-200 transition-colors">
-<td class="px-8 py-6 sticky left-0 z-10">
-<div class="flex items-center gap-4">
-<div class="font-semibold text-on-surface">Иванов Алексей Иванович</div>
+<tr  class=" bg-green-100 hover:bg-green-200 transition-colors">
+    <td class="px-4 py-2 sticky group-hover:bg-surface-container-low/50 z-20 text-center">
+        <span class="material-symbols-outlined text-green-500" title="Ознакомлен">check_circle</span>
+    </td>
+    <td class="px-4 py-2 sticky left-0 z-10">
+<div onclick="window.location.href='./Протокол_Претендент.html'" class="flex items-center gap-4">
+<div  class="font-semibold text-on-surface">Иванов Алексей Иванович</div>
 </div>
 </td>
-<td class="px-4 py-6">
+<td class="px-4 py-2">
 <div class="text-sm font-medium">Специалист по ТИ 1 к.</div>
 </td>
-<td class="px-4 py-6">
-<div class="text-sm">12.2</div>
-</td>
-<td class="px-4 py-6">
+<!--<td class="px-4 py-2">-->
+<!--<div class="text-sm">12.2</div>-->
+<!--</td>-->
+<td class="px-4 py-2">
 <div class="text-sm">Минское городское Агентство</div>
 </td>
-<td class="px-4 py-6">
-    <div class="text-[11px] leading-tight max-w-[250px]">
-        <span class="font-bold">Образование, наименование учебного заведения</span><br/>
-        <span class="text-on-surface-variant italic">Cпециальность по образованию, квалификация</span>
-        </div>
-</td>
-<td class="px-4 py-6 text-center">
-<button class="p-2 hover:bg-surface-container rounded-lg text-primary" title="Скачать характеристику">
-    <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">1</span>
-<span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
-</button>
-</td>
-<td class="px-4 py-6">
-<span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">3</span>
-</td>
-<td class="px-4 py-6">
-    <div class="text-[11px] leading-tight max-w-[250px]">
-        <span class="font-bold">где, номер документа, дата его выдачи, наименование курсов, оценка</span><br/>
-        <span class="text-on-surface-variant italic">Оценка</span>
-    </div>
-</td>
-<td class="px-4 py-6 text-center font-bold text-on-surface">38/40</td>
-<td class="px-4 py-6 text-sm">24.04.2026</td>
-<td class="px-4 py-6">
-<span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">3</span>
-</td>
-<td class="px-4 py-6 text-center font-extrabold text-primary">12</td>
-<td class="px-8 py-6">
+<!--<td class="px-4 py-2">-->
+<!--    <div class="text-[11px] leading-tight max-w-[250px]">-->
+<!--        <span class="font-bold">Образование, наименование учебного заведения</span><br/>-->
+<!--        <span class="text-on-surface-variant italic">Cпециальность по образованию, квалификация</span>-->
+<!--        </div>-->
+<!--</td>-->
+<!--<td class="px-4 py-2 text-center">-->
+<!--<button class="p-2 hover:bg-surface-container rounded-lg text-primary" title="Скачать характеристику">-->
+<!--    <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">1</span>-->
+<!--<span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>-->
+<!--</button>-->
+<!--</td>-->
+<!--<td class="px-4 py-2">-->
+<!--<span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">3</span>-->
+<!--</td>-->
+<!--<td class="px-4 py-2">-->
+<!--    <div class="text-[11px] leading-tight max-w-[250px]">-->
+<!--        <span class="font-bold">где, номер документа, дата его выдачи, наименование курсов, оценка</span><br/>-->
+<!--        <span class="text-on-surface-variant italic">Оценка</span>-->
+<!--    </div>-->
+<!--</td>-->
+<!--<td class="px-4 py-2 text-center font-bold text-on-surface">38/40</td>-->
+<!--<td class="px-4 py-2 text-sm">24.04.2026</td>-->
+<!--<td class="px-4 py-2">-->
+<!--<span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">3</span>-->
+<!--</td>-->
+<td class="px-4 py-2 text-center font-extrabold text-primary">12</td>
+<td class="px-8 py-2">
 <div class="text-xs font-bold text-tertiary">Аттестован, рекомендовано присвоение категории</div>
 </td>
 </tr>
 <!-- Row 2 -->
 <tr class="bg-green-100 hover:bg-green-200 transition-colors">
-<td class="px-8 py-6 sticky left-0 z-10">
+    <td class="px-4 py-2  text-center">
+        <span class="material-symbols-outlined text-outline" title="В процессе">pending</span>
+    </td>
+<td class="px-4 py-2 sticky left-0 z-10">
 <div class="flex items-center gap-4">
 <div class="font-semibold text-on-surface">Иванова Татьяна Васильевна</div>
 </div>
 </td>
-<td class="px-4 py-6">
+<td class="px-4 py-2">
 <div class="text-sm font-medium">Специалист по ТИ 2 к.</div>
 </td>
-<td class="px-4 py-6">
-<div class="text-sm">8.5</div>
-</td>
-<td class="px-4 py-6">
+<!--<td class="px-4 py-2">-->
+<!--<div class="text-sm">8.5</div>-->
+<!--</td>-->
+<td class="px-4 py-2">
 <div class="text-sm">Гродненское Агентство</div>
 </td>
-<td class="px-4 py-6">
-    <div class="text-[11px] leading-tight max-w-[250px]">
-        <span class="font-bold">Образование, наименование учебного заведения</span><br/>
-        <span class="text-on-surface-variant italic">Cпециальность по образованию, квалификация</span>
-    </div>
-</td>
-<td class="px-4 py-6 text-center">
-<button class="p-2 hover:bg-surface-container rounded-lg text-primary" title="Скачать характеристику">
-    <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">3</span>
-<span class="material-symbols-outlined" data-icon="description">description</span>
-</button>
-</td>
-<td class="px-4 py-6">
-<span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">0</span>
-</td>
-<td class="px-4 py-6">
-    <div class="text-[11px] leading-tight max-w-[250px]">
-        <span class="font-bold">где, номер документа, дата его выдачи, наименование курсов, оценка</span><br/>
-        <span class="text-on-surface-variant italic">Оценка</span>
-    </div>
-</td>
-<td class="px-4 py-6 text-center font-bold text-on-surface">36/40</td>
-<td class="px-4 py-6 text-sm">24.04.2026</td>
-<td class="px-4 py-6">
-<span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">0</span>
-</td>
-<td class="px-4 py-6 text-center font-extrabold text-primary">10</td>
+<!--<td class="px-4 py-2">-->
+<!--    <div class="text-[11px] leading-tight max-w-[250px]">-->
+<!--        <span class="font-bold">Образование, наименование учебного заведения</span><br/>-->
+<!--        <span class="text-on-surface-variant italic">Cпециальность по образованию, квалификация</span>-->
+<!--    </div>-->
+<!--</td>-->
+<!--<td class="px-4 py-2 text-center">-->
+<!--<button class="p-2 hover:bg-surface-container rounded-lg text-primary" title="Скачать характеристику">-->
+<!--    <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">3</span>-->
+<!--<span class="material-symbols-outlined" data-icon="description">description</span>-->
+<!--</button>-->
+<!--</td>-->
+<!--<td class="px-4 py-2">-->
+<!--<span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">0</span>-->
+<!--</td>-->
+<!--<td class="px-4 py-2">-->
+<!--    <div class="text-[11px] leading-tight max-w-[250px]">-->
+<!--        <span class="font-bold">где, номер документа, дата его выдачи, наименование курсов, оценка</span><br/>-->
+<!--        <span class="text-on-surface-variant italic">Оценка</span>-->
+<!--    </div>-->
+<!--</td>-->
+<!--<td class="px-4 py-2 text-center font-bold text-on-surface">36/40</td>-->
+<!--<td class="px-4 py-2 text-sm">24.04.2026</td>-->
+<!--<td class="px-4 py-2">-->
+<!--<span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">0</span>-->
+<!--</td>-->
+<td class="px-4 py-2 text-center font-extrabold text-primary">10</td>
 <td class="px-8 py-6">
 <div class="text-xs font-bold text-on-surface-variant">Аттестован</div>
 </td>
 </tr>
 <!-- Row 3 -->
 <tr class="bg-red-100 hover:bg-red-200 transition-colors">
+    <td class="px-4 py-2 text-center">
+        <span class="material-symbols-outlined text-error" title="Не ознакомлен">report</span>
+    </td>
 <td class="px-8 py-6 sticky left-0 z-10">
 <div class="flex items-center gap-4">
 <div class="font-semibold text-on-surface">Сидоров Дмитрий Иванович</div>
 </div>
 </td>
-<td class="px-4 py-6">
+<td class="px-4 py-2">
 <div class="text-sm font-medium">Начальник отдела</div>
 </td>
-<td class="px-4 py-6">
-<div class="text-sm">15.9</div>
-</td>
-<td class="px-4 py-6">
+<!--<td class="px-4 py-2">-->
+<!--<div class="text-sm">15.9</div>-->
+<!--</td>-->
+<td class="px-4 py-2">
 <div class="text-sm">Национальное кадастровое агентство</div>
 </td>
-<td class="px-4 py-6">
-    <div class="text-[11px] leading-tight max-w-[250px]">
-        <span class="font-bold">Образование, наименование учебного заведения</span><br/>
-        <span class="text-on-surface-variant italic">Cпециальность по образованию, квалификация</span>
-    </div>
-</td>
-<td class="px-4 py-6 text-center">
-<button class="p-2 hover:bg-surface-container rounded-lg text-primary opacity-50" disabled="">
-    <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">3</span>
-<span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
-</button>
-</td>
-<td class="px-4 py-6">
-<span class="bg-error-container text-on-error-container text-[10px] font-bold px-2 py-1 rounded-full uppercase">-1</span>
-</td>
-<td class="px-4 py-6">
-<!--<div class="text-[11px] text-on-surface-variant italic">где, номер документа, дата его выдачи, наименование курсов, оценка</div>-->
-    <div class="text-[11px] leading-tight max-w-[250px]">
-        <span class="font-bold">где, номер документа, дата его выдачи, наименование курсов, оценка</span><br/>
-        <span class="text-on-surface-variant italic">Оценка</span>
-    </div>
+<!--<td class="px-4 py-2">-->
+<!--    <div class="text-[11px] leading-tight max-w-[250px]">-->
+<!--        <span class="font-bold">Образование, наименование учебного заведения</span><br/>-->
+<!--        <span class="text-on-surface-variant italic">Cпециальность по образованию, квалификация</span>-->
+<!--    </div>-->
+<!--</td>-->
+<!--<td class="px-4 py-2 text-center">-->
+<!--<button class="p-2 hover:bg-surface-container rounded-lg text-primary opacity-50" disabled="">-->
+<!--    <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">3</span>-->
+<!--<span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>-->
+<!--</button>-->
+<!--</td>-->
+<!--<td class="px-4 py-2">-->
+<!--<span class="bg-error-container text-on-error-container text-[10px] font-bold px-2 py-1 rounded-full uppercase">-1</span>-->
+<!--</td>-->
+<!--<td class="px-4 py-2">-->
+<!--&lt;!&ndash;<div class="text-[11px] text-on-surface-variant italic">где, номер документа, дата его выдачи, наименование курсов, оценка</div>&ndash;&gt;-->
+<!--    <div class="text-[11px] leading-tight max-w-[250px]">-->
+<!--        <span class="font-bold">где, номер документа, дата его выдачи, наименование курсов, оценка</span><br/>-->
+<!--        <span class="text-on-surface-variant italic">Оценка</span>-->
+<!--    </div>-->
 
-</td>
-<td class="px-4 py-6 text-center font-bold text-error">0/100</td>
-<td class="px-4 py-6 text-sm">--</td>
-    <td class="px-4 py-6">
-        <span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">0</span>
-    </td>
-
-
-<td class="px-4 py-6 text-center font-extrabold text-on-surface-variant">0</td>
+<!--</td>-->
+<!--<td class="px-4 py-2 text-center font-bold text-error">0/100</td>-->
+<!--<td class="px-4 py-2 text-sm">&#45;&#45;</td>-->
+<!--    <td class="px-4 py-2">-->
+<!--        <span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">0</span>-->
+<!--    </td>-->
+<td class="px-4 py-2 text-center font-extrabold text-on-surface-variant">0</td>
 <td class="px-8 py-6">
 <div class="text-xs font-bold text-error">Результат аннулирован</div>
 </td>
 </tr>
 <!-- Row 4 -->
 <tr class="bg-green-100 hover:bg-green-200 transition-colors">
+    <td class="px-4 py-2 sticky group-hover:bg-surface-container-low/50 z-20 text-center">
+        <span class="material-symbols-outlined text-green-500" title="Ознакомлен">check_circle</span>
+    </td>
     <td class="px-8 py-6 sticky left-0 z-10">
         <div class="flex items-center gap-4">
             <div class="font-semibold text-on-surface ">Петрова Валерия Степановна</div>
         </div>
     </td>
-    <td class="px-4 py-6">
+    <td class="px-4 py-2">
         <div class="text-sm font-medium">Специалист по ТИ</div>
     </td>
-    <td class="px-4 py-6">
-        <div class="text-sm">1.1</div>
-    </td>
-    <td class="px-4 py-6">
+<!--    <td class="px-4 py-2">-->
+<!--        <div class="text-sm">1.1</div>-->
+<!--    </td>-->
+    <td class="px-4 py-2">
         <div class="text-sm">Гомельское Агентство</div>
     </td>
-    <td class="px-4 py-6">
-        <div class="text-[11px] leading-tight max-w-[250px]">
-            <span class="font-bold">Образование, наименование учебного заведения</span><br/>
-            <span class="text-on-surface-variant italic">Cпециальность по образованию, квалификация</span>
-        </div>
-    </td>
-    <td class="px-4 py-6 text-center">
-        <button class="p-2 hover:bg-surface-container rounded-lg text-primary" title="Скачать характеристику">
-            <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">1</span>
-            <span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
-        </button>
-    </td>
-    <td class="px-4 py-6">
-        <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">3</span>
-    </td>
-    <td class="px-4 py-6">
-        <div class="text-[11px] leading-tight max-w-[250px]">
-            <span class="font-bold">где, номер документа, дата его выдачи, наименование курсов, оценка</span><br/>
-            <span class="text-on-surface-variant italic">Оценка</span>
-        </div>
-    </td>
-    <td class="px-4 py-6 text-center font-bold text-on-surface">40/40</td>
-    <td class="px-4 py-6 text-sm">24.04.2026</td>
-    <td class="px-4 py-6">
-        <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">3</span>
-    </td>
-    <td class="px-4 py-6 text-center font-extrabold text-primary">12</td>
+<!--    <td class="px-4 py-2">-->
+<!--        <div class="text-[11px] leading-tight max-w-[250px]">-->
+<!--            <span class="font-bold">Образование, наименование учебного заведения</span><br/>-->
+<!--            <span class="text-on-surface-variant italic">Cпециальность по образованию, квалификация</span>-->
+<!--        </div>-->
+<!--    </td>-->
+<!--    <td class="px-4 py-2 text-center">-->
+<!--        <button class="p-2 hover:bg-surface-container rounded-lg text-primary" title="Скачать характеристику">-->
+<!--            <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">1</span>-->
+<!--            <span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>-->
+<!--        </button>-->
+<!--    </td>-->
+<!--    <td class="px-4 py-2">-->
+<!--        <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">3</span>-->
+<!--    </td>-->
+<!--    <td class="px-4 py-2">-->
+<!--        <div class="text-[11px] leading-tight max-w-[250px]">-->
+<!--            <span class="font-bold">где, номер документа, дата его выдачи, наименование курсов, оценка</span><br/>-->
+<!--            <span class="text-on-surface-variant italic">Оценка</span>-->
+<!--        </div>-->
+<!--    </td>-->
+<!--    <td class="px-4 py-2 text-center font-bold text-on-surface">40/40</td>-->
+<!--    <td class="px-4 py-2 text-sm">24.04.2026</td>-->
+<!--    <td class="px-4 py-2">-->
+<!--        <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">3</span>-->
+<!--    </td>-->
+    <td class="px-4 py-2 text-center font-extrabold text-primary">12</td>
     <td class="px-8 py-6">
         <div class="text-xs font-bold text-tertiary">Аттестован, рекомендовано присвоение категории</div>
     </td>
 </tr>
 <!-- Row 5 -->
 <tr class="bg-green-100 hover:bg-green-200 transition-colors">
+    <td class="px-4 py-2 sticky group-hover:bg-surface-container-low/50 z-20 text-center">
+        <span class="material-symbols-outlined text-green-500" title="Ознакомлен">check_circle</span>
+    </td>
     <td class="px-8 py-6 sticky left-0 z-10">
         <div class="flex items-center gap-4">
             <div class="font-semibold text-on-surface ">Кузнецов Михаил Петрович</div>
         </div>
     </td>
-    <td class="px-4 py-6">
+    <td class="px-4 py-2">
         <div class="text-sm font-medium">Инженер</div>
     </td>
-    <td class="px-4 py-6">
-        <div class="text-sm">0.5</div>
-    </td>
-    <td class="px-4 py-6">
+<!--    <td class="px-4 py-2">-->
+<!--        <div class="text-sm">0.5</div>-->
+<!--    </td>-->
+    <td class="px-4 py-2">
         <div class="text-sm">Брестское Агентство</div>
     </td>
-    <td class="px-4 py-6">
-        <div class="text-[11px] leading-tight max-w-[250px]">
-            <span class="font-bold">Образование, наименование учебного заведения</span><br/>
-            <span class="text-on-surface-variant italic">Cпециальность по образованию, квалификация</span>
-        </div>
-    </td>
-    <td class="px-4 py-6 text-center">
-        <button class="p-2 hover:bg-surface-container rounded-lg text-primary" title="Скачать характеристику">
-            <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">3</span>
-            <span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
-        </button>
-    </td>
-    <td class="px-4 py-6">
-        <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">0</span>
-    </td>
-    <td class="px-4 py-6">
-        <div class="text-[11px] leading-tight max-w-[250px]">
-            <span class="font-bold">где, номер документа, дата его выдачи, наименование курсов, оценка</span><br/>
-            <span class="text-on-surface-variant italic">Оценка</span>
-        </div>
-    </td>
-    <td class="px-4 py-6 text-center font-bold text-on-surface">40/40</td>
-    <td class="px-4 py-6 text-sm">24.04.2026</td>
-    <td class="px-4 py-6">
-        <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">1</span>
-    </td>
-    <td class="px-4 py-6 text-center font-extrabold text-primary">8</td>
-    <td class="px-8 py-6">
+<!--    <td class="px-4 py-2">-->
+<!--        <div class="text-[11px] leading-tight max-w-[250px]">-->
+<!--            <span class="font-bold">Образование, наименование учебного заведения</span><br/>-->
+<!--            <span class="text-on-surface-variant italic">Cпециальность по образованию, квалификация</span>-->
+<!--        </div>-->
+<!--    </td>-->
+<!--    <td class="px-4 py-2 text-center">-->
+<!--        <button class="p-2 hover:bg-surface-container rounded-lg text-primary" title="Скачать характеристику">-->
+<!--            <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">3</span>-->
+<!--            <span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>-->
+<!--        </button>-->
+<!--    </td>-->
+<!--    <td class="px-4 py-2">-->
+<!--        <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">0</span>-->
+<!--    </td>-->
+<!--    <td class="px-4 py-2">-->
+<!--        <div class="text-[11px] leading-tight max-w-[250px]">-->
+<!--            <span class="font-bold">где, номер документа, дата его выдачи, наименование курсов, оценка</span><br/>-->
+<!--            <span class="text-on-surface-variant italic">Оценка</span>-->
+<!--        </div>-->
+<!--    </td>-->
+<!--    <td class="px-4 py-2 text-center font-bold text-on-surface">40/40</td>-->
+<!--    <td class="px-4 py-2 text-sm">24.04.2026</td>-->
+<!--    <td class="px-4 py-2">-->
+<!--        <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase">1</span>-->
+<!--    </td>-->
+    <td class="px-4 py-2 text-center font-extrabold text-primary">8</td>
+    <td class="px-8 py-2">
         <div class="text-xs font-bold text-tertiary">Аттестован, рекомендовано присвоение категории</div>
     </td>
 </tr>
