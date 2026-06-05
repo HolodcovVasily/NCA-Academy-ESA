@@ -682,9 +682,10 @@
 </div>
 <!-- Special Status Tags -->
 <div class="flex gap-2">
-<button class="px-4 py-2 text-label-sm rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-colors">Отсутствие по уважительной причине</button>
-<button class="px-4 py-2 text-label-sm rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-colors">Отсутствие без уважительной причины</button>
-<button class="px-4 py-2 text-label-sm rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-colors">Отказе от прохождения аттестации</button>
+    <button class="px-4 py-2 text-label-sm rounded-full bg-error-container text-on-error-container hover:opacity-80 transition-opacity">Назначено собеседование</button>
+<button class="px-4 py-2 text-label-sm rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-colors">Отсутствут</button>
+<button class="px-4 py-2 text-label-sm rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-colors">Отказ от прохождения аттестации</button>
+<button class="px-4 py-2 text-label-sm rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-colors">Отказ от ознакомления с АЛ</button>
 <button class="px-4 py-2 text-label-sm rounded-full bg-error-container text-on-error-container hover:opacity-80 transition-opacity">Апелляция</button>
 </div>
 </div>
@@ -772,6 +773,12 @@
             <h2 class="text-label-md uppercase tracking-widest text-primary">Профессиональная деятельность</h2>
         </div>
         <div class="space-y-4">
+            <div class="flex items-center justify-between pt-2">
+                <div class="flex items-center gap-2 text-primary cursor-pointer hover:underline">
+                    <span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
+                    <span class="text-label-md">Аттестационный лист.pdf</span>
+                </div>
+            </div>
             <div class="flex items-center justify-between pt-2">
                 <div class="flex items-center gap-2 text-primary cursor-pointer hover:underline">
                     <span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
@@ -876,10 +883,10 @@
 <span class="text-headline-md text-primary">Результат аттестации (общая сумма баллов):</span>
 <span class="text-[32px] font-extrabold text-primary">7</span>
 </div>
-<div class="flex items-center gap-3 py-2">
-<input  class="rounded-sm border-outline text-primary focus:ring-primary w-5 h-5" id="familiarized" type="checkbox" checked disabled/>
-<label class="text-label-md text-on-surface-variant" for="familiarized">Наличие отметки об ознакомлении с аттестационным листом</label>
-</div>
+<!--<div class="flex items-center gap-3 py-2">-->
+<!--<input  class="rounded-sm border-outline text-primary focus:ring-primary w-5 h-5" id="familiarized" type="checkbox" checked disabled/>-->
+<!--<label class="text-label-md text-on-surface-variant" for="familiarized">Наличие отметки об ознакомлении с аттестационным листом</label>-->
+<!--</div>-->
 </div>
 <div class="pt-4 flex flex-col gap-3">
 <button onclick="window.location.href='#'" class="w-full h-12 primary-gradient text-on-primary font-label-md rounded shadow-lg flex items-center justify-center gap-2 hover:opacity-90 transition-all">
