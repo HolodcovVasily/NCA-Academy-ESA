@@ -311,9 +311,15 @@
 <thead>
 <tr class="bg-surface-container-low text-on-surface-variant text-label-sm uppercase">
 <!--    <th class="px-4 py-4 font-bold text-center">Ознакомлен</th>-->
-    <th class="px-4 py-4 font-bold sticky bg-surface-container-low z-20 w-[80px] text-center">
+    <th class="px-1 py-4 font-bold sticky bg-surface-container-low z-20 w-[80px] text-center">
         <div class="flex items-center justify-center gap-1 cursor-pointer hover:text-primary transition-colors">
         <span class="">Ознакомлен</span>
+            <span class="material-symbols-outlined text-sm">unfold_more</span>
+        </div>
+    </th>
+    <th class="px-1 py-4 font-bold sticky bg-surface-container-low z-20 w-[80px] text-center">
+        <div class="flex items-center justify-center gap-1 cursor-pointer hover:text-primary transition-colors">
+            <span class="">Апелляция</span>
             <span class="material-symbols-outlined text-sm">unfold_more</span>
         </div>
     </th>
@@ -391,7 +397,13 @@
     </th>
     <th class="px-4 py-4 font-bold sticky bg-surface-container-low z-20 w-[80px] text-center">
         <div class="flex items-center justify-center gap-1 cursor-pointer hover:text-primary transition-colors">
-            <span class="">Решение АК</span>
+            <span class="">Решение АтК</span>
+            <span class="material-symbols-outlined text-sm">unfold_more</span>
+        </div>
+    </th>
+    <th class="px-4 py-4 font-bold sticky bg-surface-container-low z-20 w-[80px] text-center">
+        <div class="flex items-center justify-center gap-1 cursor-pointer hover:text-primary transition-colors">
+            <span class="">Решение АпК</span>
             <span class="material-symbols-outlined text-sm">unfold_more</span>
         </div>
     </th>
@@ -402,6 +414,9 @@
 <tr  class=" bg-green-100 hover:bg-green-200 transition-colors">
     <td class="px-4 py-2 sticky group-hover:bg-surface-container-low/50 z-20 text-center">
         <span class="material-symbols-outlined text-green-500" title="Ознакомлен">check_circle</span>
+    </td>
+    <td class="px-4 py-2 sticky group-hover:bg-surface-container-low/50 z-20 text-center">
+        <span class="text-on-surface-variant opacity-50">—</span>
     </td>
     <td class="px-4 py-2 sticky left-0 z-10">
 <div onclick="window.location.href='./Протокол_Претендент.html'" class="flex items-center gap-4">
@@ -447,11 +462,17 @@
 <td class="px-4 py-2">
 <div class="text-xs font-bold text-tertiary">Аттестован, рекомендовано присвоение категории</div>
 </td>
+    <td class="px-4 py-2">
+        <div class="text-xs font-bold text-on-surface-variant">Решение не принималось</div>
+    </td>
 </tr>
 <!-- Row 2 -->
 <tr class="bg-green-100 hover:bg-green-200 transition-colors">
     <td class="px-4 py-2  text-center">
         <span class="material-symbols-outlined text-outline" title="В процессе">pending</span>
+    </td>
+    <td class="px-4 py-2 sticky group-hover:bg-surface-container-low/50 z-20 text-center">
+        <span class="text-on-surface-variant opacity-50">—</span>
     </td>
 <td class="px-4 py-2 sticky left-0 z-10">
 <div class="flex items-center gap-4">
@@ -497,11 +518,17 @@
 <td class="px-4 py-2">
 <div class="text-xs font-bold text-on-surface-variant">Аттестован</div>
 </td>
+    <td class="px-4 py-2">
+        <div class="text-xs font-bold text-on-surface-variant">Решение не принималось</div>
+    </td>
 </tr>
 <!-- Row 3 -->
 <tr class="bg-red-100 hover:bg-red-200 transition-colors">
     <td class="px-4 py-2 text-center">
         <span class="material-symbols-outlined text-outline" title="В процессе">pending</span>
+    </td>
+    <td class="px-4 py-2 sticky group-hover:bg-surface-container-low/50 z-20 text-center">
+        <span class="text-on-surface-variant opacity-50">—</span>
     </td>
 <td class="px-4 py-2 sticky left-0 z-10">
 <div class="flex items-center gap-4">
@@ -549,11 +576,17 @@
 <td class="px-4 py-2">
 <div class="text-xs font-bold text-error">Результат аннулирован</div>
 </td>
+    <td class="px-4 py-2">
+        <div class="text-xs font-bold text-on-surface-variant">Решение не принималось</div>
+    </td>
 </tr>
 <!-- Row 4 -->
 <tr class="bg-green-100 hover:bg-green-200 transition-colors">
     <td class="px-4 py-2 sticky group-hover:bg-surface-container-low/50 z-20 text-center">
         <span class="material-symbols-outlined text-green-500" title="Ознакомлен">check_circle</span>
+    </td>
+    <td class="px-4 py-2 sticky group-hover:bg-surface-container-low/50 z-20 text-center">
+        <span class="text-on-surface-variant opacity-50">—</span>
     </td>
     <td class="px-4 py-2 sticky left-0 z-10">
         <div class="flex items-center gap-4">
@@ -599,11 +632,17 @@
     <td class="px-4 py-2">
         <div class="text-xs font-bold text-tertiary">Аттестован, рекомендовано присвоение категории</div>
     </td>
+    <td class="px-4 py-2">
+        <div class="text-xs font-bold text-on-surface-variant">Решение не принималось</div>
+    </td>
 </tr>
 <!-- Row 5 -->
 <tr class="bg-green-100 hover:bg-green-200 transition-colors">
     <td class="px-4 py-2 sticky group-hover:bg-surface-container-low/50 z-20 text-center">
         <span class="material-symbols-outlined text-green-500" title="Ознакомлен">check_circle</span>
+    </td>
+    <td class="px-4 py-2 sticky group-hover:bg-surface-container-low/50 z-20 text-center">
+        <span class="text-on-surface-variant opacity-50">—</span>
     </td>
     <td class="px-4 py-2 sticky left-0 z-10">
         <div class="flex items-center gap-4">
@@ -649,11 +688,17 @@
     <td class="px-4 py-2">
         <div class="text-xs font-bold text-tertiary">Аттестован, рекомендовано присвоение категории</div>
     </td>
+    <td class="px-4 py-2">
+        <div class="text-xs font-bold text-on-surface-variant">Решение не принималось</div>
+    </td>
 </tr>
 <!-- Row 6 -->
 <tr class="bg-red-100 hover:bg-red-200 transition-colors">
     <td class="px-4 py-2 sticky group-hover:bg-surface-container-low/50 z-20 text-center">
         <span class="material-symbols-outlined text-green-500" title="Ознакомлен">check_circle</span>
+    </td>
+    <td class="px-4 py-2 sticky group-hover:bg-surface-container-low/50 z-20 text-center">
+        <span class="text-on-surface-variant opacity-50">—</span>
     </td>
     <td class="px-4 py-2 sticky left-0 z-10">
         <div class="flex items-center gap-4">
@@ -699,11 +744,17 @@
     <td class="px-4 py-2">
         <div class="text-xs font-bold text-error">Не аттестован, не соответствует занимаемой должности</div>
     </td>
+    <td class="px-4 py-2">
+        <div class="text-xs font-bold text-on-surface-variant">Решение не принималось</div>
+    </td>
 </tr>
 <!-- Row 7 -->
 <tr class="bg-red-100 hover:bg-red-200 transition-colors">
     <td class="px-4 py-2 text-center">
         <span class="material-symbols-outlined text-error" title="Отказался(ась) от ознакомления">report</span>
+    </td>
+    <td class="px-4 py-2 text-center">
+        <div class="inline-flex items-center gap-1 bg-amber-100 text-amber-800 text-[10px] font-bold px-2 py-1 rounded-full uppercase"><span class="material-symbols-outlined text-[12px]">warning</span><span class="">Подана</span></div>
     </td>
     <td class="px-4 py-2 sticky left-0 z-10">
         <div class="flex items-center gap-4">
@@ -750,6 +801,9 @@
     <td class="px-4 py-2 text-center font-extrabold text-error">4</td>
     <td class="px-4 py-2">
         <div class="text-xs font-bold text-error">Не аттестован, не соответствует занимаемой должности</div>
+    </td>
+    <td class="px-4 py-2">
+        <div class="text-xs font-bold text-on-surface-variant">Оставить в силе/Отменить</div>
     </td>
 </tr>
 </tbody>

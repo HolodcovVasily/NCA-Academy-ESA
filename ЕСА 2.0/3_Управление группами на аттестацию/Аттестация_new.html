@@ -368,6 +368,41 @@
                     </button>
                 </div>
                 <div class="space-y-4 overflow-hidden">
+                    <!-- Close Group Card -->
+                    <div class="p-5 bg-surface-container border-l-4 border-primary rounded-r-xl architectural-shadow scale-[1.02] transition-transform cursor-pointer">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="font-headline-md text-headline-md font-bold text-on-surface leading-tight">№ А-09-06.2026</h3>
+                                <p class="text-primary font-bold font-label-md text-label-md mt-1">Аттестационное</p>
+                            </div>
+                            <span class="bg-slate-400 text-on-primary text-[10px] px-2 py-1 rounded font-black tracking-widest uppercase cursor-not-allowed">Закрыта</span>
+                        </div>
+
+                        <div class="flex items-center gap-4 text-on-surface-variant mb-6 font-label-md text-label-md">
+                            <div class="flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                                12.06.2026
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[18px]">schedule</span>
+                                09:00–11:00
+                            </div>
+                            <div onclick="window.location.href='../4_Протокол/Группа архивная_аттестация и апелляция завершена/Протокол.html'" class="flex items-center gap-1">
+                                <span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
+                                <span  class="bg-slate-400 text-on-primary text-[10px] px-2 py-1 rounded font-black tracking-widest uppercase">ПРОТОКОЛ</span>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-label-sm font-label-sm">
+                                <span class="text-on-surface-variant uppercase">Заполняемость</span>
+                                <span class="text-on-surface font-bold">19 / 25 человек</span>
+                            </div>
+                            <div class="w-full h-2 bg-surface-variant rounded-full overflow-hidden">
+                                <div class="h-full bg-primary" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Test_end Group Card -->
                     <div class="p-5 bg-surface-container border-l-4 border-primary rounded-r-xl architectural-shadow scale-[1.02] transition-transform cursor-pointer">
                         <div class="flex justify-between items-start mb-4">
@@ -388,7 +423,42 @@
                                 09:00–11:00
                             </div>
                             <div class="flex items-center gap-1">
+                                <span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
                                 <span onclick="window.location.href='../4_Протокол/Активная группа_аттестация/Протокол_без карточки.html'" class="bg-[#ffa12b] text-on-primary text-[10px] px-2 py-1 rounded font-black tracking-widest uppercase">ПРОТОКОЛ</span>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-label-sm font-label-sm">
+                                <span class="text-on-surface-variant uppercase">Заполняемость</span>
+                                <span class="text-on-surface font-bold">19 / 25 человек</span>
+                            </div>
+                            <div class="w-full h-2 bg-surface-variant rounded-full overflow-hidden">
+                                <div class="h-full bg-primary" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Appeliation Group Card -->
+                    <div class="p-5 bg-surface-container border-l-4 border-primary rounded-r-xl architectural-shadow scale-[1.02] transition-transform cursor-pointer">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="font-headline-md text-headline-md font-bold text-on-surface leading-tight">№ А-09-06.2026</h3>
+                                <p class="text-primary font-bold font-label-md text-label-md mt-1">Аттестационное</p>
+                            </div>
+                            <span onclick="window.location.href='./Добавление группы/Добавление группы.html'" class="bg-[#a10f0f] text-on-primary text-[10px] px-2 py-1 rounded font-black tracking-widest uppercase">АПЕЛЛЯЦИЯ</span>
+                        </div>
+
+                        <div class="flex items-center gap-4 text-on-surface-variant mb-6 font-label-md text-label-md">
+                            <div class="flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                                12.06.2026
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[18px]">schedule</span>
+                                09:00–11:00
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
+                                <span onclick="window.location.href='../4_Протокол/Активная группа_аттестация/Протокол_без карточки.html'" class="bg-[#a10f0f] text-on-primary text-[10px] px-2 py-1 rounded font-black tracking-widest uppercase">ПРОТОКОЛ</span>
                             </div>
                         </div>
                         <div class="space-y-2">
@@ -421,6 +491,7 @@
                                 09:00–11:00
                             </div>
                             <div class="flex items-center gap-1">
+                                <span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
                                 <span onclick="window.location.href='../4_Протокол/Активная группа_аттестация/Протокол_без карточки.html'" class="bg-primary-container text-on-primary text-[10px] px-2 py-1 rounded font-black tracking-widest uppercase">ПРОТОКОЛ</span>
                             </div>
                         </div>
@@ -530,7 +601,11 @@
                     <span class="text-xs font-bold text-outline">Аттестация проведена</span>
                 </div>
                 <div class="flex items-center gap-2">
-                    <span class="w-3 h-3 rounded-full bg-slate-300"></span>
+                    <span class="w-3 h-3 rounded-full bg-[#a10f0f]"></span>
+                    <span class="text-xs font-bold text-outline">Апелляция</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-slate-400"></span>
                     <span class="text-xs font-bold text-outline">Закрыта</span>
                 </div>
 <!--                <div class="flex items-center gap-2">-->
