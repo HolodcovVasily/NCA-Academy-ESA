@@ -266,7 +266,7 @@
 <div class="text-[10px] uppercase text-on-surface-variant tracking-widest">Не аттестовано</div>
 </div>
     <div>
-        <div class="text-2xl font-bold text-error">0</div>
+        <div class="text-2xl font-bold text-error">2</div>
         <div class="text-[10px] uppercase text-on-surface-variant tracking-widest">Апелляции</div>
     </div>
     <div>
@@ -294,6 +294,25 @@
 <span class="material-symbols-outlined text-[180px]" data-icon="verified">verified</span>
 </div>
 </div>
+    <div class="col-span-2 bg-red-400 p-8 rounded-xl flex justify-between overflow-hidden relative">
+        <div class="z-10">
+            <span class="text-label-sm uppercase text-white/70">Процесс аппеляции</span>
+            <div class="text-xl font-bold text-white mt-2">Апелляций: 2</div>
+            <div class="text-xl font-bold text-white mt-2">Принято решений: 2</div>
+        </div>
+        <div class="flex flex-col">
+            <button onclick="window.location.href='../../3_Управление группами на аттестацию/Аттестация.html'" class="z-10 bg-on-surface text-white px-4 py-2 rounded-full font-label-md px-4 py-2 rounded-lg self-start mt-4 transition-colors">
+                Подписать документы
+            </button>
+            <button onclick="window.location.href='../../3_Управление группами на аттестацию/Аттестация.html'" class="z-10 bg-white/10 hover:bg-white/20 text-white font-label-md px-4 py-2 rounded-lg self-start mt-4 transition-colors">
+                Завершить апелляцию
+            </button>
+        </div>
+
+        <div class="absolute -right-10 -bottom-10 opacity-10">
+            <span class="material-symbols-outlined text-[180px]" data-icon="verified">verified</span>
+        </div>
+    </div>
 </section>
 <!-- Main Candidate Table with Horizontal Scrolling -->
 <section class="bg-surface-container-lowest rounded-xl overflow-hidden">
