@@ -103,33 +103,33 @@
 </head>
 <body class="bg-surface text-on-surface min-h-screen flex flex-col">
 <!-- Encryption Ribbon (Signature Component) -->
-<div class="bg-primary-container h-8 w-full flex items-center justify-center relative z-50">
-<div class="flex items-center gap-2">
-<span class="w-2 h-2 rounded-full bg-surface-tint animate-pulse"></span>
-<span class="text-white text-[10px] font-label uppercase tracking-widest" style="">Безопасное соединение активно</span>
-</div>
-</div>
+<!--<div class="bg-primary-container text-on-primary shadow-sm h-8 w-full flex items-center justify-center relative z-50">-->
+<!--<div class="flex items-center gap-2">-->
+<!--<span class="w-2 h-2 rounded-full bg-surface-tint animate-pulse"></span>-->
+<!--<span class="text-white text-[10px] font-label uppercase tracking-widest" style="">Безопасное соединение активно</span>-->
+<!--</div>-->
+<!--</div>-->
 <!-- TopAppBar -->
     <header class="w-full bg-slate-50/50 backdrop-blur-md flex justify-between items-center px-12 h-24 w-full">
         <div class="flex items-center gap-4">
             <span class="text-xl font-bold tracking-tighter text-slate-900">НКА Академия | ЕСА 2.0</span>
-            <div class="h-6 w-px bg-outline-variant/30 mx-2"></div>
-            <a href="../../../1_Главная%20страница%20НКА%20Академия/2_Главная_страница.html" class="text-slate-500 font-label-md text-label-md">На главную</a>
+<!--            <div class="h-6 w-px bg-outline-variant/30 mx-2"></div>-->
+<!--            <a href="../../../1_Главная%20страница%20НКА%20Академия/2_Главная_страница.html" class="text-slate-500 font-label-md text-label-md">На главную</a>-->
         </div>
         <div class="flex items-center gap-8">
             <div class="text-right">
                 <p class="font-bold text-slate-900 leading-tight">Иванов Алексей Иванович</p>
-                <p class="text-sm text-slate-500 font-medium tracking-wide">Специалист по ТИ 1 к. • 12.2 • Минское городское Агентство</p>
+                <p class="text-sm text-slate-500 font-medium tracking-wide">Специалист по ТИ • Минское городское Агентство</p>
             </div>
-            <div class="flex items-center gap-3">
-                <button class="p-2 hover:bg-slate-200/50 transition-colors rounded-full">
-                    <span class="material-symbols-outlined text-slate-600" data-icon="timer">timer</span>
-                </button>
-                <button class="p-2 hover:bg-slate-200/50 transition-colors rounded-full">
-                    <span class="material-symbols-outlined text-slate-600" data-icon="analytics">analytics</span>
-                </button>
-                <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary font-bold">ИА</div>
-            </div>
+<!--            <div class="flex items-center gap-3">-->
+<!--                <button class="p-2 hover:bg-slate-200/50 transition-colors rounded-full">-->
+<!--                    <span class="material-symbols-outlined text-slate-600" data-icon="timer">timer</span>-->
+<!--                </button>-->
+<!--                <button class="p-2 hover:bg-slate-200/50 transition-colors rounded-full">-->
+<!--                    <span class="material-symbols-outlined text-slate-600" data-icon="analytics">analytics</span>-->
+<!--                </button>-->
+<!--                <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary font-bold">ИА</div>-->
+<!--            </div>-->
         </div>
 </header>
 <aside class="h-screen w-72 fixed left-0 top-40 bg-slate-100 dark:bg-slate-900 flex flex-col gap-6 p-8 border-r-0 z-40">
@@ -164,40 +164,52 @@
     </div>
 </aside>
 <main class="flex-grow flex items-center justify-center py-4 px-6 relative">
-<div class="max-w-5xl w-full flex flex-col md:flex-row gap-12 items-stretch shadow-[0_40px_80px_-15px_rgba(25,28,30,0.08)]">
+<div class="max-w-5xl w-full flex flex-col md:flex-row gap-12 items-stretch">
 
 <!-- Left Side: Contextual Info (Editorial Density) -->
-<div class="md:w-1/2 flex flex-col justify-center">
-<div class="mb-2">
-<!--<span class="text-[10px] font-label uppercase tracking-[0.2em] text-on-surface-variant font-bold" style="">Группа: №14_25_20.04.2026</span>-->
-</div>
-<h1 class="text-4xl font-headline font-extrabold tracking-tight text-on-surface mb-6 leading-none" style="">Прохождение аттестации</h1>
-    <div class="bg-surface-container-low p-1 rounded-xl">
+<div class="ml-20 md:w-1/2 flex flex-col justify-center">
+<h1 class="text-4xl font-headline font-extrabold tracking-tight text-on-surface mb-6 leading-none" style="">Запуск аттестационного тестирования</h1>
+    <div class="bg-surface-container p-4 rounded-xl">
         <div class="flex items-center gap-3 mb-8">
             <span class="material-symbols-outlined text-primary" data-icon="gavel">gavel</span>
             <h2 class="font-headline-md text-headline-md text-on-surface uppercase tracking-tight">Правила прохождения тестирования</h2>
         </div>
         <div class="space-y-6 text-on-surface-variant leading-relaxed">
             <ul class="space-y-4 font-body-md">
+<!--                <li class="flex items-start gap-4">-->
+<!--                    <span class="w-1.5 h-1.5 rounded-full bg-primary mt-3 shrink-0"></span>-->
+<!--                    <span>Максимальное количество вопросов: 40</span>-->
+<!--                </li>-->
                 <li class="flex items-start gap-4">
                     <span class="w-1.5 h-1.5 rounded-full bg-primary mt-3 shrink-0"></span>
-                    <span>Адаптивное тестирование. Сложность и количество вопросов меняются в зависимости от Ваших ответов.</span>
+                    <span>Максимальное время на прохождение теста: <strong class="text-on-surface font-semibold">60 минут.</strong> Система завершит тест автоматически при истечении указанного времени.</span>
                 </li>
                 <li class="flex items-start gap-4">
                     <span class="w-1.5 h-1.5 rounded-full bg-primary mt-3 shrink-0"></span>
-                    <span>Максимальная продолжительность тестирования <strong class="text-on-surface font-semibold">60 минут</strong>. Система завершит тест автоматически при истечении указанного времени.</span>
+                    <span>Максимальное количество вопросов:  <strong class="text-on-surface font-semibold">40.</strong></span>
                 </li>
                 <li class="flex items-start gap-4">
                     <span class="w-1.5 h-1.5 rounded-full bg-primary mt-3 shrink-0"></span>
-                    <span>Максимальное количество вопросов:  <strong class="text-on-surface font-semibold">40</strong>. Вопросы представлены в <strong class="text-on-surface font-semibold">адаптивном формате</strong>, где сложность зависит от вашего уровня.</span>
+                    <span>Количество правильных ответов:  <strong class="text-on-surface font-semibold">32.</strong></span>
                 </li>
                 <li class="flex items-start gap-4">
                     <span class="w-1.5 h-1.5 rounded-full bg-primary mt-3 shrink-0"></span>
-                    <span>Возврат к предыдущим вопросам или изменение ответа на ранее подтвержденный вопрос невозможны Система фиксирует ответ и подбирает следующий в режиме реального времени.</span>
+                    <span>Режим теста:  <strong class="text-on-surface font-semibold">Стандартный</strong></span>
+                </li>
+
+                <li class="flex items-start gap-4">
+                    <span class="w-1.5 h-1.5 rounded-full bg-primary mt-3 shrink-0"></span>
+                    <span>Доступны: возврат к предыдущим вопросам или изменение ответа на ранее подтвержденный вопрос.</span>
                 </li>
                 <li class="flex items-start gap-4">
                     <span class="w-1.5 h-1.5 rounded-full bg-primary mt-3 shrink-0"></span>
-                    <span>Использование сторонних ресурсов, средств связи и помощи третьих лиц строго запрещено. Влечет к аннулированию результатов, нарушения фиксируются в протоколе.</span>
+<!--                    <span>Использование сторонних ресурсов, средств связи и помощи третьих лиц строго запрещено. Влечет к аннулированию результатов, нарушения фиксируются в протоколе.</span>-->
+                    <span>В целях обеспечение объективности результатов аттестации система фиксирует попытки переключение на другие ресурсы. Система отображает предупреждение при уходе со страницы тестирования.</span>
+
+                </li>
+                <li class="flex items-start gap-4">
+                    <span class="w-1.5 h-1.5 rounded-full bg-primary mt-3 shrink-0"></span>
+                    <span>В случае выявления действий, которые могут свидетельствовать о нарушении порядка прохождения аттестации, события фиксируются в системе и могут быть переданы на рассмотрение комиссии.</span>
                 </li>
             </ul>
         </div>
@@ -207,48 +219,48 @@
                     <input class="peer h-6 w-6 rounded border-0 bg-surface-container-highest text-primary focus:ring-0 focus:ring-offset-0 transition-colors" type="checkbox"/>
                     <span class="material-symbols-outlined absolute opacity-0 peer-checked:opacity-100 text-on-primary pointer-events-none text-sm left-1" data-icon="check">check</span>
                 </div>
-                <span class="font-label-md text-on-surface group-hover:text-primary transition-colors">Я ознакомился(ась) с правилами прохождения тестирования и согласен с ними.</span>
+                <span class="font-label-md text-on-surface group-hover:text-primary transition-colors">Я ознакомился(ась) с правилами прохождения тестирования.</span>
             </label>
         </div>
     </div>
-<div class="space-y-4">
-<div class="p-4 bg-surface-container-low rounded-xl">
-<div class="flex items-center gap-3 mb-1">
-<span class="material-symbols-outlined text-[#4e69c3] text-lg" style="">verified_user</span>
-<span class="text-[10px] font-bold uppercase tracking-wider text-on-surface-variant" style="">Системная интеграция</span>
-</div>
-<div class="text-xs text-on-surface/70" style="">Проверка оборудования завершена. Протоколы защиты от читерства активированы.</div>
-</div>
-</div>
+<!--<div class="space-y-4">-->
+<!--<div class="p-4 bg-surface-container-low rounded-xl">-->
+<!--<div class="flex items-center gap-3 mb-1">-->
+<!--<span class="material-symbols-outlined text-[#4e69c3] text-lg" style="">verified_user</span>-->
+<!--<span class="text-[10px] font-bold uppercase tracking-wider text-on-surface-variant" style="">Прокторинг</span>-->
+<!--</div>-->
+<!--<div class="text-xs text-on-surface/70" style="">Автоматизиррованный контролю соблюдения порядка прохождения аттестации.</div>-->
+<!--</div>-->
+<!--</div>-->
 </div>
 <!-- Right Side: The Setup Card (The Vault) -->
-<div class="md:w-1/2 bg-surface-container-lowest rounded-xl p-10 border border-white/50 backdrop-blur-sm">
-    <div class="bg-surface-container-low p-10 rounded-xl flex flex-col">
+<div class="md:w-1/2 rounded-xl">
+    <div class="p-4 rounded-xl flex flex-col bg-surface-container">
         <div class="flex-grow">
-            <h2 class="font-headline-md text-headline-md text-on-surface mb-2">Аттестационное тестирование</h2>
-            <p class="font-label-md text-on-surface-variant mb-10 tracking-widest uppercase">Группа: №14_25_20.04.2026</p>
-            <div class="bg-surface-container-lowest p-8 rounded-lg mb-8 space-y-6">
-                <div class="flex items-center gap-4">
+<!--            <h2 class="font-headline-md text-headline-md text-on-surface mb-2">Аттестационное тестирование</h2>-->
+            <div class="p-4 rounded-lg mb-8 space-y-6">
+                                <div class="flex items-center gap-4">
                     <div class="w-3 h-3 rounded-full bg-amber-500 pulse-indicator"></div>
-                    <span class="font-label-md text-on-surface">Ожидание активации теста...</span>
+                    <span class="font-label-md text-on-surface">Тест не активирован</span>
                 </div>
+                <p class="font-label-md text-on-surface-variant mb-10 tracking-widest uppercase">Группа: №14_25_20.04.2026</p>
                 <div class="flex flex-col gap-2">
-                    <span class="font-label-sm text-outline uppercase tracking-wider">Сведения о претенденте</span>
+<!--                    <span class="font-label-sm text-outline uppercase tracking-wider">Сведения о претенденте</span>-->
                     <div class="flex items-center gap-3">
-                        <span class="material-symbols-outlined text-outline" data-icon="account_circle">account_circle</span>
-                        <span class="font-body-md text-on-surface font-medium">Иванов Алексей Иванович (ID: 15212545)</span>
+<!--                        <span class="material-symbols-outlined text-outline" data-icon="account_circle">account_circle</span>-->
+                        <span class="font-body-md text-on-surface font-medium">Председатель АтК: Дубков А.В.</span>
                     </div>
                     <div class="flex items-center gap-3">
-                        <span class="font-body-md text-on-surface font-medium">Специалист по ТИ 1 к.</span>
-                    </div>
-                </div>
-                <div class="flex flex-col gap-2">
-                    <span class="font-label-sm text-outline uppercase tracking-wider">Наименование организации</span>
-                    <div class="flex items-center gap-3">
-                        <span class="material-symbols-outlined text-outline" data-icon="corporate_fare">corporate_fare</span>
-                        <span class="font-body-md text-on-surface font-medium">Минское городское Агентство</span>
+                        <span class="font-body-md text-on-surface font-medium">Члены АтК: Первый А.А., Второй В.В.</span>
                     </div>
                 </div>
+<!--                <div class="flex flex-col gap-2">-->
+<!--                    <span class="font-label-sm text-outline uppercase tracking-wider">Наименование организации</span>-->
+<!--                    <div class="flex items-center gap-3">-->
+<!--                        <span class="material-symbols-outlined text-outline" data-icon="corporate_fare">corporate_fare</span>-->
+<!--                        <span class="font-body-md text-on-surface font-medium">Минское городское Агентство</span>-->
+<!--                    </div>-->
+<!--                </div>-->
             </div>
         </div>
         <div class="mt-auto space-y-4">
@@ -264,6 +276,15 @@
 <span class="material-symbols-outlined text-lg" style="">play_arrow</span>НАЧАТЬ ТЕСТИРОВАНИЕ</button>
 
 </div>
+    <div class="space-y-4">
+        <div class="mt-20 p-4 bg-surface-container rounded-xl">
+            <div class="flex items-center gap-3 mb-1">
+                <span class="material-symbols-outlined text-[#4e69c3] text-lg" style="">verified_user</span>
+                <span class="text-[10px] font-bold uppercase tracking-wider text-on-surface-variant" style="">Прокторинг</span>
+            </div>
+            <div class="text-xs text-on-surface/70" style="">Автоматизированный контроль соблюдения порядка прохождения аттестации.</div>
+        </div>
+    </div>
 </div>
 </div>
 </main>
@@ -272,11 +293,11 @@
 <div class="w-full px-12 py-8 flex justify-between items-center max-w-screen-2xl mx-auto">
 <div class="text-[10px] font-label uppercase tracking-widest text-slate-400" style="">
                 © 2026 Академия НКА | ЕСА 2.0</div>
-<div class="flex gap-8">
-<a class="font-label text-[10px] text-on-surface-variant uppercase tracking-[0.05em] hover:text-on-surface transition-colors" href="#" style="--tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; color: rgb(25, 28, 30); letter-spacing: 0.05em; --tw-text-opacity: 1; font-family: Inter, sans-serif; background-color: rgb(242, 244, 246); outline: none !important;">Политика безопасности</a>
-<a class="text-[10px] font-label uppercase tracking-widest text-slate-400 hover:text-slate-900 transition-colors" href="#" style="">условия доступа</a>
-<a class="text-[10px] font-label uppercase tracking-widest text-slate-400 hover:text-slate-900 transition-colors" href="#" style="">Служба поддержки</a>
-</div>
+<!--<div class="flex gap-8">-->
+<!--<a class="font-label text-[10px] text-on-surface-variant uppercase tracking-[0.05em] hover:text-on-surface transition-colors" href="#" style="&#45;&#45;tw-scale-x: 1; &#45;&#45;tw-scale-y: 1; &#45;&#45;tw-pan-x: ; &#45;&#45;tw-pan-y: ; &#45;&#45;tw-pinch-zoom: ; &#45;&#45;tw-scroll-snap-strictness: proximity; &#45;&#45;tw-gradient-from-position: ; &#45;&#45;tw-gradient-via-position: ; &#45;&#45;tw-gradient-to-position: ; &#45;&#45;tw-ordinal: ; &#45;&#45;tw-slashed-zero: ; &#45;&#45;tw-numeric-figure: ; &#45;&#45;tw-numeric-spacing: ; &#45;&#45;tw-numeric-fraction: ; &#45;&#45;tw-ring-inset: ; &#45;&#45;tw-ring-offset-width: 0px; &#45;&#45;tw-ring-offset-color: #fff; &#45;&#45;tw-ring-color: rgb(59 130 246 / 0.5); &#45;&#45;tw-ring-offset-shadow: 0 0 #0000; &#45;&#45;tw-ring-shadow: 0 0 #0000; &#45;&#45;tw-shadow: 0 0 #0000; &#45;&#45;tw-shadow-colored: 0 0 #0000; &#45;&#45;tw-blur: ; &#45;&#45;tw-brightness: ; &#45;&#45;tw-contrast: ; &#45;&#45;tw-grayscale: ; &#45;&#45;tw-hue-rotate: ; &#45;&#45;tw-invert: ; &#45;&#45;tw-saturate: ; &#45;&#45;tw-sepia: ; &#45;&#45;tw-drop-shadow: ; &#45;&#45;tw-backdrop-blur: ; &#45;&#45;tw-backdrop-brightness: ; &#45;&#45;tw-backdrop-contrast: ; &#45;&#45;tw-backdrop-grayscale: ; &#45;&#45;tw-backdrop-hue-rotate: ; &#45;&#45;tw-backdrop-invert: ; &#45;&#45;tw-backdrop-opacity: ; &#45;&#45;tw-backdrop-saturate: ; &#45;&#45;tw-backdrop-sepia: ; &#45;&#45;tw-contain-size: ; &#45;&#45;tw-contain-layout: ; &#45;&#45;tw-contain-paint: ; &#45;&#45;tw-contain-style: ; color: rgb(25, 28, 30); letter-spacing: 0.05em; &#45;&#45;tw-text-opacity: 1; font-family: Inter, sans-serif; background-color: rgb(242, 244, 246); outline: none !important;">Политика безопасности</a>-->
+<!--<a class="text-[10px] font-label uppercase tracking-widest text-slate-400 hover:text-slate-900 transition-colors" href="#" style="">условия доступа</a>-->
+<!--<a class="text-[10px] font-label uppercase tracking-widest text-slate-400 hover:text-slate-900 transition-colors" href="#" style="">Служба поддержки</a>-->
+<!--</div>-->
 </div>
 </footer>
 </body></html>
