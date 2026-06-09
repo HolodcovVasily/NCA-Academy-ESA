@@ -91,75 +91,121 @@
     <div class="flex items-center gap-4">
         <span class="text-xl font-bold tracking-tighter text-slate-900">НКА Академия | ЕСА 2.0</span>
         <div class="h-6 w-px bg-outline-variant/30 mx-2"></div>
-        <span class="text-slate-500 font-label-md text-label-md">Прохождение тестирования</span>
+<!--        <span class="text-slate-500 font-label-md text-label-md">Прохождение тестирования</span>-->
+    </div>
+    <!-- Center Progress & Stats -->
+    <div class="flex flex-col items-center gap-1 flex-1 max-w-2xl px-12">
+        <div class="flex justify-between w-full font-label-md text-label-sm text-on-surface-variant uppercase tracking-tighter">
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-[14px]">check_circle</span>
+                Отвечено: 24 из 40
+            </div>
+            <div class="flex items-center gap-2 text-error">
+                <span class="material-symbols-outlined text-[14px]">timer</span>
+                Оставшееся время: 00:32:15
+            </div>
+        </div>
+        <div class="w-full bg-surface-variant h-1.5 rounded-full overflow-hidden">
+            <div class="bg-primary h-full transition-all duration-1000 ease-in-out" style="width: 60%"></div>
+        </div>
     </div>
     <div class="flex items-center gap-8">
         <div class="text-right">
             <p class="font-bold text-slate-900 leading-tight">Иванов Алексей Иванович</p>
-            <p class="text-sm text-slate-500 font-medium tracking-wide">Специалист по ТИ 1 к. • 12.2 • Минское городское Агентство</p>
-        </div>
-        <div class="flex items-center gap-3">
-            <button class="p-2 hover:bg-slate-200/50 transition-colors rounded-full">
-                <span class="material-symbols-outlined text-slate-600" data-icon="timer">timer</span>
-            </button>
-            <button class="p-2 hover:bg-slate-200/50 transition-colors rounded-full">
-                <span class="material-symbols-outlined text-slate-600" data-icon="analytics">analytics</span>
-            </button>
-            <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary font-bold">ИА</div>
+            <p class="text-sm text-slate-500 font-medium tracking-wide">Специалист по ТИ • Минское городское Агентство</p>
         </div>
     </div>
 </header>
+
+<!-- Sidebar Navigation -->
+<aside class="w-72 bg-[#f1f3f4] border-r border-[#c6c6cd]/15 flex flex-col pt-24 z-40 fixed left-0 h-[calc(100vh-64px)] overflow-hidden">
+    <div class="px-8 mb-6">
+        <p class="font-label-sm text-label-sm text-outline">Нажмите для перехода к вопросу</p>
+    </div>
+    <!-- 5x8 Grid -->
+    <div class="px-6 grid grid-cols-5 gap-2 mb-8">
+        <!-- Question 1 Highlighted -->
+        <button class="w-10 h-10 flex items-center justify-center font-label-md text-label-md bg-primary-gradient text-on-primary active-question rounded-lg transition-all hover:bg-surface-container-high shadow-sm">
+            1
+        </button>
+        <!-- Other 39 Questions -->
+        <script>
+            for(let i=2; i<=40; i++) {
+                document.write(`
+                            <button class="w-10 h-10 flex items-center justify-center font-label-md text-label-md bg-surface-variant/40 text-on-surface-variant rounded-lg transition-all hover:bg-surface-variant">
+                                ${i}
+                            </button>
+                        `);
+            }
+        </script>
+    </div>
+    <div class="mt-auto p-6 border-t border-outline-variant/15 bg-surface-container-low/50">
+        <div class="space-y-3">
+            <div class="flex items-center gap-3">
+                <div class="w-4 h-4 rounded bg-primary-gradient "></div>
+                <span class="font-label-sm text-label-sm text-on-surface">Синий — отвечен</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <div class="w-4 h-4 rounded bg-surface-variant"></div>
+                <span class="font-label-sm text-label-sm text-on-surface">Серый — нет ответа</span>
+            </div>
+        </div>
+        <div class="mt-2 p-3 rounded-lg bg-error-container/10 border border-error/10">
+            <div class="flex items-center gap-2 text-error mb-1">
+                <span class="material-symbols-outlined text-sm">warning</span>
+                <span class="font-label-sm text-label-sm uppercase font-bold tracking-tighter">Внимание</span>
+            </div>
+            <p class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Статус: Тестирование выполняется. Не закрывайте окно браузера.</p>
+        </div>
+    </div>
+</aside>
 <!-- Main Content Canvas -->
 <main class="ml-72 pt-32 px-16 pb-20 max-w-7xl mx-auto">
     <!-- Encryption Ribbon -->
-    <div class="mb-section-gap flex items-center justify-between px-6 py-3 bg-on-secondary-fixed rounded-xl text-on-primary">
-        <div class="flex items-center gap-3">
-<span class="relative flex h-2 w-2">
-<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-surface-tint opacity-75"></span>
-<span class="relative inline-flex rounded-full h-2 w-2 bg-surface-tint"></span>
-</span>
-            <span class="text-label-md font-label-md uppercase tracking-widest">Группа: №14_25_20.04.2026 </span>
-        </div>
-        <div class="flex items-center gap-2 opacity-80">
-            <span class="material-symbols-outlined text-sm" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
-            <span class="text-label-sm font-label-sm">Дата аттестации: 20.04.2026</span>
-        </div>
-    </div>
-    <!-- Monitoring Section -->
-    <div class="grid grid-cols-12 gap-module-gap mb-section-gap">
-        <div class="col-span-8 bg-surface-container-low p-8 rounded-xl flex flex-col justify-between">
-            <div>
-                <h3 class="text-on-surface-variant font-label-md text-label-md uppercase tracking-wider mb-4">Прогресс</h3>
-                <div class="w-full bg-surface-variant h-1 rounded-full overflow-hidden">
-                    <div class="bg-primary h-full rounded-full" style="width: 64%;"></div>
-                </div>
-            </div>
-            <div class="flex justify-between mt-4">
-                <span class="text-on-surface-variant font-label-md text-label-md">Аттестационное тестирование</span>
-                <span class="text-primary font-bold text-label-md">64% вопросов пройдено</span>
-            </div>
-        </div>
-        <div class="col-span-4 bg-surface-container-low p-8 rounded-xl flex items-center justify-center gap-6">
-            <div class="relative w-20 h-20">
-                <svg class="w-20 h-20 transform -rotate-90">
-                    <circle class="text-surface-variant" cx="40" cy="40" fill="transparent" r="36" stroke="currentColor" stroke-width="4"></circle>
-                    <circle class="text-primary" cx="40" cy="40" fill="transparent" r="36" stroke="currentColor" stroke-dasharray="226.2" stroke-dashoffset="56.5" stroke-width="4"></circle>
-                </svg>
-                <div class="absolute inset-0 flex items-center justify-center">
-                    <span class="material-symbols-outlined text-primary" data-icon="schedule">schedule</span>
-                </div>
-            </div>
-            <div>
-                <p class="text-on-surface-variant font-label-md text-label-md uppercase tracking-wider">Оставшееся время</p>
-                <p class="text-display-lg font-display-lg text-on-surface tabular-nums">45:12</p>
-            </div>
-        </div>
-    </div>
+<!--    <div class="mb-section-gap flex items-center justify-between px-6 py-3 bg-primary-gradient text-on-primary rounded-xl">-->
+<!--        <div class="flex items-center gap-3">-->
+<!--<span class="relative flex h-2 w-2">-->
+<!--<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-inverse-primary opacity-90"></span>-->
+<!--</span>-->
+<!--            <span class="text-label-md font-label-md uppercase tracking-widest">Группа: №14_25_20.04.2026 </span>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash; Monitoring Section &ndash;&gt;-->
+<!--    <div class="grid grid-cols-12 gap-module-gap mb-section-gap">-->
+<!--        <div class="col-span-8 bg-surface-container-low p-8 rounded-xl flex flex-col justify-between">-->
+<!--            <div>-->
+<!--                <h3 class="text-on-surface-variant font-label-md text-label-md uppercase tracking-wider mb-4">Прогресс</h3>-->
+<!--                <div class="w-full bg-surface-variant h-1 rounded-full overflow-hidden">-->
+<!--                    <div class="bg-primary h-full rounded-full" style="width: 64%;"></div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="flex justify-between mt-4">-->
+<!--&lt;!&ndash;                <span class="text-on-surface-variant font-label-md text-label-md">Аттестационное тестирование</span>&ndash;&gt;-->
+<!--                <span class="text-primary font-bold text-label-md">осталось вопросов: 18</span>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-span-4 bg-surface-container-low p-8 rounded-xl flex items-center justify-center gap-6">-->
+<!--            <div class="relative w-20 h-20">-->
+<!--                <svg class="w-20 h-20 transform -rotate-90">-->
+<!--                    <circle class="text-surface-variant" cx="40" cy="40" fill="transparent" r="36" stroke="currentColor" stroke-width="4"></circle>-->
+<!--                    <circle class="text-primary" cx="40" cy="40" fill="transparent" r="36" stroke="currentColor" stroke-dasharray="226.2" stroke-dashoffset="56.5" stroke-width="4"></circle>-->
+<!--                </svg>-->
+<!--                <div class="absolute inset-0 flex items-center justify-center">-->
+<!--                    <span class="material-symbols-outlined text-primary" data-icon="schedule">schedule</span>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div>-->
+<!--                <p class="text-on-surface-variant font-label-md text-label-md uppercase tracking-wider">Оставшееся время</p>-->
+<!--                <p class="text-display-lg font-display-lg text-on-surface tabular-nums">45:12</p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
     <div class="grid grid-cols-1 gap-section-gap">
         <!-- Question 1: Text -->
         <section class="bg-surface-container-lowest p-12 rounded-xl ghost-border">
             <div class="flex items-start gap-6 mb-8">
-                <span class="w-10 h-10 rounded bg-slate-900 text-white flex items-center justify-center font-bold flex-shrink-0">01</span>
+                <span class="w-10 h-10 rounded bg-primary-gradient text-on-primary flex items-center justify-center font-bold flex-shrink-0">01</span>
                 <h2 class="font-headline-md text-headline-md text-on-surface leading-snug">
                     Что в соответствии с Гражданским кодексом является одним из признаков недвижимого имущества?
                 </h2>
@@ -182,7 +228,7 @@
         <!-- Question 2: Graphical -->
         <section class="bg-surface-container-lowest p-12 rounded-xl ghost-border">
             <div class="flex items-start gap-6 mb-8">
-                <span class="w-10 h-10 rounded bg-slate-900 text-white flex items-center justify-center font-bold flex-shrink-0">02</span>
+                <span class="w-10 h-10 rounded bg-primary-gradient text-on-primary flex items-center justify-center font-bold flex-shrink-0">02</span>
                 <h2 class="font-headline-md text-headline-md text-on-surface leading-snug">
                     Какое помещение в квартире (одноквартирном жилом доме), если оно соответствует определению "жилая комната", но согласно представленной проектной документации ему определено иное наименование, относится к жилой комнате?
                 </h2>
@@ -230,28 +276,75 @@
                     Инструкция № 11. Пункт 45
                 </p>
             </div>
-            <div class="lex items-center mt-4">
-                <div class="flex  items-center content-end justify-end gap-6">
-                    <button onclick="window.location.href='../Аттестационное тестирование_Результат/Результат_аттестационного тестирования.html'" class="px-10 py-3 bg-primary-gradient text-white rounded-lg font-bold text-xs tracking-widest uppercase shadow-md shadow-[#4e69c3]/20 flex items-center gap-2 active:opacity-80 active:scale-95 transition-all" style="">
-                        Следующий вопрос
-                        <span class="material-symbols-outlined text-lg" data-icon="arrow_forward">arrow_forward</span>
-                    </button>
-                </div>
-            </div>
+<!--            <div class="lex items-center mt-4">-->
+<!--                <div class="flex  items-center content-end justify-end gap-6">-->
+<!--                    <button onclick="window.location.href='../Аттестационное тестирование_Результат/Результат_аттестационного тестирования.html'" class="px-10 py-3 bg-primary-gradient text-white rounded-lg font-bold text-xs tracking-widest uppercase shadow-md shadow-[#4e69c3]/20 flex items-center gap-2 active:opacity-80 active:scale-95 transition-all" style="">-->
+<!--                        Следующий вопрос-->
+<!--                        <span class="material-symbols-outlined text-lg" data-icon="arrow_forward">arrow_forward</span>-->
+<!--                    </button>-->
+<!--                </div>-->
+<!--            </div>-->
         </div>
     </div>
 </main>
-<!-- Footer -->
-<footer class="bg-[#f7f9fb] dark:bg-slate-950 border-t border-slate-200/20">
-<div class="w-full px-12 py-8 flex justify-between items-center max-w-screen-2xl mx-auto">
-<p class="text-[10px] font-label uppercase tracking-widest text-slate-400" style="">
-                ©  НКА Академия | ЕСА 2.0
-</p>
-<div class="flex gap-8">
-<a class="text-[10px] font-label uppercase tracking-widest text-slate-400 hover:text-slate-900 transition-colors" href="#" style="">Политика безопасности</a>
-<a class="text-[10px] font-label uppercase tracking-widest text-slate-400 hover:text-slate-900 transition-colors" href="#" style="">Условия доступа</a>
-<a class="text-[10px] font-label uppercase tracking-widest text-slate-400 hover:text-slate-900 transition-colors" href="#" style="">Служба поддержки</a>
-</div>
-</div>
+
+<!-- Bottom Action Bar -->
+<footer class="fixed bottom-0 left-0 right-0 h-20 bg-surface-container-lowest border-t border-outline-variant/15 px-8 flex items-center justify-between z-50">
+    <div class="w-72"></div> <!-- Sidebar Offset -->
+    <div class="flex-1 flex justify-between items-center max-w-5xl mx-auto w-full px-section-gap">
+<!--        <button class="flex items-center gap-2 font-label-md text-label-md text-outline cursor-not-allowed opacity-50 px-6 py-2.5" disabled="">-->
+<!--            <span class="material-symbols-outlined">arrow_back</span>-->
+<!--            Предыдущий вопрос-->
+<!--        </button>-->
+        <button onclick="window.location.href='#'" class="px-10 py-3 bg-surface-container-high/50 hover:scale-[1.02] active:scale-[0.98] transition-all rounded-lg font-bold text-xs tracking-widest uppercase shadow-md shadow-[#4e69c3]/20 flex items-center gap-2 active:opacity-80 active:scale-95 transition-all" style="">
+            Предыдущий вопрос
+            <span class="material-symbols-outlined text-lg" data-icon="arrow_back">arrow_back</span>
+        </button>
+        <button onclick="window.location.href='#'" class="px-10 py-3 bg-primary-gradient text-white rounded-lg font-bold text-xs tracking-widest hover:scale-[1.02] active:scale-[0.98] transition-all uppercase shadow-md shadow-[#4e69c3]/20 flex items-center gap-2 active:opacity-80 active:scale-95 transition-all" style="">
+            Ответить
+            <span class="material-symbols-outlined text-lg" data-icon="check_circle">check_circle</span>
+        </button>
+        <button onclick="window.location.href='../Аттестационное тестирование_Результат/Результат_аттестационного тестирования.html'" class="px-10 py-3 hover:scale-[1.02] active:scale-[0.98] transition-all bg-surface-container-high/50  rounded-lg font-bold text-xs tracking-widest uppercase shadow-md shadow-[#4e69c3]/20 flex items-center gap-2 active:opacity-80 active:scale-95 transition-all" style="">
+            Следующий вопрос
+            <span class="material-symbols-outlined text-lg" data-icon="arrow_forward">arrow_forward</span>
+        </button>
+    </div>
 </footer>
+
+<!-- Footer -->
+<!--<footer class="bg-[#f7f9fb] dark:bg-slate-950 border-t border-slate-200/20">-->
+<!--<div class="w-full px-12 py-8 flex justify-between items-center max-w-screen-2xl mx-auto">-->
+<!--<p class="text-[10px] font-label uppercase tracking-widest text-slate-400" style="">-->
+<!--                ©  НКА Академия | ЕСА 2.0-->
+<!--</p>-->
+<!--</div>-->
+<!--</footer>-->
+<!-- Micro-interaction script for the active session feel -->
+<script>
+    // Simple timer simulation (visual only as per prompt request)
+    let timeInSeconds = 32 * 60 + 15;
+    const timerElement = document.querySelector('.text-error');
+
+    setInterval(() => {
+        timeInSeconds--;
+        const mins = Math.floor(timeInSeconds / 60);
+        const secs = timeInSeconds % 60;
+        if (timerElement) {
+            timerElement.innerHTML = `
+                    <span class="material-symbols-outlined text-[14px]">timer</span>
+                    Оставшееся время: 00:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}
+                `;
+        }
+    }, 1000);
+
+    // Highlight selected answer
+    document.querySelectorAll('input[name="answer"]').forEach(input => {
+        input.addEventListener('change', function() {
+            document.querySelectorAll('label').forEach(l => l.classList.remove('bg-primary-fixed', 'border-primary'));
+            if (this.checked) {
+                this.closest('label').classList.add('bg-primary-fixed', 'border-primary');
+            }
+        });
+    });
+</script>
 </body></html>
