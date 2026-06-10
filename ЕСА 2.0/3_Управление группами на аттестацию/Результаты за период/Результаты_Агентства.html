@@ -486,10 +486,10 @@
 </button>
 </header>
     <div class="px-10 bg-surface-container-lowest border-b border-[#c6c6cd]/15 flex gap-8">
-        <button onclick="window.location.href='#'" class="py-4 border-b-2 border-primary text-primary font-label-md transition-colors">
+        <button onclick="window.location.href='./Результаты.html'" class="py-4 border-b-2 border-transparent text-on-surface-variant hover:text-on-surface font-label-md transition-colors">
             По группам
         </button>
-        <button onclick="window.location.href='./Результаты_Агентства.html'" class="py-4 border-b-2 border-transparent text-on-surface-variant hover:text-on-surface font-label-md transition-colors">
+        <button onclick="window.location.href='#'" class="py-4 border-b-2 border-primary text-primary font-label-md transition-colors">
             По агентствам
         </button>
     </div>
@@ -577,182 +577,142 @@
 </div>
 </div>
 <!-- Data Table Container -->
-<div class="flex-1 overflow-auto px-10 py-8">
-<table class="w-full border-separate border-spacing-y-0">
-<thead>
-<tr class="bg-surface-container-highest">
-<th class="py-2 px-2 text-left font-label-sm text-on-surface-variant tracking-wider first:rounded-l-lg">Номер группы</th>
-<th class="py-2 px-2 text-left font-label-sm text-on-surface-variant tracking-wider">Дата аттестации</th>
-<th class="py-2 px-2 text-center font-label-sm text-on-surface-variant tracking-wider">Претендентов</th>
-<th class="py-2 px-2 text-center font-label-sm text-on-surface-variant tracking-wider">Явилось</th>
-<th class="py-2 px-2 text-center font-label-sm text-on-surface-variant tracking-wider">Не явилось</th>
-<th class="py-2 px-2 text-center font-label-sm text-on-surface-variant tracking-wider">Аттестовано</th>
-<th class="py-2 px-2 text-center font-label-sm text-on-surface-variant tracking-wider">Не аттестовано</th>
-<th class="py-2 px-2 text-center font-label-sm text-on-surface-variant tracking-wider">Апелляций</th>
-<th class="py-2 px-2 text-center font-label-sm text-on-surface-variant tracking-wider">Нарушений</th>
-<th class="py-2 px-2 text-right font-label-sm text-on-surface-variant tracking-wider last:rounded-r-lg">Всего аттестовано, %</th>
-</tr>
-</thead>
-<tbody class="divide-y-0">
-<!-- Row 1 -->
-<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors group">
-<td class="py-5 px-6 font-label-md text-on-surface">№01</td>
-<td class="py-5 px-6 font-body-md text-on-surface-variant">21.01.2026</td>
-<td class="py-5 px-4 text-center font-body-md">25</td>
-<td class="py-5 px-4 text-center font-body-md text-on-primary-fixed-variant">23</td>
-<td class="py-5 px-4 text-center font-body-md text-error">2</td>
-<td class="py-5 px-4 text-center font-body-md text-tertiary">20</td>
-<td class="py-5 px-4 text-center font-body-md">3</td>
-<td class="py-5 px-4 text-center font-body-md">1</td>
-<td class="py-5 px-4 text-center font-body-md">0</td>
-<td class="py-5 px-6 text-right">
-<div class="flex items-center justify-end gap-3">
-<span class="font-label-md text-primary">87%</span>
-<div class="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.4)]"></div>
-</div>
-</td>
-</tr>
-<!-- Row 2 -->
-<tr class="bg-surface-container-low/50 hover:bg-surface-container-low transition-colors group">
-<td class="py-5 px-6 font-label-md text-on-surface">№02</td>
-<td class="py-5 px-6 font-body-md text-on-surface-variant">13.02.2026</td>
-<td class="py-5 px-4 text-center font-body-md">20</td>
-<td class="py-5 px-4 text-center font-body-md text-on-primary-fixed-variant">20</td>
-<td class="py-5 px-4 text-center font-body-md">0</td>
-<td class="py-5 px-4 text-center font-body-md text-tertiary">19</td>
-<td class="py-5 px-4 text-center font-body-md">1</td>
-<td class="py-5 px-4 text-center font-body-md">0</td>
-<td class="py-5 px-4 text-center font-body-md">0</td>
-<td class="py-5 px-6 text-right">
-<div class="flex items-center justify-end gap-3">
-<span class="font-label-md text-primary">95%</span>
-<div class="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.4)]"></div>
-</div>
-</td>
-</tr>
-<!-- Row 3 -->
-<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors group">
-<td class="py-5 px-6 font-label-md text-on-surface">№03</td>
-<td class="py-5 px-6 font-body-md text-on-surface-variant">18.03.2026</td>
-<td class="py-5 px-4 text-center font-body-md">15</td>
-<td class="py-5 px-4 text-center font-body-md text-on-primary-fixed-variant">12</td>
-<td class="py-5 px-4 text-center font-body-md text-error">3</td>
-<td class="py-5 px-4 text-center font-body-md text-tertiary">9</td>
-<td class="py-5 px-4 text-center font-body-md">3</td>
-<td class="py-5 px-4 text-center font-body-md">2</td>
-<td class="py-5 px-4 text-center font-body-md text-error">1</td>
-<td class="py-5 px-6 text-right">
-<div class="flex items-center justify-end gap-3">
-<span class="font-label-md text-primary">75%</span>
-<div class="w-2.5 h-2.5 rounded-full bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.4)]"></div>
-</div>
-</td>
-</tr>
-<!-- Row 4 -->
-<tr class="bg-surface-container-low/50 hover:bg-surface-container-low transition-colors group">
-<td class="py-5 px-6 font-label-md text-on-surface">№04</td>
-<td class="py-5 px-6 font-body-md text-on-surface-variant">22.04.2026</td>
-<td class="py-5 px-4 text-center font-body-md">25</td>
-<td class="py-5 px-4 text-center font-body-md text-on-primary-fixed-variant">24</td>
-<td class="py-5 px-4 text-center font-body-md text-error">1</td>
-<td class="py-5 px-4 text-center font-body-md text-tertiary">11</td>
-<td class="py-5 px-4 text-center font-body-md">13</td>
-<td class="py-5 px-4 text-center font-body-md">5</td>
-<td class="py-5 px-4 text-center font-body-md text-error">2</td>
-<td class="py-5 px-6 text-right">
-<div class="flex items-center justify-end gap-3">
-<span class="font-label-md text-primary">45%</span>
-<div class="w-2.5 h-2.5 rounded-full bg-rose-600 shadow-[0_0_8px_rgba(225,29,72,0.4)]"></div>
-</div>
-</td>
-</tr>
-<!-- Row 5 -->
-<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors group">
-<td class="py-5 px-6 font-label-md text-on-surface">№05</td>
-<td class="py-5 px-6 font-body-md text-on-surface-variant">12.05.2026</td>
-<td class="py-5 px-4 text-center font-body-md">22</td>
-<td class="py-5 px-4 text-center font-body-md text-on-primary-fixed-variant">22</td>
-<td class="py-5 px-4 text-center font-body-md text-outline">0</td>
-<td class="py-5 px-4 text-center font-body-md text-tertiary">18</td>
-<td class="py-5 px-4 text-center font-body-md">4</td>
-<td class="py-5 px-4 text-center font-body-md">1</td>
-<td class="py-5 px-4 text-center font-body-md">0</td>
-<td class="py-5 px-6 text-right">
-<div class="flex items-center justify-end gap-3">
-<span class="font-label-md text-primary">82%</span>
-<div class="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.4)]"></div>
-</div>
-</td>
-</tr>
-<!-- Row 6 -->
-<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors group">
-    <td class="py-5 px-6 font-label-md text-on-surface">№06</td>
-    <td class="py-5 px-6 font-body-md text-on-surface-variant">20.06.2026</td>
-    <td class="py-5 px-4 text-center font-body-md">23</td>
-    <td class="py-5 px-4 text-center font-body-md text-on-primary-fixed-variant">23</td>
-    <td class="py-5 px-4 text-center font-body-md text-outline">0</td>
-    <td class="py-5 px-4 text-center font-body-md text-tertiary">18</td>
-    <td class="py-5 px-4 text-center font-body-md">3</td>
-    <td class="py-5 px-4 text-center font-body-md">1</td>
-    <td class="py-5 px-4 text-center font-body-md">0</td>
-    <td class="py-5 px-6 text-right">
-        <div class="flex items-center justify-end gap-3">
-            <span class="font-label-md text-primary">82%</span>
-            <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.4)]"></div>
-        </div>
-    </td>
-</tr>
-<!-- Row 7 -->
-<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors group">
-    <td class="py-5 px-6 font-label-md text-on-surface">№07</td>
-    <td class="py-5 px-6 font-body-md text-on-surface-variant">10.07.2026</td>
-    <td class="py-5 px-4 text-center font-body-md">24</td>
-    <td class="py-5 px-4 text-center font-body-md text-on-primary-fixed-variant">22</td>
-    <td class="py-5 px-4 text-center font-body-md text-outline">0</td>
-    <td class="py-5 px-4 text-center font-body-md text-tertiary">19</td>
-    <td class="py-5 px-4 text-center font-body-md">4</td>
-    <td class="py-5 px-4 text-center font-body-md">1</td>
-    <td class="py-5 px-4 text-center font-body-md">0</td>
-    <td class="py-5 px-6 text-right">
-        <div class="flex items-center justify-end gap-3">
-            <span class="font-label-md text-primary">82%</span>
-            <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.4)]"></div>
-        </div>
-    </td>
-</tr>
-<!-- Row 8 -->
-<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors group">
-    <td class="py-5 px-6 font-label-md text-on-surface">№08</td>
-    <td class="py-5 px-6 font-body-md text-on-surface-variant">22.08.2026</td>
-    <td class="py-5 px-4 text-center font-body-md">20</td>
-    <td class="py-5 px-4 text-center font-body-md text-on-primary-fixed-variant">17</td>
-    <td class="py-5 px-4 text-center font-body-md text-outline">0</td>
-    <td class="py-5 px-4 text-center font-body-md text-tertiary">15</td>
-    <td class="py-5 px-4 text-center font-body-md">2</td>
-    <td class="py-5 px-4 text-center font-body-md">1</td>
-    <td class="py-5 px-4 text-center font-body-md">0</td>
-    <td class="py-5 px-6 text-right">
-        <div class="flex items-center justify-end gap-3">
-            <span class="font-label-md text-primary">82%</span>
-            <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.4)]"></div>
-        </div>
-    </td>
-</tr>
-<tr class="bg-surface-container">
-    <th class="py-2 px-2 text-left font-label-sm text-on-surface-variant tracking-wider first:rounded-l-lg">Итого:</th>
-    <th class="py-2 px-2 text-left font-label-sm text-on-surface-variant tracking-wider"></th>
-    <th class="py-2 px-2 text-center font-label-sm text-on-surface-variant tracking-wider">220</th>
-    <th class="py-2 px-2 text-center font-label-sm text-on-surface-variant tracking-wider">203</th>
-    <th class="py-2 px-2 text-center font-label-sm text-on-surface-variant tracking-wider">17</th>
-    <th class="py-2 px-2 text-center font-label-sm text-on-surface-variant tracking-wider">187</th>
-    <th class="py-2 px-2 text-center font-label-sm text-on-surface-variant tracking-wider">16</th>
-    <th class="py-2 px-2 text-center font-label-sm text-on-surface-variant tracking-wider">12</th>
-    <th class="py-2 px-2 text-center font-label-sm text-on-surface-variant tracking-wider">03</th>
-    <th class="py-2 px-2 text-right font-label-sm text-on-surface-variant tracking-wider last:rounded-r-lg">78%</th>
-</tr>
-</tbody>
-</table>
-</div>
+    <div class="flex-1 overflow-auto px-10 py-8">
+        <table class="w-full border-separate border-spacing-y-0">
+            <thead>
+            <tr class="bg-surface-container-highest">
+                <th class="py-4 px-6 text-left font-label-sm text-on-surface-variant uppercase tracking-wider first:rounded-l-lg">Агентство</th>
+<!--                <th class="py-4 px-6 text-left font-label-sm text-on-surface-variant uppercase tracking-wider">Дата аттестации</th>-->
+                <th class="py-4 px-4 text-center font-label-sm text-on-surface-variant uppercase tracking-wider">Претендентов</th>
+                <th class="py-4 px-4 text-center font-label-sm text-on-surface-variant uppercase tracking-wider">Явилось</th>
+                <th class="py-4 px-4 text-center font-label-sm text-on-surface-variant uppercase tracking-wider">Не явилось</th>
+                <th class="py-4 px-4 text-center font-label-sm text-on-surface-variant uppercase tracking-wider">Аттестовано</th>
+                <th class="py-4 px-4 text-center font-label-sm text-on-surface-variant uppercase tracking-wider">Не аттестовано</th>
+                <th class="py-4 px-4 text-center font-label-sm text-on-surface-variant uppercase tracking-wider">Апелляций</th>
+                <th class="py-4 px-4 text-center font-label-sm text-on-surface-variant uppercase tracking-wider">Нарушений</th>
+                <th class="py-4 px-6 text-right font-label-sm text-on-surface-variant uppercase tracking-wider last:rounded-r-lg">Всего аттестовано, %</th></tr>
+            </thead>
+            <tbody class="divide-y-0">
+            <tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors group">
+                <td class="py-5 px-6 font-label-md text-on-surface">Брестское Агентство</td>
+<!--                <td class="py-5 px-6 font-body-md text-on-surface-variant">14.11.2024</td>-->
+                <td class="py-5 px-4 text-center font-body-md">42</td>
+                <td class="py-5 px-4 text-center font-body-md text-on-primary-fixed-variant">40</td>
+                <td class="py-5 px-4 text-center font-body-md text-error">2</td>
+                <td class="py-5 px-4 text-center font-body-md text-tertiary">35</td>
+                <td class="py-5 px-4 text-center font-body-md">5</td>
+                <td class="py-5 px-4 text-center font-body-md">2</td>
+                <td class="py-5 px-4 text-center font-body-md">0</td>
+                <td class="py-5 px-6 text-right"><div class="flex items-center justify-end gap-3">
+                    <span class="font-label-md text-primary">83%</span>
+                    <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.4)]">
+
+                    </div>
+                </div>
+                </td>
+            </tr>
+            <tr class="bg-surface-container-low/50 hover:bg-surface-container-low transition-colors group">
+                <td class="py-5 px-6 font-label-md text-on-surface">Витебское</td>
+<!--                <td class="py-5 px-6 font-body-md text-on-surface-variant">16.11.2024</td>-->
+                <td class="py-5 px-4 text-center font-body-md">38</td>
+                <td class="py-5 px-4 text-center font-body-md text-on-primary-fixed-variant">36</td>
+                <td class="py-5 px-4 text-center font-body-md text-error">2</td>
+                <td class="py-5 px-4 text-center font-body-md text-tertiary">30</td>
+                <td class="py-5 px-4 text-center font-body-md">6</td>
+                <td class="py-5 px-4 text-center font-body-md">1</td>
+                <td class="py-5 px-4 text-center font-body-md">0</td>
+                <td class="py-5 px-6 text-right"><div class="flex items-center justify-end gap-3">
+                    <span class="font-label-md text-primary">79%</span>
+                    <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.4)]">
+
+                    </div>
+                </div>
+                </td>
+            </tr>
+            <tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors group">
+                <td class="py-5 px-6 font-label-md text-on-surface">Гомельское</td>
+<!--                <td class="py-5 px-6 font-body-md text-on-surface-variant">18.11.2024</td>-->
+                <td class="py-5 px-4 text-center font-body-md">55</td>
+                <td class="py-5 px-4 text-center font-body-md text-on-primary-fixed-variant">50</td>
+                <td class="py-5 px-4 text-center font-body-md text-error">5</td>
+                <td class="py-5 px-4 text-center font-body-md text-tertiary">42</td>
+                <td class="py-5 px-4 text-center font-body-md">8</td>
+                <td class="py-5 px-4 text-center font-body-md">3</td>
+                <td class="py-5 px-4 text-center font-body-md text-error">1</td>
+                <td class="py-5 px-6 text-right">
+                    <div class="flex items-center justify-end gap-3">
+                    <span class="font-label-md text-primary">76%</span>
+                    <div class="w-2.5 h-2.5 rounded-full bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.4)]"></div>
+                </div>
+                </td>
+            </tr>
+            <tr class="bg-surface-container-low/50 hover:bg-surface-container-low transition-colors group">
+                <td class="py-5 px-6 font-label-md text-on-surface">Гродненское</td>
+<!--                <td class="py-5 px-6 font-body-md text-on-surface-variant">20.11.2024</td>-->
+                <td class="py-5 px-4 text-center font-body-md">30</td>
+                <td class="py-5 px-4 text-center font-body-md text-on-primary-fixed-variant">29</td>
+                <td class="py-5 px-4 text-center font-body-md text-error">1</td>
+                <td class="py-5 px-4 text-center font-body-md text-tertiary">15</td>
+                <td class="py-5 px-4 text-center font-body-md">14</td>
+                <td class="py-5 px-4 text-center font-body-md">4</td>
+                <td class="py-5 px-4 text-center font-body-md text-error">2</td>
+                <td class="py-5 px-6 text-right">
+                    <div class="flex items-center justify-end gap-3">
+                    <span class="font-label-md text-primary">50%</span>
+                        <div class="w-2.5 h-2.5 rounded-full bg-rose-600 shadow-[0_0_8px_rgba(225,29,72,0.4)]"></div></div></td></tr>
+            <tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors group">
+                <td class="py-5 px-6 font-label-md text-on-surface">Минское областное</td>
+<!--                <td class="py-5 px-6 font-body-md text-on-surface-variant">22.11.2024</td>-->
+                <td class="py-5 px-4 text-center font-body-md">60</td>
+                <td class="py-5 px-4 text-center font-body-md text-on-primary-fixed-variant">60</td>
+                <td class="py-5 px-4 text-center font-body-md text-outline">0</td>
+                <td class="py-5 px-4 text-center font-body-md text-tertiary">55</td>
+                <td class="py-5 px-4 text-center font-body-md">5</td>
+                <td class="py-5 px-4 text-center font-body-md">1</td>
+                <td class="py-5 px-4 text-center font-body-md">0</td>
+                <td class="py-5 px-6 text-right">
+                    <div class="flex items-center justify-end gap-3">
+                    <span class="font-label-md text-primary">91%</span>
+                    <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.4)]">
+                    </div>
+                </div>
+                </td>
+            </tr>
+            <tr class="bg-surface-container-low/50 hover:bg-surface-container-low transition-colors group">
+                <td class="py-5 px-6 font-label-md text-on-surface">Могилевское</td>
+<!--                <td class="py-5 px-6 font-body-md text-on-surface-variant">24.11.2024</td>-->
+                <td class="py-5 px-4 text-center font-body-md">45</td>
+                <td class="py-5 px-4 text-center font-body-md text-on-primary-fixed-variant">43</td>
+                <td class="py-5 px-4 text-center font-body-md text-error">2</td>
+                <td class="py-5 px-4 text-center font-body-md text-tertiary">38</td>
+                <td class="py-5 px-4 text-center font-body-md">5</td><td class="py-5 px-4 text-center font-body-md">2</td>
+                <td class="py-5 px-4 text-center font-body-md">0</td>
+                <td class="py-5 px-6 text-right">
+                    <div class="flex items-center justify-end gap-3">
+                    <span class="font-label-md text-primary">84%</span>
+                        <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.4)]">
+
+                        </div></div></td></tr>
+            <tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors group">
+                <td class="py-5 px-6 font-label-md text-on-surface">Минское</td>
+<!--                <td class="py-5 px-6 font-body-md text-on-surface-variant">26.11.2024</td>-->
+                <td class="py-5 px-4 text-center font-body-md">80</td>
+                <td class="py-5 px-4 text-center font-body-md text-on-primary-fixed-variant">78</td>
+                <td class="py-5 px-4 text-center font-body-md text-error">2</td>
+                <td class="py-5 px-4 text-center font-body-md text-tertiary">72</td>
+                <td class="py-5 px-4 text-center font-body-md">6</td>
+                <td class="py-5 px-4 text-center font-body-md">3</td>
+                <td class="py-5 px-4 text-center font-body-md">0</td>
+                <td class="py-5 px-6 text-right"><div class="flex items-center justify-end gap-3">
+                    <span class="font-label-md text-primary">90%</span>
+                    <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.4)]">
+                </div>
+                </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 <!-- Footer Pagination/Summary -->
 <footer class="h-20 px-10 border-t border-[#c6c6cd]/15 flex items-center justify-between bg-surface-container-lowest">
 <div class="flex items-center gap-6">
