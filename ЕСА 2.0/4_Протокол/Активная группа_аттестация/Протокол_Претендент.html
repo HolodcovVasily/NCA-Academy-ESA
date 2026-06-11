@@ -682,11 +682,11 @@
 </div>
 <!-- Special Status Tags -->
 <div class="flex gap-2">
-    <button class="px-4 py-2 text-label-sm rounded-full bg-error-container text-on-error-container hover:opacity-80 transition-opacity">Назначено собеседование</button>
 <button class="px-4 py-2 text-label-sm rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-colors">Отсутствут</button>
 <button class="px-4 py-2 text-label-sm rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-colors">Отказ от прохождения аттестации</button>
-<button class="px-4 py-2 text-label-sm rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-colors">Отказ от ознакомления с АЛ</button>
-<button class="px-4 py-2 text-label-sm rounded-full bg-error-container text-on-error-container hover:opacity-80 transition-opacity">Апелляция</button>
+    <button class="px-4 py-2 text-label-sm rounded-full bg-error-container text-on-error-container hover:opacity-80 transition-opacity">Назначено собеседование</button>
+<!--<button class="px-4 py-2 text-label-sm rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-colors">Отказ от ознакомления с АЛ</button>-->
+<!--<button class="px-4 py-2 text-label-sm rounded-full bg-error-container text-on-error-container hover:opacity-80 transition-opacity">Апелляция</button>-->
 </div>
 </div>
 <!-- Modal Body Content -->
@@ -869,14 +869,15 @@
             <option>Аттестован, рекомендуется для для принятия решения о премировании</option>
             <option>Не аттестован</option>
             <option>Не аттестован, не соответствует занимаемой должности</option>
-            <option>Аттестован, допущен к выполнению работ в отношении видов объектов недвижимого имущества повышенной сложности </option>
+            <option>Не аттестован. Отстранен от аттестации</option>
+<!--            <option>Аттестован, допущен к выполнению работ в отношении видов объектов недвижимого имущества повышенной сложности </option>-->
 
             <!--    для аттестации на право выполнять работы по технической инвентаризации претенденту необходимо набрать не менее пяти баллов;-->
             <!--    для присвоения (подтверждения) II квалификационной категории претенденту необходимо набрать не менее шести баллов;-->
             <!--    для присвоения (подтверждения) I квалификационной категории претенденту необходимо набрать не менее семи баллов;-->
             <!--    для присвоения (подтверждения) должности ведущего специалиста по технической инвентаризации, руководителя структурного подразделения, выполняющего работы по технической инвентаризации претенденту необходимо набрать не менее восьми баллов;-->
             <!--    для принятия решения о премировании претендента необходимо набрать не менее девяти баллов.-->
-
+<!--            Не аттестован по причине отстранения-->
         </select>
     </div>
     <div class="space-y-2">
@@ -902,9 +903,9 @@
 <span class="material-symbols-outlined" data-icon="save">save</span>
                                 Сохранить аттестационный лист
                             </button>
-    <button class="w-full h-12 bg-error-container text-on-error-container hover:opacity-70 transition-opacity font-label-md rounded shadow-lg flex items-center justify-center gap-2">
+    <button onclick="window.location.href='./Отстранение.html'" class="w-full h-12 bg-error-container text-on-error-container hover:opacity-70 transition-opacity font-label-md rounded shadow-lg flex items-center justify-center gap-2">
         <span class="material-symbols-outlined text-[16px]" data-icon="cancel">cancel</span>
-        Аннулировать результат
+        Отстранить претендента
 
     </button>
 </div>
