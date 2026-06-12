@@ -228,14 +228,14 @@
 <!--                    </button>-->
                 </div>
 
-                <div class="flex gap-2 mb-4">
-<!--                    <button class="text-primary font-label-md text-label-md hover:underline">Выбрать все</button>-->
-<!--                    <span class="text-outline-variant">|</span>-->
-                    <button class="text-primary font-label-md text-label-md hover:underline flex items-center gap-1">
-                        <span class="material-symbols-outlined text-[16px]">bolt</span>
-                        Автораспределение
-                    </button>
-                </div>
+<!--                <div class="flex gap-2 mb-4">-->
+<!--&lt;!&ndash;                    <button class="text-primary font-label-md text-label-md hover:underline">Выбрать все</button>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <span class="text-outline-variant">|</span>&ndash;&gt;-->
+<!--                    <button class="text-primary font-label-md text-label-md hover:underline flex items-center gap-1">-->
+<!--                        <span class="material-symbols-outlined text-[16px]">bolt</span>-->
+<!--                        Автораспределение-->
+<!--                    </button>-->
+<!--                </div>-->
                 <div class="relative">
                     <span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline">search</span>
                     <input class="w-full pl-12 pr-4 py-3 bg-surface-container-highest border-none focus:bg-surface-container-lowest focus:border-b-2 focus:border-surface-tint transition-all placeholder:text-outline font-body-md rounded-t-lg" placeholder="Поиск по ФИО..." type="text"/>
@@ -392,6 +392,8 @@
                                 <span  class="bg-slate-400 text-on-primary text-[10px] px-2 py-1 rounded font-black tracking-widest uppercase">ПРОТОКОЛ</span>
                             </div>
                         </div>
+
+
                         <div class="space-y-2">
                             <div class="flex justify-between text-label-sm font-label-sm">
                                 <span class="text-on-surface-variant uppercase">Заполняемость</span>
@@ -402,7 +404,6 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- Test_end Group Card -->
                     <div class="p-5 bg-surface-container border-l-4 border-primary rounded-r-xl architectural-shadow scale-[1.02] transition-transform cursor-pointer">
                         <div class="flex justify-between items-start mb-4">
@@ -471,7 +472,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Active Group Card -->
+                    <!-- Complete Group Card -->
                     <div class="p-5 bg-surface-container border-l-4 border-primary rounded-r-xl architectural-shadow scale-[1.02] transition-transform cursor-pointer">
                         <div class="flex justify-between items-start mb-4">
                             <div>
@@ -505,7 +506,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Regular Group Card 1-->
+                    <!-- Open Group Card 1-->
                     <div class="p-5 bg-error-container rounded-xl hover:bg-error-container transition-colors cursor-pointer group">
                         <div class="flex justify-between items-start mb-4">
                             <div>
@@ -523,6 +524,13 @@
                                 <span class="material-symbols-outlined text-[18px]">schedule</span>
                                 12:00–14:00
                             </div>
+                        </div>
+                        <div class="flex items-center gap-4 text-on-surface-variant mb-6 font-label-md text-label-md">
+                            <div class="flex items-center gap-1 text-error">
+                                <span class="material-symbols-outlined text-[18px] text-error">calendar_today</span>
+                                Крайний срок формирования группы: 02.06.2026
+                            </div>
+
                         </div>
                         <div class="space-y-2">
                             <div class="flex justify-between text-label-sm font-label-sm">
