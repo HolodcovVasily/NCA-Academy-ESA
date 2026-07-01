@@ -169,48 +169,76 @@
         <div class="flex items-center gap-3">
             <button onclick="window.location.href='./Создание теста/Создание теста.html'" title="Добавить новый вопрос" class="px-5 py-2 text-sm font-semibold text-white bg-gradient-to-br from-[#4e69c3] to-[#001453] rounded-md active:scale-[0.98] transition-all">Создать тест</button>        </div>
     </div>
-    <!-- Dashboard Stats Cluster (Bento Style) -->
-    <div class="mt-section-gap grid grid-cols-3 gap-module-gap">
-        <div class="col-span-1 p-6 bg-surface-container-low rounded-xl">
-            <div class="text-on-surface-variant font-label-md mb-2">Всего тестов</div>
-            <div class="text-[32px] font-black text-[#4e69c3]">24</div>
-            <div class="mt-4 text-xs text-on-surface-variant/70">+10% за последний месяц</div>
-        </div>
-        <!-- Status Distribution Card -->
-        <div class="col-span-1 p-6 bg-surface-container-low rounded-xl">
-            <h3 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-6">Жизненный цикл тестов</h3>
-            <div class="space-y-4">
-                <div>
-                    <div class="flex justify-between text-[10px] font-bold mb-1.5">
-                        <span class="text-emerald-600 uppercase">Активный (84%)</span>
-                        <span class="text-slate-600 font-black">17</span>
-                    </div>
-                    <div class="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
-                        <div class="h-full bg-emerald-500 w-[84%] transition-all duration-700"></div>
+
+    <!-- Dashboard Stats -->
+    <section class="mb-section-gap grid grid-cols-12 gap-module-gap">
+        <!-- Global Statistics (Left) -->
+        <div class="col-span-4 bg-surface-container-low p-6 rounded-xl flex flex-col justify-between shadow-lg relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#4e69c3] to-[#001453]"></div>
+            <div>
+                <h2 class="font-label-sm uppercase tracking-widest text-on-surface-variant/60 mb-4">Общая статистика тестов</h2>
+                <div class="mb-6">
+                    <div class="text-on-surface-variant font-label-md mb-1">Общее количество тестов</div>
+                    <div class="flex items-baseline gap-2">
+                        <span class="text-[32px] font-black text-primary tracking-tighter drop-shadow-[0_0_8px_rgba(52,80,169,0.3)]">24</span>
+<!--                        <span class="text-xs text-[#006a52] font-bold bg-[#e7f3ef] px-2 py-0.5 rounded-full">+12%</span>-->
                     </div>
                 </div>
                 <div>
-                    <div class="flex justify-between text-[10px] font-bold mb-1.5">
-                        <span class="text-amber-600 uppercase">В разработке (10%)</span>
-                        <span class="text-slate-600 font-black">4</span>
+                    <div class="text-on-surface-variant font-label-md mb-3">Жизненный цикл тестов</div>
+                    <div class="h-2.5 w-full bg-surface-container-highest rounded-full overflow-hidden flex shadow-inner">
+                        <div class="h-full bg-emerald-500" style="width: 84%"></div>
+                        <div class="h-full bg-amber-200" style="width: 10%"></div>
+                        <div class="h-full bg-slate-400" style="width: 6%"></div>
                     </div>
-                    <div class="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
-                        <div class="h-full bg-amber-200 w-[10%] transition-all duration-700"></div>
-                    </div>
-                </div>
-                <div>
-                    <div class="flex justify-between text-[10px] font-bold mb-1.5">
-                        <span class="text-slate-500 uppercase">Архивный (6%)</span>
-                        <span class="text-slate-600 font-black">3</span>
-                    </div>
-                    <div class="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
-                        <div class="h-full bg-slate-400 w-[6%] transition-all duration-700"></div>
+                    <div class="mt-3 flex justify-between text-[10px] font-bold uppercase tracking-wider text-on-surface-variant/70">
+                        <span class="text-primary">Активный (84%)</span>
+                        <span class="">В разработке (10%)</span>
+                        <span class="">Архивный (6%)</span>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-<!-- Warning Message (Embedded Modal Mockup) -->
+
+        <!-- Specific Test Analytics (Right) -->
+        <div class="col-span-8 bg-surface-container-low p-6 rounded-xl shadow-lg">
+            <div class="flex justify-between items-start mb-6">
+                <div>
+                    <h2 class="font-label-sm uppercase tracking-widest text-on-surface-variant/60 mb-1">Статистика теста</h2>
+                    <h3 class="font-headline-md text-xl text-on-background tracking-tight">Аттестация специалистов по ТИ 22.04.2026</h3>
+                </div>
+                <div class="text-right">
+                    <div class="font-label-sm uppercase tracking-widest text-on-surface-variant/60">Последнее использование</div>
+                    <div class="font-label-md text-on-background">29.06.2026</div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-4 gap-4">
+                <div class="bg-surface-container-lowest p-4 rounded-lg shadow-[0_4px_20px_-4px_rgba(25,28,30,0.1)] hover:translate-y-[-2px] transition-transform">
+                    <div class="font-label-sm uppercase tracking-widest text-on-surface-variant/60 mb-1">Назначений</div>
+                    <div class="text-lg font-bold text-on-background tracking-tighter">14 Гр.</div>
+<!--                    <div class="text-[11px] text-on-surface-variant/70">3,912 Completions</div>-->
+                </div>
+                <div class="bg-[#001453] p-4 rounded-lg shadow-[0_8px_24px_-6px_rgba(0,20,83,0.3)] hover:translate-y-[-2px] transition-transform">
+                    <div class="font-label-sm uppercase tracking-widest text-white/60 mb-1">Процент прохождения</div>
+                    <div class="text-2xl font-black text-white tracking-tighter">92.4%</div>
+                    <div class="text-[11px] text-white/80">Прохождений теста 188</div>
+                </div>
+                <div class="bg-surface-container-lowest p-4 rounded-lg shadow-[0_4px_20px_-4px_rgba(25,28,30,0.1)] hover:translate-y-[-2px] transition-transform">
+                    <div class="font-label-sm uppercase tracking-widest text-on-surface-variant/60 mb-1">Среднее время прохождения</div>
+                    <div class="text-lg font-bold text-on-background tracking-tighter">48 мин.</div>
+<!--                    <div class="text-[11px] text-on-surface-variant/70">Avg. Session</div>-->
+                </div>
+                <div class="bg-surface-container-lowest p-4 rounded-lg shadow-[0_4px_20px_-4px_rgba(25,28,30,0.1)] hover:translate-y-[-2px] transition-transform">
+                    <div class="font-label-sm uppercase tracking-widest text-on-surface-variant/60 mb-1">Состав теста</div>
+                    <div class="text-lg font-bold text-on-background tracking-tighter">420 Активных вопросов</div>
+                    <div class="text-[11px] text-error font-medium">8 вопросов с отложенной публикацией</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Warning Message (Embedded Modal Mockup) -->
 <div class="mt-10 mb-section-gap bg-error-container/30 border-l-4 border-error p-container-padding flex items-start gap-4">
 <span class="material-symbols-outlined text-error">Warning</span>
 <div>
@@ -284,11 +312,11 @@
                             </div>
                         </div>
                     </th>
-                    <th class="px-4 py-4 cursor-pointer hover:text-brand-primary transition-colors group">
-                        <div class="flex items-center gap-1">
-                            Назначен <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
-                        </div>
-                    </th>
+<!--                    <th class="px-4 py-4 cursor-pointer hover:text-brand-primary transition-colors group">-->
+<!--                        <div class="flex items-center gap-1">-->
+<!--                            Назначен <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>-->
+<!--                        </div>-->
+<!--                    </th>-->
                     <th class="px-4 py-4 cursor-pointer hover:text-brand-primary transition-colors group">
                         <div class="flex items-center gap-1">
                             Режим <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
@@ -332,9 +360,9 @@
                     <td class="px-4 py-4">
                         <span class="px-2 py-0.5 bg-emerald-100 text-emerald-700 text-[9px] font-black uppercase rounded">Активный</span>
                     </td>
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">
-                        Назначен
-                    </td>
+<!--                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">-->
+<!--                        Назначен-->
+<!--                    </td>-->
                     <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">
                         Адаптивный
                     </td>
@@ -363,9 +391,9 @@
                     <td class="px-4 py-4">
                         <span class="px-2 py-0.5 bg-amber-200 text-amber-700 text-[9px] font-black uppercase rounded">В разработке</span>
                     </td>
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">
-                        Нет
-                    </td>
+<!--                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">-->
+<!--                        Нет-->
+<!--                    </td>-->
                     <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">
                         Адаптивный
                     </td>
@@ -394,9 +422,9 @@
                     <td class="px-4 py-4">
                         <span class="px-2 py-0.5 bg-emerald-100 text-emerald-700 text-[9px] font-black uppercase rounded">Активный</span>
                     </td>
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">
-                        Нет
-                    </td>
+<!--                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">-->
+<!--                        Нет-->
+<!--                    </td>-->
                     <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">
                         Стандартный
                     </td>
@@ -425,9 +453,9 @@
                     <td class="px-4 py-4">
                         <span class="px-2 py-0.5 bg-emerald-100 text-emerald-700 text-[9px] font-black uppercase rounded">Активный</span>
                     </td>
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">
-                        Назначен
-                    </td>
+<!--                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">-->
+<!--                        Назначен-->
+<!--                    </td>-->
                     <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">
                         Стандартный
                     </td>
@@ -456,9 +484,9 @@
                     <td class="px-4 py-4">
                         <span class="px-2 py-0.5 bg-emerald-100 text-emerald-700 text-[9px] font-black uppercase rounded">Активный</span>
                     </td>
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">
-                        Нет
-                    </td>
+<!--                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">-->
+<!--                        Нет-->
+<!--                    </td>-->
                     <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">
                         Адаптивный
                     </td>
