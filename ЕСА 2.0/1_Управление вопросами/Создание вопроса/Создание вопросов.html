@@ -191,7 +191,7 @@
             <div class="space-y-4">
                 <!-- Field 1: Select Document -->
                 <div>
-                    <label class="font-label-sm text-label-sm text-outline uppercase mb-2 block px-1">Выберите документ...<span class="text-error">*</span></label>
+                    <label class="font-label-sm text-label-sm text-outline uppercase mb-2 block px-1">Выберите документ<span class="text-error">*</span></label>
                     <div class="relative">
                         <select class="w-full h-11 pl-4 pr-10 bg-surface-container-highest border-none font-body-md text-on-surface rounded-lg focus:ring-1 focus:ring-primary appearance-none cursor-pointer">
                             <option disabled="" selected="" value="">Выберите документ...</option>
@@ -223,16 +223,17 @@
                 <span class="material-symbols-outlined text-primary" data-icon="inventory_2">inventory_2</span>
                 Метаданные вопроса
             </h3>
-            <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1" style="">Статус вопроса</label>
+            <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1" style="">Статус вопроса<span class="text-error">*</span></label>
             <select class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface appearance-none bottom-border-focus">
-                <option disabled="" selected="" value="">Выберите статус</option>
-                <option title="только внесли/изменили статус с активного - не отображается в тестах">В разработке</option>
+<!--                <option disabled="" selected="" value="">Выберите статус</option>-->
+                <option selected="" title="только внесли/изменили статус с активного - не отображается в тестах">В разработке</option>
                 <option title="утвержден ГКИ, можно его применять в аттестации" >Активный</option>
                 <option title="не отображается в тестах">Архивный</option>
+                <option title="изменения в структурной единице нормативного документа">Требует актуализации</option>
             </select>
         </div>
         <div class="space-y-2">
-            <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1" style="">Сложность вопроса</label>
+            <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1" style="">Сложность вопроса<span class="text-error">*</span></label>
             <select class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface appearance-none bottom-border-focus">
                 <option disabled="" selected="" value="">Укажите сложность вопроса</option>
                 <option>Легкая</option>
@@ -240,6 +241,10 @@
                 <option>Сложная</option>
             </select>
         </div>
+            <div>
+                <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Дата вступления в силу</label>
+                <input class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant" type="text" value="01.09.2026"/>
+            </div>
         <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Номер (ID)</label>
         <input class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant cursor-not-allowed" readonly="" type="text" value="4153723"/>
     </div>
@@ -294,7 +299,7 @@
     </div>
     <!-- Source Reference -->
     <section class="bg-surface-container-lowest p-4 rounded-xl">
-        <label class="text-[10px] font-bold uppercase tracking-widest text-slate-500 block mb-6" style="">Ссылка на источник</label>
+        <label class="text-[10px] font-bold uppercase tracking-widest text-slate-500 block mb-2" style="">Ссылка на источник</label>
         <div class="space-y-2">
             <span class="text-[10px] font-bold uppercase text-outline" style="">Структурная единица</span>
             <input class="w-full bg-surface-container-low border-none rounded-lg px-4 py-2.5 text-sm cursor-not-allowed" readonly="" type="text" value="" placeholder="Глава 3. Статья 15. Пункт 15.2">

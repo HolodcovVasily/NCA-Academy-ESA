@@ -140,9 +140,13 @@
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
                 На главную
             </a>
-            <a class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-600 rounded-lg hover:bg-brand-container transition-colors" href="../1_Управление%20вопросами/Управление%20вопросами/Управление%20вопросами.html">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-                Управление вопросами
+<!--            <a class="flex items-center gap-3 px-4 py-3 text-[#4e69c3] bg-white font-bold transition-transform duration-200 scale-98" href="#">-->
+<!--                <span class="material-symbols-outlined">badge</span>-->
+<!--                <span>Аттестация</span>-->
+<!--            </a>-->
+            <a class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-600 rounded-lg hover:bg-brand-container transition-colors" href="../3_Управление%20группами%20на%20аттестацию/Аттестация_new.html">
+                <span class="material-symbols-outlined">badge</span>
+                Аттестация
             </a>
             <a class="sidebar-active flex items-center gap-3 px-4 py-3 bg-white dark:bg-slate-800 text-[#4e69c3] font-semibold rounded-l-lg shadow-sm transition-all duration-200"  href="#">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
@@ -220,7 +224,7 @@
 
     <!-- Bank of Questions Table -->
     <div class="px-8 pb-8 flex-1">
-        <div class="bg-surface-container-lowest rounded-xl overflow-hidden border border-surface-container shadow-sm">
+        <th class="bg-surface-container-lowest rounded-xl overflow-hidden border border-surface-container shadow-sm">
             <!-- Table Controls -->
             <div class="p-4 flex flex-row-reverse items-center gap-4 bg-brand-container/30 rounded-t-lg">
                 <div class="relative flex-1 max-w-sm">
@@ -241,19 +245,43 @@
                             Наименование <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
                         </div>
                     </th>
-                    <th class="px-4 py-4 cursor-pointer hover:text-brand-primary transition-colors group">
-                        <div class="flex items-center gap-1">
-                            Разделов <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
-                        </div>
-                    </th>
-                    <th class="px-4 py-4 cursor-pointer hover:text-brand-primary transition-colors group">
-                        <div class="flex items-center gap-1">
-                            Тип <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
-                        </div>
-                    </th>
+<!--                    <th class="px-4 py-4 cursor-pointer hover:text-brand-primary transition-colors group">-->
+<!--                        <div class="flex items-center gap-1">-->
+<!--                            Разделов <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>-->
+<!--                        </div>-->
+<!--                    </th>-->
+<!--                    <th class="px-4 py-4 cursor-pointer hover:text-brand-primary transition-colors group">-->
+<!--                        <div class="flex items-center gap-1">-->
+<!--                            Тип <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>-->
+<!--                        </div>-->
+<!--                    </th>-->
+<!--                    <th class="px-4 py-4 w-32 cursor-pointer hover:text-brand-primary transition-colors group">-->
+<!--                        <div class="flex items-center gap-1">-->
+<!--                            Статус <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>-->
+<!--                        </div>-->
+<!--                    </th>-->
+<!--                    <div class="col-span-1">-->
                     <th class="px-4 py-4 w-32 cursor-pointer hover:text-brand-primary transition-colors group">
-                        <div class="flex items-center gap-1">
-                            Статус <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
+                        <div class="relative inline-block" id="statusFilterContainer">
+                            <div class="flex items-center gap-1 cursor-pointer hover:text-primary transition-colors" id="statusFilterTrigger">
+                                <span>Статус</span>
+                                <span class="material-symbols-outlined text-[14px]">filter_list</span>
+                            </div>
+                            <!-- Dropdown Status Menu -->
+                            <div class="absolute top-full left-0 mt-2 w-48 bg-surface-container-lowest rounded-xl vault-dropdown-shadow p-4 z-[110] space-y-4 hidden" id="statusFilterDropdown">
+                                <label class="flex items-center gap-3 cursor-pointer group/item">
+                                    <input checked="" class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox">
+                                    <span class="font-label-md text-on-surface-variant group-hover/item:text-primary transition-colors">В разработке</span>
+                                </label>
+                                <label class="flex items-center gap-3 cursor-pointer group/item">
+                                    <input checked="" class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox">
+                                    <span class="font-label-md text-on-surface-variant group-hover/item:text-primary transition-colors">Активный</span>
+                                </label>
+                                <label class="flex items-center gap-3 cursor-pointer group/item">
+                                    <input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox">
+                                    <span class="font-label-md text-on-surface-variant group-hover/item:text-primary transition-colors">Архивный</span>
+                                </label>
+                            </div>
                         </div>
                     </th>
                     <th class="px-4 py-4 cursor-pointer hover:text-brand-primary transition-colors group">
@@ -297,10 +325,10 @@
                 <tr class="hover:bg-surface-container-low/50 transition-colors group cursor-pointer">
                     <td class="px-4 py-4 text-xs font-bold text-[#001453]">001</td>
                     <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">Аттестация специалистов по ТИ 22.04.2026</td>
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">07</td>
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">
-                        Аттестационный
-                    </td>
+<!--                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">07</td>-->
+<!--                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">-->
+<!--                        Аттестационный-->
+<!--                    </td>-->
                     <td class="px-4 py-4">
                         <span class="px-2 py-0.5 bg-emerald-100 text-emerald-700 text-[9px] font-black uppercase rounded">Активный</span>
                     </td>
@@ -328,10 +356,10 @@
                 <tr class="hover:bg-surface-container-low/50 transition-colors group cursor-pointer">
                     <td class="px-4 py-4 text-xs font-bold text-[#001453]">002</td>
                     <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">Курсы повышения квалификации специалистов по ТИ_тест 2026</td>
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">07</td>
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">
-                        Экзаменационный
-                    </td>
+<!--                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">07</td>-->
+<!--                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">-->
+<!--                        Экзаменационный-->
+<!--                    </td>-->
                     <td class="px-4 py-4">
                         <span class="px-2 py-0.5 bg-amber-200 text-amber-700 text-[9px] font-black uppercase rounded">В разработке</span>
                     </td>
@@ -359,10 +387,10 @@
                 <tr class="hover:bg-surface-container-low/50 transition-colors group cursor-pointer">
                     <td class="px-4 py-4 text-xs font-bold text-[#001453]">003</td>
                     <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">Тест учебный_Гражданский кодекс</td>
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">07</td>
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">
-                        Учебный
-                    </td>
+<!--                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">07</td>-->
+<!--                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">-->
+<!--                        Учебный-->
+<!--                    </td>-->
                     <td class="px-4 py-4">
                         <span class="px-2 py-0.5 bg-emerald-100 text-emerald-700 text-[9px] font-black uppercase rounded">Активный</span>
                     </td>
@@ -390,10 +418,10 @@
                 <tr class="hover:bg-surface-container-low/50 transition-colors group cursor-pointer">
                     <td class="px-4 py-4 text-xs font-bold text-[#001453]">004</td>
                     <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">Аттестация специалистов по ТИ 14.05.2025</td>
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">07</td>
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">
-                        Аттестационный
-                    </td>
+<!--                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">07</td>-->
+<!--                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">-->
+<!--                        Аттестационный-->
+<!--                    </td>-->
                     <td class="px-4 py-4">
                         <span class="px-2 py-0.5 bg-emerald-100 text-emerald-700 text-[9px] font-black uppercase rounded">Активный</span>
                     </td>
@@ -421,12 +449,12 @@
                 <tr class="hover:bg-surface-container-low/50 transition-colors group cursor-pointer">
                     <td class="px-4 py-4 text-xs font-bold text-[#001453]">005</td>
                     <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">Аттестация специалистов по ТИ 01.12.2025</td>
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">06</td>
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">
-                        Аттестационный
-                    </td>
+<!--                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">06</td>-->
+<!--                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">-->
+<!--                        Аттестационный-->
+<!--                    </td>-->
                     <td class="px-4 py-4">
-                        <span class="px-2 py-0.5 bg-surface-container-highest text-on-surface-variant text-[9px] font-black uppercase rounded">Архивный</span>
+                        <span class="px-2 py-0.5 bg-emerald-100 text-emerald-700 text-[9px] font-black uppercase rounded">Активный</span>
                     </td>
                     <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">
                         Нет
@@ -465,7 +493,33 @@
                 </div>
             </div>
         </div>
-    </div>
 </main>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const statusTrigger = document.getElementById('statusFilterTrigger');
+        const statusDropdown = document.getElementById('statusFilterDropdown');
+        const statusContainer = document.getElementById('statusFilterContainer');
+
+        if (statusTrigger && statusDropdown) {
+            // Toggle dropdown visibility
+            statusTrigger.addEventListener('click', (e) => {
+                e.stopPropagation();
+                statusDropdown.classList.toggle('hidden');
+            });
+
+            // Prevent dropdown from closing when clicking inside it
+            statusDropdown.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+
+            // Close when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!statusContainer.contains(e.target)) {
+                    statusDropdown.classList.add('hidden');
+                }
+            });
+        }
+    });
+</script>
 </body></html>
