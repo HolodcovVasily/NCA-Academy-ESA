@@ -118,13 +118,13 @@
 <header class="h-14 bg-brand-lowest flex items-center justify-between px-6 z-20" data-purpose="top-navigation">
     <div class="flex items-center gap-8">
         <div class="flex items-center gap-2">
-            <h1 class="text-xl font-black text-[#001453] dark:text-white">НКА Академия | ЕСА 2.0 | Управление тестами</h1>
+            <h1 class="text-xl font-black text-[#001453] dark:text-white">НКА Академия | Управление тестами</h1>
         </div>
     </div>
     <div class="flex items-center gap-6">
         <div class="flex items-center gap-2">
             <div class="text-right">
-                <p class="text-xs font-semibold">Администратор вопросов</p>
+                <p class="text-xs font-semibold">Администратор СА</p>
                 <p class="text-[10px] text-slate-500">Давыдович Ю.В.</p>
             </div>
             <div class="w-9 h-9 rounded-full bg-brand-container flex items-center justify-center">
@@ -160,9 +160,9 @@
     </aside>
 
 <!-- Main Content Area -->
-<main class="ml-4 flex-1 p-section-gap overflow-y-auto">
+<main class="flex-1 p-4 overflow-y-auto">
 <!-- Page Header -->
-    <div class="flex justify-between items-center w-full px-8 h-16 bg-[#f7f9fb] dark:bg-slate-950 sticky top-0 z-50 border-b border-surface-container">
+    <div class="flex justify-between items-center w-full h-16 bg-[#f7f9fb] dark:bg-slate-950 sticky top-0 z-50 border-b border-surface-container">
         <div class="flex items-center gap-8">
             <h1 class="text-lg font-bold tracking-tighter text-[#001453] dark:text-white">Банк тестов</h1>
         </div>
@@ -219,7 +219,7 @@
                     <div class="text-lg font-bold text-on-background tracking-tighter">14 Гр.</div>
 <!--                    <div class="text-[11px] text-on-surface-variant/70">3,912 Completions</div>-->
                 </div>
-                <div class="bg-[#001453] p-4 rounded-lg shadow-[0_8px_24px_-6px_rgba(0,20,83,0.3)] hover:translate-y-[-2px] transition-transform">
+                <div class="bg-gradient-to-br from-[#4e69c3] to-[#001453] p-4 rounded-lg shadow-[0_8px_24px_-6px_rgba(0,20,83,0.3)] hover:translate-y-[-2px] transition-transform">
                     <div class="font-label-sm uppercase tracking-widest text-white/60 mb-1">Процент прохождения</div>
                     <div class="text-2xl font-black text-white tracking-tighter">92.4%</div>
                     <div class="text-[11px] text-white/80">Прохождений теста 188</div>
@@ -239,7 +239,7 @@
     </section>
 
     <!-- Warning Message (Embedded Modal Mockup) -->
-<div class="mt-10 mb-section-gap bg-error-container/30 border-l-4 border-error p-container-padding flex items-start gap-4">
+<div class="mt-2 mb-2 bg-error-container/30 border-l-4 border-error p-container-padding flex items-start gap-4">
 <span class="material-symbols-outlined text-error">Warning</span>
 <div>
 <p class="font-label-md text-on-error-container">Предупреждение: тест не подлежит удалению.</p>
@@ -254,7 +254,7 @@
     <div class="px-8 pb-8 flex-1">
         <th class="bg-surface-container-lowest rounded-xl overflow-hidden border border-surface-container shadow-sm">
             <!-- Table Controls -->
-            <div class="p-4 flex flex-row-reverse items-center gap-4 bg-brand-container/30 rounded-t-lg">
+            <div class="p-2 flex flex-row-reverse items-center gap-4 bg-brand-container/30 rounded-t-lg">
                 <div class="relative flex-1 max-w-sm">
                     <input class="w-full pl-9 pr-4 py-2 bg-brand-lowest text-xs border-none rounded-md ring-1 ring-slate-200 focus:ring-brand-primary" placeholder="Поиск по наименованию теста" type="text">
                     <svg class="w-4 h-4 text-slate-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
@@ -263,12 +263,12 @@
             <table class="w-full text-left border-collapse">
                 <thead class="sticky top-0 bg-brand-lowest text-[10px] font-bold uppercase text-slate-400 border-b border-brand-container">
                 <tr>
-                    <th class="px-4 py-4 w-24 cursor-pointer hover:text-brand-primary transition-colors group">
+                    <th class="px-2 py-2 w-24 cursor-pointer hover:text-brand-primary transition-colors group">
                         <div class="flex items-center gap-1">
                             ID <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
                         </div>
                     </th>
-                    <th class="px-4 py-4 cursor-pointer hover:text-brand-primary transition-colors group">
+                    <th class="px-2 py-2 cursor-pointer hover:text-brand-primary transition-colors group">
                         <div class="flex items-center gap-1">
                             Наименование <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
                         </div>
@@ -289,7 +289,7 @@
 <!--                        </div>-->
 <!--                    </th>-->
 <!--                    <div class="col-span-1">-->
-                    <th class="px-4 py-4 w-32 cursor-pointer hover:text-brand-primary transition-colors group">
+                    <th class="px-2 py-2 w-32 cursor-pointer hover:text-brand-primary transition-colors group">
                         <div class="relative inline-block" id="statusFilterContainer">
                             <div class="flex items-center gap-1 cursor-pointer hover:text-primary transition-colors" id="statusFilterTrigger">
                                 <span>Статус</span>
@@ -317,33 +317,33 @@
 <!--                            Назначен <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>-->
 <!--                        </div>-->
 <!--                    </th>-->
-                    <th class="px-4 py-4 cursor-pointer hover:text-brand-primary transition-colors group">
+                    <th class="px-2 py-2 cursor-pointer hover:text-brand-primary transition-colors group">
                         <div class="flex items-center gap-1">
                             Режим <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
                         </div>
                     </th>
-                    <th class="px-4 py-4 cursor-pointer hover:text-brand-primary transition-colors group">
+                    <th class="px-2 py-2 cursor-pointer hover:text-brand-primary transition-colors group">
                         <div class="flex items-center gap-1">
                             Всего вопросов в разделах <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
                         </div>
                     </th>
-                    <th class="px-4 py-4 cursor-pointer hover:text-brand-primary transition-colors group">
+                    <th class="px-2 py-2 cursor-pointer hover:text-brand-primary transition-colors group">
                         <div class="flex items-center gap-1">
                             Количество вопросов <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
                         </div>
                     </th>
-                    <th class="px-4 py-4 cursor-pointer hover:text-brand-primary transition-colors group">
+                    <th class="px-2 py-2 cursor-pointer hover:text-brand-primary transition-colors group">
                         <div class="flex items-center gap-1">
                             Количество правильных ответов <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
                         </div>
                     </th>
 
-                    <th class="px-4 py-4 cursor-pointer hover:text-brand-primary transition-colors group">
+                    <th class="px-2 py-2 cursor-pointer hover:text-brand-primary transition-colors group">
                         <div class="flex items-center gap-1">
                             Таймер, мин. <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
                         </div>
                     </th>
-                    <th class="px-4 py-4 w-32 text-right pr-6 cursor-pointer hover:text-brand-primary transition-colors group">
+                    <th class="px-2 py-2 w-32 text-right pr-6 cursor-pointer hover:text-brand-primary transition-colors group">
                         <div class="flex items-center justify-end gap-1">
                             Действия <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">settings</span>
                         </div>
@@ -351,26 +351,26 @@
                 </thead>
                 <tbody class="divide-y divide-surface-container">
                 <tr class="hover:bg-surface-container-low/50 transition-colors group cursor-pointer">
-                    <td class="px-4 py-4 text-xs font-bold text-[#001453]">001</td>
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">Аттестация специалистов по ТИ 22.04.2026</td>
+                    <td class="px-2 py-2 text-xs font-bold text-[#001453]">001</td>
+                    <td class="px-2 py-2 text-xs text-on-surface truncate max-w-[300px]">Аттестация специалистов по ТИ 22.04.2026</td>
 <!--                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">07</td>-->
 <!--                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">-->
 <!--                        Аттестационный-->
 <!--                    </td>-->
-                    <td class="px-4 py-4">
+                    <td class="px-2 py-2">
                         <span class="px-2 py-0.5 bg-emerald-100 text-emerald-700 text-[9px] font-black uppercase rounded">Активный</span>
                     </td>
 <!--                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">-->
 <!--                        Назначен-->
 <!--                    </td>-->
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">
+                    <td class="px-2 py-2 text-xs text-on-surface truncate max-w-[300px]">
                         Адаптивный
                     </td>
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">420</td>
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">40</td>
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">35</td>
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">60</td>
-                    <td class="px-6 py-4">
+                    <td class="px-2 py-2 text-xs text-on-surface truncate max-w-[300px]">420</td>
+                    <td class="px-2 py-2 text-xs text-on-surface truncate max-w-[300px]">40</td>
+                    <td class="px-2 py-2 text-xs text-on-surface truncate max-w-[300px]">35</td>
+                    <td class="px-2 py-2 text-xs text-on-surface truncate max-w-[300px]">60</td>
+                    <td class="px-2 py-2">
                         <div class="flex items-center justify-end gap-1">
                             <button class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">
                                 <span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
@@ -382,26 +382,26 @@
                     </td>
                 </tr>
                 <tr class="hover:bg-surface-container-low/50 transition-colors group cursor-pointer">
-                    <td class="px-4 py-4 text-xs font-bold text-[#001453]">002</td>
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">Курсы повышения квалификации специалистов по ТИ_тест 2026</td>
+                    <td class="px-2 py-2 text-xs font-bold text-[#001453]">002</td>
+                    <td class="px-2 py-2 text-xs text-on-surface truncate max-w-[300px]">Курсы повышения квалификации специалистов по ТИ_тест 2026</td>
 <!--                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">07</td>-->
 <!--                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">-->
 <!--                        Экзаменационный-->
 <!--                    </td>-->
-                    <td class="px-4 py-4">
+                    <td class="px-2 py-2">
                         <span class="px-2 py-0.5 bg-amber-200 text-amber-700 text-[9px] font-black uppercase rounded">В разработке</span>
                     </td>
 <!--                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">-->
 <!--                        Нет-->
 <!--                    </td>-->
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">
+                    <td class="px-2 py-2 text-xs text-on-surface truncate max-w-[300px]">
                         Адаптивный
                     </td>
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">420</td>
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">30</td>
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">25</td>
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">60</td>
-                    <td class="px-6 py-4">
+                    <td class="px-2 py-2 text-xs text-on-surface truncate max-w-[300px]">420</td>
+                    <td class="px-2 py-2 text-xs text-on-surface truncate max-w-[300px]">30</td>
+                    <td class="px-2 py-2 text-xs text-on-surface truncate max-w-[300px]">25</td>
+                    <td class="px-2 py-2 text-xs text-on-surface truncate max-w-[300px]">60</td>
+                    <td class="px-2 py-2">
                         <div class="flex items-center justify-end gap-1">
                             <button class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">
                                 <span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
@@ -413,26 +413,26 @@
                     </td>
                 </tr>
                 <tr class="hover:bg-surface-container-low/50 transition-colors group cursor-pointer">
-                    <td class="px-4 py-4 text-xs font-bold text-[#001453]">003</td>
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">Тест учебный_Гражданский кодекс</td>
+                    <td class="px-2 py-2 text-xs font-bold text-[#001453]">003</td>
+                    <td class="px-2 py-2 text-xs text-on-surface truncate max-w-[300px]">Тест учебный_Гражданский кодекс</td>
 <!--                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">07</td>-->
 <!--                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">-->
 <!--                        Учебный-->
 <!--                    </td>-->
-                    <td class="px-4 py-4">
+                    <td class="px-2 py-2">
                         <span class="px-2 py-0.5 bg-emerald-100 text-emerald-700 text-[9px] font-black uppercase rounded">Активный</span>
                     </td>
 <!--                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">-->
 <!--                        Нет-->
 <!--                    </td>-->
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">
+                    <td class="px-2 py-2 text-xs text-on-surface truncate max-w-[300px]">
                         Стандартный
                     </td>
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">12</td>
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">12</td>
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">12</td>
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">-</td>
-                    <td class="px-6 py-4">
+                    <td class="px-2 py-2 text-xs text-on-surface truncate max-w-[300px]">12</td>
+                    <td class="px-2 py-2 text-xs text-on-surface truncate max-w-[300px]">12</td>
+                    <td class="px-2 py-2 text-xs text-on-surface truncate max-w-[300px]">12</td>
+                    <td class="px-2 py-2 text-xs text-on-surface truncate max-w-[300px]">-</td>
+                    <td class="px-2 py-2">
                         <div class="flex items-center justify-end gap-1">
                             <button class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">
                                 <span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
@@ -444,26 +444,26 @@
                     </td>
                 </tr>
                 <tr class="hover:bg-surface-container-low/50 transition-colors group cursor-pointer">
-                    <td class="px-4 py-4 text-xs font-bold text-[#001453]">004</td>
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">Аттестация специалистов по ТИ 14.05.2025</td>
+                    <td class="px-2 py-2 text-xs font-bold text-[#001453]">004</td>
+                    <td class="px-2 py-2 text-xs text-on-surface truncate max-w-[300px]">Аттестация специалистов по ТИ 14.05.2025</td>
 <!--                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">07</td>-->
 <!--                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">-->
 <!--                        Аттестационный-->
 <!--                    </td>-->
-                    <td class="px-4 py-4">
+                    <td class="px-2 py-2">
                         <span class="px-2 py-0.5 bg-emerald-100 text-emerald-700 text-[9px] font-black uppercase rounded">Активный</span>
                     </td>
 <!--                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">-->
 <!--                        Назначен-->
 <!--                    </td>-->
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">
+                    <td class="px-2 py-2 text-xs text-on-surface truncate max-w-[300px]">
                         Стандартный
                     </td>
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">420</td>
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">40</td>
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">40</td>
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">60</td>
-                    <td class="px-6 py-4">
+                    <td class="px-2 py-2 text-xs text-on-surface truncate max-w-[300px]">420</td>
+                    <td class="px-2 py-2 text-xs text-on-surface truncate max-w-[300px]">40</td>
+                    <td class="px-2 py-2 text-xs text-on-surface truncate max-w-[300px]">40</td>
+                    <td class="px-2 py-2 text-xs text-on-surface truncate max-w-[300px]">60</td>
+                    <td class="px-2 py-2">
                         <div class="flex items-center justify-end gap-1">
                             <button class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">
                                 <span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
@@ -475,26 +475,26 @@
                     </td>
                 </tr>
                 <tr class="hover:bg-surface-container-low/50 transition-colors group cursor-pointer">
-                    <td class="px-4 py-4 text-xs font-bold text-[#001453]">005</td>
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">Аттестация специалистов по ТИ 01.12.2025</td>
+                    <td class="px-2 py-2 text-xs font-bold text-[#001453]">005</td>
+                    <td class="px-2 py-2 text-xs text-on-surface truncate max-w-[300px]">Аттестация специалистов по ТИ 01.12.2025</td>
 <!--                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">06</td>-->
 <!--                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">-->
 <!--                        Аттестационный-->
 <!--                    </td>-->
-                    <td class="px-4 py-4">
+                    <td class="px-2 py-2">
                         <span class="px-2 py-0.5 bg-emerald-100 text-emerald-700 text-[9px] font-black uppercase rounded">Активный</span>
                     </td>
 <!--                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">-->
 <!--                        Нет-->
 <!--                    </td>-->
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">
+                    <td class="px-2 py-2 text-xs text-on-surface truncate max-w-[300px]">
                         Адаптивный
                     </td>
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">360</td>
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">40</td>
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">35</td>
-                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">60</td>
-                    <td class="px-6 py-4">
+                    <td class="px-2 py-2 text-xs text-on-surface truncate max-w-[300px]">360</td>
+                    <td class="px-2 py-2 text-xs text-on-surface truncate max-w-[300px]">40</td>
+                    <td class="px-2 py-2 text-xs text-on-surface truncate max-w-[300px]">35</td>
+                    <td class="px-2 py-2 text-xs text-on-surface truncate max-w-[300px]">60</td>
+                    <td class="px-2 py-2">
                         <div class="flex items-center justify-end gap-1">
                             <button class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">
                                 <span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
