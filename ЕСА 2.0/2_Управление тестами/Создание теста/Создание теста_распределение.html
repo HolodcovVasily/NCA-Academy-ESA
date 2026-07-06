@@ -284,7 +284,6 @@
                 <div class="col-span-2 flex justify-end gap-3 text-on-surface-variant">
                     <button class="hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]">edit</span></button>
                     <button class="hover:text-error transition-colors"><span class="material-symbols-outlined text-[20px]">delete</span></button>
-                    <!--<button class="hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]">settings</span></button>-->
                 </div>
             </div>
             <!-- Item 3 -->
@@ -305,7 +304,6 @@
                 <div class="col-span-2 flex justify-end gap-3 text-on-surface-variant">
                     <button class="hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]">edit</span></button>
                     <button class="hover:text-error transition-colors"><span class="material-symbols-outlined text-[20px]">delete</span></button>
-                    <!--<button class="hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]">settings</span></button>-->
                 </div>
             </div>
             <!-- Item 4 -->
@@ -342,6 +340,7 @@
             </div>
         </div>
     </main>
+
     <!-- MODAL OVERLAY -->
     <div class="fixed inset-0 z-[100] flex items-center justify-center glass-backdrop">
         <!-- Large Modal: 1300px width, 85% height -->
@@ -358,91 +357,216 @@
             <!-- Modal Content (Scrollable) -->
             <div class="flex-1 overflow-y-auto p-section-gap">
                 <div class="flex bg-surface-container-low rounded-xl gap-2">
-                    <button onclick="window.location.href='#'" class="flex-1 py-3 px-6 rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md shadow-sm transition-all">Основные настройки</button>
-                    <button onclick="window.location.href='./Создание теста_распределение.html'" class="flex-1 py-3 px-6 rounded-lg text-outline hover:bg-surface-container-highest transition-all font-label-md text-label-md">Распределение вопросов и тематика</button>
+                    <button onclick="window.location.href='./Создание теста.html'" class="flex-1 py-3 px-6 rounded-lg text-outline hover:bg-surface-container-highest transition-all font-label-md text-label-md">Основные настройки</button>
+                    <button onclick="window.location.href='#'" class="flex-1 py-3 px-6 rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md shadow-sm transition-all">Распределение вопросов и тематика</button>
                 </div>
-                <div class="bg-surface-container-lowest p-module-gap rounded-xl space-y-6 shadow-sm">
-                    <div class="flex items-center gap-2 mb-2">
-                        <h3 class="font-label-md text-label-md text-on-surface uppercase tracking-[0.1em]">Основные параметры теста</h3>
-                    </div>
-                    <div class="grid grid-cols-2 gap-module-gap">
-                        <div class="col-span-2">
-                            <label class="font-label-sm text-label-sm text-outline uppercase tracking-[0.1em] mb-2 block">Наименование
-                                <span class="text-error">*</span>
-                            </label>
-                            <div class="relative">
-                                <input class="w-full h-12 px-4 bg-surface-container-highest border-none rounded-t-lg focus:bg-surface-container-lowest focus:ring-0 focus:border-b-2 focus:border-surface-tint transition-all font-body-md text-on-surface" placeholder="Введите наименование теста" type="text">
-                                <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline/50 text-[18px]">lock</span>
+                <div class="space-y-section-gap" id="panel-general">
+
+                <div class="bg-surface-container-lowest p-module-gap rounded-xl space-y-4 shadow-sm">
+                    <div class="bg-surface-dim p-6 rounded-xl mb-6 space-y-4">
+                        <div class="flex items-center gap-2 mb-2">
+                            <h3 class="font-label-md text-label-md text-on-surface uppercase tracking-[0.1em]">Выбор тематики теста</h3>
+                        </div>
+                        <div class="relative">
+                            <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline/50">search</span>
+                            <input class="w-full h-12 pl-12 pr-4 bg-surface-container-lowest border-none rounded-lg focus:ring-2 focus:ring-primary/20 transition-all font-body-md text-on-surface shadow-sm" placeholder="Поиск по тематике вопросов..." type="text">
+                        </div>
+                        <div class="flex flex-wrap gap-3 mt-4">
+                            <div class="flex items-center gap-2 px-3 py-1.5 bg-surface-container-lowest rounded-full border border-outline-variant/30">
+                                <div class="w-2 h-2 rounded-full bg-primary"></div>
+                                <span class="text-sm font-medium text-on-surface-variant">Общие</span>
+                                <span class="material-symbols-outlined text-[16px] text-outline cursor-pointer hover:text-error">close</span>
+                            </div>
+                            <div class="flex items-center gap-2 px-3 py-1.5 bg-surface-container-lowest rounded-full border border-outline-variant/30">
+                                <div class="w-2 h-2 rounded-full bg-green-600"></div>
+                                <span class="text-sm font-medium text-on-surface-variant">Строения</span>
+                                <span class="material-symbols-outlined text-[16px] text-outline cursor-pointer hover:text-error">close</span>
+                            </div>
+                            <div class="flex items-center gap-2 px-3 py-1.5 bg-surface-container-lowest rounded-full border border-outline-variant/30">
+                                <div class="w-2 h-2 rounded-full bg-amber-500"></div>
+                                <span class="text-sm font-medium text-on-surface-variant">Сооружения</span>
+                                <span class="material-symbols-outlined text-[16px] text-outline cursor-pointer hover:text-error">close</span>
+                            </div>
+                            <div class="flex items-center gap-2 px-3 py-1.5 bg-surface-container-lowest rounded-full border border-outline-variant/30">
+                                <div class="w-2 h-2 rounded-full bg-amber-500"></div>
+                                <span class="text-sm font-medium text-on-surface-variant">Комплексные сооружения</span>
+                                <span class="material-symbols-outlined text-[16px] text-outline cursor-pointer hover:text-error">close</span>
+                            </div>
+                            <div class="flex items-center gap-2 px-3 py-1.5 bg-surface-container-lowest rounded-full border border-outline-variant/30">
+                                <div class="w-2 h-2 rounded-full bg-green-600"></div>
+                                <span class="text-sm font-medium text-on-surface-variant">Квартиры</span>
+                                <span class="material-symbols-outlined text-[16px] text-outline cursor-pointer hover:text-error">close</span>
+                            </div>
+                            <div class="flex items-center gap-2 px-3 py-1.5 bg-surface-container-lowest rounded-full border border-outline-variant/30">
+                                <div class="w-2 h-2 rounded-full bg-amber-500"></div>
+                                <span class="text-sm font-medium text-on-surface-variant">АЗС</span>
+                                <span class="material-symbols-outlined text-[16px] text-outline cursor-pointer hover:text-error">close</span>
+                            </div>
+                            <div class="flex items-center gap-2 px-3 py-1.5 bg-surface-container-lowest rounded-full border border-outline-variant/30">
+                                <div class="w-2 h-2 rounded-full bg-[#e100ff]"></div>
+                                <span class="text-sm font-medium text-on-surface-variant">Полевые работы</span>
+                                <span class="material-symbols-outlined text-[16px] text-outline cursor-pointer hover:text-error">close</span>
+                            </div>
+                            <div class="flex items-center gap-2 px-3 py-1.5 bg-surface-container-lowest rounded-full border border-outline-variant/30">
+                                <div class="w-2 h-2 rounded-full bg-[#00ff1d]"></div>
+                                <span class="text-sm font-medium text-on-surface-variant">Земельные участки</span>
+                                <span class="material-symbols-outlined text-[16px] text-outline cursor-pointer hover:text-error">close</span>
                             </div>
                         </div>
-                        <div>
-                            <label class="font-label-sm text-label-sm text-outline uppercase tracking-[0.1em] mb-2 block">Тип теста</label>
-                            <select class="w-full h-12 px-4 bg-surface-container-highest border-none rounded-t-lg focus:bg-surface-container-lowest focus:ring-0 focus:border-b-2 focus:border-surface-tint font-body-md text-on-surface appearance-none">
-                                <option>Учебный</option>
-                                <option>Экзаменационный</option>
-                                <option>Аттестационный</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="font-label-sm text-label-sm text-outline uppercase tracking-[0.1em] mb-2 block">Версии вопросов</label>
-                            <select class="w-full h-12 px-4 bg-surface-container-highest border-none rounded-t-lg focus:bg-surface-container-lowest focus:ring-0 focus:border-b-2 focus:border-surface-tint font-body-md text-on-surface appearance-none">
-                                <option selected="">Активные</option>
-                                <option>Ожидающие вступления в силу</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="font-label-sm text-label-sm text-outline uppercase tracking-[0.1em] mb-2 block">Статус теста</label>
-                            <select class="w-full h-12 px-4 bg-surface-container-highest border-none rounded-t-lg focus:bg-surface-container-lowest focus:ring-0 focus:border-b-2 focus:border-surface-tint font-body-md text-on-surface appearance-none">
-                                <option selected="">В разработке</option>
-                                <option>Активный</option>
-                                <option>Архивный</option>
-                            </select>
-                        </div>
-                    </div> <div class="grid grid-cols-2 gap-module-gap items-end">
-                    <div>
-                        <label class="font-label-sm text-label-sm text-outline uppercase tracking-[0.1em] mb-2 block">Максимальное количество вопросов
-                            <span class="text-error">*</span>
-                        </label>
-                        <div class="relative">
-                            <input class="w-full h-12 px-4 bg-surface-container-highest border-none rounded-t-lg focus:bg-surface-container-lowest focus:ring-0 focus:border-b-2 focus:border-surface-tint font-body-md text-on-surface" type="number" value="40">
-                            <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline/50 text-[18px]">шт.</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-2">
+                        <div class="flex items-center gap-2">
+                            <h3 class="font-label-md text-label-md text-on-surface uppercase tracking-[0.1em]">Распределение вопросов в тесте
+                                <span class="text-error">*</span>
+                            </h3>
                         </div>
                     </div>
-                    <div>
-                        <label class="font-label-sm text-label-sm text-outline uppercase tracking-[0.1em] mb-2 block">Максимальное время на прохождение теста, минуты
-                            <span class="text-error">*</span>
-                        </label>
-                        <div class="relative">
-                            <input class="w-full h-12 px-4 bg-surface-container-highest border-none rounded-t-lg focus:bg-surface-container-lowest focus:ring-0 focus:border-b-2 focus:border-surface-tint font-body-md text-on-surface" type="number" value="60">
-                            <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline/50 text-[18px]">timer</span>
+                    <div class="grid grid-cols-12 gap-4 px-6 py-3 bg-surface-container-low/50 rounded-t-lg text-[10px] font-bold text-outline uppercase tracking-widest">
+                        <div class="col-span-5">Нормативный документ / Структурная единица</div>
+                        <div class="col-span-2 text-center">Доступно вопросов</div>
+                        <div class="col-span-2 text-center">В тесте</div>
+                    </div>
+                    <div class="divide-y divide-surface-container-low">
+                        <div class="group">
+                            <div class="grid grid-cols-12 gap-4 px-6 py-4 items-center bg-white hover:bg-surface-container-low/20 transition-colors">
+                                <div class="col-span-5 flex items-center gap-3">
+                                    <input checked="" class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary bg-surface-container-low cursor-pointer" type="checkbox">
+                                    <span class="material-symbols-outlined text-primary cursor-pointer">keyboard_arrow_down</span>
+                                    <span class="font-label-md text-on-surface cursor-pointer">Гражданский кодекс</span>
+                                </div>
+                                <div class="col-span-2 text-center font-body-md text-outline">44</div>
+                                <div class="col-span-2 flex justify-center">
+                                    <input class="w-20 h-9 text-center bg-surface-container-low border-none rounded font-bold text-primary focus:ring-1 focus:ring-primary cursor-pointer" type="number" value="10">
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-12 gap-4 px-6 py-3 items-center bg-surface-container-low/10 border-l-4 border-primary/20 ml-6">
+                                <div class="col-span-5 flex items-center gap-3 pl-4">
+                                    <input checked="" class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary bg-white cursor-pointer" type="checkbox">
+                                    <span class="material-symbols-outlined text-outline text-[16px]">subdirectory_arrow_right</span>
+                                    <span class="text-sm text-on-surface-variant font-medium cursor-pointer">Глава 1</span>
+                                </div>
+                                <div class="col-span-2 text-center text-sm text-outline">10</div>
+                                <div class="col-span-2 flex justify-center">
+                                    <input class="w-16 h-8 text-center bg-white border-none rounded text-sm focus:ring-1 focus:ring-primary" type="number" value="3">
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-12 gap-4 px-6 py-3 items-center bg-surface-container-low/10 border-l-4 border-primary/20 ml-6">
+                                <div class="col-span-5 flex items-center gap-3 pl-4">
+                                    <input checked="" class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary bg-white cursor-pointer" type="checkbox">
+                                    <span class="material-symbols-outlined text-outline text-[16px]">subdirectory_arrow_right</span>
+                                    <span class="text-sm text-on-surface-variant font-medium cursor-pointer">Глава 2</span>
+                                </div>
+                                <div class="col-span-2 text-center text-sm text-outline">12</div>
+                                <div class="col-span-2 flex justify-center">
+                                    <input class="w-16 h-8 text-center bg-white border-none rounded text-sm focus:ring-1 focus:ring-primary" type="number" value="7">
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-12 gap-4 px-6 py-3 items-center bg-surface-container-low/10 border-l-4 border-primary/20 ml-6">
+                                <div class="col-span-5 flex items-center gap-3 pl-4">
+                                    <input checked="" class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary bg-white cursor-pointer" type="checkbox">
+                                    <span class="material-symbols-outlined text-outline text-[16px]">subdirectory_arrow_right</span>
+                                    <span class="text-sm text-on-surface-variant font-medium cursor-pointer">Глава 3</span>
+                                </div>
+                                <div class="col-span-2 text-center text-sm text-outline">20</div>
+                                <div class="col-span-2 flex justify-center">
+                                    <input class="w-16 h-8 text-center bg-white border-none rounded text-sm focus:ring-1 focus:ring-primary" type="number" value="7">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-12 gap-4 px-6 py-4 items-center bg-white hover:bg-surface-container-low/20 transition-colors">
+                            <div class="col-span-5 flex items-center gap-3">
+                                <input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary bg-surface-container-low cursor-pointer" type="checkbox">
+                                <span class="material-symbols-outlined text-outline cursor-pointer">keyboard_arrow_right</span>
+                                <span class="font-label-md text-on-surface cursor-pointer">Закон о государственной регистрации</span>
+                            </div>
+                            <div class="col-span-2 text-center font-body-md text-outline">22</div>
+                            <div class="col-span-2 flex justify-center">
+                                <input class="w-20 h-9 text-center bg-surface-container-low/50 border-none rounded font-bold text-outline/50 cursor-not-allowed" readonly="" type="number" value="0">
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-12 gap-4 px-6 py-4 items-center bg-white hover:bg-surface-container-low/20 transition-colors">
+                            <div class="col-span-5 flex items-center gap-3">
+                                <input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary bg-surface-container-low cursor-pointer" type="checkbox">
+                                <span class="material-symbols-outlined text-outline cursor-pointer">keyboard_arrow_right</span>
+                                <span class="font-label-md text-on-surface cursor-pointer">Инструкция о кадастровых номерах</span>
+                            </div>
+                            <div class="col-span-2 text-center font-body-md text-outline">14</div>
+                            <div class="col-span-2 flex justify-center">
+                                <input class="w-20 h-9 text-center bg-surface-container-low/50 border-none rounded font-bold text-outline/50 cursor-not-allowed" readonly="" type="number" value="0">
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-12 gap-4 px-6 py-4 items-center bg-white hover:bg-surface-container-low/20 transition-colors">
+                            <div class="col-span-5 flex items-center gap-3">
+                                <input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary bg-surface-container-low cursor-pointer" type="checkbox">
+                                <span class="material-symbols-outlined text-outline cursor-pointer">keyboard_arrow_right</span>
+                                <span class="font-label-md text-on-surface cursor-pointer">Инструкция о порядке ведения адресной системы</span>
+                            </div>
+                            <div class="col-span-2 text-center font-body-md text-outline">66</div>
+                            <div class="col-span-2 flex justify-center">
+                                <input class="w-20 h-9 text-center bg-surface-container-low/50 border-none rounded font-bold text-outline/50 cursor-not-allowed" readonly="" type="number" value="0">
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-12 gap-4 px-6 py-4 items-center bg-white hover:bg-surface-container-low/20 transition-colors">
+                            <div class="col-span-5 flex items-center gap-3">
+                                <input class="cursor-pointer w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary bg-surface-container-low" type="checkbox">
+                                <span class="material-symbols-outlined text-outline cursor-pointer">keyboard_arrow_right</span>
+                                <span class="font-label-md text-on-surface cursor-pointer">Инструкция № 11</span>
+                            </div>
+                            <div class="col-span-2 text-center font-body-md text-outline">348</div>
+                            <div class="col-span-2 flex justify-center">
+                                <input class="w-20 h-9 text-center bg-surface-container-low/50 border-none rounded font-bold text-outline/50 cursor-not-allowed" readonly="" type="number" value="0">
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-12 gap-4 px-6 py-4 items-center bg-white hover:bg-surface-container-low/20 transition-colors">
+                            <div class="col-span-5 flex items-center gap-3">
+                                <input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary bg-surface-container-low cursor-pointer" type="checkbox">
+                                <span class="material-symbols-outlined text-outline cursor-pointer">keyboard_arrow_right</span>
+                                <span class="font-label-md text-on-surface cursor-pointer">Инструкция об инвентарных номера</span>
+                            </div>
+                            <div class="col-span-2 text-center font-body-md text-outline">18</div>
+                            <div class="col-span-2 flex justify-center">
+                                <input class="w-20 h-9 text-center bg-surface-container-low/50 border-none rounded font-bold text-outline/50 cursor-not-allowed" readonly="" type="number" value="0">
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-12 gap-4 px-6 py-4 items-center bg-white hover:bg-surface-container-low/20 transition-colors">
+                            <div class="col-span-5 flex items-center gap-3">
+                                <input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary bg-surface-container-low cursor-pointer" type="checkbox">
+                                <span class="material-symbols-outlined text-outline cursor-pointer">keyboard_arrow_right</span>
+                                <span class="font-label-md text-on-surface cursor-pointer">Кодекс Республики Беларусь о земле </span>
+                            </div>
+                            <div class="col-span-2 text-center font-body-md text-outline">35</div>
+                            <div class="col-span-2 flex justify-center">
+                                <input class="w-20 h-9 text-center bg-surface-container-low/50 border-none rounded font-bold text-outline/50 cursor-not-allowed" readonly="" type="number" value="0">
+                            </div>
                         </div>
                     </div>
-                    <div>
-                        <label class="font-label-sm text-label-sm text-outline uppercase tracking-[0.1em] mb-2 block">Режим теста</label>
-                        <select class="w-full h-12 px-4 bg-surface-container-highest border-none rounded-t-lg focus:bg-surface-container-lowest focus:ring-0 focus:border-b-2 focus:border-surface-tint font-body-md text-on-surface appearance-none">
-                            <option title="Всем аттестуемым должен запускаться одинаковый тест по составу из случайных вопросов, со случайным порядком отображения в тесте" selected="">Стандартный (линейный) </option>
-                            <!--<option>By Criteria</option>-->
-                            <option title="При выборе отображаются дополнительные настройки адаптивного тестирования" disabled>Адаптивный</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="font-label-sm text-label-sm text-outline uppercase tracking-[0.1em] mb-2 block">Количество правильных ответов
-                            <span class="text-error">*</span>
-                        </label>
-                        <div class="relative">
-                            <input class="w-full h-12 px-4 bg-surface-container-highest border-none rounded-t-lg focus:bg-surface-container-lowest focus:ring-0 focus:border-b-2 focus:border-surface-tint font-body-md text-on-surface" type="number" value="32">
-                            <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline/50 text-[18px]">шт.</span>
-                        </div>
-                    </div>
-                </div>
-                </div>
 
+                    <div class="mt-2 p-2 rounded-xl bg-surface-container-low/60 border border-surface-container-high/30">
+                        <div class="grid grid-cols-2 gap-8 items-center">
+                            <div class="space-y-3">
+                                <div class="flex items-baseline gap-2">Вопросов
+                                    <span class="text-2xl font-bold text-on-surface">37</span>
+                                    <span class="text-sm text-outline">/ 40 Максимальное количество вопросов</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-end gap-2">
+                                <div class="flex items-center gap-2 px-3 py-2 bg-error-container text-on-error-container rounded-lg text-[12px] font-semibold animate-pulse">
+                                    <span class="material-symbols-outlined text-[16px]">warning</span>
+                                    <span>Распределение вопросов не соответствует общему количеству вопросов</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div class="hidden space-y-section-gap" id="panel-distribution">
+                <div class="bg-surface-container-lowest p-module-gap rounded-xl space-y-4 shadow-sm"><div class="flex justify-between items-center mb-2"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">account_tree</span><h3 class="font-label-md text-label-md text-on-surface uppercase tracking-[0.1em]">Hierarchical Question Distribution</h3></div><div class="text-[11px] text-outline bg-surface-container-low px-3 py-1 rounded-full uppercase tracking-wider font-semibold">Absolute Count Mode Active</div></div><div class="grid grid-cols-12 gap-4 px-6 py-3 bg-surface-container-low/50 rounded-t-lg text-[10px] font-bold text-outline uppercase tracking-widest"><div class="col-span-5">Section / Subsection Name</div><div class="col-span-2 text-center">Available</div><div class="col-span-2 text-center">In Test (Input)</div><div class="col-span-2 text-center">Balance</div><div class="col-span-1 text-center">Status</div></div><div class="divide-y divide-surface-container-low"><div class="group"><div class="grid grid-cols-12 gap-4 px-6 py-4 items-center bg-white hover:bg-surface-container-low/20 transition-colors"><div class="col-span-5 flex items-center gap-3"><input checked="" class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary bg-surface-container-low" type="checkbox"/><span class="material-symbols-outlined text-primary cursor-pointer">keyboard_arrow_down</span><span class="font-label-md text-on-surface">Rules of Safety</span></div><div class="col-span-2 text-center font-body-md text-outline">250</div><div class="col-span-2 flex justify-center"><input class="w-20 h-9 text-center bg-surface-container-low border-none rounded font-bold text-primary focus:ring-1 focus:ring-primary" type="number" value="10"/></div><div class="col-span-2 text-center font-body-md text-outline">240</div><div class="col-span-1 flex justify-center"><span class="material-symbols-outlined text-error text-[18px]">error</span></div></div></div></div><div class="mt-6 p-6 rounded-xl bg-surface-container-low/60 border border-surface-container-high/30"><div class="grid grid-cols-3 gap-8 items-center"><div class="space-y-1"><div class="text-[10px] text-outline uppercase font-bold tracking-widest">Global Test Allocation</div><div class="flex items-baseline gap-2"><span class="text-2xl font-bold text-on-surface">37</span><span class="text-sm text-outline">/ 40 Distributed</span></div></div><div class="flex flex-col gap-2"><div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden"><div class="h-full bg-primary rounded-full transition-all duration-500" style="width: 92.5%;"></div></div><div class="flex justify-between text-[11px] font-bold"><span class="text-primary uppercase">92.5% Complete</span><span class="text-error uppercase">Remaining: 3 Questions</span></div></div><div class="flex flex-col items-end gap-2"><div class="flex items-center gap-2 px-3 py-2 bg-error-container text-on-error-container rounded-lg text-[12px] font-semibold animate-pulse"><span class="material-symbols-outlined text-[16px]">warning</span><span class="">Sum of sections != Test total (40)</span></div></div></div></div></div><div class="p-4 bg-surface-container-low/30 rounded-xl flex items-center justify-between group cursor-pointer hover:bg-surface-container-low/50"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-primary/50">settings_suggest</span><span class="font-label-md text-outline uppercase tracking-wider">Advanced Adaptive Settings</span></div><span class="material-symbols-outlined text-outline">expand_more</span></div></div></div>
             <!-- Modal Footer Actions -->
             <div class="px-section-gap py-module-gap bg-surface-container-lowest flex justify-between items-center border-t-2 border-surface-container-low">
                 <div class="flex items-center gap-2 text-primary opacity-60">
                 </div>
                 <div class="flex gap-4">
-                    <button onclick="window.location.href='../Управление тестами 2.html'" class="px-8 py-3 rounded-lg font-label-md text-label-md text-outline hover:text-on-surface transition-colors">
+                    <button class="px-8 py-3 rounded-lg font-label-md text-label-md text-outline hover:text-on-surface transition-colors">
                         Отмена
                     </button>
                     <button class="signature-gradient text-white px-10 py-3 rounded-lg font-label-md text-label-md shadow-lg opacity-50 cursor-not-allowed flex items-center gap-2">
@@ -453,7 +577,6 @@
             </div>
         </div>
     </div>
-</div>
 </div>
 </body>
 </html>
