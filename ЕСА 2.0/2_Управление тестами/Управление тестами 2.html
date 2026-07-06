@@ -136,7 +136,7 @@
 <div class="flex flex-1">
     <aside class="w-64 bg-brand-surface flex flex-col py-6" data-purpose="main-sidebar">
         <nav class="flex-1 px-4 space-y-1">
-            <a class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-600 rounded-lg hover:bg-brand-container transition-colors" href="../../1_Главная%20страница%20НКА%20Академия/2_Главная_страница.html">
+            <a class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-on-surface-variant rounded-lg hover:bg-surface-container transition-colors" href="../../1_Главная%20страница%20НКА%20Академия/2_Главная_страница.html">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
                 На главную
             </a>
@@ -144,15 +144,15 @@
 <!--                <span class="material-symbols-outlined">badge</span>-->
 <!--                <span>Аттестация</span>-->
 <!--            </a>-->
-            <a class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-600 rounded-lg hover:bg-brand-container transition-colors" href="../3_Управление%20группами%20на%20аттестацию/Аттестация_new.html">
+            <a class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-on-surface-variant rounded-lg hover:hover:bg-surface-container transition-colors" href="../3_Управление%20группами%20на%20аттестацию/Аттестация_new.html">
                 <span class="material-symbols-outlined">badge</span>
                 Аттестация
             </a>
-            <a class="sidebar-active flex items-center gap-3 px-4 py-3 bg-white dark:bg-slate-800 text-[#4e69c3] font-semibold rounded-l-lg shadow-sm transition-all duration-200"  href="#">
+            <a class="sidebar-active flex items-center gap-3 px-4 py-3 bg-white dark:bg-slate-800 text-[#4e69c3] text-sm font-medium rounded-l-lg shadow-sm transition-all duration-200"  href="#">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
                 Управление тестами
             </a>
-            <a class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-600 rounded-lg hover:bg-brand-container transition-colors" href="#">
+            <a class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-on-surface-variant rounded-lg hover:hover:bg-surface-container transition-colors" href="#">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
                 База знаний
             </a>
@@ -167,7 +167,7 @@
             <h1 class="text-lg font-bold tracking-tighter text-[#001453] dark:text-white">Банк тестов</h1>
         </div>
         <div class="flex items-center gap-3">
-            <button onclick="window.location.href='./Создание теста/Создание теста.html'" title="Добавить новый вопрос" class="px-5 py-2 text-sm font-semibold text-white bg-gradient-to-br from-[#4e69c3] to-[#001453] rounded-md active:scale-[0.98] transition-all">Создать тест</button>        </div>
+            <button onclick="window.location.href='./Создание теста/Создание теста.html'" title="Добавить новый тест в Банк тестов" class="px-5 py-2 text-sm font-semibold text-white bg-gradient-to-br from-[#4e69c3] to-[#001453] rounded-md hover:scale-[1.05]  transition-all">Создать тест</button>        </div>
     </div>
 
     <!-- Dashboard Stats -->
@@ -191,8 +191,8 @@
                         <div class="h-full bg-amber-200" style="width: 10%"></div>
                         <div class="h-full bg-slate-400" style="width: 6%"></div>
                     </div>
-                    <div class="mt-3 flex justify-between text-[10px] font-bold uppercase tracking-wider text-on-surface-variant/70">
-                        <span class="text-primary">Активный (84%)</span>
+                    <div class="mt-3 flex justify-between text-[10px] font-bold uppercase tracking-wider text-on-surface-variant/60">
+                        <span class="">Активный (84%)</span>
                         <span class="">В разработке (10%)</span>
                         <span class="">Архивный (6%)</span>
                     </div>
@@ -243,7 +243,7 @@
 <span class="material-symbols-outlined text-error">Warning</span>
 <div>
 <p class="font-label-md text-on-error-container">Предупреждение: тест не подлежит удалению.</p>
-<p class="text-on-surface-variant text-sm mt-1">Выбранный тест назначен группе аттестации <span class="font-bold">[Аттестация 23.04.2026]</span>. Удаление запрещено до завершения теста группой либо назначьте иной тест указанной группе.</p>
+<p class="text-on-surface-variant text-sm mt-1">Выбранный тест назначен группе аттестации. Удаление запрещено до завершения теста группой либо назначьте иной тест группе.</p>
 </div>
 <button class="ml-auto text-on-surface-variant hover:text-on-background">
 <span class="material-symbols-outlined">close</span>
@@ -350,7 +350,7 @@
                     </th></tr>
                 </thead>
                 <tbody class="divide-y divide-surface-container">
-                <tr class="hover:bg-surface-container-low/50 transition-colors group cursor-pointer">
+                <tr class="hover:bg-surface-container-low transition-colors group cursor-pointer">
                     <td class="px-2 py-2 text-xs font-bold text-[#001453]">001</td>
                     <td class="px-2 py-2 text-xs text-on-surface truncate max-w-[300px]">Аттестация специалистов по ТИ 22.04.2026</td>
 <!--                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">07</td>-->
@@ -381,7 +381,7 @@
                         </div>
                     </td>
                 </tr>
-                <tr class="hover:bg-surface-container-low/50 transition-colors group cursor-pointer">
+                <tr class="hover:bg-surface-container-low transition-colors group cursor-pointer">
                     <td class="px-2 py-2 text-xs font-bold text-[#001453]">002</td>
                     <td class="px-2 py-2 text-xs text-on-surface truncate max-w-[300px]">Курсы повышения квалификации специалистов по ТИ_тест 2026</td>
 <!--                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">07</td>-->
@@ -412,7 +412,7 @@
                         </div>
                     </td>
                 </tr>
-                <tr class="hover:bg-surface-container-low/50 transition-colors group cursor-pointer">
+                <tr class="hover:bg-surface-container-low transition-colors group cursor-pointer">
                     <td class="px-2 py-2 text-xs font-bold text-[#001453]">003</td>
                     <td class="px-2 py-2 text-xs text-on-surface truncate max-w-[300px]">Тест учебный_Гражданский кодекс</td>
 <!--                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">07</td>-->
@@ -443,7 +443,7 @@
                         </div>
                     </td>
                 </tr>
-                <tr class="hover:bg-surface-container-low/50 transition-colors group cursor-pointer">
+                <tr class="hover:bg-surface-container-low transition-colors group cursor-pointer">
                     <td class="px-2 py-2 text-xs font-bold text-[#001453]">004</td>
                     <td class="px-2 py-2 text-xs text-on-surface truncate max-w-[300px]">Аттестация специалистов по ТИ 14.05.2025</td>
 <!--                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">07</td>-->
@@ -474,7 +474,7 @@
                         </div>
                     </td>
                 </tr>
-                <tr class="hover:bg-surface-container-low/50 transition-colors group cursor-pointer">
+                <tr class="hover:bg-surface-container-low transition-colors group cursor-pointer">
                     <td class="px-2 py-2 text-xs font-bold text-[#001453]">005</td>
                     <td class="px-2 py-2 text-xs text-on-surface truncate max-w-[300px]">Аттестация специалистов по ТИ 01.12.2025</td>
 <!--                    <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">06</td>-->
