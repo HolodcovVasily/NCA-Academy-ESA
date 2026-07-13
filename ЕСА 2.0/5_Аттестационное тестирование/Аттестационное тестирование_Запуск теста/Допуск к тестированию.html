@@ -147,7 +147,6 @@
 
             <!-- Left Side: Contextual Info (Editorial Density) -->
             <div class="md:w-1/2 flex flex-col">
-<!--                <h1 class="text-4xl font-headline font-extrabold tracking-tight text-on-surface mb-6 leading-none" style="">Запуск аттестационного тестирования</h1>-->
                 <div class="bg-surface-container p-8 rounded-lg flex flex-col">
                     <div class="flex items-center gap-3 mb-8">
                         <span class="material-symbols-outlined text-primary" data-icon="gavel">gavel</span>
@@ -182,13 +181,18 @@
                             </li>
                             <li class="flex items-start gap-4">
                                 <span class="w-1.5 h-1.5 rounded-full bg-primary mt-3 shrink-0"></span>
-                                <span>В целях обеспечение объективности результатов аттестации система фиксирует попытки переключение на другие ресурсы. Система отображает предупреждение при уходе со страницы тестирования.</span>
+                                <span>В целях обеспечения объективности результатов аттестации система фиксирует попытки переключение на другие ресурсы. Система отображает предупреждение при уходе со страницы тестирования.</span>
 
                             </li>
                             <li class="flex items-start gap-4">
                                 <span class="w-1.5 h-1.5 rounded-full bg-primary mt-3 shrink-0"></span>
                                 <span>В случае выявления действий, которые могут свидетельствовать о нарушении порядка прохождения аттестации, события фиксируются в системе и могут быть переданы на рассмотрение комиссии.</span>
                             </li>
+                            <li class="flex items-start gap-4">
+                                <span class="w-1.5 h-1.5 rounded-full bg-primary mt-3 shrink-0"></span>
+                                <span>В случае нарушения правил прохождения тестирования претендент подлежит отстранению от дальнейшей аттестации.</span>
+                            </li>
+
                         </ul>
                     </div>
                     <div class="mt-12 p-6 bg-surface-container-lowest rounded-lg">
@@ -214,6 +218,7 @@
                         <p class="font-label-md text-on-surface-variant mb-4 tracking-widest uppercase">Группа: №14_25_20.04.2026</p>
                         <div class="bg-surface-container-lowest p-8 rounded-lg mb-8 space-y-6">
                             <div class="flex items-center justify-between">
+                                <!-- NOT Active Test -->
                                 <div class="flex items-center gap-4">
                                     <div class="w-3 h-3 rounded-full bg-amber-500 pulse-indicator"></div>
                                     <span class="font-label-md text-on-surface">Ожидание активации теста</span>
@@ -222,6 +227,11 @@
 <!--                                <div class="flex items-center gap-4">-->
 <!--                                    <div class="w-3 h-3 rounded-full bg-emerald-500 pulse-indicator"></div>-->
 <!--                                    <span class="font-label-md text-on-surface">Тест активирован</span>-->
+<!--                                </div>-->
+                                <!-- Restart Test -->
+<!--                                <div class="flex items-center gap-4">-->
+<!--                                    <div class="w-3 h-3 rounded-full bg-emerald-500 pulse-indicator"></div>-->
+<!--                                    <span class="font-label-md text-on-surface">Тестирование запущено</span>-->
 <!--                                </div>-->
                             </div>
                             <div class="space-y-4 pt-4 border-t border-outline-variant">
@@ -287,11 +297,21 @@
 <!--                            <span class="material-symbols-outlined text-[14px]" data-icon="info">info</span>-->
 <!--                            Тест активирован. Вы можете приступить к прохождению теста. После нажатия на кнопку «Начать тестирование» будет открыт первый вопрос теста, а время прохождения начнет отсчитываться автоматически.»-->
 <!--                        </p>-->
-<!--                        <button onclick="window.location.href='../Аттестационное тестирование_Тест/Аттестационное_Прохождение теста.html'" class="w-full bg-gradient-to-br from-[#4e69c3] to-[#001453] p-4 rounded-lg transition-all text-on-primary font-bold font-label-md text-label-md flex items-center justify-center gap-3">-->
+<!--                        <button onclick="window.location.href='../Аттестационное тестирование_Тест/Аттестационное_Прохождение теста.html'" class="w-full bg-gradient-to-br from-[#4e69c3] to-[#001453] p-4 rounded-lg transition-all text-on-primary font-bold font-label-md text-label-md flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all ">-->
 <!--                            <span class="material-symbols-outlined" data-icon="play_arrow">play_arrow</span>-->
 <!--                            НАЧАТЬ ТЕСТИРОВАНИЕ-->
 <!--                        </button>-->
-
+                        <!-- Active Test, error -->
+<!--                        <p class="font-label-sm text-emerald-500 flex items-center gap-2 italic">-->
+<!--                            <span class="material-symbols-outlined text-[14px]" data-icon="info">info</span>-->
+<!--                            Соединение с сервером успешно восстановлено. Все результаты сохранены, таймер был приостановлен.-->
+<!--                            После нажатия на кнопку «Продолжить тестирование» тестирование будет продолжено с последнего сохраненного вопроса.-->
+<!--                            Отвечено вопросов: 15, оставшееся время: 45:35.-->
+<!--                        </p>-->
+<!--                        <button onclick="window.location.href='../Аттестационное тестирование_Тест/Аттестационное_Прохождение теста.html'" class="w-full bg-gradient-to-br from-[#4e69c3] to-[#001453] p-4 rounded-lg transition-all text-on-primary font-bold font-label-md text-label-md flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all ">-->
+<!--                            <span class="material-symbols-outlined" data-icon="play_arrow">play_arrow</span>-->
+<!--                            ПРОДОЛЖИТЬ ТЕСТИРОВАНИЕ-->
+<!--                        </button>-->
                     </div>
                 </div>
             </div>
