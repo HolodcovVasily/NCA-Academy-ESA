@@ -157,6 +157,10 @@
                         <ul class="space-y-4 font-body-md">
                             <li class="flex items-start gap-4">
                                 <span class="w-1.5 h-1.5 rounded-full bg-primary mt-3 shrink-0"></span>
+                                <span>Тип теста:  <strong class="text-on-surface font-semibold">Аттестационный.</strong></span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <span class="w-1.5 h-1.5 rounded-full bg-primary mt-3 shrink-0"></span>
                                 <span>Максимальное количество вопросов:  <strong class="text-on-surface font-semibold">40.</strong></span>
                             </li>
                             <li class="flex items-start gap-4">
@@ -217,7 +221,7 @@
                                 <!-- Active Test -->
 <!--                                <div class="flex items-center gap-4">-->
 <!--                                    <div class="w-3 h-3 rounded-full bg-emerald-500 pulse-indicator"></div>-->
-<!--                                    <span class="font-label-md text-on-surface">Тест активен</span>-->
+<!--                                    <span class="font-label-md text-on-surface">Тест активирован</span>-->
 <!--                                </div>-->
                             </div>
                             <div class="space-y-4 pt-4 border-t border-outline-variant">
@@ -229,7 +233,7 @@
                                     </div>
                                 </div>
                                 <div class="flex flex-col gap-2">
-                                    <span class="font-label-sm text-outline uppercase tracking-wider">Члены атестационной комиссии</span>
+                                    <span class="font-label-sm text-outline uppercase tracking-wider">Члены аттестационной комиссии</span>
                                     <div class="space-y-2">
                                         <div class="flex items-center gap-3">
                                             <span class="material-symbols-outlined text-outline text-lg">group</span>
@@ -269,14 +273,25 @@
                         </div>
                     </div>
                     <div class="mt-auto space-y-4">
-                        <p class="font-label-sm text-error/70 flex items-center gap-2 italic">
+                        <!-- Not active Test -->
+<!--                        <p class="font-label-sm text-error/70 flex items-center gap-2 italic">-->
+<!--                            <span class="material-symbols-outlined text-[14px]" data-icon="info">info</span>-->
+<!--                            Тест будет доступен после активации. Ожидайте команды аттестационной комиссии-->
+<!--                        </p>-->
+<!--                        <button onclick="window.location.href='../Аттестационное тестирование_Тест/Аттестационное_Прохождение теста.html'" class="w-full py-5 rounded-lg font-headline-md text-white bg-slate-300 cursor-not-allowed transition-all opacity-70 flex items-center justify-center gap-3">-->
+<!--                            <span class="material-symbols-outlined" data-icon="play_arrow">play_arrow</span>-->
+<!--                            НАЧАТЬ ТЕСТИРОВАНИЕ-->
+<!--                        </button>-->
+                        <!-- Active Test -->
+                        <p class="font-label-sm text-emerald-500 flex items-center gap-2 italic">
                             <span class="material-symbols-outlined text-[14px]" data-icon="info">info</span>
-                            Тест будет доступен после активации. Ожидайте команды аттестационной комиссии
+                            Тест активирован. Вы можете приступить к прохождению теста. После нажатия на кнопку «Начать тестирование» будет открыт первый вопрос теста, а время прохождения начнет отсчитываться автоматически.»
                         </p>
-                        <button onclick="window.location.href='../Аттестационное тестирование_Тест/Аттестационное_Прохождение теста.html'" class="w-full py-5 rounded-lg font-headline-md text-white bg-slate-300 cursor-not-allowed transition-all opacity-70 flex items-center justify-center gap-3">
+                        <button onclick="window.location.href='../Аттестационное тестирование_Тест/Аттестационное_Прохождение теста.html'" class="w-full bg-gradient-to-br from-[#4e69c3] to-[#001453] p-4 rounded-lg transition-all text-on-primary font-bold font-label-md text-label-md flex items-center justify-center gap-3">
                             <span class="material-symbols-outlined" data-icon="play_arrow">play_arrow</span>
                             НАЧАТЬ ТЕСТИРОВАНИЕ
                         </button>
+
                     </div>
                 </div>
             </div>
