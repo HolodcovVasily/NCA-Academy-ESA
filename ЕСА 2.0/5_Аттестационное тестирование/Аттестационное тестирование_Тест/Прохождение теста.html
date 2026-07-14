@@ -83,13 +83,17 @@
             background: linear-gradient(135deg, #4e69c3 0%, #001453 100%);
         }
         body { font-family: 'Inter', sans-serif; }
+        .active-question {
+            outline: 2px solid #3755c3;
+            outline-offset: 2px;
+        }
     </style>
 </head>
 <body class="bg-surface text-on-surface min-h-screen flex flex-col">
 <!-- TopAppBar -->
 <header class="fixed top-0 w-full z-50 bg-slate-50/50 backdrop-blur-md flex justify-between items-center px-12 h-24 w-full">
     <div class="flex items-center gap-4">
-        <span class="text-xl font-bold tracking-tighter text-slate-900">НКА Академия | ЕСА 2.0</span>
+        <span class="text-xl font-bold tracking-tighter text-slate-900">НКА Академия | Прохождение теста</span>
     </div>
     <!-- Center Progress & Stats -->
     <div class="flex flex-col items-center gap-1 flex-1 max-w-2xl px-12">
@@ -141,11 +145,11 @@
         <div class="space-y-3">
             <div class="flex items-center gap-3">
                 <div class="w-4 h-4 rounded bg-primary-gradient "></div>
-                <span class="font-label-sm text-label-sm text-on-surface">дан ответ</span>
+                <span class="font-label-sm text-label-sm text-on-surface">Ответ сохранен</span>
             </div>
             <div class="flex items-center gap-3">
                 <div class="w-4 h-4 rounded bg-surface-variant"></div>
-                <span class="font-label-sm text-label-sm text-on-surface">нет ответа</span>
+                <span class="font-label-sm text-label-sm text-on-surface">Без ответа</span>
             </div>
         </div>
 <!--        <div class="mt-2 p-3 rounded-lg bg-error-container/10 border border-error/10">-->
@@ -164,7 +168,7 @@
         <!-- Question 1: Text -->
         <section class="bg-surface-container-lowest p-12 rounded-xl ghost-border">
             <div class="flex items-start gap-6 mb-8">
-                <span class="w-10 h-10 rounded bg-primary-gradient text-on-primary flex items-center justify-center font-bold flex-shrink-0">01</span>
+                <span class="w-10 h-10 rounded bg-primary-gradient text-on-primary flex items-center justify-center font-bold flex-shrink-0">1</span>
                 <h2 class="font-headline-md text-headline-md text-on-surface leading-snug">
                     Что в соответствии с Гражданским кодексом является одним из признаков недвижимого имущества?
                 </h2>
