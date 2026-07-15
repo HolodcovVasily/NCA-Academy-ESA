@@ -66,11 +66,20 @@
                     "xl": "0.5rem",
                     "full": "0.75rem"
             },
-            "fontFamily": {
-                    "headline": ["Inter"],
-                    "body": ["Inter"],
-                    "label": ["Inter"]
-            }
+              "fontFamily": {
+                  "label-md": ["Inter"],
+                  "display-lg": ["Inter"],
+                  "body-md": ["Inter"],
+                  "headline-md": ["Inter"],
+                  "label-sm": ["Inter"]
+              },
+              "fontSize": {
+                  "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                  "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                  "body-md": ["16px", {"lineHeight": "25.6px", "fontWeight": "400"}],
+                  "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                  "label-sm": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}]
+              }
           },
         },
       }
@@ -201,29 +210,52 @@
         </div>
     </div>
     <!-- Completion Modal Overlay -->
-    <div class="absolute inset-0 glass-backdrop z-[70] flex items-center justify-center p-6">
-        <div class="max-w-md w-full bg-surface-container-lowest rounded-lg vault-shadow overflow-hidden flex flex-col transform transition-all animate-in fade-in zoom-in duration-300">
-            <div class="p-8 pb-4 text-center">
-                <p class="font-body-md text-body-md text-on-surface-variant mb-8 px-4">
-                    Вы уверены, что хотите завершить тестирование? После завершения изменить ответы будет невозможно.
+
+<!--    <div class="fixed inset-0 z-[60] blur-overlay flex items-center justify-center p-container-padding">-->
+        <div class="absolute inset-0 glass-backdrop z-[70] flex items-center justify-center p-6">
+        <!-- Modal Window -->
+        <div class="bg-surface-container-lowest w-full max-w-2xl tonal-elevation overflow-hidden rounded-lg flex flex-col relative transition-all duration-500 ease-out" style="transform: translate(-7.155px, 2.545px);">
+
+
+            <div class="p-12 md:p-16 flex flex-col items-center text-center">
+                <!-- Icon Header -->
+                <div class="mb-module-gap">
+                    <div class="w-20 h-20 rounded-full bg-error-container/20 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-[48px] text-error" style="font-variation-settings: 'FILL' 1;">gavel</span>
+                    </div>
+                </div>
+                <!-- Title Section -->
+                <h1 class="font-headline-md text-headline-md text-on-surface max-w-md mb-6 font-extrabold tracking-tight">
+                    Отстранение от дальнейшего прохождения тестирования
+                </h1>
+                <!-- Reason Container (The Body) -->
+                <div class="w-full bg-surface-container-low p-8 rounded-sm text-left mb-module-gap relative">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-error/30"></div>
+                    <span class="font-label-sm text-on-surface-variant mb-2 block uppercase tracking-widest">Основание решения:</span>
+                    <p class="font-body-md text-on-surface-variant leading-relaxed">
+                        Нарушение регламента проведения аттестации: использование мобильного устройства во время прохождения тестирования. Зафиксировано автоматизированной системой прокторинга и подтверждено Председателем комиссии.
+                    </p>
+                </div>
+                <!-- Guidance Text -->
+                <p class="font-body-md text-on-surface-variant mb-section-gap px-4 my-10">
+                    По решению аттестационной комиссии данный сеанс тестирования был заблокирован. Информация о нарушении направлена в ваш личный профиль.
+                    Если Вы считаете принятое решение ошибочным, Вы можете воспользоваться порядком подачи апелляции в соответствии с действующим регламентом.
                 </p>
+
+                <!-- Action Button -->
+                <a class="bg-primary-gradient text-on-primary font-label-md text-label-md py-4 px-6 mt-12 rounded-lg shadow-lg hover:brightness-110 transition-all scale-98-on-click flex items-center space-x-3" href="../../5_Аттестационное%20тестирование/Доступ%20авторизованного%20пользователя%20к%20тестам/Центр%20Аттестации.html">
+                    <span>Перейти в личный кабинет</span>
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </a>
+<!--                <button class="mt-8 text-on-surface-variant hover:text-on-surface font-label-md text-label-md underline underline-offset-4 decoration-outline-variant transition-colors">-->
+<!--                    Посмотреть детали нарушения-->
+<!--                </button>-->
             </div>
-            <div class="p-8 pt-0 flex flex-col gap-3">
-                <button onclick="window.location.href='../Аттестационное тестирование_Результат/Результат_аттестационного тестирования.html'" class="w-full bg-primary-gradient text-white py-4 px-6 rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98] transition-all">
-                    Завершить тестирование
-                    <span class="material-symbols-outlined">arrow_forward</span>
-                </button>
-                <button onclick="window.location.href='./Прохождение теста.html'" class="w-full py-4 px-6 rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 text-on-surface-variant hover:bg-surface-variant hover:scale-[1.02] active:scale-[0.98] transition-all">
-                    <span class="material-symbols-outlined">arrow_back</span>
-                    Вернуться к тесту
-                </button>
-            </div>
-            <!-- Visual detail -->
-            <div class="h-1 w-full bg-surface-container flex">
-                <div class="h-full bg-primary-container w-full"></div>
-            </div>
+            <!-- Structural Accent (Top Line) -->
+            <div class="h-1.5 w-full bg-error"></div>
         </div>
     </div>
+
 </main>
 
 <!-- Bottom Action Bar -->

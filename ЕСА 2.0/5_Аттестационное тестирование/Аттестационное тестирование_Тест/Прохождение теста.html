@@ -165,6 +165,14 @@
 <main class="ml-72 pt-32 px-16 pb-20 max-w-7xl mx-auto">
 
     <div class="grid grid-cols-1 gap-section-gap">
+        <!-- Error section -->
+        <section class="space-y-3">
+            <div class="bg-error-container p-4 rounded-xl flex items-center gap-4" onclick="window.location.href='Отстранение от прохождения теста.html'">
+                <span class="material-symbols-outlined text-error text-2xl" data-icon="info">info</span>
+                <p class="text-body-md text-error">Зафиксирован выход со страницы тестирования. Пожалуйста, не покидайте страницу тестирования до завершения теста. Событие зафиксировано.</p>
+            </div>
+
+        </section>
         <!-- Question 1: Text -->
         <section class="bg-surface-container-lowest p-12 rounded-xl ghost-border">
             <div class="flex items-start gap-6 mb-8">
@@ -190,7 +198,7 @@
             <div class="flex flex-col gap-8">
                 <div class="p-4 ml-16 mt-10 border border-outline-variant/15 rounded-xl bg-surface-container-low flex items-start gap-8">
                     <div>
-                        <h4 class="font-headline-md text-label-md text-on-surface mb-2">Документ. Структурная единица</h4>
+<!--                        <h4 class="font-headline-md text-label-md text-on-surface mb-2">Документ. Структурная единица</h4>-->
                         <p class="font-body-md text-on-surface-variant text-sm leading-relaxed italic">
                             Гражданский кодекс. Глава 4, п. 11
                         </p>
@@ -264,16 +272,17 @@
 <!--            <span class="material-symbols-outlined">arrow_back</span>-->
 <!--            Предыдущий вопрос-->
 <!--        </button>-->
-        <button onclick="window.location.href='#'" class="px-10 py-3 bg-surface-container-high hover:scale-[1.02] active:scale-[0.98] transition-all rounded-lg font-bold text-xs tracking-widest uppercase shadow-md shadow-[#4e69c3]/20 flex items-center gap-2 active:opacity-80 active:scale-95 transition-all" style="">
-            Предыдущий вопрос
+        <button onclick="window.location.href='#'" class="px-10 py-3 bg-surface-variant/40 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-not-allowed rounded-lg font-bold text-xs tracking-widest uppercase shadow-md shadow-[#4e69c3]/20 flex items-center gap-2 active:opacity-80 active:scale-95 transition-all" style="">
             <span class="material-symbols-outlined text-lg" data-icon="arrow_back">arrow_back</span>
+            Предыдущий вопрос
+
         </button>
 <!--        <button onclick="window.location.href='./Аттестационное_завершение_теста.html'" class="px-10 py-3 bg-primary-gradient text-white rounded-lg font-bold text-xs tracking-widest hover:scale-[1.02] active:scale-[0.98] transition-all uppercase shadow-md shadow-[#4e69c3]/20 flex items-center gap-2 active:opacity-80 active:scale-95 transition-all" style="">-->
 <!--            Завершить прохождение теста-->
 <!--            <span class="material-symbols-outlined text-lg" data-icon="check_circle">check_circle</span>-->
 <!--        </button>-->
 
-        <button onclick="window.location.href='./Аттестационное_завершение_теста.html'" class="px-10 py-3 bg-slate-300 cursor-not-allowed rounded-lg font-bold text-xs tracking-widest hover:scale-[1.02] active:scale-[0.98] transition-all uppercase shadow-md shadow-[#4e69c3]/20 flex items-center gap-2 active:opacity-80 active:scale-95 transition-all">
+        <button onclick="window.location.href='./Аттестационное_завершение_теста.html'" class="px-10 py-3 bg-surface-variant/40 cursor-not-allowed rounded-lg font-bold text-xs tracking-widest hover:scale-[1.02] active:scale-[0.98] transition-all uppercase shadow-md shadow-[#4e69c3]/20 flex items-center gap-2 active:opacity-80 active:scale-95 transition-all">
 <!--                class="w-full py-5 rounded-lg font-headline-md text-white bg-slate-300 cursor-not-allowed transition-all opacity-70 flex items-center justify-center gap-3"-->
             <span class="material-symbols-outlined" data-icon="play_arrow">play_arrow</span>
             Завершить прохождение теста
