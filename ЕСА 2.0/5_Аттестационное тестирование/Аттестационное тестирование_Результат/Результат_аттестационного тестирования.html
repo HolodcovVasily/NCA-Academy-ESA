@@ -198,6 +198,93 @@
             </div>
         </div>
     </section>
+    <!-- Message Block -->
+    <section class="space-y-3">
+        <div class="bg-error-container p-4 rounded-xl flex items-center gap-4">
+            <span class="material-symbols-outlined text-[#4e69c3] text-2xl" data-icon="info">info</span>
+            <p class="text-body-md text-on-surface">Ожидайте принятия решения комиссии по результатам тестирования.</p>
+        </div>
+        <div class="bg-error-container p-4 rounded-xl flex items-center gap-4">
+            <span class="material-symbols-outlined text-[#4e69c3] text-2xl" data-icon="event_repeat">event_repeat</span>
+            <p class="text-body-md text-on-surface">По результатам тестирования Вам назначено собеседование. Ожидайте приглашения комиссии.</p>
+        </div>
+    </section>
+    <section class="space-y-module-gap">
+        <div class="bg-surface-container-lowest p-4 rounded-xl shadow-[0_20px_20px_-12px_rgba(25,28,30,0.04)] border-outline-variant/15 border">
+            <div class="flex justify-between items-start mb-6">
+                <div class="space-y-0.5">
+                    <h2 class="font-headline-md text-on-surface">Аттестационный лист</h2>
+                    <p class="font-label-sm text-outline uppercase">Официальные сведения Реестра специалистов</p>
+                </div>
+                <span class="material-symbols-outlined text-outline text-3xl" data-icon="account_balance">account_balance</span>
+            </div>
+
+            <div class="space-y-px bg-outline-variant/10 rounded overflow-hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-px">
+                    <div class="flex flex-col bg-surface-container-low/50 p-4 space-y-1">
+                        <span class="font-label-sm text-outline uppercase bg-surface-container">Фамилия, Имя, Отчество</span>
+                        <span class="font-label-md text-on-surface font-bold">Иванов Алексей Иванович</span>
+                    </div>
+
+                    <div class="flex flex-col bg-surface-container-low/50 p-4 space-y-1">
+                        <span class="font-label-sm text-outline uppercase bg-surface-container">Должность</span>
+                        <span class="font-label-md text-on-surface">Специалист по ТИ</span>
+                    </div>
+
+                    <div class="flex flex-col bg-surface-container-low/50 p-4 space-y-1">
+                        <span class="font-label-sm text-outline uppercase bg-surface-container">Стаж</span>
+                        <span class="font-label-md text-on-surface">12 лет 2 мес.</span>
+                    </div>
+
+                    <div class="flex flex-col bg-surface-container-low/50 p-4 space-y-1">
+                        <span class="font-label-sm text-outline uppercase bg-surface-container">Наименование организации по государственной регистрации</span>
+                        <span class="font-label-md text-on-surface">Минское городское Агентство</span>
+                    </div>
+
+                    <div class="flex flex-col bg-surface-container-low/50 p-4 space-y-1">
+                        <span class="font-label-sm text-outline uppercase bg-surface-container">Образование</span>
+                        <span class="font-label-md text-on-surface ">Образование, наименование учебного заведения, специальность по образованию, квалификация</span>
+                    </div>
+
+                    <div class="flex flex-col bg-surface-container-low/50 p-4 space-y-1">
+                        <span class="font-label-sm text-outline uppercase bg-surface-container">Характеристика</span>
+                        <div>
+                            <p class="font-label-md text-on-surface">Положительная на специалиста.
+                                <span title="Скачать характеристику"  class="material-symbols-outlined text-primary cursor-pointer hover:bg-primary-fixed p-1 rounded text-xl" data-icon="download">download</span>
+                            </p>
+                            <p class="font-label-md text-on-surface">Балл: 1</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col bg-surface-container-low/50 p-4 space-y-1">
+                        <span class="font-label-sm text-outline uppercase bg-surface-container">Последнее повышение квалификации</span>
+                        <span class="font-label-md text-on-surface">Где, наименование курсов, оценка</span>
+                    </div>
+
+                    <div class="flex flex-col bg-surface-container-low/50 p-4 space-y-1">
+                        <span class="font-label-sm text-outline uppercase bg-surface-container">Тестирование</span>
+                        <span class="font-label-md text-on-surface ">Балл: 3</span>
+                    </div>
+
+                    <div class="flex flex-col bg-surface-container-low/50 p-4 space-y-1">
+                        <span class="font-label-sm text-outline uppercase bg-surface-container">Результат собеседования</span>
+                        <span class="font-label-md text-on-surface">Собеседование не проводилось.</span>
+                        <span class="font-label-md text-on-surface">Балл: 0</span>
+                    </div>
+
+                    <div class="flex flex-col bg-surface-container-low/50 p-4 space-y-1">
+                        <span class="font-label-sm text-outline uppercase bg-surface-container">Решение аттестационной комиссии</span>
+                        <span class="font-label-md text-on-surface">Аттестован, соответствует занимаемой должности</span>
+                    </div>
+
+                    <div class="flex flex-col bg-surface-container-low/50 p-4 space-y-1">
+                        <span class="font-label-sm text-outline uppercase bg-surface-container">Дата аттестации</span>
+                        <span class="font-label-md text-on-surface">24.06.2026</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Accordion List: Question Details -->
     <div class="space-y-4">
         <div class="flex items-center justify-between">
@@ -305,97 +392,6 @@
             </div>
         </div>
     </div>
-    <!-- Message Block -->
-    <section class="space-y-3">
-        <div class="bg-error-container p-4 rounded-xl flex items-center gap-4">
-            <span class="material-symbols-outlined text-[#4e69c3] text-2xl" data-icon="info">info</span>
-            <p class="text-body-md text-on-surface">Ожидайте принятия решения комиссии по результатам тестирования.</p>
-        </div>
-        <div class="bg-error-container p-4 rounded-xl flex items-center gap-4">
-            <span class="material-symbols-outlined text-[#4e69c3] text-2xl" data-icon="event_repeat">event_repeat</span>
-            <p class="text-body-md text-on-surface">По результатам тестирования Вам назначено собеседование. Ожидайте приглашения комиссии.</p>
-        </div>
-    </section>
-
-
-
-    <section class="space-y-module-gap">
-        <div class="bg-surface-container-lowest p-4 rounded-xl shadow-[0_20px_20px_-12px_rgba(25,28,30,0.04)] border-outline-variant/15 border">
-            <div class="flex justify-between items-start mb-6">
-                <div class="space-y-0.5">
-                    <h2 class="font-headline-md text-on-surface">Аттестационный лист</h2>
-                    <p class="font-label-sm text-outline uppercase">Официальные сведения Реестра специалистов</p>
-                </div>
-                <span class="material-symbols-outlined text-outline text-3xl" data-icon="account_balance">account_balance</span>
-            </div>
-
-            <div class="space-y-px bg-outline-variant/10 rounded overflow-hidden">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-px">
-                    <div class="flex flex-col bg-surface-container-low/50 p-4 space-y-1">
-                        <span class="font-label-sm text-outline uppercase bg-surface-container">Фамилия, Имя, Отчество</span>
-                        <span class="font-label-md text-on-surface font-bold">Иванов Алексей Иванович</span>
-                    </div>
-
-                    <div class="flex flex-col bg-surface-container-low/50 p-4 space-y-1">
-                        <span class="font-label-sm text-outline uppercase bg-surface-container">Должность</span>
-                        <span class="font-label-md text-on-surface">Специалист по ТИ</span>
-                    </div>
-
-                    <div class="flex flex-col bg-surface-container-low/50 p-4 space-y-1">
-                        <span class="font-label-sm text-outline uppercase bg-surface-container">Стаж</span>
-                        <span class="font-label-md text-on-surface">12 лет 2 мес.</span>
-                    </div>
-
-                    <div class="flex flex-col bg-surface-container-low/50 p-4 space-y-1">
-                        <span class="font-label-sm text-outline uppercase bg-surface-container">Наименование организации по государственной регистрации</span>
-                        <span class="font-label-md text-on-surface">Минское городское Агентство</span>
-                    </div>
-
-                    <div class="flex flex-col bg-surface-container-low/50 p-4 space-y-1">
-                        <span class="font-label-sm text-outline uppercase bg-surface-container">Образование</span>
-                        <span class="font-label-md text-on-surface ">Образование, наименование учебного заведения, специальность по образованию, квалификация</span>
-                    </div>
-
-                    <div class="flex flex-col bg-surface-container-low/50 p-4 space-y-1">
-                        <span class="font-label-sm text-outline uppercase bg-surface-container">Характеристика</span>
-                        <div>
-                            <p class="font-label-md text-on-surface">Положительная на специалиста.
-                                <span title="Скачать характеристику"  class="material-symbols-outlined text-primary cursor-pointer hover:bg-primary-fixed p-1 rounded text-xl" data-icon="download">download</span>
-                            </p>
-                            <p class="font-label-md text-on-surface">Балл: 1</p>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col bg-surface-container-low/50 p-4 space-y-1">
-                        <span class="font-label-sm text-outline uppercase bg-surface-container">Последнее повышение квалификации</span>
-                        <span class="font-label-md text-on-surface">Где, наименование курсов, оценка</span>
-                    </div>
-
-                    <div class="flex flex-col bg-surface-container-low/50 p-4 space-y-1">
-                        <span class="font-label-sm text-outline uppercase bg-surface-container">Тестирование</span>
-                        <span class="font-label-md text-on-surface ">Балл: 3</span>
-                    </div>
-
-                    <div class="flex flex-col bg-surface-container-low/50 p-4 space-y-1">
-                        <span class="font-label-sm text-outline uppercase bg-surface-container">Результат собеседования</span>
-                        <span class="font-label-md text-on-surface">Собеседование не проводилось.</span>
-                        <span class="font-label-md text-on-surface">Балл: 0</span>
-                    </div>
-
-                    <div class="flex flex-col bg-surface-container-low/50 p-4 space-y-1">
-                        <span class="font-label-sm text-outline uppercase bg-surface-container">Решение аттестационной комиссии</span>
-                        <span class="font-label-md text-on-surface">Аттестован, соответствует занимаемой должности</span>
-                    </div>
-
-                    <div class="flex flex-col bg-surface-container-low/50 p-4 space-y-1">
-                        <span class="font-label-sm text-outline uppercase bg-surface-container">Дата аттестации</span>
-                        <span class="font-label-md text-on-surface">24.06.2026</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
 <!-- Recommended Review Block -->
 <!--<section class="space-y-module-gap">-->
 <!--&lt;!&ndash;<h2 class="font-headline-md text-on-surface">Рекомендуем повторить</h2>&ndash;&gt;-->
