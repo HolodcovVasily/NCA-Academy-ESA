@@ -279,13 +279,18 @@
         <!-- Message: тест завершен---принято решение комиссии---отстранен -->
         <div class="bg-error-container p-4 rounded-xl flex items-center text-error gap-4">
             <span class="material-symbols-outlined text-2xl" data-icon="info">info</span>
-            <p class="text-body-md ">Апелляционная комиссия завершила рассмотрение Вашей апелляции. Принятое решение: отказать в удовлетворении апелляции и оставить решения о не аттестации в силе. Ознакомьтесь с аттестационным листом, представленным ниже.</p>
+            <p class="text-body-md ">Апелляционная комиссия завершила рассмотрение Вашей апелляции. Принятое решение: отказать в удовлетворении апелляции и оставить решения о не аттестации в силе.</p>
         </div>
 
         <!-- Message: тест завершен---зафиксирован факт несогласия с решением комиссии -->
         <div class="bg-error-container p-4 rounded-xl flex items-center text-error gap-4">
             <span class="material-symbols-outlined text-2xl" data-icon="info">info</span>
             <p class="text-body-md ">Зафиксировано несогласие с решением аттестационной комиссии. Данная отметка не является апелляцией. При необходимости апелляция может быть подана в установленном порядке.</p>
+        </div>
+        <!-- Message: тест завершен---зафиксирован факт несогласия с предложенной на ознакомление характеристикой -->
+        <div class="bg-error-container p-4 rounded-xl flex items-center text-error gap-4">
+            <span class="material-symbols-outlined text-2xl" data-icon="info">info</span>
+            <p class="text-body-md ">Зафиксировано несогласие с предложенной на ознакомление характеристикой. Данная отметка не является апелляцией. При необходимости апелляция может быть подана в установленном порядке.</p>
         </div>
     </section>
     <!-- Message section -->
@@ -362,11 +367,6 @@
                     <div class="flex flex-col bg-surface-container-low/50 p-4 space-y-1">
                         <span class="font-label-sm text-outline uppercase bg-surface-container">Дата аттестации</span>
                         <span class="font-label-md text-on-surface">24.06.2026</span>
-                    </div>
-                    <div class="flex flex-col bg-surface-container-low/50 p-4 space-y-1">
-                        <span class="font-label-sm text-outline uppercase bg-surface-container">Несогласие с решением комиссии</span>
-
-                        <span class="font-label-md text-on-surface">Выражено несогласие с решением комиссии</span>
                     </div>
                     <div class="flex flex-col bg-surface-container-low/50 p-4 space-y-1">
                         <span class="font-label-sm text-outline uppercase bg-surface-container">Решение апелляционной комиссии</span>
@@ -547,21 +547,13 @@
                 <span class="material-symbols-outlined text-lg" data-icon="check_circle">check_circle</span>С аттестационным листом ознакомлен(а)</button>
         </div>
     </section>
-    <!-- Подача апелляции, отображается после ознакомления/не с АЛ -->
-    <section class="flex flex-col items-center pt-4">
-        <div class="flex flex-col md:flex-row items-center justify-center gap-4 w-full">
-            <button onclick="window.location.href='#'" class="w-full py-4 px-6 rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 text-on-surface-variant hover:bg-surface-variant hover:scale-[1.02] active:scale-[0.98] transition-all">Подать апелляцию</button>
-            <!--            <button onclick="window.location.href='./Результат_Отказ.html'" class="bg-surface-container py-4 px-4 rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 active:scale-[0.98] transition-all hover:bg-surface-container-high ">Отказаться от ознакомления</button>-->
+    <!-- Подача апелляции- 21/07/2026 -согласно новому проекту постановления апелляция подается ТОРом по инициативе Претендента из личного кабинета ТОРа -->
+<!--    <section class="flex flex-col items-center pt-4">-->
+<!--        <div class="flex flex-col md:flex-row items-center justify-center gap-4 w-full">-->
+<!--            <button onclick="window.location.href='#'" class="w-full py-4 px-6 rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 text-on-surface-variant hover:bg-surface-variant hover:scale-[1.02] active:scale-[0.98] transition-all">Подать апелляцию</button>-->
+<!--            &lt;!&ndash;            <button onclick="window.location.href='./Результат_Отказ.html'" class="bg-surface-container py-4 px-4 rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 active:scale-[0.98] transition-all hover:bg-surface-container-high ">Отказаться от ознакомления</button>&ndash;&gt;-->
 
-        </div>
-    </section>
+<!--        </div>-->
+<!--    </section>-->
 </main>
-<!-- Footer -->
-<!--<footer class="w-full py-8 mt-12 border-t border-[#e0e3e5] dark:border-[#2d2f31] border-opacity-15 bg-[#f8f9fa] dark:bg-[#121416]">-->
-<!--<div class="flex flex-col items-center justify-center gap-4 max-w-[1920px] mx-auto px-8">-->
-<!--<p class="text-[10px] uppercase tracking-[0.1em] font-medium text-[#70757a] text-center max-w-md">-->
-<!--                ©  НКА Академия | ЕСА 2.0-->
-<!--            </p>-->
-<!--</div>-->
-<!--</footer>-->
 </body></html>
