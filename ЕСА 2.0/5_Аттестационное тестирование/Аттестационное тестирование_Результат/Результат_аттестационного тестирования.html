@@ -429,7 +429,7 @@
                             <div class="bg-surface-container p-4 rounded text-body-md text-on-surface-variant italic leading-relaxed">
                                 "ст.268 ГК. Собственник недвижимого имущества вправе требовать от собственника соседнего недвижимого имущества, а в необходимых случаях - и от собственника другого недвижимого имущества предоставления права ограниченного пользования недвижимым имуществом (сервитута)."
                             </div>
-                            <a class="inline-flex items-center gap-2 text-primary text-label-md font-bold hover:underline" href="#">
+                            <a title="Открыть ссылку на документ в Базе Знаний" class="inline-flex items-center gap-2 text-label-sm font-bold text-primary uppercase tracking-wider hover:underline " href="#">
                                 <span class="material-symbols-outlined text-[18px]">open_in_new</span>
                                 Ссылка на документ
                             </a>
@@ -477,8 +477,8 @@
                             <div class="bg-surface-container-highest/60 p-4 rounded text-body-md text-on-surface-variant italic leading-relaxed">
                                 "Инструкция № 11 п. 263. Готовность незавершенного строения в целом определяется принятым в технической инвентаризации методом сложения величин готовности отдельных конструктивных элементов, взвешенных по удельному весу капитального строения (здания, сооружения) с поправками. Формула определения готовности незавершенного строения в целом: где С - готовность незавершенного строения в целом; - сумма величин готовности отдельных конструктивных элементов; В - сумма удельного веса конструктивных элементов капитального строения (здания, сооружения) с поправками к ним. Допускается следующая степень округления величины готовности: для отдельных участков конструктивного элемента - до 10%; для конструктивного элемента в целом - до 5%; для незавершенного строения в целом - до 1%."
                             </div>
-                            <a class="inline-flex items-center gap-2 text-primary text-label-md font-bold hover:underline" href="#">
-                                <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+                            <a title="Открыть ссылку на документ в Базе Знаний" class="inline-flex items-center gap-2 text-primary text-label-md font-bold hover:underline" href="#">
+                                <span  class="material-symbols-outlined text-[18px]">open_in_new</span>
                                 Ссылка на документ
                             </a>
                         </div>
@@ -538,15 +538,22 @@
 <!--</div>-->
 <!--</section>-->
 
-    <!-- Action Area -->
+    <!-- НЕ отображать кнопки до решения АК -->
     <section class="flex flex-col items-center pt-4">
         <div class="flex flex-col md:flex-row items-center justify-center gap-4 w-full">
-<!--            Кнопку не делать, чтобы проще было. А просто собирать статусы ознакомлений на момент формирования протокола. По тем людям, которые ничего не нажали, просто автоматом проставлять - отказался-->
-<!--            <button onclick="window.location.href='./Результат_Отказ.html'" class="w-full py-4 px-6 rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 text-on-surface-variant hover:bg-surface-variant hover:scale-[1.02] active:scale-[0.98] transition-all">Отказаться от ознакомления</button>-->
-<!--            <button onclick="window.location.href='./Результат_Отказ.html'" class="bg-surface-container py-4 px-4 rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 active:scale-[0.98] transition-all hover:bg-surface-container-high ">Отказаться от ознакомления</button>-->
-            <button onclick="window.location.href='../Доступ авторизованного пользователя к тестам/Центр Аттестации.html'" class="w-full bg-primary-gradient text-white py-4 px-6 rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98] transition-all">
-                <span class="material-symbols-outlined text-lg" data-icon="check_circle">check_circle</span>С аттестационным листом ознакомлен(а)</button>
+
+            <button onclick="window.location.href='../Доступ авторизованного пользователя к тестам/Центр Аттестации.html'" class="w-full  py-4 px-6 rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 hover:bg-surface-variant hover:scale-[1.02] shadow-md shadow-[#4e69c3]/20 active:scale-[0.98] transition-all" style="">
+                Перейти в личный кабинет <span class="material-symbols-outlined" data-icon="arrow_back">arrow_forward</span></button>
+
+            <button onclick="window.location.href='#'" class="w-full bg-primary-gradient text-white py-4 px-6 rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98] transition-all">
+<!--                <span class="material-symbols-outlined text-lg" data-icon="check_circle">check_circle</span>-->
+                С аттестационным листом ознакомлен(а)</button>
+            <!-- После первого клика по кнопке добавлять галочку и блокировать кнопку -->
+<!--            <button class="w-full  py-4 px-6 rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 shadow-md shadow-[#4e69c3]/20 cursor-not-allowed" style="">-->
+<!--                <span class="material-symbols-outlined text-lg" data-icon="check_circle">check_circle</span>-->
+<!--                С аттестационным листом ознакомлен(а)</button>-->
         </div>
+
     </section>
     <!-- Подача апелляции- 21/07/2026 -согласно новому проекту постановления апелляция подается ТОРом по инициативе Претендента из личного кабинета ТОРа -->
 <!--    <section class="flex flex-col items-center pt-4">-->
