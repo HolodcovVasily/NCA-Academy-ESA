@@ -40,87 +40,102 @@
         .bg-primary-gradient {
             background: linear-gradient(135deg, #4e69c3 0%, #001453 100%);
         }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        .signature-gradient {
+            background: linear-gradient(135deg, #3755c3 0%, #001453 100%);
+        }
+        .glass-backdrop {
+            backdrop-filter: blur(12px);
+            background-color: rgba(25, 28, 30, 0.4);
+        }
+        .ghost-border {
+            outline: 1px solid rgba(198, 198, 205, 0.15);
+        }
     </style>
 <script id="tailwind-config">
         tailwind.config = {
           darkMode: "class",
           theme: {
             extend: {
-              "colors": {
-                      "inverse-primary": "#b6c4ff",
-                      "surface-bright": "#f7f9fb",
-                      "outline": "#757683",
-                      "on-tertiary-fixed-variant": "#173baa",
-                      "on-secondary": "#ffffff",
-                      "error": "#ba1a1a",
-                      "on-tertiary": "#ffffff",
-                      "on-primary-fixed-variant": "#214098",
-                      "surface-container-lowest": "#ffffff",
-                      "on-secondary-container": "#384785",
-                      "on-secondary-fixed-variant": "#334380",
-                      "outline-variant": "#c6c6cd",
-                      "secondary-fixed-dim": "#b8c4ff",
-                      "background": "#f7f9fb",
-                      "inverse-surface": "#2d3133",
-                      "on-surface-variant": "#444652",
-                      "primary-container": "#4e69c3",
-                      "primary-fixed": "#dce1ff",
-                      "primary": "#3450a9",
-                      "on-primary-fixed": "#00164f",
-                      "on-surface": "#191c1e",
-                      "tertiary-fixed": "#dde1ff",
-                      "inverse-on-surface": "#eff1f3",
-                      "primary-fixed-dim": "#b6c4ff",
-                      "on-secondary-fixed": "#001453",
-                      "surface": "#f7f9fb",
-                      "surface-variant": "#e0e3e5",
-                      "surface-container-highest": "#e0e3e5",
-                      "on-tertiary-fixed": "#001453",
-                      "surface-container-low": "#f2f4f6",
-                      "on-error": "#ffffff",
-                      "secondary-fixed": "#dde1ff",
-                      "tertiary-container": "#4966d4",
-                      "surface-container-high": "#e6e8ea",
-                      "surface-dim": "#d8dadc",
-                      "secondary": "#4b5b9a",
-                      "tertiary-fixed-dim": "#b8c4ff",
-                      "surface-tint": "#3755c3",
-                      "surface-container": "#eceef0",
-                      "secondary-container": "#a9b8fe",
-                      "on-error-container": "#93000a",
-                      "on-primary-container": "#f1f1ff",
-                      "error-container": "#ffdad6",
-                      "on-primary": "#ffffff",
-                      "on-background": "#191c1e",
-                      "tertiary": "#2d4cba",
-                      "on-tertiary-container": "#f2f1ff"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.125rem",
-                      "lg": "0.25rem",
-                      "xl": "0.5rem",
-                      "full": "0.75rem"
-              },
-              "spacing": {
-                      "module-gap": "24px",
-                      "container-padding": "16px",
-                      "base": "8px",
-                      "section-gap": "32px"
-              },
-              "fontFamily": {
-                      "display-lg": ["Inter"],
-                      "label-sm": ["Inter"],
-                      "label-md": ["Inter"],
-                      "body-md": ["Inter"],
-                      "headline-md": ["Inter"]
-              },
-              "fontSize": {
-                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                      "label-sm": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
-                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}],
-                      "body-md": ["16px", {"lineHeight": "25.6px", "fontWeight": "400"}],
-                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
-              }
+                "colors": {
+                    "tertiary-fixed": "#dde1ff",
+                    "surface-container-low": "#f2f4f6",
+                    "on-primary": "#ffffff",
+                    "surface": "#f7f9fb",
+                    "on-secondary-fixed-variant": "#334380",
+                    "inverse-surface": "#2d3133",
+                    "primary-fixed-dim": "#b6c4ff",
+                    "surface-dim": "#d8dadc",
+                    "tertiary": "#2d4cba",
+                    "outline-variant": "#c5c5d4",
+                    "surface-bright": "#f7f9fb",
+                    "on-error": "#ffffff",
+                    "on-surface-variant": "#444652",
+                    "primary-container": "#4e69c3",
+                    "on-tertiary-fixed": "#001453",
+                    "on-secondary": "#ffffff",
+                    "surface-container-highest": "#e0e3e5",
+                    "secondary-container": "#a9b8fe",
+                    "surface-variant": "#e0e3e5",
+                    "inverse-on-surface": "#eff1f3",
+                    "on-surface": "#191c1e",
+                    "on-primary-fixed": "#00164f",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed": "#dde1ff",
+                    "on-tertiary-container": "#f2f1ff",
+                    "on-tertiary-fixed-variant": "#173baa",
+                    "surface-container-lowest": "#ffffff",
+                    "outline": "#757683",
+                    "on-background": "#191c1e",
+                    "primary-fixed": "#dce1ff",
+                    "tertiary-fixed-dim": "#b8c4ff",
+                    "secondary-fixed-dim": "#b8c4ff",
+                    "surface-tint": "#3755c3",
+                    "on-secondary-fixed": "#001453",
+                    "on-primary-container": "#f1f1ff",
+                    "inverse-primary": "#b6c4ff",
+                    "tertiary-container": "#4966d4",
+                    "surface-container-high": "#e6e8ea",
+                    "surface-container": "#eceef0",
+                    "background": "#f7f9fb",
+                    "error-container": "#ffdad6",
+                    "secondary": "#4b5b9a",
+                    "on-primary-fixed-variant": "#214098",
+                    "on-error-container": "#93000a",
+                    "primary": "#3450a9",
+                    "on-secondary-container": "#384785",
+                    "error": "#ba1a1a"
+                },
+                "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+                },
+                "spacing": {
+                    "base": "8px",
+                    "module-gap": "24px",
+                    "section-gap": "32px",
+                    "container-padding": "16px"
+                },
+                "fontFamily": {
+                    "label-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "body-md": ["Inter"]
+                },
+                "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "label-sm": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "25.6px", "fontWeight": "400"}]
+                }
             },
           },
         }
@@ -167,248 +182,504 @@
 <!--            New Question-->
 <!--        </button>-->
 </aside>
-<!-- Main Content Canvas -->
-<main class="ml-72 mt-12 p-section-gap max-w-[1400px]">
-<!-- Page Header -->
-<div class="mb-section-gap flex justify-between items-end">
-<div class="max-w-2xl">
-<span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em] mb-2 block">Создание вопроса</span>
-<!--<h1 class="font-display-lg text-display-lg text-on-background">Гражданский кодекс Республики Беларусь. Раздел 1</h1>-->
-<!--<p class="font-body-md text-body-md text-on-surface-variant mt-2">Добавляйте новые вопросы. После сохранения вопросы отображаются в Банке вопросов в зависимости от их статуса.</p>-->
-</div>
-</div>
-<div class="flex flex-col lg:flex-row gap-module-gap">
-<!-- Metadata Side Column -->
-<section class="lg:w-1/3 flex flex-col gap-module-gap">
-<!-- Metadata Card -->
-<div class="bg-surface-container-low p-8 rounded-xl flex flex-col gap-6">
-<div class="flex flex-col gap-4">
-<div class="group">
-    <div class="space-y-2">
-        <!-- Regulatory Metadata (Condensed) -->
-        <div class="">
-            <h3 class="font-label-md text-label-md text-on-surface flex items-center gap-2 mb-4">
-                <span class="material-symbols-outlined text-primary" data-icon="gavel">gavel</span>
-                Предметная область вопроса
-            </h3>
-            <div class="space-y-4">
-                <!-- Field 1: Select Document -->
-                <div>
-                    <label class="font-label-sm text-label-sm text-outline uppercase mb-2 block px-1">Нормативный документ<span class="text-error">*</span></label>
-                    <div class="relative">
-                        <select class="w-full h-11 pl-4 pr-10 bg-surface-container-highest border-none font-body-md text-on-surface rounded-lg focus:ring-1 focus:ring-primary appearance-none cursor-pointer">
-                            <option disabled="" selected="" value="">Выберите документ...</option>
-                            <option>Гражданский кодекс</option>
-                            <option>Закон о государственной регистрации</option>
-                            <option>Инструкция о кадастровых номерах</option>
-                            <option>Инструкция о порядке ведения адресной системы</option>
-                            <option>Инструкция № 11</option>
-                            <option>Инструкция об инвентарных номерах</option>
-                            <option>Кодекс Республики Беларусь о земле</option>
-                        </select>
-                        <span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline pointer-events-none" data-icon="expand_more">expand_more</span>
-                    </div>
-                </div>
-                <!-- Field 2: Structural Unit -->
-                <div>
-                    <label class="font-label-sm text-label-sm text-outline uppercase mb-2 block px-1">СТРУКТУРНАЯ ЕДИНИЦА <span class="text-error">*</span></label>
-                    <div class="relative">
-                        <input class="w-full h-11 pl-4 pr-10 bg-surface-container-highest border-none font-body-md text-on-surface rounded-lg focus:ring-1 focus:ring-primary opacity-60 cursor-not-allowed" disabled="" placeholder="Поиск единицы..." type="text">
-                        <span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline" data-icon="search">search</span>
-                    </div>
-                </div>
-                <!-- Field 3: field -->
-                <div>
-                    <label class="font-label-sm text-label-sm text-outline uppercase mb-2 block px-1">ТЕМАТИКА <span class="text-error">*</span></label>
-                    <div class="relative">
-                        <input class="w-full h-11 pl-4 pr-10 bg-surface-container-highest border-none font-body-md text-on-surface rounded-lg focus:ring-1 focus:ring-primary opacity-60 cursor-not-allowed" disabled="" placeholder="Поиск тематики..." type="text">
-                        <span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline" data-icon="search">search</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="pt-6 border-t border-outline-variant/20">
 
-        <div class="space-y-2">
-            <h3 class="font-label-md text-label-md text-on-surface flex items-center gap-2">
-                <span class="material-symbols-outlined text-primary" data-icon="inventory_2">inventory_2</span>
-                Метаданные вопроса
-            </h3>
-            <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1" style="">Статус вопроса<span class="text-error">*</span></label>
-            <select class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface appearance-none bottom-border-focus">
-<!--                <option disabled="" selected="" value="">Выберите статус</option>-->
-                <option selected="" title="только внесли/изменили статус с активного - не отображается в тестах">В разработке</option>
-                <option title="утвержден ГКИ, можно его применять в аттестации" >Активный</option>
-                <option title="не отображается в тестах">Архивный</option>
-                <option title="изменения в структурной единице нормативного документа">Требует актуализации</option>
-            </select>
-        </div>
-        <div class="space-y-2">
-            <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1" style="">Сложность вопроса<span class="text-error">*</span></label>
-            <select class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface appearance-none bottom-border-focus">
-                <option disabled="" selected="" value="">Укажите сложность вопроса</option>
-                <option>Легкая</option>
-                <option >Средняя</option>
-                <option>Сложная</option>
-            </select>
-        </div>
+
+<div class="fixed inset-0 z-[100] flex items-center justify-center glass-backdrop">
+    <!-- Large Modal: 1300px width, 85% height -->
+    <div class="bg-surface-container-low w-full max-w-[1300px] h-[85vh] overflow-hidden rounded-xl shadow-2xl flex flex-col">
+        <!-- Modal Header -->
+        <!-- Page Header -->
+        <div class="px-section-gap py-module-gap flex justify-between items-center bg-surface-container-lowest border-b-2 border-surface-container-low">
             <div>
-                <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Дата вступления в силу</label>
-                <input class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant" type="text" value="01.09.2026"/>
+                <h2 class="font-headline-md text-headline-md text-on-surface">Создание вопроса</h2>
             </div>
-        <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Номер (ID)</label>
-        <input class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant cursor-not-allowed" readonly="" type="text" value="4153723"/>
-    </div>
+            <button class="w-10 h-10 rounded-full hover:bg-surface-container-highest flex items-center justify-center text-outline transition-colors">
+                <span onclick="window.location.href='../Управление вопросами/Управление вопросами.html'" class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <div class="flex-1 overflow-y-auto p-section-gap">
+            <div class="flex flex-col lg:flex-row gap-module-gap">
+                <!-- Metadata Side Column -->
+                <section class="lg:w-1/3 flex flex-col gap-module-gap">
+                    <!-- Metadata Card -->
+                    <div class="bg-surface-container-low p-8 rounded-xl flex flex-col gap-6">
+                        <div class="flex flex-col gap-4">
+                            <div class="group">
+                                <div class="space-y-2">
+                                    <!-- Regulatory Metadata (Condensed) -->
+                                    <div class="">
+                                        <h3 class="font-label-md text-label-md text-on-surface flex items-center gap-2 mb-4">
+                                            <span class="material-symbols-outlined text-primary" data-icon="gavel">gavel</span>
+                                            Предметная область вопроса
+                                        </h3>
+                                        <div class="space-y-4">
+                                            <!-- Field 1: Select Document -->
+                                            <div>
+                                                <label class="font-label-sm text-label-sm text-outline uppercase mb-2 block px-1">Нормативный документ<span class="text-error">*</span></label>
+                                                <div class="relative">
+                                                    <select class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface appearance-none bottom-border-focus">
+                                                        <option disabled="" selected="" value="">Выберите документ...</option>
+                                                        <option>Гражданский кодекс</option>
+                                                        <option>Закон о государственной регистрации</option>
+                                                        <option>Инструкция о кадастровых номерах</option>
+                                                        <option>Инструкция о порядке ведения адресной системы</option>
+                                                        <option>Инструкция № 11</option>
+                                                        <option>Инструкция об инвентарных номерах</option>
+                                                        <option>Кодекс Республики Беларусь о земле</option>
+                                                    </select>
+                                                    <span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline pointer-events-none" data-icon="expand_more">expand_more</span>
+                                                </div>
+                                            </div>
+                                            <!-- Field 2: Structural Unit -->
+                                            <div>
+                                                <label class="font-label-sm text-label-sm text-outline uppercase mb-2 block px-1">СТРУКТУРНАЯ ЕДИНИЦА <span class="text-error">*</span></label>
+                                                <div class="relative">
+                                                    <input class="w-full h-11 pl-4 pr-10 bg-surface-container-highest border-none font-body-md text-on-surface rounded-lg focus:ring-1 focus:ring-primary opacity-60 cursor-not-allowed" disabled="" placeholder="Поиск единицы..." type="text">
+                                                    <span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline" data-icon="search">search</span>
+                                                </div>
+                                            </div>
+                                            <!-- Field 3: field -->
+                                            <div>
+                                                <label class="font-label-sm text-label-sm text-outline uppercase mb-2 block px-1">ТЕМАТИКА <span class="text-error">*</span></label>
+                                                <div class="relative">
+                                                    <input class="w-full h-11 pl-4 pr-10 bg-surface-container-highest border-none font-body-md text-on-surface rounded-lg focus:ring-1 focus:ring-primary opacity-60 cursor-not-allowed" disabled="" placeholder="Поиск тематики..." type="text">
+                                                    <span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline" data-icon="search">search</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pt-6 border-t border-outline-variant/20">
+
+                                        <div class="space-y-2">
+                                            <h3 class="font-label-md text-label-md text-on-surface flex items-center gap-2">
+                                                <span class="material-symbols-outlined text-primary" data-icon="inventory_2">inventory_2</span>
+                                                Метаданные вопроса
+                                            </h3>
+                                            <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1" style="">Статус вопроса<span class="text-error">*</span></label>
+                                            <select class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface appearance-none bottom-border-focus">
+                                                <!--                <option disabled="" selected="" value="">Выберите статус</option>-->
+                                                <option selected="" title="только внесли/изменили статус с активного - не отображается в тестах">В разработке</option>
+                                                <option title="утвержден ГКИ, можно его применять в аттестации">Активный</option>
+                                                <option title="не отображается в тестах">Архивный</option>
+                                                <option title="изменения в структурной единице нормативного документа">Требует актуализации</option>
+                                            </select>
+                                        </div>
+                                        <div class="space-y-2">
+                                            <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1" style="">Сложность вопроса<span class="text-error">*</span></label>
+                                            <select class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface appearance-none bottom-border-focus">
+                                                <option disabled="" selected="" value="">Укажите сложность вопроса</option>
+                                                <option>Легкая</option>
+                                                <option>Средняя</option>
+                                                <option>Сложная</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Дата вступления в силу</label>
+                                            <input class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant" type="text" value="01.09.2026">
+                                        </div>
+                                        <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Номер (ID)</label>
+                                        <input class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant cursor-not-allowed" readonly="" type="text" value="4153723">
+                                    </div>
 
 
-</div>
-    <div class="">
-        <div>
-            <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Разработчик</label>
-            <input class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant cursor-not-allowed" readonly="" type="text" value="Авторизованный администратор вопросов"/>
-        </div>
-        <div>
-            <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Создан</label>
-            <input class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant cursor-not-allowed" readonly="" type="text" value="03.10.2016 15:55:06"/>
-        </div>
-        <div>
-            <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Дата изменений</label>
-            <input class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant cursor-not-allowed" readonly="" type="text" value="07.05.2026 09:21:06"/>
-        </div>
-    </div>
-</div>
-</div>
-</div>
-</section>
-<!-- Main Content Area -->
-<section class="lg:w-2/3 flex flex-col gap-module-gap">
-    <!-- Question Type Selection -->
-    <div class="bg-surface-container-low p-6 rounded-xl">
-        <label class="font-label-sm text-label-sm text-outline uppercase mb-4 block px-1">Тип вопроса:</label>
-        <div class="flex flex-wrap gap-3">
-            <button onclick="window.location.href='#'" class="flex-1 min-w-[140px] px-4 py-3 rounded-lg bg-white border border-primary text-primary font-label-md flex items-center justify-center gap-2 shadow-sm">
-                <span class="material-symbols-outlined text-lg" data-icon="radio_button_checked">radio_button_checked</span>
-                Стандартный
-            </button>
-            <button onclick="window.location.href='./Создание вопросов_интерактивный.html'" class="flex-1 min-w-[140px] px-4 py-3 rounded-lg bg-surface-container hover:bg-white text-on-surface-variant font-label-md flex items-center justify-center gap-2 transition-colors cursor-not-allowed" disabled>
-                <span class="material-symbols-outlined text-lg" data-icon="check_box">check_box</span>
-                Интерактивный
-            </button>
-<!--            <button onclick="window.location.href='#'" class="flex-1 min-w-[140px] px-4 py-3 rounded-lg bg-surface-container hover:bg-white text-on-surface-variant font-label-md flex items-center justify-center gap-2 transition-colors">-->
-<!--                <span class="material-symbols-outlined text-lg" data-icon="short_text">short_text</span>-->
-<!--                Открытый-->
-<!--            </button>-->
-<!--            <button onclick="window.location.href='#'" class="flex-1 min-w-[140px] px-4 py-3 rounded-lg bg-surface-container hover:bg-white text-on-surface-variant font-label-md flex items-center justify-center gap-2 transition-colors">-->
-<!--                <span class="material-symbols-outlined text-lg" data-icon="sync_alt">sync_alt</span>-->
-<!--                Соответствие-->
-<!--            </button>-->
-<!--            <button onclick="window.location.href='#'" class="flex-1 min-w-[140px] px-4 py-3 rounded-lg bg-surface-container hover:bg-white text-on-surface-variant font-label-md flex items-center justify-center gap-2 transition-colors">-->
-<!--                <span class="material-symbols-outlined text-lg" data-icon="reorder">reorder</span>-->
-<!--                Последовательность-->
-<!--            </button>-->
-        </div>
-    </div>
-    <!-- Source Reference -->
-    <section class="bg-surface-container-lowest p-4 rounded-xl">
-        <label class="text-[10px] font-bold uppercase tracking-widest text-slate-500 block mb-2" style="">Ссылка на источник</label>
-        <div class="space-y-2">
-            <span class="text-[10px] font-bold uppercase text-outline" style="">Структурная единица</span>
-            <input class="w-full bg-surface-container-low border-none rounded-lg px-4 py-2.5 text-sm cursor-not-allowed" readonly="" type="text" value="" placeholder="Глава 3. Статья 15. Пункт 15.2">
+                                </div>
+                                <div class="">
+                                    <div>
+                                        <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Разработчик</label>
+                                        <input class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant cursor-not-allowed" readonly="" type="text" value="Авторизованный администратор вопросов">
+                                    </div>
+                                    <div>
+                                        <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Создан</label>
+                                        <input class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant cursor-not-allowed" readonly="" type="text" value="03.10.2016 15:55:06">
+                                    </div>
+                                    <div>
+                                        <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Дата изменений</label>
+                                        <input class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant cursor-not-allowed" readonly="" type="text" value="07.05.2026 09:21:06">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Main Content Area -->
+                <section class="lg:w-2/3 flex flex-col gap-module-gap">
+                    <!-- Question Type Selection -->
+                    <div class="bg-surface-container-low p-6 rounded-xl">
+                        <label class="font-label-sm text-label-sm text-outline uppercase mb-4 block px-1">Тип вопроса:</label>
+                        <div class="flex flex-wrap gap-3">
+                            <button onclick="window.location.href='#'" class="flex-1 min-w-[140px] px-4 py-3 rounded-lg bg-white border border-primary text-primary font-label-md flex items-center justify-center gap-2 shadow-sm">
+                                <span class="material-symbols-outlined text-lg" data-icon="radio_button_checked">radio_button_checked</span>
+                                Стандартный
+                            </button>
+                            <button onclick="window.location.href='./Создание вопросов_интерактивный.html'" class="flex-1 min-w-[140px] px-4 py-3 rounded-lg bg-surface-container hover:bg-white text-on-surface-variant font-label-md flex items-center justify-center gap-2 transition-colors cursor-not-allowed" disabled="">
+                                <span class="material-symbols-outlined text-lg" data-icon="check_box">check_box</span>
+                                Интерактивный
+                            </button>
+                            <!--            <button onclick="window.location.href='#'" class="flex-1 min-w-[140px] px-4 py-3 rounded-lg bg-surface-container hover:bg-white text-on-surface-variant font-label-md flex items-center justify-center gap-2 transition-colors">-->
+                            <!--                <span class="material-symbols-outlined text-lg" data-icon="short_text">short_text</span>-->
+                            <!--                Открытый-->
+                            <!--            </button>-->
+                            <!--            <button onclick="window.location.href='#'" class="flex-1 min-w-[140px] px-4 py-3 rounded-lg bg-surface-container hover:bg-white text-on-surface-variant font-label-md flex items-center justify-center gap-2 transition-colors">-->
+                            <!--                <span class="material-symbols-outlined text-lg" data-icon="sync_alt">sync_alt</span>-->
+                            <!--                Соответствие-->
+                            <!--            </button>-->
+                            <!--            <button onclick="window.location.href='#'" class="flex-1 min-w-[140px] px-4 py-3 rounded-lg bg-surface-container hover:bg-white text-on-surface-variant font-label-md flex items-center justify-center gap-2 transition-colors">-->
+                            <!--                <span class="material-symbols-outlined text-lg" data-icon="reorder">reorder</span>-->
+                            <!--                Последовательность-->
+                            <!--            </button>-->
+                        </div>
+                    </div>
+                    <!-- Source Reference -->
+                    <section class="bg-surface-container-lowest p-4 rounded-xl">
+                        <label class="text-[10px] font-bold uppercase tracking-widest text-slate-500 block mb-2" style="">Ссылка на источник</label>
+                        <div class="space-y-2">
+                            <span class="text-[10px] font-bold uppercase text-outline" style="">Структурная единица</span>
+                            <input class="w-full bg-surface-container-low border-none rounded-lg px-4 py-2.5 text-sm cursor-not-allowed" readonly="" type="text" value="" placeholder="Глава 3. Статья 15. Пункт 15.2">
 
-            <label class="text-[10px] font-bold uppercase text-outline">Текст</label>
-            <textarea class="w-full bg-surface-container-low border-none rounded-lg px-4 py-2.5 text-sm focus:bg-white focus:ring-0 focus:border-b-2 focus:border-surface-tint cursor-not-allowed" readonly="" placeholder="Отображается текст структурной единицы" rows="4"></textarea>
+                            <label class="text-[10px] font-bold uppercase text-outline">Текст</label>
+                            <textarea class="w-full bg-surface-container-low border-none rounded-lg px-4 py-2.5 text-sm focus:bg-white focus:ring-0 focus:border-b-2 focus:border-surface-tint cursor-not-allowed" readonly="" placeholder="Отображается текст структурной единицы" rows="4"></textarea>
+                        </div>
+                    </section>
+                    <!-- Content Section -->
+                    <div class="bg-surface-container-lowest p-8 rounded-xl outline outline-1 outline-outline-variant/15">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="font-label-md text-label-md text-on-surface flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary" data-icon="edit_note">edit_note</span>
+                                Содержание вопроса
+                            </h3>
+                        </div>
+                        <div class="flex flex-col gap-6">
+                            <div>
+                                <label class="font-label-sm text-label-sm text-outline uppercase mb-2 block px-1">Текст вопроса</label>
+                                <div class="flex gap-2 mb-2 p-1 bg-surface-container-low rounded-lg w-fit">
+                                    <button class="p-2 hover:bg-white rounded transition-colors material-symbols-outlined text-on-surface-variant" data-icon="format_bold">format_bold</button>
+                                    <button class="p-2 hover:bg-white rounded transition-colors material-symbols-outlined text-on-surface-variant" data-icon="format_italic">format_italic</button>
+                                    <button class="p-2 hover:bg-white rounded transition-colors material-symbols-outlined text-on-surface-variant" data-icon="format_list_bulleted">format_list_bulleted</button>
+                                    <div class="w-px h-6 bg-outline-variant/30 self-center mx-1"></div>
+                                </div>
+                                <textarea class="w-full p-6 bg-surface-container-low border-none font-body-md text-body-md text-on-surface focus:bg-white focus:ring-0 focus:border-b-2 focus:border-surface-tint" placeholder="Введите текст вопроса..." rows="4">В соответствии с Гражданским Кодексом, что является недвижимым имуществом, созданным в результате самовольного строительства?</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Answers block -->
+                    <div class="bg-surface-container-lowest p-8 rounded-xl outline outline-1 outline-outline-variant/15 mb-12">
+                        <!-- Answer Type Selection -->
+                        <div class="bg-surface-container-low p-6 rounded-xl">
+                            <label class="font-label-sm text-label-sm text-outline uppercase mb-4 block px-1">Тип ответов:</label>
+                            <div class="flex flex-wrap gap-3">
+                                <button class="flex-1 min-w-[140px] px-4 py-3 rounded-lg bg-white border border-primary text-primary font-label-md flex items-center justify-center gap-2 shadow-sm">
+                                    <span class="material-symbols-outlined text-lg" data-icon="radio_button_checked">radio_button_checked</span>
+                                    Одиночный выбор
+                                </button>
+                                <button class="flex-1 min-w-[140px] px-4 py-3 rounded-lg bg-surface-container text-on-surface-variant font-label-md flex items-center justify-center gap-2 cursor-not-allowed" readonly="">
+                                    <span class="material-symbols-outlined text-lg" data-icon="check_box">check_box</span>
+                                    Множественный выбор
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Shuffle Toggle -->
+                        <!--    <div class="flex items-center justify-between bg-surface-container-low p-6 rounded-xl mb-4">-->
+                        <!--        <span class="font-label-md text-on-surface-variant">Перемешивание ответов</span>-->
+                        <!--        <label class="relative inline-flex items-center cursor-pointer">-->
+                        <!--            <input checked="" class="sr-only peer" type="checkbox"/>-->
+                        <!--            <div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>-->
+                        <!--        </label>-->
+                        <!--    </div>-->
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="font-label-md text-label-md text-on-surface flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary" data-icon="checklist">checklist</span>
+                                Варианты ответов
+                            </h3>
+                            <button class="flex items-center gap-2 px-3 py-1.5 font-label-sm text-label-sm text-primary hover:bg-primary-fixed/30 rounded-lg transition-colors">
+                                <span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+                                Добавить ответ
+                            </button>
+                        </div>
+                        <div class="space-y-4">
+                            <!-- Option Row -->
+                            <div class="flex items-center gap-4 p-4 bg-surface-container-low rounded-xl group hover:bg-white transition-colors">
+                                <input class="w-5 h-5 text-primary border-outline focus:ring-primary-container" name="q1" type="radio">
+                                <input class="flex-grow bg-transparent border-none font-body-md text-body-md text-on-surface focus:ring-0" type="text" value="" placeholder="добавьте текст ответа">
+                                <button class="material-symbols-outlined text-outline hover:text-error transition-colors opacity-0 group-hover:opacity-100" data-icon="remove_circle">delete</button>
+                            </div>
+
+                            <!-- Option Row -->
+                            <div class="flex items-center gap-4 p-4 bg-surface-container-low rounded-xl group hover:bg-white transition-colors">
+                                <input class="w-5 h-5 text-primary border-outline focus:ring-primary-container" name="q1" type="radio">
+                                <input class="flex-grow bg-transparent border-none font-body-md text-body-md text-on-surface focus:ring-0" type="text" value="самовольным недвижимым имуществом">
+                                <button class="material-symbols-outlined text-outline hover:text-error transition-colors opacity-0 group-hover:opacity-100" data-icon="remove_circle">delete</button>
+                            </div>
+                            <!-- Option Row -->
+                            <div class="flex items-center gap-4 p-4 bg-white rounded-xl shadow-sm outline outline-1 outline-surface-tint">
+                                <input checked="" class="w-5 h-5 text-primary border-outline focus:ring-primary-container" name="q1" type="radio">
+                                <input class="flex-grow bg-transparent border-none font-body-md text-body-md text-on-surface focus:ring-0" type="text" value="самовольная постройка">
+                                <span class="font-label-sm text-label-sm text-surface-tint uppercase bg-primary-fixed px-2 py-1 rounded">Правильный</span>
+                                <button class="material-symbols-outlined text-outline hover:text-error transition-colors" data-icon="remove_circle">delete</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+            </div></div>
+        <!-- Actions Section -->
+        <section class="px-section-gap py-module-gap bg-surface-container-lowest flex justify-between items-center border-t-2 border-surface-container-low"><div class="flex flex-col md:flex-row items-center justify-center gap-4 w-full">
+            <button onclick="window.location.href='../Управление вопросами/Управление вопросами.html'" class="w-full  px-6 py-4 text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors rounded-lg flex items-center justify-center gap-2 hover:bg-surface-variant hover:scale-[1.02] active:scale-[0.98] transition-all" style="">
+                Отмена</button>
+            <button onclick="window.location.href='#'" class="w-full  px-6 py-4 text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors rounded-lg flex items-center justify-center gap-2 hover:bg-surface-variant hover:scale-[1.02] active:scale-[0.98] transition-all" style="">
+                <span class="material-symbols-outlined text-sm" style="">clear</span>Очистить форму</button>
+            <button onclick="window.location.href='../Управление вопросами/Управление вопросами.html'" class="bg-primary-gradient text-white w-full  py-4 px-6 rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 hover:brightness-110 active:scale-95 transition-all" style="">
+                <span class="material-symbols-outlined text-sm" style="">save</span>Сохранить вопрос</button>
         </div>
-    </section>
-<!-- Content Section -->
-<div class="bg-surface-container-lowest p-8 rounded-xl outline outline-1 outline-outline-variant/15">
-<div class="flex justify-between items-center mb-6">
-<h3 class="font-label-md text-label-md text-on-surface flex items-center gap-2">
-<span class="material-symbols-outlined text-primary" data-icon="edit_note">edit_note</span>
-    Содержание вопроса
-                        </h3>
-</div>
-<div class="flex flex-col gap-6">
-<div>
-<label class="font-label-sm text-label-sm text-outline uppercase mb-2 block px-1">Текст вопроса</label>
-<div class="flex gap-2 mb-2 p-1 bg-surface-container-low rounded-lg w-fit">
-<button class="p-2 hover:bg-white rounded transition-colors material-symbols-outlined text-on-surface-variant" data-icon="format_bold">format_bold</button>
-<button class="p-2 hover:bg-white rounded transition-colors material-symbols-outlined text-on-surface-variant" data-icon="format_italic">format_italic</button>
-<button class="p-2 hover:bg-white rounded transition-colors material-symbols-outlined text-on-surface-variant" data-icon="format_list_bulleted">format_list_bulleted</button>
-<div class="w-px h-6 bg-outline-variant/30 self-center mx-1"></div>
-</div>
-<textarea class="w-full p-6 bg-surface-container-low border-none font-body-md text-body-md text-on-surface focus:bg-white focus:ring-0 focus:border-b-2 focus:border-surface-tint" placeholder="Введите текст вопроса..." rows="4">В соответствии с Гражданским Кодексом, что является недвижимым имуществом, созданным в результате самовольного строительства?</textarea>
-</div>
-</div>
-</div>
-<!-- Answers block -->
-<div class="bg-surface-container-lowest p-8 rounded-xl outline outline-1 outline-outline-variant/15 mb-12">
-    <!-- Answer Type Selection -->
-    <div class="bg-surface-container-low p-6 rounded-xl">
-        <label class="font-label-sm text-label-sm text-outline uppercase mb-4 block px-1">Тип ответов:</label>
-        <div class="flex flex-wrap gap-3">
-            <button class="flex-1 min-w-[140px] px-4 py-3 rounded-lg bg-white border border-primary text-primary font-label-md flex items-center justify-center gap-2 shadow-sm">
-                <span class="material-symbols-outlined text-lg" data-icon="radio_button_checked">radio_button_checked</span>
-                Одиночный выбор
-            </button>
-            <button class="flex-1 min-w-[140px] px-4 py-3 rounded-lg bg-surface-container text-on-surface-variant font-label-md flex items-center justify-center gap-2 cursor-not-allowed" readonly="">
-                <span class="material-symbols-outlined text-lg" data-icon="check_box">check_box</span>
-                Множественный выбор
-            </button>
-        </div>
+        </section>
+
     </div>
-    <!-- Shuffle Toggle -->
-<!--    <div class="flex items-center justify-between bg-surface-container-low p-6 rounded-xl mb-4">-->
-<!--        <span class="font-label-md text-on-surface-variant">Перемешивание ответов</span>-->
-<!--        <label class="relative inline-flex items-center cursor-pointer">-->
-<!--            <input checked="" class="sr-only peer" type="checkbox"/>-->
-<!--            <div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>-->
-<!--        </label>-->
+</div>
+
+
+
+
+<!-- Main Content Canvas -->
+<!--<main class="ml-72 mt-12 p-section-gap max-w-[1400px]">-->
+<!--&lt;!&ndash; Page Header &ndash;&gt;-->
+<!--<div class="mb-section-gap flex justify-between items-end">-->
+<!--<div class="max-w-2xl">-->
+<!--<span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em] mb-2 block">Создание вопроса</span>-->
+<!--&lt;!&ndash;<h1 class="font-display-lg text-display-lg text-on-background">Гражданский кодекс Республики Беларусь. Раздел 1</h1>&ndash;&gt;-->
+<!--&lt;!&ndash;<p class="font-body-md text-body-md text-on-surface-variant mt-2">Добавляйте новые вопросы. После сохранения вопросы отображаются в Банке вопросов в зависимости от их статуса.</p>&ndash;&gt;-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="flex flex-col lg:flex-row gap-module-gap">-->
+<!--&lt;!&ndash; Metadata Side Column &ndash;&gt;-->
+<!--<section class="lg:w-1/3 flex flex-col gap-module-gap">-->
+<!--&lt;!&ndash; Metadata Card &ndash;&gt;-->
+<!--<div class="bg-surface-container-low p-8 rounded-xl flex flex-col gap-6">-->
+<!--<div class="flex flex-col gap-4">-->
+<!--<div class="group">-->
+<!--    <div class="space-y-2">-->
+<!--        &lt;!&ndash; Regulatory Metadata (Condensed) &ndash;&gt;-->
+<!--        <div class="">-->
+<!--            <h3 class="font-label-md text-label-md text-on-surface flex items-center gap-2 mb-4">-->
+<!--                <span class="material-symbols-outlined text-primary" data-icon="gavel">gavel</span>-->
+<!--                Предметная область вопроса-->
+<!--            </h3>-->
+<!--            <div class="space-y-4">-->
+<!--                &lt;!&ndash; Field 1: Select Document &ndash;&gt;-->
+<!--                <div>-->
+<!--                    <label class="font-label-sm text-label-sm text-outline uppercase mb-2 block px-1">Нормативный документ<span class="text-error">*</span></label>-->
+<!--                    <div class="relative">-->
+<!--                        <select class="w-full h-11 pl-4 pr-10 bg-surface-container-highest border-none font-body-md text-on-surface rounded-lg focus:ring-1 focus:ring-primary appearance-none cursor-pointer">-->
+<!--                            <option disabled="" selected="" value="">Выберите документ...</option>-->
+<!--                            <option>Гражданский кодекс</option>-->
+<!--                            <option>Закон о государственной регистрации</option>-->
+<!--                            <option>Инструкция о кадастровых номерах</option>-->
+<!--                            <option>Инструкция о порядке ведения адресной системы</option>-->
+<!--                            <option>Инструкция № 11</option>-->
+<!--                            <option>Инструкция об инвентарных номерах</option>-->
+<!--                            <option>Кодекс Республики Беларусь о земле</option>-->
+<!--                        </select>-->
+<!--                        <span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline pointer-events-none" data-icon="expand_more">expand_more</span>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; Field 2: Structural Unit &ndash;&gt;-->
+<!--                <div>-->
+<!--                    <label class="font-label-sm text-label-sm text-outline uppercase mb-2 block px-1">СТРУКТУРНАЯ ЕДИНИЦА <span class="text-error">*</span></label>-->
+<!--                    <div class="relative">-->
+<!--                        <input class="w-full h-11 pl-4 pr-10 bg-surface-container-highest border-none font-body-md text-on-surface rounded-lg focus:ring-1 focus:ring-primary opacity-60 cursor-not-allowed" disabled="" placeholder="Поиск единицы..." type="text">-->
+<!--                        <span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline" data-icon="search">search</span>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; Field 3: field &ndash;&gt;-->
+<!--                <div>-->
+<!--                    <label class="font-label-sm text-label-sm text-outline uppercase mb-2 block px-1">ТЕМАТИКА <span class="text-error">*</span></label>-->
+<!--                    <div class="relative">-->
+<!--                        <input class="w-full h-11 pl-4 pr-10 bg-surface-container-highest border-none font-body-md text-on-surface rounded-lg focus:ring-1 focus:ring-primary opacity-60 cursor-not-allowed" disabled="" placeholder="Поиск тематики..." type="text">-->
+<!--                        <span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline" data-icon="search">search</span>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="pt-6 border-t border-outline-variant/20">-->
+
+<!--        <div class="space-y-2">-->
+<!--            <h3 class="font-label-md text-label-md text-on-surface flex items-center gap-2">-->
+<!--                <span class="material-symbols-outlined text-primary" data-icon="inventory_2">inventory_2</span>-->
+<!--                Метаданные вопроса-->
+<!--            </h3>-->
+<!--            <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1" style="">Статус вопроса<span class="text-error">*</span></label>-->
+<!--            <select class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface appearance-none bottom-border-focus">-->
+<!--&lt;!&ndash;                <option disabled="" selected="" value="">Выберите статус</option>&ndash;&gt;-->
+<!--                <option selected="" title="только внесли/изменили статус с активного - не отображается в тестах">В разработке</option>-->
+<!--                <option title="утвержден ГКИ, можно его применять в аттестации" >Активный</option>-->
+<!--                <option title="не отображается в тестах">Архивный</option>-->
+<!--                <option title="изменения в структурной единице нормативного документа">Требует актуализации</option>-->
+<!--            </select>-->
+<!--        </div>-->
+<!--        <div class="space-y-2">-->
+<!--            <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1" style="">Сложность вопроса<span class="text-error">*</span></label>-->
+<!--            <select class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface appearance-none bottom-border-focus">-->
+<!--                <option disabled="" selected="" value="">Укажите сложность вопроса</option>-->
+<!--                <option>Легкая</option>-->
+<!--                <option >Средняя</option>-->
+<!--                <option>Сложная</option>-->
+<!--            </select>-->
+<!--        </div>-->
+<!--            <div>-->
+<!--                <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Дата вступления в силу</label>-->
+<!--                <input class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant" type="text" value="01.09.2026"/>-->
+<!--            </div>-->
+<!--        <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Номер (ID)</label>-->
+<!--        <input class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant cursor-not-allowed" readonly="" type="text" value="4153723"/>-->
 <!--    </div>-->
-<div class="flex justify-between items-center mb-6">
-<h3 class="font-label-md text-label-md text-on-surface flex items-center gap-2">
-<span class="material-symbols-outlined text-primary" data-icon="checklist">checklist</span>
-    Варианты ответов
-                        </h3>
-<button class="flex items-center gap-2 px-3 py-1.5 font-label-sm text-label-sm text-primary hover:bg-primary-fixed/30 rounded-lg transition-colors">
-<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
-                            Добавить ответ
-                        </button>
-</div>
-<div class="space-y-4">
-<!-- Option Row -->
-<div class="flex items-center gap-4 p-4 bg-surface-container-low rounded-xl group hover:bg-white transition-colors">
-<input  class="w-5 h-5 text-primary border-outline focus:ring-primary-container" name="q1" type="radio"/>
-<input class="flex-grow bg-transparent border-none font-body-md text-body-md text-on-surface focus:ring-0" type="text" value="" placeholder="добавьте текст ответа"/>
-<button class="material-symbols-outlined text-outline hover:text-error transition-colors opacity-0 group-hover:opacity-100" data-icon="remove_circle">delete</button>
-</div>
 
-<!-- Option Row -->
-<div class="flex items-center gap-4 p-4 bg-surface-container-low rounded-xl group hover:bg-white transition-colors">
-<input class="w-5 h-5 text-primary border-outline focus:ring-primary-container" name="q1" type="radio"/>
-<input class="flex-grow bg-transparent border-none font-body-md text-body-md text-on-surface focus:ring-0" type="text" value="самовольным недвижимым имуществом"/>
-<button class="material-symbols-outlined text-outline hover:text-error transition-colors opacity-0 group-hover:opacity-100" data-icon="remove_circle">delete</button>
-</div>
-<!-- Option Row -->
-<div class="flex items-center gap-4 p-4 bg-white rounded-xl shadow-sm outline outline-1 outline-surface-tint">
-<input checked="" class="w-5 h-5 text-primary border-outline focus:ring-primary-container" name="q1" type="radio"/>
-<input class="flex-grow bg-transparent border-none font-body-md text-body-md text-on-surface focus:ring-0" type="text" value="самовольная постройка"/>
-<span class="font-label-sm text-label-sm text-surface-tint uppercase bg-primary-fixed px-2 py-1 rounded">Правильный</span>
-<button class="material-symbols-outlined text-outline hover:text-error transition-colors" data-icon="remove_circle">delete</button>
-</div>
-</div>
-</div>
 
-</section>
-</div>
-    <!-- Actions Section -->
-    <section class="flex flex-col items-center pt-4"><div class="flex flex-col md:flex-row items-center justify-center gap-4 w-full">
-        <button onclick="window.location.href='../Управление вопросами/Управление вопросами.html'" class="w-full  px-6 py-4 text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors rounded-lg flex items-center justify-center gap-2 hover:bg-surface-variant hover:scale-[1.02] active:scale-[0.98] transition-all" style="">
-            Отмена</button>
-        <button onclick="window.location.href='#'" class="w-full  px-6 py-4 text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors rounded-lg flex items-center justify-center gap-2 hover:bg-surface-variant hover:scale-[1.02] active:scale-[0.98] transition-all" style="">
-            <span class="material-symbols-outlined text-sm" style="">clear</span>Очистить форму</button>
-        <button onclick="window.location.href='../Управление вопросами/Управление вопросами.html'" class="bg-primary-gradient text-white w-full  py-4 px-6 rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 hover:brightness-110 active:scale-95 transition-all" style="">
-            <span class="material-symbols-outlined text-sm" style="">save</span>Сохранить вопрос</button>
-    </div>
-    </section>
-</main>
+<!--</div>-->
+<!--    <div class="">-->
+<!--        <div>-->
+<!--            <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Разработчик</label>-->
+<!--            <input class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant cursor-not-allowed" readonly="" type="text" value="Авторизованный администратор вопросов"/>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Создан</label>-->
+<!--            <input class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant cursor-not-allowed" readonly="" type="text" value="03.10.2016 15:55:06"/>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Дата изменений</label>-->
+<!--            <input class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant cursor-not-allowed" readonly="" type="text" value="07.05.2026 09:21:06"/>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</section>-->
+<!--&lt;!&ndash; Main Content Area &ndash;&gt;-->
+<!--<section class="lg:w-2/3 flex flex-col gap-module-gap">-->
+<!--    &lt;!&ndash; Question Type Selection &ndash;&gt;-->
+<!--    <div class="bg-surface-container-low p-6 rounded-xl">-->
+<!--        <label class="font-label-sm text-label-sm text-outline uppercase mb-4 block px-1">Тип вопроса:</label>-->
+<!--        <div class="flex flex-wrap gap-3">-->
+<!--            <button onclick="window.location.href='#'" class="flex-1 min-w-[140px] px-4 py-3 rounded-lg bg-white border border-primary text-primary font-label-md flex items-center justify-center gap-2 shadow-sm">-->
+<!--                <span class="material-symbols-outlined text-lg" data-icon="radio_button_checked">radio_button_checked</span>-->
+<!--                Стандартный-->
+<!--            </button>-->
+<!--            <button onclick="window.location.href='./Создание вопросов_интерактивный.html'" class="flex-1 min-w-[140px] px-4 py-3 rounded-lg bg-surface-container hover:bg-white text-on-surface-variant font-label-md flex items-center justify-center gap-2 transition-colors cursor-not-allowed" disabled>-->
+<!--                <span class="material-symbols-outlined text-lg" data-icon="check_box">check_box</span>-->
+<!--                Интерактивный-->
+<!--            </button>-->
+<!--&lt;!&ndash;            <button onclick="window.location.href='#'" class="flex-1 min-w-[140px] px-4 py-3 rounded-lg bg-surface-container hover:bg-white text-on-surface-variant font-label-md flex items-center justify-center gap-2 transition-colors">&ndash;&gt;-->
+<!--&lt;!&ndash;                <span class="material-symbols-outlined text-lg" data-icon="short_text">short_text</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                Открытый&ndash;&gt;-->
+<!--&lt;!&ndash;            </button>&ndash;&gt;-->
+<!--&lt;!&ndash;            <button onclick="window.location.href='#'" class="flex-1 min-w-[140px] px-4 py-3 rounded-lg bg-surface-container hover:bg-white text-on-surface-variant font-label-md flex items-center justify-center gap-2 transition-colors">&ndash;&gt;-->
+<!--&lt;!&ndash;                <span class="material-symbols-outlined text-lg" data-icon="sync_alt">sync_alt</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                Соответствие&ndash;&gt;-->
+<!--&lt;!&ndash;            </button>&ndash;&gt;-->
+<!--&lt;!&ndash;            <button onclick="window.location.href='#'" class="flex-1 min-w-[140px] px-4 py-3 rounded-lg bg-surface-container hover:bg-white text-on-surface-variant font-label-md flex items-center justify-center gap-2 transition-colors">&ndash;&gt;-->
+<!--&lt;!&ndash;                <span class="material-symbols-outlined text-lg" data-icon="reorder">reorder</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                Последовательность&ndash;&gt;-->
+<!--&lt;!&ndash;            </button>&ndash;&gt;-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash; Source Reference &ndash;&gt;-->
+<!--    <section class="bg-surface-container-lowest p-4 rounded-xl">-->
+<!--        <label class="text-[10px] font-bold uppercase tracking-widest text-slate-500 block mb-2" style="">Ссылка на источник</label>-->
+<!--        <div class="space-y-2">-->
+<!--            <span class="text-[10px] font-bold uppercase text-outline" style="">Структурная единица</span>-->
+<!--            <input class="w-full bg-surface-container-low border-none rounded-lg px-4 py-2.5 text-sm cursor-not-allowed" readonly="" type="text" value="" placeholder="Глава 3. Статья 15. Пункт 15.2">-->
+
+<!--            <label class="text-[10px] font-bold uppercase text-outline">Текст</label>-->
+<!--            <textarea class="w-full bg-surface-container-low border-none rounded-lg px-4 py-2.5 text-sm focus:bg-white focus:ring-0 focus:border-b-2 focus:border-surface-tint cursor-not-allowed" readonly="" placeholder="Отображается текст структурной единицы" rows="4"></textarea>-->
+<!--        </div>-->
+<!--    </section>-->
+<!--&lt;!&ndash; Content Section &ndash;&gt;-->
+<!--<div class="bg-surface-container-lowest p-8 rounded-xl outline outline-1 outline-outline-variant/15">-->
+<!--<div class="flex justify-between items-center mb-6">-->
+<!--<h3 class="font-label-md text-label-md text-on-surface flex items-center gap-2">-->
+<!--<span class="material-symbols-outlined text-primary" data-icon="edit_note">edit_note</span>-->
+<!--    Содержание вопроса-->
+<!--                        </h3>-->
+<!--</div>-->
+<!--<div class="flex flex-col gap-6">-->
+<!--<div>-->
+<!--<label class="font-label-sm text-label-sm text-outline uppercase mb-2 block px-1">Текст вопроса</label>-->
+<!--<div class="flex gap-2 mb-2 p-1 bg-surface-container-low rounded-lg w-fit">-->
+<!--<button class="p-2 hover:bg-white rounded transition-colors material-symbols-outlined text-on-surface-variant" data-icon="format_bold">format_bold</button>-->
+<!--<button class="p-2 hover:bg-white rounded transition-colors material-symbols-outlined text-on-surface-variant" data-icon="format_italic">format_italic</button>-->
+<!--<button class="p-2 hover:bg-white rounded transition-colors material-symbols-outlined text-on-surface-variant" data-icon="format_list_bulleted">format_list_bulleted</button>-->
+<!--<div class="w-px h-6 bg-outline-variant/30 self-center mx-1"></div>-->
+<!--</div>-->
+<!--<textarea class="w-full p-6 bg-surface-container-low border-none font-body-md text-body-md text-on-surface focus:bg-white focus:ring-0 focus:border-b-2 focus:border-surface-tint" placeholder="Введите текст вопроса..." rows="4">В соответствии с Гражданским Кодексом, что является недвижимым имуществом, созданным в результате самовольного строительства?</textarea>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--&lt;!&ndash; Answers block &ndash;&gt;-->
+<!--<div class="bg-surface-container-lowest p-8 rounded-xl outline outline-1 outline-outline-variant/15 mb-12">-->
+<!--    &lt;!&ndash; Answer Type Selection &ndash;&gt;-->
+<!--    <div class="bg-surface-container-low p-6 rounded-xl">-->
+<!--        <label class="font-label-sm text-label-sm text-outline uppercase mb-4 block px-1">Тип ответов:</label>-->
+<!--        <div class="flex flex-wrap gap-3">-->
+<!--            <button class="flex-1 min-w-[140px] px-4 py-3 rounded-lg bg-white border border-primary text-primary font-label-md flex items-center justify-center gap-2 shadow-sm">-->
+<!--                <span class="material-symbols-outlined text-lg" data-icon="radio_button_checked">radio_button_checked</span>-->
+<!--                Одиночный выбор-->
+<!--            </button>-->
+<!--            <button class="flex-1 min-w-[140px] px-4 py-3 rounded-lg bg-surface-container text-on-surface-variant font-label-md flex items-center justify-center gap-2 cursor-not-allowed" readonly="">-->
+<!--                <span class="material-symbols-outlined text-lg" data-icon="check_box">check_box</span>-->
+<!--                Множественный выбор-->
+<!--            </button>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash; Shuffle Toggle &ndash;&gt;-->
+<!--&lt;!&ndash;    <div class="flex items-center justify-between bg-surface-container-low p-6 rounded-xl mb-4">&ndash;&gt;-->
+<!--&lt;!&ndash;        <span class="font-label-md text-on-surface-variant">Перемешивание ответов</span>&ndash;&gt;-->
+<!--&lt;!&ndash;        <label class="relative inline-flex items-center cursor-pointer">&ndash;&gt;-->
+<!--&lt;!&ndash;            <input checked="" class="sr-only peer" type="checkbox"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>&ndash;&gt;-->
+<!--&lt;!&ndash;        </label>&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--<div class="flex justify-between items-center mb-6">-->
+<!--<h3 class="font-label-md text-label-md text-on-surface flex items-center gap-2">-->
+<!--<span class="material-symbols-outlined text-primary" data-icon="checklist">checklist</span>-->
+<!--    Варианты ответов-->
+<!--                        </h3>-->
+<!--<button class="flex items-center gap-2 px-3 py-1.5 font-label-sm text-label-sm text-primary hover:bg-primary-fixed/30 rounded-lg transition-colors">-->
+<!--<span class="material-symbols-outlined text-sm" data-icon="add">add</span>-->
+<!--                            Добавить ответ-->
+<!--                        </button>-->
+<!--</div>-->
+<!--<div class="space-y-4">-->
+<!--&lt;!&ndash; Option Row &ndash;&gt;-->
+<!--<div class="flex items-center gap-4 p-4 bg-surface-container-low rounded-xl group hover:bg-white transition-colors">-->
+<!--<input  class="w-5 h-5 text-primary border-outline focus:ring-primary-container" name="q1" type="radio"/>-->
+<!--<input class="flex-grow bg-transparent border-none font-body-md text-body-md text-on-surface focus:ring-0" type="text" value="" placeholder="добавьте текст ответа"/>-->
+<!--<button class="material-symbols-outlined text-outline hover:text-error transition-colors opacity-0 group-hover:opacity-100" data-icon="remove_circle">delete</button>-->
+<!--</div>-->
+
+<!--&lt;!&ndash; Option Row &ndash;&gt;-->
+<!--<div class="flex items-center gap-4 p-4 bg-surface-container-low rounded-xl group hover:bg-white transition-colors">-->
+<!--<input class="w-5 h-5 text-primary border-outline focus:ring-primary-container" name="q1" type="radio"/>-->
+<!--<input class="flex-grow bg-transparent border-none font-body-md text-body-md text-on-surface focus:ring-0" type="text" value="самовольным недвижимым имуществом"/>-->
+<!--<button class="material-symbols-outlined text-outline hover:text-error transition-colors opacity-0 group-hover:opacity-100" data-icon="remove_circle">delete</button>-->
+<!--</div>-->
+<!--&lt;!&ndash; Option Row &ndash;&gt;-->
+<!--<div class="flex items-center gap-4 p-4 bg-white rounded-xl shadow-sm outline outline-1 outline-surface-tint">-->
+<!--<input checked="" class="w-5 h-5 text-primary border-outline focus:ring-primary-container" name="q1" type="radio"/>-->
+<!--<input class="flex-grow bg-transparent border-none font-body-md text-body-md text-on-surface focus:ring-0" type="text" value="самовольная постройка"/>-->
+<!--<span class="font-label-sm text-label-sm text-surface-tint uppercase bg-primary-fixed px-2 py-1 rounded">Правильный</span>-->
+<!--<button class="material-symbols-outlined text-outline hover:text-error transition-colors" data-icon="remove_circle">delete</button>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--</section>-->
+<!--</div>-->
+<!--    &lt;!&ndash; Actions Section &ndash;&gt;-->
+<!--    <section class="flex flex-col items-center pt-4"><div class="flex flex-col md:flex-row items-center justify-center gap-4 w-full">-->
+<!--        <button onclick="window.location.href='../Управление вопросами/Управление вопросами.html'" class="w-full  px-6 py-4 text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors rounded-lg flex items-center justify-center gap-2 hover:bg-surface-variant hover:scale-[1.02] active:scale-[0.98] transition-all" style="">-->
+<!--            Отмена</button>-->
+<!--        <button onclick="window.location.href='#'" class="w-full  px-6 py-4 text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors rounded-lg flex items-center justify-center gap-2 hover:bg-surface-variant hover:scale-[1.02] active:scale-[0.98] transition-all" style="">-->
+<!--            <span class="material-symbols-outlined text-sm" style="">clear</span>Очистить форму</button>-->
+<!--        <button onclick="window.location.href='../Управление вопросами/Управление вопросами.html'" class="bg-primary-gradient text-white w-full  py-4 px-6 rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 hover:brightness-110 active:scale-95 transition-all" style="">-->
+<!--            <span class="material-symbols-outlined text-sm" style="">save</span>Сохранить вопрос</button>-->
+<!--    </div>-->
+<!--    </section>-->
+<!--</main>-->
 </body></html>
