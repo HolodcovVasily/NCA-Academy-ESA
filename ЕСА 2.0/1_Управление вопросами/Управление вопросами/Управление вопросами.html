@@ -85,7 +85,8 @@
                             primary: '#4e69c3',
                             dark: '#0a1d43',
                             surface: '#f7f9fb',
-                            container: '#f2f4f6',
+                            surface_high: '#e0e3e5',
+                            container: '#444652',
                             lowest: '#ffffff',
                         },
                         status: {
@@ -122,7 +123,7 @@
         }
         .no-line-card {
             background-color: #ffffff;
-            border-radius: 8px;
+            border-radius: 4px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
         .sidebar-active {
@@ -159,7 +160,7 @@
                 <p class="text-xs font-semibold">Администратор вопросов</p>
                 <p class="text-[10px] text-slate-500">Давыдович Ю.В.</p>
             </div>
-            <div class="w-9 h-9 rounded-full bg-brand-container flex items-center justify-center">
+            <div class="w-9 h-9 rounded-full bg-brand-surface flex items-center justify-center">
                 <svg class="w-5 h-5 text-brand-primary" fill="currentColor" viewBox="0 0 20 20"><path clip-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" fill-rule="evenodd"></path></svg>
             </div>
         </div>
@@ -168,11 +169,11 @@
 <div class="flex h-screen overflow-hidden">
     <aside class="w-64 bg-brand-surface flex flex-col py-6" data-purpose="main-sidebar">
         <nav class="flex-1 px-4 space-y-1">
-            <a class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-600 rounded-lg hover:bg-brand-container transition-colors" href="../../../1_Главная%20страница%20НКА%20Академия/2_Главная_страница.html">
+            <a class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-brand-container rounded hover:bg-brand-surface_high  transition-colors" href="../../../1_Главная%20страница%20НКА%20Академия/2_Главная_страница.html">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
                 На главную
             </a>
-                <a class="sidebar-active flex items-center gap-3 px-4 py-3 bg-white dark:bg-slate-800 text-[#4e69c3] font-semibold rounded-l-lg shadow-sm transition-all duration-200" href="#">
+                <a class="sidebar-active flex items-center gap-3 px-4 py-3 bg-white dark:bg-slate-800 text-[#4e69c3] text-sm font-medium rounded-l-l shadow-sm transition-all duration-200" href="#">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
                 Управление вопросами
             </a>
@@ -180,7 +181,7 @@
 <!--                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>-->
 <!--                Управление тестами-->
 <!--            </a>-->
-            <a class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-600 rounded-lg hover:bg-brand-container transition-colors" href="#">
+            <a class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-brand-container rounded hover:bg-brand-surface_high transition-colors" href="#">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
                 База знаний
             </a>
@@ -193,9 +194,9 @@
 <h1 class="text-lg font-bold tracking-tighter text-[#001453] dark:text-white">Банк вопросов</h1>
 </div>
 <div class="flex items-center gap-3">
-<button title="Экспорт в формат .xls" class="px-4 py-2 text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors rounded-md">Экспорт</button>
-<button title="Пакетная загрузка вопросов в формате .xls" class="px-4 py-2 text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors rounded-md">Импорт</button>
-<button onclick="window.location.href='../Создание вопроса/Создание вопросов.html'" title="Добавить новый вопрос" class="px-5 py-2 text-sm font-semibold text-white bg-gradient-to-br from-[#4e69c3] to-[#001453] rounded-md active:scale-[0.98] transition-all">Добавить вопрос</button>
+<button title="Экспорт в формат .xls" class="px-4 py-2 text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors rounded">Экспорт</button>
+<button title="Пакетная загрузка вопросов в формате .xls" class="px-4 py-2 text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors rounded">Импорт</button>
+<button onclick="window.location.href='../Создание вопроса/Создание вопросов.html'" title="Добавить новый вопрос" class="px-5 py-2 text-sm font-semibold text-white bg-gradient-to-br from-[#4e69c3] to-[#001453] rounded active:scale-[0.98] transition-all">Добавить вопрос</button>
 </div>
 </header>
 <!-- Main Content Area -->
@@ -354,7 +355,7 @@
         <div class="no-line-card p-5">
             <div class="flex justify-between items-center mb-4">
                 <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Баланс сложности</span>
-                <span class="text-[8px] px-1.5 py-0.5 bg-brand-container text-slate-500 rounded font-bold uppercase">Цель: 20-60-20</span>
+                <span class="text-[8px] px-1.5 py-0.5 bg-brand-surface text-slate-500 rounded font-bold uppercase">Цель: 20-60-20</span>
             </div>
             <div class="flex h-6 rounded-md overflow-hidden mb-4">
                 <div class="h-full bg-status-active w-[25%] flex items-center justify-center text-[10px] font-bold text-white">25%</div>
@@ -380,15 +381,15 @@
 </div>
 <!-- Bank of Questions Table -->
 <div class="px-8 pb-8 flex-1">
-<div class="bg-surface-container-lowest rounded-xl overflow-hidden border border-surface-container shadow-sm">
+<div class="bg-surface-container-lowest rounded overflow-hidden border border-surface-container shadow-sm">
     <!-- Table Controls -->
-    <div class="p-4 flex items-center gap-4 bg-brand-container/30 rounded-t-lg">
+    <div class="p-4 flex items-center justify-space-between gap-4 rounded-t">
         <div class="relative flex-1 max-w-xs">
-            <input class="w-full pl-9 pr-4 py-2 bg-brand-lowest text-xs border-none rounded-md ring-1 ring-slate-200 focus:ring-brand-primary" placeholder="Поиск по ID" type="text">
+            <input class="w-full pl-9 pr-4 py-2 bg-brand-lowest text-xs border-none rounded ring-1 ring-slate-200 focus:ring-brand-primary" placeholder="Поиск по ID" type="text">
             <svg class="w-4 h-4 text-slate-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
         </div>
         <div class="relative flex-1 max-w-sm">
-            <input class="w-full pl-9 pr-4 py-2 bg-brand-lowest text-xs border-none rounded-md ring-1 ring-slate-200 focus:ring-brand-primary" placeholder="Поиск по тексту" type="text">
+            <input class="w-full pl-9 pr-4 py-2 bg-brand-lowest text-xs border-none rounded ring-1 ring-slate-200 focus:ring-brand-primary" placeholder="Поиск по тексту" type="text">
             <svg class="w-4 h-4 text-slate-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
         </div>
         <div class="relative">
@@ -398,8 +399,7 @@
                 <span class="material-symbols-outlined text-[14px]">expand_more</span>
             </button>
         </div>
-        <div class="h-8 w-[1px] bg-slate-200 mx-1"></div>
-        <button class="flex items-center gap-2 px-4 py-2 bg-brand-primary/10 text-brand-primary text-[11px] font-bold rounded-md hover:bg-brand-primary hover:text-white transition-all">
+        <button class="flex items-center gap-2 px-4 py-2 bg-brand-lowest  text-brand-primary text-[11px] font-bold rounded-md hover:bg-brand-primary hover:text-white transition-all">
             <span class="material-symbols-outlined text-[16px]">task_alt</span>
             Массовые действия
         </button>
