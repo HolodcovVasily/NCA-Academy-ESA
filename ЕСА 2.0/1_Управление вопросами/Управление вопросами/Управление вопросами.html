@@ -435,7 +435,7 @@
                                     <div class="relative">
                                         <button class="flex items-center gap-2 px-3 py-2 bg-brand-lowest text-[11px] font-bold text-slate-600 border-none rounded-md ring-1 ring-slate-200 hover:ring-brand-primary transition-all" id="column-settings-btn">
                                             <span class="material-symbols-outlined text-[16px]">view_column</span> Колонки </button>
-                                        <div id="column-settings-panel" class="absolute right-0 mt-2 w-64 bg-brand-lowest rounded-lg shadow-md border border-surface-container z-20 p-4 hidden max-h-80 overflow-y-auto">
+                                        <div id="column-settings-panel" class="absolute right-0 mt-2 w-64 bg-brand-lowest rounded-lg shadow-md border border-surface-container z-20 p-4 hidden max-h-100 overflow-y-auto">
                                             <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3">Настройка колонок</p>
                                             <div id="column-toggles-list" class="space-y-2">
 
@@ -477,44 +477,44 @@
                         <table class="w-full text-left border-collapse" id="questions-table">
                             <thead class="sticky top-0 bg-brand-lowest text-[10px] font-bold uppercase text-slate-400 border-b border-brand-container z-10">
                             <tr>
-                                <th class="px-6 py-4 w-12">
+                                <th class="px-2 py-2 w-12">
                                     <input class="rounded text-brand-primary focus:ring-brand-primary border-slate-300" placeholder="on" type="checkbox" value="">
                                 </th>
-                                <th class="px-4 py-4 w-24 cursor-pointer hover:text-brand-primary transition-colors group" data-col="id">
+                                <th class="px-2 py-2 w-24 cursor-pointer hover:text-brand-primary transition-colors group" data-col="id">
                                     <div class="flex items-center gap-1">
                                         ID <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
                                     </div>
                                 </th>
-                                <th class="px-4 py-4 cursor-pointer hover:text-brand-primary transition-colors group" data-col="text">
+                                <th class="px-2 py-2 cursor-pointer hover:text-brand-primary transition-colors group" data-col="text">
                                     <div class="flex items-center gap-1">
                                         Текст вопроса <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
                                     </div>
                                 </th>
-                                <th class="px-4 py-4 w-32 cursor-pointer hover:text-brand-primary transition-colors group" data-col="status">
+                                <th class="px-2 py-2 w-32 cursor-pointer hover:text-brand-primary transition-colors group" data-col="status">
                                     <div class="flex items-center gap-1">
                                         Статус <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
                                     </div>
                                 </th>
-                                <th class="px-4 py-4 w-32 cursor-pointer hover:text-brand-primary transition-colors group" data-col="complexity">
+                                <th class="px-2 py-2 w-32 cursor-pointer hover:text-brand-primary transition-colors group" data-col="complexity">
                                     <div class="flex items-center gap-1">
                                         Сложность <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
                                     </div>
                                 </th>
-                                <th class="px-4 py-4 w-32 text-right pr-6 cursor-pointer hover:text-brand-primary transition-colors group" data-col="actions">
+                                <th class="px-2 py-2 w-32 text-right pr-6 cursor-pointer hover:text-brand-primary transition-colors group" data-col="actions">
                                     <div class="flex items-center justify-end gap-1">
                                         Действия <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">settings</span>
                                     </div>
                                 </th>
-                                <th class="px-4 py-4 w-32 hidden" data-col="effective-date" >Дата действия с</th>
-                                <th class="px-4 py-4 w-32 hidden" data-col="expiry-date">Дата действия по</th>
-                                <th class="px-4 py-4 w-32 hidden" data-col="author">Разработчик</th>
-                                <th class="px-4 py-4 w-32 hidden" data-col="created-at">Создан</th>
-                                <th class="px-4 py-4 w-32 hidden" data-col="updated-at">Дата изменения</th>
-                                <th class="px-4 py-4 w-32 hidden" data-col="q-type">Тип вопроса</th>
-                                <th class="px-4 py-4 w-32 hidden" data-col="a-type">Тип ответов</th>
-                                <th class="px-4 py-4 w-32 hidden" data-col="opt-1">Вариант 1</th>
-                                <th class="px-4 py-4 w-32 hidden" data-col="opt-2">Вариант 2</th>
-                                <th class="px-4 py-4 w-32 hidden" data-col="opt-3">Вариант 3</th>
+                                <th class="px-2 py-2 w-32 hidden" data-col="effective-date" >Дата действия с</th>
+                                <th class="px-2 py-2 w-32 hidden" data-col="expiry-date">Дата действия по</th>
+                                <th class="px-2 py-2 w-32 hidden" data-col="author">Разработчик</th>
+                                <th class="px-2 py-2 w-32 hidden" data-col="created-at">Создан</th>
+                                <th class="px-2 py-2 w-32 hidden" data-col="updated-at">Дата изменения</th>
+                                <th class="px-2 py-2 w-32 hidden" data-col="q-type">Тип вопроса</th>
+                                <th class="px-2 py-2 w-32 hidden" data-col="a-type">Тип ответов</th>
+                                <th class="px-2 py-2 w-32 hidden" data-col="opt-1">Вариант 1</th>
+                                <th class="px-2 py-2 w-32 hidden" data-col="opt-2">Вариант 2</th>
+                                <th class="px-2 py-2 w-32 hidden" data-col="opt-3">Вариант 3</th>
                             </tr>
                             </thead>
 
