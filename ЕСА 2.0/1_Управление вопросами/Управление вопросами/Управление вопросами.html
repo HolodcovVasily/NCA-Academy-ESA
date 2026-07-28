@@ -335,8 +335,8 @@
                         <div class="text-4xl font-black text-brand-dark">240</div>
                         <div class="mt-4 flex items-center justify-between">
                             <div>
-                                <p class="text-[9px] text-slate-400 uppercase font-bold">Требует актуализации</p>
-                                <p class="text-[11px] font-bold text-status-hard">12</p>
+                                <p class="text-[9px] text-on-error-container uppercase font-bold">Требует актуализации</p>
+                                <p class="text-[11px] font-bold text-on-error-container">2</p>
                             </div>
                         </div>
                     </div>
@@ -364,8 +364,8 @@
                             </div>
                             <div class="space-y-1">
                                 <div class="flex justify-between text-[10px] font-bold uppercase">
-                                    <span class="text-slate-500 ">Архивный (6%)</span>
-                                    <span class="">13</span>
+                                    <span class="text-slate-500 ">Архивный (5%)</span>
+                                    <span class="">12</span>
                                 </div>
                                 <div class="h-1.5 w-full rounded-full overflow-hidden">
                                     <div class="h-full bg-slate-300 w-[06%]"></div>
@@ -373,11 +373,11 @@
                             </div>
                             <div class="space-y-1">
                                 <div class="flex justify-between text-[10px] font-bold uppercase">
-                                    <span class="text-status-hard ">Требует актуализации (1%)</span>
+                                    <span class="text-on-error-container ">Требует актуализации (1%)</span>
                                     <span class="">2</span>
                                 </div>
                                 <div class="h-1.5 w-full rounded-full overflow-hidden">
-                                    <div class="h-full bg-status-hard w-[06%]"></div>
+                                    <div class="h-full bg-on-error-container w-[06%]"></div>
                                 </div>
                             </div>
                         </div>
@@ -451,11 +451,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button class="p-2 text-slate-400 hover:text-brand-primary">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-                                        </svg>
-                                    </button>
                                 </div>
                             </div>
                             <div id="expanded-filter-panel"  class="grid grid-cols-3 gap-4 p-4 bg-brand-lowest/50 rounded-lg border border-brand-container/50 transition-all hidden">
@@ -474,6 +469,8 @@
                                             <option>Все статусы</option>
                                             <option>Активный</option>
                                             <option>В разработке</option>
+                                            <option>Архивный</option>
+                                            <option>Требует актуализации</option>
                                         </select>
                                         <span class="material-symbols-outlined absolute right-2 top-2 text-[16px] pointer-events-none text-slate-400">expand_more</span>
                                     </div>
@@ -486,7 +483,7 @@
                         <table class="w-full text-left border-collapse" id="questions-table">
                             <thead class="sticky top-0 bg-brand-lowest text-[10px] font-bold uppercase text-slate-400 border-b border-brand-container z-10">
                             <tr>
-                                <th class="px-2 py-2 w-12">
+                                <th class="px-2 py-2 w-12 text-center">
                                     <input class="rounded text-brand-primary focus:ring-brand-primary border-slate-300" placeholder="on" type="checkbox" value="">
                                 </th>
                                 <th class="px-2 py-2 w-24 cursor-pointer hover:text-brand-primary transition-colors group" data-col="id">
