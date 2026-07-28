@@ -261,7 +261,7 @@
                                                 <option selected="" title="только внесли/изменили статус с активного - не отображается в тестах">В разработке</option>
                                                 <option title="утвержден ГКИ, можно его применять в аттестации">Активный</option>
                                                 <option title="не отображается в тестах">Архивный</option>
-                                                <option title="изменения в структурной единице нормативного документа">Требует актуализации</option>
+                                                <option title="изменения в структурной единице нормативного документа">Отложенная публикация</option>
                                             </select>
                                         </div>
                                         <div class="space-y-2">
@@ -273,9 +273,21 @@
                                                 <option>Сложная</option>
                                             </select>
                                         </div>
+                                        <div class="space-y-2">
+                                            <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1" style="">Актуальность<span class="text-error">*</span></label>
+                                            <select class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface appearance-none bottom-border-focus">
+                                                <option disabled="" selected="" value="">Укажите актуальность вопроса</option>
+                                                <option>Актуален</option>
+                                                <option>Требует актуализации</option>
+                                            </select>
+                                        </div>
                                         <div>
-                                            <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Дата вступления в силу</label>
+                                            <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Действует с</label>
                                             <input class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant" type="text" value="01.09.2026">
+                                        </div>
+                                        <div>
+                                            <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Действует по</label>
+                                            <input class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant" type="text" value="">
                                         </div>
                                         <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Номер (ID)</label>
                                         <input class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant cursor-not-allowed" readonly="" type="text" value="4153723">
