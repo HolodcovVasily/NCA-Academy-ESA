@@ -208,9 +208,9 @@
         <header class="flex justify-between items-center" data-purpose="content-header">
             <h2 class="text-xl font-bold tracking-tightest">Банк вопросов</h2>
             <div class="flex gap-2">
-                <button class="px-4 py-2 bg-brand-lowest text-sm  font-semibold rounded-lg shadow-sm hover:bg-brand-container transition-colors border border-surface-container">Экспорт</button>
-                <button class="px-4 py-2 bg-brand-lowest text-sm  font-semibold rounded-lg shadow-sm hover:bg-brand-container transition-colors border border-surface-container">Импорт</button>
-                <button onclick="window.location.href='../Создание вопроса/Создание вопросов.html'" title="Добавить новый вопрос" class="px-4 py-2 gradient-btn text-white text-sm  font-semibold rounded-lg shadow-md hover:opacity-90 transition-opacity">Добавить вопрос</button>
+                <button class="text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors px-8 py-2.5 rounded-lg font-label-md transition-all flex items-center gap-2">Экспорт</button>
+                <button class="text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors px-8 py-2.5 rounded-lg font-label-md transition-all flex items-center gap-2">Импорт</button>
+                <button onclick="window.location.href='../Создание вопроса/Создание вопросов.html'" title="Добавить новый вопрос" class="px-4 py-2 gradient-btn text-white text-sm  font-semibold rounded-lg hover:opacity-90 transition-opacity">Добавить вопрос</button>
             </div>
         </header>
         <!-- END: Content Header -->
@@ -218,7 +218,7 @@
             <!-- BEGIN: Left Filter Column (Collapsible) -->
             <aside class="flex transition-all duration-300 ease-in-out relative shrink-0 z-10" data-purpose="category-filters" id="category-filters-container">
 <!--                <div class="w-64 p-4 space-y-4 rounded-l-lg overflow-hidden transition-all duration-300 ease-in-out bg-surface-container-low filter-panel-collapsed" id="filter-panel-content">-->
-                <div class="w-80 p-4 space-y-4 rounded-l-lg overflow-hidden transition-all duration-300 ease-in-out bg-surface-container-low filter-panel-collapsed" id="filter-panel-content">
+                <div class="w-80 p-4 space-y-4 rounded-l-lg overflow-hidden transition-all duration-300 ease-in-out bg-brand-surface filter-panel-collapsed" id="filter-panel-content">
                     <div class="p-2">
                         <div class="flex items-center justify-between mb-4">
                             <h2 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">НОРМАТИВНЫЙ ДОКУМЕНТ</h2>
@@ -371,15 +371,15 @@
                                     <div class="h-full bg-slate-300 w-[06%]"></div>
                                 </div>
                             </div>
-                            <div class="space-y-1">
-                                <div class="flex justify-between text-[10px] font-bold uppercase">
-                                    <span class="text-on-error-container ">Отложенная публикация (1%)</span>
-                                    <span class="">2</span>
-                                </div>
-                                <div class="h-1.5 w-full rounded-full overflow-hidden">
-                                    <div class="h-full bg-on-error-container w-[06%]"></div>
-                                </div>
-                            </div>
+<!--                            <div class="space-y-1">-->
+<!--                                <div class="flex justify-between text-[10px] font-bold uppercase">-->
+<!--                                    <span class="text-on-error-container ">Отложенная публикация (1%)</span>-->
+<!--                                    <span class="">2</span>-->
+<!--                                </div>-->
+<!--                                <div class="h-1.5 w-full rounded-full overflow-hidden">-->
+<!--                                    <div class="h-full bg-on-error-container w-[06%]"></div>-->
+<!--                                </div>-->
+<!--                            </div>-->
                         </div>
                     </div>
 
@@ -436,7 +436,7 @@
                                             <button class="w-full text-left px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-status-active hover:bg-white rounded-md transition-colors">Активный</button>
                                             <button class="w-full text-left px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-status-development hover:bg-white rounded-md transition-colors">В разработке</button>
                                             <button class="w-full text-left px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-slate-400 hover:bg-white rounded-md transition-colors">Архивный</button>
-                                            <button class="w-full text-left px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-on-error-container hover:bg-white rounded-md transition-colors">Отложенная публикация</button>
+<!--                                            <button class="w-full text-left px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-on-error-container hover:bg-white rounded-md transition-colors">Отложенная публикация</button>-->
                                         </div>
                                     </div>
                                     </div>
@@ -471,7 +471,7 @@
                                             <option>Активный</option>
                                             <option>В разработке</option>
                                             <option>Архивный</option>
-                                            <option>Отложенная публикация </option>
+<!--                                            <option>Отложенная публикация </option>-->
                                         </select>
                                         <span class="material-symbols-outlined absolute right-2 top-2 text-[16px] pointer-events-none text-slate-400">expand_more</span>
                                     </div>
@@ -604,8 +604,8 @@
                                 </td>
                                 <td class="px-6 py-4">
                                     <div class="flex items-center justify-end gap-1">
-                                        <button class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">
-                                            <span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+                                        <button onclick="window.location.href='../Создание вопроса/Карточка вопроса.html'" class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">
+                                            <span class="material-symbols-outlined text-lg" data-icon="edit">visibility</span>
                                         </button>
                                         <!--<button class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-on-surface">-->
                                         <!--<span class="material-symbols-outlined text-lg" data-icon="content_copy">content_copy</span>-->
@@ -637,8 +637,8 @@
                                 </td>
                                 <td class="px-6 py-4 text-right">
                                     <div class="flex items-center justify-end gap-1">
-                                        <button class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">
-                                            <span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+                                        <button onclick="window.location.href='../Создание вопроса/Карточка вопроса.html'" class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">
+                                            <span class="material-symbols-outlined text-lg" data-icon="edit">visibility</span>
                                         </button>
                                         <!--<button class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-on-surface">-->
                                         <!--<span class="material-symbols-outlined text-lg" data-icon="content_copy">content_copy</span>-->
@@ -670,8 +670,8 @@
                                 </td>
                                 <td class="px-6 py-4 text-right">
                                     <div class="flex items-center justify-end gap-1">
-                                        <button class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">
-                                            <span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+                                        <button onclick="window.location.href='../Создание вопроса/Карточка вопроса.html'" class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">
+                                            <span class="material-symbols-outlined text-lg" data-icon="edit">visibility</span>
                                         </button>
                                         <!--<button class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-on-surface">-->
                                         <!--<span class="material-symbols-outlined text-lg" data-icon="content_copy">content_copy</span>-->
@@ -703,8 +703,8 @@
                                 </td>
                                 <td class="px-6 py-4 text-right">
                                     <div class="flex items-center justify-end gap-1">
-                                        <button class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">
-                                            <span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+                                        <button onclick="window.location.href='../Создание вопроса/Карточка вопроса.html'" class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">
+                                            <span class="material-symbols-outlined text-lg" data-icon="edit">visibility</span>
                                         </button>
                                         <!--            <button class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-on-surface">-->
                                         <!--                <span class="material-symbols-outlined text-lg" data-icon="content_copy">content_copy</span>-->
@@ -736,8 +736,8 @@
                                 </td>
                                 <td class="px-6 py-4 text-right">
                                     <div class="flex items-center justify-end gap-1">
-                                        <button class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">
-                                            <span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+                                        <button onclick="window.location.href='../Создание вопроса/Карточка вопроса.html'" class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">
+                                            <span class="material-symbols-outlined text-lg" data-icon="edit">visibility</span>
                                         </button>
                                         <!--            <button class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-on-surface">-->
                                         <!--                <span class="material-symbols-outlined text-lg" data-icon="content_copy">content_copy</span>-->
