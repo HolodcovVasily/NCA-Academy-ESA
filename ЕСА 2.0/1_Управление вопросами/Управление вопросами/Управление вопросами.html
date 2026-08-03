@@ -220,18 +220,19 @@
 <!--                <div class="w-64 p-4 space-y-4 rounded-l-lg overflow-hidden transition-all duration-300 ease-in-out bg-surface-container-low filter-panel-collapsed" id="filter-panel-content">-->
                 <div class="w-80 p-4 space-y-4 rounded-l-lg overflow-hidden transition-all duration-300 ease-in-out bg-brand-surface filter-panel-collapsed" id="filter-panel-content">
                     <div class="p-2">
-                        <div class="flex items-center justify-between mb-4">
-                            <h2 class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">НОРМАТИВНЫЙ ДОКУМЕНТ</h2>
+                        <div class="flex items-center justify-between cursor-pointer">
+                            <h2 class="text-xs font-bold text-brand-primary uppercase tracking-widest">Все вопросы</h2>
+                            <span class="material-symbols-outlined text-slate-400 rotate-90 transition-transform" data-icon="chevron_right">chevron_right</span>
                         </div>
-                        <div class="space-y-2 custom-scrollbar overflow-y-auto max-h-[calc(100vh-200px)]">
+                        <div class="space-y-2 custom-scrollbar overflow-y-auto max-h-[calc(100vh-200px)] border-l-2 border-slate-200 ml-2">
                             <!-- Accordion Item 1 -->
                             <div class="group">
                                 <button class="w-full flex items-center justify-between p-3 bg-white rounded-lg shadow-sm">
                                     <span class="text-sm font-semibold text-on-surface truncate">Гражданский кодекс</span>
                                     <span class="material-symbols-outlined text-slate-400 group-hover:rotate-90 transition-transform" data-icon="chevron_right">chevron_right</span>
                                 </button>
-                                <div class="mt-2 ml-4 space-y-1 border-l-2 border-slate-200 pl-4">
-                                    <div class="flex items-center justify-between p-1 text-xs text-slate-600 hover:bg-white hover:rounded-md transition-colors cursor-pointer">
+                                <div class="mt-2 ml-4 space-y-1 border-l-2 border-slate-200 pl-4 ">
+                                    <div class="flex items-center justify-between p-1 text-xs text-slate-600 hover:bg-surface-container-low hover:rounded-md transition-colors cursor-pointer">
                                         <span class="">Глава 1. Описание</span>
                                         <!--    <div>-->
                                         <!--        <button class="p-1 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">-->
@@ -242,7 +243,7 @@
                                         <!--        </button>-->
                                         <!--    </div>-->
                                     </div>
-                                    <div class="flex items-center justify-between p-1 text-xs text-slate-600 hover:bg-white hover:rounded-md transition-colors cursor-pointer">
+                                    <div class="flex items-center justify-between p-1 text-xs text-slate-600 hover:bg-surface-container-low hover:rounded-md transition-colors cursor-pointer">
                                         <span class="">Глава 2. Описание</span>
                                         <!--    <div>-->
                                         <!--        <button class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">-->
@@ -253,7 +254,7 @@
                                         <!--        </button>-->
                                         <!--    </div>-->
                                     </div>
-                                    <div class="flex items-center justify-between p-1 text-xs text-slate-600 hover:bg-white hover:rounded-md transition-colors cursor-pointer">
+                                    <div class="flex items-center justify-between p-1 text-xs text-slate-600 hover:bg-surface-container-low hover:rounded-md transition-colors cursor-pointer">
                                         <span class="">Глава 3. Описание</span>
                                         <!--        <div>-->
                                         <!--            <button class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">-->
@@ -306,6 +307,13 @@
                                     <span class="material-symbols-outlined text-slate-400 group-hover:rotate-90 transition-transform" data-icon="chevron_right" style="">chevron_right</span>
                                 </button>
                             </div>
+                            <!-- Accordion Item иное -->
+                            <div class="group">
+                                <button class="w-full flex items-center justify-between p-3 bg-white rounded-lg shadow-sm">
+                                    <span class="text-sm font-semibold text-on-surface truncate">Иное</span>
+                                    <span class="material-symbols-outlined text-slate-400 group-hover:rotate-90 transition-transform" data-icon="chevron_right">chevron_right</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -314,9 +322,6 @@
                 <div class="w-6 flex flex-col items-center justify-between py-4 cursor-pointer transition-all duration-300 rounded-r-lg group shadow-[1px_0_4px_rgba(0,0,0,0.05)] hover:bg-brand-container/80 bg-brand-surface" id="sidebar-collapse-btn" title="Отобразить панель Нормативный документ">
                     <span class="material-symbols-outlined text-slate-400 text-[18px] mb-auto">account_tree</span>
                     <div class="flex flex-col items-center justify-center flex-1">
-                        <div class="absolute left-1 w-0.5 h-8 bg-brand-primary/20 rounded-full group-hover:bg-brand-primary/40 transition-colors">
-
-                        </div>
                         <span class="material-symbols-outlined text-brand-primary text-[18px] transition-transform duration-300 group-hover:scale-110 rotate-180" id="collapse-icon">chevron_left</span>
                     </div>
                 </div>
@@ -417,7 +422,7 @@
                         <div class="flex flex-col w-full gap-4">
                             <div class="flex items-center justify-between w-full">
                                 <div class="flex items-center gap-2">
-                                    <button id="toggle-filters-btn" title="Отобразить поля фильтра" class="p-2 rounded-md hover:bg-brand-container/50 text-brand-primary transition-colors flex items-center justify-center">
+                                    <button id="toggle-filters-btn" title="Отобразить поля фильтра" class="p-2 rounded-md hover:bg-brand-primary/10 text-brand-primary transition-colors flex items-center justify-center">
                                         <span class="material-symbols-outlined">filter_list</span>
                                     </button>
                                     <div class="relative inline-block" id="mass-actions-wrapper">
@@ -456,17 +461,17 @@
                             <div id="expanded-filter-panel"  class="grid grid-cols-4 gap-4 p-4 bg-brand-lowest/50 rounded-lg border border-brand-container/50 transition-all hidden">
                                 <div class="space-y-1.5">
                                     <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Поиск по ID</label>
-                                    <input type="text" placeholder="Напр. 4153723" class="w-full px-3 py-2 bg-brand-lowest text-xs border-none rounded-md ring-1 ring-slate-200 focus:ring-brand-primary placeholder:text-slate-300">
+                                    <input type="text" placeholder="Введите ID вопроса" class="w-full px-3 py-2 bg-brand-lowest text-xs border-none rounded-md ring-1 ring-slate-200 focus:ring-brand-primary placeholder:text-slate-300">
                                 </div>
                                 <div class="space-y-1.5">
                                     <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Поиск по тексту вопроса</label>
-                                    <input type="text" placeholder="Введите ключевые слова..." class="w-full px-3 py-2 bg-brand-lowest text-xs border-none rounded-md ring-1 ring-slate-200 focus:ring-brand-primary placeholder:text-slate-300">
+                                    <input type="text" placeholder="Введите ключевое слово вопроса" class="w-full px-3 py-2 bg-brand-lowest text-xs border-none rounded-md ring-1 ring-slate-200 focus:ring-brand-primary placeholder:text-slate-300">
                                 </div>
                                 <div class="space-y-1.5">
                                     <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Статус</label>
                                     <div class="relative">
                                         <select class="w-full px-3 py-2 bg-brand-lowest text-xs border-none rounded-md ring-1 ring-slate-200 focus:ring-brand-primary appearance-none text-slate-600">
-                                            <option>Все статусы</option>
+                                            <option>Все</option>
                                             <option>Активный</option>
                                             <option>В разработке</option>
                                             <option>Архивный</option>
@@ -479,6 +484,7 @@
                                     <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Актуальность</label>
                                     <div class="relative">
                                         <select class="w-full px-3 py-2 bg-brand-lowest text-xs border-none rounded-md ring-1 ring-slate-200 focus:ring-brand-primary appearance-none text-slate-600">
+                                            <option>Все</option>
                                             <option>Актуальный</option>
                                             <option>Требует актуализации</option>
                                         </select>
