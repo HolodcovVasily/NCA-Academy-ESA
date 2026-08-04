@@ -203,18 +203,18 @@
     </aside>
     <!-- END: Left Sidebar Navigation -->
     <!-- BEGIN: Main Workspace Area -->
-    <main class="flex-1 overflow-auto  bg-surface-container-low p-6 flex flex-col gap-6 transition-all duration-300 ease-in-out" data-purpose="workspace-center">
+    <main class="flex-1 overflow-auto  bg-surface-container-low p-4 flex flex-col gap-3 transition-all duration-300 ease-in-out" data-purpose="workspace-center">
         <!-- BEGIN: Content Header -->
         <header class="flex justify-between items-center" data-purpose="content-header">
             <h2 class="text-xl font-bold tracking-tightest">Банк вопросов</h2>
-            <div class="flex gap-2">
+            <div class="flex gap-3">
                 <button title="" class="text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors px-8 py-2.5 rounded-lg font-label-md hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2">Экспорт</button>
                 <button class="text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors px-8 py-2.5 rounded-lg font-label-md hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2">Импорт</button>
                 <button onclick="window.location.href='../Создание вопроса/Создание вопросов.html'" title="Добавить новый вопрос" class="px-4 py-2 gradient-btn text-white text-sm hover:scale-[1.02] active:scale-[0.98] font-semibold rounded-lg transition-opacity">Добавить вопрос</button>
             </div>
         </header>
         <!-- END: Content Header -->
-        <div class="flex gap-6 flex-1 overflow-hidden">
+        <div class="flex gap-3 flex-1 overflow-hidden">
             <!-- BEGIN: Left Filter Column (Collapsible) -->
             <aside class="flex transition-all duration-300 ease-in-out relative shrink-0 z-10" data-purpose="category-filters" id="category-filters-container">
 <!--                <div class="w-64 p-4 space-y-4 rounded-l-lg overflow-hidden transition-all duration-300 ease-in-out bg-surface-container-low filter-panel-collapsed" id="filter-panel-content">-->
@@ -332,9 +332,9 @@
             </aside>
             <!-- END: Left Filter Column -->
             <!-- BEGIN: Center Content Area -->
-            <div class="flex-1 flex flex-col gap-6 overflow-hidden" data-purpose="content-center">
+            <div class="flex-1 flex flex-col gap-3 overflow-hidden" data-purpose="content-center">
                 <!-- BEGIN: Statistics Dashboard -->
-                <div class="grid grid-cols-3 gap-4 shrink-0" data-purpose="stats-dashboard">
+                <div class="grid grid-cols-3 gap-3 shrink-0" data-purpose="stats-dashboard">
                     <!-- Total Questions -->
                     <div class="no-line-card p-5 relative overflow-hidden">
                         <div class="flex items-center gap-2 mb-1">
@@ -430,7 +430,7 @@
                                         <span class="material-symbols-outlined">filter_list</span>
                                     </button>
                                     <div class="relative inline-block" id="mass-actions-wrapper">
-                                        <button title="Выбрать действие для выбранных элементов" id="mass-actions-btn" class="flex items-center gap-2 px-4 py-2 bg-brand-primary/10 text-brand-primary text-[11px] font-bold rounded-md hover:bg-brand-primary hover:text-white transition-all">
+                                        <button title="Выбрать действие для выбранных вопросов" id="mass-actions-btn" class="flex items-center gap-2 px-4 py-2 bg-brand-primary/10 text-brand-primary text-[11px] font-bold rounded-md hover:bg-brand-primary hover:text-white transition-all">
                                             <span class="material-symbols-outlined text-[16px]">task_alt</span> Массовые действия
                                         </button>
                                         <div id="mass-actions-menu" class="absolute left-0 mt-2 w-56 bg-surface-container-lowest rounded-lg shadow-md border border-surface-container z-30 hidden overflow-hidden transition-all duration-200 opacity-0 scale-95 origin-top-left">
@@ -451,7 +451,7 @@
                                 </div>
                                 <div class="flex items-center gap-2">
                                     <div class="relative">
-                                        <button class="flex items-center gap-2 px-3 py-2 bg-brand-lowest text-[11px] font-bold text-slate-600 border-none rounded-md ring-1 ring-slate-200 hover:ring-brand-primary transition-all" id="column-settings-btn">
+                                        <button title="Выбрать колонки для отображения в таблице" class="flex items-center gap-2 px-4 py-2 bg-brand-primary/10 text-brand-primary text-[11px] font-bold rounded-md hover:bg-brand-primary hover:text-white transition-all" id="column-settings-btn">
                                             <span class="material-symbols-outlined text-[16px]">view_column</span> Колонки </button>
                                         <div id="column-settings-panel" class="absolute right-0 mt-2 w-64 bg-brand-lowest rounded-lg shadow-md border border-surface-container z-20 p-4 hidden max-h-100 overflow-y-auto">
                                             <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3">Настройка колонок</p>
@@ -507,42 +507,42 @@
                                     <input class="rounded text-brand-primary focus:ring-brand-primary border-slate-300" placeholder="on" type="checkbox" value="">
                                 </th>
                                 <th class="px-2 py-2 w-24 cursor-pointer hover:text-brand-primary transition-colors group" data-col="id">
-                                    <div class="flex items-center gap-1">
+                                    <div class="flex items-center gap-1 justify-center">
                                         ID <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
                                     </div>
                                 </th>
                                 <th class="px-2 py-2 cursor-pointer hover:text-brand-primary transition-colors group" data-col="text">
-                                    <div class="flex items-center gap-1">
+                                    <div class="flex items-center gap-1 justify-center">
                                         Текст вопроса <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
                                     </div>
                                 </th>
                                 <th class="px-2 py-2 w-32 cursor-pointer hover:text-brand-primary transition-colors group" data-col="status">
-                                    <div class="flex items-center gap-1">
+                                    <div class="flex items-center gap-1 justify-center">
                                         Статус <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
                                     </div>
                                 </th>
                                 <th class="px-2 py-2 w-32 cursor-pointer hover:text-brand-primary transition-colors group" data-col="complexity">
-                                    <div class="flex items-center gap-1">
+                                    <div class="flex items-center gap-1 justify-center">
                                         Сложность <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
                                     </div>
                                 </th>
                                 <th class="px-2 py-2 w-32 cursor-pointer hover:text-brand-primary transition-colors group" data-col="actual" >
-                                    <div class="flex items-center gap-1">
+                                    <div class="flex items-center gap-1 justify-center">
                                         Актуальность <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
                                     </div>
                                 </th>
                                 <th class="px-2 py-2 w-32 text-right pr-6 cursor-pointer hover:text-brand-primary transition-colors group" data-col="actions">
-                                    <div class="flex items-center justify-end gap-1">
+                                    <div class="flex items-center justify-end gap-1 justify-center">
                                         Действия <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">settings</span>
                                     </div>
                                 </th>
                                 <th class="px-2 py-2 w-32 hidden cursor-pointer hover:text-brand-primary transition-colors group" data-col="effective-date" >
-                                    <div class="flex items-center gap-1">
+                                    <div class="flex items-center gap-1 justify-center">
                                         Действует с <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
                                     </div>
                                 </th>
                                 <th class="px-2 py-2 w-32 hidden cursor-pointer hover:text-brand-primary transition-colors group" data-col="expiry-date">
-                                    <div class="flex items-center gap-1">
+                                    <div class="flex items-center gap-1 justify-center">
                                         Действует по <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
                                     </div>
                                 </th>
@@ -552,39 +552,44 @@
                                     </div>
                                 </th>
                                 <th class="px-2 py-2 w-32 hidden cursor-pointer hover:text-brand-primary transition-colors group" data-col="created-at">
-                                    <div class="flex items-center gap-1">
+                                    <div class="flex items-center gap-1 justify-center">
                                     Создан <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
                                 </div>
                                 </th>
                                 <th class="px-2 py-2 w-32 hidden cursor-pointer hover:text-brand-primary transition-colors group" data-col="updated-at">
-                                    <div class="flex items-center gap-1">
+                                    <div class="flex items-center gap-1 justify-center">
                                         Дата изменения <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
                                     </div>
                                 </th>
                                 <th class="px-2 py-2 w-32 hidden cursor-pointer hover:text-brand-primary transition-colors group" data-col="q-type">
-                                    <div class="flex items-center gap-1">
+                                    <div class="flex items-center gap-1 justify-center">
                                         Тип вопроса <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
                                     </div>
                                 </th>
                                 <th class="px-2 py-2 w-32 hidden cursor-pointer hover:text-brand-primary transition-colors group" data-col="a-type">
                                 <th class="px-2 py-2 w-32 hidden cursor-pointer hover:text-brand-primary transition-colors group" data-col="q-type">
-                                    <div class="flex items-center gap-1">
+                                    <div class="flex items-center gap-1 justify-center">
                                         Тип ответа <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
                                     </div>
                                 </th>
                                 <th class="px-2 py-2 w-32 hidden cursor-pointer hover:text-brand-primary transition-colors group" data-col="opt-1">
-                                    <div class="flex items-center gap-1">
+                                    <div class="flex items-center gap-1 justify-center">
                                         Вариант 1 <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
                                     </div>
                                 </th>
                                 <th class="px-2 py-2 w-32 hidden cursor-pointer hover:text-brand-primary transition-colors group" data-col="opt-2">
-                                    <div class="flex items-center gap-1">
+                                    <div class="flex items-center gap-1 justify-center">
                                         Вариант 2 <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
                                     </div>
                                 </th>
                                 <th class="px-2 py-2 w-32 hidden cursor-pointer hover:text-brand-primary transition-colors group" data-col="opt-3">
-                                    <div class="flex items-center gap-1">
+                                    <div class="flex items-center gap-1 justify-center">
                                         Вариант 3 <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
+                                    </div>
+                                </th>
+                                <th class="px-2 py-2 w-32 hidden cursor-pointer hover:text-brand-primary transition-colors group" data-col="text-structure">
+                                    <div class="flex items-center gap-1 justify-center">
+                                        Текст структурной единицы <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
                                     </div>
                                 </th>
                             </tr>
@@ -593,25 +598,25 @@
                             <tbody class="text-xs text-brand-dark divide-y divide-brand-container">
                             <!-- Row 1 -->
                             <tr class="hover:bg-brand-container/10 group cursor-pointer transition-colors question-row">
-                                <td class="px-6 py-4 text-xs font-medium text-slate-400">
+                                <td class="px-6 py-2 text-xs font-medium text-slate-400">
                                     <input class="w-4 h-4 rounded border-outline-variant text-surface-tint focus:ring-surface-tint/20 cursor-pointer" type="checkbox" checked="">
                                     <!--    <input checked="" class="w-4 h-4 rounded border-outline-variant text-surface-tint focus:ring-surface-tint/20 cursor-pointer  peer-checked:bg-blue-600 peer-checked:border-blue-600  text-transparent peer-checked:text-white">-->
                                 </td>
-                                <td class="px-4 py-4 text-xs font-bold text-[#001453]">4153723</td>
-                                <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">В соответствии с ГК, что является недвижимы...</td>
-                                <td class="px-4 py-4">
-                                    <span class="px-2 py-0.5 bg-emerald-100 text-emerald-700 text-[9px] font-black uppercase rounded">Активный</span>
+                                <td class="px-4 py-2 text-xs font-bold text-brand-primary">4153723</td>
+                                <td class="px-4 py-2 text-xs text-on-surface truncate max-w-[300px]">В соответствии с ГК, что является недвижимы...</td>
+                                <td class="px-4 py-2">
+                                    <span class="px-2 py-0.5 bg-emerald-100 text-[9px] text-on-surface uppercase rounded">Активный</span>
                                 </td>
-                                <td class="px-4 py-4">
+                                <td class="px-4 py-2">
                                     <div class="flex items-center gap-1.5">
                                         <div class="w-2.5 h-2.5 rounded-full bg-emerald-500"></div>
-                                        <span class="text-[10px] font-bold text-slate-600">Легкая</span>
+                                        <span class="text-[9px] text-on-surface uppercase">Легкая</span>
                                     </div>
                                 </td>
-                                <td class="px-4 py-4">
-                                    <span class="px-2 py-0.5 bg-emerald-100 text-emerald-700 text-[9px] font-black uppercase rounded">Актуален</span>
+                                <td class="px-4 py-2">
+                                    <span class="px-2 py-0.5 bg-emerald-100 text-[9px] text-on-surface uppercase rounded">Актуален</span>
                                 </td>
-                                <td class="px-6 py-4">
+                                <td class="px-6 py-2">
                                     <div class="flex items-center justify-end gap-1">
                                         <button onclick="window.location.href='../Создание вопроса/Карточка вопроса.html'" class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">
                                             <span class="material-symbols-outlined text-lg" data-icon="edit">visibility</span>
@@ -627,24 +632,24 @@
                             </tr>
                             <!-- Row 2 -->
                             <tr class="hover:bg-brand-container/10 group cursor-pointer transition-colors question-row">
-                                <td class="px-6 py-4 text-xs font-medium text-slate-400">
+                                <td class="px-6 py-2 text-xs font-medium text-slate-400">
                                     <input class="w-4 h-4 rounded border-outline-variant text-surface-tint focus:ring-surface-tint/20 cursor-pointer" type="checkbox">
                                 </td>
-                                <td class="px-4 py-4 text-xs font-bold text-[#001453]">4153724</td>
-                                <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">Чем в соответствии с ГК является строительство</td>
-                                <td class="px-4 py-4">
-                                    <span class="px-2 py-0.5 bg-amber-100 text-amber-700 text-[9px] font-black uppercase rounded">В разработке</span>
+                                <td class="px-4 py-2 text-xs font-bold text-brand-primary">4153724</td>
+                                <td class="px-4 py-2 text-xs text-on-surface truncate max-w-[300px]">Чем в соответствии с ГК является строительство</td>
+                                <td class="px-4 py-2">
+                                    <span class="px-2 py-0.5 bg-amber-100 text-[9px] text-on-surface uppercase rounded">В разработке</span>
                                 </td>
-                                <td class="px-4 py-4">
+                                <td class="px-4 py-2">
                                     <div class="flex items-center gap-1.5">
                                         <div class="w-2.5 h-2.5 rounded-full bg-emerald-500"></div>
-                                        <span class="text-[10px] font-bold text-slate-600">Легкая</span>
+                                        <span class="text-[9px] text-on-surface uppercase">Легкая</span>
                                     </div>
                                 </td>
-                                <td class="px-4 py-4">
-                                    <span class="px-2 py-0.5 bg-emerald-100 text-emerald-700 text-[9px] font-black uppercase rounded">Актуален</span>
+                                <td class="px-4 py-2">
+                                    <span class="px-2 py-0.5 bg-emerald-100 text-[9px] text-on-surface uppercase rounded">Актуален</span>
                                 </td>
-                                <td class="px-6 py-4 text-right">
+                                <td class="px-6 py-2 text-right">
                                     <div class="flex items-center justify-end gap-1">
                                         <button onclick="window.location.href='../Создание вопроса/Карточка вопроса.html'" class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">
                                             <span class="material-symbols-outlined text-lg" data-icon="edit">visibility</span>
@@ -660,24 +665,24 @@
                             </tr>
                             <!-- Row 3 -->
                             <tr class="hover:bg-brand-container/10 group cursor-pointer transition-colors question-row">
-                                <td class="px-6 py-4 text-xs font-medium text-slate-400">
+                                <td class="px-6 py-2 text-xs font-medium text-slate-400">
                                     <input class="w-4 h-4 rounded border-outline-variant text-surface-tint focus:ring-surface-tint/20 cursor-pointer" type="checkbox">
                                 </td>
-                                <td class="px-4 py-4 text-xs font-bold text-[#001453]">4153725</td>
-                                <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">В соответствии с ГК, что является недвижимы...</td>
-                                <td class="px-4 py-4">
-                                    <span class="px-2 py-0.5 bg-emerald-100 text-emerald-700 text-[9px] font-black uppercase rounded">Активный</span>
+                                <td class="px-4 py-2 text-xs font-bold text-brand-primary">4153725</td>
+                                <td class="px-4 py-2 text-xs text-on-surface truncate max-w-[300px]">В соответствии с ГК, что является недвижимы...</td>
+                                <td class="px-4 py-2">
+                                    <span class="px-2 py-0.5 bg-emerald-100 text-[9px] text-on-surface uppercase rounded">Активный</span>
                                 </td>
-                                <td class="px-4 py-4">
+                                <td class="px-4 py-2">
                                     <div class="flex items-center gap-1.5">
                                         <div class="w-2.5 h-2.5 rounded-full bg-rose-500"></div>
-                                        <span class="text-[10px] font-bold text-slate-600">Сложная</span>
+                                        <span class="text-[9px] text-on-surface uppercase">Сложная</span>
                                     </div>
                                 </td>
-                                <td class="px-4 py-4">
-                                    <span class="px-2 py-0.5 bg-emerald-100 text-emerald-700 text-[9px] font-black uppercase rounded">Актуален</span>
+                                <td class="px-4 py-2">
+                                    <span class="px-2 py-0.5 bg-emerald-100 text-[9px] text-on-surface uppercase rounded">Актуален</span>
                                 </td>
-                                <td class="px-6 py-4 text-right">
+                                <td class="px-6 py-2 text-right">
                                     <div class="flex items-center justify-end gap-1">
                                         <button onclick="window.location.href='../Создание вопроса/Карточка вопроса.html'" class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">
                                             <span class="material-symbols-outlined text-lg" data-icon="edit">visibility</span>
@@ -693,24 +698,24 @@
                             </tr>
                             <!-- Row 4 -->
                             <tr class="hover:bg-brand-container/10 group cursor-pointer transition-colors question-row">
-                                <td class="px-6 py-4 text-xs font-medium text-slate-400">
+                                <td class="px-6 py-2 text-xs font-medium text-slate-400">
                                     <input class="w-4 h-4 rounded border-outline-variant text-surface-tint focus:ring-surface-tint/20 cursor-pointer" type="checkbox">
                                 </td>
-                                <td class="px-4 py-4 text-xs font-bold text-[#001453]">4153726</td>
-                                <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">В соответствии с ГК, что является недвижимы...</td>
-                                <td class="px-4 py-4">
-                                    <span class="px-2 py-0.5 bg-slate-300 text-slate-500 text-[9px] font-black uppercase rounded">Архивный</span>
+                                <td class="px-4 py-2 text-xs font-bold text-brand-primary">4153726</td>
+                                <td class="px-4 py-2 text-xs text-on-surface truncate max-w-[300px]">В соответствии с ГК, что является недвижимы...</td>
+                                <td class="px-4 py-2">
+                                    <span class="px-2 py-0.5 bg-slate-300 text-[9px] text-on-surface uppercase rounded">Архивный</span>
                                 </td>
-                                <td class="px-4 py-4">
+                                <td class="px-4 py-2">
                                     <div class="flex items-center gap-1.5">
                                         <div class="w-2.5 h-2.5 rounded-full bg-amber-500"></div>
-                                        <span class="text-[10px] font-bold text-slate-600">Средняя</span>
+                                        <span class="text-[9px] text-on-surface uppercase">Средняя</span>
                                     </div>
                                 </td>
-                                <td class="px-4 py-4">
-                                    <span class="px-2 py-0.5 bg-emerald-100 text-emerald-700 text-[9px] font-black uppercase rounded">Актуален</span>
+                                <td class="px-4 py-2">
+                                    <span class="px-2 py-0.5 bg-emerald-100 text-[9px] text-on-surface uppercase rounded">Актуален</span>
                                 </td>
-                                <td class="px-6 py-4 text-right">
+                                <td class="px-6 py-2 text-right">
                                     <div class="flex items-center justify-end gap-1">
                                         <button onclick="window.location.href='../Создание вопроса/Карточка вопроса.html'" class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">
                                             <span class="material-symbols-outlined text-lg" data-icon="edit">visibility</span>
@@ -726,24 +731,24 @@
                             </tr>
                             <!-- Row 5 -->
                             <tr class="hover:bg-brand-container/10 group cursor-pointer transition-colors question-row">
-                                <td class="px-6 py-4 text-xs font-medium text-slate-400">
+                                <td class="px-6 py-2 text-xs font-medium text-slate-400">
                                     <input class="w-4 h-4 rounded border-outline-variant text-surface-tint focus:ring-surface-tint/20 cursor-pointer" type="checkbox">
                                 </td>
-                                <td class="px-4 py-4 text-xs font-bold text-[#001453]">4153727</td>
-                                <td class="px-4 py-4 text-xs text-on-surface truncate max-w-[300px]">В соответствии с ГК, что является недвижимы...</td>
-                                <td class="px-4 py-4">
-                                    <span class="px-2 py-0.5 bg-emerald-100 text-emerald-700 text-[9px] font-black uppercase rounded">Активный</span>
+                                <td class="px-4 py-2 text-xs font-bold text-brand-primary">4153727</td>
+                                <td class="px-4 py-2 text-xs text-on-surface truncate max-w-[300px]">В соответствии с ГК, что является недвижимы...</td>
+                                <td class="px-4 py-2">
+                                    <span class="px-2 py-0.5 bg-emerald-100 text-[9px] text-on-surface uppercase rounded">Активный</span>
                                 </td>
-                                <td class="px-4 py-4">
+                                <td class="px-4 py-2">
                                     <div class="flex items-center gap-1.5">
                                         <div class="w-2.5 h-2.5 rounded-full bg-amber-500"></div>
-                                        <span class="text-[10px] font-bold text-slate-600">Средняя</span>
+                                        <span class="text-[9px] text-on-surface uppercase">Средняя</span>
                                     </div>
                                 </td>
-                                <td class="px-4 py-4">
-                                    <span class="px-2 py-0.5 bg-error-container text-on-error-container text-[9px] font-black uppercase rounded">Требует актуализации</span>
+                                <td class="px-4 py-2">
+                                    <span class="px-2 py-0.5 bg-error-container text-[9px] text-on-surface uppercase rounded">Требует актуализации</span>
                                 </td>
-                                <td class="px-6 py-4 text-right">
+                                <td class="px-6 py-2 text-right">
                                     <div class="flex items-center justify-end gap-1">
                                         <button onclick="window.location.href='../Создание вопроса/Карточка вопроса.html'" class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">
                                             <span class="material-symbols-outlined text-lg" data-icon="edit">visibility</span>
@@ -788,14 +793,10 @@
                             <span class="material-symbols-outlined text-[20px]">close</span>
                         </button>
                     </div>
-                    <div class="flex-1 overflow-auto p-5 space-y-6">
+                    <div class="flex-1 overflow-auto p-5 space-y-3">
                         <div>
                             <p class="text-[9px] font-bold text-slate-400 uppercase mb-2">Нормативный документ</p>
                             <h3 class="text-xs font-bold text-brand-dark leading-relaxed">Гражданский кодекс Республики Беларусь</h3>
-                        </div>
-                        <div>
-                            <label class="text-[9px] font-bold text-slate-400 uppercase mb-2">Структурная единица</label>
-                            <p class="text-xs font-bold text-brand-dark leading-relaxed">ст.268 ГК</p>
                         </div>
                         <div>
                             <p class="text-[9px] font-bold text-slate-400 uppercase mb-2">Текст вопроса</p>
@@ -813,14 +814,26 @@
                                     <span class="text-[11px] font-semibold text-emerald-700">самовольная постройка</span>
                                 </label>
                                 <label class="flex items-start gap-3 p-3 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
-                                    <div class="w-4 h-4 rounded-full border-2 border-slate-200 bg-white shrink-0 mt-0.5"></div>
+                                    <div class="w-4 h-4 rounded-full border-2 border-slate-200 bg-white shrink-0 mt-0.5">
+
+                                    </div>
                                     <span class="text-[11px] text-slate-600">самовольным недвижимым имуществом</span>
                                 </label>
                                 <label class="flex items-start gap-3 p-3 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
-                                    <div class="w-4 h-4 rounded-full border-2 border-slate-200 bg-white shrink-0 mt-0.5"></div>
+                                    <div class="w-4 h-4 rounded-full border-2 border-slate-200 bg-white shrink-0 mt-0.5">
+
+                                    </div>
                                     <span class="text-[11px] text-slate-600">самовольный объект строительства</span>
                                 </label>
                             </div>
+                        </div>
+                        <div>
+                            <label class="text-[9px] font-bold text-slate-400 uppercase mb-2">Структурная единица</label>
+                            <p class="text-xs font-bold text-brand-dark leading-relaxed">ст.268 ГК</p>
+                        </div>
+                        <div>
+                            <label class="text-[9px] font-bold text-slate-400 uppercase mb-2">Структурная единица</label>
+                            <p class="text-xs font-bold text-brand-dark leading-relaxed">ст.268 ГК</p>
                         </div>
                         <div class="grid grid-cols-2 gap-4 pt-4 border-t border-slate-100">
                             <div>
@@ -963,7 +976,8 @@
             { id: 'a-type', label: 'Тип ответов', visible: false },
             { id: 'opt-1', label: 'Вариант ответа 1', visible: false },
             { id: 'opt-2', label: 'Вариант ответа 2', visible: false },
-            { id: 'opt-3', label: 'Вариант ответа 3', visible: false }
+            { id: 'opt-3', label: 'Вариант ответа 3', visible: false },
+            { id: 'text-structure', label: 'Текст структурной единицы', visible: false },
         ];
 
         function toggleColumn(colId, isVisible) {
