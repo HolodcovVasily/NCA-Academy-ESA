@@ -106,7 +106,7 @@
                     "secondary": "#4b5b9a",
                     "on-primary-fixed-variant": "#214098",
                     "on-error-container": "#93000a",
-                    "primary": "#3450a9",
+                    "primary": "#4e69c3",
                     "on-secondary-container": "#384785",
                     "error": "#ba1a1a"
                 },
@@ -217,7 +217,7 @@
                                             <div>
                                                 <label class="font-label-sm text-label-sm text-outline uppercase mb-2 block px-1">Нормативный документ<span class="text-error">*</span></label>
                                                 <div class="relative">
-                                                    <select class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface appearance-none bottom-border-focus">
+                                                    <select class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface appearance-none bottom-border-focus rounded-lg">
                                                         <option disabled="" selected="" value="">Выберите документ...</option>
                                                         <option>Гражданский кодекс</option>
                                                         <option>Закон о государственной регистрации</option>
@@ -227,7 +227,7 @@
                                                         <option>Инструкция об инвентарных номерах</option>
                                                         <option>Кодекс Республики Беларусь о земле</option>
                                                     </select>
-                                                    <span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline pointer-events-none" data-icon="expand_more">expand_more</span>
+                                                    <span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline pointer-events-none" data-icon="expand_more"></span>
                                                 </div>
                                             </div>
                                             <!-- Field 2: Structural Unit -->
@@ -255,42 +255,42 @@
                                                 <span class="material-symbols-outlined text-primary" data-icon="inventory_2">inventory_2</span>
                                                 Метаданные вопроса
                                             </h3>
-                                            <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1" style="">Статус вопроса<span class="text-error">*</span></label>
-                                            <select class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface appearance-none bottom-border-focus">
+                                            <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1" style="">Статус<span class="text-error">*</span></label>
+                                            <select class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface appearance-none bottom-border-focus rounded-lg">
                                                 <!--                <option disabled="" selected="" value="">Выберите статус</option>-->
                                                 <option selected="" title="только внесли/изменили статус с активного - не отображается в тестах">В разработке</option>
                                                 <option title="утвержден ГКИ, можно его применять в аттестации">Активный</option>
                                                 <option title="не отображается в тестах">Архивный</option>
-                                                <option title="изменения в структурной единице нормативного документа">Отложенная публикация</option>
                                             </select>
                                         </div>
                                         <div class="space-y-2">
-                                            <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1" style="">Сложность вопроса<span class="text-error">*</span></label>
-                                            <select class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface appearance-none bottom-border-focus">
+                                            <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1" style="">Сложность<span class="text-error">*</span></label>
+                                            <select class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface appearance-none bottom-border-focus rounded-lg">
                                                 <option disabled="" selected="" value="">Укажите сложность вопроса</option>
                                                 <option>Легкая</option>
                                                 <option>Средняя</option>
                                                 <option>Сложная</option>
                                             </select>
                                         </div>
-                                        <div class="space-y-2">
-                                            <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1" style="">Актуальность<span class="text-error">*</span></label>
-                                            <select class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface appearance-none bottom-border-focus">
-                                                <option disabled="" selected="" value="">Укажите актуальность вопроса</option>
-                                                <option>Актуален</option>
-                                                <option>Требует актуализации</option>
-                                            </select>
-                                        </div>
+<!--                                        <div class="space-y-2">-->
+<!--                                            <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1" style="">Актуальность</label>-->
+<!--                                            <select class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface appearance-none bottom-border-focus rounded-lg">-->
+<!--                                                <option selected="">Актуален</option>-->
+<!--                                                <option>Требует актуализации</option>-->
+<!--                                            </select>-->
+<!--                                        </div>-->
                                         <div>
                                             <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Действует с</label>
-                                            <input class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant" type="text" value="01.09.2026">
+                                            <input class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant rounded-lg" type="text" value="01.09.2026">
                                         </div>
                                         <div>
                                             <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Действует по</label>
-                                            <input class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant" type="text" value="">
+                                            <input class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant rounded-lg" type="text" value="">
                                         </div>
-                                        <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Номер (ID)</label>
-                                        <input class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant cursor-not-allowed" readonly="" type="text" value="4153723">
+<!--                                        <div>-->
+<!--                                        <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Номер (ID)</label>-->
+<!--                                        <input class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant cursor-not-allowed rounded-lg" readonly="" type="text" value="4153723">-->
+<!--                                        </div>-->
                                     </div>
 
 
@@ -298,16 +298,16 @@
                                 <div class="">
                                     <div>
                                         <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Разработчик</label>
-                                        <input class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant cursor-not-allowed" readonly="" type="text" value="Авторизованный администратор вопросов">
+                                        <input class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant cursor-not-allowed rounded-lg" readonly="" type="text" value="Авторизованный администратор вопросов">
                                     </div>
-                                    <div>
-                                        <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Создан</label>
-                                        <input class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant cursor-not-allowed" readonly="" type="text" value="03.10.2016 15:55:06">
-                                    </div>
-                                    <div>
-                                        <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Дата изменений</label>
-                                        <input class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant cursor-not-allowed" readonly="" type="text" value="07.05.2026 09:21:06">
-                                    </div>
+<!--                                    <div>-->
+<!--                                        <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Создан</label>-->
+<!--                                        <input class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant cursor-not-allowed rounded-lg" readonly="" type="text" value="03.10.2016 15:55:06">-->
+<!--                                    </div>-->
+<!--                                    <div>-->
+<!--                                        <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Дата изменений</label>-->
+<!--                                        <input class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant cursor-not-allowed rounded-lg" readonly="" type="text" value="07.05.2026 09:21:06">-->
+<!--                                    </div>-->
                                 </div>
                             </div>
                         </div>
@@ -316,7 +316,7 @@
                 <!-- Main Content Area -->
                 <section class="lg:w-2/3 flex flex-col gap-module-gap">
                     <!-- Question Type Selection -->
-                    <div class="bg-surface-container-low p-6 rounded-xl">
+                    <div class="bg-surface-container-low rounded-xl">
                         <label class="font-label-sm text-label-sm text-outline uppercase mb-4 block px-1">Тип вопроса:</label>
                         <div class="flex flex-wrap gap-3">
                             <button onclick="window.location.href='#'" class="flex-1 min-w-[140px] px-4 py-3 rounded-lg bg-white border border-primary text-primary font-label-md flex items-center justify-center gap-2 shadow-sm">
@@ -343,7 +343,9 @@
                     </div>
                     <!-- Source Reference -->
                     <section class="bg-surface-container-lowest p-4 rounded-xl">
-                        <label class="text-[10px] font-bold uppercase tracking-widest text-slate-500 block mb-2" style="">Ссылка на источник</label>
+                        <h3 class="font-label-md text-label-md text-on-surface flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary" data-icon="edit_note">sync</span>Ссылка на источник
+                        </h3>
                         <div class="space-y-2">
                             <span class="text-[10px] font-bold uppercase text-outline" style="">Структурная единица</span>
                             <input class="w-full bg-surface-container-low border-none rounded-lg px-4 py-2.5 text-sm cursor-not-allowed" readonly="" type="text" value="" placeholder="Глава 3. Статья 15. Пункт 15.2">
@@ -353,7 +355,7 @@
                         </div>
                     </section>
                     <!-- Content Section -->
-                    <div class="bg-surface-container-lowest p-8 rounded-xl outline outline-1 outline-outline-variant/15">
+                    <div class="bg-surface-container-lowest p-4 rounded-xl">
                         <div class="flex justify-between items-center mb-6">
                             <h3 class="font-label-md text-label-md text-on-surface flex items-center gap-2">
                                 <span class="material-symbols-outlined text-primary" data-icon="edit_note">edit_note</span>
@@ -373,30 +375,23 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Answers block -->
-                    <div class="bg-surface-container-lowest p-8 rounded-xl outline outline-1 outline-outline-variant/15 mb-12">
-                        <!-- Answer Type Selection -->
-                        <div class="bg-surface-container-low p-6 rounded-xl">
-                            <label class="font-label-sm text-label-sm text-outline uppercase mb-4 block px-1">Тип ответов:</label>
-                            <div class="flex flex-wrap gap-3">
-                                <button class="flex-1 min-w-[140px] px-4 py-3 rounded-lg bg-white border border-primary text-primary font-label-md flex items-center justify-center gap-2 shadow-sm">
-                                    <span class="material-symbols-outlined text-lg" data-icon="radio_button_checked">radio_button_checked</span>
-                                    Одиночный выбор
-                                </button>
-                                <button class="flex-1 min-w-[140px] px-4 py-3 rounded-lg bg-surface-container text-on-surface-variant font-label-md flex items-center justify-center gap-2 cursor-not-allowed" readonly="">
-                                    <span class="material-symbols-outlined text-lg" data-icon="check_box">check_box</span>
-                                    Множественный выбор
-                                </button>
-                            </div>
+
+                    <!-- Answer Type Selection -->
+                    <div class="bg-surface-container-lowest p-4 rounded-xl">
+                        <label class="font-label-sm text-label-sm text-outline uppercase mb-4 block px-1">Тип ответов:</label>
+                        <div class="flex flex-wrap gap-3">
+                            <button class="flex-1 min-w-[140px] px-4 py-3 rounded-lg bg-white border border-primary text-primary font-label-md flex items-center justify-center gap-2 shadow-sm">
+                                <span class="material-symbols-outlined text-lg" data-icon="radio_button_checked">radio_button_checked</span>
+                                Одиночный выбор
+                            </button>
+                            <button class="flex-1 min-w-[140px] px-4 py-3 rounded-lg bg-surface-container text-on-surface-variant font-label-md flex items-center justify-center gap-2 cursor-not-allowed" readonly="">
+                                <span class="material-symbols-outlined text-lg" data-icon="check_box">check_box</span>
+                                Множественный выбор
+                            </button>
                         </div>
-                        <!-- Shuffle Toggle -->
-                        <!--    <div class="flex items-center justify-between bg-surface-container-low p-6 rounded-xl mb-4">-->
-                        <!--        <span class="font-label-md text-on-surface-variant">Перемешивание ответов</span>-->
-                        <!--        <label class="relative inline-flex items-center cursor-pointer">-->
-                        <!--            <input checked="" class="sr-only peer" type="checkbox"/>-->
-                        <!--            <div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>-->
-                        <!--        </label>-->
-                        <!--    </div>-->
+                    </div>
+                    <!-- Answers block -->
+                    <div class="bg-surface-container-lowest p-4 rounded-xl">
                         <div class="flex justify-between items-center mb-6">
                             <h3 class="font-label-md text-label-md text-on-surface flex items-center gap-2">
                                 <span class="material-symbols-outlined text-primary" data-icon="checklist">checklist</span>
