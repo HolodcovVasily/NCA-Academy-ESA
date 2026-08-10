@@ -211,11 +211,11 @@
                     <h2 class="text-headline-md font-headline-md text-on-surface">Карточка вопроса</h2>
                 </div>
                 <div class="flex items-center gap-3">
-                    <button class="text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors px-8 py-2.5 rounded-lg font-label-md transition-all flex items-center gap-2">
+                    <button class="text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant hover:scale-[1.02] active:scale-[0.98] transition-all px-8 py-2.5 rounded-lg font-label-md transition-all flex items-center gap-2">
                         <span class="material-symbols-outlined text-base" data-icon="history">history</span>
                         Создать новую версию
                     </button>
-                    <button class="gradient-button text-on-primary px-8 py-2.5 rounded-lg font-label-md transition-all flex items-center gap-2">
+                    <button class="gradient-button text-on-primary px-8 py-2.5 rounded-lg font-label-md hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2">
                         <span class="material-symbols-outlined text-base" data-icon="edit">edit</span>
                         Редактировать
                     </button> <button class="w-10 h-10 rounded-full hover:bg-surface-container-highest flex items-center justify-center text-outline transition-colors">
@@ -300,8 +300,12 @@
                                 <input  readonly="" class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant rounded-lg" type="text" value="31.12.2026">
                             </div>
                             <div>
+                                <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Дата изменений</label>
+                                <input  readonly="" class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant rounded-lg" type="text" value="24.12.2022">
+                            </div>
+                            <div>
                                 <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Разработчик</label>
-                                <input  value="Актуален" readonly="" class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant rounded-lg" readonly="" type="text" value="Давыдович Ю.А.">
+                                <input readonly="" class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant rounded-lg" type="text" value="Давыдович Ю.А.">
                             </div>
                         </div>
 
