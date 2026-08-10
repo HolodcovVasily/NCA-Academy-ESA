@@ -198,7 +198,7 @@
     <div class="bg-surface-container-low w-full max-w-[1300px] h-[85vh] overflow-hidden rounded-xl shadow-2xl flex flex-col">
         <!-- Modal Header -->
         <!-- Page Header -->
-        <div class="px-section-gap pt-section-gap">
+        <div class="px-section-gap py-module-gap bg-surface-container-lowest border-b-2 border-surface-container-low">
             <div class="flex justify-between items-end mb-6">
                 <div>
                     <nav class="flex items-center gap-2 text-on-surface-variant mb-2">
@@ -224,144 +224,98 @@
                 </div>
             </div>
         </div>
-        <div class="flex-1 overflow-y-auto p-section-gap">
+        <div class="flex-1 overflow-y-auto p-4">
         <!-- Version Tabs -->
         <div class="bg-surface-container-low rounded-xl gap-2">
             <button class="flex-1 py-3 px-6 rounded-lg text-outline hover:bg-surface-container-highest transition-all font-label-md text-label-md">Версия 1</button>
             <button class="flex-1 py-3 px-6 rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md shadow-sm transition-all">Версия 2</button>
         </div>
-        <div class="flex-1 overflow-y-auto bg-surface-container-lowest p-section-gap">
+        <div class="flex-1 rounded-xl overflow-y-auto bg-surface-container-lowest p-section-gap">
             <div class="flex flex-col lg:flex-row gap-module-gap">
                 <!-- Metadata Side Column -->
                 <section class="lg:w-1/3 flex flex-col gap-module-gap">
-                    <!-- Metadata Card -->
-                    <div class="bg-surface-container-low p-8 rounded-xl flex flex-col gap-6">
-                        <div class="flex flex-col gap-4">
-                            <div class="group">
-                                <div class="space-y-2">
-                                    <!-- Regulatory Metadata (Condensed) -->
-                                    <div class="">
-                                        <h3 class="font-label-md text-label-md text-on-surface flex items-center gap-2 mb-4">
-                                            <span class="material-symbols-outlined text-primary" data-icon="gavel">gavel</span>
-                                            Предметная область вопроса
-                                        </h3>
-                                        <div class="space-y-4">
-                                            <!-- Field 1: Select Document -->
-                                            <div>
-                                                <label class="font-label-sm text-label-sm text-outline uppercase mb-2 block px-1">Нормативный документ</label>
-                                                <div class="relative">
-                                                    <div class="bg-surface-container-highest px-4 py-3 rounded-lg flex items-center justify-between">
-                                                        <!--                                                        <option disabled="" selected="" value="">Выберите документ...</option>-->
-                                                        <!--                                                        <option>Гражданский кодекс</option>-->
-                                                        <!--                                                        <option>Закон о государственной регистрации</option>-->
-                                                        <!--                                                        <option>Инструкция о кадастровых номерах</option>-->
-                                                        <!--                                                        <option>Инструкция о порядке ведения адресной системы</option>-->
-                                                        <!--                                                        <option>Инструкция № 11</option>-->
-                                                        <!--                                                        <option>Инструкция об инвентарных номерах</option>-->
-                                                        <!--                                                        <option>Кодекс Республики Беларусь о земле</option>-->
-                                                        Гражданский кодекс
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- Field 2: Structural Unit -->
-                                            <div>
-                                                <label class="font-label-sm text-label-sm text-outline uppercase mb-2 block px-1">СТРУКТУРНАЯ ЕДИНИЦА</label>
-                                                <div class="relative">
-                                                    <div class="bg-surface-container-highest px-4 py-3 rounded-lg flex items-center justify-between">
-                                                        <!--                                                    <span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline" data-icon="search">search</span>-->
-                                                        Глава 3. Статья 15. Пункт 15.2
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- Field 3: field -->
-                                            <div>
-                                                <label class="font-label-sm text-label-sm text-outline uppercase mb-2 block px-1">ТЕМАТИКА</label>
-                                                <div class="relative">
-                                                    <div class="bg-surface-container-highest px-4 py-3 rounded-lg flex items-center justify-between">
-                                                        Общий
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="pt-6 border-t border-outline-variant/20">
-                                            <div class="space-y-2">
-                                                <h3 class="font-label-md text-label-md text-on-surface flex items-center gap-2">
-                                                    <span class="material-symbols-outlined text-primary" data-icon="inventory_2">inventory_2</span>
-                                                    Метаданные вопроса
-                                                </h3>
-                                                <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1" style="">Статус вопроса
-                                                </label>
-                                                <div class="bg-surface-container-highest px-4 py-3 rounded-lg flex items-center justify-between">
-                                                    <!--                                                <option selected="" title="только внесли/изменили статус с активного - не отображается в тестах">В разработке</option>-->
-                                                    <!--                                                <option title="утвержден ГКИ, можно его применять в аттестации">Активный</option>-->
-                                                    <!--                                                <option title="не отображается в тестах">Архивный</option>-->
-                                                    <!--                                                <option title="изменения в структурной единице нормативного документа">Отложенная публикация</option>-->
-                                                    Активный
-                                                </div>
-                                            </div>
-                                            <div class="space-y-2">
-                                                <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1" style="">Сложность вопроса</label>
-                                                <div class="bg-surface-container-highest px-4 py-3 rounded-lg flex items-center justify-between">
-                                                    <!--                                                <option disabled="" selected="" value="">Укажите сложность вопроса</option>-->
-                                                    <!--                                                <option>Легкая</option>-->
-                                                    <!--                                                <option>Средняя</option>-->
-                                                    <!--                                                <option>Сложная</option>-->
-                                                    Легкая
-                                                </div>
-                                            </div>
-                                            <div class="space-y-2">
-                                                <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1" style="">Актуальность</label>
-                                                <div class="bg-surface-container-highest px-4 py-3 rounded-lg flex items-center justify-between">
-                                                    <!--                                                <option disabled="" selected="" value="">Укажите актуальность вопроса</option>-->
-                                                    <!--                                                <option>Актуален</option>-->
-                                                    <!--                                                <option>Требует актуализации</option>-->
-                                                    Актуален
-                                                </div>
-                                            </div>
-                                            <div class="space-y-2">
-                                                <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Действует с</label>
-                                                <div class="bg-surface-container-highest px-4 py-3 rounded-lg flex items-center justify-between">
-                                                    01.09.2026
-                                                </div>
-                                            </div>
-                                            <div class="space-y-2">
-                                                <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Действует по</label>
-                                                <div class="bg-surface-container-highest px-4 py-3 rounded-lg flex items-center justify-between">
-                                                    01.09.2027
-                                                </div>
-                                            </div>
-                                            <div class="space-y-2">
-                                                <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Номер (ID)</label>
-                                                <div class="bg-surface-container-highest px-4 py-3 rounded-lg flex items-center justify-between">4153723</div>
-                                            </div>
-                                        </div>
-
-
+                    <div class="space-y-2">
+                        <!-- Regulatory Metadata (Condensed) -->
+                        <div class="bg-surface-container-low p-4 rounded-xl">
+                            <h3 class="font-label-md text-label-md text-on-surface flex items-center gap-2 mb-4">
+                                <span class="material-symbols-outlined text-primary" data-icon="gavel">gavel</span>
+                                Предметная область вопроса
+                            </h3>
+                            <div class="space-y-4">
+                                <!-- Field 1: Select Document -->
+                                <div>
+                                    <label class="font-label-sm text-label-sm text-outline uppercase mb-2 block px-1">Нормативный документ</label>
+                                    <div class="relative">
+                                        <input disabled class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface appearance-none bottom-border-focus rounded-lg" value="Гражданский кодекс">                                        </input>
+                                        <span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline pointer-events-none" data-icon="expand_more"></span>
                                     </div>
-                                    <div class="">
-                                        <div class="space-y-2">
-                                            <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Разработчик</label>
-                                            <div class="bg-surface-container-highest px-4 py-3 rounded-lg flex items-center justify-between">Давыдович Ю.В.</div>
-                                        </div>
-                                        <div class="space-y-2">
-                                            <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Создан</label>
-                                            <div class="bg-surface-container-highest px-4 py-3 rounded-lg flex items-center justify-between">03.10.2016 15:55:06</div>
-                                        </div>
-                                        <div class="space-y-2">
-                                            <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Дата изменений</label>
-                                            <div class="bg-surface-container-highest px-4 py-3 rounded-lg flex items-center justify-between">07.05.2026 09:21:06</div>
-                                        </div>
+                                </div>
+                                <!-- Field 2: Structural Unit -->
+                                <div>
+                                    <label class="font-label-sm text-label-sm text-outline uppercase mb-2 block px-1">СТРУКТУРНАЯ ЕДИНИЦА</label>
+                                    <div class="relative">
+                                        <input value="Глава 3. Статья 15. Пункт 15.2" class="w-full h-11 pl-4 pr-10 bg-surface-container-highest border-none font-body-md text-on-surface rounded-lg focus:ring-1 focus:ring-primary" disabled="" type="text">
+                                    </div>
+                                </div>
+                                <!-- Field 3: field -->
+                                <div>
+                                    <label class="font-label-sm text-label-sm text-outline uppercase mb-2 block px-1">ТЕМАТИКА </label>
+                                    <div class="relative">
+                                        <input value="Общее" class="w-full h-11 pl-4 pr-10 bg-surface-container-highest border-none font-body-md text-on-surface rounded-lg focus:ring-1 focus:ring-primary" disabled="" type="text">
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="bg-surface-container-low p-4 rounded-xl">
+
+                            <div class="space-y-2">
+                                <h3 class="font-label-md text-label-md text-on-surface flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-primary" data-icon="inventory_2">inventory_2</span>
+                                    Метаданные вопроса
+                                </h3>
+
+                            </div>
+                            <div>
+                                <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">ID</label>
+                                <input class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant rounded-lg" readonly="" type="text" value="4153723">
+                            </div>
+                            <div>
+                                <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1" style="">Статус</label>
+                                <input  readonly="" value="Активный" class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface appearance-none bottom-border-focus rounded-lg">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1" style="">Сложность</label>
+                                <input readonly="" value="Легкая" class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface appearance-none bottom-border-focus rounded-lg">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1" style="">Актуальность</label>
+                                <input value="Актуален" readonly="" class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface appearance-none bottom-border-focus rounded-lg">
+                            </div>
+                            <div>
+                                <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Действует с</label>
+                                <input  readonly="" class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant rounded-lg" type="text" value="01.09.2026">
+                            </div>
+                            <div>
+                                <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Действует по</label>
+                                <input  readonly="" class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant rounded-lg" type="text" value="31.12.2026">
+                            </div>
+                            <div>
+                                <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Разработчик</label>
+                                <input  value="Актуален" readonly="" class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant rounded-lg" readonly="" type="text" value="Давыдович Ю.А.">
+                            </div>
+                        </div>
+
+
                     </div>
+                    <!-- Metadata Card -->
                 </section>
                 <!-- Main Content Area -->
                 <section class="lg:w-2/3 flex flex-col gap-module-gap">
                     <!-- Question Type Selection -->
-                    <div class="bg-surface-container-lowest p-4 rounded-xl">
-                        <label class="font-label-sm text-label-sm text-outline uppercase mb-4 block px-1">Тип вопроса</label>
+                    <div class="bg-surface-container-low p-4 rounded-xl">
+                        <h3 class="font-label-md text-label-md text-on-surface flex items-center gap-2 mb-6">
+                            <span class="material-symbols-outlined text-primary" data-icon="edit_note">list_alt</span>Тип вопроса
+                        </h3>
                         <div class="flex flex-wrap gap-3">
                             <div class="w-full bg-surface-container-highest px-4 py-3 rounded-lg flex items-center justify-between">
 
@@ -371,9 +325,12 @@
                         </div>
                     </div>
                     <!-- Source Reference -->
-                    <section class="bg-surface-container-lowest p-4 rounded-xl">
+                    <section class="bg-surface-container-low p-4 rounded-xl">
 
                         <div class="space-y-2">
+                            <h3 class="font-label-md text-label-md text-on-surface flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary" data-icon="edit_note">sync</span>Ссылка на источник
+                            </h3>
                             <label class="font-label-sm text-label-sm text-outline uppercase mb-4 block px-1">Структурная единица</label>
                             <div class="w-full bg-surface-container-highest px-4 py-3 rounded-lg flex items-center justify-between">Глава 3. Статья 15. Пункт 15.2</div>
 
@@ -382,12 +339,13 @@
                         </div>
                     </section>
                     <!-- Content Section -->
-                    <div class="bg-surface-container-lowest p-8 rounded-xl outline outline-1 outline-outline-variant/15">
+                    <div class="bg-surface-container-low p-4 rounded-xl outline outline-1 outline-outline-variant/15">
                         <div class="flex justify-between items-center mb-6">
-                            <h3 class="font-label-sm text-label-sm text-outline uppercase mb-4 block px-1">
-
+                            <h3 class="font-label-md text-label-md text-on-surface flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary" data-icon="edit_note">edit_note</span>
                                 Содержание вопроса
-                            </h3><span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-label-sm">Только чтение</span>
+                            </h3>
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-label-sm">Только чтение</span>
                         </div>
                         <div class="flex flex-col gap-6">
                             <div>
@@ -396,44 +354,52 @@
                         </div>
                     </div>
                     <!-- Answers block -->
-                    <div class="bg-surface-container-lowest p-8 rounded-xl outline outline-1 outline-outline-variant/15 mb-12">
+                    <div class="bg-surface-container-low p-4 rounded-xl outline outline-1 outline-outline-variant/15">
                         <!-- Answer Type Selection -->
                         <div class="rounded-xl">
-                            <label class="font-label-sm text-label-sm text-outline uppercase mb-4 block px-1">Тип ответов</label>
+                            <h3 class="font-label-md text-label-md text-on-surface flex items-center gap-2 mb-6">
+                                <span class="material-symbols-outlined text-primary" data-icon="edit_note">library_add_check</span>Тип ответов
+                            </h3>
                             <div class="flex flex-wrap gap-3">
                                 <div class="w-full bg-surface-container-highest px-4 py-3 rounded-lg flex items-center justify-between">
                                     Одиночный выбор
                                 </div>
-
                             </div>
                         </div>
-                        <div class="flex justify-between items-center mt-6 mb-6">
-                            <h3 class="font-label-sm text-label-sm text-outline uppercase mb-4 block px-1">
+
+                    </div>
+                    <div class="bg-surface-container-low p-4 rounded-xl">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="font-label-md text-label-md text-on-surface flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary" data-icon="checklist">checklist</span>
                                 Варианты ответов
                             </h3>
-
+<!--                            <button class="flex items-center gap-2 px-3 py-1.5 font-label-sm text-label-sm text-primary hover:bg-surface-container rounded-lg transition-colors">-->
+<!--                                <span class="material-symbols-outlined text-sm" data-icon="add">add</span>-->
+<!--                                Добавить ответ-->
+<!--                            </button>-->
                         </div>
                         <div class="space-y-4">
                             <!-- Option Row -->
-                            <div class="flex items-center gap-4 bg-surface-container-low p-5 rounded-lg opacity-80">
-                                <div class="flex-grow bg-transparent border-none font-body-md text-body-md text-on-surface focus:ring-0">cамовольным сооружением
-                                </div>
+                            <div class="flex items-center gap-4 bg-surface-container-low p-2 rounded-lg opacity-80">
+                                <input readonly="" class="flex-grow bg-transparent border-none font-body-md text-body-md text-on-surface focus:ring-0" value="cамовольным сооружением">
                             </div>
                             <!-- Option Row -->
-                            <div class="flex items-center gap-4 bg-surface-container-low p-5 rounded-lg opacity-80">
-                                <input class="flex-grow bg-transparent border-none font-body-md text-body-md text-on-surface focus:ring-0" type="text" value="самовольным недвижимым имуществом">
-                                <button class="material-symbols-outlined text-outline hover:text-error transition-colors opacity-0 group-hover:opacity-100" data-icon="remove_circle">delete</button>
+                            <div class="flex items-center gap-4 bg-surface-container-low p-2 rounded-lg opacity-80">
+                                <input readonly="" class="flex-grow bg-transparent border-none font-body-md text-body-md text-on-surface focus:ring-0" type="text" value="самовольным недвижимым имуществом">
                             </div>
                             <!-- Option Row -->
-                            <div class="flex items-center gap-4 bg-surface-container-lowest p-5 rounded-lg border-l-4 border-surface-tint">
-                                <input class="flex-grow bg-transparent border-none font-body-md text-body-md text-on-surface focus:ring-0" type="text" value="самовольная постройка">
+                            <div class="flex items-center gap-4 bg-surface-container-lowest p-2 rounded-lg border-l-4 border-surface-tint">
+                                <input readonly="" class="flex-grow bg-transparent border-none font-body-md text-body-md text-on-surface focus:ring-0" type="text" value="самовольная постройка">
                                 <span class="font-label-sm text-label-sm text-surface-tint uppercase bg-primary-fixed px-2 py-1 rounded">Правильный</span>
                             </div>
                         </div>
                     </div>
 
+
                 </section>
-            </div></div>
+            </div>
+        </div>
         <!-- Actions Section -->
         <!--        <section class="px-section-gap py-module-gap bg-surface-container-lowest flex justify-between items-center border-t-2 border-surface-container-low">-->
         <!--            <div class="flex flex-col md:flex-row items-center justify-center gap-4 w-full">-->
