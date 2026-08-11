@@ -228,7 +228,7 @@
         <!-- Version Tabs -->
         <div class="bg-surface-container-low rounded-xl gap-2">
             <button class="flex-1 py-3 px-6 rounded-lg text-outline hover:bg-surface-container-highest transition-all font-label-md text-label-md">Версия 1</button>
-            <button class="flex-1 py-3 px-6 rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md shadow-sm transition-all">Версия 2</button>
+            <button class="flex-1 py-3 px-6 rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md shadow-sm transition-all"> <span class="material-symbols-outlined text-[16px]">task_alt</span> Версия 2</button>
         </div>
         <div class="flex-1 rounded-xl overflow-y-auto bg-surface-container-lowest p-section-gap">
             <div class="flex flex-col lg:flex-row gap-module-gap">
@@ -300,8 +300,12 @@
                                 <input  readonly="" class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant rounded-lg" type="text" value="31.12.2026">
                             </div>
                             <div>
+                                <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Создан</label>
+                                <input class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant cursor-not-allowed" readonly="" type="text" value="03.10.2016 15:55:06"/>
+                            </div>
+                            <div>
                                 <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Дата изменений</label>
-                                <input  readonly="" class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant rounded-lg" type="text" value="24.12.2022">
+                                <input  readonly="" class="w-full h-12 px-4 bg-surface-container-highest border-none font-body-md text-body-md text-on-surface-variant rounded-lg" type="text" value="24.12.2024 10:22:59">
                             </div>
                             <div>
                                 <label class="font-label-sm text-label-sm text-outline uppercase mt-6 mb-2 block px-1">Разработчик</label>
@@ -349,7 +353,7 @@
                                 <span class="material-symbols-outlined text-primary" data-icon="edit_note">edit_note</span>
                                 Содержание вопроса
                             </h3>
-                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-label-sm">Только чтение</span>
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-lg text-label-sm">Только чтение</span>
                         </div>
                         <div class="flex flex-col gap-6">
                             <div>
@@ -404,20 +408,18 @@
                 </section>
             </div>
         </div>
-        <!-- Actions Section -->
-        <!--        <section class="px-section-gap py-module-gap bg-surface-container-lowest flex justify-between items-center border-t-2 border-surface-container-low">-->
-        <!--            <div class="flex flex-col md:flex-row items-center justify-center gap-4 w-full">-->
-        <!--                <button onclick="window.location.href='../Управление вопросами/Управление вопросами.html'" class="w-full  px-6 py-4 text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors rounded-lg flex items-center justify-center gap-2 hover:bg-surface-variant hover:scale-[1.02] active:scale-[0.98] transition-all" style="">-->
-        <!--                Отмена</button>-->
-        <!--                <button onclick="window.location.href='#'" class="w-full  px-6 py-4 text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors rounded-lg flex items-center justify-center gap-2 hover:bg-surface-variant hover:scale-[1.02] active:scale-[0.98] transition-all" style="">-->
-        <!--                    <span class="material-symbols-outlined text-sm" style="">clear</span>Очистить форму</button>-->
-        <!--                <button onclick="window.location.href='../Управление вопросами/Управление вопросами.html'" class="bg-primary-gradient text-white w-full  py-4 px-6 rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 hover:brightness-110 active:scale-95 transition-all" style="">-->
-        <!--                    <span class="material-symbols-outlined text-sm" style="">save</span>Сохранить вопрос</button>-->
-        <!--            </div>-->
-        <!--        </section>-->
         </div>
+        <!-- Actions Section Отображаются только при редактировании или создании новой версии вопроса-->
+        <section class="px-section-gap py-module-gap bg-surface-container-lowest flex justify-between items-center border-t-2 border-surface-container-low"><div class="flex flex-col md:flex-row items-center justify-center gap-4 w-full">
+            <button onclick="window.location.href='../Управление вопросами/Управление вопросами.html'" class="w-full  px-6 py-4 text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors rounded-lg flex items-center justify-center gap-2 hover:bg-surface-variant hover:scale-[1.02] active:scale-[0.98] transition-all" style="">
+                Отмена</button>
+            <button onclick="window.location.href='../Управление вопросами/Управление вопросами.html'" class="bg-primary-gradient text-white w-full  py-4 px-6 rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98] transition-all" style="">
+                <span class="material-symbols-outlined text-sm" style="">save</span>Сохранить изменения</button>
+        </div>
+        </section>
     </div>
 </div>
+
 
 
 
@@ -653,17 +655,8 @@
 <!--</div>-->
 <!--</div>-->
 
-<!--</section>-->
-<!--</div>-->
-<!--    &lt;!&ndash; Actions Section &ndash;&gt;-->
-<!--    <section class="flex flex-col items-center pt-4"><div class="flex flex-col md:flex-row items-center justify-center gap-4 w-full">-->
-<!--        <button onclick="window.location.href='../Управление вопросами/Управление вопросами.html'" class="w-full  px-6 py-4 text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors rounded-lg flex items-center justify-center gap-2 hover:bg-surface-variant hover:scale-[1.02] active:scale-[0.98] transition-all" style="">-->
-<!--            Отмена</button>-->
-<!--        <button onclick="window.location.href='#'" class="w-full  px-6 py-4 text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors rounded-lg flex items-center justify-center gap-2 hover:bg-surface-variant hover:scale-[1.02] active:scale-[0.98] transition-all" style="">-->
-<!--            <span class="material-symbols-outlined text-sm" style="">clear</span>Очистить форму</button>-->
-<!--        <button onclick="window.location.href='../Управление вопросами/Управление вопросами.html'" class="bg-primary-gradient text-white w-full  py-4 px-6 rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 hover:brightness-110 active:scale-95 transition-all" style="">-->
-<!--            <span class="material-symbols-outlined text-sm" style="">save</span>Сохранить вопрос</button>-->
-<!--    </div>-->
-<!--    </section>-->
+</section>
+</div>
+
 <!--</main>-->
 </body></html>
