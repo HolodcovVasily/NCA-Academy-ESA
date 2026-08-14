@@ -219,95 +219,48 @@
 <div class="fixed inset-0 z-[100] flex items-center justify-center glass-backdrop">
     <!-- Large Modal: 1300px width, 85% height -->
     <div class="fixed inset-0 z-[100] flex items-center justify-center bg-dark/40 backdrop-blur-sm transition-opacity duration-300" id="export-modal-backdrop">
-        <div class="bg-surface-container-lowest w-[740px] max-w-[95vw] rounded-xl modal-shadow flex flex-col max-h-[90vh]">
-            <!-- Header -->
-            <div class="flex items-center justify-between px-section-gap py-module-gap border-b border-outline-variant/15">
-                <h2 class="font-headline-md text-headline-md text-on-surface">Импорт вопросов</h2>
-                <button class="w-10 h-10 rounded-full hover:bg-surface-container-highest flex items-center justify-center text-outline transition-colors">
-                    <span onclick="window.location.href='../Управление вопросами/Управление вопросами.html'" class="material-symbols-outlined">close</span>
-                </button>
+<!--        <div class="bg-surface-container-lowest rounded-xl p-8 w-full max-w-md deep-slate-shadow relative flex flex-col gap-6">-->
+<!--            <div class="flex justify-between items-start">-->
+<!--                <div>-->
+<!--                    <h2 class="text-headline-md font-headline-md text-on-surface">Импорт вопросов</h2>-->
+<!--                    <p class="text-body-md font-body-md text-on-surface-variant mt-2">Выполняется импорт. Не закрывайте окно до завершения операции.</p>-->
+<!--                </div>-->
+<!--                <span class="material-symbols-outlined text-outline animate-spin" style="font-variation-settings: 'wght' 300; font-size: 28px;">sync</span>-->
+<!--            </div>-->
+<!--            <div class="flex flex-col gap-3">-->
+<!--                <div class="flex justify-between items-end text-label-md font-label-md text-on-surface-variant">-->
+<!--                    <span>Обработано: 180 из 250</span>-->
+<!--                    <span class="text-primary font-bold">72%</span>-->
+<!--                </div>-->
+<!--                <div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">-->
+<!--                    <div class="h-full bg-primary rounded-full" style="width: 72%;"></div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            &lt;!&ndash; Footer Actions &ndash;&gt;-->
+<!--            <div class="flex justify-end mt-4">-->
+<!--                <button class="px-6 py-2.5 rounded text-label-md font-label-md text-on-surface-variant bg-surface-container-highest opacity-50 cursor-not-allowed" disabled="">-->
+<!--                    Отмена-->
+<!--                </button>-->
+<!--            </div>-->
+<!--        </div>-->
+        <!-- State 2: Completion Modal -->
+        <div class="bg-surface-container-lowest rounded-xl p-8 w-full max-w-md deep-slate-shadow relative flex flex-col gap-6 items-center text-center">
+            <div class="w-20 h-20 rounded-full flex items-center justify-center mb-2">
+                <span class="material-symbols-outlined text-[48px]" style="color: #0f9d58; font-variation-settings: 'FILL' 1, 'wght' 400;">check_circle</span>
             </div>
-            <!-- Content Body -->
-            <div class="p-section-gap space-y-section-gap overflow-y-auto">
-                <!-- Block: Назначение импорта -->
-                <div class="space-y-module-gap">
-                    <h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Назначение импорта</h3>
-                    <div class="space-y-container-padding">
-                        <!-- Option 1: Первоначальный импорт -->
-                        <label class="flex items-center cursor-pointer group bg-primary/5 cursor-pointer border border-primary p-container-padding rounded-lg hover:bg-surface-container transition-all">
-                            <div class="flex items-center h-6 mr-3">
-                                <input checked="" class="focus:ring-surface-tint h-5 w-5 text-surface-tint border-outline bg-surface-container-lowest cursor-pointer" id="import-type-new" name="import_type" type="radio"/>
-                            </div>
-                            <div class="flex flex-col">
-                                <span class="font-label-md text-label-md text-on-surface">Первоначальный импорт</span>
-                                <span class="font-body-md text-body-md text-on-surface-variant mt-1">Добавление новых вопросов в Банк вопросов</span>
-                            </div>
-                        </label>
-                        <!-- Option 2: Восстановление из резервной копии -->
-                        <label class="flex items-center cursor-pointer group bg-primary/5 cursor-pointer p-container-padding rounded-lg hover:bg-surface-container transition-colors">
-                            <div class="flex items-center h-6 mr-3">
-                                <input class="focus:ring-surface-tint h-5 w-5 text-surface-tint border-outline bg-surface-container-lowest cursor-pointer" id="import-type-restore" name="import_type" type="radio"/>
-                            </div>
-                            <div class="flex flex-col">
-                                <span class="font-label-md text-label-md text-on-surface">Восстановление из резервной копии</span>
-                                <span class="font-body-md text-body-md text-on-surface-variant mt-1">Восстановление вопросов и их версий из ранее созданной резервной копии</span>
-                            </div>
-                        </label>
-                    </div>
-                </div>
-                <!-- Block: Файл для импорта -->
-                <div class="space-y-module-gap">
-                    <h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Файл для импорта</h3>
-                    <!-- Drag and Drop Area -->
-                    <div class="border-2 border-dashed border-outline-variant/50 rounded-lg bg-surface-container-low h-[160px] flex flex-col items-center justify-center p-container-padding transition-colors relative group" id="drop-zone">
-                        <input accept=".xls,.xlsx" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" id="file-upload" type="file"/>
-                        <div class="bg-surface-container rounded-full p-3 mb-3 group-hover:bg-primary-fixed transition-colors">
-                            <span class="material-symbols-outlined text-primary" style="font-size: 28px;">upload_file</span>
-                        </div>
-                        <div class="text-center">
-                            <span class="font-label-md text-label-md text-on-surface">Перетащите файл сюда</span>
-                            <span class="font-body-md text-body-md text-on-surface-variant mx-2">или</span>
-                            <button class="font-label-md text-label-md text-surface-tint hover:text-primary transition-colors focus:outline-none" type="button">
-                                [ Выбрать файл ]
-                            </button>
-                        </div>
-                    </div>
-                    <div class="flex justify-between items-center font-label-sm text-label-sm text-on-surface-variant mt-2 px-1">
-                        <span>Поддерживаемые форматы: XLS, XLSX</span>
-                        <span>Максимальный размер файла: 50 МБ</span>
-                    </div>
-                </div>
-                <!-- Block: Требования к файлу -->
-                <div class="bg-surface-container-highest/30 rounded-lg p-container-padding flex items-start">
-                    <span class="material-symbols-outlined text-on-surface-variant mr-3 mt-0.5" style="font-size: 20px;">info</span>
-                    <div>
-                        <h4 class="font-label-md text-label-md text-on-surface mb-2">Требования к файлу</h4>
-                        <ul class="list-none space-y-1 font-body-md text-body-md text-on-surface-variant">
-                            <li class="flex items-start"><span class="mr-2 text-surface-tint">•</span>Формат файла должен быть строго XLS или XLSX.</li>
-                            <li class="flex items-start"><span class="mr-2 text-surface-tint">•</span>Файл должен соответствовать утвержденному шаблону системы.</li>
-                            <li class="flex items-start"><span class="mr-2 text-surface-tint">•</span>Обязательные поля не могут быть пустыми.</li>
-                            <li class="flex items-start"><span class="mr-2 text-surface-tint">•</span>Каждый вопрос должен содержать минимум 3 варианта ответа.</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Block: ошибки в файле -->
-                <div class="bg-surface-container-highest/30 rounded-lg p-container-padding flex items-start">
-                    <span class="material-symbols-outlined text-on-surface-variant mr-3 mt-0.5" style="font-size: 20px;">info</span>
-                    <div>
-                        <h4 class="font-label-md text-label-md text-on-surface mb-2">Требования к файлу</h4>
-                        <ul class="list-none space-y-1 font-body-md text-body-md text-on-surface-variant">
-                            <li class="flex items-start"><span class="mr-2 text-surface-tint">•</span>Формат файла должен быть строго XLS или XLSX.</li>
-                            <li class="flex items-start"><span class="mr-2 text-surface-tint">•</span>Файл должен соответствовать утвержденному шаблону системы.</li>
-                            <li class="flex items-start"><span class="mr-2 text-surface-tint">•</span>Обязательные поля не могут быть пустыми.</li>
-                            <li class="flex items-start"><span class="mr-2 text-surface-tint">•</span>Каждый вопрос должен содержать минимум 3 варианта ответа.</li>
-                        </ul>
-                    </div>
-                </div>
+            <div>
+                <h2 class="text-headline-md font-headline-md text-on-surface">Импорт завершен</h2>
+                <p class="text-body-md font-body-md text-on-surface-variant mt-4">
+                    Успешно добавлено <strong class="text-on-surface font-semibold">250</strong> вопросов в защищенный архив.
+                </p>
             </div>
+            <!-- Separation strategy: 24px spacing instead of lines -->
+            <div class="h-[24px]"></div>
             <!-- Footer Actions -->
-            <div class="px-6 py-4 bg-surface/50 border-t border-surface-container flex justify-end gap-3">
-                <button onclick="window.location.href='../Управление вопросами/Управление вопросами.html'" class="text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors px-8 py-2.5 rounded-lg font-label-md hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2" type="button">Отмена</button>
-                <button onclick="window.location.href='./Выполнение импорта.html'" class="px-6 py-2 bg-primary-gradient text-white text-xs font-bold rounded shadow-md hover:scale-[1.02] active:scale-[0.98] transition-all" disabled="" id="submit-import" type="button">Импортировать</button>
+            <div class="w-full flex justify-center">
+                <button onclick="window.location.href='../Управление вопросами/Управление вопросами.html'" class="w-full sm:w-auto px-10 py-3 rounded bg-primary-gradient text-on-primary font-label-md text-label-md transition-transform hover:scale-[0.98] active:scale-95">
+                    Закрыть
+                </button>
             </div>
         </div>
     </div>
