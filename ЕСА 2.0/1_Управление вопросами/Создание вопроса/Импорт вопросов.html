@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>НКА Академия | Импорт вопросов</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .pulsing-dot-indicator-on-left::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: #3755c3;
+            border-radius: 50%;
+            margin-right: 12px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(55, 85, 195, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(55, 85, 195, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(55, 85, 195, 0); }
+        }
+        .bottom-border-focus:focus {
+            border-bottom: 2px solid #3755c3 !important;
+            outline: none;
+            background-color: #ffffff !important;
+        }
+        .bg-primary-gradient {
+            background: linear-gradient(135deg, #4e69c3 0%, #001453 100%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        .glass-backdrop {
+            backdrop-filter: blur(12px);
+            background-color: rgba(25, 28, 30, 0.4);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .gradient-button {
+            background: linear-gradient(135deg, #3d59b2 0%, #001453 100%);
+        }
+        /* Animated pulsing for secure connection */
+        @keyframes pulse-tint {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+        .animate-pulse-tint {
+            animation: pulse-tint 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        .gradient-button {
+            background: linear-gradient(135deg, theme('colors.primary') 0%, #1a2a5e 100%);
+        }
+        .gradient-button:disabled {
+            background: theme('colors.surface-container-highest');
+            color: theme('colors.on-surface-variant');
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+        /* Custom deep slate shadow for modals */
+        .modal-shadow {
+            box-shadow: 0 12px 40px rgba(25, 28, 30, 0.04);
+        }
+        .ghost-border {
+            border-color: rgba(197, 197, 212, 0.15); /* outline-variant at 15% */
+        }
+
+        /* Drag and Drop visual feedback */
+        .drag-over {
+            background-color: theme('colors.surface-container-lowest');
+            border-color: theme('colors.surface-tint');
+        }
+    </style>
+
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+                "colors": {
+                    "tertiary-fixed": "#dde1ff",
+                    "surface-container-low": "#f2f4f6",
+                    "on-primary": "#ffffff",
+                    "surface": "#f7f9fb",
+                    "on-secondary-fixed-variant": "#334380",
+                    "inverse-surface": "#2d3133",
+                    "primary-fixed-dim": "#b6c4ff",
+                    "surface-dim": "#d8dadc",
+                    "tertiary": "#2d4cba",
+                    "outline-variant": "#c5c5d4",
+                    "surface-bright": "#f7f9fb",
+                    "on-error": "#ffffff",
+                    "on-surface-variant": "#444652",
+                    "primary-container": "#4e69c3",
+                    "on-tertiary-fixed": "#001453",
+                    "on-secondary": "#ffffff",
+                    "surface-container-highest": "#e0e3e5",
+                    "secondary-container": "#a9b8fe",
+                    "surface-variant": "#e0e3e5",
+                    "inverse-on-surface": "#eff1f3",
+                    "on-surface": "#191c1e",
+                    "on-primary-fixed": "#00164f",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed": "#dde1ff",
+                    "on-tertiary-container": "#f2f1ff",
+                    "on-tertiary-fixed-variant": "#173baa",
+                    "surface-container-lowest": "#ffffff",
+                    "outline": "#757683",
+                    "on-background": "#191c1e",
+                    "primary-fixed": "#dce1ff",
+                    "tertiary-fixed-dim": "#b8c4ff",
+                    "secondary-fixed-dim": "#b8c4ff",
+                    "surface-tint": "#3755c3",
+                    "on-secondary-fixed": "#001453",
+                    "on-primary-container": "#f1f1ff",
+                    "inverse-primary": "#b6c4ff",
+                    "tertiary-container": "#4966d4",
+                    "surface-container-high": "#e6e8ea",
+                    "surface-container": "#eceef0",
+                    "background": "#f7f9fb",
+                    "error-container": "#ffdad6",
+                    "secondary": "#4b5b9a",
+                    "on-primary-fixed-variant": "#214098",
+                    "on-error-container": "#93000a",
+                    "primary": "#3450a9",
+                    "on-secondary-container": "#384785",
+                    "error": "#ba1a1a"
+                },
+                "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+                },
+                "spacing": {
+                    "base": "8px",
+                    "module-gap": "24px",
+                    "section-gap": "32px",
+                    "container-padding": "16px"
+                },
+                "fontFamily": {
+                    "label-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "body-md": ["Inter"]
+                },
+                "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "label-sm": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "25.6px", "fontWeight": "400"}]
+                }
+            },
+          },
+        }
+      </script>
+</head>
+<body class="bg-surface-bright text-on-surface">
+<!-- TopAppBar (EncryptionRibbon) -->
+<header class="bg-[#001453] text-white font-['Inter'] text-sm tracking-wide uppercase font-semibold fixed top-0 w-full z-[100] flex justify-between items-center px-8 h-12 shadow-none">
+<div class="text-lg font-black tracking-tighter text-white flex items-center gap-2 pulsing-dot-indicator-on-left"></div>
+<div class="flex items-center gap-6 h-full">
+<nav class="flex h-full items-center gap-8">
+<a class="text-blue-200/70 hover:bg-white/10 transition-colors h-full flex items-center px-4" href="#">Администратор вопросов</a>
+</nav>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined hover:bg-white/10 p-2 rounded-full cursor-pointer transition-colors" data-icon="account_circle">account_circle</span>
+<span class="material-symbols-outlined hover:bg-white/10 p-2 rounded-full cursor-pointer transition-colors" data-icon="settings">settings</span>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-12 h-[calc(100vh-48px)] w-72 bg-slate-50 dark:bg-slate-900 flex flex-col p-6 gap-2 z-[90]">
+<div class="mb-8">
+<h2 class="font-headline-md text-headline-md text-on-surface">НКА Академия | ЕСА 2.0</h2>
+<!--<p class="font-label-sm text-label-sm text-outline uppercase tracking-widest">Создание вопроса</p>-->
+</div>
+<nav class="flex flex-col gap-1">
+    <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-[#4e69c3] hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-200" href="../../../1_Главная%20страница%20НКА%20Академия/2_Главная_страница.html">
+        <span class="material-symbols-outlined">database</span>
+        <span>На главную</span>
+    </a>
+    <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-[#4e69c3] hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-200" href="../Управление%20вопросами/Управление%20вопросами.html">
+        <span class="material-symbols-outlined">database</span>
+        <span>Управление вопросами</span>
+    </a>
+    <a class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-slate-800 text-[#4e69c3] font-semibold rounded-l-lg shadow-sm transition-all duration-200" href="#">
+        <span class="material-symbols-outlined">analytics</span>
+        <span>Создание вопроса</span>
+    </a>
+    <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-[#4e69c3] hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-200" href="../../2_Управление%20тестами/Управление%20тестами%202.html">
+        <span class="material-symbols-outlined">assignment</span>
+        <span>Управление тестами</span>
+    </a>
+</nav>
+<!--            New Question-->
+<!--        </button>-->
+</aside>
+
+
+<div class="fixed inset-0 z-[100] flex items-center justify-center glass-backdrop">
+    <!-- Large Modal: 1300px width, 85% height -->
+    <div class="fixed inset-0 z-[100] flex items-center justify-center bg-dark/40 backdrop-blur-sm transition-opacity duration-300" id="export-modal-backdrop">
+        <div class="bg-surface-container-lowest w-[740px] max-w-[95vw] rounded-xl modal-shadow flex flex-col max-h-[90vh]">
+            <!-- Header -->
+            <div class="flex items-center justify-between px-section-gap py-module-gap border-b border-outline-variant/15">
+                <h2 class="font-headline-md text-headline-md text-on-surface">Импорт вопросов</h2>
+                <button class="w-10 h-10 rounded-full hover:bg-surface-container-highest flex items-center justify-center text-outline transition-colors">
+                    <span onclick="window.location.href='../Управление вопросами/Управление вопросами.html'" class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <!-- Content Body -->
+            <div class="p-section-gap space-y-section-gap overflow-y-auto">
+                <!-- Block: Назначение импорта -->
+                <div class="space-y-module-gap">
+                    <h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Назначение импорта</h3>
+                    <div class="space-y-container-padding">
+                        <!-- Option 1: Первоначальный импорт -->
+                        <label class="flex items-start cursor-pointer group bg-surface-container-low p-container-padding rounded-lg hover:bg-surface-container transition-colors">
+                            <div class="flex items-center h-6 mr-3">
+                                <input checked="" class="focus:ring-surface-tint h-5 w-5 text-surface-tint border-outline bg-surface-container-lowest cursor-pointer" id="import-type-new" name="import_type" type="radio"/>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="font-label-md text-label-md text-on-surface">Первоначальный импорт</span>
+                                <span class="font-body-md text-body-md text-on-surface-variant mt-1">Добавление новых вопросов в Банк вопросов</span>
+                            </div>
+                        </label>
+                        <!-- Option 2: Восстановление из резервной копии -->
+                        <label class="flex items-start cursor-pointer group bg-surface p-container-padding rounded-lg hover:bg-surface-container-low transition-colors">
+                            <div class="flex items-center h-6 mr-3">
+                                <input class="focus:ring-surface-tint h-5 w-5 text-surface-tint border-outline bg-surface-container-lowest cursor-pointer" id="import-type-restore" name="import_type" type="radio"/>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="font-label-md text-label-md text-on-surface">Восстановление из резервной копии</span>
+                                <span class="font-body-md text-body-md text-on-surface-variant mt-1">Восстановление вопросов и их версий из ранее созданной резервной копии</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <!-- Block: Файл для импорта -->
+                <div class="space-y-module-gap">
+                    <h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Файл для импорта</h3>
+                    <!-- Drag and Drop Area -->
+                    <div class="border-2 border-dashed border-outline-variant/50 rounded-lg bg-surface-container-low h-[160px] flex flex-col items-center justify-center p-container-padding transition-colors relative group" id="drop-zone">
+                        <input accept=".xls,.xlsx" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" id="file-upload" type="file"/>
+                        <div class="bg-surface-container rounded-full p-3 mb-3 group-hover:bg-primary-fixed transition-colors">
+                            <span class="material-symbols-outlined text-primary" style="font-size: 28px;">upload_file</span>
+                        </div>
+                        <div class="text-center">
+                            <span class="font-label-md text-label-md text-on-surface">Перетащите файл сюда</span>
+                            <span class="font-body-md text-body-md text-on-surface-variant mx-2">или</span>
+                            <button class="font-label-md text-label-md text-surface-tint hover:text-primary transition-colors focus:outline-none" type="button">
+                                [ Выбрать файл ]
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center font-label-sm text-label-sm text-on-surface-variant mt-2 px-1">
+                        <span>Поддерживаемые форматы: XLS, XLSX</span>
+                        <span>Максимальный размер файла: 50 МБ</span>
+                    </div>
+                </div>
+                <!-- Block: Требования к файлу -->
+                <div class="bg-surface-container-highest/30 rounded-lg p-container-padding flex items-start">
+                    <span class="material-symbols-outlined text-on-surface-variant mr-3 mt-0.5" style="font-size: 20px;">info</span>
+                    <div>
+                        <h4 class="font-label-md text-label-md text-on-surface mb-2">Требования к файлу</h4>
+                        <ul class="list-none space-y-1 font-body-md text-body-md text-on-surface-variant">
+                            <li class="flex items-start"><span class="mr-2 text-surface-tint">•</span>Формат файла должен быть строго XLS или XLSX.</li>
+                            <li class="flex items-start"><span class="mr-2 text-surface-tint">•</span>Файл должен соответствовать утвержденному шаблону системы.</li>
+                            <li class="flex items-start"><span class="mr-2 text-surface-tint">•</span>Обязательные поля (Текст вопроса, Сложность, Тема) не могут быть пустыми.</li>
+                            <li class="flex items-start"><span class="mr-2 text-surface-tint">•</span>Каждый вопрос должен содержать минимум 3 варианта ответа.</li>
+                            <li class="flex items-start"><span class="mr-2 text-surface-tint">•</span>Структура листов документа не должна быть изменена.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer Actions -->
+            <div class="flex items-center justify-between px-section-gap py-module-gap bg-surface-container-low rounded-b-xl border-t border-outline-variant/15">
+                <button class="font-label-md text-label-md text-on-surface hover:bg-surface-variant px-6 py-2.5 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-surface-tint underline decoration-outline-variant underline-offset-4" type="button">
+                    Отмена
+                </button>
+                <button class="gradient-button font-label-md text-label-md text-on-primary px-8 py-2.5 rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary shadow-sm" disabled="" id="submit-import" type="button">
+                    Импортировать
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+</div>
+
+<!--</main>-->
+<script>
+    // Simple script to handle file selection state for visual feedback
+    document.addEventListener('DOMContentLoaded', () => {
+        const fileUpload = document.getElementById('file-upload');
+        const submitBtn = document.getElementById('submit-import');
+        const dropZone = document.getElementById('drop-zone');
+
+        // Handle file selection
+        fileUpload.addEventListener('change', (e) => {
+            if(e.target.files.length > 0) {
+                submitBtn.disabled = false;
+                dropZone.classList.add('border-surface-tint', 'bg-surface-container-highest');
+                dropZone.classList.remove('border-outline-variant/50', 'bg-surface-container-low');
+
+                // Simple feedback showing file name could be added here
+                const fileName = e.target.files[0].name;
+                const textContainer = dropZone.querySelector('.text-center');
+                textContainer.innerHTML = `<span class="font-label-md text-label-md text-surface-tint">${fileName}</span>
+                                               <div class="font-body-md text-body-md text-on-surface-variant mt-1 text-sm">Файл готов к загрузке</div>`;
+            } else {
+                submitBtn.disabled = true;
+                dropZone.classList.remove('border-surface-tint', 'bg-surface-container-highest');
+                dropZone.classList.add('border-outline-variant/50', 'bg-surface-container-low');
+            }
+        });
+
+        // Drag and drop visual feedback
+        fileUpload.addEventListener('dragenter', () => {
+            dropZone.classList.add('drag-over');
+        });
+
+        fileUpload.addEventListener('dragleave', () => {
+            dropZone.classList.remove('drag-over');
+        });
+
+        fileUpload.addEventListener('drop', () => {
+            dropZone.classList.remove('drag-over');
+        });
+    });
+</script>
+</body></html>
