@@ -278,7 +278,7 @@
                     </div>
                 </div>
                 <!-- Block: Требования к файлу -->
-                <div class="bg-surface-container-highest/30 rounded-lg p-container-padding flex items-start">
+                <div class="bg-surface-container-highest/30 mt-2 mb-2 p-container-padding flex items-start gap-4">
                     <span class="material-symbols-outlined text-on-surface-variant mr-3 mt-0.5" style="font-size: 20px;">info</span>
                     <div>
                         <h4 class="font-label-md text-label-md text-on-surface mb-2">Требования к файлу</h4>
@@ -290,16 +290,27 @@
                         </ul>
                     </div>
                 </div>
-                <!-- Block: ошибки в файле -->
-                <div class="bg-surface-container-highest/30 rounded-lg p-container-padding flex items-start">
+                <!-- Block: Проверка:успех -->
+                <div class="bg-emerald-100 mt-2 mb-2 p-container-padding flex items-start gap-4">
                     <span class="material-symbols-outlined text-on-surface-variant mr-3 mt-0.5" style="font-size: 20px;">info</span>
                     <div>
-                        <h4 class="font-label-md text-label-md text-on-surface mb-2">Требования к файлу</h4>
+                        <h4 class="font-label-md text-label-md text-on-surface mb-2">Проверка файла</h4>
                         <ul class="list-none space-y-1 font-body-md text-body-md text-on-surface-variant">
-                            <li class="flex items-start"><span class="mr-2 text-surface-tint">•</span>Формат файла должен быть строго XLS или XLSX.</li>
-                            <li class="flex items-start"><span class="mr-2 text-surface-tint">•</span>Файл должен соответствовать утвержденному шаблону системы.</li>
-                            <li class="flex items-start"><span class="mr-2 text-surface-tint">•</span>Обязательные поля не могут быть пустыми.</li>
-                            <li class="flex items-start"><span class="mr-2 text-surface-tint">•</span>Каждый вопрос должен содержать минимум 3 варианта ответа.</li>
+                            <li class="flex items-start">Количество записей:  <span class="mr-2 text-surface-tint"> 250</span></li>
+                            <li class="flex items-start">Корректных записей:  <span class="mr-2 text-surface-tint"> 250</span></li>
+                            <li class="flex items-start">Записей с ошибками:  <span class="mr-2 text-surface-tint"> 0</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Block: ошибки в файле -->
+                <div class="mt-2 mb-2 bg-error-container/30 p-container-padding flex items-start gap-4">
+                    <span class="material-symbols-outlined text-error mr-3 mt-0.5" style="font-size: 20px;">info</span>
+                    <div>
+                        <h4 class="font-label-md text-label-md text-on-error-container mb-2">Проверка файла</h4>
+                        <ul class="list-none space-y-1 font-body-md text-body-md text-on-surface-variant">
+                            <li class="flex items-start">Количество записей:  <span class="mr-2 text-surface-tint"> 250</span></li>
+                            <li class="flex items-start">Корректных записей:  <span class="mr-2 text-surface-tint"> 243</span></li>
+                            <li class="flex items-start">Записей с ошибками:  <span class="mr-2 text-surface-tint"> 7</span></li>
                         </ul>
                     </div>
                 </div>
