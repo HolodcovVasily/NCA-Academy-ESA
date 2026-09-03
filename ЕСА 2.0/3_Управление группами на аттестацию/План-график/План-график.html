@@ -244,7 +244,16 @@
 
 </header>
 <!-- Workspace -->
-
+    <div class="mt-2 mb-2 bg-emerald-100 border-l-4 border-emerald-100 p-container-padding flex items-start gap-4">
+        <span class="material-symbols-outlined">Warning</span>
+        <div>
+            <p class="font-label-md">Внимание: автоматически сформирован план-график аттестаций на следующий год.</p>
+            <p class="text-on-surface-variant text-sm mt-1">После утверждения сформированного план-графика нажмите на кнопку "Опубликовать план-график", после чего данный план-график будет доступен специалистам ОКР ТОР.</p>
+        </div>
+        <button class="ml-auto text-on-surface-variant hover:text-on-background">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+    </div>
 
 
 <div class="p-8 flex-1 flex flex-col gap-4 max-w-[1600px] mx-auto w-full">
@@ -307,12 +316,17 @@
             </th>
             <th class="px-2 py-2 w-32 cursor-pointer hover:text-brand-primary transition-colors group">
                 <div class="flex items-center gap-1 justify-center">
-                    Дата аттестации <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
+                    Предыдущая аттестация<span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
                 </div>
             </th>
             <th class="px-2 py-2 w-32 cursor-pointer hover:text-brand-primary transition-colors group">
                 <div class="flex items-center gap-1 justify-center">
                     Неделя аттестации <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
+                </div>
+            </th>
+            <th class="px-2 py-2 w-32 cursor-pointer hover:text-brand-primary transition-colors group">
+                <div class="flex items-center gap-1 justify-center">
+                    Аттестация назначена<span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
                 </div>
             </th>
             <th class="px-2 py-2 w-32 text-right pr-6 cursor-pointer hover:text-brand-primary transition-colors group" data-col="actions">
@@ -343,10 +357,13 @@
                 <span class="px-2 py-0.5 bg-emerald-100 text-[9px] text-on-surface uppercase rounded">Активен</span>
             </td>
             <td class="px-4 py-2">
-                23.09.2026
+                23.09.2023
             </td>
             <td class="px-4 py-2">
                 41 нед.
+            </td>
+            <td class="px-4 py-2">
+                25.09.2026
             </td>
             <td class="px-4 py-2">
                 <span class="px-2 py-0.5 bg-emerald-100 text-[9px] text-on-surface uppercase rounded">Одобрена</span>
@@ -376,10 +393,13 @@
                 <span class="px-2 py-0.5 bg-emerald-100 text-[9px] text-on-surface uppercase rounded">Активен</span>
             </td>
             <td class="px-4 py-2">
-                25.09.2026
+                25.09.2023
             </td>
             <td class="px-4 py-2">
                 42 нед.
+            </td>
+            <td class="px-4 py-2">
+                25.09.2026
             </td>
             <td class="px-4 py-2">
                 <span class="px-2 py-0.5 bg-emerald-100 text-[9px] text-on-surface uppercase rounded">Одобрена</span>
@@ -409,6 +429,9 @@
             </td>
             <td class="px-4 py-2">
                 18.06.2026
+            </td>
+            <td class="px-4 py-2">
+                -
             </td>
             <td class="px-4 py-2">
                 -
@@ -446,6 +469,9 @@
                 -
             </td>
             <td class="px-4 py-2">
+                -
+            </td>
+            <td class="px-4 py-2">
                 <span class="px-2 py-0.5 bg-surface-container-highest text-[9px] text-on-surface uppercase rounded">Не подана</span>
             </td>
             <td class="px-6 py-2">
@@ -473,6 +499,9 @@
             </td>
             <td class="px-4 py-2">
                 28.11.2026
+            </td>
+            <td class="px-4 py-2">
+                -
             </td>
             <td class="px-4 py-2">
                 -
