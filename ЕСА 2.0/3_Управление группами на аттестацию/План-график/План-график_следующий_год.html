@@ -220,22 +220,19 @@
 </div>
 <div class="flex items-center gap-3">
     <button onclick="window.location.href='./Добавление претендента.html'" class="text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors px-8 py-2.5 rounded-lg font-label-md hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2" title="Включение стажеров, вновь принятых лиц или назначение внеочередной аттестации">Добавить претендента</button>
-    <button onclick="window.location.href='../Результаты за период/Результаты.html'" class="text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors px-8 py-2.5 rounded-lg font-label-md hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2" title="Результаты за период">
-        Результаты за период
-    </button>
-<!--    <button onclick="window.location.href='#'" class="text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors px-8 py-2.5 rounded-lg font-label-md hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2" title="Экспорт в XLS">Экспорт в XLS</button>-->
-<!--    <button onclick="window.location.href='#'" class="px-4 py-2 gradient-btn text-white text-sm hover:scale-[1.02] active:scale-[0.98] font-semibold rounded-lg transition-opacity">Опубликовать план-график</button>-->
+    <button onclick="window.location.href='#'" class="text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors px-8 py-2.5 rounded-lg font-label-md hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2" title="Экспорт в XLS">Экспорт в XLS</button>
+    <button onclick="window.location.href='#'" class="px-4 py-2 gradient-btn text-white text-sm hover:scale-[1.02] active:scale-[0.98] font-semibold rounded-lg transition-opacity">Опубликовать план-график</button>
 </div>
 </div>
 <!-- Main Tabs -->
-    <div class="flex gap-3 border-b border-outline-variant/15">
-        <button onclick="window.location.href='#'" class="flex items-center gap-2 px-4 py-2 bg-brand-primary/10 text-brand-primary text-[14px] font-bold rounded-md hover:bg-brand-primary hover:text-white transition-all">
+    <div class="flex items-end gap-4">
+        <button onclick="window.location.href='./План-график.html'" class="flex items-center gap-2 px-4 py-2 text-brand-primary text-[14px] font-bold rounded-md hover:bg-brand-primary hover:text-white transition-all">
             Текущий год
         </button>
-        <button onclick="window.location.href='./План-график_следующий_год.html'" class="flex items-center gap-2 px-4 py-2 text-brand-primary text-[14px] font-bold rounded-md hover:bg-brand-primary hover:text-white transition-all">
+        <button onclick="window.location.href='#'" class="flex items-center gap-2 px-4 py-2 bg-brand-primary/10 text-brand-primary text-[14px] font-bold rounded-md hover:bg-brand-primary hover:text-white transition-all">
             Следующий год
         </button>
-        <div class="flex items-end gap-4">
+        <div class="flex gap-3 border-b border-outline-variant/15">
             <button title="Отобразить поля фильтра" class="p-2 rounded-md hover:bg-brand-primary/10 text-brand-primary transition-colors flex items-center justify-center" onclick="document.getElementById('filter-panel').classList.toggle('hidden')">
                 <span class="material-symbols-outlined">filter_list</span>
             </button>
@@ -245,6 +242,7 @@
 
 </header>
 <!-- Workspace -->
+
     <div class="mt-2 mb-2 bg-emerald-100 border-l-4 border-emerald-100 p-container-padding flex items-start gap-4">
         <span class="material-symbols-outlined">Warning</span>
         <div>
@@ -255,8 +253,6 @@
             <span class="material-symbols-outlined">close</span>
         </button>
     </div>
-
-
 <div class="p-8 flex-1 flex flex-col gap-4 max-w-[1600px] mx-auto w-full">
 <!-- Filters -->
     <div id="filter-panel" class="hidden grid grid-cols-5 gap-4 p-4 bg-brand-lowest/50 rounded-lg border border-brand-container/50 transition-all">
@@ -366,10 +362,6 @@
                     Статус заявки <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
                 </div>
             </th>
-            <th class="px-2 py-2 w-32 text-right pr-6 cursor-pointer hover:text-brand-primary transition-colors group" data-col="actions">
-                <div class="flex items-center justify-end gap-1 justify-center">Группа<span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
-                </div>
-            </th>
             <th class="px-2 py-2 w-32 cursor-pointer hover:text-brand-primary transition-colors group">
                 <div class="flex items-center gap-1 justify-center">
                     Действия<span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">settings</span>
@@ -396,25 +388,17 @@
                 23.09.2023
             </td>
             <td class="px-4 py-2">
-                41 нед.
+                42 нед.
             </td>
             <td class="px-4 py-2">
-                25.09.2026
+                -
             </td>
             <td class="px-4 py-2">
-                <span class="px-2 py-0.5 bg-emerald-100 text-[9px] text-on-surface uppercase rounded">Одобрена</span>
-            </td>
-            <td class="px-4 py-2 text-[9px] ">
-                № А-41-26.10.2026
+                <span class="px-2 py-0.5 bg-surface-container-highest text-[9px] text-on-surface uppercase rounded">Не подана</span>
             </td>
             <td class="px-6 py-2">
-                <div class="flex items-center justify-end gap-1">
-                    <button class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-on-surface">
-                        <span title="Подать заявку" class="material-symbols-outlined text-lg" data-icon="content_copy">calendar_month</span>
-                    </button>
-                    <button onclick="window.location.href='#'" class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">
-                        <span title="Просмотреть заявку" class="material-symbols-outlined text-lg" data-icon="edit">visibility</span>
-                    </button>
+                <div class="flex items-center">
+                    <button class="text-on-surface-variant hover:text-error transition-colors" title="Исключить"><span class="material-symbols-outlined text-lg">block</span></button>
 
                 </div>
             </td>
@@ -435,25 +419,17 @@
                 25.09.2023
             </td>
             <td class="px-4 py-2">
-                42 нед.
+                41 нед.
             </td>
             <td class="px-4 py-2">
-                25.09.2026
+                -
             </td>
             <td class="px-4 py-2">
-                <span class="px-2 py-0.5 bg-emerald-100 text-[9px] text-on-surface uppercase rounded">Одобрена</span>
-            </td>
-            <td class="px-4 py-2 text-[9px] ">
-                № А-42-26.10.2026
+                <span class="px-2 py-0.5 bg-surface-container-highest text-[9px] text-on-surface uppercase rounded">Не подана</span>
             </td>
             <td class="px-6 py-2">
-                <div class="flex items-center justify-end gap-1">
-                    <button class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-on-surface">
-                        <span title="Подать заявку" class="material-symbols-outlined text-lg" data-icon="content_copy">calendar_month</span>
-                    </button>
-                    <button onclick="window.location.href='#'" class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">
-                        <span title="Просмотреть заявку" class="material-symbols-outlined text-lg" data-icon="edit">visibility</span>
-                    </button>
+                <div class="flex items-center">
+                    <button class="text-on-surface-variant hover:text-error transition-colors" title="Исключить"><span class="material-symbols-outlined text-lg">block</span></button>
                 </div>
             </td>
         </tr>
@@ -470,7 +446,7 @@
                 <span class="px-2 py-0.5 bg-amber-100 text-[9px] text-on-surface uppercase rounded">Временно заблокирован</span>
             </td>
             <td class="px-4 py-2">
-                18.06.2026
+                18.06.2023
             </td>
             <td class="px-4 py-2">
                 42 нед.
@@ -481,15 +457,10 @@
             <td class="px-4 py-2">
                 <span class="px-2 py-0.5 bg-surface-container-highest text-[9px] text-on-surface uppercase rounded">Не подана</span>
             </td>
-            <td class="px-4 py-2">-</td>
             <td class="px-6 py-2">
-                <div class="flex items-center justify-end gap-1">
-                    <button class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-on-surface">
-                        <span title="Подать заявку" class="material-symbols-outlined text-lg" data-icon="content_copy">calendar_month</span>
-                    </button>
-                    <button onclick="window.location.href='#'" class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">
-                        <span title="Просмотреть заявку" class="material-symbols-outlined text-lg" data-icon="edit">visibility</span>
-                    </button>
+                <div class="flex items-center">
+                    <button class="text-on-surface-variant hover:text-error transition-colors" title="Исключить"><span class="material-symbols-outlined text-lg">block</span></button>
+
                 </div>
             </td>
         </tr>
@@ -506,7 +477,7 @@
                 <span class="px-2 py-0.5 bg-emerald-100 text-[9px] text-on-surface uppercase rounded">Активен</span>
             </td>
             <td class="px-4 py-2">
-                22.07.2026
+                22.07.2023
             </td>
             <td class="px-4 py-2">
                 42 нед.
@@ -515,17 +486,12 @@
                 -
             </td>
             <td class="px-4 py-2">
-                <span class="px-2 py-0.5 bg-error-container text-[9px] text-on-surface uppercase rounded">Не подана</span>
+                <span class="px-2 py-0.5 bg-surface-container-highest text-[9px] text-on-surface uppercase rounded">Не подана</span>
             </td>
-            <td class="px-4 py-2">-</td>
             <td class="px-6 py-2">
-                <div class="flex items-center justify-end gap-1">
-                    <button class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-on-surface">
-                        <span title="Подать заявку" class="material-symbols-outlined text-lg" data-icon="content_copy">calendar_month</span>
-                    </button>
-                    <button onclick="window.location.href='#'" class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">
-                        <span title="Просмотреть заявку" class="material-symbols-outlined text-lg" data-icon="edit">visibility</span>
-                    </button>
+                <div class="flex items-center">
+                    <button class="text-on-surface-variant hover:text-error transition-colors" title="Исключить"><span class="material-symbols-outlined text-lg">block</span></button>
+
                 </div>
             </td>
         </tr>
@@ -542,10 +508,10 @@
                 <span class="px-2 py-0.5 bg-error-container text-[9px] text-on-surface uppercase rounded">Заблокирован</span>
             </td>
             <td class="px-4 py-2">
-                28.11.2026
+                28.11.2023
             </td>
             <td class="px-4 py-2">
-                42 нед.
+                43 нед.
             </td>
             <td class="px-4 py-2">
                 -
@@ -553,15 +519,9 @@
             <td class="px-4 py-2">
                 <span class="px-2 py-0.5 bg-surface-container-highest text-[9px] text-on-surface uppercase rounded">Не подана</span>
             </td>
-            <td class="px-4 py-2">-</td>
             <td class="px-6 py-2">
-                <div class="flex items-center justify-end gap-1">
-                    <button class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-on-surface">
-                        <span title="Подать заявку" class="material-symbols-outlined text-lg" data-icon="content_copy">calendar_month</span>
-                    </button>
-                    <button onclick="window.location.href='#'" class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">
-                        <span title="Просмотреть заявку" class="material-symbols-outlined text-lg" data-icon="edit">visibility</span>
-                    </button>
+                <div class="flex items-center">
+                    <button class="text-on-surface-variant hover:text-error transition-colors" title="Исключить"><span class="material-symbols-outlined text-lg">block</span></button>
                 </div>
             </td>
         </tr>
