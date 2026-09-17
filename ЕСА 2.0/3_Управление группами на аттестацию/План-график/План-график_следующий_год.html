@@ -253,9 +253,9 @@
             <span class="material-symbols-outlined">close</span>
         </button>
     </div>
-<div class="p-8 flex-1 flex flex-col gap-4 max-w-[1600px] mx-auto w-full">
+<div class="p-4 flex-1 flex flex-col gap-4 max-w-[1600px] mx-auto w-full">
 <!-- Filters -->
-    <div id="filter-panel" class="hidden grid grid-cols-5 gap-4 p-4 bg-brand-lowest/50 rounded-lg border border-brand-container/50 transition-all">
+    <div id="filter-panel" class="grid grid-cols-5 gap-4 p-4 bg-brand-lowest/50 rounded-lg border border-brand-container/50 transition-all">
         <div class="space-y-1.5">
             <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Поиск</label>
             <input type="text" placeholder="ФИО" class="w-full px-3 py-2 bg-brand-lowest text-xs border-none rounded-md ring-1 ring-slate-200 focus:ring-brand-primary placeholder:text-slate-300">
@@ -286,7 +286,7 @@
                     <option>Все статусы</option>
                     <option>Активен</option>
                     <option>Временно заблокирован</option>
-                    <option>Заблокирован</option>
+<!--                    <option>Заблокирован</option>-->
                 </select>
                 <span class="material-symbols-outlined absolute right-2 top-2 text-[16px] pointer-events-none text-slate-400">expand_more</span>
             </div>
@@ -297,10 +297,11 @@
                 <select class="w-full px-3 py-2 bg-brand-lowest text-xs border-none rounded-md ring-1 ring-slate-200 focus:ring-brand-primary appearance-none text-slate-600">
                     <option>Все статусы</option>
                     <option>Не подана</option>
-                    <option>На рассмотрении</option>
-                    <option>Одобрена</option>
                     <option>Отклонена</option>
+                    <option>На рассмотрении</option>
                     <option>Перенесена</option>
+                    <option>Одобрена</option>
+                    <option>Аттестован</option>
                 </select>
                 <span class="material-symbols-outlined absolute right-2 top-2 text-[16px] pointer-events-none text-slate-400">expand_more</span>
             </div>
@@ -339,6 +340,11 @@
             </th>
             <th class="px-2 py-2 w-32 cursor-pointer hover:text-brand-primary transition-colors group">
                 <div class="flex items-center gap-1 justify-center">
+                    Дата приема<span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
+                </div>
+            </th>
+            <th class="px-2 py-2 w-32 cursor-pointer hover:text-brand-primary transition-colors group">
+                <div class="flex items-center gap-1 justify-center">
                     Статус претендента <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
                 </div>
             </th>
@@ -349,7 +355,12 @@
             </th>
             <th class="px-2 py-2 w-32 cursor-pointer hover:text-brand-primary transition-colors group">
                 <div class="flex items-center gap-1 justify-center">
-                    Неделя аттестации <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
+                    Вид аттестации <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
+                </div>
+            </th>
+            <th class="px-2 py-2 w-32 text-right pr-6 cursor-pointer hover:text-brand-primary transition-colors group" data-col="actions">
+                <div class="flex items-center justify-end gap-1 justify-center">
+                    Статус заявки <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
                 </div>
             </th>
             <th class="px-2 py-2 w-32 cursor-pointer hover:text-brand-primary transition-colors group">
@@ -357,9 +368,9 @@
                     Аттестация назначена<span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
                 </div>
             </th>
-            <th class="px-2 py-2 w-32 text-right pr-6 cursor-pointer hover:text-brand-primary transition-colors group" data-col="actions">
-                <div class="flex items-center justify-end gap-1 justify-center">
-                    Статус заявки <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
+            <th class="px-2 py-2 w-32 cursor-pointer hover:text-brand-primary transition-colors group">
+                <div class="flex items-center gap-1 justify-center">
+                    Группа<span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
                 </div>
             </th>
             <th class="px-2 py-2 w-32 cursor-pointer hover:text-brand-primary transition-colors group">
@@ -382,19 +393,25 @@
                 Специалист по ТИ 1 к.
             </td>
             <td class="px-4 py-2">
+                23.09.2020
+            </td>
+            <td class="px-4 py-2">
                 <span class="px-2 py-0.5 bg-emerald-100 text-[9px] text-on-surface uppercase rounded">Активен</span>
             </td>
             <td class="px-4 py-2">
                 23.09.2023
             </td>
             <td class="px-4 py-2">
-                42 нед.
+                Очередная
+            </td>
+            <td class="px-4 py-2">
+                <span class="px-2 py-0.5 bg-surface-container-highest text-[9px] text-on-surface uppercase rounded">Не подана</span>
             </td>
             <td class="px-4 py-2">
                 -
             </td>
             <td class="px-4 py-2">
-                <span class="px-2 py-0.5 bg-surface-container-highest text-[9px] text-on-surface uppercase rounded">Не подана</span>
+                -
             </td>
             <td class="px-6 py-2">
                 <div class="flex items-center">
@@ -413,19 +430,25 @@
                 Начальник отдела
             </td>
             <td class="px-4 py-2">
+                25.09.2020
+            </td>
+            <td class="px-4 py-2">
                 <span class="px-2 py-0.5 bg-emerald-100 text-[9px] text-on-surface uppercase rounded">Активен</span>
             </td>
             <td class="px-4 py-2">
                 25.09.2023
             </td>
             <td class="px-4 py-2">
-                41 нед.
+                Очередная
+            </td>
+            <td class="px-4 py-2">
+                <span class="px-2 py-0.5 bg-surface-container-highest text-[9px] text-on-surface uppercase rounded">Не подана</span>
             </td>
             <td class="px-4 py-2">
                 -
             </td>
             <td class="px-4 py-2">
-                <span class="px-2 py-0.5 bg-surface-container-highest text-[9px] text-on-surface uppercase rounded">Не подана</span>
+                -
             </td>
             <td class="px-6 py-2">
                 <div class="flex items-center">
@@ -443,19 +466,25 @@
                 Специалист по ТИ 2 к.
             </td>
             <td class="px-4 py-2">
+                18.06.2020
+            </td>
+            <td class="px-4 py-2">
                 <span class="px-2 py-0.5 bg-amber-100 text-[9px] text-on-surface uppercase rounded">Временно заблокирован</span>
             </td>
             <td class="px-4 py-2">
                 18.06.2023
             </td>
             <td class="px-4 py-2">
-                42 нед.
+                Очередная
+            </td>
+            <td class="px-4 py-2">
+                <span class="px-2 py-0.5 bg-surface-container-highest text-[9px] text-on-surface uppercase rounded">Не подана</span>
             </td>
             <td class="px-4 py-2">
                 -
             </td>
             <td class="px-4 py-2">
-                <span class="px-2 py-0.5 bg-surface-container-highest text-[9px] text-on-surface uppercase rounded">Не подана</span>
+                -
             </td>
             <td class="px-6 py-2">
                 <div class="flex items-center">
@@ -474,19 +503,25 @@
                 инженер
             </td>
             <td class="px-4 py-2">
+                22.07.2020
+            </td>
+            <td class="px-4 py-2">
                 <span class="px-2 py-0.5 bg-emerald-100 text-[9px] text-on-surface uppercase rounded">Активен</span>
             </td>
             <td class="px-4 py-2">
                 22.07.2023
             </td>
             <td class="px-4 py-2">
-                42 нед.
+                Внеочередная
+            </td>
+            <td class="px-4 py-2">
+                <span class="px-2 py-0.5 bg-surface-container-highest text-[9px] text-on-surface uppercase rounded">Не подана</span>
             </td>
             <td class="px-4 py-2">
                 -
             </td>
             <td class="px-4 py-2">
-                <span class="px-2 py-0.5 bg-surface-container-highest text-[9px] text-on-surface uppercase rounded">Не подана</span>
+                -
             </td>
             <td class="px-6 py-2">
                 <div class="flex items-center">
@@ -505,19 +540,25 @@
                 Специалист по ТИ
             </td>
             <td class="px-4 py-2">
-                <span class="px-2 py-0.5 bg-error-container text-[9px] text-on-surface uppercase rounded">Заблокирован</span>
+                28.11.2020
+            </td>
+            <td class="px-4 py-2">
+                <span class="px-2 py-0.5 bg-emerald-100 text-[9px] text-on-surface uppercase rounded">Активен</span>
             </td>
             <td class="px-4 py-2">
                 28.11.2023
             </td>
             <td class="px-4 py-2">
-                43 нед.
+                Повторная
+            </td>
+            <td class="px-4 py-2">
+                <span class="px-2 py-0.5 bg-surface-container-highest text-[9px] text-on-surface uppercase rounded">Не подана</span>
             </td>
             <td class="px-4 py-2">
                 -
             </td>
             <td class="px-4 py-2">
-                <span class="px-2 py-0.5 bg-surface-container-highest text-[9px] text-on-surface uppercase rounded">Не подана</span>
+                -
             </td>
             <td class="px-6 py-2">
                 <div class="flex items-center">
