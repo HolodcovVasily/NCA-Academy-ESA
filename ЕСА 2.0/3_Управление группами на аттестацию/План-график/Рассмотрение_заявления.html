@@ -622,12 +622,19 @@
         <div class="px-8 pt-6 pb-0 bg-surface-container-low border-b border-outline-variant/15 flex-shrink-0">
             <div class="flex items-start justify-between gap-4">
                 <div>
-                    <div class="flex items-center gap-3">
-                        <h2 class="text-headline-md font-bold text-on-surface">Заявка на аттестацию </h2>
+                    <div class="flex items-center gap-8">
+                        <h2 class="text-headline-md font-bold text-on-surface">Проверка заявки на аттестацию</h2>
+                        <div class="flex items-center gap-4 text-label-sm font-label-sm text-on-surface-variant">
+                        <span class="flex items-center gap-1">
+                            <span class="material-symbols-outlined text-sm">schedule</span>
+                            Поступила: 28.09.2026 в 14:20
+                        </span>
+                        </div>
                     </div>
-                    <div class="flex items-center gap-2 mb-1">
-                        <span class="bg-slate-400 text-on-primary text-[10px] px-2 py-1 rounded font-black tracking-widest uppercase ">Не подана</span>
-                    </div>
+
+<!--                    <div class="flex items-center gap-2 mb-1">-->
+<!--                        <span class="bg-slate-400 text-on-primary text-[10px] px-2 py-1 rounded font-black tracking-widest uppercase ">Не подана</span>-->
+<!--                    </div>-->
                     <div class="flex items-center gap-2 mb-1">
                         <span class="bg-[#ffa12b] text-on-primary text-[10px] px-2 py-1 rounded font-black tracking-widest uppercase ">На рассмотрении</span>
                     </div>
@@ -650,10 +657,10 @@
             </div>
             <!-- Scenario Tabs -->
             <div class="flex items-center gap-2 mt-4 pt-2 overflow-x-auto">
-                <button onclick="window.location.href='Подача_заявления.html'" class="px-4 py-2 text-label-md font-semibold text-primary bg-surface-container-lowest rounded-t-lg shadow-sm flex items-center gap-2">
+                <button onclick="window.location.href='#'" class="px-4 py-2 text-label-md font-semibold text-primary bg-surface-container-lowest rounded-t-lg shadow-sm flex items-center gap-2">
                     Действующие специалисты
                 </button>
-                <button onclick="window.location.href='Подача_заявления_стажер.html'" class="px-4 py-2 text-label-md font-medium text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 rounded-t-lg transition-colors flex items-center gap-2">
+                <button onclick="window.location.href='#'" class="px-4 py-2 text-label-md font-medium text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 rounded-t-lg transition-colors flex items-center gap-2">
                     Стажер
                 </button>
             </div>
@@ -733,185 +740,193 @@
                     <h2 class="text-label-md uppercase tracking-widest text-primary">1. Основание и реквизиты приказа</h2>
                 </div>
 
-                <div class="space-y-2">
-                    <label class="text-label-sm text-outline uppercase">
-                        Вид аттестации: <span class="text-error">*</span>
-                    </label>
-                    <select class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-lg px-4 py-2 text-body-md text-on-surface appearance-none focus:ring-2 focus:ring-primary/30 outline-none">
-                        <option selected="" disabled>Выберите вид аттестации</option>
-                        <option>Очередная</option>
-                        <option>Внеочередная</option>
-                        <option>Повторная</option>
-                    </select>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-1 gap-5">
-                    <div>
-                        <label class="text-label-sm text-outline uppercase">
-                            Номер и дата приказа <span class="text-error">*</span>
-                        </label>
-                        <div class="relative">
-                            <input class="w-full bg-surface-container-low border border-outline-variant/20 rounded-lg px-4 py-2.5 text-body-md text-on-surface focus:ring-2 focus:ring-primary/30 outline-none font-medium" type="text" value="Приказ № 142 от 12.08.2026 о направлении на аттестацию"/>
+                <div class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors p-base rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-base shadow-sm">
+                    <div class="flex items-center gap-3 min-w-0 md:w-5/12">
+<!--                        <div class="w-10 h-10 rounded-lg bg-surface-container text-primary flex items-center justify-center shrink-0">-->
+<!--                            <input class="" type="checkbox">-->
+<!--                        </div>-->
+                        <div class="">
+                            <div class="text-label-md font-label-md text-on-surface font-semibold ">Вид аттестации:</div>
+                        </div>
+                        <div class="">
+                            <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container rounded-lg text-label-sm font-label-sm text-on-surface">
+
+                                <span class="font-semibold text-primary">Очередная</span>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors p-base rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-base shadow-sm">
+                    <div class="flex items-center gap-3">
+                        <!--                        <div class="w-10 h-10 rounded-lg bg-surface-container text-primary flex items-center justify-center shrink-0">-->
+                        <!--                            <input class="" type="checkbox">-->
+                        <!--                        </div>-->
+                        <div class="">
+                            <div class="text-label-md font-label-md text-on-surface font-semibold">Номер и дата приказа:</div>
+                        </div>
+                        <div class="">
+                            <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container rounded-lg text-label-sm font-label-sm text-on-surface">
+                                <span class="font-semibold text-primary">Приказ № 142 от 12.08.2026 о направлении на аттестацию</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+<!--                <div class="space-y-2">-->
+<!--                    <label class="text-label-sm text-outline uppercase">-->
+<!--                        Вид аттестации-->
+<!--                    </label>-->
+<!--                    <select class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-lg px-4 py-2 text-body-md text-on-surface appearance-none focus:ring-2 focus:ring-primary/30 outline-none">-->
+<!--                        <option selected="" disabled>Выберите вид аттестации</option>-->
+<!--                        <option>Очередная</option>-->
+<!--                        <option>Внеочередная</option>-->
+<!--                        <option>Повторная</option>-->
+<!--                    </select>-->
+<!--                </div>-->
+<!--                <div class="grid grid-cols-1 md:grid-cols-1 gap-5">-->
+<!--                    <div>-->
+<!--                        <label class="text-label-sm text-outline uppercase">-->
+<!--                            Номер и дата приказа <span class="text-error">*</span>-->
+<!--                        </label>-->
+<!--                        <div class="relative">-->
+<!--                            <input class="w-full bg-surface-container-low border border-outline-variant/20 rounded-lg px-4 py-2.5 text-body-md text-on-surface focus:ring-2 focus:ring-primary/30 outline-none font-medium" type="text" value="Приказ № 142 от 12.08.2026 о направлении на аттестацию"/>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
             </div>
             <!-- Section 2: Documents and PDF Attachments -->
             <div class="space-y-4 bg-surface-container-lowest p-4 rounded-lg">
                 <div class="flex items-center gap-2 mb-4">
                     <span class="w-1 h-6 bg-primary rounded-full"></span>
-                    <h2 class="text-label-md uppercase tracking-widest text-primary">2. Документы и вложения</h2>
+                    <h2 class="text-label-md uppercase tracking-widest text-primary">2. Проверка прикрепленных документов</h2>
+                </div><div class="space-y-base">
+                <div class="flex items-center justify-between">
+                    <div class="space-y-0.5">
+
+                        <p class="text-label-sm font-label-sm text-on-surface-variant">Проверьте комплектность и подлинность документов перед вынесением решения о допуске к тестированию.</p>
+                    </div>
+                    <span class="text-label-sm font-label-sm text-primary font-semibold">Комплект: 3 / 3 загружено</span>
                 </div>
-                <div class="space-y-4">
-                    <label class="text-label-sm text-outline uppercase">Стаж работы в должности
-                    </label>
-                    <div class="p-4 rounded-xl border border-outline-variant/15 bg-surface-container-low/60 flex items-center justify-between gap-4">
-                        <div class="flex items-center gap-3.5">
-                            <div class="w-10 h-10 rounded-lg bg-surface-container-high text-on-surface-variant flex items-center justify-center text-lg flex-shrink-0">
-                                <span class="material-symbols-outlined">lock</span>
+                <!-- Document List Table-Like Rows (Tonal Layering, Zero harsh borders) -->
+                <div class="space-y-2">
+                    <!-- Document Row 1 -->
+                    <div class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors p-base rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-base shadow-sm">
+                        <div class="flex items-center gap-3 min-w-0 md:w-5/12">
+
+                            <div class="truncate">
+                                <div class="text-label-md font-label-md text-on-surface font-semibold truncate">Аттестационный лист (предыдущая аттестация)</div>
+
                             </div>
-                            <div>
-                                <p class="text-label-sm text-on-surface-variant mt-0.5">Данные о стаже (12 лет 2 месяца) подтянуты из Реестра автоматически, ручная загрузка заблокирована</p>
+                        </div>
+                        <div class="md:w-4/12">
+                            <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container rounded-lg text-label-sm font-label-sm text-on-surface">
+                                <span class="text-outline">Статус:</span>
+                                <span class="font-semibold text-primary">Загружена автоматически</span>
                             </div>
+                        </div>
+                        <div class="flex items-center gap-2 justify-end md:w-3/12">
+                            <button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface text-label-sm font-label-sm flex items-center gap-1 hover:bg-surface-container-highest transition-colors">
+                                <span class="material-symbols-outlined text-sm">visibility</span>
+                                <span>Предпросмотр</span>
+                            </button>
+                            <button class="p-1.5 text-on-surface-variant hover:bg-surface-container rounded-lg transition-colors" title="Скачать">
+                                <span class="material-symbols-outlined text-lg">download</span>
+                            </button>
                         </div>
                     </div>
+                    <!-- Document Row 2 -->
+                    <div class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors p-base rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-base shadow-sm">
+                    <div class="flex items-center gap-3 min-w-0 md:w-5/12">
 
+                        <div class="truncate">
+                            <div class="text-label-md font-label-md text-on-surface font-semibold truncate">Аттестационная характеристика</div>
 
-                    <div class="space-y-module-gap">
-                        <label class="text-label-sm text-outline uppercase">
-                            Аттестационный лист (предыдущая аттестация)
-                        </label>
-                        <!-- Drag and Drop Area -->
-                        <div class="border-2 border-dashed border-outline-variant/50 rounded-lg bg-surface-container-low h-[120px] flex flex-col items-center justify-center p-container-padding transition-colors relative group" id="drop-zone-3">
-                            <input accept=".xls,.xlsx" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" id="file-upload-3" type="file">
-                            <div class="text-center">
-                                <span class="font-label-md text-label-md text-on-surface">Перетащите файл с аттестационным листом сюда</span>
-                                <span class="font-body-md text-body-md text-on-surface-variant mx-2">или</span>
-                                <button class="font-label-md text-label-md text-surface-tint hover:text-primary transition-colors focus:outline-none" type="button">
-                                    [ Выберите файл ]
-                                </button>
-                            </div>
-                        </div>
-                        <div class="flex justify-between items-center font-label-sm text-label-sm text-on-surface-variant px-1">
-                            <span class="text-label-sm text-on-surface-variant">Формат файла: .doc, PDF</span>
-                            <span>Максимальный размер файла: 25 МБ</span>
                         </div>
                     </div>
+                    <!-- Assessment Pill -->
 
-
-                    <div class="space-y-module-gap">
-                        <label class="text-label-sm text-outline uppercase">
-                            Аттестационная характеристика <span class="text-error">*</span>
-                        </label>
-                        <!-- Drag and Drop Area -->
-                        <div class="border-2 border-dashed border-outline-variant/50 rounded-lg bg-surface-container-low h-[120px] flex flex-col items-center justify-center p-container-padding transition-colors relative group" id="drop-zone-1">
-                            <input accept=".xls,.xlsx" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" id="file-upload-1" type="file">
-                            <div class="text-center">
-                                <span class="font-label-md text-label-md text-on-surface">Перетащите файл с аттестационной характеристикой сюда</span>
-                                <span class="font-body-md text-body-md text-on-surface-variant mx-2">или</span>
-                                <button class="font-label-md text-label-md text-surface-tint hover:text-primary transition-colors focus:outline-none" type="button">
-                                    [ Выберите файл ]
-                                </button>
-                            </div>
+                    <div class="md:w-4/12">
+                        <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container rounded-lg text-label-sm font-label-sm text-on-surface">
+                            <span class="text-outline">Ознакомление:</span>
+                            <span class="font-semibold text-primary">ознакомлен, согласен</span>
                         </div>
-                        <div class="flex justify-between items-center font-label-sm text-label-sm text-on-surface-variant mt-2 px-1">
-                            <span class="text-label-sm text-on-surface-variant">Формат файла: .doc, PDF</span>
-                            <span>Максимальный размер файла: 25 МБ</span>
+                        <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container rounded-lg text-label-sm font-label-sm text-on-surface">
+                            <span class="text-outline">Оценка:</span>
+                            <span class="font-semibold text-primary">положительная на специалиста</span>
                         </div>
                     </div>
+                    <!-- Actions -->
+                    <div class="flex items-center gap-2 justify-end md:w-3/12">
+                        <button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface text-label-sm font-label-sm flex items-center gap-1 hover:bg-surface-container-highest transition-colors">
+                            <span class="material-symbols-outlined text-sm">visibility</span>
+                            <span>Предпросмотр</span>
+                        </button>
+                        <button class="p-1.5 text-on-surface-variant hover:bg-surface-container rounded-lg transition-colors" title="Скачать">
+                            <span class="material-symbols-outlined text-lg">download</span>
+                        </button>
+                    </div>
+                </div>
+                    <!-- Document Row 3 -->
+                    <div class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors p-base rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-base shadow-sm">
+                        <div class="flex items-center gap-3 min-w-0 md:w-5/12">
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="truncate">
+                                <div class="text-label-md font-label-md text-on-surface font-semibold truncate">Результаты анализа качества выполняемых работ по технической инвентаризации</div>
 
-                        <div>
-                            <label class="text-label-sm text-outline uppercase">
-                                Ознакомление претендента с характеристикой: <span class="text-error">*</span>
-                            </label>
-                            <div class="relative">
-                                <select class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-lg px-4 py-2 text-body-md text-on-surface appearance-none focus:ring-2 focus:ring-primary/30 outline-none">
-                                    <option selected="" disabled="">Выберите из списка</option>
-                                    <option>ознакомлен, согласен</option>
-                                    <option>ознакомлен, не согласен</option>
-                                    <option>не ознакомлен</option>
-                                </select>
                             </div>
                         </div>
-                        <div>
-                            <label class="text-label-sm text-outline uppercase">
-                                Оценка по аттестационной характеристике: <span class="text-error">*</span>
-                            </label>
-                            <div class="relative">
-                                <select class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-lg px-4 py-2 text-body-md text-on-surface appearance-none focus:ring-2 focus:ring-primary/30 outline-none">
-                                    <option selected="" disabled>Выберите оценку из списка</option>
-                                    <option>отрицательная</option>
-                                    <option>нейтральная</option>
-                                    <option>положительная на специалиста</option>
-                                    <option>положительная, с рекомендацией о присвоении (подтверждении) квалификационной категории</option>
-                                    <option>положительная на ведущего специалиста, руководителя структурного подразделения</option>
-                                </select>
+                        <div class="md:w-4/12">
+                            <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container rounded-lg text-label-sm font-label-sm text-on-surface">
+                                <span class="text-outline">Оценка:</span>
+                                <span class="font-semibold text-primary">решение о признании действии специалиста по технической инвентаризации полностью соответствующими законодательству</span>
                             </div>
                         </div>
-
+                        <div class="flex items-center gap-2 justify-end md:w-3/12">
+                            <button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface text-label-sm font-label-sm flex items-center gap-1 hover:bg-surface-container-highest transition-colors">
+                                <span class="material-symbols-outlined text-sm">visibility</span>
+                                <span>Предпросмотр</span>
+                            </button>
+                            <button class="p-1.5 text-on-surface-variant hover:bg-surface-container rounded-lg transition-colors" title="Скачать">
+                                <span class="material-symbols-outlined text-lg">download</span>
+                            </button>
+                        </div>
                     </div>
+                    <!-- Document Row 4 Stager -->
+                    <div class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors p-base rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-base shadow-sm">
+                        <div class="flex items-center gap-3 min-w-0 md:w-5/12">
 
-<!--                    <div class="space-y-2">-->
-<!--                        <label class="text-label-sm text-outline uppercase">-->
-<!--                            Оценка по аттестационной характеристике: <span class="text-error">*</span>-->
-<!--                        </label>-->
-<!--                        <select class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-lg px-4 py-2 text-body-md text-on-surface appearance-none focus:ring-2 focus:ring-primary/30 outline-none">-->
-<!--                            <option selected="" disabled>Выберите оценку из списка</option>-->
-<!--                            <option>отрицательная</option>-->
-<!--                            <option>нейтральная</option>-->
-<!--                            <option>положительная на специалиста</option>-->
-<!--                            <option>положительная, с рекомендацией о присвоении (подтверждении) квалификационной категории</option>-->
-<!--                            <option>положительная на ведущего специалиста, руководителя структурного подразделения</option>-->
-<!--                    </select>-->
-<!--                    </div>-->
+                            <div class="truncate">
+                                <div class="text-label-md font-label-md text-on-surface font-semibold truncate">Отчет о стажировке</div>
 
-                    <div class="space-y-module-gap">
-                        <label class="text-label-sm text-outline uppercase">
-                            Результаты анализа качества выполняемых работ по технической инвентаризации  <span class="text-error">*</span>
-                        </label>
-                        <!-- Drag and Drop Area -->
-                        <div class="border-2 border-dashed border-outline-variant/50 rounded-lg bg-surface-container-low h-[120px] flex flex-col items-center justify-center p-container-padding transition-colors relative group" id="drop-zone-2">
-                            <input accept=".xls,.xlsx" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" id="file-upload-2" type="file">
-                            <div class="text-center">
-                                <span class="font-label-md text-label-md text-on-surface">Перетащите файл проверки правильности работ сюда</span>
-                                <span class="font-body-md text-body-md text-on-surface-variant mx-2">или</span>
-                                <button class="font-label-md text-label-md text-surface-tint hover:text-primary transition-colors focus:outline-none" type="button">
-                                    [ Выберите файл ]
-                                </button>
                             </div>
                         </div>
-
-                        <div class="flex justify-between items-center font-label-sm text-label-sm text-on-surface-variant mt-2 px-1">
-                            <span class="text-label-sm text-on-surface-variant">Формат файла: .doc, PDF</span>
-                            <span>Максимальный размер файла: 25 МБ</span>
+                        <div class="md:w-4/12">
+                            <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container rounded-lg text-label-sm font-label-sm text-on-surface">
+                                <span class="text-outline">Результат:</span>
+                                <span class="font-semibold text-primary">прошел(ла) с отличием</span>
+                            </div>
                         </div>
-
-
+                        <div class="flex items-center gap-2 justify-end md:w-3/12">
+                            <button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface text-label-sm font-label-sm flex items-center gap-1 hover:bg-surface-container-highest transition-colors">
+                                <span class="material-symbols-outlined text-sm">visibility</span>
+                                <span>Предпросмотр</span>
+                            </button>
+                            <button class="p-1.5 text-on-surface-variant hover:bg-surface-container rounded-lg transition-colors" title="Скачать">
+                                <span class="material-symbols-outlined text-lg">download</span>
+                            </button>
+                        </div>
                     </div>
-
-                    <div class="space-y-2">
-                        <label class="text-label-sm text-outline uppercase">
-                            Оценка качества выполняемых работ: <span class="text-error">*</span>
-                        </label>
-                        <select class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-lg px-4 py-2 text-body-md text-on-surface appearance-none focus:ring-2 focus:ring-primary/30 outline-none">
-                            <option selected="" disabled>Выберите оценку из списка</option>
-                            <option>решение о временном отстранении специалиста по технической инвентаризации от занимаемой должности</option>
-                            <option>решение о признании действий специалиста по технической инвентаризации не соответствующими законодательству</option>
-                            <option>проверка не проводилась или решение о признании некоторых действий специалиста по технической инвентаризации не соответствующими законодательству</option>
-                            <option>решение о признании действии специалиста по технической инвентаризации в целом соответствующими законодательству</option>
-                            <option>решение о признании действии специалиста по технической инвентаризации полностью соответствующими законодательству</option>
-                        </select>
-                    </div>
-
                 </div>
             </div>
-
+            </div>
             <!-- Section 4: Calendar week selection -->
             <div class="p-5 rounded-xl bg-surface-container-lowest border border-outline-variant/15 shadow-sm">
                 <div class="flex items-center gap-2 mb-4">
                     <span class="w-1 h-6 bg-primary rounded-full"></span>
-                    <h2 class="text-label-md uppercase tracking-widest text-primary">3. Выбор желаемого периода проведения (Календарная неделя)</h2>
+                    <h2 class="text-label-md uppercase tracking-widest text-primary">3. Выбранный период аттестации (Календарная неделя)</h2>
                 </div>
 
                 <p class="text-label-sm text-[#2e7d32] font-semibold mt-1 flex items-center gap-1">
@@ -921,16 +936,16 @@
 
                 <!-- Interactive Week Selector Cards -->
                 <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 mt-4">
-                    <div class="p-3.5 rounded-xl border border-outline-variant/20 bg-surface-container-low hover:border-primary/50 cursor-pointer transition-all">
-                        <div class="text-label-sm text-on-surface-variant font-medium">42 неделя</div>
-                        <div class="text-body-md font-bold text-on-surface mt-0.5">07.09 - 13.09</div>
-                        <span class="text-label-sm text-[#ba1a1a] block mt-1 font-semibold">Подано заявок: 25</span>
-                    </div>
-                    <div class="p-3.5 rounded-xl border border-outline-variant/20 bg-surface-container-low hover:border-primary/50 cursor-pointer transition-all">
-                        <div class="text-label-sm text-on-surface-variant font-medium">43 неделя</div>
-                        <div class="text-body-md font-bold text-on-surface mt-0.5">14.09 - 20.09</div>
-                        <span class="text-label-sm text-[#2e7d32] block mt-1 font-semibold">Подано заявок: 8</span>
-                    </div>
+<!--                    <div class="p-3.5 rounded-xl border border-outline-variant/20 bg-surface-container-low hover:border-primary/50 cursor-pointer transition-all">-->
+<!--                        <div class="text-label-sm text-on-surface-variant font-medium">42 неделя</div>-->
+<!--                        <div class="text-body-md font-bold text-on-surface mt-0.5">07.09 - 13.09</div>-->
+<!--                        <span class="text-label-sm text-[#ba1a1a] block mt-1 font-semibold">Подано заявок: 25</span>-->
+<!--                    </div>-->
+<!--                    <div class="p-3.5 rounded-xl border border-outline-variant/20 bg-surface-container-low hover:border-primary/50 cursor-pointer transition-all">-->
+<!--                        <div class="text-label-sm text-on-surface-variant font-medium">43 неделя</div>-->
+<!--                        <div class="text-body-md font-bold text-on-surface mt-0.5">14.09 - 20.09</div>-->
+<!--                        <span class="text-label-sm text-[#2e7d32] block mt-1 font-semibold">Подано заявок: 8</span>-->
+<!--                    </div>-->
                     <div class="p-3.5 rounded-xl border-2 border-primary bg-primary-fixed/20 cursor-pointer shadow-sm transition-all relative">
                         <span class="absolute top-2 right-2 text-primary material-symbols-outlined text-base font-bold">check_circle</span>
                         <div class="text-label-sm text-primary font-bold uppercase">44 неделя</div>
@@ -938,16 +953,16 @@
                         <span class="text-label-sm text-primary font-semibold block mt-1">Подано заявок:4</span>
                     </div>
 
-                    <div class="p-3.5 rounded-xl border border-outline-variant/20 bg-surface-container-low hover:border-primary/50 cursor-pointer transition-all">
-                        <div class="text-label-sm text-on-surface-variant font-medium">45 неделя</div>
-                        <div class="text-body-md font-bold text-on-surface mt-0.5">28.09 - 04.10</div>
-                        <span class="text-label-sm text-[#2e7d32] block mt-1 font-semibold">Подано заявок: 9</span>
-                    </div>
-                    <div class="p-3.5 rounded-xl border border-outline-variant/20 bg-surface-container-low hover:border-primary/50 cursor-pointer transition-all">
-                        <div class="text-label-sm text-on-surface-variant font-medium">46 неделя</div>
-                        <div class="text-body-md font-bold text-on-surface mt-0.5">05.10 - 11.10</div>
-                        <span class="text-label-sm text-[#2e7d32] block mt-1 font-semibold">Подано заявок: 2</span>
-                    </div>
+<!--                    <div class="p-3.5 rounded-xl border border-outline-variant/20 bg-surface-container-low hover:border-primary/50 cursor-pointer transition-all">-->
+<!--                        <div class="text-label-sm text-on-surface-variant font-medium">45 неделя</div>-->
+<!--                        <div class="text-body-md font-bold text-on-surface mt-0.5">28.09 - 04.10</div>-->
+<!--                        <span class="text-label-sm text-[#2e7d32] block mt-1 font-semibold">Подано заявок: 9</span>-->
+<!--                    </div>-->
+<!--                    <div class="p-3.5 rounded-xl border border-outline-variant/20 bg-surface-container-low hover:border-primary/50 cursor-pointer transition-all">-->
+<!--                        <div class="text-label-sm text-on-surface-variant font-medium">46 неделя</div>-->
+<!--                        <div class="text-body-md font-bold text-on-surface mt-0.5">05.10 - 11.10</div>-->
+<!--                        <span class="text-label-sm text-[#2e7d32] block mt-1 font-semibold">Подано заявок: 2</span>-->
+<!--                    </div>-->
                 </div>
             </div>
             <!-- Section 5: Postponement Request (Запрос переноса срока) -->
@@ -955,42 +970,48 @@
                 <div class="flex items-center justify-between mb-4">
                     <div class="flex items-center gap-2 mb-4">
                         <span class="w-1 h-6 bg-primary rounded-full"></span>
-                        <h2 class="text-label-md uppercase tracking-widest text-primary">4. Запрос переноса срока аттестации (Нормативные основания)</h2>
+                        <h2 class="text-label-md uppercase tracking-widest text-primary">4. Запрошен перенос срока аттестации (Нормативные основания)</h2>
                     </div>
                 </div>
                 <div class="space-y-4">
                     <div class="grid grid-cols-1 md:grid-cols-1 gap-4">
-                        <div>
-                            <label class="text-label-sm text-outline uppercase">
-                                Причина переноса<span class="text-error">*</span>
-                            </label>
-                            <div class="relative">
-                                <select class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-lg px-4 py-2 text-body-md text-on-surface appearance-none focus:ring-2 focus:ring-primary/30 outline-none">
-                                    <option selected="" disabled>Выберите причину переноса из списка</option>
-                                    <option>Беременность</option>
-                                    <option>Длительное излечение (более 4 месяцев)</option>
-                                    <option>Отпуск по уходу за ребенком до 3 лет</option>
-                                    <option>Принятие на работу с перерывом менее 3 лет</option>
-                                    <option>Производственные обстоятельства</option>
-                                </select>
-                            </div>
+                        <div class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors p-base rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-base shadow-sm">
+                            <div class="flex items-center gap-3 ">
+                                <!--                        <div class="w-10 h-10 rounded-lg bg-surface-container text-primary flex items-center justify-center shrink-0">-->
+                                <!--                            <input class="" type="checkbox">-->
+                                <!--                        </div>-->
+                                <div class="">
+                                    <div class="text-label-md font-label-md text-on-surface font-semibold ">Причина переноса:</div>
+                                </div>
+                                <div class="">
+                                    <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container rounded-lg text-label-sm font-label-sm text-on-surface">
+
+                                        <span class="font-semibold text-primary">Длительное излечение (более 4 месяцев)</span>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container rounded-lg text-label-sm font-label-sm text-on-surface">
+
+                                        <span class="font-semibold text-primary">В связи с нахождением на стационарном лечении согласно листку нетрудоспособности № 91024823 от 10.09.2026 г.</span>
+                                    </div>
+                                </div></div>
                         </div>
                     </div>
-                    <div>
-                        <label class="text-label-sm text-outline uppercase">
-                            Комментарий / Обстоятельства переноса<span class="text-error">*</span>
-                        </label>
-                        <textarea class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-lg p-3 text-body-md text-on-surface focus:ring-2 focus:ring-primary/30 outline-none" placeholder="Укажите подробное обоснование переноса с указанием реквизитов подтверждающих документов..." rows="2">В связи с нахождением на стационарном лечении согласно листку нетрудоспособности № 91024823 от 10.09.2026 г.</textarea>
-                    </div>
+
                 </div>
             </div>
         </div>
         <!-- Footer / Sticky Action Bar -->
         <section class="px-section-gap py-module-gap bg-surface-container-lowest flex justify-between items-center border-t-2 border-surface-container-low"><div class="flex flex-col md:flex-row items-center justify-center gap-4 w-full">
-            <button onclick="window.location.href='План-график.html'" class="w-full  px-6 py-4 text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors rounded-lg flex items-center justify-center gap-2 hover:bg-surface-variant hover:scale-[1.02] active:scale-[0.98] transition-all" style="">
+            <button onclick="window.location.href='План-график.html'" class="w-full  px-6 py-4 text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors rounded-lg flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98] transition-all" style="">
                 Отмена</button>
+            <button onclick="window.location.href='#'" class="w-full px-6 py-4 text-sm font-semibold border border-outline-variant bg-error-container text-on-error-container hover:bg-error hover:text-on-error rounded-lg flex items-center justify-center gap-2  hover:scale-[1.02] active:scale-[0.98] transition-all">
+                <span class="material-symbols-outlined text-base">cancel</span>
+                <span>Отклонить заявку</span>
+                </button>
             <button onclick="window.location.href='План-график.html'" class="gradient-btn text-on-primary w-full  py-4 px-6 rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98] transition-all" style="">
-                <span class="material-symbols-outlined text-sm" style="" id="submit-import">save</span>Сохранить и отправить заявку</button>
+                <span class="material-symbols-outlined text-base">task_alt</span>
+                Допустить к аттестации</button>
         </div>
         </section>
 
@@ -1016,51 +1037,5 @@
 <!--        </div>-->
     </div>
 </div>
-
-
-<script>
-    // Simple script 1 to handle file selection state for visual feedback
-    document.addEventListener('DOMContentLoaded', () => {
-        const fileUpload = document.getElementById('file-upload-1');
-        const submitBtn = document.getElementById('submit-import');
-        const dropZone = document.getElementById('drop-zone-1');
-
-        // Handle file selection
-        fileUpload.addEventListener('change', (e) => {
-            if(e.target.files.length > 0) {
-                submitBtn.disabled = false;
-                dropZone.classList.add('border-surface-tint', 'bg-surface-container-highest');
-                dropZone.classList.remove('border-outline-variant/50', 'bg-surface-container-low');
-
-                // Simple feedback showing file name could be added here
-                const fileName = e.target.files[0].name;
-                const fileSize = e.target.files[0].size/100000;
-                const textContainer = dropZone.querySelector('.text-center');
-                textContainer.innerHTML = `<span class="font-label-md text-label-md text-surface-tint">${fileName}</span>
-<span class="font-label-md text-label-md text-surface-tint">( ${fileSize}) </span>
-                                               <div class="font-body-md text-body-md text-on-surface-variant mt-1 text-sm">Файл готов к загрузке</div>`;
-            } else {
-                submitBtn.disabled = true;
-                dropZone.classList.remove('border-surface-tint', 'bg-surface-container-highest');
-                dropZone.classList.add('border-outline-variant/50', 'bg-surface-container-low');
-            }
-        });
-
-        // Drag and drop visual feedback
-        fileUpload.addEventListener('dragenter', () => {
-            dropZone.classList.add('drag-over');
-        });
-
-        fileUpload.addEventListener('dragleave', () => {
-            dropZone.classList.remove('drag-over');
-        });
-
-        fileUpload.addEventListener('drop', () => {
-            dropZone.classList.remove('drag-over');
-        });
-    })
-
-</script>
-
 </body>
 </html>

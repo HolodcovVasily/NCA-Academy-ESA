@@ -163,7 +163,7 @@
 <header class="h-14 bg-brand-lowest flex items-center justify-between px-6 z-20" data-purpose="top-navigation">
     <div class="flex items-center gap-8">
         <div class="flex items-center gap-2">
-            <h1 class="text-xl font-black text-[#001453] dark:text-white">НКА Академия | Управление вопросами</h1>
+            <h1 class="text-xl font-black text-[#001453] dark:text-white">НКА Академия | Управление заявками на аттестацию</h1>
         </div>
     </div>
     <div class="flex items-center gap-6">
@@ -193,6 +193,7 @@
             <a class="flex items-center gap-3 px-4 py-3 text-[#4e69c3] bg-white font-bold transition-transform duration-200 scale-98" href="#">
                 <span class="material-symbols-outlined">calendar_month</span>
                 <span>План-график</span>
+                <span class="px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-[#ffa12b] text-white font-bold">5</span>
             </a>
             <a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100 transition-transform duration-200 scale-98" href="../Аттестация_new.html">
                 <span class="material-symbols-outlined">badge</span>
@@ -245,24 +246,44 @@
 
 </header>
 <!-- Workspace -->
-    <div class="mt-2 mb-2 bg-emerald-100 p-container-padding flex items-start gap-4">
+    <div class="mt-2 mb-2 bg-emerald-100 p-container-padding flex items-start gap-4" id="review-banner-1">
         <span class="material-symbols-outlined">Warning</span>
         <div>
             <p class="font-label-md">Внимание: автоматически сформирован план-график аттестаций на следующий год. У Вас есть время до [дд.мм.гггг] для проверки, экспорта и согласования план-графика.</p>
             <p class="text-on-surface-variant text-sm mt-1">* - После утверждения сформированного план-графика нажмите на кнопку "Опубликовать план-график", после чего вкладка с данным план-графиком будет доступна специалистам ОКР ТОР.</p>
         </div>
-        <button class="ml-auto text-on-surface-variant hover:text-on-background">
+        <button class="p-1.5 rounded-lg text-on-surface-variant transition-colors" onclick="document.getElementById('review-banner-1').remove()" title="Закрыть оповещение">
             <span class="material-symbols-outlined">close</span>
         </button>
     </div>
-    <div class="mt-2 mb-2 bg-error-container p-container-padding flex items-start gap-4">
+    <div class="mt-2 mb-2 bg-error-container p-container-padding flex items-start gap-4" id="review-banner-2">
         <span class="material-symbols-outlined text-error">Warning</span>
         <div>
             <p class="font-label-md">Внимание! До крайнего срока публикации план-графика осталось [дд] дней. Неопубликованный план-график заблокирует подачу заявок на аттестации специалистов с датой аттестации в январе.</p>
         </div>
-        <button class="ml-auto text-on-surface-variant hover:text-on-background">
+        <button class="p-1.5 rounded-lg text-on-surface-variant transition-colors" onclick="document.getElementById('review-banner-2').remove()" title="Закрыть оповещение">
             <span class="material-symbols-outlined">close</span>
         </button>
+    </div>
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 p-4 rounded-xl bg-[#fff8e1] shadow-sm transition-all duration-300" id="review-banner-3">
+        <div class="flex items-center gap-3.5">
+            <div class="w-9 h-9 rounded-lg flex items-center justify-center text-[#ffa12b] flex-shrink-0">
+                <span class="material-symbols-outlined text-xl">notification_important</span>
+            </div>
+            <div>
+                <div class="flex items-center gap-2">
+                    <span class="font-label-md">Поступило 5 новых заявок на рассмотрение</span>
+                </div>
+            </div>
+        </div>
+        <div class="flex items-center gap-3 flex-shrink-0">
+            <button class="gradient-btn text-on-primary text-label-md font-label-md px-4 py-2 rounded-lg flex items-center gap-2 hover:opacity-90 transition-opacity shadow-sm">
+                <span>Показать заявки (5)</span>
+            </button>
+            <button class="p-1.5 rounded-lg text-on-surface-variant transition-colors" onclick="document.getElementById('review-banner-3').remove()" title="Закрыть оповещение">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
     </div>
 
 
@@ -430,9 +451,9 @@
                     <button onclick="window.location.href='Подача_заявления.html'" class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-on-surface">
                         <span title="Подать заявку" class="material-symbols-outlined text-lg" data-icon="content_copy">calendar_month</span>
                     </button>
-                    <button onclick="window.location.href='#'" class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">
-                        <span title="Просмотреть заявку" class="material-symbols-outlined text-lg" data-icon="edit">visibility</span>
-                    </button>
+<!--                    <button onclick="window.location.href='#'" class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">-->
+<!--                        <span title="Просмотреть заявку" class="material-symbols-outlined text-lg" data-icon="edit">visibility</span>-->
+<!--                    </button>-->
 
                 </div>
             </td>
@@ -472,9 +493,9 @@
                     <button class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-on-surface">
                         <span title="Подать заявку" class="material-symbols-outlined text-lg" data-icon="content_copy">calendar_month</span>
                     </button>
-                    <button onclick="window.location.href='#'" class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">
-                        <span title="Просмотреть заявку" class="material-symbols-outlined text-lg" data-icon="edit">visibility</span>
-                    </button>
+<!--                    <button onclick="window.location.href='#'" class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">-->
+<!--                        <span title="Просмотреть заявку" class="material-symbols-outlined text-lg" data-icon="edit">visibility</span>-->
+<!--                    </button>-->
                 </div>
             </td>
         </tr>
@@ -511,9 +532,9 @@
                     <button class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-on-surface">
                         <span title="Подать заявку" class="material-symbols-outlined text-lg" data-icon="content_copy">calendar_month</span>
                     </button>
-                    <button onclick="window.location.href='#'" class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">
-                        <span title="Просмотреть заявку" class="material-symbols-outlined text-lg" data-icon="edit">visibility</span>
-                    </button>
+<!--                    <button onclick="window.location.href='#'" class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">-->
+<!--                        <span title="Просмотреть заявку" class="material-symbols-outlined text-lg" data-icon="edit">visibility</span>-->
+<!--                    </button>-->
                 </div>
             </td>
         </tr>
@@ -539,7 +560,7 @@
                 Внеочередная
             </td>
             <td class="px-4 py-2">
-                <span class="px-2 py-0.5 bg-error-container text-[9px] text-on-surface uppercase rounded">Отклонена</span>
+                <span class="px-2 py-0.5 bg-[#ffa12b] text-[9px] text-on-surface uppercase rounded">На рассмотрении</span>
             </td>
             <td class="px-4 py-2">
                 -
@@ -547,11 +568,14 @@
             <td class="px-4 py-2">-</td>
             <td class="px-6 py-2">
                 <div class="flex items-center justify-end gap-1">
-                    <button class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-on-surface">
-                        <span title="Подать заявку" class="material-symbols-outlined text-lg" data-icon="content_copy">calendar_month</span>
-                    </button>
-                    <button onclick="window.location.href='#'" class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">
-                        <span title="Просмотреть заявку" class="material-symbols-outlined text-lg" data-icon="edit">visibility</span>
+<!--                    <button onclick="window.location.href='Подача_заявления_стажер.html'" class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-on-surface">-->
+<!--                        <span title="Подать заявку" class="material-symbols-outlined text-lg" data-icon="content_copy">calendar_month</span>-->
+<!--                    </button>-->
+<!--                    <button  class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">-->
+<!--                        <span title="Рассмотреть заявку" class="material-symbols-outlined text-lg" data-icon="edit">visibility</span>-->
+<!--                    </button>-->
+                    <button onclick="window.location.href='Рассмотрение_заявления.html'" class="gradient-btn text-on-primary text-label-sm font-label-sm px-2.5 py-1.5 rounded-lg flex items-center gap-1 hover:shadow transition-all whitespace-nowrap" title="Открыть форму проверки заявки">
+                        <span>Рассмотреть</span>
                     </button>
                 </div>
             </td>
@@ -589,9 +613,9 @@
                     <button class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-on-surface">
                         <span title="Подать заявку" class="material-symbols-outlined text-lg" data-icon="content_copy">calendar_month</span>
                     </button>
-                    <button onclick="window.location.href='#'" class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">
-                        <span title="Просмотреть заявку" class="material-symbols-outlined text-lg" data-icon="edit">visibility</span>
-                    </button>
+<!--                    <button onclick="window.location.href='#'" class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">-->
+<!--                        <span title="Просмотреть заявку" class="material-symbols-outlined text-lg" data-icon="edit">visibility</span>-->
+<!--                    </button>-->
                 </div>
             </td>
         </tr>
