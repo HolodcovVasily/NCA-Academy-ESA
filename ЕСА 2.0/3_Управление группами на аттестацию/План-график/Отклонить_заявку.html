@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+
+<html lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ESA 2.0 - План-график</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-fixed": "#00164f",
+                      "surface-container-highest": "#e0e3e5",
+                      "surface-container-high": "#e6e8ea",
+                      "on-background": "#191c1e",
+                      "on-secondary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "surface-tint": "#3d59b2",
+                      "on-secondary-fixed": "#001453",
+                      "tertiary-container": "#4966d4",
+                      "on-secondary-container": "#384785",
+                      "tertiary": "#2d4cba",
+                      "surface-container-lowest": "#ffffff",
+                      "outline-variant": "#c6c6cd",
+                      "background": "#f7f9fb",
+                      "secondary-container": "#a9b8fe",
+                      "primary-fixed": "#dce1ff",
+                      "on-primary-container": "#f1f1ff",
+                      "primary-fixed-dim": "#b6c4ff",
+                      "on-surface": "#191c1e",
+                      "surface-dim": "#d8dadc",
+                      "on-primary-fixed-variant": "#214098",
+                      "surface-bright": "#f7f9fb",
+                      "surface-container": "#eceef0",
+                      "outline": "#757683",
+                      "on-surface-variant": "#444652",
+                      "surface-variant": "#e0e3e5",
+                      "inverse-primary": "#b6c4ff",
+                      "tertiary-fixed": "#dde1ff",
+                      "on-secondary-fixed-variant": "#334380",
+                      "primary": "#3450a9",
+                      "inverse-on-surface": "#eff1f3",
+                      "secondary": "#4b5b9a",
+                      "on-primary": "#ffffff",
+                      "surface-container-low": "#f2f4f6",
+                      "error-container": "#ffdad6",
+                      "secondary-fixed-dim": "#b8c4ff",
+                      "on-tertiary-fixed-variant": "#173baa",
+                      "secondary-fixed": "#dde1ff",
+                      "on-error-container": "#93000a",
+                      "error": "#ba1a1a",
+                      "on-tertiary-container": "#f2f1ff",
+                      "inverse-surface": "#2d3133",
+                      "tertiary-fixed-dim": "#b8c4ff",
+                      "surface": "#f7f9fb",
+                      "primary-container": "#4e69c3",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-fixed": "#001453",
+                  brand: {
+                      primary: '#4e69c3',
+                      dark: '#0a1d43',
+                      surface: '#f7f9fb',
+                      container: '#eceef0',
+                      lowest: '#ffffff',
+                  },
+                  status: {
+                      active: '#10b981',
+                      development: '#f59e0b',
+                      archived: '#94a3b8',
+                      easy: '#10b981',
+                      medium: '#f59e0b',
+                      hard: '#ef4444',
+                  },
+              },
+                      "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "base": "8px",
+                      "module-gap": "24px",
+                      "section-gap": "32px",
+                      "container-padding": "16px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-sm": [
+                              "11px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "25.6px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+            }
+          }
+        }
+</script>
+<style>
+        .gradient-btn {
+            background: linear-gradient(135deg, #4e69c3 0%, #00164f 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col">
+<!-- TopNavBar (Shared Component) -->
+<header class="h-14 bg-brand-lowest flex items-center justify-between px-6 z-20" data-purpose="top-navigation">
+    <div class="flex items-center gap-8">
+        <div class="flex items-center gap-2">
+            <h1 class="text-xl font-black text-[#001453] dark:text-white">НКА Академия | Управление вопросами</h1>
+        </div>
+    </div>
+    <div class="flex items-center gap-6">
+        <div class="flex items-center gap-2">
+            <div class="text-right">
+                <p class="text-xs font-semibold">Администратор вопросов</p>
+                <p class="text-[10px] text-slate-500">Давыдович Ю.В.</p>
+            </div>
+            <div class="w-9 h-9 rounded-full bg-brand-surface flex items-center justify-center">
+                <svg class="w-5 h-5 text-brand-primary" fill="currentColor" viewBox="0 0 20 20">
+                    <path clip-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" fill-rule="evenodd"></path>
+                </svg>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<div class="flex flex-1 overflow-hidden">
+<!-- SideNavBar (Shared Component) -->
+    <aside class="hidden md:flex flex-col py-section-gap px-container-padding bg-surface-container-low w-72 flex-shrink-0 z-40 relative after:content-[''] after:absolute after:right-0 after:top-0 after:bottom-0 after:w-px after:bg-outline-variant/15">
+        <div class="space-y-1">
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100 transition-transform duration-200 scale-98" href="../../../1_Главная%20страница%20НКА%20Академия/2_Главная_страница.html">
+                <span class="material-symbols-outlined">database</span>
+                <span>На главную</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-[#4e69c3] bg-white font-bold transition-transform duration-200 scale-98" href="#">
+                <span class="material-symbols-outlined">calendar_month</span>
+                <span>План-график</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100 transition-transform duration-200 scale-98" href="../Аттестация_new.html">
+                <span class="material-symbols-outlined">badge</span>
+                <span>Аттестация</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100 transition-transform duration-200 scale-98" href="../../2_Управление%20тестами/Управление%20тестами%202.html">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                <span>Управление тестами</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100 transition-transform duration-200 scale-98" href="#">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                База знаний
+            </a>
+        </div>
+    </aside>
+
+
+<!-- Main Content Canvas -->
+<main class="flex-1 overflow-y-auto bg-surface-bright flex flex-col">
+<!-- Page Header & Top Nav -->
+<header class="px-section-gap py-4 bg-surface-container-lowest sticky top-0 z-30">
+<div class="flex justify-between items-end mb-module-gap">
+<div>
+    <h1 class="text-display-lg font-display-lg text-on-surface">План-график</h1>
+</div>
+<div class="flex items-center gap-3">
+    <button onclick="window.location.href='./Добавление претендента.html'" class="text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors px-8 py-2.5 rounded-lg font-label-md hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2" title="Включение стажеров, вновь принятых лиц или назначение внеочередной аттестации">Добавить претендента</button>
+    <button onclick="window.location.href='../Результаты за период/Результаты.html'" class="text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors px-8 py-2.5 rounded-lg font-label-md hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2" title="Результаты за период">
+        Результаты за период
+    </button>
+<!--    <button onclick="window.location.href='#'" class="text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors px-8 py-2.5 rounded-lg font-label-md hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2" title="Экспорт в XLS">Экспорт в XLS</button>-->
+<!--    <button onclick="window.location.href='#'" class="px-4 py-2 gradient-btn text-white text-sm hover:scale-[1.02] active:scale-[0.98] font-semibold rounded-lg transition-opacity">Опубликовать план-график</button>-->
+</div>
+</div>
+<!-- Main Tabs -->
+    <div class="flex gap-3 border-b border-outline-variant/15">
+        <button onclick="window.location.href='#'" class="flex items-center gap-2 px-4 py-2 bg-brand-primary/10 text-brand-primary text-[14px] font-bold rounded-md hover:bg-brand-primary hover:text-white transition-all">
+            <span class="material-symbols-outlined text-[13px]">verified</span>Текущий год
+        </button>
+        <button onclick="window.location.href='./План-график_следующий_год.html'" class="flex items-center gap-2 px-4 py-2 text-brand-primary text-[14px] font-bold rounded-md hover:bg-brand-primary hover:text-white transition-all">
+            Следующий год*
+        </button>
+        <div class="flex items-end gap-4">
+            <button title="Отобразить поля фильтра" class="p-2 rounded-md hover:bg-brand-primary/10 text-brand-primary transition-colors flex items-center justify-center" onclick="document.getElementById('filter-panel').classList.toggle('hidden')">
+                <span class="material-symbols-outlined">filter_list</span>
+            </button>
+        </div>
+    </div>
+
+
+</header>
+<!-- Workspace -->
+    <div class="mt-2 mb-2 bg-emerald-100 p-container-padding flex items-start gap-4">
+        <span class="material-symbols-outlined">Warning</span>
+        <div>
+            <p class="font-label-md">Внимание: автоматически сформирован план-график аттестаций на следующий год. У Вас есть время до [дд.мм.гггг] для проверки, экспорта и согласования план-графика.</p>
+            <p class="text-on-surface-variant text-sm mt-1">* - После утверждения сформированного план-графика нажмите на кнопку "Опубликовать план-график", после чего вкладка с данным план-графиком будет доступна специалистам ОКР ТОР.</p>
+        </div>
+        <button class="ml-auto text-on-surface-variant hover:text-on-background">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+    </div>
+    <div class="mt-2 mb-2 bg-error-container p-container-padding flex items-start gap-4">
+        <span class="material-symbols-outlined text-error">Warning</span>
+        <div>
+            <p class="font-label-md">Внимание! До крайнего срока публикации план-графика осталось [дд] дней. Неопубликованный план-график заблокирует подачу заявок на аттестации специалистов с датой аттестации в январе.</p>
+        </div>
+        <button class="ml-auto text-on-surface-variant hover:text-on-background">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+    </div>
+
+
+<div class="p-4 flex-1 flex flex-col gap-4 max-w-[1600px] mx-auto w-full">
+<!-- Filters -->
+    <div id="filter-panel" class="grid grid-cols-5 gap-4 p-4 bg-brand-lowest/50 rounded-lg border border-brand-container/50 transition-all">
+        <div class="space-y-1.5">
+            <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Поиск</label>
+            <input type="text" placeholder="ФИО" class="w-full px-3 py-2 bg-brand-lowest text-xs border-none rounded-md ring-1 ring-slate-200 focus:ring-brand-primary placeholder:text-slate-300">
+        </div>
+
+        <div class="space-y-1.5">
+            <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Организация</label>
+            <div class="relative">
+                <select class="w-full px-3 py-2 bg-brand-lowest text-xs border-none rounded-md ring-1 ring-slate-200 focus:ring-brand-primary appearance-none text-slate-600">
+                    <option>Все</option>
+                    <option>Государственное республиканское унитарное предприятие "Национальное кадастровое агентство"</option>
+                    <option>РУП "Брестское агентство по государственной регистрации и земельному кадастру"</option>
+                    <option>РУП "Витебское агентство по государственной регистрации и земельному кадастру"</option>
+                    <option>РУП "Гомельское агентство по государственной регистрации и земельному кадастру"</option>
+                    <option>РУП "Гродненское агентство по государственной регистрации и земельному кадастру"</option>
+                    <option>РУП "Минское городское агентство по государственной регистрации и земельному кадастру"</option>
+                    <option>РУП "Минское областное агентство по государственной регистрации и земельному кадастру"</option>
+                    <option>РУП "Могилевское агентство по государственной регистрации и земельному кадастру"</option>
+                </select>
+                <span class="material-symbols-outlined absolute right-2 top-2 text-[16px] pointer-events-none text-slate-400">expand_more</span>
+            </div>
+        </div>
+        <!-- Status Dropdown -->
+        <div class="space-y-1.5">
+            <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Статус претендента</label>
+            <div class="relative">
+                <select class="w-full px-3 py-2 bg-brand-lowest text-xs border-none rounded-md ring-1 ring-slate-200 focus:ring-brand-primary appearance-none text-slate-600">
+                    <option>Все статусы</option>
+                    <option>Активен</option>
+                    <option>Временно заблокирован</option>
+<!--                    <option>Заблокирован</option>-->
+                </select>
+                <span class="material-symbols-outlined absolute right-2 top-2 text-[16px] pointer-events-none text-slate-400">expand_more</span>
+            </div>
+        </div>
+        <div class="space-y-1.5">
+            <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Статус заявки</label>
+            <div class="relative">
+                <select class="w-full px-3 py-2 bg-brand-lowest text-xs border-none rounded-md ring-1 ring-slate-200 focus:ring-brand-primary appearance-none text-slate-600">
+                    <option>Все статусы</option>
+                    <option>Не подана</option>
+                    <option>Отклонена</option>
+                    <option>На рассмотрении</option>
+                    <option>Перенесена</option>
+                    <option>Одобрена</option>
+                    <option>Аттестован</option>
+                </select>
+                <span class="material-symbols-outlined absolute right-2 top-2 text-[16px] pointer-events-none text-slate-400">expand_more</span>
+            </div>
+        </div>
+        <div class="space-y-1.5">
+            <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Должность</label>
+            <div class="relative">
+                <select class="w-full px-3 py-2 bg-brand-lowest text-xs border-none rounded-md ring-1 ring-slate-200 focus:ring-brand-primary appearance-none text-slate-600">
+                    <option>Все</option>
+                    <option>Действующие специалисты</option>
+                    <option>Стажеры</option>
+                </select>
+                <span class="material-symbols-outlined absolute right-2 top-2 text-[16px] pointer-events-none text-slate-400">expand_more</span>
+            </div>
+        </div>
+    </div>
+
+<!-- Table Data Cluster (Bento/Editorial Style) -->
+       <table class="w-full text-left border-collapse" id="questions-table">
+        <thead class="sticky top-0 bg-brand-lowest text-[10px] font-bold uppercase text-slate-400 border-b border-brand-container z-10">
+        <tr>
+            <th class="px-2 py-2 cursor-pointer hover:text-brand-primary transition-colors group">
+                <div class="flex items-center gap-1 justify-center">
+                    ФИО <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
+                </div>
+            </th>
+            <th class="px-2 py-2 cursor-pointer hover:text-brand-primary transition-colors group">
+                <div class="flex items-center gap-1 justify-center">
+                    Организация <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
+                </div>
+            </th>
+            <th class="px-2 py-2 w-32 cursor-pointer hover:text-brand-primary transition-colors group">
+                <div class="flex items-center gap-1 justify-center">
+                    Должность <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
+                </div>
+            </th>
+            <th class="px-2 py-2 w-32 cursor-pointer hover:text-brand-primary transition-colors group">
+                <div class="flex items-center gap-1 justify-center">
+                    Дата приема<span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
+                </div>
+            </th>
+            <th class="px-2 py-2 w-32 cursor-pointer hover:text-brand-primary transition-colors group">
+                <div class="flex items-center gap-1 justify-center">
+                    Статус претендента <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
+                </div>
+            </th>
+            <th class="px-2 py-2 w-32 cursor-pointer hover:text-brand-primary transition-colors group">
+                <div class="flex items-center gap-1 justify-center">
+                    Предыдущая аттестация<span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
+                </div>
+            </th>
+            <th class="px-2 py-2 w-32 cursor-pointer hover:text-brand-primary transition-colors group">
+                <div class="flex items-center gap-1 justify-center">
+                    Вид аттестации <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
+                </div>
+            </th>
+            <th class="px-2 py-2 w-32 text-right pr-6 cursor-pointer hover:text-brand-primary transition-colors group" data-col="actions">
+                <div class="flex items-center justify-end gap-1 justify-center">
+                    Статус заявки <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
+                </div>
+            </th>
+            <th class="px-2 py-2 w-32 cursor-pointer hover:text-brand-primary transition-colors group">
+                <div class="flex items-center gap-1 justify-center">
+                    Аттестация назначена<span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
+                </div>
+            </th>
+            <th class="px-2 py-2 w-32 text-right pr-6 cursor-pointer hover:text-brand-primary transition-colors group" data-col="actions">
+                <div class="flex items-center justify-end gap-1 justify-center">Группа<span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
+                </div>
+            </th>
+            <th class="px-2 py-2 w-32 cursor-pointer hover:text-brand-primary transition-colors group">
+                <div class="flex items-center gap-1 justify-center">
+                    Действия<span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">settings</span>
+                </div>
+            </th>
+        </tr>
+        </thead>
+
+
+        <tbody class="text-xs text-brand-dark divide-y divide-brand-container">
+        <!-- Row 1 -->
+        <tr class="hover:bg-brand-container group cursor-pointer transition-colors question-row">
+            <td class="px-4 py-2 truncate max-w-[300px]">Иванов Алексей Иванович</td>
+            <td class="px-4 py-2">
+                Минское городское Агентство
+            </td>
+            <td class="px-4 py-2">
+                Специалист по ТИ 1 к.
+            </td>
+            <td class="px-4 py-2">
+                01.08.2016
+            </td>
+            <td class="px-4 py-2">
+                <span class="px-2 py-0.5 bg-emerald-100 text-[9px] text-on-surface uppercase rounded">Активен</span>
+            </td>
+            <td class="px-4 py-2">
+                23.09.2023
+            </td>
+            <td class="px-4 py-2">
+                Очередная
+            </td>
+            <td class="px-4 py-2">
+                <span class="px-2 py-0.5 bg-emerald-100 text-[9px] text-on-surface uppercase rounded">Одобрена</span>
+            </td>
+            <td class="px-4 py-2">
+                25.09.2026
+            </td>
+            <td class="px-4 py-2 text-[9px] ">
+                № А-41-26.10.2026
+            </td>
+            <td class="px-6 py-2">
+                <div class="flex items-center justify-end gap-1">
+                    <button class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-on-surface">
+                        <span title="Подать заявку" class="material-symbols-outlined text-lg" data-icon="content_copy">calendar_month</span>
+                    </button>
+                    <button onclick="window.location.href='#'" class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">
+                        <span title="Просмотреть заявку" class="material-symbols-outlined text-lg" data-icon="edit">visibility</span>
+                    </button>
+
+                </div>
+            </td>
+        </tr>
+        <!-- Row 2 -->
+        <tr class="hover:bg-brand-container group cursor-pointer transition-colors question-row">
+            <td class="px-4 py-2 truncate max-w-[300px]">Сидоров Дмитрий Иванович</td>
+            <td class="px-4 py-2">
+                Национальное кадастровое агентство
+            </td>
+            <td class="px-4 py-2">
+                Начальник отдела
+            </td>
+            <td class="px-4 py-2">
+                24.12.2012
+            </td>
+            <td class="px-4 py-2">
+                <span class="px-2 py-0.5 bg-emerald-100 text-[9px] text-on-surface uppercase rounded">Активен</span>
+            </td>
+            <td class="px-4 py-2">
+                25.09.2023
+            </td>
+            <td class="px-4 py-2">
+                Очередная
+            </td>
+            <td class="px-4 py-2">
+                <span class="px-2 py-0.5 bg-emerald-100 text-[9px] text-on-surface uppercase rounded">Одобрена</span>
+            </td>
+            <td class="px-4 py-2">
+                25.09.2026
+            </td>
+            <td class="px-4 py-2 text-[9px] ">
+                № А-42-26.10.2026
+            </td>
+            <td class="px-6 py-2">
+                <div class="flex items-center justify-end gap-1">
+                    <button class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-on-surface">
+                        <span title="Подать заявку" class="material-symbols-outlined text-lg" data-icon="content_copy">calendar_month</span>
+                    </button>
+                    <button onclick="window.location.href='#'" class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">
+                        <span title="Просмотреть заявку" class="material-symbols-outlined text-lg" data-icon="edit">visibility</span>
+                    </button>
+                </div>
+            </td>
+        </tr>
+        <!-- Row 3 -->
+        <tr class="hover:bg-brand-container group cursor-pointer transition-colors question-row">
+            <td class="px-4 py-2 truncate max-w-[300px]">Иванова Татьяна Васильевна</td>
+            <td class="px-4 py-2">
+                Гродненское Агентство
+            </td>
+            <td class="px-4 py-2">
+                Специалист по ТИ 2 к.
+            </td>
+            <td class="px-4 py-2">
+                01.04.2019
+            </td>
+            <td class="px-4 py-2">
+                <span class="px-2 py-0.5 bg-amber-100 text-[9px] text-on-surface uppercase rounded">Временно заблокирован</span>
+            </td>
+            <td class="px-4 py-2">
+                18.06.2023
+            </td>
+            <td class="px-4 py-2">
+                Очередная
+            </td>
+            <td class="px-4 py-2">
+                <span class="px-2 py-0.5 bg-surface-container-highest text-[9px] text-on-surface uppercase rounded">Не подана</span>
+            </td>
+            <td class="px-4 py-2">
+                -
+            </td>
+            <td class="px-4 py-2">-</td>
+            <td class="px-6 py-2">
+                <div class="flex items-center justify-end gap-1">
+                    <button class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-on-surface">
+                        <span title="Подать заявку" class="material-symbols-outlined text-lg" data-icon="content_copy">calendar_month</span>
+                    </button>
+                    <button onclick="window.location.href='#'" class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">
+                        <span title="Просмотреть заявку" class="material-symbols-outlined text-lg" data-icon="edit">visibility</span>
+                    </button>
+                </div>
+            </td>
+        </tr>
+        <!-- Row 4 -->
+        <tr class="hover:bg-brand-container group cursor-pointer transition-colors question-row">
+            <td class="px-4 py-2 truncate max-w-[300px]">Кузнецов Михаил Петрович</td>
+            <td class="px-4 py-2">
+                Брестское Агентство
+            </td>
+            <td class="px-4 py-2">
+                стажер
+            </td>
+            <td class="px-4 py-2">
+                01.08.2026
+            </td>
+            <td class="px-4 py-2">
+                <span class="px-2 py-0.5 bg-emerald-100 text-[9px] text-on-surface uppercase rounded">Активен</span>
+            </td>
+            <td class="px-4 py-2">
+                -
+            </td>
+            <td class="px-4 py-2">
+                Внеочередная
+            </td>
+            <td class="px-4 py-2">
+                <span class="px-2 py-0.5 bg-error-container text-[9px] text-on-surface uppercase rounded">Отклонена</span>
+            </td>
+            <td class="px-4 py-2">
+                -
+            </td>
+            <td class="px-4 py-2">-</td>
+            <td class="px-6 py-2">
+                <div class="flex items-center justify-end gap-1">
+                    <button class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-on-surface">
+                        <span title="Подать заявку" class="material-symbols-outlined text-lg" data-icon="content_copy">calendar_month</span>
+                    </button>
+                    <button onclick="window.location.href='#'" class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">
+                        <span title="Просмотреть заявку" class="material-symbols-outlined text-lg" data-icon="edit">visibility</span>
+                    </button>
+                </div>
+            </td>
+        </tr>
+        <!-- Row 5 -->
+        <tr class="hover:bg-brand-container group cursor-pointer transition-colors question-row">
+            <td class="px-4 py-2 truncate max-w-[300px]">Петрова Валерия Степановна</td>
+            <td class="px-4 py-2">
+                Гомельское Агентство
+            </td>
+            <td class="px-4 py-2">
+                Специалист по ТИ
+            </td>
+            <td class="px-4 py-2">
+                11.07.2023
+            </td>
+            <td class="px-4 py-2">
+                <span class="px-2 py-0.5 bg-emerald-100 text-[9px] text-on-surface uppercase rounded">Активен</span>
+            </td>
+            <td class="px-4 py-2">
+                28.11.2023
+            </td>
+            <td class="px-4 py-2">
+                Повторная
+            </td>
+            <td class="px-4 py-2">
+                <span class="px-2 py-0.5 bg-surface-container-highest text-[9px] text-on-surface uppercase rounded">Не подана</span>
+            </td>
+            <td class="px-4 py-2">
+                -
+            </td>
+            <td class="px-4 py-2">-</td>
+            <td class="px-6 py-2">
+                <div class="flex items-center justify-end gap-1">
+                    <button class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-on-surface">
+                        <span title="Подать заявку" class="material-symbols-outlined text-lg" data-icon="content_copy">calendar_month</span>
+                    </button>
+                    <button onclick="window.location.href='#'" class="p-1.5 hover:bg-white rounded transition-all text-slate-400 hover:text-primary">
+                        <span title="Просмотреть заявку" class="material-symbols-outlined text-lg" data-icon="edit">visibility</span>
+                    </button>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+
+    </table>
+</div>
+    <div class="px-6 py-4 flex justify-between items-center bg-brand-lowest border-t border-brand-container rounded-b-lg shrink-0">
+        <p class="text-[10px] text-slate-400 font-bold">Показано 1-10 из 240 записей</p>
+        <div class="flex items-center gap-1">
+            <button class="w-8 h-8 flex items-center justify-center text-slate-400 hover:bg-brand-container rounded"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button>
+            <button class="w-8 h-8 bg-brand-primary text-white text-[10px] font-bold rounded">1</button>
+            <button class="w-8 h-8 text-slate-600 text-[10px] font-bold hover:bg-brand-container rounded">2</button>
+            <button class="w-8 h-8 text-slate-600 text-[10px] font-bold hover:bg-brand-container rounded">3</button>
+            <span class="px-2 text-slate-300">...</span>
+            <button class="w-8 h-8 text-slate-600 text-[10px] font-bold hover:bg-brand-container rounded">24</button>
+            <button class="w-8 h-8 flex items-center justify-center text-slate-400 hover:bg-brand-container rounded"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button>
+        </div>
+    </div>
+</main>
+</div>
+
+
+<!-- Deep Modal Overlay Layer -->
+    <div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-on-surface/60 backdrop-blur-sm overflow-y-auto">
+        <div class="relative w-full max-w-2xl bg-surface-container-lowest rounded-xl shadow-2xl overflow-hidden flex flex-col border border-outline-variant/30">
+            <div class="bg-error-container/80 px-6 py-3 flex items-center justify-between text-on-error-container text-label-sm font-label-sm tracking-wider uppercase border-b border-error-container"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-lg text-error">warning</span>
+                <span class="font-bold">Отклонение заявки</span>
+            </div>
+                <button onclick="window.location.href='Рассмотрение_заявления.html'" class="w-7 h-7 rounded-md flex items-center justify-center text-on-error-container hover:bg-error-container transition-colors" title="Закрыть">
+                    <span class="material-symbols-outlined text-lg">close</span>
+            </button>
+            </div>
+            <div class="p-6 space-y-5">
+                <div class="space-y-1.5">
+                    <div class="flex items-center justify-between flex-wrap gap-2">
+                        <h3 class="text-headline-md font-headline-md text-on-surface text-lg sm:text-xl font-bold">Отклонение заявки № ЗВ-2025-0482</h3>
+                        <span class="px-2.5 py-1 rounded text-label-sm font-label-sm bg-error-container text-on-error-container font-semibold">Отклонена (Требует доработки)</span>
+                    </div>
+                    <p class="text-label-sm font-label-sm text-on-surface-variant">Претендент: <span class="font-semibold text-on-surface">Смирнова Елена Васильевна</span> (EMP-09241)</p>
+                </div>
+            <div class="bg-error-container/30 border border-error-container rounded-lg p-3.5 flex items-start gap-3">
+            <span class="material-symbols-outlined text-error text-xl shrink-0 mt-0.5">info</span>
+                <div class="text-label-sm font-label-sm text-on-surface space-y-1">
+            <div class="font-semibold text-error">Внимание! Заявка будет отклонена и возвращена Специалисту ОКР ТОР</div>
+                    <p class="text-on-surface-variant leading-relaxed text-xs">Заявка будет снята с рассмотрения текущей сессии. Для допуска к аттестации потребуется повторная подача комплекта документов после исправления всех указанных замечаний.</p>
+                </div>
+            </div>
+                <div class="space-y-2">
+            <label class="block text-label-sm font-label-sm text-outline uppercase tracking-wider">Быстрый выбор типовой причины</label>
+                <div class="flex flex-wrap gap-1.5">
+            <button class="px-2.5 py-1 rounded-md text-xs font-medium bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" type="button">Неполный пакет документов</button>
+            <button class="px-2.5 py-1 rounded-md text-xs font-medium bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" type="button">Отсутствует подпись / печать</button>
+                    <button class="px-2.5 py-1 rounded-md text-xs font-medium bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" type="button">Ошибка в реквизитах приказа</button>
+                    <button class="px-2.5 py-1 rounded-md text-xs font-medium bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" type="button">Несоответствие стажа</button>
+                </div>
+                </div>
+                <div class="space-y-1.5">
+                    <div class="flex justify-between items-center">
+                        <label class="text-label-sm font-label-sm font-semibold text-on-surface">Причина отклонения и требования по устранению замечаний <span class="text-error">*</span>
+                        </label>
+                        <span class="text-xs text-outline font-mono">0 / 1000</span>
+                    </div>
+                <textarea class="w-full rounded-lg bg-surface-container-low border border-outline-variant/60 focus:border-primary focus:bg-surface-container-lowest p-3 text-body-md text-sm text-on-surface placeholder:text-outline/70 focus:outline-none transition-all" placeholder="Подробно опишите выявленные нарушения, замечания к прикрепленным документам (например: отсутствует подпись руководителя, некорректная дата приказа и т.д.) и укажите конкретные требования для повторной подачи..." rows="4" ></textarea>
+            <p class="text-[11px] text-on-surface-variant flex items-center gap-1">
+                <span class="material-symbols-outlined text-[13px] text-outline">help</span>Минимум 20 символов. Текст замечания будет отправлен специалисту ОКР ТОР.</p>
+                </div>
+<!--                <div class="pt-1">-->
+<!--                    <label class="flex items-center gap-2.5 cursor-pointer select-none">-->
+<!--                        <input checked="" class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary/20" type="checkbox"/>-->
+<!--                        <span class="text-label-sm font-label-sm text-on-surface">Уведомить Специалиста ОКР ТОР по электронной почте и в системе ESA</span>-->
+<!--                    </label>-->
+<!--                </div>-->
+            </div>
+            <div class="bg-surface-container-low px-6 py-3.5 flex items-center justify-between border-t border-outline-variant/20">
+                <button onclick="window.location.href='Рассмотрение_заявления.html'" class="px-4 py-2 rounded-lg text-label-md font-label-md text-on-surface-variant hover:bg-surface-container-highest transition-colors" type="button">Отмена</button>
+                <div class="flex items-center gap-3">
+                    <button onclick="window.location.href='План-график.html'" class="px-5 py-2.5 rounded-lg text-label-md font-label-md bg-error text-on-error hover:bg-error/90 active:bg-error transition-all flex items-center gap-2 shadow-sm font-semibold" type="button">
+            <span class="material-symbols-outlined text-base">block</span>
+            <span>Подтвердить отклонение</span>
+        </button>
+        </div>
+        </div>
+        </div>
+    </div>
+
+
+
+
+<!--<div class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto bg-inverse-surface/60 backdrop-blur-md animate-fadeIn" id="certification-modal">-->
+<!--    <div class="relative w-full max-w-5xl max-h-[92vh] flex flex-col bg-surface-container-lowest rounded-2xl shadow-[0_25px_60px_rgba(0,20,83,0.22)] overflow-hidden border border-outline-variant/20 my-auto text-on-surface">-->
+<!--        &lt;!&ndash; Header &ndash;&gt;-->
+<!--        <div class="px-8 pt-6 pb-0 bg-surface-container-low border-b border-outline-variant/15 flex-shrink-0">-->
+<!--            <div class="flex items-start justify-between gap-4">-->
+<!--                <div>-->
+<!--                    <div class="flex items-center gap-8">-->
+<!--                        <h2 class="text-headline-md font-bold text-on-surface">Проверка заявки на аттестацию</h2>-->
+<!--                        <div class="flex items-center gap-4 text-label-sm font-label-sm text-on-surface-variant">-->
+<!--                        <span class="flex items-center gap-1">-->
+<!--                            <span class="material-symbols-outlined text-sm">schedule</span>-->
+<!--                            Поступила: 28.09.2026 в 14:20-->
+<!--                        </span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--&lt;!&ndash;                    <div class="flex items-center gap-2 mb-1">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <span class="bg-slate-400 text-on-primary text-[10px] px-2 py-1 rounded font-black tracking-widest uppercase ">Не подана</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--                    <div class="flex items-center gap-2 mb-1">-->
+<!--                        <span class="bg-[#ffa12b] text-on-primary text-[10px] px-2 py-1 rounded font-black tracking-widest uppercase ">На рассмотрении</span>-->
+<!--                    </div>-->
+<!--&lt;!&ndash;                    <div class="flex items-center gap-2 mb-1">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <span class="bg-[#a10f0f] text-on-primary text-[10px] px-2 py-1 rounded font-black tracking-widest uppercase ">Отклонена</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <div class="flex items-center gap-2 mb-1">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <span class="bg-primary-container text-on-primary text-[10px] px-2 py-1 rounded font-black tracking-widest uppercase ">Одобрена</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <div class="flex items-center gap-2 mb-1">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <span class="bg-slate-400 text-on-primary text-[10px] px-2 py-1 rounded font-black tracking-widest uppercase ">Перенесена</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <div class="flex items-center gap-2 mb-1">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <span class="bg-primary-container text-on-primary text-[10px] px-2 py-1 rounded font-black tracking-widest uppercase ">Аттестован</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--                </div>-->
+<!--                <button class="p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" onclick="window.location.href='План-график.html'">-->
+<!--                    <span class="material-symbols-outlined text-2xl">close</span>-->
+<!--                </button>-->
+<!--            </div>-->
+<!--            &lt;!&ndash; Scenario Tabs &ndash;&gt;-->
+<!--            <div class="flex items-center gap-2 mt-4 pt-2 overflow-x-auto">-->
+<!--                <button onclick="window.location.href='#'" class="px-4 py-2 text-label-md font-semibold text-primary bg-surface-container-lowest rounded-t-lg shadow-sm flex items-center gap-2">-->
+<!--                    Действующие специалисты-->
+<!--                </button>-->
+<!--                <button onclick="window.location.href='#'" class="px-4 py-2 text-label-md font-medium text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 rounded-t-lg transition-colors flex items-center gap-2">-->
+<!--                    Стажер-->
+<!--                </button>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash; Scrollable Modal Body &ndash;&gt;-->
+<!--        <div class="p-8 overflow-y-auto flex-1 space-y-6 bg-surface-bright/50">-->
+<!--            &lt;!&ndash; Section 1: Candidate Details (Read-Only) &ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="p-5 rounded-xl bg-surface-container-low border border-outline-variant/15">&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="flex items-center justify-between mb-3">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <h3 class="text-label-md font-bold uppercase tracking-wider text-on-surface-variant flex items-center gap-2">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <span class="material-symbols-outlined text-primary text-lg">person_pin</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                        Сведения о претенденте&ndash;&gt;-->
+<!--&lt;!&ndash;                    </h3>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <div class="bg-surface-container-lowest p-3 rounded-lg border border-outline-variant/10">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <span class="text-label-sm text-on-surface-variant block mb-1">ФИО</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <p class="font-bold text-on-surface">Иванов Алексей Иванович</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <div class="bg-surface-container-lowest p-3 rounded-lg border border-outline-variant/10">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <span class="text-label-sm text-on-surface-variant block mb-1">Организация / Филиал</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <p class="font-semibold text-on-surface">РУП "Минское городское агентство по государственной регистрации и земельному кадастру"</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <span class="text-label-sm text-on-surface-variant">-</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <div class="bg-surface-container-lowest p-3 rounded-lg border border-outline-variant/10">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <span class="text-label-sm text-on-surface-variant block mb-1">Должность</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <p class="font-semibold text-on-surface">Специалист по ТИ 1 к.</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <div class="bg-surface-container-lowest p-3 rounded-lg border border-outline-variant/10">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <span class="text-label-sm text-on-surface-variant block mb-1">Срок действия аттестации</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <p class="font-bold text-[#d84315] flex items-center gap-1">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <span class="material-symbols-outlined text-base">event_busy</span> 02.11.2026&ndash;&gt;-->
+<!--&lt;!&ndash;                        </p>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <span class="text-label-sm text-on-surface-variant">Стаж в должности: 10 лет 4 мес.</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+
+
+<!--            <div class="space-y-4 bg-surface-container-lowest p-4 rounded-lg">-->
+<!--                <div class="flex items-center gap-2 mb-4">-->
+<!--                    <span class="w-1 h-6 bg-primary rounded-full"></span>-->
+<!--                    <h2 class="text-label-md uppercase tracking-widest text-primary">Сведения о претенденте</h2>-->
+<!--                </div>-->
+<!--                <div class="grid grid-cols-2 gap-y-6 gap-x-8">-->
+<!--                    <div class="flex flex-col gap-1">-->
+<!--                        <span class="text-label-sm text-outline uppercase">Фамилия, имя, отчество</span>-->
+<!--                        <span class="font-label-md text-on-surface">Иванов Алексей Иванович</span>-->
+<!--                    </div>-->
+<!--                    <div class="flex flex-col gap-1">-->
+<!--                        <span class="text-label-sm text-outline uppercase">Наименование организации </span>-->
+<!--                        <span class="font-label-md text-on-surface">РУП "Минское городское агентство по государственной регистрации и земельному кадастру"</span>-->
+<!--                    </div>-->
+<!--                    <div class="flex flex-col gap-1">-->
+<!--                        <span class="text-label-sm text-outline uppercase">Должность</span>-->
+<!--                        <span class="font-label-md text-on-surface">Специалист по ТИ 1 к.</span>-->
+<!--                    </div>-->
+<!--                                        <div class="flex flex-col gap-1">-->
+<!--                        <span class="text-label-sm text-outline uppercase">Срок действия аттестации</span>-->
+<!--                        <span class="font-label-md text-on-surface">22.09.2026</span>-->
+<!--                    </div>-->
+<!--                    <div class="flex flex-col gap-1">-->
+<!--                        <span class="text-label-sm text-outline uppercase">Стаж работы в должности</span>-->
+<!--                        <span class="font-label-md text-on-surface">12 лет 2 месяца</span>-->
+<!--                    </div>-->
+<!--                    <div class="flex flex-col gap-1">-->
+<!--                        <span class="text-label-sm text-outline uppercase">Наличие курсов за 3 года</span>-->
+<!--                        <span class="font-label-md text-on-surface">да</span>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            &lt;!&ndash; Section 2: Grounds & Order Credentials &ndash;&gt;-->
+
+<!--            <div class="p-5 rounded-xl bg-surface-container-lowest border border-outline-variant/15 shadow-sm">-->
+<!--                <div class="flex items-center gap-2 mb-4">-->
+<!--                    <span class="w-1 h-6 bg-primary rounded-full"></span>-->
+<!--                    <h2 class="text-label-md uppercase tracking-widest text-primary">1. Основание и реквизиты приказа</h2>-->
+<!--                </div>-->
+
+<!--                <div class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors p-base rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-base shadow-sm">-->
+<!--                    <div class="flex items-center gap-3 min-w-0 md:w-5/12">-->
+<!--&lt;!&ndash;                        <div class="w-10 h-10 rounded-lg bg-surface-container text-primary flex items-center justify-center shrink-0">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <input class="" type="checkbox">&ndash;&gt;-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                        <div class="">-->
+<!--                            <div class="text-label-md font-label-md text-on-surface font-semibold ">Вид аттестации:</div>-->
+<!--                        </div>-->
+<!--                        <div class="">-->
+<!--                            <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container rounded-lg text-label-sm font-label-sm text-on-surface">-->
+
+<!--                                <span class="font-semibold text-primary">Очередная</span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors p-base rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-base shadow-sm">-->
+<!--                    <div class="flex items-center gap-3">-->
+<!--                        &lt;!&ndash;                        <div class="w-10 h-10 rounded-lg bg-surface-container text-primary flex items-center justify-center shrink-0">&ndash;&gt;-->
+<!--                        &lt;!&ndash;                            <input class="" type="checkbox">&ndash;&gt;-->
+<!--                        &lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                        <div class="">-->
+<!--                            <div class="text-label-md font-label-md text-on-surface font-semibold">Номер и дата приказа:</div>-->
+<!--                        </div>-->
+<!--                        <div class="">-->
+<!--                            <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container rounded-lg text-label-sm font-label-sm text-on-surface">-->
+<!--                                <span class="font-semibold text-primary">Приказ № 142 от 12.08.2026 о направлении на аттестацию</span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                </div>-->
+
+
+
+<!--&lt;!&ndash;                <div class="space-y-2">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <label class="text-label-sm text-outline uppercase">&ndash;&gt;-->
+<!--&lt;!&ndash;                        Вид аттестации&ndash;&gt;-->
+<!--&lt;!&ndash;                    </label>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <select class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-lg px-4 py-2 text-body-md text-on-surface appearance-none focus:ring-2 focus:ring-primary/30 outline-none">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <option selected="" disabled>Выберите вид аттестации</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <option>Очередная</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <option>Внеочередная</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <option>Повторная</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </select>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="grid grid-cols-1 md:grid-cols-1 gap-5">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <div>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <label class="text-label-sm text-outline uppercase">&ndash;&gt;-->
+<!--&lt;!&ndash;                            Номер и дата приказа <span class="text-error">*</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </label>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <div class="relative">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <input class="w-full bg-surface-container-low border border-outline-variant/20 rounded-lg px-4 py-2.5 text-body-md text-on-surface focus:ring-2 focus:ring-primary/30 outline-none font-medium" type="text" value="Приказ № 142 от 12.08.2026 о направлении на аттестацию"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--            </div>-->
+<!--            &lt;!&ndash; Section 2: Documents and PDF Attachments &ndash;&gt;-->
+<!--            <div class="space-y-4 bg-surface-container-lowest p-4 rounded-lg">-->
+<!--                <div class="flex items-center gap-2 mb-4">-->
+<!--                    <span class="w-1 h-6 bg-primary rounded-full"></span>-->
+<!--                    <h2 class="text-label-md uppercase tracking-widest text-primary">2. Проверка прикрепленных документов</h2>-->
+<!--                </div><div class="space-y-base">-->
+<!--                <div class="flex items-center justify-between">-->
+<!--                    <div class="space-y-0.5">-->
+
+<!--                        <p class="text-label-sm font-label-sm text-on-surface-variant">Проверьте комплектность и подлинность документов перед вынесением решения о допуске к тестированию.</p>-->
+<!--                    </div>-->
+<!--                    <span class="text-label-sm font-label-sm text-primary font-semibold">Комплект: 3 / 3 загружено</span>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; Document List Table-Like Rows (Tonal Layering, Zero harsh borders) &ndash;&gt;-->
+<!--                <div class="space-y-2">-->
+<!--                    &lt;!&ndash; Document Row 1 &ndash;&gt;-->
+<!--                    <div class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors p-base rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-base shadow-sm">-->
+<!--                        <div class="flex items-center gap-3 min-w-0 md:w-5/12">-->
+
+<!--                            <div class="truncate">-->
+<!--                                <div class="text-label-md font-label-md text-on-surface font-semibold truncate">Аттестационный лист (предыдущая аттестация)</div>-->
+
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="md:w-4/12">-->
+<!--                            <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container rounded-lg text-label-sm font-label-sm text-on-surface">-->
+<!--                                <span class="text-outline">Статус:</span>-->
+<!--                                <span class="font-semibold text-primary">Загружена автоматически</span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="flex items-center gap-2 justify-end md:w-3/12">-->
+<!--                            <button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface text-label-sm font-label-sm flex items-center gap-1 hover:bg-surface-container-highest transition-colors">-->
+<!--                                <span class="material-symbols-outlined text-sm">visibility</span>-->
+<!--                                <span>Предпросмотр</span>-->
+<!--                            </button>-->
+<!--                            <button class="p-1.5 text-on-surface-variant hover:bg-surface-container rounded-lg transition-colors" title="Скачать">-->
+<!--                                <span class="material-symbols-outlined text-lg">download</span>-->
+<!--                            </button>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash; Document Row 2 &ndash;&gt;-->
+<!--                    <div class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors p-base rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-base shadow-sm">-->
+<!--                    <div class="flex items-center gap-3 min-w-0 md:w-5/12">-->
+
+<!--                        <div class="truncate">-->
+<!--                            <div class="text-label-md font-label-md text-on-surface font-semibold truncate">Аттестационная характеристика</div>-->
+
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash; Assessment Pill &ndash;&gt;-->
+
+<!--                    <div class="md:w-4/12">-->
+<!--                        <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container rounded-lg text-label-sm font-label-sm text-on-surface">-->
+<!--                            <span class="text-outline">Ознакомление:</span>-->
+<!--                            <span class="font-semibold text-primary">ознакомлен, согласен</span>-->
+<!--                        </div>-->
+<!--                        <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container rounded-lg text-label-sm font-label-sm text-on-surface">-->
+<!--                            <span class="text-outline">Оценка:</span>-->
+<!--                            <span class="font-semibold text-primary">положительная на специалиста</span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash; Actions &ndash;&gt;-->
+<!--                    <div class="flex items-center gap-2 justify-end md:w-3/12">-->
+<!--                        <button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface text-label-sm font-label-sm flex items-center gap-1 hover:bg-surface-container-highest transition-colors">-->
+<!--                            <span class="material-symbols-outlined text-sm">visibility</span>-->
+<!--                            <span>Предпросмотр</span>-->
+<!--                        </button>-->
+<!--                        <button class="p-1.5 text-on-surface-variant hover:bg-surface-container rounded-lg transition-colors" title="Скачать">-->
+<!--                            <span class="material-symbols-outlined text-lg">download</span>-->
+<!--                        </button>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                    &lt;!&ndash; Document Row 3 &ndash;&gt;-->
+<!--                    <div class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors p-base rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-base shadow-sm">-->
+<!--                        <div class="flex items-center gap-3 min-w-0 md:w-5/12">-->
+
+<!--                            <div class="truncate">-->
+<!--                                <div class="text-label-md font-label-md text-on-surface font-semibold truncate">Результаты анализа качества выполняемых работ по технической инвентаризации</div>-->
+
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="md:w-4/12">-->
+<!--                            <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container rounded-lg text-label-sm font-label-sm text-on-surface">-->
+<!--                                <span class="text-outline">Оценка:</span>-->
+<!--                                <span class="font-semibold text-primary">решение о признании действии специалиста по технической инвентаризации полностью соответствующими законодательству</span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="flex items-center gap-2 justify-end md:w-3/12">-->
+<!--                            <button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface text-label-sm font-label-sm flex items-center gap-1 hover:bg-surface-container-highest transition-colors">-->
+<!--                                <span class="material-symbols-outlined text-sm">visibility</span>-->
+<!--                                <span>Предпросмотр</span>-->
+<!--                            </button>-->
+<!--                            <button class="p-1.5 text-on-surface-variant hover:bg-surface-container rounded-lg transition-colors" title="Скачать">-->
+<!--                                <span class="material-symbols-outlined text-lg">download</span>-->
+<!--                            </button>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash; Document Row 4 Stager &ndash;&gt;-->
+<!--                    <div class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors p-base rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-base shadow-sm">-->
+<!--                        <div class="flex items-center gap-3 min-w-0 md:w-5/12">-->
+
+<!--                            <div class="truncate">-->
+<!--                                <div class="text-label-md font-label-md text-on-surface font-semibold truncate">Отчет о стажировке</div>-->
+
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="md:w-4/12">-->
+<!--                            <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container rounded-lg text-label-sm font-label-sm text-on-surface">-->
+<!--                                <span class="text-outline">Результат:</span>-->
+<!--                                <span class="font-semibold text-primary">прошел(ла) с отличием</span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="flex items-center gap-2 justify-end md:w-3/12">-->
+<!--                            <button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface text-label-sm font-label-sm flex items-center gap-1 hover:bg-surface-container-highest transition-colors">-->
+<!--                                <span class="material-symbols-outlined text-sm">visibility</span>-->
+<!--                                <span>Предпросмотр</span>-->
+<!--                            </button>-->
+<!--                            <button class="p-1.5 text-on-surface-variant hover:bg-surface-container rounded-lg transition-colors" title="Скачать">-->
+<!--                                <span class="material-symbols-outlined text-lg">download</span>-->
+<!--                            </button>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            </div>-->
+<!--            &lt;!&ndash; Section 4: Calendar week selection &ndash;&gt;-->
+<!--            <div class="p-5 rounded-xl bg-surface-container-lowest border border-outline-variant/15 shadow-sm">-->
+<!--                <div class="flex items-center gap-2 mb-4">-->
+<!--                    <span class="w-1 h-6 bg-primary rounded-full"></span>-->
+<!--                    <h2 class="text-label-md uppercase tracking-widest text-primary">3. Выбранный период аттестации (Календарная неделя)</h2>-->
+<!--                </div>-->
+
+<!--                <p class="text-label-sm text-[#2e7d32] font-semibold mt-1 flex items-center gap-1">-->
+<!--                    <span class="material-symbols-outlined text-base">check_circle</span>-->
+<!--                    Срок подачи соблюден (за 2 месяца до даты аттестации / от 2 до 6 мес. для стажеров)-->
+<!--                </p>-->
+
+<!--                &lt;!&ndash; Interactive Week Selector Cards &ndash;&gt;-->
+<!--                <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 mt-4">-->
+<!--&lt;!&ndash;                    <div class="p-3.5 rounded-xl border border-outline-variant/20 bg-surface-container-low hover:border-primary/50 cursor-pointer transition-all">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <div class="text-label-sm text-on-surface-variant font-medium">42 неделя</div>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <div class="text-body-md font-bold text-on-surface mt-0.5">07.09 - 13.09</div>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <span class="text-label-sm text-[#ba1a1a] block mt-1 font-semibold">Подано заявок: 25</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <div class="p-3.5 rounded-xl border border-outline-variant/20 bg-surface-container-low hover:border-primary/50 cursor-pointer transition-all">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <div class="text-label-sm text-on-surface-variant font-medium">43 неделя</div>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <div class="text-body-md font-bold text-on-surface mt-0.5">14.09 - 20.09</div>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <span class="text-label-sm text-[#2e7d32] block mt-1 font-semibold">Подано заявок: 8</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--                    <div class="p-3.5 rounded-xl border-2 border-primary bg-primary-fixed/20 cursor-pointer shadow-sm transition-all relative">-->
+<!--                        <span class="absolute top-2 right-2 text-primary material-symbols-outlined text-base font-bold">check_circle</span>-->
+<!--                        <div class="text-label-sm text-primary font-bold uppercase">44 неделя</div>-->
+<!--                        <div class="text-body-md font-bold text-on-surface mt-0.5">21.09 - 27.09</div>-->
+<!--                        <span class="text-label-sm text-primary font-semibold block mt-1">Подано заявок:4</span>-->
+<!--                    </div>-->
+
+<!--&lt;!&ndash;                    <div class="p-3.5 rounded-xl border border-outline-variant/20 bg-surface-container-low hover:border-primary/50 cursor-pointer transition-all">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <div class="text-label-sm text-on-surface-variant font-medium">45 неделя</div>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <div class="text-body-md font-bold text-on-surface mt-0.5">28.09 - 04.10</div>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <span class="text-label-sm text-[#2e7d32] block mt-1 font-semibold">Подано заявок: 9</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <div class="p-3.5 rounded-xl border border-outline-variant/20 bg-surface-container-low hover:border-primary/50 cursor-pointer transition-all">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <div class="text-label-sm text-on-surface-variant font-medium">46 неделя</div>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <div class="text-body-md font-bold text-on-surface mt-0.5">05.10 - 11.10</div>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <span class="text-label-sm text-[#2e7d32] block mt-1 font-semibold">Подано заявок: 2</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            &lt;!&ndash; Section 5: Postponement Request (Запрос переноса срока) &ndash;&gt;-->
+<!--            <div class="p-5 rounded-xl bg-surface-container-low border border-outline-variant/20 shadow-sm">-->
+<!--                <div class="flex items-center justify-between mb-4">-->
+<!--                    <div class="flex items-center gap-2 mb-4">-->
+<!--                        <span class="w-1 h-6 bg-primary rounded-full"></span>-->
+<!--                        <h2 class="text-label-md uppercase tracking-widest text-primary">4. Запрошен перенос срока аттестации (Нормативные основания)</h2>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="space-y-4">-->
+<!--                    <div class="grid grid-cols-1 md:grid-cols-1 gap-4">-->
+<!--                        <div class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors p-base rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-base shadow-sm">-->
+<!--                            <div class="flex items-center gap-3 ">-->
+<!--                                &lt;!&ndash;                        <div class="w-10 h-10 rounded-lg bg-surface-container text-primary flex items-center justify-center shrink-0">&ndash;&gt;-->
+<!--                                &lt;!&ndash;                            <input class="" type="checkbox">&ndash;&gt;-->
+<!--                                &lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                                <div class="">-->
+<!--                                    <div class="text-label-md font-label-md text-on-surface font-semibold ">Причина переноса:</div>-->
+<!--                                </div>-->
+<!--                                <div class="">-->
+<!--                                    <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container rounded-lg text-label-sm font-label-sm text-on-surface">-->
+
+<!--                                        <span class="font-semibold text-primary">Длительное излечение (более 4 месяцев)</span>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="">-->
+<!--                                    <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container rounded-lg text-label-sm font-label-sm text-on-surface">-->
+
+<!--                                        <span class="font-semibold text-primary">В связи с нахождением на стационарном лечении согласно листку нетрудоспособности № 91024823 от 10.09.2026 г.</span>-->
+<!--                                    </div>-->
+<!--                                </div></div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash; Footer / Sticky Action Bar &ndash;&gt;-->
+<!--        <section class="px-section-gap py-module-gap bg-surface-container-lowest flex justify-between items-center border-t-2 border-surface-container-low"><div class="flex flex-col md:flex-row items-center justify-center gap-4 w-full">-->
+<!--            <button onclick="window.location.href='План-график.html'" class="w-full  px-6 py-4 text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors rounded-lg flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98] transition-all" style="">-->
+<!--                Отмена</button>-->
+<!--            <button onclick="window.location.href='#'" class="w-full px-6 py-4 text-sm font-semibold border border-outline-variant bg-error-container text-on-error-container hover:bg-error hover:text-on-error rounded-lg flex items-center justify-center gap-2  hover:scale-[1.02] active:scale-[0.98] transition-all">-->
+<!--                <span class="material-symbols-outlined text-base">cancel</span>-->
+<!--                <span>Отклонить заявку</span>-->
+<!--                </button>-->
+<!--            <button onclick="window.location.href='План-график.html'" class="gradient-btn text-on-primary w-full  py-4 px-6 rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98] transition-all" style="">-->
+<!--                <span class="material-symbols-outlined text-base">task_alt</span>-->
+<!--                Допустить к аттестации</button>-->
+<!--        </div>-->
+<!--        </section>-->
+
+
+<!--&lt;!&ndash;        <div class="px-8 py-4 bg-surface-container-low border-t border-outline-variant/15 flex-shrink-0 flex flex-col md:flex-row items-center justify-between gap-4">&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="flex items-center gap-2.5 w-full md:w-auto justify-end flex-wrap">&ndash;&gt;-->
+<!--&lt;!&ndash;                <button onclick="window.location.href='План-график.html'" class="px-4 py-2.5 rounded-lg text-label-md font-semibold text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" onclick="document.getElementById('certification-modal').classList.add('hidden')">&ndash;&gt;-->
+<!--&lt;!&ndash;                    Отмена&ndash;&gt;-->
+<!--&lt;!&ndash;                </button>&ndash;&gt;-->
+<!--&lt;!&ndash;                <button class="px-4 py-2.5 rounded-lg border border-error/30 text-label-md font-semibold text-error hover:bg-error-container/40 transition-colors flex items-center gap-1.5">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <span class="material-symbols-outlined text-lg">cancel</span> Отклонить с замечаниями&ndash;&gt;-->
+<!--&lt;!&ndash;                </button>&ndash;&gt;-->
+<!--&lt;!&ndash;                <button class="px-4 py-2.5 rounded-lg border border-outline-variant/30 text-label-md font-semibold text-primary hover:bg-surface-container-highest transition-colors flex items-center gap-1.5">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <span class="material-symbols-outlined text-lg">update</span> Перенести срок&ndash;&gt;-->
+<!--&lt;!&ndash;                </button>&ndash;&gt;-->
+<!--&lt;!&ndash;                <button onclick="window.location.href='План-график.html'" class="px-5 py-2.5 rounded-lg bg-[#2e7d32] hover:bg-[#256629] text-white text-label-md font-bold shadow-sm transition-all flex items-center gap-1.5">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <span class="material-symbols-outlined text-lg">check</span> Одобрить заявку&ndash;&gt;-->
+<!--&lt;!&ndash;                </button>&ndash;&gt;-->
+<!--&lt;!&ndash;                <button class="gradient-btn px-6 py-2.5 rounded-lg text-on-primary text-label-md font-bold shadow-md hover:shadow-lg transition-all flex items-center gap-2">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <span class="material-symbols-outlined text-lg">send</span> Сохранить и отправить повторно&ndash;&gt;-->
+<!--&lt;!&ndash;                </button>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--    </div>-->
+<!--</div>-->
+</body>
+</html>
