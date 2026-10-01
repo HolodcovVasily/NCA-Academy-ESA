@@ -311,14 +311,6 @@
                 <div>
                     <h1 class="text-display-lg font-display-lg text-on-surface">Управление претендентами</h1>
                 </div>
-                <div class="flex items-center gap-3">
-                    <button onclick="window.location.href='./Добавление претендента.html'" class="text-sm font-semibold gradient-btn text-on-primary  px-8 py-2.5 rounded-lg font-label-md hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2" title="Включение стажеров, вновь принятых лиц или назначение внеочередной аттестации">Добавить претендента</button>
-                    <button onclick="window.location.href='../Результаты за период/Результаты.html'" class="text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors px-8 py-2.5 rounded-lg font-label-md hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2" title="Результаты за период">
-                        Результаты за период
-                    </button>
-                    <!--    <button onclick="window.location.href='#'" class="text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors px-8 py-2.5 rounded-lg font-label-md hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2" title="Экспорт в XLS">Экспорт в XLS</button>-->
-                    <!--    <button onclick="window.location.href='#'" class="px-4 py-2 gradient-btn text-white text-sm hover:scale-[1.02] active:scale-[0.98] font-semibold rounded-lg transition-opacity">Опубликовать план-график</button>-->
-                </div>
             </div>
             <!-- Main Tabs -->
             <div class="flex gap-3 border-b border-outline-variant/15">
@@ -337,6 +329,7 @@
                     </button>
                 </div>
             </div>
+
 
 
         </header>
@@ -359,15 +352,13 @@
             </div>
 
             <!-- Action Buttons -->
-            <div class="flex flex-wrap items-center gap-3">
+            <div class="flex items-center gap-3">
                 <button class="px-3.5 py-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container-highest text-on-surface text-label-md font-label-md flex items-center gap-2 transition-colors">
                     <span class="material-symbols-outlined text-[18px]">tune</span>
                     <span>Фильтры по ТОР</span>
                 </button>
-                <button class="px-3.5 py-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container-highest text-on-surface text-label-md font-label-md flex items-center gap-2 transition-colors">
-                    <span class="material-symbols-outlined text-[18px]">file_download</span>
-                    <span>Экспорт XLS</span>
-                </button>
+                <button onclick="window.location.href='Экспорт план-графика.html'" class="text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors px-8 py-2.5 rounded-lg font-label-md hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2" title="Экспорт в XLS">Экспорт в XLS</button>
+                <button onclick="window.location.href='Публикация план-графика.html'" class="px-4 py-2 gradient-btn text-white text-sm hover:scale-[1.02] active:scale-[0.98] font-semibold rounded-lg transition-opacity">Опубликовать план-график</button>
             </div>
         </div>
 
@@ -425,7 +416,7 @@
             <div class="bg-surface-container-low px-4 py-2.5 rounded-xl flex flex-wrap items-center justify-between gap-4 border border-outline-variant/15 text-xs">
                 <div class="text-on-surface-variant flex items-center gap-1">
                     <span class="material-symbols-outlined text-sm text-primary">info</span>
-                    <p class="text-xs text-on-surface-variant mt-1">Отмечайте чек-боксы перед номерами недель для включения или исключения периода аттестации.</p>
+                    <p class="text-xs text-on-surface-variant mt-1">Отмечайте чек-боксы перед номерами недель для включения или исключения предварительного периода аттестации.</p>
                 </div>
             </div>
         </div>
