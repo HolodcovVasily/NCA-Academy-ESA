@@ -7,33 +7,6 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<!--    <script id="tailwind-config">-->
-<!--        tailwind.config = {-->
-<!--            darkMode: "class",-->
-<!--            theme: {-->
-<!--                extend: {-->
-<!--                    colors: {-->
-<!--                        "primary": "#3450a9",-->
-<!--                        "primary-container": "#4e69c3",-->
-<!--                        "on-primary": "#ffffff",-->
-<!--                        "surface": "#f7f9fb",-->
-<!--                        "surface-container-low": "#f2f4f6",-->
-<!--                        "surface-container-lowest": "#ffffff",-->
-<!--                        "surface-container-high": "#e6e8ea",-->
-<!--                        "surface-container-highest": "#e0e3e5",-->
-<!--                        "on-surface": "#191c1e",-->
-<!--                        "on-surface-variant": "#444652",-->
-<!--                        "outline-variant": "#c6c6cd",-->
-<!--                        "error": "#ba1a1a",-->
-<!--                        "error-container": "#ffdad6"-->
-<!--                    },-->
-<!--                    fontFamily: {-->
-<!--                        inter: ["Inter", "sans-serif"]-->
-<!--                    }-->
-<!--                }-->
-<!--            }-->
-<!--        }-->
-<!--    </script>-->
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -222,7 +195,7 @@
             border-radius: 4px;
         }
         .week-row.is-active-period {
-            background-color: rgba(224, 231, 255, 0.65);
+            background-color: #a6b4e4a6;
             border-left: 3px solid #3755c3;
         }
         .week-row.is-active-period .week-tag {
@@ -271,9 +244,6 @@
     </div>
 </header>
 
-
-
-
 <div class="flex flex-1 overflow-hidden">
 <!-- SideNavBar (Shared Component) -->
     <aside class="hidden md:flex flex-col py-section-gap px-container-padding bg-surface-container-low w-72 flex-shrink-0 z-40 relative after:content-[''] after:absolute after:right-0 after:top-0 after:bottom-0 after:w-px after:bg-outline-variant/15">
@@ -314,20 +284,20 @@
             </div>
             <!-- Main Tabs -->
             <div class="flex gap-3 border-b border-outline-variant/15">
-                <button onclick="window.location.href='План-график_календарь.html'" class="flex items-center gap-2 px-4 py-2 text-brand-primary text-[14px] font-bold rounded-md hover:bg-brand-primary hover:text-white transition-all">
-                    <span class="material-symbols-outlined text-[13px]">verified</span>План-график
+                <button onclick="window.location.href='План-график_календарь.html'" class="flex items-center gap-2 px-4 py-2 bg-brand-primary/10 text-brand-primary text-[14px] font-bold rounded-md hover:bg-brand-primary hover:text-white transition-all">
+                    План-график
                 </button>
-                <button onclick="window.location.href='#'" class="flex items-center gap-2 px-4 py-2 bg-brand-primary/10 text-brand-primary text-[14px] font-bold rounded-md hover:bg-brand-primary hover:text-white transition-all">
-                    <span class="material-symbols-outlined text-[13px]">verified</span>Текущий год
+                <button onclick="window.location.href='План-график.html'" class="flex items-center gap-2 px-4 py-2 text-brand-primary text-[14px] font-bold rounded-md hover:bg-brand-primary hover:text-white transition-all">
+                    Текущий год
                 </button>
                 <button onclick="window.location.href='./План-график_следующий_год.html'" class="flex items-center gap-2 px-4 py-2 text-brand-primary text-[14px] font-bold rounded-md hover:bg-brand-primary hover:text-white transition-all">
                     Следующий год*
                 </button>
-                <div class="flex items-end gap-4">
-                    <button title="Отобразить поля фильтра" class="p-2 rounded-md hover:bg-brand-primary/10 text-brand-primary transition-colors flex items-center justify-center" onclick="document.getElementById('filter-panel').classList.toggle('hidden')">
-                        <span class="material-symbols-outlined">filter_list</span>
-                    </button>
-                </div>
+<!--                <div class="flex items-end gap-4">-->
+<!--                    <button title="Отобразить поля фильтра" class="p-2 rounded-md hover:bg-brand-primary/10 text-brand-primary transition-colors flex items-center justify-center" onclick="document.getElementById('filter-panel').classList.toggle('hidden')">-->
+<!--                        <span class="material-symbols-outlined">filter_list</span>-->
+<!--                    </button>-->
+<!--                </div>-->
             </div>
 
 
