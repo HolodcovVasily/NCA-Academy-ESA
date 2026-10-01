@@ -179,11 +179,8 @@
     </div>
 </header>
 
-
-
-
 <div class="flex flex-1 overflow-hidden">
-<!-- SideNavBar (Shared Component) -->
+    <!-- SideNavBar (Shared Component) -->
     <aside class="hidden md:flex flex-col py-section-gap px-container-padding bg-surface-container-low w-72 flex-shrink-0 z-40 relative after:content-[''] after:absolute after:right-0 after:top-0 after:bottom-0 after:w-px after:bg-outline-variant/15">
         <div class="space-y-1">
             <a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100 transition-transform duration-200 scale-98" href="../../../1_Главная%20страница%20НКА%20Академия/2_Главная_страница.html">
@@ -192,7 +189,8 @@
             </a>
             <a class="flex items-center gap-3 px-4 py-3 text-[#4e69c3] bg-white font-bold transition-transform duration-200 scale-98" href="#">
                 <span class="material-symbols-outlined">calendar_month</span>
-                <span>План-график</span>
+                <span>Управление претендентами</span>
+                <span class="px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-[#ffa12b] text-white font-bold">5</span>
             </a>
             <a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100 transition-transform duration-200 scale-98" href="../Аттестация_new.html">
                 <span class="material-symbols-outlined">badge</span>
@@ -210,380 +208,497 @@
     </aside>
 
 
-<!-- Main Content Canvas -->
-<main class="flex-1 overflow-y-auto bg-surface-bright flex flex-col">
-<!-- Page Header & Top Nav -->
-<header class="px-section-gap py-4 bg-surface-container-lowest sticky top-0 z-30">
-<div class="flex justify-between items-end mb-module-gap">
-<div>
-    <h1 class="text-display-lg font-display-lg text-on-surface">План-график</h1>
-</div>
-<div class="flex items-center gap-3">
-    <button onclick="window.location.href='./Добавление претендента.html'" class="text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors px-8 py-2.5 rounded-lg font-label-md hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2" title="Включение стажеров, вновь принятых лиц или назначение внеочередной аттестации">Добавить претендента</button>
-    <button onclick="window.location.href='#'" class="text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors px-8 py-2.5 rounded-lg font-label-md hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2" title="Экспорт в XLS">Экспорт в XLS</button>
-    <button onclick="window.location.href='#'" class="px-4 py-2 gradient-btn text-white text-sm hover:scale-[1.02] active:scale-[0.98] font-semibold rounded-lg transition-opacity">Опубликовать план-график</button>
-</div>
-</div>
-<!-- Main Tabs -->
-    <div class="flex items-end gap-4">
-        <button onclick="window.location.href='./План-график.html'" class="flex items-center gap-2 px-4 py-2 text-brand-primary text-[14px] font-bold rounded-md hover:bg-brand-primary hover:text-white transition-all">
-            Текущий год
-        </button>
-        <button onclick="window.location.href='#'" class="flex items-center gap-2 px-4 py-2 bg-brand-primary/10 text-brand-primary text-[14px] font-bold rounded-md hover:bg-brand-primary hover:text-white transition-all">
-            Следующий год
-        </button>
-        <div class="flex gap-3 border-b border-outline-variant/15">
-            <button title="Отобразить поля фильтра" class="p-2 rounded-md hover:bg-brand-primary/10 text-brand-primary transition-colors flex items-center justify-center" onclick="document.getElementById('filter-panel').classList.toggle('hidden')">
-                <span class="material-symbols-outlined">filter_list</span>
-            </button>
-        </div>
-    </div>
+    <!-- Main Content Canvas -->
+    <main class="flex-1 overflow-y-auto bg-surface flex flex-col">
 
+        <header class="px-section-gap py-4 bg-surface-container-lowest sticky top-0 z-30">
+            <div class="flex justify-between items-end mb-module-gap">
+                <div>
+                    <h1 class="text-lg font-bold tracking-tighter text-[#001453] dark:text-white">Управление претендентами</h1>
+                </div>
+            </div>
+            <!-- Main Tabs -->
+            <div class="flex gap-3 border-b border-outline-variant/15">
+                <button onclick="window.location.href='План-график_календарь.html'" class="flex items-center gap-2 px-4 py-2 bg-brand-primary/10 text-brand-primary text-[14px] font-bold rounded-md hover:bg-brand-primary hover:text-white transition-all">
+                    План-график
+                </button>
+                <button onclick="window.location.href='План-график.html'" class="flex items-center gap-2 px-4 py-2 text-brand-primary text-[14px] font-bold rounded-md hover:bg-brand-primary hover:text-white transition-all">
+                    Текущий год
+                </button>
+                <!--                <button onclick="window.location.href='./План-график_следующий_год.html'" class="flex items-center gap-2 px-4 py-2 text-brand-primary text-[14px] font-bold rounded-md hover:bg-brand-primary hover:text-white transition-all">-->
+                <!--                    Следующий год*-->
+                <!--                </button>-->
+                <!--                <div class="flex items-end gap-4">-->
+                <!--                    <button title="Отобразить поля фильтра" class="p-2 rounded-md hover:bg-brand-primary/10 text-brand-primary transition-colors flex items-center justify-center" onclick="document.getElementById('filter-panel').classList.toggle('hidden')">-->
+                <!--                        <span class="material-symbols-outlined">filter_list</span>-->
+                <!--                    </button>-->
+                <!--                </div>-->
+            </div>
 
-</header>
-<!-- Workspace -->
+        </header>
 
-    <div class="mt-2 mb-2 bg-emerald-100 border-l-4 border-emerald-100 p-container-padding flex items-start gap-4">
-        <span class="material-symbols-outlined">Warning</span>
-        <div>
-            <p class="font-label-md">Внимание: автоматически сформирован план-график аттестаций на следующий год.</p>
-            <p class="text-on-surface-variant text-sm mt-1">После утверждения сформированного план-графика нажмите на кнопку "Опубликовать план-график", после чего данный план-график будет доступен специалистам ОКР ТОР.</p>
-        </div>
-        <button class="ml-auto text-on-surface-variant hover:text-on-background">
-            <span class="material-symbols-outlined">close</span>
-        </button>
-    </div>
-<div class="p-4 flex-1 flex flex-col gap-4 max-w-[1600px] mx-auto w-full">
-<!-- Filters -->
-    <div id="filter-panel" class="grid grid-cols-5 gap-4 p-4 bg-brand-lowest/50 rounded-lg border border-brand-container/50 transition-all">
-        <div class="space-y-1.5">
-            <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Поиск</label>
-            <input type="text" placeholder="ФИО" class="w-full px-3 py-2 bg-brand-lowest text-xs border-none rounded-md ring-1 ring-slate-200 focus:ring-brand-primary placeholder:text-slate-300">
-        </div>
+        <!-- Header & Actions -->
+        <div class="px-6 pt-6 pb-4 flex flex-col xl:flex-row xl:items-end justify-between gap-4">
+            <div>
+                <div class="flex items-center gap-3">
+                    <h1 class="text-2xl font-bold text-on-surface tracking-tight">Годовой план-график аттестации</h1>
+                    <div class="inline-flex items-center bg-surface-container-highest rounded-lg p-1">
+                        <button class="p-1 hover:bg-surface-container-lowest rounded text-on-surface-variant hover:text-on-surface transition-all" title="Предыдущий год">
+                            <span class="material-symbols-outlined text-lg">chevron_left</span>
+                        </button>
+                        <span class="px-3 text-label-md font-label-md text-on-surface font-bold tracking-wider">2026 ГОД</span>
+                        <button class="p-1 hover:bg-surface-container-lowest rounded text-on-surface-variant hover:text-on-surface transition-all" title="Следующий год">
+                            <span class="material-symbols-outlined text-lg">chevron_right</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
 
-        <div class="space-y-1.5">
-            <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Организация</label>
-            <div class="relative">
-                <select class="w-full px-3 py-2 bg-brand-lowest text-xs border-none rounded-md ring-1 ring-slate-200 focus:ring-brand-primary appearance-none text-slate-600">
-                    <option>Все</option>
-                    <option>Государственное республиканское унитарное предприятие "Национальное кадастровое агентство"</option>
-                    <option>РУП "Брестское агентство по государственной регистрации и земельному кадастру"</option>
-                    <option>РУП "Витебское агентство по государственной регистрации и земельному кадастру"</option>
-                    <option>РУП "Гомельское агентство по государственной регистрации и земельному кадастру"</option>
-                    <option>РУП "Гродненское агентство по государственной регистрации и земельному кадастру"</option>
-                    <option>РУП "Минское городское агентство по государственной регистрации и земельному кадастру"</option>
-                    <option>РУП "Минское областное агентство по государственной регистрации и земельному кадастру"</option>
-                    <option>РУП "Могилевское агентство по государственной регистрации и земельному кадастру"</option>
-                </select>
-                <span class="material-symbols-outlined absolute right-2 top-2 text-[16px] pointer-events-none text-slate-400">expand_more</span>
+            <!-- Action Buttons -->
+            <div class="flex items-center gap-3">
+                <button class="px-3.5 py-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container-highest text-on-surface text-label-md font-label-md flex items-center gap-2 transition-colors">
+                    <span class="material-symbols-outlined text-[18px]">tune</span>
+                    <span>Фильтры по ТОР</span>
+                </button>
+                <button onclick="window.location.href='Экспорт план-графика.html'" class="text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors px-8 py-2.5 rounded-lg font-label-md hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2" title="Экспорт в XLS">Экспорт в XLS</button>
+                <button onclick="window.location.href='Публикация план-графика.html'" class="px-4 py-2 gradient-btn text-white text-sm hover:scale-[1.02] active:scale-[0.98] font-semibold rounded-lg transition-opacity">Опубликовать план-график</button>
             </div>
         </div>
-        <!-- Status Dropdown -->
-        <div class="space-y-1.5">
-            <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Статус претендента</label>
-            <div class="relative">
-                <select class="w-full px-3 py-2 bg-brand-lowest text-xs border-none rounded-md ring-1 ring-slate-200 focus:ring-brand-primary appearance-none text-slate-600">
-                    <option>Все статусы</option>
-                    <option>Активен</option>
-                    <option>Временно заблокирован</option>
-<!--                    <option>Заблокирован</option>-->
-                </select>
-                <span class="material-symbols-outlined absolute right-2 top-2 text-[16px] pointer-events-none text-slate-400">expand_more</span>
+
+        <!-- KPI Summary Cards -->
+        <div class="px-6 pb-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div class="bg-white p-3.5 rounded-xl border border-outline-variant/20 shadow-sm flex items-center justify-between">
+                    <div>
+                        <div class="text-[11px] uppercase tracking-wider text-on-surface-variant font-semibold">Согласовано недель</div>
+                        <div class="flex items-baseline gap-1.5 mt-0.5">
+                            <span id="metricWeeksCount" class="text-2xl font-bold text-primary">34</span>
+                            <span class="text-xs text-on-surface-variant">/ 52 нед.</span>
+                        </div>
+                    </div>
+                    <span class="material-symbols-outlined text-2xl text-primary bg-blue-50 p-2 rounded-lg">event_available</span>
+                </div>
+
+                <div class="bg-white p-3.5 rounded-xl border border-outline-variant/20 shadow-sm flex items-center justify-between">
+                    <div>
+                        <div class="text-[11px] uppercase tracking-wider text-on-surface-variant font-semibold">Охвачено претендентов</div>
+                        <div class="flex items-baseline gap-1.5 mt-0.5">
+                            <span id="metricCandidatesCount" class="text-2xl font-bold text-on-surface">364</span>
+                            <span class="text-xs text-on-surface-variant">/ 400 чел.</span>
+                        </div>
+                    </div>
+                    <span class="material-symbols-outlined text-2xl text-blue-600 bg-blue-50 p-2 rounded-lg">groups</span>
+                </div>
+
+                <div class="bg-white p-3.5 rounded-xl border border-outline-variant/20 shadow-sm flex items-center justify-between">
+                    <div>
+                        <div class="text-[11px] uppercase tracking-wider text-on-surface-variant font-semibold">Пиковые недели</div>
+                        <div class="flex items-baseline gap-1.5 mt-0.5">
+                            <span id="metricPeakWeeks" class="text-2xl font-bold text-error">4</span>
+                            <span class="text-xs text-error font-semibold">&gt;25 чел./нед.</span>
+                        </div>
+                    </div>
+                    <span class="material-symbols-outlined text-2xl text-amber-600 bg-amber-50 p-2 rounded-lg">warning</span>
+                </div>
+
+                <div class="bg-white p-3.5 rounded-xl border border-outline-variant/20 shadow-sm flex items-center justify-between">
+                    <div>
+                        <div class="text-[11px] uppercase tracking-wider text-on-surface-variant font-semibold">Средняя нагрузка</div>
+                        <div class="flex items-baseline gap-1.5 mt-0.5">
+                            <span id="metricAverageLoad" class="text-2xl font-bold text-green-700">~10.7</span>
+                            <span class="text-xs text-green-800">чел./соглас. нед.</span>
+                        </div>
+                    </div>
+                    <span class="material-symbols-outlined text-2xl text-green-700 bg-green-50 p-2 rounded-lg">equalizer</span>
+                </div>
             </div>
         </div>
-        <div class="space-y-1.5">
-            <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Статус заявки</label>
-            <div class="relative">
-                <select class="w-full px-3 py-2 bg-brand-lowest text-xs border-none rounded-md ring-1 ring-slate-200 focus:ring-brand-primary appearance-none text-slate-600">
-                    <option>Все статусы</option>
-                    <option>Не подана</option>
-                    <option>Отклонена</option>
-                    <option>На рассмотрении</option>
-                    <option>Перенесена</option>
-                    <option>Одобрена</option>
-                    <option>Аттестован</option>
-                </select>
-                <span class="material-symbols-outlined absolute right-2 top-2 text-[16px] pointer-events-none text-slate-400">expand_more</span>
+
+        <!-- Legend Bar -->
+        <div class="px-6 pb-4">
+            <div class="bg-surface-container-low px-4 py-2.5 rounded-xl flex flex-wrap items-center justify-between gap-4 border border-outline-variant/15 text-xs">
+                <div class="text-on-surface-variant flex items-center gap-1">
+                    <span class="material-symbols-outlined text-sm text-primary">info</span>
+                    <p class="text-xs text-on-surface-variant mt-1">Отмечайте чек-боксы перед номерами недель для включения или исключения предварительного периода аттестации.</p>
+                </div>
             </div>
         </div>
-        <div class="space-y-1.5">
-            <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Должность</label>
-            <div class="relative">
-                <select class="w-full px-3 py-2 bg-brand-lowest text-xs border-none rounded-md ring-1 ring-slate-200 focus:ring-brand-primary appearance-none text-slate-600">
-                    <option>Все</option>
-                    <option>Действующие специалисты</option>
-                    <option>Стажеры</option>
-                </select>
-                <span class="material-symbols-outlined absolute right-2 top-2 text-[16px] pointer-events-none text-slate-400">expand_more</span>
+
+        <!-- 12-Month Calendar Container -->
+        <div class="px-6 pb-6">
+            <div id="calendarGrid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-2">
+                <!-- Rendered dynamically by JavaScript for clean, compact and complete 12 months with interactive checkboxes -->
             </div>
         </div>
+
+    </main>
+
+    <!-- Toast Notice -->
+    <div id="toastNotice" class="fixed bottom-5 right-5 bg-gray-900 text-white px-4 py-2.5 rounded-lg shadow-xl text-xs flex items-center gap-2 z-50 pointer-events-none opacity-0">
+        <span class="material-symbols-outlined text-green-400 text-base" id="toastIcon">check_circle</span>
+        <span id="toastMessage">Неделя добавлена в график</span>
     </div>
 
-<!-- Table Data Cluster (Bento/Editorial Style) -->
-       <table class="w-full text-left border-collapse" id="questions-table">
-        <thead class="sticky top-0 bg-brand-lowest text-[10px] font-bold uppercase text-slate-400 border-b border-brand-container z-10">
-        <tr>
-            <th class="px-2 py-2 cursor-pointer hover:text-brand-primary transition-colors group">
-                <div class="flex items-center gap-1 justify-center">
-                    ФИО <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
-                </div>
-            </th>
-            <th class="px-2 py-2 cursor-pointer hover:text-brand-primary transition-colors group">
-                <div class="flex items-center gap-1 justify-center">
-                    Организация <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
-                </div>
-            </th>
-            <th class="px-2 py-2 w-32 cursor-pointer hover:text-brand-primary transition-colors group">
-                <div class="flex items-center gap-1 justify-center">
-                    Должность <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
-                </div>
-            </th>
-            <th class="px-2 py-2 w-32 cursor-pointer hover:text-brand-primary transition-colors group">
-                <div class="flex items-center gap-1 justify-center">
-                    Дата приема<span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
-                </div>
-            </th>
-            <th class="px-2 py-2 w-32 cursor-pointer hover:text-brand-primary transition-colors group">
-                <div class="flex items-center gap-1 justify-center">
-                    Статус претендента <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
-                </div>
-            </th>
-            <th class="px-2 py-2 w-32 cursor-pointer hover:text-brand-primary transition-colors group">
-                <div class="flex items-center gap-1 justify-center">
-                    Предыдущая аттестация<span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
-                </div>
-            </th>
-            <th class="px-2 py-2 w-32 cursor-pointer hover:text-brand-primary transition-colors group">
-                <div class="flex items-center gap-1 justify-center">
-                    Вид аттестации <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
-                </div>
-            </th>
-            <th class="px-2 py-2 w-32 text-right pr-6 cursor-pointer hover:text-brand-primary transition-colors group" data-col="actions">
-                <div class="flex items-center justify-end gap-1 justify-center">
-                    Статус заявки <span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
-                </div>
-            </th>
-            <th class="px-2 py-2 w-32 cursor-pointer hover:text-brand-primary transition-colors group">
-                <div class="flex items-center gap-1 justify-center">
-                    Аттестация назначена<span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
-                </div>
-            </th>
-            <th class="px-2 py-2 w-32 cursor-pointer hover:text-brand-primary transition-colors group">
-                <div class="flex items-center gap-1 justify-center">
-                    Группа<span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
-                </div>
-            </th>
-            <th class="px-2 py-2 w-32 cursor-pointer hover:text-brand-primary transition-colors group">
-                <div class="flex items-center gap-1 justify-center">
-                    Действия<span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">settings</span>
-                </div>
-            </th>
-        </tr>
-        </thead>
+    <script>
+        // Calendar 2026 Raw Data definition (12 months with correct days & active candidate weeks)
+        const MONTHS_DATA = [
+            {
+                name: "ЯНВАРЬ",
+                totalPret: "28 прет.",
+                weeks: [
+                    { id: "01", checked: false, dates: "01.01 – 04.01.2026", pret: 0, days: [null, null, null, 1, 2, 3, 4], badges: {} },
+                    { id: "02", checked: false, dates: "05.01 – 11.01.2026", pret: 8, days: [5, 6, 7, 8, 9, 10, 11], badges: { 8: 4, 9: 4 } },
+                    { id: "03", checked: true, dates: "12.01 – 18.01.2026", pret: 12, days: [12, 13, 14, 15, 16, 17, 18], badges: { 14: 6, 16: 6 } },
+                    { id: "04", checked: false, dates: "19.01 – 25.01.2026", pret: 8, days: [19, 20, 21, 22, 23, 24, 25], badges: { 21: 4, 22: 4 } },
+                    { id: "05", checked: false, dates: "26.01 – 31.01.2026", pret: 0, days: [26, 27, 28, 29, 30, 31, null], badges: {} }
+                ]
+            },
+            {
+                name: "ФЕВРАЛЬ",
+                totalPret: "18 прет.",
+                weeks: [
+                    { id: "05", checked: false, dates: "01.02.2026", pret: 0, days: [null, null, null, null, null, null, 1], badges: {} },
+                    { id: "06", checked: false, dates: "02.02 – 08.02.2026", pret: 6, days: [2, 3, 4, 5, 6, 7, 8], badges: { 4: 6 } },
+                    { id: "07", checked: true, dates: "09.02 – 15.02.2026", pret: 6, days: [9, 10, 11, 12, 13, 14, 15], badges: { 11: 6 } },
+                    { id: "08", checked: false, dates: "16.02 – 22.02.2026", pret: 6, days: [16, 17, 18, 19, 20, 21, 22], badges: { 18: 6 } },
+                    { id: "09", checked: false, dates: "23.02 – 28.02.2026", pret: 0, days: [23, 24, 25, 26, 27, 28, null], badges: {} }
+                ]
+            },
+            {
+                name: "МАРТ",
+                totalPret: "46 прет. (ПИК)",
+                peak: true,
+                weeks: [
+                    { id: "09", checked: false, dates: "01.03.2026", pret: 0, days: [null, null, null, null, null, null, 1], badges: {} },
+                    { id: "10", checked: true, dates: "02.03 – 08.03.2026", pret: 8, days: [2, 3, 4, 5, 6, 7, 8], badges: { 4: 8 } },
+                    { id: "11", checked: true, dates: "09.03 – 15.03.2026", pret: 30, peak: true, days: [9, 10, 11, 12, 13, 14, 15], badges: { 9: 10, 10: 10, 11: 10 } },
+                    { id: "12", checked: false, dates: "16.03 – 22.03.2026", pret: 8, days: [16, 17, 18, 19, 20, 21, 22], badges: { 18: 8 } },
+                    { id: "13", checked: false, dates: "23.03 – 29.03.2026", pret: 0, days: [23, 24, 25, 26, 27, 28, 29], badges: {} }
+                ]
+            },
+            {
+                name: "АПРЕЛЬ",
+                totalPret: "34 прет.",
+                weeks: [
+                    { id: "14", checked: false, dates: "30.03 – 05.04.2026", pret: 8, days: [null, null, 1, 2, 3, 4, 5], badges: { 1: 8 } },
+                    { id: "15", checked: true, dates: "06.04 – 12.04.2026", pret: 10, days: [6, 7, 8, 9, 10, 11, 12], badges: { 8: 10 } },
+                    { id: "16", checked: true, dates: "13.04 – 19.04.2026", pret: 10, days: [13, 14, 15, 16, 17, 18, 19], badges: { 15: 10 } },
+                    { id: "17", checked: false, dates: "20.04 – 26.04.2026", pret: 6, days: [20, 21, 22, 23, 24, 25, 26], badges: { 22: 6 } },
+                    { id: "18", checked: false, dates: "27.04 – 30.04.2026", pret: 0, days: [27, 28, 29, 30, null, null, null], badges: {} }
+                ]
+            },
+            {
+                name: "МАЙ",
+                totalPret: "26 прет.",
+                weeks: [
+                    { id: "18b", checked: false, dates: "01.05 – 03.05.2026", pret: 0, days: [null, null, null, null, 1, 2, 3], badges: {} },
+                    { id: "19", checked: true, dates: "04.05 – 10.05.2026", pret: 8, days: [4, 5, 6, 7, 8, 9, 10], badges: { 6: 8 } },
+                    { id: "20", checked: false, dates: "11.05 – 17.05.2026", pret: 10, days: [11, 12, 13, 14, 15, 16, 17], badges: { 13: 10 } },
+                    { id: "21", checked: false, dates: "18.05 – 24.05.2026", pret: 8, days: [18, 19, 20, 21, 22, 23, 24], badges: { 20: 8 } },
+                    { id: "22", checked: false, dates: "25.05 – 31.05.2026", pret: 0, days: [25, 26, 27, 28, 29, 30, 31], badges: {} }
+                ]
+            },
+            {
+                name: "ИЮНЬ",
+                totalPret: "14 прет.",
+                weeks: [
+                    { id: "23", checked: true, dates: "01.06 – 07.06.2026", pret: 8, days: [1, 2, 3, 4, 5, 6, 7], badges: { 3: 8 } },
+                    { id: "24", checked: false, dates: "08.06 – 14.06.2026", pret: 6, days: [8, 9, 10, 11, 12, 13, 14], badges: { 10: 6 } },
+                    { id: "25", checked: false, dates: "15.06 – 21.06.2026", pret: 0, days: [15, 16, 17, 18, 19, 20, 21], badges: {} },
+                    { id: "26", checked: false, dates: "22.06 – 28.06.2026", pret: 0, days: [22, 23, 24, 25, 26, 27, 28], badges: {} },
+                    { id: "27", checked: false, dates: "29.06 – 30.06.2026", pret: 0, days: [29, 30, null, null, null, null, null], badges: {} }
+                ]
+            },
+            {
+                name: "ИЮЛЬ",
+                totalPret: "12 прет.",
+                weeks: [
+                    { id: "27", checked: false, dates: "01.07 – 05.07.2026", pret: 0, days: [null, null, 1, 2, 3, 4, 5], badges: {} },
+                    { id: "28", checked: false, dates: "06.07 – 12.07.2026", pret: 0, days: [6, 7, 8, 9, 10, 11, 12], badges: {} },
+                    { id: "29", checked: true, dates: "13.07 – 19.07.2026", pret: 6, days: [13, 14, 15, 16, 17, 18, 19], badges: { 15: 6 } },
+                    { id: "30", checked: false, dates: "20.07 – 26.07.2026", pret: 6, days: [20, 21, 22, 23, 24, 25, 26], badges: { 22: 6 } },
+                    { id: "31", checked: false, dates: "27.07 – 31.07.2026", pret: 0, days: [27, 28, 29, 30, 31, null, null], badges: {} }
+                ]
+            },
+            {
+                name: "АВГУСТ",
+                totalPret: "32 прет.",
+                weeks: [
+                    { id: "31", checked: false, dates: "01.08 – 02.08.2026", pret: 0, days: [null, null, null, null, null, 1, 2], badges: {} },
+                    { id: "32", checked: true, dates: "03.08 – 09.08.2026", pret: 10, days: [3, 4, 5, 6, 7, 8, 9], badges: { 5: 10 } },
+                    { id: "33", checked: false, dates: "10.08 – 16.08.2026", pret: 10, days: [10, 11, 12, 13, 14, 15, 16], badges: { 12: 10 } },
+                    { id: "34", checked: false, dates: "17.08 – 23.08.2026", pret: 12, days: [17, 18, 19, 20, 21, 22, 23], badges: { 19: 12 } },
+                    { id: "35", checked: false, dates: "24.08 – 30.08.2026", pret: 0, days: [24, 25, 26, 27, 28, 29, 30], badges: {} }
+                ]
+            },
+            {
+                name: "СЕНТЯБРЬ",
+                totalPret: "24 прет.",
+                weeks: [
+                    { id: "36", checked: false, dates: "31.08 – 06.09.2026", pret: 0, days: [null, 1, 2, 3, 4, 5, 6], badges: {} },
+                    { id: "37", checked: true, dates: "07.09 – 13.09.2026", pret: 8, days: [7, 8, 9, 10, 11, 12, 13], badges: { 9: 8 } },
+                    { id: "38", checked: false, dates: "14.09 – 20.09.2026", pret: 8, days: [14, 15, 16, 17, 18, 19, 20], badges: { 16: 8 } },
+                    { id: "39", checked: false, dates: "21.09 – 27.09.2026", pret: 8, days: [21, 22, 23, 24, 25, 26, 27], badges: { 23: 8 } },
+                    { id: "40", checked: false, dates: "28.09 – 30.09.2026", pret: 0, days: [28, 29, 30, null, null, null, null], badges: {} }
+                ]
+            },
+            {
+                name: "ОКТЯБРЬ",
+                totalPret: "48 прет. (ПИК)",
+                peak: true,
+                weeks: [
+                    { id: "40", checked: false, dates: "01.10 – 04.10.2026", pret: 0, days: [null, null, null, 1, 2, 3, 4], badges: {} },
+                    { id: "41", checked: false, dates: "05.10 – 11.10.2026", pret: 0, days: [5, 6, 7, 8, 9, 10, 11], badges: {} },
+                    { id: "42", checked: true, dates: "12.10 – 18.10.2026", pret: 28, peak: true, days: [12, 13, 14, 15, 16, 17, 18], badges: { 12: 10, 13: 10, 14: 8 } },
+                    { id: "43", checked: true, dates: "19.10 – 25.10.2026", pret: 10, days: [19, 20, 21, 22, 23, 24, 25], badges: { 20: 10 } },
+                    { id: "44", checked: false, dates: "26.10 – 31.10.2026", pret: 10, days: [26, 27, 28, 29, 30, 31, null], badges: { 28: 10 } }
+                ]
+            },
+            {
+                name: "НОЯБРЬ",
+                totalPret: "56 прет. (ПИК)",
+                peak: true,
+                weeks: [
+                    { id: "44b", checked: false, dates: "01.11.2026", pret: 0, days: [null, null, null, null, null, null, 1], badges: {} },
+                    { id: "45", checked: true, dates: "02.11 – 08.11.2026", pret: 12, days: [2, 3, 4, 5, 6, 7, 8], badges: { 4: 12 } },
+                    { id: "46", checked: false, dates: "09.11 – 15.11.2026", pret: 12, days: [9, 10, 11, 12, 13, 14, 15], badges: { 11: 12 } },
+                    { id: "47", checked: true, dates: "16.11 – 22.11.2026", pret: 32, peak: true, days: [16, 17, 18, 19, 20, 21, 22], badges: { 16: 10, 17: 12, 18: 10 } },
+                    { id: "48", checked: false, dates: "23.11 – 29.11.2026", pret: 0, days: [23, 24, 25, 26, 27, 28, 29], badges: {} }
+                ]
+            },
+            {
+                name: "ДЕКАБРЬ",
+                totalPret: "62 прет. (МАКС)",
+                peak: true,
+                weeks: [
+                    { id: "49", checked: false, dates: "30.11 – 06.12.2026", pret: 0, days: [null, 1, 2, 3, 4, 5, 6], badges: {} },
+                    { id: "50", checked: true, dates: "07.12 – 13.12.2026", pret: 36, peak: true, days: [7, 8, 9, 10, 11, 12, 13], badges: { 8: 12, 9: 12, 10: 12 } },
+                    { id: "51", checked: true, dates: "14.12 – 20.12.2026", pret: 14, days: [14, 15, 16, 17, 18, 19, 20], badges: { 16: 14 } },
+                    { id: "52", checked: false, dates: "21.12 – 27.12.2026", pret: 12, days: [21, 22, 23, 24, 25, 26, 27], badges: { 23: 12 } },
+                    { id: "01b", checked: false, dates: "28.12 – 31.12.2026", pret: 0, days: [28, 29, 30, 31, null, null, null], badges: {} }
+                ]
+            }
+        ];
 
+        let activeInspectorWeekId = "11";
 
-        <tbody class="text-xs text-brand-dark divide-y divide-brand-container">
-        <!-- Row 1 -->
-        <tr class="hover:bg-brand-container group cursor-pointer transition-colors question-row">
-                        <td class="px-4 py-2 truncate max-w-[300px]">Иванов Алексей Иванович</td>
-            <td class="px-4 py-2">
-                Минское городское Агентство
-            </td>
-            <td class="px-4 py-2">
-                Специалист по ТИ 1 к.
-            </td>
-            <td class="px-4 py-2">
-                23.09.2020
-            </td>
-            <td class="px-4 py-2">
-                <span class="px-2 py-0.5 bg-emerald-100 text-[9px] text-on-surface uppercase rounded">Активен</span>
-            </td>
-            <td class="px-4 py-2">
-                23.09.2023
-            </td>
-            <td class="px-4 py-2">
-                Очередная
-            </td>
-            <td class="px-4 py-2">
-                <span class="px-2 py-0.5 bg-surface-container-highest text-[9px] text-on-surface uppercase rounded">Не подана</span>
-            </td>
-            <td class="px-4 py-2">
-                -
-            </td>
-            <td class="px-4 py-2">
-                -
-            </td>
-            <td class="px-6 py-2">
-                <div class="flex items-center">
-                    <button class="text-on-surface-variant hover:text-error transition-colors" title="Исключить"><span class="material-symbols-outlined text-lg">block</span></button>
+        function renderCalendar() {
+            const container = document.getElementById("calendarGrid");
+            container.innerHTML = "";
 
-                </div>
-            </td>
-        </tr>
-        <!-- Row 2 -->
-        <tr class="hover:bg-brand-container group cursor-pointer transition-colors question-row">
-            <td class="px-4 py-2 truncate max-w-[300px]">Сидоров Дмитрий Иванович</td>
-            <td class="px-4 py-2">
-                Национальное кадастровое агентство
-            </td>
-            <td class="px-4 py-2">
-                Начальник отдела
-            </td>
-            <td class="px-4 py-2">
-                25.09.2020
-            </td>
-            <td class="px-4 py-2">
-                <span class="px-2 py-0.5 bg-emerald-100 text-[9px] text-on-surface uppercase rounded">Активен</span>
-            </td>
-            <td class="px-4 py-2">
-                25.09.2023
-            </td>
-            <td class="px-4 py-2">
-                Очередная
-            </td>
-            <td class="px-4 py-2">
-                <span class="px-2 py-0.5 bg-surface-container-highest text-[9px] text-on-surface uppercase rounded">Не подана</span>
-            </td>
-            <td class="px-4 py-2">
-                -
-            </td>
-            <td class="px-4 py-2">
-                -
-            </td>
-            <td class="px-6 py-2">
-                <div class="flex items-center">
-                    <button class="text-on-surface-variant hover:text-error transition-colors" title="Исключить"><span class="material-symbols-outlined text-lg">block</span></button>
-                </div>
-            </td>
-        </tr>
-        <!-- Row 3 -->
-        <tr class="hover:bg-brand-container group cursor-pointer transition-colors question-row">
-            <td class="px-4 py-2 truncate max-w-[300px]">Иванова Татьяна Васильевна</td>
-            <td class="px-4 py-2">
-                Гродненское Агентство
-            </td>
-            <td class="px-4 py-2">
-                Специалист по ТИ 2 к.
-            </td>
-            <td class="px-4 py-2">
-                18.06.2020
-            </td>
-            <td class="px-4 py-2">
-                <span class="px-2 py-0.5 bg-amber-100 text-[9px] text-on-surface uppercase rounded">Временно заблокирован</span>
-            </td>
-            <td class="px-4 py-2">
-                18.06.2023
-            </td>
-            <td class="px-4 py-2">
-                Очередная
-            </td>
-            <td class="px-4 py-2">
-                <span class="px-2 py-0.5 bg-surface-container-highest text-[9px] text-on-surface uppercase rounded">Не подана</span>
-            </td>
-            <td class="px-4 py-2">
-                -
-            </td>
-            <td class="px-4 py-2">
-                -
-            </td>
-            <td class="px-6 py-2">
-                <div class="flex items-center">
-                    <button class="text-on-surface-variant hover:text-error transition-colors" title="Исключить"><span class="material-symbols-outlined text-lg">block</span></button>
+            MONTHS_DATA.forEach(month => {
+                const monthCard = document.createElement("div");
+                monthCard.className = `bg-white rounded-xl p-3.5 border shadow-sm flex flex-col justify-between ${month.peak ? 'ring-1 ring-amber-300 border-amber-200' : 'border-outline-variant/20'}`;
 
-                </div>
-            </td>
-        </tr>
-        <!-- Row 4 -->
-        <tr class="hover:bg-brand-container group cursor-pointer transition-colors question-row">
-            <td class="px-4 py-2 truncate max-w-[300px]">Кузнецов Михаил Петрович</td>
-            <td class="px-4 py-2">
-                Брестское Агентство
-            </td>
-            <td class="px-4 py-2">
-                инженер
-            </td>
-            <td class="px-4 py-2">
-                22.07.2020
-            </td>
-            <td class="px-4 py-2">
-                <span class="px-2 py-0.5 bg-emerald-100 text-[9px] text-on-surface uppercase rounded">Активен</span>
-            </td>
-            <td class="px-4 py-2">
-                22.07.2023
-            </td>
-            <td class="px-4 py-2">
-                Внеочередная
-            </td>
-            <td class="px-4 py-2">
-                <span class="px-2 py-0.5 bg-surface-container-highest text-[9px] text-on-surface uppercase rounded">Не подана</span>
-            </td>
-            <td class="px-4 py-2">
-                -
-            </td>
-            <td class="px-4 py-2">
-                -
-            </td>
-            <td class="px-6 py-2">
-                <div class="flex items-center">
-                    <button class="text-on-surface-variant hover:text-error transition-colors" title="Исключить"><span class="material-symbols-outlined text-lg">block</span></button>
+                let weeksHtml = "";
+                month.weeks.forEach(w => {
+                    const activeClass = w.checked ? "is-active-period" : "";
+                    const selectedClass = (w.id === activeInspectorWeekId) ? "selected-row" : "";
+                    const isPeakTag = w.peak ? "text-error font-bold" : (w.checked ? "text-primary font-bold" : "text-gray-400");
+                    const cleanWeekTag = w.id.replace(/[a-z]/g, "");
 
-                </div>
-            </td>
-        </tr>
-        <!-- Row 5 -->
-        <tr class="hover:bg-brand-container group cursor-pointer transition-colors question-row">
-            <td class="px-4 py-2 truncate max-w-[300px]">Петрова Валерия Степановна</td>
-            <td class="px-4 py-2">
-                Гомельское Агентство
-            </td>
-            <td class="px-4 py-2">
-                Специалист по ТИ
-            </td>
-            <td class="px-4 py-2">
-                28.11.2020
-            </td>
-            <td class="px-4 py-2">
-                <span class="px-2 py-0.5 bg-emerald-100 text-[9px] text-on-surface uppercase rounded">Активен</span>
-            </td>
-            <td class="px-4 py-2">
-                28.11.2023
-            </td>
-            <td class="px-4 py-2">
-                Повторная
-            </td>
-            <td class="px-4 py-2">
-                <span class="px-2 py-0.5 bg-surface-container-highest text-[9px] text-on-surface uppercase rounded">Не подана</span>
-            </td>
-            <td class="px-4 py-2">
-                -
-            </td>
-            <td class="px-4 py-2">
-                -
-            </td>
-            <td class="px-6 py-2">
-                <div class="flex items-center">
-                    <button class="text-on-surface-variant hover:text-error transition-colors" title="Исключить"><span class="material-symbols-outlined text-lg">block</span></button>
-                </div>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-</div>
-    <div class="px-6 py-4 flex justify-between items-center bg-brand-lowest border-t border-brand-container rounded-b-lg shrink-0">
-        <p class="text-[10px] text-slate-400 font-bold">Показано 1-10 из 240 записей</p>
-        <div class="flex items-center gap-1">
-            <button class="w-8 h-8 flex items-center justify-center text-slate-400 hover:bg-brand-container rounded"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button>
-            <button class="w-8 h-8 bg-brand-primary text-white text-[10px] font-bold rounded">1</button>
-            <button class="w-8 h-8 text-slate-600 text-[10px] font-bold hover:bg-brand-container rounded">2</button>
-            <button class="w-8 h-8 text-slate-600 text-[10px] font-bold hover:bg-brand-container rounded">3</button>
-            <span class="px-2 text-slate-300">...</span>
-            <button class="w-8 h-8 text-slate-600 text-[10px] font-bold hover:bg-brand-container rounded">24</button>
-            <button class="w-8 h-8 flex items-center justify-center text-slate-400 hover:bg-brand-container rounded"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></button>
+                    let daysHtml = "";
+                    w.days.forEach((dayNum, idx) => {
+                        const isWeekend = (idx >= 5);
+                        if (dayNum === null) {
+                            daysHtml += `<div class="day-cell empty"></div>`;
+                        } else {
+                            const badgeCount = w.badges[dayNum];
+                            const hasBadge = badgeCount !== undefined;
+                            const badgeClass = w.peak ? "day-badge peak" : "day-badge";
+                            const weekendClass = isWeekend ? "weekend" : "";
+
+                            if (hasBadge) {
+                                daysHtml += `
+              <div class="day-cell ${weekendClass} cursor-pointer hover:border-primary">
+                <span class="day-num absolute top-0.5 left-0.5 text-[7px]">${dayNum}</span>
+                <span class="${badgeClass}">${badgeCount}</span>
+              </div>`;
+                            } else {
+                                daysHtml += `
+              <div class="day-cell ${weekendClass}">
+                <span class="day-num">${dayNum}</span>
+              </div>`;
+                            }
+                        }
+                    });
+
+                    weeksHtml += `
+        <div id="row-${w.id}" class="week-row ${activeClass} ${selectedClass} grid grid-cols-8 gap-1 items-center cursor-pointer" onclick="handleRowSelect('${w.id}')">
+          <div class="flex items-center gap-1 text-[10px]">
+            <input type="checkbox" id="chk-${w.id}" class="week-checkbox" ${w.checked ? 'checked' : ''} onclick="event.stopPropagation(); handleCheckboxChange('${w.id}', this.checked)">
+            <span class="week-tag ${isPeakTag}">${cleanWeekTag}</span>
+          </div>
+          ${daysHtml}
+        </div>`;
+                });
+
+                monthCard.innerHTML = `
+      <div>
+        <div class="flex items-center justify-between pb-2 mb-1.5 border-b border-gray-100">
+          <span class="text-xs font-bold text-on-surface tracking-wider">${month.name}</span>
+          <span class="px-2 py-0.5 rounded text-[10px] font-bold ${month.peak ? 'bg-amber-100 text-amber-900 border border-amber-300' : 'bg-blue-50 text-blue-800'}">${month.totalPret}</span>
         </div>
-    </div>
-</main>
-</div>
+        <div class="grid grid-cols-8 gap-1 text-center text-[10px] text-on-surface-variant font-semibold mb-1.5">
+          <span class="text-left text-gray-400 pl-0.5">Нед.</span><span>ПН</span><span>ВТ</span><span>СР</span><span>ЧТ</span><span>ПТ</span><span class="text-error">СБ</span><span class="text-error">ВС</span>
+        </div>
+        <div class="flex flex-col gap-0.5">
+          ${weeksHtml}
+        </div>
+      </div>
+      <div class="mt-2.5 pt-1.5 border-t border-gray-50 flex items-center justify-between text-[11px] text-on-surface-variant">
+        <span>Активных: ${month.weeks.filter(w => w.checked).length}</span>
+        <span class="font-semibold text-primary">${month.peak ? 'Пиковый месяц' : 'Плановый'}</span>
+      </div>`;
 
+                container.appendChild(monthCard);
+            });
+
+            updateKpis();
+            updateInspector();
+        }
+
+        function handleCheckboxChange(weekId, isChecked) {
+            let targetWeek = null;
+            MONTHS_DATA.forEach(m => {
+                m.weeks.forEach(w => {
+                    if (w.id === weekId) {
+                        w.checked = isChecked;
+                        targetWeek = w;
+                    }
+                });
+            });
+
+            const rowEl = document.getElementById("row-" + weekId);
+            if (rowEl) {
+                if (isChecked) {
+                    rowEl.classList.add("is-active-period");
+                } else {
+                    rowEl.classList.remove("is-active-period");
+                }
+            }
+
+            activeInspectorWeekId = weekId;
+            showToast(isChecked ? `Неделя ${weekId.replace(/[a-z]/g, "")} добавлена в согласованный график` : `Согласование с недели ${weekId.replace(/[a-z]/g, "")} снято`);
+            renderCalendar();
+        }
+
+        function handleRowSelect(weekId) {
+            activeInspectorWeekId = weekId;
+            renderCalendar();
+        }
+
+        function toggleCurrentInspectorWeek() {
+            let targetWeek = null;
+            MONTHS_DATA.forEach(m => {
+                m.weeks.forEach(w => {
+                    if (w.id === activeInspectorWeekId) {
+                        targetWeek = w;
+                    }
+                });
+            });
+
+            if (targetWeek) {
+                handleCheckboxChange(activeInspectorWeekId, !targetWeek.checked);
+            }
+        }
+
+        function selectAllActiveWeeks() {
+            MONTHS_DATA.forEach(m => {
+                m.weeks.forEach(w => {
+                    if (w.pret > 0) {
+                        w.checked = true;
+                    }
+                });
+            });
+            showToast("Все недели с претендентами отмечены в графике");
+            renderCalendar();
+        }
+
+        function updateKpis() {
+            let agreedWeeks = 0;
+            let coveredCandidates = 0;
+            let peakWeeksCount = 0;
+            let candidatesCountAll= 400;
+
+            MONTHS_DATA.forEach(m => {
+                m.weeks.forEach(w => {
+                    if (w.checked) {
+                        agreedWeeks++;
+                        coveredCandidates += w.pret;
+                        if (w.pret >= 25) peakWeeksCount++;
+                    }
+                });
+            });
+
+            document.getElementById("metricWeeksCount").innerText = agreedWeeks;
+            document.getElementById("metricCandidatesCount").innerText = coveredCandidates;
+            document.getElementById("metricPeakWeeks").innerText = peakWeeksCount;
+            const avg = agreedWeeks > 0 ? (candidatesCountAll / agreedWeeks).toFixed(1) : 0;
+            document.getElementById("metricAverageLoad").innerText = `~${avg}`;
+        }
+
+        function updateInspector() {
+            let targetWeek = null;
+            MONTHS_DATA.forEach(m => {
+                m.weeks.forEach(w => {
+                    if (w.id === activeInspectorWeekId) targetWeek = w;
+                });
+            });
+
+            if (!targetWeek) return;
+
+            const cleanTag = targetWeek.id.replace(/[a-z]/g, "");
+            document.getElementById("inspectorWeekTitle").innerText = cleanTag;
+            document.getElementById("inspectorWeekDates").innerText = `Неделя ${cleanTag} (${targetWeek.dates})`;
+
+            const badgeEl = document.getElementById("inspectorBadge");
+            const statusPill = document.getElementById("inspectorStatusPill");
+            const toggleBtn = document.getElementById("toggleWeekBtn");
+            const toggleBtnText = document.getElementById("toggleWeekBtnText");
+
+            if (targetWeek.checked) {
+                badgeEl.className = "w-14 h-14 rounded-xl bg-blue-100 text-primary flex flex-col items-center justify-center font-bold";
+                badgeEl.innerHTML = `<span class="text-base">${cleanTag}</span><span class="text-[9px] uppercase tracking-wider font-semibold">В плане</span>`;
+
+                if (targetWeek.peak) {
+                    statusPill.className = "px-2 py-0.5 rounded text-xs font-bold bg-amber-100 text-amber-900 border border-amber-300";
+                    statusPill.innerText = `Пиковая нагрузка: ${targetWeek.pret} чел.`;
+                } else {
+                    statusPill.className = "px-2 py-0.5 rounded text-xs font-bold bg-green-100 text-green-900 border border-green-300";
+                    statusPill.innerText = `Согласовано: ${targetWeek.pret} прет.`;
+                }
+
+                toggleBtn.className = "px-3.5 py-2 rounded-lg bg-red-50 hover:bg-red-100 text-red-700 text-xs font-bold flex items-center gap-1.5 transition-colors border border-red-200";
+                toggleBtnText.innerText = "Снять согласование недели";
+            } else {
+                badgeEl.className = "w-14 h-14 rounded-xl bg-gray-100 text-gray-500 flex flex-col items-center justify-center font-bold";
+                badgeEl.innerHTML = `<span class="text-base">${cleanTag}</span><span class="text-[9px] uppercase tracking-wider font-semibold">Вне плана</span>`;
+
+                statusPill.className = "px-2 py-0.5 rounded text-xs font-bold bg-gray-100 text-gray-700 border border-gray-300";
+                statusPill.innerText = "Период не включен в график";
+
+                toggleBtn.className = "px-3.5 py-2 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-700 text-xs font-bold flex items-center gap-1.5 transition-colors border border-blue-200";
+                toggleBtnText.innerText = "+ Включить неделю в график";
+            }
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById("toastNotice");
+            const msgEl = document.getElementById("toastMessage");
+            msgEl.innerText = msg;
+            toast.classList.add("show");
+            setTimeout(() => {
+                toast.classList.remove("show");
+            }, 2200);
+        }
+
+        // Initial Render
+        renderCalendar();
+    </script>
+
+
+</div>
 
 <div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-on-surface/40 backdrop-blur-sm transition-opacity" id="modal-export-xls">
     <div class="bg-surface-container-lowest rounded-xl shadow-[0_12px_40px_rgba(25,28,30,0.16)] w-full max-w-[920px] flex flex-col overflow-hidden border border-outline-variant/15 animate-in fade-in zoom-in-95 duration-200">
@@ -593,17 +708,11 @@
     </div>
         <h2 class="text-headline-md font-bold text-on-surface">Подтверждение экспорта план-графика</h2>
     </div>
-        <button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" onclick="window.location.href='./План-график.html'">
+        <button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" onclick="window.location.href='План-график_календарь.html'">
         <span class="material-symbols-outlined text-xl">close</span>
     </button>
         </div>
         <div class="p-6 flex flex-col gap-6 overflow-y-auto max-h-[calc(85vh-130px)]">
-<!--        <div class="bg-[#e8f5e9]/30 p-4 flex items-start gap-3.5">-->
-<!--        <div class="flex-1">-->
-<!--            <div class="text-label-md font-bold text-on-surface mb-0.5">Формирование сводной выгрузки</div>-->
-<!--        <p class="text-body-md text-on-surface-variant leading-snug">Будет сформирован файл сводного план-графика плановых аттестаций специалистов по технической инвентаризации на выбранный год в разрезе организаций и календарных недель.</p>-->
-<!--        </div>-->
-<!--        </div>-->
             <div class="p-4 bg-surface-container-low rounded-lg flex gap-3 items-start">
                 <span class="material-symbols-outlined text-primary text-[20px]">info</span>
                 <p class="text-[11px] leading-relaxed text-slate-600">
@@ -612,204 +721,74 @@
                 </p>
             </div>
 
-<!--            <div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/15 flex flex-col gap-4">-->
-<!--                <div class="text-label-sm font-bold text-on-surface uppercase tracking-wider flex items-center gap-2">-->
-<!--                    <span class="material-symbols-outlined text-[18px] text-surface-tint">tune</span>-->
-<!--                    <span>Параметры выгрузки</span>-->
-<!--                </div>-->
-<!--                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-end">-->
-<!--                    <div class="flex flex-col gap-1.5">-->
-<!--                        <label class="text-label-sm font-semibold text-on-surface-variant uppercase tracking-wider">Год планирования</label>-->
-<!--                        <div class="relative">-->
-<!--                            <select class="w-full bg-surface-container-lowest border border-outline-variant/15 rounded-lg px-4 py-2.5 text-body-md font-medium text-on-surface appearance-none focus:ring-2 focus:ring-primary/20 outline-none pr-10 cursor-pointer shadow-sm"><option selected="" value="2025">2025 год (текущий рабочий)</option>-->
-<!--                                <option value="2024">2024 год (архивный период)</option>-->
-<!--                                <option value="2026">2026 год (перспективный период)</option>-->
-<!--                            </select>-->
-<!--                            <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant text-xl">expand_more</span>-->
-<!--        </div>-->
-<!--        </div>-->
-<!--        <div class="flex flex-col gap-1.5">-->
-<!--            <label class="text-label-sm font-semibold text-on-surface-variant uppercase tracking-wider">Спецификация и формат</label>-->
-<!--            <div class="flex items-center gap-2 bg-surface-container-lowest px-4 py-2.5 rounded-lg border border-outline-variant/15 shadow-sm">-->
-<!--                <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-[#e8f5e9] text-[#2e7d32] font-bold text-label-sm">XLSX</span>-->
-<!--                <span class="text-label-sm text-on-surface-variant">Microsoft Excel • ~64 KB</span>-->
-<!--                <span class="text-[11px] text-surface-tint ml-auto font-medium">Альбомный A4/A3</span>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        </div>-->
-<!--            <div class="flex flex-col gap-1.5">-->
-<!--                <label class="text-label-sm font-semibold text-on-surface-variant uppercase tracking-wider">Маска наименования формируемого файла</label>-->
-<!--                <div class="flex items-center gap-2 bg-surface-container-lowest px-4 py-2.5 rounded-lg border border-outline-variant/15 font-mono text-label-md text-on-surface shadow-sm select-all">-->
-<!--                    <span class="material-symbols-outlined text-surface-tint text-lg flex-shrink-0">draft</span>-->
-<!--                    <span class="truncate">Сводный_план-график_аттестации_на_2025_год.xlsx</span>-->
-<!--                    <span class="ml-auto text-[11px] font-sans font-medium px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">Автоматически</span>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-
-
-            <div class="flex flex-col gap-3">
-                <div class="flex items-center justify-between">
-            <div class="text-label-md font-bold text-on-surface flex items-center gap-2">
-            <span>Структура формируемого документа</span>
-            </div>
-        </div>
-            <div class="bg-surface-container-lowest border border-outline-variant/15 rounded-xl overflow-hidden shadow-sm">
-            <div class="p-4 bg-surface-container-high/40 border-b border-outline-variant/15 flex flex-col gap-1">
-            <div class="text-label-md font-bold text-on-surface tracking-wide uppercase">СВОДНЫЙ ПЛАН-ГРАФИК плановых аттестаций специалистов по технической инвентаризации на 2027 год</div>
-            <div class="text-label-sm text-on-surface-variant flex items-center gap-3">
-                <span>Дата формирования: <strong>01.10.2026</strong></span>
-                <span class="w-1 h-1 rounded-full bg-outline-variant"></span>
-                <span>Сформировал: <strong>Администратор СА</strong></span>
-            </div>
-            </div>
-                <div class="overflow-x-auto">
-                    <table class="w-full text-left border-collapse text-label-sm">
-                        <thead class="bg-surface-container-low text-on-surface-variant font-semibold">
-                        <tr class="border-b border-outline-variant/15">
-                            <th class="px-3 py-2 border-r border-outline-variant/15 row-span-2 align-middle w-48 text-on-surface uppercase tracking-wider text-[11px]">Организации</th>
-                            <th class="px-3 py-2 border-r border-outline-variant/15 row-span-2 align-middle text-center w-28 uppercase tracking-wider text-[11px]">Всего</th>
-                            <th class="px-3 py-1.5 border-r border-outline-variant/15 text-center bg-surface-container-high/30" colspan="3">Январь</th>
-                            <th class="px-3 py-1.5 text-center bg-surface-container-high/10" colspan="4">Февраль</th>
-                            <th class="px-3 py-1.5 text-center bg-surface-container-high/10" colspan="4">Март</th>
-                            <th class="px-3 py-1.5 text-center bg-surface-container-high/10" colspan="4">Апрель</th>
-                        </tr>
-                        <tr class="border-b border-outline-variant/15 text-[11px] text-on-surface-variant/80 bg-surface-container-low/70">
-                            <th class="px-2 py-1 border-r border-outline-variant/15 text-center"><br/>
-                                <span class="text-[10px] text-surface-tint font-bold"></span>
-                            </th>
-                            <th class="px-2 py-1 border-r border-outline-variant/15 text-center"><br/>
-                                <span class="text-[10px] text-surface-tint font-bold"></span>
-                            </th>
-                            <th class="px-2 py-1 border-r border-outline-variant/15 text-center">05.01-11.01<br/>
-                                <span class="text-[10px] text-surface-tint font-bold">1 нед.</span>
-                            </th>
-                            <th class="px-2 py-1 border-r border-outline-variant/15 text-center">12.01-18.01<br/>
-                                <span class="text-[10px] text-surface-tint font-bold">2 нед.</span>
-                            </th>
-                            <th class="px-2 py-1 border-r border-outline-variant/15 text-center">19.01-25.01<br/>
-                                <span class="text-[10px] text-surface-tint font-bold">3 нед.</span>
-                            </th>
-                            <th class="px-2 py-1 border-r border-outline-variant/15 text-center">02.02-08.02<br/>
-                                <span class="text-[10px] text-surface-tint font-bold">4 нед.</span>
-                            </th>
-                            <th class="px-2 py-1 text-center">09.02-15.02<br/>
-                                <span class="text-[10px] text-surface-tint font-bold">5 нед.</span>
-                            </th>
-                        </tr>
-                        </thead>
-                        <tbody class="divide-y divide-outline-variant/15 font-normal text-on-surface">
-<!--                        <tr class="hover:bg-surface-container-low/40 transition-colors">-->
-<!--                            <td class="px-3 py-2 border-r border-outline-variant/15 font-medium flex items-center gap-2">-->
-<!--                                Государственное республиканское унитарное предприятие "Национальное кадастровое агентство"-->
-<!--                            </td>-->
-<!--                            <td class="px-3 py-2 border-r border-outline-variant/15 text-center font-bold text-primary">6</td>-->
-<!--                            <td class="px-2 py-2 border-r border-outline-variant/15 text-center bg-[#e8f5e9]/20 font-medium text-[#2e7d32]">1</td>-->
-<!--                            <td class="px-2 py-2 border-r border-outline-variant/15 text-center bg-[#e8f5e9]/20 font-medium text-[#2e7d32]">—</td>-->
-<!--                            <td class="px-2 py-2 border-r border-outline-variant/15 text-center text-on-surface-variant">—</td>-->
-<!--                            <td class="px-2 py-2 border-r border-outline-variant/15 text-center bg-[#e8f5e9]/20 font-medium text-[#2e7d32]">—</td>-->
-<!--                            <td class="px-2 py-2 text-center bg-[#e8f5e9]/20 font-medium text-[#2e7d32]">—</td>-->
-<!--                        </tr>-->
-<!--                        <tr class="hover:bg-surface-container-low/40 transition-colors">-->
-<!--                            <td class="px-3 py-2 border-r border-outline-variant/15 font-medium flex items-center gap-2">-->
-<!--                                РУП "Брестское агентство по государственной регистрации и земельному кадастру"</td>-->
-<!--                            <td class="px-3 py-2 border-r border-outline-variant/15 text-center font-bold text-primary">68</td>-->
-<!--                            <td class="px-2 py-2 border-r border-outline-variant/15 text-center bg-[#e8f5e9]/20 font-medium text-[#2e7d32]">2</td>-->
-<!--                            <td class="px-2 py-2 border-r border-outline-variant/15 text-center text-on-surface-variant">—</td>-->
-<!--                            <td class="px-2 py-2 border-r border-outline-variant/15 text-center bg-[#e8f5e9]/20 font-medium text-[#2e7d32]">5</td>-->
-<!--                            <td class="px-2 py-2 border-r border-outline-variant/15 text-center bg-[#e8f5e9]/20 font-medium text-[#2e7d32]">4</td>-->
-<!--                            <td class="px-2 py-2 text-center bg-[#e8f5e9]/20 font-medium text-[#2e7d32]">3</td>-->
-<!--                        </tr>-->
-<!--                        <tr class="hover:bg-surface-container-low/40 transition-colors">-->
-<!--                            <td class="px-3 py-2 border-r border-outline-variant/15 font-medium flex items-center gap-2">-->
-<!--                                РУП "Витебское агентство по государственной регистрации и земельному кадастру"</td>-->
-<!--                            <td class="px-3 py-2 border-r border-outline-variant/15 text-center font-bold text-primary">78</td>-->
-<!--                            <td class="px-2 py-2 border-r border-outline-variant/15 text-center text-on-surface-variant">—</td>-->
-<!--                            <td class="px-2 py-2 border-r border-outline-variant/15 text-center bg-[#e8f5e9]/20 font-medium text-[#2e7d32]">3</td>-->
-<!--                            <td class="px-2 py-2 border-r border-outline-variant/15 text-center bg-[#e8f5e9]/20 font-medium text-[#2e7d32]">2</td>-->
-<!--                            <td class="px-2 py-2 border-r border-outline-variant/15 text-center bg-[#e8f5e9]/20 font-medium text-[#2e7d32]">1</td>-->
-<!--                            <td class="px-2 py-2 text-center text-on-surface-variant">—</td>-->
-<!--                        </tr>-->
-<!--                        <tr class="hover:bg-surface-container-low/40 transition-colors">-->
-<!--                            <td class="px-3 py-2 border-r border-outline-variant/15 font-medium flex items-center gap-2">-->
-<!--                                РУП "Гомельское агентство по государственной регистрации и земельному кадастру"</td>-->
-<!--                            <td class="px-3 py-2 border-r border-outline-variant/15 text-center font-bold text-primary">65</td>-->
-<!--                            <td class="px-2 py-2 border-r border-outline-variant/15 text-center text-on-surface-variant">—</td>-->
-<!--                            <td class="px-2 py-2 border-r border-outline-variant/15 text-center bg-[#e8f5e9]/20 font-medium text-[#2e7d32]">3</td>-->
-<!--                            <td class="px-2 py-2 border-r border-outline-variant/15 text-center bg-[#e8f5e9]/20 font-medium text-[#2e7d32]">2</td>-->
-<!--                            <td class="px-2 py-2 border-r border-outline-variant/15 text-center bg-[#e8f5e9]/20 font-medium text-[#2e7d32]">1</td>-->
-<!--                            <td class="px-2 py-2 text-center text-on-surface-variant">—</td>-->
-<!--                        </tr>-->
-<!--                        <tr class="hover:bg-surface-container-low/40 transition-colors">-->
-<!--                            <td class="px-3 py-2 border-r border-outline-variant/15 font-medium flex items-center gap-2">-->
-<!--                                РУП "Гродненское агентство по государственной регистрации и земельному кадастру"</td>-->
-<!--                            <td class="px-3 py-2 border-r border-outline-variant/15 text-center font-bold text-primary">45</td>-->
-<!--                            <td class="px-2 py-2 border-r border-outline-variant/15 text-center text-on-surface-variant">—</td>-->
-<!--                            <td class="px-2 py-2 border-r border-outline-variant/15 text-center bg-[#e8f5e9]/20 font-medium text-[#2e7d32]">3</td>-->
-<!--                            <td class="px-2 py-2 border-r border-outline-variant/15 text-center bg-[#e8f5e9]/20 font-medium text-[#2e7d32]">2</td>-->
-<!--                            <td class="px-2 py-2 border-r border-outline-variant/15 text-center bg-[#e8f5e9]/20 font-medium text-[#2e7d32]">1</td>-->
-<!--                            <td class="px-2 py-2 text-center text-on-surface-variant">—</td>-->
-<!--                        </tr>-->
-<!--                        <tr class="hover:bg-surface-container-low/40 transition-colors">-->
-<!--                            <td class="px-3 py-2 border-r border-outline-variant/15 font-medium flex items-center gap-2">-->
-<!--                                РУП "Минское городское агентство по государственной регистрации и земельному кадастру"</td>-->
-<!--                            <td class="px-3 py-2 border-r border-outline-variant/15 text-center font-bold text-primary">27</td>-->
-<!--                            <td class="px-2 py-2 border-r border-outline-variant/15 text-center text-on-surface-variant">—</td>-->
-<!--                            <td class="px-2 py-2 border-r border-outline-variant/15 text-center bg-[#e8f5e9]/20 font-medium text-[#2e7d32]">3</td>-->
-<!--                            <td class="px-2 py-2 border-r border-outline-variant/15 text-center bg-[#e8f5e9]/20 font-medium text-[#2e7d32]">2</td>-->
-<!--                            <td class="px-2 py-2 border-r border-outline-variant/15 text-center bg-[#e8f5e9]/20 font-medium text-[#2e7d32]">1</td>-->
-<!--                            <td class="px-2 py-2 text-center text-on-surface-variant">—</td>-->
-<!--                        </tr>-->
-<!--                        <tr class="hover:bg-surface-container-low/40 transition-colors">-->
-<!--                            <td class="px-3 py-2 border-r border-outline-variant/15 font-medium flex items-center gap-2">-->
-<!--                                РУП "Минское областное агентство по государственной регистрации и земельному кадастру"</td>-->
-<!--                            <td class="px-3 py-2 border-r border-outline-variant/15 text-center font-bold text-primary">119</td>-->
-<!--                            <td class="px-2 py-2 border-r border-outline-variant/15 text-center text-on-surface-variant">—</td>-->
-<!--                            <td class="px-2 py-2 border-r border-outline-variant/15 text-center bg-[#e8f5e9]/20 font-medium text-[#2e7d32]">3</td>-->
-<!--                            <td class="px-2 py-2 border-r border-outline-variant/15 text-center bg-[#e8f5e9]/20 font-medium text-[#2e7d32]">2</td>-->
-<!--                            <td class="px-2 py-2 border-r border-outline-variant/15 text-center bg-[#e8f5e9]/20 font-medium text-[#2e7d32]">1</td>-->
-<!--                            <td class="px-2 py-2 text-center text-on-surface-variant">—</td>-->
-<!--                        </tr>-->
-<!--                        <tr class="hover:bg-surface-container-low/40 transition-colors">-->
-<!--                            <td class="px-3 py-2 border-r border-outline-variant/15 font-medium flex items-center gap-2">-->
-<!--                                РУП "Могилевское агентство по государственной регистрации и земельному кадастру"</td>-->
-<!--                            <td class="px-3 py-2 border-r border-outline-variant/15 text-center font-bold text-primary">35</td>-->
-<!--                            <td class="px-2 py-2 border-r border-outline-variant/15 text-center text-on-surface-variant">—</td>-->
-<!--                            <td class="px-2 py-2 border-r border-outline-variant/15 text-center bg-[#e8f5e9]/20 font-medium text-[#2e7d32]">3</td>-->
-<!--                            <td class="px-2 py-2 border-r border-outline-variant/15 text-center bg-[#e8f5e9]/20 font-medium text-[#2e7d32]">2</td>-->
-<!--                            <td class="px-2 py-2 border-r border-outline-variant/15 text-center bg-[#e8f5e9]/20 font-medium text-[#2e7d32]">1</td>-->
-<!--                            <td class="px-2 py-2 text-center text-on-surface-variant">—</td>-->
-<!--                        </tr>-->
-                        <tr class="bg-surface-container-high/60 font-bold text-on-surface">
-                            <td class="px-3 py-2.5 border-r border-outline-variant/15 uppercase text-[11px] tracking-wider">ИТОГО</td>
-                            <td class="px-3 py-2.5 border-r border-outline-variant/15 text-center text-primary text-body-md">438</td>
-                            <td class="px-2 py-2.5 border-r border-outline-variant/15 text-center">18</td>
-                            <td class="px-2 py-2.5 border-r border-outline-variant/15 text-center">17</td>
-                            <td class="px-2 py-2.5 border-r border-outline-variant/15 text-center">10</td>
-                            <td class="px-2 py-2.5 border-r border-outline-variant/15 text-center">3</td>
-                            <td class="px-2 py-2.5 text-center">8</td>
-                        </tr>
-                        </tbody>
-                    </table>
+            <div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/15 flex flex-col gap-4">
+                <div class="text-label-sm font-bold text-on-surface uppercase tracking-wider flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[18px] text-surface-tint">tune</span>
+                    <span>Параметры выгрузки</span>
                 </div>
-            </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-end">
+                    <div class="flex flex-col gap-1.5">
+                        <label class="text-label-sm font-semibold text-on-surface-variant uppercase tracking-wider">Год планирования</label>
+                        <div class="relative">
+                            <select class="w-full bg-surface-container-lowest border border-outline-variant/15 rounded-lg px-4 py-2.5 text-body-md font-medium text-on-surface appearance-none focus:ring-2 focus:ring-primary/20 outline-none pr-10 cursor-pointer shadow-sm">
+                                <option selected="" value="">2027 год</option>
+                                <option value="2026">2026 год (текущий период)</option>
+                            </select>
+                            <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant text-xl">expand_more</span>
+        </div>
+        </div>
+        </div>
+        </div>
+
+
+            <div class="flex flex-col gap-4">
+                <div class="flex items-center justify-between">
+                    <div class="text-label-md font-bold text-on-surface flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[18px] text-surface-tint">table_rows</span>
+                        <span class="">Структура формируемого документа</span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-surface-container-lowest rounded-xl p-4 border border-outline-variant/15 flex flex-col justify-between shadow-sm relative group hover:border-primary/30 transition-all">
+                        <div class="flex flex-col gap-3">
+                            <div class="flex items-start justify-between">
+                                <div class="flex items-center gap-2.5">
+                                    <div class="w-9 h-9 rounded-lg bg-primary-fixed/40 text-primary flex items-center justify-center font-bold">
+                                        <span class="material-symbols-outlined text-xl">calendar_month</span>
+                                    </div>
+                                    <div>
+                                        <div class="text-[11px] font-bold uppercase tracking-wider text-surface-tint">Лист 1</div>
+                                        <div class="text-label-md font-bold text-on-surface">Сводный план-график</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="bg-surface-container-lowest rounded-xl p-4 border border-outline-variant/15 flex flex-col justify-between shadow-sm relative group hover:border-primary/30 transition-all">
+                        <div class="flex flex-col gap-3">
+                            <div class="flex items-start justify-between">
+                                <div class="flex items-center gap-2.5">
+                                    <div class="w-9 h-9 rounded-lg bg-surface-container-high text-on-surface-variant flex items-center justify-center font-bold">
+                                        <span class="material-symbols-outlined text-xl">analytics</span>
+                                    </div>
+                                    <div>
+                                        <div class="text-[11px] font-bold uppercase tracking-wider text-outline">Лист 2</div>
+                                        <div class="text-label-md font-bold text-on-surface">План-график по ТОРам.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="px-6 py-4 bg-surface/50 border-t border-surface-container flex justify-end gap-3">
-            <button onclick="window.location.href='План-график_следующий_год.html'" class="text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors px-8 py-2.5 rounded-lg font-label-md hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2" id="cancel-export">Отмена</button>
-            <button onclick="window.location.href='План-график_следующий_год.html'" class="text-sm font-semibold px-6 py-2 gradient-btn text-on-primary rounded shadow-md hover:scale-[1.02] active:scale-[0.98] transition-all">Экспортировать</button>
+            <button onclick="window.location.href='План-график_календарь.html'" class="text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors px-8 py-2.5 rounded-lg font-label-md hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2" id="cancel-export">Отмена</button>
+            <button onclick="window.location.href='План-график_календарь.html'" class="text-sm font-semibold px-6 py-2 gradient-btn text-on-primary rounded shadow-md hover:scale-[1.02] active:scale-[0.98] transition-all">Экспортировать</button>
         </div>
-
-<!--        <div class="px-6 py-4 bg-surface-container-low border-t border-outline-variant/15 flex items-center justify-between">-->
-<!--            <div class="flex items-center gap-3">-->
-<!--                <button class="px-5 py-2.5 rounded-lg text-label-md font-medium text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" onclick="window.location.href='./План-график.html'">Отмена</button>-->
-<!--                <button class="gradient-btn text-on-primary text-label-md font-semibold px-6 py-2.5 rounded-lg flex items-center gap-2 hover:opacity-90 shadow-sm transition-all" onclick="this.innerHTML='&lt;span class=\'material-symbols-outlined text-lg animate-spin\'&gt;sync&lt;/span&gt;&lt;span&gt;Формирование файла Excel...&lt;/span&gt;'; this.disabled=true;" title="Сформировать и скачать файл Excel">-->
-<!--                    <span class="material-symbols-outlined text-lg">download</span>-->
-<!--                    <span>Экспортировать</span>-->
-<!--                </button>-->
-<!--            </div>-->
-<!--        </div>-->
     </div>
 </div>
 </body>

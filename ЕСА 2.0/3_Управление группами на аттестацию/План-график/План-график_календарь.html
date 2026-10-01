@@ -279,7 +279,7 @@
         <header class="px-section-gap py-4 bg-surface-container-lowest sticky top-0 z-30">
             <div class="flex justify-between items-end mb-module-gap">
                 <div>
-                    <h1 class="text-display-lg font-display-lg text-on-surface">Управление претендентами</h1>
+                    <h1 class="text-lg font-bold tracking-tighter text-[#001453] dark:text-white">Управление претендентами</h1>
                 </div>
             </div>
             <!-- Main Tabs -->
@@ -290,9 +290,9 @@
                 <button onclick="window.location.href='План-график.html'" class="flex items-center gap-2 px-4 py-2 text-brand-primary text-[14px] font-bold rounded-md hover:bg-brand-primary hover:text-white transition-all">
                     Текущий год
                 </button>
-                <button onclick="window.location.href='./План-график_следующий_год.html'" class="flex items-center gap-2 px-4 py-2 text-brand-primary text-[14px] font-bold rounded-md hover:bg-brand-primary hover:text-white transition-all">
-                    Следующий год*
-                </button>
+<!--                <button onclick="window.location.href='./План-график_следующий_год.html'" class="flex items-center gap-2 px-4 py-2 text-brand-primary text-[14px] font-bold rounded-md hover:bg-brand-primary hover:text-white transition-all">-->
+<!--                    Следующий год*-->
+<!--                </button>-->
 <!--                <div class="flex items-end gap-4">-->
 <!--                    <button title="Отобразить поля фильтра" class="p-2 rounded-md hover:bg-brand-primary/10 text-brand-primary transition-colors flex items-center justify-center" onclick="document.getElementById('filter-panel').classList.toggle('hidden')">-->
 <!--                        <span class="material-symbols-outlined">filter_list</span>-->
@@ -300,15 +300,13 @@
 <!--                </div>-->
             </div>
 
-
-
         </header>
 
         <!-- Header & Actions -->
         <div class="px-6 pt-6 pb-4 flex flex-col xl:flex-row xl:items-end justify-between gap-4">
             <div>
                 <div class="flex items-center gap-3">
-                    <h1 class="text-2xl font-bold text-on-surface tracking-tight">Годовой план-график аттестации специалистов</h1>
+                    <h1 class="text-2xl font-bold text-on-surface tracking-tight">Годовой план-график аттестации</h1>
                     <div class="inline-flex items-center bg-surface-container-highest rounded-lg p-1">
                         <button class="p-1 hover:bg-surface-container-lowest rounded text-on-surface-variant hover:text-on-surface transition-all" title="Предыдущий год">
                             <span class="material-symbols-outlined text-lg">chevron_left</span>
@@ -362,7 +360,7 @@
                         <div class="text-[11px] uppercase tracking-wider text-on-surface-variant font-semibold">Пиковые недели</div>
                         <div class="flex items-baseline gap-1.5 mt-0.5">
                             <span id="metricPeakWeeks" class="text-2xl font-bold text-error">4</span>
-                            <span class="text-xs text-error font-semibold">&gt;28 чел./нед.</span>
+                            <span class="text-xs text-error font-semibold">&gt;25 чел./нед.</span>
                         </div>
                     </div>
                     <span class="material-symbols-outlined text-2xl text-amber-600 bg-amber-50 p-2 rounded-lg">warning</span>
@@ -686,13 +684,14 @@
             let agreedWeeks = 0;
             let coveredCandidates = 0;
             let peakWeeksCount = 0;
+            let candidatesCountAll= 400;
 
             MONTHS_DATA.forEach(m => {
                 m.weeks.forEach(w => {
                     if (w.checked) {
                         agreedWeeks++;
                         coveredCandidates += w.pret;
-                        if (w.pret >= 28) peakWeeksCount++;
+                        if (w.pret >= 25) peakWeeksCount++;
                     }
                 });
             });
@@ -700,7 +699,7 @@
             document.getElementById("metricWeeksCount").innerText = agreedWeeks;
             document.getElementById("metricCandidatesCount").innerText = coveredCandidates;
             document.getElementById("metricPeakWeeks").innerText = peakWeeksCount;
-            const avg = agreedWeeks > 0 ? (coveredCandidates / agreedWeeks).toFixed(1) : 0;
+            const avg = agreedWeeks > 0 ? (candidatesCountAll / agreedWeeks).toFixed(1) : 0;
             document.getElementById("metricAverageLoad").innerText = `~${avg}`;
         }
 
