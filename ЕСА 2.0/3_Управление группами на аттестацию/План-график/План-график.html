@@ -190,7 +190,7 @@
                 <span class="material-symbols-outlined">database</span>
                 <span>На главную</span>
             </a>
-            <a class="flex items-center gap-3 px-4 py-3 text-[#4e69c3] bg-white font-bold transition-transform duration-200 scale-98" href="#">
+            <a class="flex items-center gap-3 px-4 py-3 text-[#4e69c3] bg-white font-bold transition-transform duration-200 scale-98" href="План-график.html">
                 <span class="material-symbols-outlined">calendar_month</span>
                 <span>Управление претендентами</span>
                 <span class="px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-[#ffa12b] text-white font-bold">5</span>
@@ -230,6 +230,9 @@
 </div>
 <!-- Main Tabs -->
     <div class="flex gap-3 border-b border-outline-variant/15">
+        <button onclick="window.location.href='План-график_календарь.html'" class="flex items-center gap-2 px-4 py-2 text-brand-primary text-[14px] font-bold rounded-md hover:bg-brand-primary hover:text-white transition-all">
+            <span class="material-symbols-outlined text-[13px]">verified</span>План-график
+        </button>
         <button onclick="window.location.href='#'" class="flex items-center gap-2 px-4 py-2 bg-brand-primary/10 text-brand-primary text-[14px] font-bold rounded-md hover:bg-brand-primary hover:text-white transition-all">
             <span class="material-symbols-outlined text-[13px]">verified</span>Текущий год
         </button>
@@ -334,6 +337,7 @@
                     <option>На рассмотрении</option>
                     <option>Перенесена</option>
                     <option>Одобрена</option>
+                    <option>Аттестация назначена</option>
                     <option>Аттестован</option>
                 </select>
                 <span class="material-symbols-outlined absolute right-2 top-2 text-[16px] pointer-events-none text-slate-400">expand_more</span>
@@ -398,7 +402,7 @@
             </th>
             <th class="px-2 py-2 w-32 cursor-pointer hover:text-brand-primary transition-colors group">
                 <div class="flex items-center gap-1 justify-center">
-                    Аттестация назначена<span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
+                    Дата аттестации<span class="material-symbols-outlined text-[14px] opacity-0 group-hover:opacity-100 transition-opacity">unfold_more</span>
                 </div>
             </th>
             <th class="px-2 py-2 w-32 text-right pr-6 cursor-pointer hover:text-brand-primary transition-colors group" data-col="actions">
