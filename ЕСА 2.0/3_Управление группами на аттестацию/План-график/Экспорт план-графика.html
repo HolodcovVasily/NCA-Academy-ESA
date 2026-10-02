@@ -701,7 +701,7 @@
 </div>
 
 <div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-on-surface/40 backdrop-blur-sm transition-opacity" id="modal-export-xls">
-    <div class="bg-surface-container-lowest rounded-xl shadow-[0_12px_40px_rgba(25,28,30,0.16)] w-full max-w-[920px] flex flex-col overflow-hidden border border-outline-variant/15 animate-in fade-in zoom-in-95 duration-200">
+    <div class="bg-surface-container-lowest rounded-xl shadow-[0_12px_40px_rgba(25,28,30,0.16)] w-full max-w-md flex flex-col overflow-hidden border border-outline-variant/15 animate-in fade-in zoom-in-95 duration-200">
         <div class="px-6 py-5 bg-surface-container-low border-b border-outline-variant/15 flex items-start justify-between">
             <div>
         <div class="text-label-sm font-bold text-surface-tint uppercase tracking-wider mb-1 flex items-center gap-1.5">
@@ -716,17 +716,13 @@
             <div class="p-4 bg-surface-container-low rounded-lg flex gap-3 items-start">
                 <span class="material-symbols-outlined text-primary text-[20px]">info</span>
                 <p class="text-[11px] leading-relaxed text-slate-600">
-                    Будет сформирован файл сводного план-графика плановых аттестаций специалистов по технической инвентаризации на выбранный год в разрезе организаций и календарных недель. <br>
+                    Будет сформирован файл план-графика проведения аттестаций, составленный на соответствующий календарный год в разрезе календарных недель.<br>
                     <span class="font-bold">Формат: XLS/XLSX</span>
                 </p>
             </div>
 
             <div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/15 flex flex-col gap-4">
-                <div class="text-label-sm font-bold text-on-surface uppercase tracking-wider flex items-center gap-2">
-                    <span class="material-symbols-outlined text-[18px] text-surface-tint">tune</span>
-                    <span>Параметры выгрузки</span>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-end">
+                <div class="grid grid-cols-1 md:grid-cols-1 gap-4 items-end">
                     <div class="flex flex-col gap-1.5">
                         <label class="text-label-sm font-semibold text-on-surface-variant uppercase tracking-wider">Год планирования</label>
                         <div class="relative">
@@ -735,20 +731,19 @@
                                 <option value="2026">2026 год (текущий период)</option>
                             </select>
                             <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant text-xl">expand_more</span>
-        </div>
-        </div>
-        </div>
-        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
             <div class="flex flex-col gap-4">
                 <div class="flex items-center justify-between">
                     <div class="text-label-md font-bold text-on-surface flex items-center gap-2">
-                        <span class="material-symbols-outlined text-[18px] text-surface-tint">table_rows</span>
                         <span class="">Структура формируемого документа</span>
                     </div>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="grid grid-cols-1 md:grid-cols-1 gap-4">
                     <div class="bg-surface-container-lowest rounded-xl p-4 border border-outline-variant/15 flex flex-col justify-between shadow-sm relative group hover:border-primary/30 transition-all">
                         <div class="flex flex-col gap-3">
                             <div class="flex items-start justify-between">
@@ -758,27 +753,10 @@
                                     </div>
                                     <div>
                                         <div class="text-[11px] font-bold uppercase tracking-wider text-surface-tint">Лист 1</div>
-                                        <div class="text-label-md font-bold text-on-surface">Сводный план-график</div>
+                                        <div class="text-label-md font-bold text-on-surface">План-график</div>
                                     </div>
                                 </div>
                             </div>
-
-                        </div>
-                    </div>
-                    <div class="bg-surface-container-lowest rounded-xl p-4 border border-outline-variant/15 flex flex-col justify-between shadow-sm relative group hover:border-primary/30 transition-all">
-                        <div class="flex flex-col gap-3">
-                            <div class="flex items-start justify-between">
-                                <div class="flex items-center gap-2.5">
-                                    <div class="w-9 h-9 rounded-lg bg-surface-container-high text-on-surface-variant flex items-center justify-center font-bold">
-                                        <span class="material-symbols-outlined text-xl">analytics</span>
-                                    </div>
-                                    <div>
-                                        <div class="text-[11px] font-bold uppercase tracking-wider text-outline">Лист 2</div>
-                                        <div class="text-label-md font-bold text-on-surface">План-график по ТОРам.</div>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>
