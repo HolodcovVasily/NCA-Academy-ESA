@@ -213,26 +213,25 @@
 
 <!-- Main Content Canvas -->
 <main class="flex-1 overflow-y-auto bg-surface-bright flex flex-col">
+
+
 <!-- Page Header & Top Nav -->
 <header class="px-section-gap py-4 bg-surface-container-lowest sticky top-0 z-30">
 <div class="flex justify-between items-end mb-module-gap">
 <div>
     <h1 class="text-lg font-bold tracking-tighter text-[#001453] dark:text-white">Управление претендентами</h1>
 </div>
-<div class="flex items-center gap-3">
-    <button onclick="window.location.href='./Добавление претендента.html'" class="text-sm font-semibold gradient-btn text-on-primary  px-8 py-2.5 rounded-lg font-label-md hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2" title="Включение стажеров, вновь принятых лиц или назначение внеочередной аттестации">Добавить претендента</button>
-<!--    <button onclick="window.location.href='../Результаты за период/Результаты.html'" class="text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors px-8 py-2.5 rounded-lg font-label-md hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2" title="Результаты за период">-->
-<!--        Результаты за период-->
-<!--    </button>-->
 </div>
-</div>
+
+
+
 <!-- Main Tabs -->
     <div class="flex gap-3 border-b border-outline-variant/15">
         <button onclick="window.location.href='План-график_календарь.html'" class="flex items-center gap-2 px-4 py-2 text-brand-primary text-[14px] font-bold rounded-md hover:bg-brand-primary hover:text-white transition-all">
             План-график
         </button>
         <button onclick="window.location.href='#'" class="flex items-center gap-2 px-4 py-2 bg-brand-primary/10 text-brand-primary text-[14px] font-bold rounded-md hover:bg-brand-primary hover:text-white transition-all">
-            Текущий год
+            Управление заявками на аттестацию
         </button>
 <!--        <button onclick="window.location.href='./План-график_следующий_год.html'" class="flex items-center gap-2 px-4 py-2 text-brand-primary text-[14px] font-bold rounded-md hover:bg-brand-primary hover:text-white transition-all">-->
 <!--            Следующий год*-->
@@ -250,8 +249,8 @@
     <div class="mt-2 mb-2 bg-emerald-100 p-container-padding flex items-start gap-4" id="review-banner-1">
         <span class="material-symbols-outlined">Warning</span>
         <div>
-            <p class="font-label-md">Внимание: автоматически сформирован план-график аттестаций на следующий год. У Вас есть время до [дд.мм.гггг] для проверки, экспорта и согласования план-графика.</p>
-            <p class="text-on-surface-variant text-sm mt-1">* - После утверждения сформированного план-графика нажмите на кнопку "Опубликовать план-график", после чего вкладка с данным план-графиком будет доступна специалистам ОКР ТОР.</p>
+            <p class="font-label-md">Внимание: автоматически сформирован план-график аттестаций на [гггг] год. У Вас есть время до [дд.мм.гггг] для редактирования предварительных периодов аттестации, экспорта и согласования план-графика.</p>
+            <p class="text-on-surface-variant text-sm mt-1">После утверждения сформированного план-графика нажмите на кнопку "Опубликовать план-график", после чего вкладка с данным план-графиком будет доступна специалистам ОКР ТОР.</p>
         </div>
         <button class="p-1.5 rounded-lg text-on-surface-variant transition-colors" onclick="document.getElementById('review-banner-1').remove()" title="Закрыть оповещение">
             <span class="material-symbols-outlined">close</span>
@@ -286,9 +285,16 @@
             </button>
         </div>
     </div>
+    <div class="p-4 flex-1 flex flex-col gap-4 max-w-[1600px] mx-auto w-full">
 
+    <div class="flex justify-between items-end">
+        <div>
 
-<div class="p-4 flex-1 flex flex-col gap-4 max-w-[1600px] mx-auto w-full">
+        </div>
+        <div class="flex items-center gap-3">
+            <button onclick="window.location.href='./Добавление претендента.html'" class="text-sm font-semibold gradient-btn text-on-primary  px-8 py-2.5 rounded-lg font-label-md hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2" title="Включение стажеров, вновь принятых лиц или назначение внеочередной аттестации">Добавить претендента</button>
+        </div>
+    </div>
 <!-- Filters -->
     <div id="filter-panel" class="grid grid-cols-6 gap-4 p-4 bg-brand-lowest/50 rounded-lg border border-brand-container/50 transition-all">
         <div class="space-y-1.5">

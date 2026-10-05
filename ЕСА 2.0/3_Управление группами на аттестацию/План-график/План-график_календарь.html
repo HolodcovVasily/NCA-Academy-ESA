@@ -271,8 +271,6 @@
             </a>
         </div>
     </aside>
-
-
 <!-- Main Content Canvas -->
     <main class="flex-1 overflow-y-auto bg-surface flex flex-col">
 
@@ -288,18 +286,9 @@
                     План-график
                 </button>
                 <button onclick="window.location.href='План-график.html'" class="flex items-center gap-2 px-4 py-2 text-brand-primary text-[14px] font-bold rounded-md hover:bg-brand-primary hover:text-white transition-all">
-                    Текущий год
+                    Управление заявками на аттестацию
                 </button>
-<!--                <button onclick="window.location.href='./План-график_следующий_год.html'" class="flex items-center gap-2 px-4 py-2 text-brand-primary text-[14px] font-bold rounded-md hover:bg-brand-primary hover:text-white transition-all">-->
-<!--                    Следующий год*-->
-<!--                </button>-->
-<!--                <div class="flex items-end gap-4">-->
-<!--                    <button title="Отобразить поля фильтра" class="p-2 rounded-md hover:bg-brand-primary/10 text-brand-primary transition-colors flex items-center justify-center" onclick="document.getElementById('filter-panel').classList.toggle('hidden')">-->
-<!--                        <span class="material-symbols-outlined">filter_list</span>-->
-<!--                    </button>-->
-<!--                </div>-->
             </div>
-
         </header>
 
         <!-- Header & Actions -->
@@ -359,7 +348,7 @@
                     <div>
                         <div class="text-[11px] uppercase tracking-wider text-on-surface-variant font-semibold">Пиковые недели</div>
                         <div class="flex items-baseline gap-1.5 mt-0.5">
-                            <span id="metricPeakWeeks" class="text-2xl font-bold text-error">4</span>
+                            <span id="metricPeakWeeks" class="text-2xl font-bold text-error">8</span>
                             <span class="text-xs text-error font-semibold">&gt;25 чел./нед.</span>
                         </div>
                     </div>
@@ -384,20 +373,17 @@
             <div class="bg-surface-container-low px-4 py-2.5 rounded-xl flex flex-wrap items-center justify-between gap-4 border border-outline-variant/15 text-xs">
                 <div class="text-on-surface-variant flex items-center gap-1">
                     <span class="material-symbols-outlined text-sm text-primary">info</span>
-                    <p class="text-xs text-on-surface-variant mt-1">Отмечайте чек-боксы перед номерами недель для включения или исключения предварительного периода аттестации.</p>
+                    <p class="text-xs text-on-surface-variant mt-1">Отмечайте чек-боксы перед номерами недель для включения или исключения предварительного периода аттестации. Даты аттестации претендентов указаны с учетом срока подачи заявки.</p>
                 </div>
             </div>
         </div>
-
         <!-- 12-Month Calendar Container -->
         <div class="px-6 pb-6">
             <div id="calendarGrid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-2">
-                <!-- Rendered dynamically by JavaScript for clean, compact and complete 12 months with interactive checkboxes -->
+
             </div>
         </div>
-
     </main>
-
     <!-- Toast Notice -->
     <div id="toastNotice" class="fixed bottom-5 right-5 bg-gray-900 text-white px-4 py-2.5 rounded-lg shadow-xl text-xs flex items-center gap-2 z-50 pointer-events-none opacity-0">
         <span class="material-symbols-outlined text-green-400 text-base" id="toastIcon">check_circle</span>
@@ -405,11 +391,12 @@
     </div>
 
     <script>
-        // Calendar 2026 Raw Data definition (12 months with correct days & active candidate weeks)
+
         const MONTHS_DATA = [
             {
                 name: "ЯНВАРЬ",
                 totalPret: "28 прет.",
+                peak: true,
                 weeks: [
                     { id: "01", checked: false, dates: "01.01 – 04.01.2026", pret: 0, days: [null, null, null, 1, 2, 3, 4], badges: {} },
                     { id: "02", checked: false, dates: "05.01 – 11.01.2026", pret: 8, days: [5, 6, 7, 8, 9, 10, 11], badges: { 8: 4, 9: 4 } },
@@ -431,7 +418,7 @@
             },
             {
                 name: "МАРТ",
-                totalPret: "46 прет. (ПИК)",
+                totalPret: "46 прет.",
                 peak: true,
                 weeks: [
                     { id: "09", checked: false, dates: "01.03.2026", pret: 0, days: [null, null, null, null, null, null, 1], badges: {} },
@@ -444,6 +431,7 @@
             {
                 name: "АПРЕЛЬ",
                 totalPret: "34 прет.",
+                peak: true,
                 weeks: [
                     { id: "14", checked: false, dates: "30.03 – 05.04.2026", pret: 8, days: [null, null, 1, 2, 3, 4, 5], badges: { 1: 8 } },
                     { id: "15", checked: true, dates: "06.04 – 12.04.2026", pret: 10, days: [6, 7, 8, 9, 10, 11, 12], badges: { 8: 10 } },
@@ -455,6 +443,7 @@
             {
                 name: "МАЙ",
                 totalPret: "26 прет.",
+                peak: true,
                 weeks: [
                     { id: "18b", checked: false, dates: "01.05 – 03.05.2026", pret: 0, days: [null, null, null, null, 1, 2, 3], badges: {} },
                     { id: "19", checked: true, dates: "04.05 – 10.05.2026", pret: 8, days: [4, 5, 6, 7, 8, 9, 10], badges: { 6: 8 } },
@@ -488,6 +477,7 @@
             {
                 name: "АВГУСТ",
                 totalPret: "32 прет.",
+                peak: true,
                 weeks: [
                     { id: "31", checked: false, dates: "01.08 – 02.08.2026", pret: 0, days: [null, null, null, null, null, 1, 2], badges: {} },
                     { id: "32", checked: true, dates: "03.08 – 09.08.2026", pret: 10, days: [3, 4, 5, 6, 7, 8, 9], badges: { 5: 10 } },
@@ -509,7 +499,7 @@
             },
             {
                 name: "ОКТЯБРЬ",
-                totalPret: "48 прет. (ПИК)",
+                totalPret: "48 прет.",
                 peak: true,
                 weeks: [
                     { id: "40", checked: false, dates: "01.10 – 04.10.2026", pret: 0, days: [null, null, null, 1, 2, 3, 4], badges: {} },
@@ -521,7 +511,7 @@
             },
             {
                 name: "НОЯБРЬ",
-                totalPret: "56 прет. (ПИК)",
+                totalPret: "56 прет.",
                 peak: true,
                 weeks: [
                     { id: "44b", checked: false, dates: "01.11.2026", pret: 0, days: [null, null, null, null, null, null, 1], badges: {} },
@@ -533,7 +523,7 @@
             },
             {
                 name: "ДЕКАБРЬ",
-                totalPret: "62 прет. (МАКС)",
+                totalPret: "62 прет.",
                 peak: true,
                 weeks: [
                     { id: "49", checked: false, dates: "30.11 – 06.12.2026", pret: 0, days: [null, 1, 2, 3, 4, 5, 6], badges: {} },
