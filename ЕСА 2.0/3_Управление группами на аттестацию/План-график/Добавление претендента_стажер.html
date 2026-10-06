@@ -601,11 +601,11 @@
             </div>
             <!-- Scenario Tabs -->
             <div class="flex items-center gap-2 mt-4 pt-2 overflow-x-auto">
-                <button onclick="window.location.href='Добавление претендента.html'" class="px-4 py-2 text-label-md font-semibold text-primary bg-surface-container-lowest rounded-t-lg shadow-sm flex items-center gap-2">
+                <button onclick="window.location.href='Добавление претендента.html'" class="px-4 py-2 text-label-md font-medium text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 rounded-t-lg transition-colors flex items-center gap-2">
                     <span class="material-symbols-outlined text-[18px]">group</span>
                     <span class="">Действующие специалисты</span>
                 </button>
-                <button onclick="window.location.href='Добавление претендента_стажер.html'" class="px-4 py-2 text-label-md font-medium text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 rounded-t-lg transition-colors flex items-center gap-2">
+                <button onclick="window.location.href='Добавление претендента_стажер.html'" class="px-4 py-2 text-label-md font-semibold text-primary bg-surface-container-lowest rounded-t-lg shadow-sm flex items-center gap-2">
                     <span class="material-symbols-outlined text-[18px]">school</span>
                     <span class="">Стажеры</span>
                     <span class="px-1.5 py-0.2 bg-primary/10 text-primary rounded-full text-[11px] font-bold">4</span>
@@ -613,35 +613,50 @@
             </div>
         </div>
         <div class="p-6 flex flex-col gap-6 overflow-y-auto max-h-[calc(85vh-140px)]">
+
             <div class="bg-surface-container-low p-4 rounded-xl border border-outline-variant/15 flex flex-col gap-3">
                 <div class="flex items-center justify-between flex-wrap gap-2">
                     <label class="text-label-sm font-semibold text-on-surface uppercase tracking-wider flex items-center gap-1.5">
                         <span class="">Поиск претендента</span>
                     </label>
+
+                    <!-- Specialized Trainee Switcher -->
+                    <label id="trainee-checkbox-label" class="inline-flex items-center gap-2 cursor-pointer bg-surface-container-lowest px-3 py-1.5 rounded-lg border border-primary/30 hover:bg-surface-bright transition-colors text-label-sm font-medium text-primary select-none shadow-sm">
+                        <input id="show-all-trainees-toggle" type="checkbox" checked="" onchange="toggleAllTrainees(this.checked)" class="w-4 h-4 text-primary rounded border-outline-variant focus:ring-primary focus:ring-2 cursor-pointer">
+                        <span class="font-bold">Отобразить всех доступных стажеров</span>
+                    </label>
                 </div>
+
                 <div class="flex items-center gap-3">
                     <div class="relative flex-1 flex items-center bg-surface-container-lowest rounded-lg px-4 py-2 border border-outline-variant/15 focus-within:ring-2 focus-within:ring-primary/20">
                         <span class="material-symbols-outlined text-on-surface-variant mr-2">search</span>
-                        <input id="candidate-search-input" class="bg-transparent border-none focus:ring-0 text-body-md text-on-surface-variant/80 w-full p-0 outline-none cursor-pointer" placeholder="Введите ФИО претендента" type="text" value="Иванов">
+                        <input id="candidate-search-input" class="bg-transparent border-none focus:ring-0 text-body-md text-on-surface-variant/80 w-full p-0 outline-none cursor-not-allowed" placeholder="Поиск отключен: отображается полный перечень доступных стажеров" type="text" value="" disabled="">
                         <button id="search-clear-btn" class="text-on-surface-variant hover:text-on-surface p-1 opacity-0 pointer-events-none transition-opacity">
                             <span class="material-symbols-outlined text-lg">cancel</span>
                         </button>
                     </div>
-                    <button class="gradient-btn text-on-primary text-label-md font-semibold px-6 py-2.5 rounded-lg flex items-center gap-2 hover:opacity-90 shadow-sm transition-all">
+                    <button id="candidate-search-btn" class="gradient-btn text-on-primary text-label-md font-label-md px-6 py-2.5 rounded-lg flex items-center gap-2 hover:opacity-90 shadow-sm transition-all opacity-50 cursor-not-allowed" disabled="">
                         <span class="material-symbols-outlined text-lg">search</span>
                         <span class="">Поиск</span>
                     </button>
                 </div>
+
+                <!-- Trainee Explanatory Notice Prompt -->
+                <div id="trainee-banner-hint"  class="text-label-sm text-surface-tint font-semibold mt-1 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-base">info</span>
+                    <span class="">При включении опции поле текстового поиска очищается, в таблице автоматически отображается полный перечень доступных стажеров.</span>
+                </div>
             </div>
+
             <div class="flex flex-col gap-3">
-            <div class="flex items-center justify-between">
-                <div class="text-label-md font-medium text-on-surface flex items-center gap-2">
-                <span>Найдено в Реестре специалистов: <strong class="font-bold text-primary">4 записи</strong>
-            </span>
-            </div>
-        </div>
+                <div class="flex items-center justify-between">
+                    <div class="text-label-md font-medium text-on-surface flex items-center gap-2">
+                        <span>Найдено в базе данных стажеров: <strong class="font-bold text-primary">4 записи</strong>
+                        </span>
+                    </div>
+                </div>
                 <div class="border border-outline-variant/15 rounded-lg overflow-hidden">
-                    <div class="grid grid-cols-12 gap-2 px-4 py-3 bg-surface-container-low text-label-sm font-semibold text-on-surface-variant uppercase tracking-wider border-b border-outline-variant/15">
+                    <div class="grid grid-cols-12 gap-2 px-4 py-2 bg-surface-container-low text-label-sm font-semibold text-on-surface-variant uppercase tracking-wider border-b border-outline-variant/15">
                         <div class="col-span-1 text-center">Выбор</div>
                         <div class="col-span-3">ФИО</div>
                         <div class="col-span-3">Организация</div>
@@ -652,7 +667,7 @@
                     <div class="divide-y divide-outline-variant/15">
                         <div class="grid grid-cols-12 gap-2 px-4 py-2 items-center bg-[#e8f5e9]/20 hover:bg-[#e8f5e9]/40 transition-colors">
                             <div class="col-span-1 flex justify-center">
-                                <input checked="" class="w-4 h-4 text-primary rounded border-outline-variant focus:ring-primary" type="checkbox"/>
+                                <input checked="" onchange="updateSelectedCount()" class="candidate-checkbox w-4 h-4 text-primary rounded border-outline-variant focus:ring-primary" type="checkbox"/>
                             </div>
                             <div class="col-span-3 font-medium text-body-md text-on-surface flex items-center gap-2">
                                 <span>Иванов Дмитрий Сергеевич</span>
@@ -662,17 +677,17 @@
                             <div class="col-span-2">
                                 <span class="px-2 py-0.5 bg-emerald-100 text-[9px] text-on-surface uppercase rounded">Активен</span>
                             </div>
-                            <div class="col-span-1 text-right text-label-md font-medium text-on-surface-variant">14.05.2021</div>
+                            <div class="col-span-1 text-right text-label-md font-medium text-on-surface-variant">-</div>
                         </div>
                         <div class="grid grid-cols-12 gap-2 px-4 py-2 items-center bg-surface-container-lowest hover:bg-surface-container-low transition-colors">
                             <div class="col-span-1 flex justify-center">
-                                <input class="w-4 h-4 text-primary rounded border-outline-variant focus:ring-primary" type="checkbox"/>
+                                <input onchange="updateSelectedCount()" class="candidate-checkbox w-4 h-4 text-primary rounded border-outline-variant focus:ring-primary" type="checkbox"/>
                             </div>
                             <div class="col-span-3 font-medium text-body-md text-on-surface flex items-center gap-2">
                                 <span>Иванова Ольга Николаевна</span>
                             </div>
                             <div class="col-span-3 text-label-md text-on-surface-variant">Гродненское Агентство</div>
-                            <div class="col-span-2 text-label-md text-on-surface-variant">Специалист по ТИ 2 к.</div>
+                            <div class="col-span-2 text-label-md text-on-surface-variant">Стажер специалиста по ТИ</div>
                             <div class="col-span-2">
                                 <span class="px-2 py-0.5 bg-emerald-100 text-[9px] text-on-surface uppercase rounded">Активен</span>
                             </div>
@@ -680,7 +695,7 @@
                         </div>
                         <div title="Уже добавлен в график" class="grid grid-cols-12 gap-2 px-4 py-2 items-center bg-surface-container-low/60 opacity-60 relative group">
                             <div class="col-span-1 flex justify-center items-center gap-1">
-                                <input class="w-4 h-4 rounded border-outline-variant text-outline cursor-not-allowed" disabled="" type="checkbox"/>
+                                <input onchange="updateSelectedCount()" class="candidate-checkbox w-4 h-4 rounded border-outline-variant text-outline cursor-not-allowed" disabled="" type="checkbox"/>
                             </div>
                             <div class="col-span-3 font-medium text-body-md text-on-surface flex items-center gap-2">
                                 <div>
@@ -692,17 +707,17 @@
                             <div class="col-span-2">
                                 <span class="px-2 py-0.5 bg-emerald-100 text-[9px] text-on-surface uppercase rounded">Активен</span>
                             </div>
-                            <div class="col-span-1 text-right text-label-md text-on-surface-variant">23.04.2023</div>
+                            <div class="col-span-1 text-right text-label-md text-on-surface-variant">-</div>
                         </div>
                         <div class="grid grid-cols-12 gap-2 px-4 py-2 items-center bg-surface-container-lowest hover:bg-surface-container-low transition-colors">
                             <div class="col-span-1 flex justify-center">
-                                <input class="w-4 h-4 text-primary rounded border-outline-variant focus:ring-primary" type="checkbox"/>
+                                <input onchange="updateSelectedCount()" class="candidate-checkbox w-4 h-4 text-primary rounded border-outline-variant focus:ring-primary" type="checkbox"/>
                             </div>
                             <div class="col-span-3 font-medium text-body-md text-on-surface flex items-center gap-2">
                                 <span>Иванов Роман Павлович</span>
                             </div>
                             <div class="col-span-3 text-label-md text-on-surface-variant">Гродненское Агентство</div>
-                            <div class="col-span-2 text-label-md text-on-surface-variant">Специалист по ТИ</div>
+                            <div class="col-span-2 text-label-md text-on-surface-variant">Стажер специалиста по ТИ</div>
                             <div class="col-span-2">
                                 <span class="px-2 py-0.5 bg-emerald-100 text-[9px] text-on-surface uppercase rounded">Активен</span>
                             </div>
@@ -716,10 +731,11 @@
                 <span>После подтверждения выбранные претенденты автоматически импортируются в текущий план-график со статусом заявки <strong>«Не подана»</strong>.</span>
             </div>
         </div>
-
         <div class="px-6 py-4 bg-surface-container-low border-t border-outline-variant/15 flex items-center justify-between">
             <div class="text-label-md font-medium text-on-surface flex items-center gap-2">
-                <span>Выбрано для добавления: <strong class="font-bold text-primary">1 претендент</strong></span>
+                <span>Выбрано для добавления:
+                    <strong id="selected-candidates-count" class="font-bold text-primary">1 претендент</strong>
+                </span>
             </div>
             <div class="flex items-center gap-3">
                 <button class="px-5 py-2.5 rounded-lg text-label-md font-medium text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" onclick="window.location.href='План-график.html'">Отмена</button>
@@ -731,6 +747,71 @@
     </div>
     </div>
 </div>
+
+<script>
+    function updateSelectedCount() {
+        const checked = document.querySelectorAll('.candidate-checkbox:checked').length;
+        const countLabel = document.getElementById('selected-candidates-count');
+        if (countLabel) {
+            let word = 'претендент';
+            if (checked >= 2 && checked <= 4) word = 'претендента';
+            else if (checked >= 5 || checked === 0) word = 'претендентов';
+            countLabel.textContent = checked + ' ' + word;
+        }
+    }
+
+    function toggleAllTrainees(checked) {
+        const input = document.getElementById('candidate-search-input');
+        const btn = document.getElementById('candidate-search-btn');
+        const hint = document.getElementById('trainee-banner-hint');
+        if (checked) {
+            input.value = '';
+            input.placeholder = 'Поиск отключен: отображается полный перечень доступных стажеров';
+            input.disabled = true;
+            input.classList.add('cursor-not-allowed', 'text-on-surface-variant/80');
+            btn.disabled = true;
+            btn.classList.add('opacity-50', 'cursor-not-allowed');
+            if (hint) hint.classList.remove('hidden');
+        } else {
+            input.disabled = false;
+            input.placeholder = 'Введите ФИО стажера';
+            input.classList.remove('cursor-not-allowed', 'text-on-surface-variant/80');
+            btn.disabled = false;
+            btn.classList.remove('opacity-50', 'cursor-not-allowed');
+            if (hint) hint.classList.add('hidden');
+        }
+    }
+
+    function switchCandidateTab(tab) {
+        const tabAll = document.getElementById('tab-all-candidates');
+        const tabTrainees = document.getElementById('tab-trainees');
+        const traineeToggleLabel = document.getElementById('trainee-checkbox-label');
+        const traineeHint = document.getElementById('trainee-banner-hint');
+        const searchInput = document.getElementById('candidate-search-input');
+        const searchBtn = document.getElementById('candidate-search-btn');
+        const countHeader = document.getElementById('results-count-header');
+
+        if (tab === 'all') {
+            tabAll.className = 'px-4 py-1.5 rounded-md text-label-md font-bold bg-surface-container-lowest text-primary shadow-sm flex items-center gap-2';
+            tabTrainees.className = 'px-4 py-1.5 rounded-md text-label-md font-medium text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-2';
+            if (traineeToggleLabel) traineeToggleLabel.classList.add('hidden');
+            if (traineeHint) traineeHint.classList.add('hidden');
+            searchInput.disabled = false;
+            searchInput.placeholder = 'Введите ФИО сотрудника...';
+            searchInput.classList.remove('cursor-not-allowed', 'text-on-surface-variant/80');
+            searchBtn.disabled = false;
+            searchBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+            if (countHeader) countHeader.innerHTML = 'Найдено специалистов в Реестре: <strong class="font-bold text-primary">4 сотрудника</strong>';
+        } else {
+            tabTrainees.className = 'px-4 py-1.5 rounded-md text-label-md font-bold bg-surface-container-lowest text-primary shadow-sm flex items-center gap-2';
+            tabAll.className = 'px-4 py-1.5 rounded-md text-label-md font-medium text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-2';
+            if (traineeToggleLabel) traineeToggleLabel.classList.remove('hidden');
+            const toggle = document.getElementById('show-all-trainees-toggle');
+            if (toggle) toggleAllTrainees(toggle.checked);
+            if (countHeader) countHeader.innerHTML = 'Найдено стажеров в БД «НКА Академии»: <strong class="font-bold text-primary">4 стажера</strong>';
+        }
+    }
+</script>
 
 </body>
 </html>
