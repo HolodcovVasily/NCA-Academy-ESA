@@ -680,40 +680,153 @@
                     </div>
                 </div>
             </div>
-
+            <!-- Section 2: Info -->
             <div class="space-y-4 bg-surface-container-lowest p-4 rounded-lg">
 
                 <div class="flex items-center gap-2 mb-4">
                     <span class="w-1 h-6 bg-primary rounded-full"></span>
-                    <h2 class="text-label-md uppercase tracking-widest text-primary">Сведения о претенденте</h2>
+                    <h2 class="text-label-md uppercase tracking-widest text-primary">Личные данные</h2>
                 </div>
-                <div class="grid grid-cols-2 gap-y-6 gap-x-8">
+                <div class="grid grid-cols-3 gap-y-6 gap-x-8">
                     <div class="flex flex-col gap-1">
                         <span class="text-label-sm text-outline uppercase">Фамилия, имя, отчество</span>
                         <span class="font-label-md text-on-surface">Кузнецов Михаил Петрович</span>
                     </div>
+                </div>
+            </div>
+
+
+            <div class="space-y-4 bg-surface-container-lowest p-4 rounded-lg">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="w-1 h-6 bg-primary rounded-full"></span>
+                    <h2 class="text-label-md uppercase tracking-widest text-primary">Место работы</h2>
+                </div>
+                <div class="grid grid-cols-2 gap-y-6 gap-x-8">
                     <div class="flex flex-col gap-1">
-                        <span class="text-label-sm text-outline uppercase">Наименование организации </span>
+                        <span class="text-label-sm text-outline uppercase">Организация</span>
                         <span class="font-label-md text-on-surface">РУП "Брестское агентство по государственной регистрации и земельному кадастру"</span>
                     </div>
                     <div class="flex flex-col gap-1">
                         <span class="text-label-sm text-outline uppercase">Должность</span>
                         <span class="font-label-md text-on-surface">Стажер</span>
                     </div>
-                    <div class="flex flex-col gap-1">
-                        <span class="text-label-sm text-outline uppercase">Срок действия аттестации</span>
-                        <span class="font-label-md text-on-surface">-</span>
-                    </div>
-<!--                    <div class="flex flex-col gap-1">-->
-<!--                        <span class="text-label-sm text-outline uppercase">Стаж работы в должности</span>-->
-<!--                        <span class="font-label-md text-on-surface">2 месяца</span>-->
-<!--                    </div>-->
-<!--                    <div class="flex flex-col gap-1">-->
-<!--                        <span class="text-label-sm text-outline uppercase">Дата приема</span>-->
-<!--                        <span class="font-label-md text-on-surface">[дд.мм.гггг]</span>-->
-<!--                    </div>-->
                 </div>
             </div>
+
+            <!-- Section 2: Grounds & Order Credentials -->
+            <div class="p-5 rounded-xl bg-surface-container-lowest border border-outline-variant/15 shadow-sm space-y-4">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="w-1 h-6 bg-primary rounded-full"></span>
+                    <h2 class="text-label-md uppercase tracking-widest text-primary">Образование</h2>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/20 relative">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="flex items-center gap-2">
+                                <h4 class="text-label-md font-bold text-on-surface">Сведения об образовании</h4>
+                            </div>
+                            <button type="button" class="text-on-surface-variant hover:text-error hover:bg-error-container/20 p-1.5 rounded-lg transition-colors flex items-center gap-1 text-label-sm font-medium" title="Удалить сведения">
+                                <span class="material-symbols-outlined text-lg">delete_outline</span>
+                            </button>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="text-label-sm text-outline uppercase">Тип учебного заведения<span class="text-error">*</span>
+                                </label>
+                                <div class="relative">
+                                    <select class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-lg px-4 py-2.5 text-body-md text-on-surface appearance-none focus:ring-2 focus:ring-primary/30 outline-none font-medium">
+                                        <option selected="">Высшее</option>
+                                        <option>Среднее специальное</option>
+                                        <option>Профессионально-техническое</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="text-label-sm text-outline uppercase">Наименование учебного заведения <span class="text-error">*</span></label>
+                                <div class="relative">
+                                    <select class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-lg px-4 py-2.5 text-body-md text-on-surface appearance-none focus:ring-2 focus:ring-primary/30 outline-none font-medium">
+                                        <option selected="">УО «Белорусский государственный университет» (БГУ)</option>
+                                        <option>УО «Белорусский государственный технологический университет» (БГТУ)</option>
+                                        <option>УО «Белорусский государственный технологический университет» (БГТУ)</option>
+                                        <option>Иное</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="text-label-sm text-outline uppercase">Специальность по образованию <span class="text-error">*</span>
+                                </label>
+                                <input class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-lg px-4 py-2.5 text-body-md text-on-surface focus:ring-2 focus:ring-primary/30 outline-none font-medium placeholder:text-on-surface-variant/70" placeholder="Укажите специальность по диплому" type="text" value="">
+                            </div>
+                            <div>
+                                <label class="text-label-sm text-outline uppercase">Квалификация <span class="text-error">*</span></label>
+                                <input class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-lg px-4 py-2.5 text-body-md text-on-surface focus:ring-2 focus:ring-primary/30 outline-none font-medium placeholder:text-on-surface-variant/70" placeholder="Укажите присвоенную квалификацию" type="text" value="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="w-full py-2.5 px-4 rounded-xl border border-dashed border-primary/50 hover:border-primary bg-surface-container-lowest hover:bg-surface-container-low text-primary text-label-md font-semibold transition-colors flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined text-lg">add_circle</span>Добавить образование
+                </button>
+            </div>
+
+
+
+
+            <div class="p-5 rounded-xl bg-surface-container-lowest border border-outline-variant/15 shadow-sm space-y-4">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="w-1 h-6 bg-primary rounded-full"></span>
+                    <h2 class="text-label-md uppercase tracking-widest text-primary">Повышение квалификации</h2>
+                </div>
+
+                <div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/20 space-y-4">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-2">
+                            <h4 class="text-label-md font-bold text-on-surface">Сведения о курсах / повышении квалификации</h4>
+                        </div>
+                        <button type="button" class="text-on-surface-variant hover:text-error hover:bg-error-container/20 p-1.5 rounded-lg transition-colors flex items-center gap-1 text-label-sm font-medium" title="Удалить сведения">
+                            <span class="material-symbols-outlined text-lg">delete_outline</span>
+                        </button>
+                    </div>
+                    <div>
+                        <label class="text-label-sm text-outline uppercase">Наименование учебного заведения<span class="text-error">*</span></label>
+                        <input class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-lg px-4 py-2.5 text-body-md text-on-surface focus:ring-2 focus:ring-primary/30 outline-none font-medium placeholder:text-on-surface-variant/70" placeholder="Укажите организацию, проводившую обучение" type="text" value="">
+                    </div>
+                <div>
+                    <label class="text-label-sm text-outline uppercase">Наименование курсов / образовательной программы <span class="text-error">*</span></label>
+                    <input class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-lg px-4 py-2.5 text-body-md text-on-surface focus:ring-2 focus:ring-primary/30 outline-none font-medium placeholder:text-on-surface-variant/70" placeholder="Укажите наименование программы повышения квалификации / обучающего курса" type="text" value="">
+                </div><div class="grid grid-cols-1 md:grid-cols-3 gap-4"><div>
+                <label class="text-label-sm text-outline uppercase">Номер документа<span class="text-error">*</span>
+                </label>
+                <input class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-lg px-4 py-2.5 text-body-md text-on-surface focus:ring-2 focus:ring-primary/30 outline-none font-medium placeholder:text-on-surface-variant/70" placeholder="Укажите номер документа" type="text" value="">
+                </div>
+                    <div>
+                        <label class="text-label-sm text-outline uppercase">Дата выдачи<span class="text-error">*</span></label>
+                        <div class="relative">
+                            <input class="w-full bg-surface-container-low border border-outline-variant/20 rounded-lg px-4 py-2.5 text-body-md text-on-surface focus:ring-2 focus:ring-primary/30 outline-none font-medium" placeholder="ДД.ММ.ГГГГ" type="date">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="text-label-sm text-outline uppercase">Оценка<span class="text-error">*</span></label>
+                        <div class="relative">
+                            <select class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-lg px-4 py-2.5 text-body-md text-on-surface appearance-none focus:ring-2 focus:ring-primary/30 outline-none font-medium">
+                                <option selected="">Зачтено</option>
+                                <option>Отлично</option>
+                                <option>Прошел(ла) обучение</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <button type="button" class="w-full py-2.5 px-4 rounded-xl border border-dashed border-primary/50 hover:border-primary bg-surface-container-lowest hover:bg-surface-container-low text-primary text-label-md font-semibold transition-colors flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined text-lg">add_circle</span>Добавить курс / повышение квалификации
+                </button>
+            </div>
+
+
+
+
+
             <!-- Section 2: Grounds & Order Credentials -->
             <div class="p-5 rounded-xl bg-surface-container-lowest border border-outline-variant/15 shadow-sm">
                 <div class="flex items-center gap-2 mb-4">
