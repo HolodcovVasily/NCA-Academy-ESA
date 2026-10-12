@@ -179,31 +179,28 @@
     </div>
 </header>
 
-
-
-
 <div class="flex flex-1 overflow-hidden">
 <!-- SideNavBar (Shared Component) -->
-    <aside class="hidden md:flex flex-col py-section-gap px-container-padding bg-surface-container-low w-72 flex-shrink-0 z-40 relative after:content-[''] after:absolute after:right-0 after:top-0 after:bottom-0 after:w-px after:bg-outline-variant/15">
+    <aside class="md:flex flex-col py-section-gap px-container-padding bg-brand-surface w-72 flex-shrink-0 z-40 relative after:content-[''] after:absolute after:right-0 after:top-0 after:bottom-0 after:w-px after:bg-outline-variant/15">
         <div class="space-y-1">
-            <a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100 transition-transform duration-200 scale-98" href="../../../1_Главная%20страница%20НКА%20Академия/2_Главная_страница.html">
+            <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container transition-all duration-200 scale-98" href="../../../1_Главная%20страница%20НКА%20Академия/2_Главная_страница.html">
                 <span class="material-symbols-outlined">database</span>
                 <span>На главную</span>
             </a>
             <a class="flex items-center gap-3 px-4 py-3 text-[#4e69c3] bg-white font-bold transition-transform duration-200 scale-98" href="План-график.html">
                 <span class="material-symbols-outlined">calendar_month</span>
                 <span>Управление претендентами</span>
-                <span class="px-1.5 py-0.2 bg-primary/10 text-primary rounded-full text-[11px] font-bold">5</span>
+                <span class="px-1.5 py-0.2 bg-primary/10 text-primary rounded-full text-[13px] font-bold">5</span>
             </a>
-            <a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100 transition-transform duration-200 scale-98" href="../Аттестация_new.html">
+            <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container transition-all duration-200 scale-98" href="../Аттестация_new.html">
                 <span class="material-symbols-outlined">badge</span>
                 <span>Аттестация</span>
             </a>
-            <a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100 transition-transform duration-200 scale-98" href="../../2_Управление%20тестами/Управление%20тестами%202.html">
+            <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container transition-all duration-200 scale-98" href="../../2_Управление%20тестами/Управление%20тестами%202.html">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
                 <span>Управление тестами</span>
             </a>
-            <a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100 transition-transform duration-200 scale-98" href="#">
+            <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container transition-all duration-200 scale-98" href="#">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
                 База знаний
             </a>
@@ -225,7 +222,7 @@
 
             </div>
             <div class="flex items-center gap-3">
-                <button onclick="window.location.href='./Добавление претендента.html'" class="text-sm font-semibold gradient-btn text-on-primary  px-8 py-2.5 rounded-lg font-label-md hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2" title="Включение стажеров, вновь принятых лиц или назначение внеочередной аттестации">Добавить претендента</button>
+                <button onclick="window.location.href='./Добавление претендента.html'" class="text-sm font-semibold gradient-btn text-on-primary  px-8 py-2.5 rounded-lg font-label-md hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2" title="Добавление стажеров, вновь принятых специалистов или назначение внеочередной аттестации">Добавить претендента</button>
             </div>
         </div>
         </div>
@@ -240,35 +237,51 @@
         </div>
     </header>
 
-<!-- Workspace -->
-    <div class="mt-2 mb-2 bg-emerald-100 p-container-padding flex items-start gap-4" id="review-banner-1">
-        <span class="material-symbols-outlined">Warning</span>
-        <div>
-            <p class="font-label-md">Внимание: автоматически сформирован план-график аттестаций на [гггг] год. У Вас есть время до [дд.мм.гггг] для редактирования предварительных периодов аттестации, экспорта и согласования план-графика.</p>
-            <p class="text-on-surface-variant text-sm mt-1">После утверждения сформированного план-графика нажмите на кнопку "Опубликовать план-график", после чего вкладка с данным план-графиком будет доступна специалистам ОКР ТОР.</p>
-        </div>
-        <button class="p-1.5 rounded-lg text-on-surface-variant transition-colors" onclick="document.getElementById('review-banner-1').remove()" title="Закрыть оповещение">
-            <span class="material-symbols-outlined">close</span>
-        </button>
-    </div>
-    <div class="mt-2 mb-2 bg-error-container p-container-padding flex items-start gap-4" id="review-banner-2">
+<!-- Info banners-->
+    <!-- System warnings-->
+    <div class="mt-2 mb-2 bg-error-container/30 border-l-4 border-error p-container-padding flex items-start gap-4" id="review-banner-2">
         <span class="material-symbols-outlined text-error">Warning</span>
         <div>
-            <p class="font-label-md">Внимание! До крайнего срока публикации план-графика осталось [дд] дней. Неопубликованный план-график заблокирует подачу заявок на аттестации специалистов с датой аттестации в январе.</p>
+            <p class="font-label-md text-on-error-container">Внимание! До крайнего срока публикации план-графика осталось [дд] дней. </p>
+            <p class="text-on-surface-variant text-sm mt-1">Неопубликованный план-график заблокирует подачу заявок на аттестацию специалистов с датой аттестации в январе.</p>
         </div>
-        <button class="p-1.5 rounded-lg text-on-surface-variant transition-colors" onclick="document.getElementById('review-banner-2').remove()" title="Закрыть оповещение">
+        <button class="ml-auto text-on-surface-variant hover:text-on-background" onclick="document.getElementById('review-banner-2').remove()" title="Закрыть уведомление">
             <span class="material-symbols-outlined">close</span>
         </button>
     </div>
-    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 p-4 rounded-xl bg-[#fff8e1] shadow-sm transition-all duration-300" id="review-banner-3">
-        <div class="flex items-center gap-3.5">
-            <div class="w-9 h-9 rounded-lg flex items-center justify-center text-[#ffa12b] flex-shrink-0">
-                <span class="material-symbols-outlined text-xl">notification_important</span>
-            </div>
+    <div class="mt-2 mb-2 bg-emerald-100/30 border-l-4 border-emerald-500 p-container-padding flex items-start gap-4" id="review-banner-1">
+        <span class="material-symbols-outlined text-emerald-500">Warning</span>
+        <div>
+            <p class="font-label-md text-emerald-500">Внимание: автоматически сформирован план-график аттестаций на [гггг] год.</p>
+            <p class="text-on-surface-variant text-sm mt-1">У Вас есть время до [дд.мм.гггг] для редактирования предварительных периодов аттестации, экспорта и согласования план-графика. После утверждения сформированного план-графика нажмите на кнопку "Опубликовать план-график" на соответствующей вкладке, после чего вкладка с данным план-графиком будет доступна специалистам ОКР ТОР.</p>
+        </div>
+        <button class="ml-auto text-on-surface-variant hover:text-on-background" onclick="document.getElementById('review-banner-1').remove()" title="Закрыть уведомление">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+    </div>
+    <!-- Queue warnings-->
+    <div class="mt-2 mb-2 flex flex-col md:flex-row md:items-center justify-between gap-4 p-4 bg-error-container/30 border-l-4 border-error p-container-padding" id="review-banner-5">
+        <div class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-xl text-on-error-container">notification_important</span>
             <div>
-                <div class="flex items-center gap-2">
-                    <span class="font-label-md">Поступило 5 новых заявок на рассмотрение</span>
-                </div>
+                <p class="font-label-md text-on-error-container">Внимание! Поданная Вами заявка была отклонена Администратором.</p>
+                <p class="text-on-surface-variant text-sm mt-1">Требуется устранение замечаний Администратора и повторная отправка заявки.</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-3 flex-shrink-0">
+            <button class="gradient-btn text-on-primary text-label-md font-label-md px-4 py-2 rounded-lg flex items-center gap-2 hover:opacity-90 transition-opacity shadow-sm">
+                <span>Показать отклоненные заявки (5)</span>
+            </button>
+            <button class="p-1.5 rounded-lg text-on-surface-variant transition-colors" onclick="document.getElementById('review-banner-5').remove()" title="Закрыть оповещение">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+    </div>
+    <div class="mt-2 mb-2 flex flex-col md:flex-row md:items-center justify-between gap-4 p-4 bg-brand-primary/10 border-l-4 border-brand-primary p-container-padding" id="review-banner-3">
+        <div class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-xl text-brand-primary">notification_important</span>
+            <div>
+                <p class="font-label-md text-brand-primary">Внимание! Поступило [n] новых заявок на рассмотрение. </p>
             </div>
         </div>
         <div class="flex items-center gap-3 flex-shrink-0">
@@ -280,15 +293,30 @@
             </button>
         </div>
     </div>
+    <div class="mt-2 mb-2 flex flex-col md:flex-row md:items-center justify-between gap-4 p-4 bg-brand-primary/10 border-l-4 border-brand-primary p-container-padding" id="review-banner-4">
+        <div class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-xl text-brand-primary">notification_important</span>
+            <div>
+                <p class="font-label-md text-brand-primary">Поданная Вами заявка была одобрена Администратором.</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-3 flex-shrink-0">
+            <button class="gradient-btn text-on-primary text-label-md font-label-md px-4 py-2 rounded-lg flex items-center gap-2 hover:opacity-90 transition-opacity shadow-sm">
+                <span>Показать одобренные заявки (5)</span>
+            </button>
+            <button class="p-1.5 rounded-lg text-on-surface-variant transition-colors" onclick="document.getElementById('review-banner-4').remove()" title="Закрыть оповещение">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+    </div>
+
+
+
     <div class="p-4 flex-1 flex flex-col gap-4 max-w-[1600px] mx-auto w-full">
 
     <div class="flex justify-between items-end">
         <div>
-
         </div>
-<!--        <div class="flex items-center gap-3">-->
-<!--            <button onclick="window.location.href='./Добавление претендента.html'" class="text-sm font-semibold gradient-btn text-on-primary  px-8 py-2.5 rounded-lg font-label-md hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2" title="Включение стажеров, вновь принятых лиц или назначение внеочередной аттестации">Добавить претендента</button>-->
-<!--        </div>-->
     </div>
 <!-- Filters -->
     <div id="filter-panel" class="grid grid-cols-6 gap-4 p-4 bg-brand-lowest/50 rounded-lg border border-brand-container/50 transition-all">
