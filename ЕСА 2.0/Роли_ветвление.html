@@ -112,25 +112,6 @@
     </style>
 </head>
 <body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex flex-col">
-<!-- Encryption Ribbon -->
-<!--<div class="bg-[#001453] h-8 flex items-center px-12 justify-between z-50">-->
-<!--<div class="flex items-center gap-2">-->
-<!--<span class="w-2 h-2 rounded-full bg-surface-tint animate-pulse"></span>-->
-<!--<span class="font-label-sm text-label-sm text-white uppercase tracking-widest">Active encrypted session: AES-256-GCM</span>-->
-<!--</div>-->
-<!--<span class="font-label-sm text-label-sm text-white/60">NODE_ID: VAULT-081</span>-->
-<!--</div>-->
-<!-- TopAppBar -->
-<!--<header class="fixed top-8 left-0 w-full z-50 flex justify-between items-center px-12 h-16 bg-[#001453] text-white font-inter antialiased tracking-tight">-->
-<!--<div class="flex items-center gap-8">-->
-<!--<div class="text-lg font-bold tracking-tighter text-white uppercase">CertifyVault</div>-->
-<!--</div>-->
-<!--<div class="flex items-center gap-6">-->
-<!--<button class="material-symbols-outlined text-white hover:bg-white/10 p-2 transition-colors rounded">lock</button>-->
-<!--<button class="material-symbols-outlined text-white hover:bg-white/10 p-2 transition-colors rounded">help_outline</button>-->
-<!--<button class="material-symbols-outlined text-white hover:bg-white/10 p-2 transition-colors rounded">language</button>-->
-<!--</div>-->
-<!--</header>-->
 <!-- Main Content -->
 <main class="flex-grow pt-32 pb-24 px-12 max-w-7xl mx-auto w-full">
 <!-- Hero Section -->
@@ -147,7 +128,7 @@
 <h3 class="font-headline-md text-headline-md text-on-surface">Администратор системы</h3>
 </div>
 <!-- Card 2 -->
-<div onclick="window.location.href='./3_Управление группами на аттестацию/Аттестация_new.html'"  class="tonal-card p-10 flex flex-col items-start group cursor-pointer">
+<div onclick="window.location.href='./3_Управление группами на аттестацию/План-график/План-график.html'"  class="tonal-card p-10 flex flex-col items-start group cursor-pointer">
 <span class="material-symbols-outlined text-primary mb-6 text-3xl">admin_panel_settings</span>
 <!--<span class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-2">Policy Control</span>-->
 <h3 class="font-headline-md text-headline-md text-on-surface">Администратор системы аттестации (СА)</h3>
@@ -158,12 +139,12 @@
 <!--<span class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-2">Knowledge Management</span>-->
 <h3 class="font-headline-md text-headline-md text-on-surface">Администратор вопросов</h3>
 </div>
-<!-- Card 4 -->
-<div onclick="window.location.href='./3_Управление группами на аттестацию/Аттестация.html'" class="tonal-card p-10 flex flex-col items-start group cursor-pointer">
-<span class="material-symbols-outlined text-primary mb-6 text-3xl">account_balance</span>
-<!--<span class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-2">Review Board</span>-->
-<h3 class="font-headline-md text-headline-md text-on-surface">Член аттестационной комиссии</h3>
-</div>
+<!--&lt;!&ndash; Card 4 &ndash;&gt;-->
+<!--<div onclick="window.location.href='./3_Управление группами на аттестацию/Аттестация.html'" class="tonal-card p-10 flex flex-col items-start group cursor-pointer">-->
+<!--<span class="material-symbols-outlined text-primary mb-6 text-3xl">account_balance</span>-->
+<!--&lt;!&ndash;<span class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-2">Review Board</span>&ndash;&gt;-->
+<!--<h3 class="font-headline-md text-headline-md text-on-surface">Член аттестационной комиссии</h3>-->
+<!--</div>-->
 <!-- Card 5 -->
 <div onclick="window.location.href='5_Аттестационное тестирование/Доступ авторизованного пользователя к тестам/Центр Аттестации.html'" class="tonal-card p-10 flex flex-col items-start group cursor-pointer">
 <span class="material-symbols-outlined text-primary mb-6 text-3xl">person</span>
@@ -171,38 +152,5 @@
 <h3 class="font-headline-md text-headline-md text-on-surface">Претендент</h3>
 </div>
 </div>
-<!-- Special Highlighted Section -->
-<div class="signature-gradient p-12 lg:p-16 flex flex-col md:flex-row items-center justify-between gap-8 text-white relative overflow-hidden">
-<div class="relative z-10 max-w-xl">
-<div class="flex items-center gap-3 mb-4">
-<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">school</span>
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-white/80">Тестирование</span>
-</div>
-<h2 class="font-headline-md text-headline-md mb-4 text-white">Учебное тестирование</h2>
-<p class="font-body-md text-body-md text-white/90">Свободный анонимный доступ для подготовки к аттестации. Проверьте свои знания перед официальным тестированием.</p>
-</div>
-<div class="relative z-10">
-<button onclick="window.location.href='../Учебное тестирование/1_Учебное тестирование_Настройка теста/Учебное тестирование.html'" class="bg-white text-primary font-label-md px-8 py-4 hover:bg-surface-variant transition-colors flex items-center gap-2">
-                    Начать тест
-                    <span class="material-symbols-outlined">arrow_forward</span>
-</button>
-</div>
-<!-- Decorative Element -->
-<div class="absolute -right-12 -bottom-12 opacity-10">
-<span class="material-symbols-outlined text-[240px]">shield</span>
-</div>
-</div>
 </main>
-<!-- Footer -->
-<!--<footer class="w-full py-8 px-12 flex justify-between items-center border-t border-slate-200/10 bg-slate-50 font-inter text-xs tracking-widest uppercase text-slate-500">-->
-<!--<div class="flex items-center gap-4">-->
-<!--<span>© 2026 ЕСА 2.0</span>-->
-<!--</div>-->
-<!--<nav class="flex gap-8">-->
-<!--<a class="hover:text-[#4e69c3] transition-colors" href="#">Security Protocol</a>-->
-<!--<a class="hover:text-[#4e69c3] transition-colors" href="#">Privacy Policy</a>-->
-<!--<a class="hover:text-[#4e69c3] transition-colors" href="#">System Status</a>-->
-<!--<a class="hover:text-[#4e69c3] transition-colors" href="#">Accessibility</a>-->
-<!--</nav>-->
-<!--</footer>-->
 </body></html>
