@@ -307,13 +307,13 @@
         <div class="px-6 pt-6 pb-4 flex flex-col xl:flex-row xl:items-end justify-between gap-4">
             <div>
                 <div class="flex items-center gap-3">
-                    <h1 class="text-2xl font-bold text-on-surface tracking-tight">Годовой план-график аттестации</h1>
-                    <div class="inline-flex items-center bg-surface-container-highest rounded-lg p-1">
-                        <button class="p-1 hover:bg-surface-container-lowest rounded text-on-surface-variant hover:text-on-surface transition-all" title="Предыдущий год">
+                    <h1 class="text-2xl font-bold text-on-surface tracking-tight">Годовой план-график аттестации на</h1>
+                    <div class="inline-flex items-center rounded-lg p-1">
+                        <button class="p-1 hover:bg-surface-variant rounded text-on-surface-variant hover:text-on-surface transition-all" title="Предыдущий год">
                             <span class="material-symbols-outlined text-lg">chevron_left</span>
                         </button>
-                        <span class="px-3 text-label-md font-label-md text-on-surface font-bold tracking-wider">2026 ГОД</span>
-                        <button class="p-1 hover:bg-surface-container-lowest rounded text-on-surface-variant hover:text-on-surface transition-all" title="Следующий год">
+                        <span class="px-3 text-2xl text-on-surface font-bold tracking-wider">2026 год</span>
+                        <button class="p-1 hover:bg-surface-variant rounded text-on-surface-variant hover:text-on-surface transition-all" title="Следующий год">
                             <span class="material-symbols-outlined text-lg">chevron_right</span>
                         </button>
                     </div>
@@ -331,15 +331,15 @@
                     <div id="tor-dropdown" class="hidden absolute right-0 mt-2 w-80 md:w-96 bg-surface-container-lowest rounded-xl shadow-xl border border-outline-variant/30 z-50 overflow-hidden flex flex-col animate-in fade-in slide-in-from-top-1 duration-150">
                         <div class="p-3.5 bg-surface-container-low border-b border-outline-variant/20 flex items-center justify-between">
                             <div class="flex items-center gap-2">
-                                <span class="material-symbols-outlined text-[18px] text-primary">domain</span>
-                                <span class="text-label-md font-label-md text-on-surface font-bold">Организации</span>
+<!--                                <span class="material-symbols-outlined text-[18px] text-primary">domain</span>-->
+                                <span class="text-label-md font-label-md text-on-surface font-bold">Выбрать организацию</span>
                             </div>
                             <button type="button" onclick="applyTorFilter(event)" class="px-4 py-1.5 rounded-lg bg-primary text-on-primary text-label-sm font-label-sm font-semibold hover:opacity-95 shadow-sm transition-opacity">Сбросить</button>
                         </div>
                         <div class="p-2.5 border-b border-outline-variant/15 bg-surface-container-lowest">
                             <div class="relative flex items-center">
                                 <span class="material-symbols-outlined absolute left-2.5 text-[16px] text-outline">search</span>
-                                <input id="tor-search-input" type="text" placeholder="Поиск ТОР..." oninput="filterTorOptions(this.value)" class="w-full pl-8 pr-3 py-1.5 text-label-sm font-label-sm bg-surface-container-low rounded-lg border-0 text-on-surface placeholder:text-outline focus:ring-1 focus:ring-primary focus:outline-none">
+                                <input id="tor-search-input" type="text" placeholder="Поиск организации.." oninput="filterTorOptions(this.value)" class="w-full pl-8 pr-3 py-1.5 text-label-sm font-label-sm bg-surface-container-low rounded-lg border-0 text-on-surface placeholder:text-outline focus:ring-1 focus:ring-primary focus:outline-none">
                             </div>
                         </div>
                         <div id="tor-options-list" class="max-h-64 overflow-y-auto p-1.5 flex flex-col gap-0.5">
