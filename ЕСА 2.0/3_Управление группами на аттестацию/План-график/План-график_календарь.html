@@ -291,7 +291,19 @@
             </div>
         </header>
 
+        <!-- Info -->
+        <div class="mt-2 mb-2 bg-error-container/30 border-l-4 border-error p-container-padding flex items-start gap-4" id="review-banner-2">
+            <span class="material-symbols-outlined text-error">Warning</span>
+            <div>
+                <p class="font-label-md text-on-error-container">Внимание! До крайнего срока публикации план-графика осталось [дд] дней. </p>
+                <p class="text-on-surface-variant text-sm mt-1">Неопубликованный план-график заблокирует подачу заявок на аттестацию специалистов с датой аттестации в январе.</p>
+            </div>
+            <button class="ml-auto text-on-surface-variant hover:text-on-background" onclick="document.getElementById('review-banner-2').remove()" title="Закрыть уведомление">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
         <!-- Header & Actions -->
+
         <div class="px-6 pt-6 pb-4 flex flex-col xl:flex-row xl:items-end justify-between gap-4">
             <div>
                 <div class="flex items-center gap-3">
@@ -309,14 +321,180 @@
             </div>
 
             <!-- Action Buttons -->
-            <div class="flex items-center gap-3">
-                <button class="px-3.5 py-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container-highest text-on-surface text-label-md font-label-md flex items-center gap-2 transition-colors">
-                    <span class="material-symbols-outlined text-[18px]">tune</span>
-                    <span>Фильтры по ТОР</span>
-                </button>
+            <div class="flex flex-wrap items-center gap-3">
+                <div id="tor-filter-container" class="relative inline-block text-left">
+                    <button id="tor-filter-btn" type="button" onclick="toggleTorDropdown(event)" class="px-3.5 py-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container-highest text-on-surface text-label-md font-label-md flex items-center gap-2 transition-colors border border-transparent focus:border-primary focus:outline-none shadow-sm">
+                        <span class="material-symbols-outlined text-[18px] text-primary">tune</span>
+                        <span id="tor-filter-label" class="">Организация: <strong class="font-semibold text-primary">Все</strong></span>
+                        <span class="material-symbols-outlined text-[16px] text-outline transition-transform duration-200" id="tor-chevron">expand_less</span>
+                    </button>
+                    <div id="tor-dropdown" class="hidden absolute right-0 mt-2 w-80 md:w-96 bg-surface-container-lowest rounded-xl shadow-xl border border-outline-variant/30 z-50 overflow-hidden flex flex-col animate-in fade-in slide-in-from-top-1 duration-150">
+                        <div class="p-3.5 bg-surface-container-low border-b border-outline-variant/20 flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-[18px] text-primary">domain</span>
+                                <span class="text-label-md font-label-md text-on-surface font-bold">Организации</span>
+                            </div>
+                            <button type="button" onclick="applyTorFilter(event)" class="px-4 py-1.5 rounded-lg bg-primary text-on-primary text-label-sm font-label-sm font-semibold hover:opacity-95 shadow-sm transition-opacity">Сбросить</button>
+                        </div>
+                        <div class="p-2.5 border-b border-outline-variant/15 bg-surface-container-lowest">
+                            <div class="relative flex items-center">
+                                <span class="material-symbols-outlined absolute left-2.5 text-[16px] text-outline">search</span>
+                                <input id="tor-search-input" type="text" placeholder="Поиск ТОР..." oninput="filterTorOptions(this.value)" class="w-full pl-8 pr-3 py-1.5 text-label-sm font-label-sm bg-surface-container-low rounded-lg border-0 text-on-surface placeholder:text-outline focus:ring-1 focus:ring-primary focus:outline-none">
+                            </div>
+                        </div>
+                        <div id="tor-options-list" class="max-h-64 overflow-y-auto p-1.5 flex flex-col gap-0.5">
+                            <div onclick="selectTorItem(this, 'Все', 'Все')" class="tor-option flex items-center justify-between px-3 py-2 rounded-lg cursor-pointer text-on-surface transition-colors hover:bg-surface-container-high">
+                                <div class="flex items-center gap-2.5 min-w-0">
+                                    <span class="material-symbols-outlined tor-check text-[18px] flex-shrink-0 text-outline">radio_button_checked</span>
+                                    <span class="text-label-sm font-label-sm font-semibold truncate">Все</span></div>
+                                <span class="px-2 py-0.5 text-[10px] font-bold rounded-full bg-primary text-on-primary flex-shrink-0 ml-2">400 чел.</span>
+                            </div>
+                            <div onclick="selectTorItem(this, 'РУП «Минское городское агентство»', 'Минское городское')" class="tor-option flex items-center justify-between px-3 py-2 rounded-lg cursor-pointer text-on-surface transition-colors hover:bg-surface-container-high active bg-primary-fixed/40">
+                                <div class="flex items-center gap-2.5 min-w-0">
+                                    <span class="material-symbols-outlined tor-check text-[18px] flex-shrink-0 text-primary">radio_button_unchecked</span>
+                                    <span class="text-label-sm font-label-sm truncate">РУП «Минское городское агентство»</span>
+                                </div>
+                                <span class="px-2 py-0.5 text-[10px] font-medium rounded-full bg-surface-container-high text-on-surface-variant flex-shrink-0 ml-2">112 чел.</span>
+                            </div>
+                            <div onclick="selectTorItem(this, 'РУП «Минское областное агентство»', 'Минское обл.')" class="tor-option flex items-center justify-between px-3 py-2 rounded-lg cursor-pointer text-on-surface transition-colors hover:bg-surface-container-high">
+                                <div class="flex items-center gap-2.5 min-w-0">
+                                    <span class="material-symbols-outlined tor-check text-outline text-[18px] flex-shrink-0">radio_button_unchecked</span>
+                                    <span class="text-label-sm font-label-sm truncate">РУП «Минское областное агентство»</span>
+                                </div>
+                                <span class="px-2 py-0.5 text-[10px] font-medium rounded-full bg-surface-container-high text-on-surface-variant flex-shrink-0 ml-2">64 чел.</span>
+                            </div>
+                            <div onclick="selectTorItem(this, 'РУП «Брестское агентство»', 'Брестское')" class="tor-option flex items-center justify-between px-3 py-2 rounded-lg cursor-pointer text-on-surface transition-colors hover:bg-surface-container-high">
+                                <div class="flex items-center gap-2.5 min-w-0"><span class="material-symbols-outlined tor-check text-outline text-[18px] flex-shrink-0">radio_button_unchecked</span>
+                                    <span class="text-label-sm font-label-sm truncate">РУП «Брестское агентство»</span>
+                                </div>
+                                <span class="px-2 py-0.5 text-[10px] font-medium rounded-full bg-surface-container-high text-on-surface-variant flex-shrink-0 ml-2">48 чел.</span>
+                            </div>
+                            <div onclick="selectTorItem(this, 'РУП «Витебское агентство»', 'Витебское')" class="tor-option flex items-center justify-between px-3 py-2 rounded-lg cursor-pointer text-on-surface transition-colors hover:bg-surface-container-high">
+                                <div class="flex items-center gap-2.5 min-w-0">
+                                    <span class="material-symbols-outlined tor-check text-outline text-[18px] flex-shrink-0">radio_button_unchecked</span>
+                                    <span class="text-label-sm font-label-sm truncate">РУП «Витебское агентство»</span>
+                                </div>
+                                <span class="px-2 py-0.5 text-[10px] font-medium rounded-full bg-surface-container-high text-on-surface-variant flex-shrink-0 ml-2">38 чел.</span>
+                            </div>
+                            <div onclick="selectTorItem(this, 'РУП «Гомельское агентство»', 'Гомельское')" class="tor-option flex items-center justify-between px-3 py-2 rounded-lg cursor-pointer text-on-surface transition-colors hover:bg-surface-container-high">
+                                <div class="flex items-center gap-2.5 min-w-0">
+                                    <span class="material-symbols-outlined tor-check text-outline text-[18px] flex-shrink-0">radio_button_unchecked</span>
+                                    <span class="text-label-sm font-label-sm truncate">РУП «Гомельское агентство»</span>
+                                </div>
+                                <span class="px-2 py-0.5 text-[10px] font-medium rounded-full bg-surface-container-high text-on-surface-variant flex-shrink-0 ml-2">42 чел.</span>
+                            </div>
+                            <div onclick="selectTorItem(this, 'РУП «Гродненское агентство»', 'Гродненское')" class="tor-option flex items-center justify-between px-3 py-2 rounded-lg cursor-pointer text-on-surface transition-colors hover:bg-surface-container-high">
+                                <div class="flex items-center gap-2.5 min-w-0">
+                                    <span class="material-symbols-outlined tor-check text-outline text-[18px] flex-shrink-0">radio_button_unchecked</span>
+                                    <span class="text-label-sm font-label-sm truncate">РУП «Гродненское агентство»</span>
+                                </div>
+                                <span class="px-2 py-0.5 text-[10px] font-medium rounded-full bg-surface-container-high text-on-surface-variant flex-shrink-0 ml-2">34 чел.</span>
+                            </div>
+                            <div onclick="selectTorItem(this, 'РУП «Могилевское агентство»', 'Могилевское')" class="tor-option flex items-center justify-between px-3 py-2 rounded-lg cursor-pointer text-on-surface transition-colors hover:bg-surface-container-high">
+                                <div class="flex items-center gap-2.5 min-w-0">
+                                    <span class="material-symbols-outlined tor-check text-outline text-[18px] flex-shrink-0">radio_button_unchecked</span>
+                                    <span class="text-label-sm font-label-sm truncate">РУП «Могилевское агентство»</span>
+                                </div>
+                                <span class="px-2 py-0.5 text-[10px] font-medium rounded-full bg-surface-container-high text-on-surface-variant flex-shrink-0 ml-2">32 чел.</span>
+                            </div>
+                            <div onclick="selectTorItem(this, 'ГУП «Национальное кадастровое агентство» (НКА)', 'НКА')" class="tor-option flex items-center justify-between px-3 py-2 rounded-lg cursor-pointer text-on-surface transition-colors hover:bg-surface-container-high">
+                                <div class="flex items-center gap-2.5 min-w-0">
+                                    <span class="material-symbols-outlined tor-check text-outline text-[18px] flex-shrink-0">radio_button_unchecked</span>
+                                    <span class="text-label-sm font-label-sm truncate">ГУП «Национальное кадастровое агентство» (НКА)</span>
+                                </div>
+                                <span class="px-2 py-0.5 text-[10px] font-medium rounded-full bg-surface-container-high text-on-surface-variant flex-shrink-0 ml-2">30 чел.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <button onclick="window.location.href='Экспорт план-графика.html'" class="text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors px-8 py-2.5 rounded-lg font-label-md hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2" title="Экспорт в XLS">Экспорт в XLS</button>
                 <button onclick="window.location.href='Публикация план-графика.html'" class="px-4 py-2 gradient-btn text-white text-sm hover:scale-[1.02] active:scale-[0.98] font-semibold rounded-lg transition-opacity">Опубликовать план-график</button>
+                <script>
+                    function toggleTorDropdown(e) {
+
+                        if (e) e.stopPropagation();
+                        var dd = document.getElementById('tor-dropdown');
+                        var ch = document.getElementById('tor-chevron');
+                        if (!dd) return;
+                        dd.classList.toggle('hidden');
+                        if (ch) {
+                            if (dd.classList.contains('hidden')) {
+                                ch.innerText = 'expand_more';
+                            } else {
+                                ch.innerText = 'expand_less';
+                            }
+                        }
+                    }
+
+                    function selectTorItem(el, fullName, shortName) {
+                        var dd = document.getElementById('tor-dropdown');
+                        var label = document.getElementById('tor-filter-label');
+                        var ch = document.getElementById('tor-chevron');
+                        if (label) {
+                            label.innerHTML = 'Организация: <strong class="font-semibold text-primary">' + (shortName || fullName) + '</strong>';
+                        }
+                        var allOptions = document.querySelectorAll('#tor-options-list .tor-option');
+                        allOptions.forEach(function(opt) {
+                            opt.classList.remove('active', 'bg-primary-fixed/40');
+                            var checkIcon = opt.querySelector('.tor-check');
+                            if (checkIcon) {
+                                checkIcon.innerText = 'radio_button_unchecked';
+                                checkIcon.classList.remove('text-primary');
+                                checkIcon.classList.add('text-outline');
+                            }
+                        });
+                        if (el) {
+                            el.classList.add('active', 'bg-primary-fixed/40');
+                            var activeIcon = el.querySelector('.tor-check');
+                            if (activeIcon) {
+                                activeIcon.innerText = 'radio_button_checked';
+                                activeIcon.classList.remove('text-outline');
+                                activeIcon.classList.add('text-primary');
+                            }
+                        }
+                        if (dd) dd.classList.add('hidden');
+                        if (ch) ch.innerText = 'expand_more';
+                    }
+
+                    function resetTorFilter(e) {
+                        if (e) e.stopPropagation();
+                        var firstOption = document.querySelector('#tor-options-list .tor-option');
+                        selectTorItem(firstOption, 'Все ТОР (Сводный вид)', 'Все');
+                    }
+
+                    function applyTorFilter(e) {
+                        if (e) e.stopPropagation();
+                        var dd = document.getElementById('tor-dropdown');
+                        var ch = document.getElementById('tor-chevron');
+                        if (dd) dd.classList.add('hidden');
+                        if (ch) ch.innerText = 'expand_more';
+                    }
+
+                    function filterTorOptions(query) {
+                        var options = document.querySelectorAll('#tor-options-list .tor-option');
+                        var q = (query || '').toLowerCase().trim();
+                        options.forEach(function(opt) {
+                            var text = opt.innerText.toLowerCase();
+                            if (!q || text.indexOf(q) !== -1) {
+                                opt.classList.remove('hidden');
+                            } else {
+                                opt.classList.add('hidden');
+                            }
+                        });
+                    }
+
+                    document.addEventListener('click', function(e) {
+                        var container = document.getElementById('tor-filter-container');
+                        var dd = document.getElementById('tor-dropdown');
+                        var ch = document.getElementById('tor-chevron');
+                        if (container && dd && !container.contains(e.target)) {
+                            dd.classList.add('hidden');
+                            if (ch) ch.innerText = 'expand_more';
+                        }
+                    });
+                </script>
             </div>
+
         </div>
 
         <!-- KPI Summary Cards -->
