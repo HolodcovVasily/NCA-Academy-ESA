@@ -196,7 +196,7 @@
         }
         .week-row.is-active-period {
             background-color: #a6b4e4a6;
-            border-left: 3px solid #3755c3;
+            /*border-left: 3px solid #3755c3;*/
         }
         .week-row.is-active-period .week-tag {
             color: #1e3a8a;
@@ -323,19 +323,19 @@
             <!-- Action Buttons -->
             <div class="flex flex-wrap items-center gap-3">
                 <div id="tor-filter-container" class="relative inline-block text-left">
-                    <button id="tor-filter-btn" type="button" onclick="toggleTorDropdown(event)" class="px-3.5 py-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container-highest text-on-surface text-label-md font-label-md flex items-center gap-2 transition-colors border border-transparent focus:border-primary focus:outline-none shadow-sm">
+                    <button title="Выберите организацию" id="tor-filter-btn" type="button" onclick="toggleTorDropdown(event)" class="px-3.5 py-2.5 rounded-lg hover:bg-surface-container-highest hover:scale-[1.02] active:scale-[0.98] transition-all text-on-surface text-label-md font-label-md flex items-center gap-2 transition-colors border border-outline-variant focus:border-primary focus:outline-none shadow-sm">
                         <span class="material-symbols-outlined text-[18px] text-primary">tune</span>
                         <span id="tor-filter-label" class="">Организация: <strong class="font-semibold text-primary">Все</strong></span>
                         <span class="material-symbols-outlined text-[16px] text-outline transition-transform duration-200" id="tor-chevron">expand_less</span>
                     </button>
                     <div id="tor-dropdown" class="hidden absolute right-0 mt-2 w-80 md:w-96 bg-surface-container-lowest rounded-xl shadow-xl border border-outline-variant/30 z-50 overflow-hidden flex flex-col animate-in fade-in slide-in-from-top-1 duration-150">
-                        <div class="p-3.5 bg-surface-container-low border-b border-outline-variant/20 flex items-center justify-between">
-                            <div class="flex items-center gap-2">
-<!--                                <span class="material-symbols-outlined text-[18px] text-primary">domain</span>-->
-                                <span class="text-label-md font-label-md text-on-surface font-bold">Выбрать организацию</span>
-                            </div>
-                            <button type="button" onclick="applyTorFilter(event)" class="px-4 py-1.5 rounded-lg bg-primary text-on-primary text-label-sm font-label-sm font-semibold hover:opacity-95 shadow-sm transition-opacity">Сбросить</button>
-                        </div>
+<!--                        <div class="p-3.5 bg-surface-container-low border-b border-outline-variant/20 flex items-center justify-between">-->
+<!--                            <div class="flex items-center gap-2">-->
+<!--&lt;!&ndash;                                <span class="material-symbols-outlined text-[18px] text-primary">domain</span>&ndash;&gt;-->
+<!--                                <span class="text-label-md font-label-md text-on-surface font-bold">Выбрать организацию</span>-->
+<!--                            </div>-->
+<!--                            <button type="button" onclick="applyTorFilter(event)" class="px-4 py-1.5 rounded-lg bg-primary text-on-primary text-label-sm font-label-sm font-semibold hover:opacity-95 shadow-sm transition-opacity">Сбросить</button>-->
+<!--                        </div>-->
                         <div class="p-2.5 border-b border-outline-variant/15 bg-surface-container-lowest">
                             <div class="relative flex items-center">
                                 <span class="material-symbols-outlined absolute left-2.5 text-[16px] text-outline">search</span>
@@ -508,40 +508,40 @@
                             <span class="text-xs text-on-surface-variant">/ 52 нед.</span>
                         </div>
                     </div>
-                    <span class="material-symbols-outlined text-2xl text-primary bg-blue-50 p-2 rounded-lg">event_available</span>
+                    <span class="material-symbols-outlined text-2xl text-primary p-2 rounded-lg">event_available</span>
                 </div>
 
                 <div class="bg-white p-3.5 rounded-xl border border-outline-variant/20 shadow-sm flex items-center justify-between">
                     <div>
                         <div class="text-[11px] uppercase tracking-wider text-on-surface-variant font-semibold">Охвачено претендентов</div>
                         <div class="flex items-baseline gap-1.5 mt-0.5">
-                            <span id="metricCandidatesCount" class="text-2xl font-bold text-on-surface">364</span>
+                            <span id="metricCandidatesCount" class="text-2xl font-bold text-primary">364</span>
                             <span class="text-xs text-on-surface-variant">/ 400 чел.</span>
                         </div>
                     </div>
-                    <span class="material-symbols-outlined text-2xl text-blue-600 bg-blue-50 p-2 rounded-lg">groups</span>
+                    <span class="material-symbols-outlined text-2xl text-primary p-2 rounded-lg">groups</span>
                 </div>
 
                 <div class="bg-white p-3.5 rounded-xl border border-outline-variant/20 shadow-sm flex items-center justify-between">
                     <div>
                         <div class="text-[11px] uppercase tracking-wider text-on-surface-variant font-semibold">Пиковые недели</div>
                         <div class="flex items-baseline gap-1.5 mt-0.5">
-                            <span id="metricPeakWeeks" class="text-2xl font-bold text-error">8</span>
-                            <span class="text-xs text-error font-semibold">&gt;25 чел./нед.</span>
+                            <span id="metricPeakWeeks" class="text-2xl font-bold text-primary">8</span>
+                            <span class="text-xs text-on-surface-variant">&gt;25 чел./нед.</span>
                         </div>
                     </div>
-                    <span class="material-symbols-outlined text-2xl text-amber-600 bg-amber-50 p-2 rounded-lg">warning</span>
+                    <span class="material-symbols-outlined text-2xl text-primary p-2 rounded-lg">warning</span>
                 </div>
 
                 <div class="bg-white p-3.5 rounded-xl border border-outline-variant/20 shadow-sm flex items-center justify-between">
                     <div>
                         <div class="text-[11px] uppercase tracking-wider text-on-surface-variant font-semibold">Средняя нагрузка</div>
                         <div class="flex items-baseline gap-1.5 mt-0.5">
-                            <span id="metricAverageLoad" class="text-2xl font-bold text-green-700">~10.7</span>
-                            <span class="text-xs text-green-800">чел./соглас. нед.</span>
+                            <span id="metricAverageLoad" class="text-2xl font-bold text-primary">~10.7</span>
+                            <span class="text-xs text-on-surface-variant">чел./соглас. нед.</span>
                         </div>
                     </div>
-                    <span class="material-symbols-outlined text-2xl text-green-700 bg-green-50 p-2 rounded-lg">equalizer</span>
+                    <span class="material-symbols-outlined text-2xl text-primary p-2 rounded-lg">equalizer</span>
                 </div>
             </div>
         </div>
@@ -551,7 +551,7 @@
             <div class="bg-surface-container-low px-4 py-2.5 rounded-xl flex flex-wrap items-center justify-between gap-4 border border-outline-variant/15 text-xs">
                 <div class="text-on-surface-variant flex items-center gap-1">
                     <span class="material-symbols-outlined text-sm text-primary">info</span>
-                    <p class="text-xs text-on-surface-variant mt-1">Отмечайте чек-боксы перед номерами недель для включения или исключения предварительного периода аттестации. Даты аттестации претендентов указаны с учетом срока подачи заявки.</p>
+                    <p class="text-xs text-on-surface-variant mt-1">Отмечайте чек-боксы перед номерами недель для включения или исключения предварительного периода аттестации. Указаны даты истечения срока предыдущей аттестации.</p>
                 </div>
             </div>
         </div>
@@ -770,7 +770,7 @@
       <div>
         <div class="flex items-center justify-between pb-2 mb-1.5 border-b border-gray-100">
           <span class="text-xs font-bold text-on-surface tracking-wider">${month.name}</span>
-          <span class="px-2 py-0.5 rounded text-[10px] font-bold ${month.peak ? 'bg-amber-100 text-amber-900 border border-amber-300' : 'bg-blue-50 text-blue-800'}">${month.totalPret}</span>
+          <span class="px-2 py-0.5 rounded text-[10px] font-bold ${month.peak ? 'bg-amber-100 text-amber-900 border border-amber-300' : 'bg-blue-50 text-primary'}">${month.totalPret}</span>
         </div>
         <div class="grid grid-cols-8 gap-1 text-center text-[10px] text-on-surface-variant font-semibold mb-1.5">
           <span class="text-left text-gray-400 pl-0.5">Нед.</span><span>ПН</span><span>ВТ</span><span>СР</span><span>ЧТ</span><span>ПТ</span><span class="text-error">СБ</span><span class="text-error">ВС</span>
@@ -780,8 +780,8 @@
         </div>
       </div>
       <div class="mt-2.5 pt-1.5 border-t border-gray-50 flex items-center justify-between text-[11px] text-on-surface-variant">
-        <span>Активных: ${month.weeks.filter(w => w.checked).length}</span>
-        <span class="font-semibold text-primary">${month.peak ? 'Пиковый месяц' : 'Плановый'}</span>
+        <span>Периодов аттестаций: ${month.weeks.filter(w => w.checked).length}</span>
+        <span class="font-semibold text-primary">${month.peak ? 'Пиковый месяц' : 'Плановый месяц'}</span>
       </div>`;
 
                 container.appendChild(monthCard);
@@ -859,7 +859,7 @@
                     if (w.checked) {
                         agreedWeeks++;
                         coveredCandidates += w.pret;
-                        if (w.pret >= 25) peakWeeksCount++;
+                        if (w.pret > 25) peakWeeksCount++;
                     }
                 });
             });
