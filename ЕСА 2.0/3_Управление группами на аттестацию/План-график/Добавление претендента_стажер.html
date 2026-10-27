@@ -288,7 +288,7 @@
             <div class="relative">
                 <select class="w-full px-3 py-2 bg-brand-lowest text-xs border-none rounded-md ring-1 ring-slate-200 focus:ring-brand-primary appearance-none text-slate-600">
                     <option>Все статусы</option>
-                    <option>Активен</option>
+                    <option>Действующий</option>
                     <option>Временно заблокирован</option>
                     <option>Заблокирован</option>
                 </select>
@@ -621,42 +621,42 @@
                     </label>
 
                     <!-- Specialized Trainee Switcher -->
-                    <label id="trainee-checkbox-label" class="inline-flex items-center gap-2 cursor-pointer bg-surface-container-lowest px-3 py-1.5 rounded-lg border border-primary/30 hover:bg-surface-bright transition-colors text-label-sm font-medium text-primary select-none shadow-sm">
-                        <input id="show-all-trainees-toggle" type="checkbox" checked="" onchange="toggleAllTrainees(this.checked)" class="w-4 h-4 text-primary rounded border-outline-variant focus:ring-primary focus:ring-2 cursor-pointer">
-                        <span class="font-bold">Отобразить всех доступных стажеров</span>
-                    </label>
+<!--                    <label id="trainee-checkbox-label" class="inline-flex items-center gap-2 cursor-pointer bg-surface-container-lowest px-3 py-1.5 rounded-lg border border-primary/30 hover:bg-surface-bright transition-colors text-label-sm font-medium text-primary select-none shadow-sm">-->
+<!--                        <input id="show-all-trainees-toggle" type="checkbox" checked="" onchange="toggleAllTrainees(this.checked)" class="w-4 h-4 text-primary rounded border-outline-variant focus:ring-primary focus:ring-2 cursor-pointer">-->
+<!--                        <span class="font-bold">Отобразить всех доступных стажеров</span>-->
+<!--                    </label>-->
                 </div>
 
                 <div class="flex items-center gap-3">
                     <div class="relative flex-1 flex items-center bg-surface-container-lowest rounded-lg px-4 py-2 border border-outline-variant/15 focus-within:ring-2 focus-within:ring-primary/20">
                         <span class="material-symbols-outlined text-on-surface-variant mr-2">search</span>
-                        <input id="candidate-search-input" class="bg-transparent border-none focus:ring-0 text-body-md text-on-surface-variant/80 w-full p-0 outline-none cursor-not-allowed" placeholder="Поиск отключен: отображается полный перечень доступных стажеров" type="text" value="" disabled="">
+                        <input id="candidate-search-input" class="bg-transparent border-none focus:ring-0 text-body-md text-on-surface-variant/80 w-full p-0 outline-none" placeholder="Отображается полный перечень доступных стажеров, введите ФИО претендента для поиска" type="text" value="">
                         <button id="search-clear-btn" class="text-on-surface-variant hover:text-on-surface p-1 opacity-0 pointer-events-none transition-opacity">
                             <span class="material-symbols-outlined text-lg">cancel</span>
                         </button>
                     </div>
-                    <button id="candidate-search-btn" class="gradient-btn text-on-primary text-label-md font-label-md px-6 py-2.5 rounded-lg flex items-center gap-2 hover:opacity-90 shadow-sm transition-all opacity-50 cursor-not-allowed" disabled="">
+                    <button id="candidate-search-btn" class="gradient-btn text-on-primary text-label-md font-label-md px-6 py-2.5 rounded-lg flex items-center gap-2 hover:scale-[1.02] hover:opacity-100 active:scale-[0.98] transition-all  opacity-50">
                         <span class="material-symbols-outlined text-lg">search</span>
                         <span class="">Поиск</span>
                     </button>
                 </div>
 
                 <!-- Trainee Explanatory Notice Prompt -->
-                <div id="trainee-banner-hint"  class="text-label-sm text-surface-tint font-semibold mt-1 flex items-center gap-1">
-                    <span class="material-symbols-outlined text-base">info</span>
-                    <span class="">При включении опции поле текстового поиска очищается, в таблице автоматически отображается полный перечень доступных стажеров.</span>
-                </div>
+<!--                <div id="trainee-banner-hint"  class="text-label-sm text-surface-tint font-semibold mt-1 flex items-center gap-1">-->
+<!--                    <span class="material-symbols-outlined text-base">info</span>-->
+<!--                    <span class="">При включении опции поле текстового поиска очищается, в таблице автоматически отображается полный перечень доступных стажеров.</span>-->
+<!--                </div>-->
             </div>
 
             <div class="flex flex-col gap-3">
                 <div class="flex items-center justify-between">
                     <div class="text-label-md font-medium text-on-surface flex items-center gap-2">
-                        <span>Найдено в базе данных стажеров: <strong class="font-bold text-primary">4 записи</strong>
+                        <span>Найдено в базе данных стажеров: <strong class="font-bold text-primary">4 претендент(а)</strong>
                         </span>
                     </div>
                 </div>
                 <div class="border border-outline-variant/15 rounded-lg overflow-hidden">
-                    <div class="grid grid-cols-12 gap-2 px-4 py-2 bg-surface-container-low text-label-sm font-semibold text-on-surface-variant uppercase tracking-wider border-b border-outline-variant/15">
+                    <div class="grid grid-cols-12 gap-2 px-4 py-2 text-label-sm font-semibold text-slate-400 uppercase tracking-wider border-b border-brand-container z-10">
                         <div class="col-span-1 text-center">Выбор</div>
                         <div class="col-span-3">ФИО</div>
                         <div class="col-span-3">Организация</div>
@@ -675,7 +675,7 @@
                             <div class="col-span-3 text-label-md text-on-surface-variant">Гродненское Агентство</div>
                             <div class="col-span-2 text-label-md text-on-surface-variant">Специалист по ТИ</div>
                             <div class="col-span-2">
-                                <span class="px-2 py-0.5 bg-emerald-100 text-[9px] text-on-surface uppercase rounded">Активен</span>
+                                <span class="px-2 py-0.5 bg-emerald-100 text-[9px] text-on-surface uppercase rounded">Стажер</span>
                             </div>
                             <div class="col-span-1 text-right text-label-md font-medium text-on-surface-variant">-</div>
                         </div>
@@ -689,7 +689,7 @@
                             <div class="col-span-3 text-label-md text-on-surface-variant">Гродненское Агентство</div>
                             <div class="col-span-2 text-label-md text-on-surface-variant">Стажер специалиста по ТИ</div>
                             <div class="col-span-2">
-                                <span class="px-2 py-0.5 bg-emerald-100 text-[9px] text-on-surface uppercase rounded">Активен</span>
+                                <span class="px-2 py-0.5 bg-emerald-100 text-[9px] text-on-surface uppercase rounded">Стажер</span>
                             </div>
                             <div class="col-span-1 text-right text-label-md text-on-surface-variant">-</div>
                         </div>
@@ -705,7 +705,7 @@
                             <div class="col-span-3 text-label-md text-on-surface-variant">Гродненское Агентство</div>
                             <div class="col-span-2 text-label-md text-on-surface-variant">Специалист по ТИ 1 к.</div>
                             <div class="col-span-2">
-                                <span class="px-2 py-0.5 bg-emerald-100 text-[9px] text-on-surface uppercase rounded">Активен</span>
+                                <span class="px-2 py-0.5 bg-emerald-100 text-[9px] text-on-surface uppercase rounded">Стажер</span>
                             </div>
                             <div class="col-span-1 text-right text-label-md text-on-surface-variant">-</div>
                         </div>
@@ -719,7 +719,7 @@
                             <div class="col-span-3 text-label-md text-on-surface-variant">Гродненское Агентство</div>
                             <div class="col-span-2 text-label-md text-on-surface-variant">Стажер специалиста по ТИ</div>
                             <div class="col-span-2">
-                                <span class="px-2 py-0.5 bg-emerald-100 text-[9px] text-on-surface uppercase rounded">Активен</span>
+                                <span class="px-2 py-0.5 bg-emerald-100 text-[9px] text-on-surface uppercase rounded">Стажер</span>
                             </div>
                             <div class="col-span-1 text-right text-label-md text-on-surface-variant">-</div>
                         </div>
@@ -728,7 +728,7 @@
             </div>
             <div class="bg-surface-container-low p-3.5 rounded-lg border border-outline-variant/15 flex items-center gap-3 text-label-sm text-on-surface-variant">
                 <span class="material-symbols-outlined text-surface-tint text-xl flex-shrink-0">rule</span>
-                <span>После подтверждения выбранные претенденты автоматически импортируются в текущий план-график со статусом заявки <strong>«Не подана»</strong>.</span>
+                <span>После подтверждения выбранные претенденты автоматически импортируются в таблицу со статусом заявки <strong>«Не подана»</strong>.</span>
             </div>
         </div>
         <div class="px-6 py-4 bg-surface-container-low border-t border-outline-variant/15 flex items-center justify-between">
@@ -739,7 +739,7 @@
             </div>
             <div class="flex items-center gap-3">
                 <button class="px-5 py-2.5 rounded-lg text-label-md font-medium text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" onclick="window.location.href='План-график.html'">Отмена</button>
-                <button class="gradient-btn text-on-primary text-label-md font-semibold px-6 py-2.5 rounded-lg flex items-center gap-2 hover:opacity-90 shadow-sm transition-all" title="Добавить выбранных претендентов в план-график" onclick="window.location.href='План-график.html'">
+                <button class="gradient-btn text-on-primary text-label-md font-semibold px-6 py-2.5 rounded-lg flex items-center gap-2 hover:scale-[1.02] hover:opacity-100 active:scale-[0.98] transition-all  opacity-50" title="Добавить выбранных претендентов в план-график" onclick="window.location.href='План-график.html'">
         <span class="material-symbols-outlined text-lg">person_add</span>
         <span>Добавить</span>
     </button>
@@ -766,7 +766,7 @@
         const hint = document.getElementById('trainee-banner-hint');
         if (checked) {
             input.value = '';
-            input.placeholder = 'Поиск отключен: отображается полный перечень доступных стажеров';
+            input.placeholder = 'Поиск отключен: отображается полный перечень доступных стажеров, введите ФИО для поиска';
             input.disabled = true;
             input.classList.add('cursor-not-allowed', 'text-on-surface-variant/80');
             btn.disabled = true;
