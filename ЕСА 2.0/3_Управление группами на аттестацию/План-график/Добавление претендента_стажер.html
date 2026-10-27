@@ -608,7 +608,7 @@
                 <button onclick="window.location.href='Добавление претендента_стажер.html'" class="px-4 py-2 text-label-md font-semibold text-primary bg-surface-container-lowest rounded-t-lg shadow-sm flex items-center gap-2">
                     <span class="material-symbols-outlined text-[18px]">school</span>
                     <span class="">Стажеры</span>
-                    <span class="px-1.5 py-0.2 bg-primary/10 text-primary rounded-full text-[11px] font-bold">4</span>
+<!--                    <span class="px-1.5 py-0.2 bg-primary/10 text-primary rounded-full text-[11px] font-bold">4</span>-->
                 </button>
             </div>
         </div>
@@ -731,20 +731,22 @@
                 <span>После подтверждения выбранные претенденты автоматически импортируются в таблицу со статусом заявки <strong>«Не подана»</strong>.</span>
             </div>
         </div>
+
+
         <div class="px-6 py-4 bg-surface-container-low border-t border-outline-variant/15 flex items-center justify-between">
             <div class="text-label-md font-medium text-on-surface flex items-center gap-2">
-                <span>Выбрано для добавления:
-                    <strong id="selected-candidates-count" class="font-bold text-primary">1 претендент</strong>
-                </span>
+                <span>Выбрано для добавления: <strong class="font-bold text-primary">1 претендент</strong></span>
             </div>
             <div class="flex items-center gap-3">
-                <button class="px-5 py-2.5 rounded-lg text-label-md font-medium text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" onclick="window.location.href='План-график.html'">Отмена</button>
-                <button class="gradient-btn text-on-primary text-label-md font-semibold px-6 py-2.5 rounded-lg flex items-center gap-2 hover:scale-[1.02] hover:opacity-100 active:scale-[0.98] transition-all  opacity-50" title="Добавить выбранных претендентов в план-график" onclick="window.location.href='План-график.html'">
-        <span class="material-symbols-outlined text-lg">person_add</span>
-        <span>Добавить</span>
-    </button>
-    </div>
-    </div>
+                <button onclick="window.location.href='План-график.html'" class="text-sm font-semibold border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors px-8 py-2.5 rounded-lg font-label-md hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2" id="cancel-export">Отмена</button>
+                <button onclick="window.location.href='План-график.html'" class="text-sm font-semibold px-6 py-2 gradient-btn text-on-primary rounded flex items-center gap-2 hover:scale-[1.02] hover:opacity-100 active:scale-[0.98] transition-all opacity-50" title="Добавить выбранных претендентов в таблицу" >
+                    <span class="material-symbols-outlined text-lg">person_add</span>
+                    <span>Добавить</span>
+                </button>
+            </div>
+        </div>
+
+
     </div>
 </div>
 
