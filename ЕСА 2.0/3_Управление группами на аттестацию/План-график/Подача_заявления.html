@@ -791,30 +791,63 @@
             <div class="space-y-4 bg-surface-container-lowest p-4 rounded-lg">
                 <div class="flex items-center gap-2 mb-4">
                     <span class="w-1 h-6 bg-primary rounded-full"></span>
+                    <h2 class="text-label-md uppercase tracking-widest text-primary">Основания для внеочередной аттестации</h2>
+                </div>
+                <div class="space-y-4">
+                    <div class="space-y-module-gap">
+                        <label class="text-label-sm text-outline uppercase">
+                            Приказ о назначении внеочередной аттестации<span class="text-error">*</span>
+                        </label>
+                        <!-- Drag and Drop Area -->
+                        <div class="border-2 border-dashed border-outline-variant/50 rounded-lg bg-surface-container-low h-[120px] flex flex-col items-center justify-center p-container-padding transition-colors relative group" id="drop-zone-0">
+                            <input accept=".xls,.xlsx" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" id="file-upload-0" type="file">
+                            <div class="text-center">
+                                <span class="font-label-md text-label-md text-on-surface">Перетащите файл с приказом сюда</span>
+                                <span class="font-body-md text-body-md text-on-surface-variant mx-2">или</span>
+                                <button class="font-label-md text-label-md text-surface-tint hover:text-primary transition-colors focus:outline-none" type="button">
+                                    [ Выберите файл ]
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center font-label-sm text-label-sm text-on-surface-variant mt-2 px-1">
+                            <span class="text-label-sm text-on-surface-variant">Формат файла: .pdf, .jpg, .png</span>
+                            <span>Максимальный размер файла: 25 МБ</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="space-y-2">
+                            <label class="text-label-sm text-outline uppercase">
+                                Реквизиты приказа<span class="text-error">*</span>
+                            </label>
+                            <input class="w-full bg-surface-container-low border-none rounded-lg px-4 py-2.5 text-sm" type="text" value="" placeholder="Введите реквизиты приказа, являющегося основанием назначения внеочередной аттестации">
+                        </div>
+                        <div>
+                            <label class="text-label-sm text-outline uppercase">
+                                Причины назначения внеочередной аттестации: <span class="text-error">*</span>
+                            </label>
+                            <div class="relative">
+                                <select class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-lg px-4 py-2 text-body-md text-on-surface appearance-none focus:ring-2 focus:ring-primary/30 outline-none">
+                                    <option selected="" disabled>Выберите причины из списка</option>
+                                    <option>поступление обращения на действия (бездействие) специалиста</option>
+                                    <option>выявления при проведении проверок правильности неоднократного грубого (умышленного) нарушения требований НПА</option>
+                                    <option>снижении качества работ специалиста </option>
+                                    <option>инициативы руководителя организации по регистрации или специалиста по технической инвентаризации в целях присвоения более высокой квалификационной категории</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="space-y-4 bg-surface-container-lowest p-4 rounded-lg">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="w-1 h-6 bg-primary rounded-full"></span>
                     <h2 class="text-label-md uppercase tracking-widest text-primary">Документы и вложения</h2>
                 </div>
                 <div class="space-y-4">
-<!--                    <div class="space-y-module-gap">-->
-<!--                        <label class="text-label-sm text-outline uppercase">-->
-<!--                            Аттестационный лист (предыдущая аттестация)-->
-<!--                        </label>-->
-<!--                        &lt;!&ndash; Drag and Drop Area &ndash;&gt;-->
-<!--                        <div class="border-2 border-dashed border-outline-variant/50 rounded-lg bg-surface-container-low h-[120px] flex flex-col items-center justify-center p-container-padding transition-colors relative group" id="drop-zone-3">-->
-<!--                            <input accept=".xls,.xlsx" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" id="file-upload-3" type="file">-->
-<!--                            <div class="text-center">-->
-<!--                                <span class="font-label-md text-label-md text-on-surface">Перетащите файл с аттестационным листом сюда</span>-->
-<!--                                <span class="font-body-md text-body-md text-on-surface-variant mx-2">или</span>-->
-<!--                                <button class="font-label-md text-label-md text-surface-tint hover:text-primary transition-colors focus:outline-none" type="button">-->
-<!--                                    [ Выберите файл ]-->
-<!--                                </button>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="flex justify-between items-center font-label-sm text-label-sm text-on-surface-variant px-1">-->
-<!--                            <span class="text-label-sm text-on-surface-variant">Формат файла: .pdf, .jpg, .png</span>-->
-<!--                            <span>Максимальный размер файла: 25 МБ</span>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
                     <div class="space-y-module-gap">
                         <label class="text-label-sm text-outline uppercase">
                             1. Аттестационная характеристика <span class="text-error">*</span>
