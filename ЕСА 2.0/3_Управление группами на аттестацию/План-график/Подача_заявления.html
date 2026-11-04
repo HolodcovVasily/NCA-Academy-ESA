@@ -710,21 +710,29 @@
                 </div>
                 <div class="grid grid-cols-2 gap-y-6 gap-x-8">
                     <div class="flex flex-col gap-1">
-                        <span class="text-label-sm text-outline uppercase">Наименование организации </span>
+                        <span class="text-label-sm text-outline uppercase">Наименование организации</span>
                         <span class="font-label-md text-on-surface">РУП "Минское городское агентство по государственной регистрации и земельному кадастру"</span>
                     </div>
+                    <div class="flex flex-col gap-1">
+                        <span class="text-label-sm text-outline uppercase">Наименование обособленного структурного подразделения (при наличии)</span>
+                        <span class="font-label-md text-on-surface">Наименование</span>
+                    </div>
+
+
+
+
                     <div class="flex flex-col gap-1">
                         <span class="text-label-sm text-outline uppercase">Должность</span>
                         <span class="font-label-md text-on-surface">Специалист по ТИ 1 к.</span>
                     </div>
-                    <div class="flex flex-col gap-1">
-                        <span class="text-label-sm text-outline uppercase">Срок действия аттестации</span>
-                        <span class="font-label-md text-on-surface">22.09.2026</span>
-                    </div>
-                    <div class="flex flex-col gap-1">
-                        <span class="text-label-sm text-outline uppercase">Наличие курсов за 3 года</span>
-                        <span class="font-label-md text-on-surface">да</span>
-                    </div>
+<!--                    <div class="flex flex-col gap-1">-->
+<!--                        <span class="text-label-sm text-outline uppercase">Срок действия аттестации</span>-->
+<!--                        <span class="font-label-md text-on-surface">22.09.2026</span>-->
+<!--                    </div>-->
+<!--                    <div class="flex flex-col gap-1">-->
+<!--                        <span class="text-label-sm text-outline uppercase">Наличие курсов за 3 года</span>-->
+<!--                        <span class="font-label-md text-on-surface">да</span>-->
+<!--                    </div>-->
                 </div>
             </div>
 
@@ -747,14 +755,14 @@
                                     <label class="text-label-sm font-semibold text-on-surface-variant mb-1 block">Количество лет</label>
                                     <div class="relative flex items-center">
                                         <input class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-lg px-3 py-2 pr-10 text-body-md text-on-surface font-medium focus:ring-2 focus:ring-primary/30 outline-none" max="60" min="0" placeholder="0" type="number" value="8">
-                                        <span class="absolute right-3 text-label-sm font-medium text-on-surface-variant pointer-events-none">лет</span>
+<!--                                        <span class="absolute right-3 text-label-sm font-medium text-on-surface-variant pointer-events-none">лет</span>-->
                                     </div>
                                 </div>
                                 <div>
                                     <label class="text-label-sm font-semibold text-on-surface-variant mb-1 block">Количество месяцев</label>
                                     <div class="relative flex items-center">
                                         <input class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-lg px-3 py-2 pr-12 text-body-md text-on-surface font-medium focus:ring-2 focus:ring-primary/30 outline-none" max="11" min="0" placeholder="0" type="number" value="4">
-                                        <span class="absolute right-3 text-label-sm font-medium text-on-surface-variant pointer-events-none">мес.</span>
+<!--                                        <span class="absolute right-3 text-label-sm font-medium text-on-surface-variant pointer-events-none">мес.</span>-->
                                     </div>
                                 </div>
                             </div>
@@ -771,14 +779,14 @@
                                     <label class="text-label-sm font-semibold text-on-surface-variant mb-1 block">Количество лет</label>
                                     <div class="relative flex items-center">
                                         <input class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-lg px-3 py-2 pr-10 text-body-md text-on-surface font-medium focus:ring-2 focus:ring-primary/30 outline-none" max="60" min="0" placeholder="0" type="number" value="5">
-                                        <span class="absolute right-3 text-label-sm font-medium text-on-surface-variant pointer-events-none">лет</span>
+<!--                                        <span class="absolute right-3 text-label-sm font-medium text-on-surface-variant pointer-events-none">лет</span>-->
                                     </div>
                                 </div>
                                 <div>
                                     <label class="text-label-sm font-semibold text-on-surface-variant mb-1 block">Количество месяцев</label>
                                     <div class="relative flex items-center">
                                         <input class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-lg px-3 py-2 pr-12 text-body-md text-on-surface font-medium focus:ring-2 focus:ring-primary/30 outline-none" max="11" min="0" placeholder="0" type="number" value="2">
-                                        <span class="absolute right-3 text-label-sm font-medium text-on-surface-variant pointer-events-none">мес.</span>
+<!--                                        <span class="absolute right-3 text-label-sm font-medium text-on-surface-variant pointer-events-none">мес.</span>-->
                                     </div>
                                 </div>
                             </div>
@@ -799,8 +807,8 @@
                             Приказ о назначении внеочередной аттестации<span class="text-error">*</span>
                         </label>
                         <!-- Drag and Drop Area -->
-                        <div class="border-2 border-dashed border-outline-variant/50 rounded-lg bg-surface-container-low h-[120px] flex flex-col items-center justify-center p-container-padding transition-colors relative group" id="drop-zone-0">
-                            <input accept=".xls,.xlsx" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" id="file-upload-0" type="file">
+                        <div class="border-2 border-dashed border-outline-variant/50 rounded-lg bg-surface-container-low h-[120px] flex flex-col items-center justify-center p-container-padding transition-colors relative group" id="drop-zone-1">
+                            <input accept=".xls,.xlsx" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" id="file-upload-1" type="file">
                             <div class="text-center">
                                 <span class="font-label-md text-label-md text-on-surface">Перетащите файл с приказом сюда</span>
                                 <span class="font-body-md text-body-md text-on-surface-variant mx-2">или</span>
@@ -820,7 +828,7 @@
                             <label class="text-label-sm text-outline uppercase">
                                 Реквизиты приказа<span class="text-error">*</span>
                             </label>
-                            <input class="w-full bg-surface-container-low border-none rounded-lg px-4 py-2.5 text-sm" type="text" value="" placeholder="Введите реквизиты приказа, являющегося основанием назначения внеочередной аттестации">
+                            <input class="w-full bg-surface-container-low border-none rounded-lg px-4 py-2.5 text-sm" type="text" value="" placeholder="Введите реквизиты приказа">
                         </div>
                         <div>
                             <label class="text-label-sm text-outline uppercase">
@@ -828,11 +836,11 @@
                             </label>
                             <div class="relative">
                                 <select class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-lg px-4 py-2 text-body-md text-on-surface appearance-none focus:ring-2 focus:ring-primary/30 outline-none">
-                                    <option selected="" disabled>Выберите причины из списка</option>
+                                    <option selected="" disabled>Выберите причину из списка</option>
                                     <option>поступление обращения на действия (бездействие) специалиста</option>
-                                    <option>выявления при проведении проверок правильности неоднократного грубого (умышленного) нарушения требований НПА</option>
-                                    <option>снижении качества работ специалиста </option>
-                                    <option>инициативы руководителя организации по регистрации или специалиста по технической инвентаризации в целях присвоения более высокой квалификационной категории</option>
+                                    <option>выявление нарушений при проведении проверок правильности</option>
+                                    <option>снижение качества работ </option>
+                                    <option>инициатива руководителя организации по регистрации</option>
                                 </select>
                             </div>
                         </div>
@@ -853,8 +861,8 @@
                             1. Аттестационная характеристика <span class="text-error">*</span>
                         </label>
                         <!-- Drag and Drop Area -->
-                        <div class="border-2 border-dashed border-outline-variant/50 rounded-lg bg-surface-container-low h-[120px] flex flex-col items-center justify-center p-container-padding transition-colors relative group" id="drop-zone-1">
-                            <input accept=".xls,.xlsx" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" id="file-upload-1" type="file">
+                        <div class="border-2 border-dashed border-outline-variant/50 rounded-lg bg-surface-container-low h-[120px] flex flex-col items-center justify-center p-container-padding transition-colors relative group" id="drop-zone-11">
+                            <input accept=".xls,.xlsx" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" id="file-upload-11" type="file">
                             <div class="text-center">
                                 <span class="font-label-md text-label-md text-on-surface">Перетащите файл с аттестационной характеристикой сюда</span>
                                 <span class="font-body-md text-body-md text-on-surface-variant mx-2">или</span>
@@ -904,13 +912,13 @@
 
                     <div class="space-y-module-gap">
                         <label class="text-label-sm text-outline uppercase">
-                            2. Результаты анализа качества выполняемых работ по технической инвентаризации  <span class="text-error">*</span>
+                            2. Акт проверки правильности выполнения работ по технической инвентаризации<span class="text-error">*</span>
                         </label>
                         <!-- Drag and Drop Area -->
                         <div class="border-2 border-dashed border-outline-variant/50 rounded-lg bg-surface-container-low h-[120px] flex flex-col items-center justify-center p-container-padding transition-colors relative group" id="drop-zone-2">
                             <input accept=".xls,.xlsx" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" id="file-upload-2" type="file">
                             <div class="text-center">
-                                <span class="font-label-md text-label-md text-on-surface">Перетащите файл проверки правильности работ сюда</span>
+                                <span class="font-label-md text-label-md text-on-surface">Перетащите файл с актом проверки правильности выполнения работ сюда</span>
                                 <span class="font-body-md text-body-md text-on-surface-variant mx-2">или</span>
                                 <button class="font-label-md text-label-md text-surface-tint hover:text-primary transition-colors focus:outline-none" type="button">
                                     [ Выберите файл ]
@@ -951,7 +959,7 @@
 
                 <p class="text-label-sm text-surface-tint font-semibold mt-1 flex items-center gap-1">
                     <span class="material-symbols-outlined text-base">check_circle</span>
-                    Срок подачи - минимум за 20 дней до предполагаемой даты аттестации.
+                    Срок подачи - минимум за 20 рабочих дней до предполагаемой даты аттестации.
                 </p>
 
                 <!-- Regulatory Bounds & Default Logic Notice -->
@@ -959,15 +967,15 @@
                     <div class="flex flex-wrap items-center justify-between gap-2">
                         <div class="flex items-center gap-3 text-[13px]">
                             <span class="flex items-center gap-1 text-[#d84315]">
-                                <span class="w-2 h-2 rounded-full bg-[#d84315]"></span> Срок действия аттестации: <strong> 23.11.2026</strong>
+                                </span> Срок действия аттестации: <strong> 23.11.2026</strong>
                             </span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Carousel Bar: Navigation Header -->
-                <div class="flex items-center justify-between mb-2 px-1">
-                    <div class="flex items-center gap-1">
+
+                    <div class="flex items-center justify-between mb-2 px-1">
                         <button type="button" onclick="const c = document.getElementById('weeks-carousel'); c.scrollBy({ left: -220, behavior: 'smooth' });" class="w-8 h-8 rounded-lg border border-outline-variant/20 bg-surface-container-low hover:bg-surface-container-high text-on-surface flex items-center justify-center transition-colors" title="Предыдущие недели">
                             <span class="material-symbols-outlined text-lg">chevron_left</span>
                         </button>
@@ -975,7 +983,7 @@
                             <span class="material-symbols-outlined text-lg">chevron_right</span>
                         </button>
                     </div>
-                </div>
+
 
                 <!-- Scroll Container with Week Cards -->
                 <div id="weeks-carousel" class="flex gap-3 overflow-x-auto pb-2 pt-1 scroll-smooth snap-x">
@@ -1055,13 +1063,13 @@
                                 <h2 class="text-label-md uppercase tracking-widest text-primary">Запрос переноса срока аттестации</h2>
                             </div>
                             <p class="text-label-sm text-surface-tint font-semibold mt-1 flex items-center gap-1">
-                                <span class="material-symbols-outlined text-base">check_circle</span>Перенос планового срока аттестации по объективной или уважительной причине.</p>
+                                <span class="material-symbols-outlined text-base">check_circle</span>Перенос планового срока аттестации уважительной причине.</p>
                         </div>
                     </div>
                     <!-- Interactive Switch Button -->
                     <div class="flex items-center gap-3 self-end sm:self-auto">
                         <span class="text-label-sm font-semibold text-on-surface-variant" id="switch-label-text">Режим переноса</span>
-                        <button type="button" id="postponement-toggle-btn" onclick="const content = document.getElementById('postponement-form-content'); const knob = document.getElementById('toggle-knob'); const headerTab = document.getElementById('tab-postponement-status'); const submitBtn = document.getElementById('main-submit-btn'); const isOff = content.classList.contains('hidden'); if(isOff){ content.classList.remove('hidden'); this.classList.remove('bg-surface-container-highest'); this.classList.add('bg-secondary'); knob.classList.remove('translate-x-1'); knob.classList.add('translate-x-7'); if(headerTab){ headerTab.classList.remove('opacity-60'); headerTab.classList.add('border-b-2', 'border-secondary', 'text-secondary', 'font-bold'); } if(submitBtn){ submitBtn.innerHTML = '&lt;span class=\'material-symbols-outlined text-lg\'&gt;send&lt;/span&gt; Сохранить и отправить запрос на перенос'; } } else { content.classList.add('hidden'); this.classList.remove('bg-secondary'); this.classList.add('bg-surface-container-highest'); knob.classList.remove('translate-x-7'); knob.classList.add('translate-x-1'); if(headerTab){ headerTab.classList.remove('border-b-2', 'border-secondary', 'text-secondary', 'font-bold'); headerTab.classList.add('opacity-60'); } if(submitBtn){ submitBtn.innerHTML = '&lt;span class=\'material-symbols-outlined text-lg\'&gt;send&lt;/span&gt; Сохранить и отправить повторно'; } }" class="relative inline-flex h-8 w-14 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-secondary/40 shadow-inner cursor-pointer bg-surface-container-highest" role="switch" aria-checked="true">
+                        <button type="button" id="postponement-toggle-btn" onclick="const content = document.getElementById('postponement-form-content'); const knob = document.getElementById('toggle-knob'); const headerTab = document.getElementById('tab-postponement-status'); const submitBtn = document.getElementById('main-submit-btn'); const isOff = content.classList.contains('hidden'); if(isOff){ content.classList.remove('hidden'); this.classList.remove('bg-surface-container-highest'); this.classList.add('bg-primary'); knob.classList.remove('translate-x-1'); knob.classList.add('translate-x-7'); if(headerTab){ headerTab.classList.remove('opacity-60'); headerTab.classList.add('border-b-2', 'border-secondary', 'text-secondary', 'font-bold'); } if(submitBtn){ submitBtn.innerHTML = '&lt;span class=\'material-symbols-outlined text-lg\'&gt;send&lt;/span&gt; Сохранить и отправить запрос на перенос'; } } else { content.classList.add('hidden'); this.classList.remove('bg-secondary'); this.classList.add('bg-surface-container-highest'); knob.classList.remove('translate-x-7'); knob.classList.add('translate-x-1'); if(headerTab){ headerTab.classList.remove('border-b-2', 'border-secondary', 'text-secondary', 'font-bold'); headerTab.classList.add('opacity-60'); } if(submitBtn){ submitBtn.innerHTML = '&lt;span class=\'material-symbols-outlined text-lg\'&gt;send&lt;/span&gt; Сохранить и отправить повторно'; } }" class="relative inline-flex h-8 w-14 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-secondary/40 shadow-inner cursor-pointer bg-surface-container-highest" role="switch" aria-checked="true">
         <span id="toggle-knob" class="inline-block h-6 w-6 transform rounded-full bg-white transition-transform shadow-md flex items-center justify-center translate-x-1">
           <span class="material-symbols-outlined text-[14px] text-secondary font-bold">check</span>
         </span>
