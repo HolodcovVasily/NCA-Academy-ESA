@@ -621,36 +621,40 @@
         <!-- Header -->
         <div class="px-8 pt-6 pb-0 bg-surface-container-low border-b border-outline-variant/15 flex-shrink-0">
             <div class="flex items-start justify-between gap-4">
-                <div>
-                    <div class="flex items-center gap-3">
+                <div class="space-y-1.5 flex-1 min-w-0">
+                    <div class="flex flex-wrap items-center justify-between gap-2.5">
                         <h2 class="text-headline-md font-bold text-on-surface">Заявка на аттестацию </h2>
+                        <div class="inline-flex items-center gap-1.5">
+                            <span class="flex items-center gap-2 mb-1">
+                                <span class="bg-slate-400 text-on-primary text-[10px] px-2 py-1 rounded font-black tracking-widest uppercase ">Не подана</span>
+
+                            </span>
+                        </div>
+                        <!--                    <div class="flex items-center gap-2 mb-1">-->
+                        <!--                        <span class="bg-[#ffa12b] text-on-primary text-[10px] px-2 py-1 rounded font-black tracking-widest uppercase ">На рассмотрении</span>-->
+                        <!--                    </div>-->
+                        <!--                    <div class="flex items-center gap-2 mb-1">-->
+                        <!--                        <span class="bg-[#a10f0f] text-on-primary text-[10px] px-2 py-1 rounded font-black tracking-widest uppercase ">Отклонена</span>-->
+                        <!--                    </div>-->
+                        <!--                    <div class="flex items-center gap-2 mb-1">-->
+                        <!--                        <span class="bg-emerald-500 text-on-primary text-[10px] px-2 py-1 rounded font-black tracking-widest uppercase ">Одобрена</span>-->
+                        <!--                    </div>-->
+                        <!--                    <div class="flex items-center gap-2 mb-1">-->
+                        <!--                        <span class="bg-[#ffa12b] text-on-primary text-[10px] px-2 py-1 rounded font-black tracking-widest uppercase ">Перенесена</span>-->
+                        <!--                    </div>-->
+                        <!--                    <div class="flex items-center gap-2 mb-1">-->
+                        <!--                        <span class="bg-[#4e69c380] text-on-primary text-[10px] px-2 py-1 rounded font-black tracking-widest uppercase ">Аттестация назначена</span>-->
+                        <!--                    </div>-->
+                        <!--                    <div class="flex items-center gap-2 mb-1">-->
+                        <!--                        <span class="bg-primary-container text-on-primary text-[10px] px-2 py-1 rounded font-black tracking-widest uppercase ">Аттестован</span>-->
+                        <!--                    </div>-->
                     </div>
-                    <div class="flex items-center gap-2 mb-1">
-                        <span class="bg-slate-400 text-on-primary text-[10px] px-2 py-1 rounded font-black tracking-widest uppercase ">Не подана</span>
-                    </div>
-<!--                    <div class="flex items-center gap-2 mb-1">-->
-<!--                        <span class="bg-[#ffa12b] text-on-primary text-[10px] px-2 py-1 rounded font-black tracking-widest uppercase ">На рассмотрении</span>-->
-<!--                    </div>-->
-<!--                    <div class="flex items-center gap-2 mb-1">-->
-<!--                        <span class="bg-[#a10f0f] text-on-primary text-[10px] px-2 py-1 rounded font-black tracking-widest uppercase ">Отклонена</span>-->
-<!--                    </div>-->
-<!--                    <div class="flex items-center gap-2 mb-1">-->
-<!--                        <span class="bg-emerald-500 text-on-primary text-[10px] px-2 py-1 rounded font-black tracking-widest uppercase ">Одобрена</span>-->
-<!--                    </div>-->
-<!--                    <div class="flex items-center gap-2 mb-1">-->
-<!--                        <span class="bg-[#ffa12b] text-on-primary text-[10px] px-2 py-1 rounded font-black tracking-widest uppercase ">Перенесена</span>-->
-<!--                    </div>-->
-<!--                    <div class="flex items-center gap-2 mb-1">-->
-<!--                        <span class="bg-[#4e69c380] text-on-primary text-[10px] px-2 py-1 rounded font-black tracking-widest uppercase ">Аттестация назначена</span>-->
-<!--                    </div>-->
-<!--                    <div class="flex items-center gap-2 mb-1">-->
-<!--                        <span class="bg-primary-container text-on-primary text-[10px] px-2 py-1 rounded font-black tracking-widest uppercase ">Аттестован</span>-->
-<!--                    </div>-->
                 </div>
                 <button class="p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" onclick="window.location.href='План-график.html'">
                     <span class="material-symbols-outlined text-2xl">close</span>
                 </button>
             </div>
+
             <!-- Scenario Tabs -->
             <div class="flex items-center gap-2 mt-4 pt-2 overflow-x-auto">
                 <button onclick="window.location.href='Подача_заявления.html'" class="px-4 py-2 text-label-md font-semibold text-primary bg-surface-container-lowest rounded-t-lg shadow-sm flex items-center gap-2">
@@ -675,7 +679,7 @@
                     <div class="space-y-2">
                         <span class="text-label-sm text-outline uppercase">Вид аттестации</span>
                         <select class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-lg px-4 py-2 text-body-md text-on-surface appearance-none focus:ring-2 focus:ring-primary/30 outline-none">
-                            <option selected="" disabled="">Выберите вид аттестации</option>
+                            <option  disabled="">Выберите вид аттестации</option>
                             <option selected="">Очередная</option>
                             <option>Внеочередная</option>
                         </select>
@@ -683,11 +687,12 @@
                     <div class="space-y-2">
                         <span class="text-label-sm text-outline uppercase">Попытка прохождения аттестации</span>
                         <select class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-lg px-4 py-2 text-body-md text-on-surface appearance-none focus:ring-2 focus:ring-primary/30 outline-none">
-                            <option selected="" disabled="">Выберите попытку прохождения аттестации</option>
+                            <option  disabled="">Выберите попытку прохождения аттестации</option>
                             <option selected="">Первичная</option>
                             <option>Повторная (после неаттестации)</option>
                         </select>
-                    </div></div>
+                    </div>
+                </div>
             </div>
             <!-- Section 2: Candidate Details (Read-Only) -->
             <div class="space-y-4 bg-surface-container-lowest p-4 rounded-lg">
