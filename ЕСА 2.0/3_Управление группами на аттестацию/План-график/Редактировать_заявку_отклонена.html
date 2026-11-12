@@ -633,7 +633,7 @@
 <!--                                <span class="bg-[#ffa12b] text-on-primary text-[10px] px-2 py-1 rounded font-black tracking-widest uppercase ">На рассмотрении</span>-->
 <!--                            </span>-->
                             <span class="flex items-center gap-2 mb-1">
-                                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-error text-white uppercase tracking-wider">Статус: Отклонена</span>
+                                <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-error text-white uppercase tracking-wider">Отклонена</span>
                             </span>
                             <!--                            <button class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-medium bg-purple-100 text-purple-900 hover:bg-purple-200 transition-colors cursor-pointer" onclick="this.classList.toggle('opacity-50')" title="Нажмите для переключения статуса" type="button">-->
                             <!--                                <span class="w-1.5 h-1.5 rounded-full bg-purple-600"></span>-->
@@ -644,7 +644,7 @@
                     <div class="flex flex-wrap items-center gap-y-1 gap-x-3 text-xs text-on-surface-variant">
                         <span class="flex items-center gap-1">
                             <span class="material-symbols-outlined text-sm">schedule</span>
-                            Поступила: 28.09.2026 в 14:20
+                            Рассмотрена: 28.09.2026 в 14:20
                         </span>
                         <span class="inline-flex items-center gap-1 truncate max-w-xl text-on-surface-variant" title="РУП Минское городское агентство по государственной регистрации и земельному кадастру">
                             <span class="material-symbols-outlined text-[15px] text-outline">domain</span>
@@ -670,19 +670,42 @@
         </div>
         <!-- Scrollable Modal Body -->
         <div class="p-8 overflow-y-auto flex-1 space-y-6 bg-surface-bright/50">
+            <div class="p-5 rounded-xl bg-primary/10  border border-primary shadow-sm">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="w-1 h-6 bg-primary rounded-full"></span>
+                        <h2 class="text-label-md uppercase tracking-widest text-primary">Комментарий Администратора</h2>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-1 gap-2.5">
+                    <div class="p-3.5 rounded-lg bg-surface-container-lowest border border-primary items-center">
+                        <div class="md:col-span-6 space-y-1">
+                            <span class="text-label-sm text-outline uppercase">Комментарий</span>
+                            <div class="flex items-center gap-1.5">
 
-            <div class="p-5 rounded-xl bg-error-container/20  border border-error shadow-sm">
+                                <span class="text-xs font-bold text-on-surface">текст комментария Администратора</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-1 gap-4">
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="p-5 rounded-xl bg-error-container/30  border border-error shadow-sm">
                 <div class="flex items-center justify-between mb-4">
                     <div class="flex items-center gap-2 mb-4">
                         <span class="material-symbols-outlined text-error text-2xl flex-shrink-0">error</span>
-                        <h2 class="text-label-md font-bold text-error flex items-center gap-1.5">Заявка отклонена Администратором СА</h2>
+                        <h2 class="text-label-md uppercase tracking-widest  text-error flex items-center gap-1.5">Заявка отклонена Администратором</h2>
                     </div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-2.5">
-                    <!-- Файл 1 -->
-
-                    <!-- Реквизиты -->
-                    <div class="p-3.5 rounded-lg bg-surface-container-lowest border border-error/20 items-center">
+                    <div class="p-3.5 rounded-lg bg-surface-container-lowest border border-error/30 items-center">
                         <div class="md:col-span-1 space-y-1">
                             <span class="flex items-center gap-1.5 text-error font-bold text-label-sm uppercase tracking-wider mb-1">Основание отклонения заявки:</span>
                             <div class="flex items-center gap-1.5">
@@ -841,9 +864,12 @@
 
             <!-- Section 4: Documents and .pdf, .jpg, .png Attachments -->
             <div class="space-y-4 bg-surface-container-lowest p-4 rounded-lg">
-                <div class="flex items-center gap-2 mb-4">
-                    <span class="w-1 h-6 bg-primary rounded-full"></span>
-                    <h2 class="text-label-md uppercase tracking-widest text-primary">Основания для внеочередной аттестации</h2>
+                <div class="flex items-center justify-between border-b border-surface-container pb-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="w-1 h-6 bg-primary rounded-full"></span>
+                        <h2 class="text-label-md uppercase tracking-widest text-primary">Основания для внеочередной аттестации</h2>
+                    </div>
+                    <span class="text-xs text-primary font-semibold">Комплект: 1 / 1</span>
                 </div>
                 <div class="space-y-4">
                     <div class="space-y-module-gap">
@@ -851,15 +877,26 @@
                             Приказ о назначении внеочередной аттестации<span class="text-error">*</span>
                         </label>
                         <!-- Drag and Drop Area -->
-                        <div class="border-2 border-dashed border-outline-variant/50 rounded-lg bg-surface-container-low h-[120px] flex flex-col items-center justify-center p-container-padding transition-colors relative group" id="drop-zone-1">
-                            <input accept=".xls,.xlsx" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" id="file-upload-1" type="file">
-                            <div class="text-center">
-                                <span class="font-label-md text-label-md text-on-surface">Перетащите файл с приказом сюда</span>
-                                <span class="font-body-md text-body-md text-on-surface-variant mx-2">или</span>
-                                <button class="font-label-md text-label-md text-surface-tint hover:text-primary transition-colors focus:outline-none" type="button">
-                                    [ Выберите файл ]
-                                </button>
+                        <div class="bg-surface-container-low hover:bg-surface-container transition-colors p-2.5 rounded-lg flex flex-col justify-between gap-2 border border-surface-container">
+                            <div class="flex items-start gap-2">
+                                <span class="material-symbols-outlined text-primary text-2xl">picture_as_pdf</span>
+                                <div class="min-w-0 flex-1">
+                                    <div class="text-xs font-bold text-on-surface" title="Приказ о назначении внеочередной аттестации.pdf">Приказ о назначении внеочередной аттестации</div>
+                                    <div class="text-[10px] text-outline">PDF • 2.4 МБ</div>
+                                </div>
                             </div>
+                            <div class="flex items-center justify-end gap-1.5 pt-1 border-t border-surface-container">
+                                <button class="px-2 py-1 rounded bg-primary-fixed text-on-primary-fixed hover:bg-primary-fixed-dim text-[11px] font-semibold flex items-center gap-1 transition-colors" onclick="alert('Открывается встроенный PDF-просмотрщик')" type="button">
+                                    <span class="material-symbols-outlined text-xs">visibility</span>
+                                    Просмотреть
+                                </button>
+                                <button class="p-1 text-on-surface-variant hover:bg-surface-container-high rounded text-xs" title="Скачать файл" type="button">
+                                    <span class="material-symbols-outlined text-sm">download</span>
+                                </button>
+                                <button class="px-2 py-1 rounded bg-error-container/30  hover:bg-error-container/50 border border-error text-[11px] text-error font-semibold flex items-center gap-1 transition-all" onclick="alert('Становится доступен интерфейс импорта файла')" type="button">
+                                    <span class="material-symbols-outlined text-xs">Autorenew</span>
+                                    Заменить файл
+                                </button></div>
                         </div>
                         <div class="flex justify-between items-center font-label-sm text-label-sm text-on-surface-variant mt-2 px-1">
                             <span class="text-label-sm text-on-surface-variant">Формат файла: .pdf, .jpg, .png</span>
@@ -880,7 +917,7 @@
                             </label>
                             <div class="relative">
                                 <select class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-lg px-4 py-2 text-body-md text-on-surface appearance-none focus:ring-2 focus:ring-primary/30 outline-none">
-                                    <option selected="" disabled>Выберите причину из списка</option>
+                                    <option selected="" disabled="">Выберите причину из списка</option>
                                     <option>поступление обращения на действия (бездействие) специалиста</option>
                                     <option>выявление нарушений при проведении проверок правильности</option>
                                     <option>снижение качества работ </option>
@@ -893,11 +930,168 @@
                 </div>
             </div>
 
+<!--            <div class="space-y-4 bg-surface-container-lowest p-4 rounded-lg">-->
+<!--                <div class="flex items-center gap-2 mb-4">-->
+<!--                    <span class="w-1 h-6 bg-primary rounded-full"></span>-->
+<!--                    <h2 class="text-label-md uppercase tracking-widest text-primary">Основания для внеочередной аттестации</h2>-->
+<!--                </div>-->
+<!--                <div class="space-y-4">-->
+<!--                    <div class="space-y-module-gap">-->
+<!--                        <label class="text-label-sm text-outline uppercase">-->
+<!--                            Приказ о назначении внеочередной аттестации<span class="text-error">*</span>-->
+<!--                        </label>-->
+<!--                        &lt;!&ndash; Drag and Drop Area &ndash;&gt;-->
+<!--                        <div class="border-2 border-dashed border-outline-variant/50 rounded-lg bg-surface-container-low h-[120px] flex flex-col items-center justify-center p-container-padding transition-colors relative group" id="drop-zone-1">-->
+<!--                            <input accept=".xls,.xlsx" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" id="file-upload-1" type="file">-->
+<!--                            <div class="text-center">-->
+<!--                                <span class="font-label-md text-label-md text-on-surface">Перетащите файл с приказом сюда</span>-->
+<!--                                <span class="font-body-md text-body-md text-on-surface-variant mx-2">или</span>-->
+<!--                                <button class="font-label-md text-label-md text-surface-tint hover:text-primary transition-colors focus:outline-none" type="button">-->
+<!--                                    [ Выберите файл ]-->
+<!--                                </button>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="flex justify-between items-center font-label-sm text-label-sm text-on-surface-variant mt-2 px-1">-->
+<!--                            <span class="text-label-sm text-on-surface-variant">Формат файла: .pdf, .jpg, .png</span>-->
+<!--                            <span>Максимальный размер файла: 25 МБ</span>-->
+<!--                        </div>-->
+<!--                    </div>-->
 
+<!--                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">-->
+<!--                        <div class="space-y-2">-->
+<!--                            <label class="text-label-sm text-outline uppercase">-->
+<!--                                Реквизиты приказа<span class="text-error">*</span>-->
+<!--                            </label>-->
+<!--                            <input class="w-full bg-surface-container-low border-none rounded-lg px-4 py-2.5 text-sm" type="text" value="" placeholder="Введите реквизиты приказа">-->
+<!--                        </div>-->
+<!--                        <div>-->
+<!--                            <label class="text-label-sm text-outline uppercase">-->
+<!--                                Причины назначения внеочередной аттестации: <span class="text-error">*</span>-->
+<!--                            </label>-->
+<!--                            <div class="relative">-->
+<!--                                <select class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-lg px-4 py-2 text-body-md text-on-surface appearance-none focus:ring-2 focus:ring-primary/30 outline-none">-->
+<!--                                    <option selected="" disabled>Выберите причину из списка</option>-->
+<!--                                    <option>поступление обращения на действия (бездействие) специалиста</option>-->
+<!--                                    <option>выявление нарушений при проведении проверок правильности</option>-->
+<!--                                    <option>снижение качества работ </option>-->
+<!--                                    <option>инициатива руководителя организации по регистрации</option>-->
+<!--                                </select>-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+
+
+
+
+<!--            <div class="space-y-4 bg-surface-container-lowest p-4 rounded-lg">-->
+<!--                <div class="flex items-center gap-2 mb-4">-->
+<!--                    <span class="w-1 h-6 bg-primary rounded-full"></span>-->
+<!--                    <h2 class="text-label-md uppercase tracking-widest text-primary">Документы и вложения</h2>-->
+<!--                </div>-->
+<!--                <div class="space-y-4">-->
+<!--                    <div class="space-y-module-gap">-->
+<!--                        <label class="text-label-sm text-outline uppercase">-->
+<!--                            1. Аттестационная характеристика <span class="text-error">*</span>-->
+<!--                        </label>-->
+<!--                        &lt;!&ndash; Drag and Drop Area &ndash;&gt;-->
+<!--                        <div class="border-2 border-dashed border-outline-variant/50 rounded-lg bg-surface-container-low h-[120px] flex flex-col items-center justify-center p-container-padding transition-colors relative group" id="drop-zone-11">-->
+<!--                            <input accept=".xls,.xlsx" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" id="file-upload-11" type="file">-->
+<!--                            <div class="text-center">-->
+<!--                                <span class="font-label-md text-label-md text-on-surface">Перетащите файл с аттестационной характеристикой сюда</span>-->
+<!--                                <span class="font-body-md text-body-md text-on-surface-variant mx-2">или</span>-->
+<!--                                <button class="font-label-md text-label-md text-surface-tint hover:text-primary transition-colors focus:outline-none" type="button">-->
+<!--                                    [ Выберите файл ]-->
+<!--                                </button>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="flex justify-between items-center font-label-sm text-label-sm text-on-surface-variant mt-2 px-1">-->
+<!--                            <span class="text-label-sm text-on-surface-variant">Формат файла: .pdf, .jpg, .png</span>-->
+<!--                            <span>Максимальный размер файла: 25 МБ</span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    <div class="grid grid-cols-1 md:grid-cols-1 gap-4">-->
+
+<!--&lt;!&ndash;                        <div>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <label class="text-label-sm text-outline uppercase">&ndash;&gt;-->
+<!--&lt;!&ndash;                                Ознакомление претендента с характеристикой: <span class="text-error">*</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                            </label>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <div class="relative">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <select class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-lg px-4 py-2 text-body-md text-on-surface appearance-none focus:ring-2 focus:ring-primary/30 outline-none">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <option selected="" disabled="">Выберите из списка</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <option>ознакомлен, согласен</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <option>ознакомлен, не согласен</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <option>не ознакомлен</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </select>&ndash;&gt;-->
+<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                        <div>-->
+<!--                            <label class="text-label-sm text-outline uppercase">-->
+<!--                                Критерий оценки по аттестационной характеристике: <span class="text-error">*</span>-->
+<!--                            </label>-->
+<!--                            <div class="relative">-->
+<!--                                <select class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-lg px-4 py-2 text-body-md text-on-surface appearance-none focus:ring-2 focus:ring-primary/30 outline-none">-->
+<!--                                    <option selected="" disabled>Выберите критерий оценки из списка</option>-->
+<!--                                    <option>"-1 балл" - отрицательная</option>-->
+<!--                                    <option>"0 баллов" - нейтральная</option>-->
+<!--                                    <option>"1 балл" - положительная на специалиста</option>-->
+<!--                                    <option>"2 балла" - положительная, с рекомендацией о присвоении (подтверждении) квалификационной категории</option>-->
+<!--                                    <option>"3 балла" - положительная на ведущего специалиста, руководителя структурного подразделения</option>-->
+<!--                                </select>-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+<!--                    </div>-->
+
+<!--                    <div class="space-y-module-gap">-->
+<!--                        <label class="text-label-sm text-outline uppercase">-->
+<!--                            2. Акт проверки правильности выполнения работ по технической инвентаризации<span class="text-error">*</span>-->
+<!--                        </label>-->
+<!--                        &lt;!&ndash; Drag and Drop Area &ndash;&gt;-->
+<!--                        <div class="border-2 border-dashed border-outline-variant/50 rounded-lg bg-surface-container-low h-[120px] flex flex-col items-center justify-center p-container-padding transition-colors relative group" id="drop-zone-2">-->
+<!--                            <input accept=".xls,.xlsx" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" id="file-upload-2" type="file">-->
+<!--                            <div class="text-center">-->
+<!--                                <span class="font-label-md text-label-md text-on-surface">Перетащите файл с актом проверки правильности выполнения работ сюда</span>-->
+<!--                                <span class="font-body-md text-body-md text-on-surface-variant mx-2">или</span>-->
+<!--                                <button class="font-label-md text-label-md text-surface-tint hover:text-primary transition-colors focus:outline-none" type="button">-->
+<!--                                    [ Выберите файл ]-->
+<!--                                </button>-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+<!--                        <div class="flex justify-between items-center font-label-sm text-label-sm text-on-surface-variant mt-2 px-1">-->
+<!--                            <span class="text-label-sm text-on-surface-variant">Формат файла: .pdf, .jpg, .png</span>-->
+<!--                            <span>Максимальный размер файла: 25 МБ</span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    <div class="space-y-2">-->
+<!--                        <label class="text-label-sm text-outline uppercase">-->
+<!--                            Критерий качества выполняемых работ: <span class="text-error">*</span>-->
+<!--                        </label>-->
+<!--                        <select class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-lg px-4 py-2 text-body-md text-on-surface appearance-none focus:ring-2 focus:ring-primary/30 outline-none">-->
+<!--                            <option selected="" disabled>Выберите критерий качества из списка</option>-->
+<!--&lt;!&ndash;                            <option>"-2 балла" - решение о временном отстранении специалиста по технической инвентаризации от занимаемой должности</option>&ndash;&gt;-->
+<!--                            <option>"-1 балл" - решение о признании действий специалиста по технической инвентаризации не соответствующими законодательству</option>-->
+<!--                            <option>"0 баллов" - проверка не проводилась или решение о признании некоторых действий специалиста по технической инвентаризации не соответствующими законодательству</option>-->
+<!--                            <option>"1 балл" - решение о признании действии специалиста по технической инвентаризации в целом соответствующими законодательству</option>-->
+<!--                            <option>"2 балла" - решение о признании действии специалиста по технической инвентаризации полностью соответствующими законодательству</option>-->
+<!--                        </select>-->
+<!--                    </div>-->
+
+<!--                </div>-->
+<!--            </div>-->
             <div class="space-y-4 bg-surface-container-lowest p-4 rounded-lg">
-                <div class="flex items-center gap-2 mb-4">
-                    <span class="w-1 h-6 bg-primary rounded-full"></span>
-                    <h2 class="text-label-md uppercase tracking-widest text-primary">Документы и вложения</h2>
+                <div class="flex items-center justify-between border-b border-surface-container pb-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="w-1 h-6 bg-primary rounded-full"></span>
+                        <h2 class="text-label-md uppercase tracking-widest text-primary">Документы и вложения</h2>
+                    </div>
+                    <span class="text-xs text-primary font-semibold">Комплект: 2 / 2</span>
                 </div>
                 <div class="space-y-4">
                     <div class="space-y-module-gap">
@@ -905,15 +1099,26 @@
                             1. Аттестационная характеристика <span class="text-error">*</span>
                         </label>
                         <!-- Drag and Drop Area -->
-                        <div class="border-2 border-dashed border-outline-variant/50 rounded-lg bg-surface-container-low h-[120px] flex flex-col items-center justify-center p-container-padding transition-colors relative group" id="drop-zone-11">
-                            <input accept=".xls,.xlsx" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" id="file-upload-11" type="file">
-                            <div class="text-center">
-                                <span class="font-label-md text-label-md text-on-surface">Перетащите файл с аттестационной характеристикой сюда</span>
-                                <span class="font-body-md text-body-md text-on-surface-variant mx-2">или</span>
-                                <button class="font-label-md text-label-md text-surface-tint hover:text-primary transition-colors focus:outline-none" type="button">
-                                    [ Выберите файл ]
-                                </button>
+                        <div class="bg-surface-container-low hover:bg-surface-container transition-colors p-2.5 rounded-lg flex flex-col justify-between gap-2 border border-surface-container">
+                            <div class="flex items-start gap-2">
+                                <span class="material-symbols-outlined text-primary text-2xl">picture_as_pdf</span>
+                                <div class="min-w-0 flex-1">
+                                    <div class="text-xs font-bold text-on-surface" title="Приказ о назначении внеочередной аттестации.pdf">Аттестационная характеристика</div>
+                                    <div class="text-[10px] text-outline">PDF • 2.4 МБ</div>
+                                </div>
                             </div>
+                            <div class="flex items-center justify-end gap-1.5 pt-1 border-t border-surface-container">
+                                <button class="px-2 py-1 rounded bg-primary-fixed text-on-primary-fixed hover:bg-primary-fixed-dim text-[11px] font-semibold flex items-center gap-1 transition-colors" onclick="alert('Открывается встроенный PDF-просмотрщик')" type="button">
+                                    <span class="material-symbols-outlined text-xs">visibility</span>
+                                    Просмотреть
+                                </button>
+                                <button class="p-1 text-on-surface-variant hover:bg-surface-container-high rounded text-xs" title="Скачать файл" type="button">
+                                    <span class="material-symbols-outlined text-sm">download</span>
+                                </button>
+                                <button class="px-2 py-1 rounded bg-error-container/30  hover:bg-error-container/50 border border-error text-[11px] text-error font-semibold flex items-center gap-1 transition-all" onclick="alert('Становится доступен интерфейс импорта файла')" type="button">
+                                    <span class="material-symbols-outlined text-xs">Autorenew</span>
+                                    Заменить файл
+                                </button></div>
                         </div>
                         <div class="flex justify-between items-center font-label-sm text-label-sm text-on-surface-variant mt-2 px-1">
                             <span class="text-label-sm text-on-surface-variant">Формат файла: .pdf, .jpg, .png</span>
@@ -923,26 +1128,26 @@
 
                     <div class="grid grid-cols-1 md:grid-cols-1 gap-4">
 
-<!--                        <div>-->
-<!--                            <label class="text-label-sm text-outline uppercase">-->
-<!--                                Ознакомление претендента с характеристикой: <span class="text-error">*</span>-->
-<!--                            </label>-->
-<!--                            <div class="relative">-->
-<!--                                <select class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-lg px-4 py-2 text-body-md text-on-surface appearance-none focus:ring-2 focus:ring-primary/30 outline-none">-->
-<!--                                    <option selected="" disabled="">Выберите из списка</option>-->
-<!--                                    <option>ознакомлен, согласен</option>-->
-<!--                                    <option>ознакомлен, не согласен</option>-->
-<!--                                    <option>не ознакомлен</option>-->
-<!--                                </select>-->
-<!--                            </div>-->
-<!--                        </div>-->
+                        <!--                        <div>-->
+                        <!--                            <label class="text-label-sm text-outline uppercase">-->
+                        <!--                                Ознакомление претендента с характеристикой: <span class="text-error">*</span>-->
+                        <!--                            </label>-->
+                        <!--                            <div class="relative">-->
+                        <!--                                <select class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-lg px-4 py-2 text-body-md text-on-surface appearance-none focus:ring-2 focus:ring-primary/30 outline-none">-->
+                        <!--                                    <option selected="" disabled="">Выберите из списка</option>-->
+                        <!--                                    <option>ознакомлен, согласен</option>-->
+                        <!--                                    <option>ознакомлен, не согласен</option>-->
+                        <!--                                    <option>не ознакомлен</option>-->
+                        <!--                                </select>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
                         <div>
                             <label class="text-label-sm text-outline uppercase">
                                 Критерий оценки по аттестационной характеристике: <span class="text-error">*</span>
                             </label>
                             <div class="relative">
                                 <select class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-lg px-4 py-2 text-body-md text-on-surface appearance-none focus:ring-2 focus:ring-primary/30 outline-none">
-                                    <option selected="" disabled>Выберите критерий оценки из списка</option>
+                                    <option selected="" disabled="">Выберите критерий оценки из списка</option>
                                     <option>"-1 балл" - отрицательная</option>
                                     <option>"0 баллов" - нейтральная</option>
                                     <option>"1 балл" - положительная на специалиста</option>
@@ -959,15 +1164,26 @@
                             2. Акт проверки правильности выполнения работ по технической инвентаризации<span class="text-error">*</span>
                         </label>
                         <!-- Drag and Drop Area -->
-                        <div class="border-2 border-dashed border-outline-variant/50 rounded-lg bg-surface-container-low h-[120px] flex flex-col items-center justify-center p-container-padding transition-colors relative group" id="drop-zone-2">
-                            <input accept=".xls,.xlsx" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" id="file-upload-2" type="file">
-                            <div class="text-center">
-                                <span class="font-label-md text-label-md text-on-surface">Перетащите файл с актом проверки правильности выполнения работ сюда</span>
-                                <span class="font-body-md text-body-md text-on-surface-variant mx-2">или</span>
-                                <button class="font-label-md text-label-md text-surface-tint hover:text-primary transition-colors focus:outline-none" type="button">
-                                    [ Выберите файл ]
-                                </button>
+                        <div class="bg-surface-container-low hover:bg-surface-container transition-colors p-2.5 rounded-lg flex flex-col justify-between gap-2 border border-surface-container">
+                            <div class="flex items-start gap-2">
+                                <span class="material-symbols-outlined text-primary text-2xl">picture_as_pdf</span>
+                                <div class="min-w-0 flex-1">
+                                    <div class="text-xs font-bold text-on-surface" title="Приказ о назначении внеочередной аттестации.pdf">Акт проверки правильности выполнения работ по технической инвентаризации</div>
+                                    <div class="text-[10px] text-outline">PDF • 2.4 МБ</div>
+                                </div>
                             </div>
+                            <div class="flex items-center justify-end gap-1.5 pt-1 border-t border-surface-container">
+                                <button class="px-2 py-1 rounded bg-primary-fixed text-on-primary-fixed hover:bg-primary-fixed-dim text-[11px] font-semibold flex items-center gap-1 transition-colors" onclick="alert('Открывается встроенный PDF-просмотрщик')" type="button">
+                                    <span class="material-symbols-outlined text-xs">visibility</span>
+                                    Просмотреть
+                                </button>
+                                <button class="p-1 text-on-surface-variant hover:bg-surface-container-high rounded text-xs" title="Скачать файл" type="button">
+                                    <span class="material-symbols-outlined text-sm">download</span>
+                                </button>
+                                <button class="px-2 py-1 rounded bg-error-container/30  hover:bg-error-container/50 border border-error text-[11px] text-error font-semibold flex items-center gap-1 transition-all" onclick="alert('Становится доступен интерфейс импорта файла')" type="button">
+                                    <span class="material-symbols-outlined text-xs">Autorenew</span>
+                                    Заменить файл
+                                </button></div>
                         </div>
 
                         <div class="flex justify-between items-center font-label-sm text-label-sm text-on-surface-variant mt-2 px-1">
@@ -981,8 +1197,8 @@
                             Критерий качества выполняемых работ: <span class="text-error">*</span>
                         </label>
                         <select class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-lg px-4 py-2 text-body-md text-on-surface appearance-none focus:ring-2 focus:ring-primary/30 outline-none">
-                            <option selected="" disabled>Выберите критерий качества из списка</option>
-<!--                            <option>"-2 балла" - решение о временном отстранении специалиста по технической инвентаризации от занимаемой должности</option>-->
+                            <option selected="" disabled="">Выберите критерий качества из списка</option>
+                            <!--                            <option>"-2 балла" - решение о временном отстранении специалиста по технической инвентаризации от занимаемой должности</option>-->
                             <option>"-1 балл" - решение о признании действий специалиста по технической инвентаризации не соответствующими законодательству</option>
                             <option>"0 баллов" - проверка не проводилась или решение о признании некоторых действий специалиста по технической инвентаризации не соответствующими законодательству</option>
                             <option>"1 балл" - решение о признании действии специалиста по технической инвентаризации в целом соответствующими законодательству</option>
@@ -992,7 +1208,6 @@
 
                 </div>
             </div>
-
 
             <div class="p-5 rounded-xl bg-surface-container-lowest border border-outline-variant/15 shadow-sm">
                 <!-- Header & Quota Info -->
